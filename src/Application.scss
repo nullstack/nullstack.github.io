@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+
+:root {
+  --primary-font-family: 'Crete Round', serif;
+  --secondary-font-family: 'Roboto', sans-serif;
+  --primary-color: #d22365;
+  --soft-color: #fff;
+  --neutral-color: #f0f0f2;
+  --heavy-color: #232129;
+}
+
+body {
+  font-family: var(--secondary-font-family);
+  font-weight: 300;
+  color: var(--heavy-color);
+  padding-top: 70px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--primary-font-family);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+pre {
+  background-color: #282c34;
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  
+  pre {
+    overflow-x: auto;
+  }
+
+}
