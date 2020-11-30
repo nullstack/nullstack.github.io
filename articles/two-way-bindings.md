@@ -1,0 +1,21 @@
+TODO:
+- bind is a shortcut for setting source, value, name, event
+- bind uses the same syntax on different inputs but different events
+  - checkbox
+  - select
+  - input
+  - textarea
+  - radio*
+- inputs can be bound to any settable variable
+- the original event can still be asigned
+- the original event will run after the new value is set
+- which event each input type uses
+- the new value will be sent as context key *
+- the new value will mantain the same type as the old value
+- you can create your own bindable components by following the signature
+- bind can take source and a string 
+- arrays can receive bind by index
+- explicit bind by non string keys
+- anythign that responds to [] can be bound by key
+- create your own bindable component
+- bind components can send extra params and trigger extra events

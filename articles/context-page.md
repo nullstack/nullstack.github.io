@@ -1,0 +1,12 @@
+TODO:
+- is global to the client context
+- page.title;
+- title updates the document title in real time
+- page.image = "/image.jpg";
+- image can be absolute or relative url
+- page.description
+- page.canonical
+- canonical can be absolute or relative url
+- page.locale
+- page.robots
+- page.schema

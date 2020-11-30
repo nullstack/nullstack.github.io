@@ -1,0 +1,13 @@
+TODO:
+- present in the global client context
+- has every query string param mapped to a key
+- every key value is a string
+- except for true/false which become booleans
+- by default every key responds as an empty string instead of undefined
+- dynamic segments from the route attribute are injected in the local context
+- assigning to the params will update the query string in the url
+- changes in the params will cause a history push event
+- params cannot be assigned in the lifecycle inside the server yet*
+- params changes are debounced
+- params with dynamic segments cascade to children 
+- assignments are serialized to json

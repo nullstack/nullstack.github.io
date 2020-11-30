@@ -7,22 +7,13 @@ class Snippet extends Nullstack {
 
   html = '';
 
-  static async start(context) {
-    context.snippets = {};
-    const {readdirSync, readFileSync} = await import('fs');
+  static async getSnippetByKey({key}) {
+    const {readFileSync} = await import('fs');
     const {default: Prism} = await import('prismjs');
     await import('prismjs/components/prism-jsx.min');
-    const folder = 'snippets';
-    for(const file of readdirSync(folder)) {
-      const path = [folder, file].join('/');
-      const code = readFileSync(path, 'utf-8');
-      const key = file.split('.')[0];
-      context.snippets[key] = Prism.highlight(code, Prism.languages.jsx, 'javascript');
-    }
-  }
-
-  static async getSnippetByKey({snippets, key}) {
-    return snippets[key];
+    const path = `snippets/${key}.njs`;
+    const code = readFileSync(path, 'utf-8');
+    return Prism.highlight(code, Prism.languages.jsx, 'javascript');
   }
 
   async initiate({key}) {
@@ -43,7 +34,9 @@ class Snippet extends Nullstack {
   
   render() {
     return (
-      <pre html={this.html} />
+      <pre class="bgm3 p4">
+        <code html={this.html} />
+      </pre>
     )
   }
 

@@ -1,0 +1,18 @@
+TODO:
+- is in both client and server contexts
+- can be written on server
+- is read only on client
+- its keys are used to generate the manifest.json
+- project.name
+- project.domain
+- project.shortName
+- project.color
+- project.backgroundColor
+- project.type
+- project.display
+- project.orientation
+- project.scope
+- project.root
+- project.icons
+- project.favicon
+- automatic project manifest icon listing

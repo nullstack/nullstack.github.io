@@ -1,0 +1,15 @@
+TODO:
+- any tag (element, component, innercomponent) can receive a route
+- the first route to matche in a level stops the lookup
+- only matched routes will render
+- routes can be nested and match once per level
+- routes can have dynamic segments
+- dynamic segments reflect in the local params
+- inner components have their own local params if they have a route attribute
+- routes can have wildcards
+- wildcards can be prefixed
+- you can link to routes using a tags with href starting with /
+- routes with dynamic segments reinstantiate the component when the param change
+- children of dynamic segments DO NOT reinstantiate when param change
+- a tags can receive a path attribute
+- a tags can receive params atrtibute

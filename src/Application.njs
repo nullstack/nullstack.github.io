@@ -1,5 +1,6 @@
 import Nullstack from 'nullstack';
 import Snippet from './Snippet';
+import Article from './Article';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
@@ -13,7 +14,6 @@ class Application extends Nullstack {
     project.name = 'Nullstack';
     project.domain = 'nullstack.app';
     project.color = '#d22365';
-    Snippet.start(context);
   }
 
   prepare({page}) {
@@ -25,6 +25,7 @@ class Application extends Nullstack {
       <main>
         <Header />
         <Home route="/" />
+        <Article route="/:slug" />
         <Footer />
       </main>
     )

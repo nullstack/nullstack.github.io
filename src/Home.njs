@@ -6,8 +6,6 @@ import Globe from 'poisonicon/globe/stroke';
 
 class Component extends Nullstack {
 
-  html = '';
-
   prepare({project, page}) {
     page.title = `${project.name} - Full-stack Javascript Components`;
   }
@@ -112,9 +110,9 @@ class Component extends Nullstack {
     return (
       <section class="x xl sm-p2x">
         <Feature 
-          title="Controlled Instances"
+          title="Controlled Components"
           key="Controlled"
-          link="/controlled-instances"
+          link="/controlled-components"
         />
         <Feature 
           title="Two Way Binding"
@@ -129,7 +127,7 @@ class Component extends Nullstack {
         <Feature 
           title="Full-stack Lifecycle"
           key="Lifecycle"
-          link="/lifecycle"
+          link="/fullstack-lifecycle"
         />
       </section>
     )
