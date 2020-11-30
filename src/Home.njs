@@ -85,7 +85,7 @@ class Component extends Nullstack {
           icon={Refresh}
           title="Single Page Application"
           description="Subsequent requests will fetch JSON from an automatically generated API, update the application state, and rerender the page"
-          link="/single-page-application"
+          link="/fullstack-lifecycle"
         />
         <Step 
           icon={Globe}
@@ -117,7 +117,7 @@ class Component extends Nullstack {
         <Feature 
           title="Two Way Binding"
           key="Binding"
-          link="/bindings"
+          link="/two-way-bindings"
         />
         <Feature 
           title="Built-in Routes"

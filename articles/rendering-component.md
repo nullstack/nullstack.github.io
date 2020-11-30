@@ -3,13 +3,13 @@ title: Rendering a Component
 description: Import Nullstack and extend your class from it define an instance method called render which returns any JSX and export the component 
 ---
 
-The simplest component you can make is a rendering component
+The simplest component you can make is a rendering component.
 
-create a file in your src folder with the name of your component and the [njs extension](/njs-file-extension)
+Create a file in your src folder with the name of your component and the [njs extension](/njs-file-extension).
 
-in this example it is going to be called HelloWorld.njs
+In this example it is going to be called HelloWorld.njs.
 
-All you have to do is to import Nullstack and extend your class from it, define an instance method called render that returns any JSX, and export the component
+All you have to do is to import Nullstack and extend your class from it, define an instance method called render that returns any JSX, and export the component.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -27,11 +27,11 @@ class HelloWorld extends Nullstack {
 export default HelloWorld;
 ```
 
-The code above is just declaring the component, you still have to use it
+The code above is just declaring the component, you still have to use it.
 
-Importing the component in your application gives you the ability to use a new tag in your render
+Importing the component in your application gives you the ability to use a new tag in your render.
 
-This tag will be replaced with whatever you returned in your component render
+This tag will be replaced with whatever you returned in your component render.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -61,9 +61,9 @@ export default Application;
 
 ## Using HTML attributes
 
-Nullstack JSX deviates a little from the spec
+Nullstack JSX deviates a little from the spec.
 
-You can use the normal HTML attributes like class and for directly
+You can use the normal HTML attributes like *class* and *for* directly.
 
 ```jsx
 <label for="input" class="dont-label-me"> I am a label </label>
@@ -71,7 +71,7 @@ You can use the normal HTML attributes like class and for directly
 
 ## Headless components
 
-If you want to skip rendering the component at all you can simply return false from the render
+If you want to skip rendering the component at all you can simply return false from the render.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -87,21 +87,21 @@ class Headless extends Nullstack {
 export default Headless;
 ```
 
-This will allocate DOM space for when you decide to render markup there
+This will allocate DOM space for when you decide to render markup there.
 
-This is also useful for conditional rendering
+This is also useful for conditional rendering.
 
-If all you want to do is to generate an invisible component you can skip defining the render method at all
+If all you want to do is to generate an invisible component you can skip defining the render method at all.
 
 ## Inner components
 
-Instead of creating a new component just to organize code-splitting, you can create an inner component
+Instead of creating a new component just to organize code-splitting, you can create an inner component.
 
-Inner components are any method that the name starts with render followed by an uppercase character
+Inner components are any method that the name starts with render followed by an uppercase character.
 
-Inner components share the same instance and scope as the main component, therefore, are very convenient to avoid problems like props drilling
+Inner components share the same instance and scope as the main component, therefore, are very convenient to avoid problems like props drilling.
 
-To invoke the inner component use a JSX tag with the method name without the render prefix
+To invoke the inner component use a JSX tag with the method name without the render prefix.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -136,27 +136,27 @@ export default HelloWorld;
 
 ## Boolean attributes
 
-Attributes can be assigned as a boolean
+Attributes can be assigned as a boolean.
 
-When the value is false the attribute will not be rendered at all
+When the value is false the attribute will not be rendered at all.
 
-When the value is true it will be rendered as a boolean attribute without a string value
+When the value is true it will be rendered as a boolean attribute without a string value.
 
 ```jsx
 <button disabled={false}> Button </button>
 ```
 
-You can shortcut attributes when you know the value will always be true
+You can shortcut attributes when you know the value will always be true.
 
 ```jsx
 <button disabled> Button </button>
 ```
 
-> Learn more about [attributes](/context-and-attributes)
+> ✨ Learn more about [attributes](/context-and-attributes)
 
 ## Element tag
 
-If you need to decide the tag name at runtime, you can use the element tag and set the tag attribute conditionally
+If you need to decide the tag name at runtime, you can use the element tag and set the tag attribute conditionally.
 
 ```jsx
 <element tag={!!link ? 'a' : 'span'} href={link || false}>
@@ -166,9 +166,9 @@ If you need to decide the tag name at runtime, you can use the element tag and s
 
 ## SVG Elements
 
-SVG can be used as if it were any regular HTML tag
+SVG can be used as if it were any regular HTML tag.
 
-You can manipulate the SVG using attributes and events normally
+You can manipulate the SVG using attributes and events normally.
 
 ```jsx
 <svg height={this.size} viewBox="0 0 100 100">
@@ -180,7 +180,7 @@ You can manipulate the SVG using attributes and events normally
 
 ## Components with Children
 
-Your component can be invoked passing a block of content
+Your component can be invoked passing a block of content.
 
 ```jsx
 <Heading> 
@@ -188,9 +188,9 @@ Your component can be invoked passing a block of content
 </Heading>
 ```
 
-This doesn't automatically render the block since it wouldn't know where to place it
+This doesn't automatically render the block since it wouldn't know where to place it.
 
-You can destructure the children on the render method and place it in your markup
+You can destructure the children on the render method and place it in your markup.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -212,9 +212,9 @@ export default Heading;
 
 ## Lists
 
-You can map over lists without declaring a key
+You can map over lists without declaring a key.
 
-Lists that may change length must be wrapped in a parent element just for them
+Lists that may change length must be wrapped in a parent element just for them.
 
 ```jsx
 <ul>
@@ -222,7 +222,7 @@ Lists that may change length must be wrapped in a parent element just for them
 </ul>
 ```
 
-You can emulate a fixed-size list by returning false instead of an element to reserve dom space
+You can emulate a fixed-size list by returning false instead of an element to reserve dom space.
 
 ```jsx
 {list.map((item) => (
@@ -230,7 +230,7 @@ You can emulate a fixed-size list by returning false instead of an element to re
 )}
 ```
 
-It's a nice practice to use inner components combined with lists to clean up your code
+It's a nice practice to use inner components combined with lists to clean up your code.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -263,9 +263,11 @@ class List extends Nullstack {
 export default List;
 ```
 
+> ✨ Sometimes you will notice keys in the map. Learn more about [instance keys](/instance-keys)
+
 ## Caveats
 
-Currently, Nullstack doesn't support JSX Fragments. If you want to see this feature implemented please [open an issue on github](https://github.com/nullstack/nullstack/issues)
+Currently, Nullstack doesn't support JSX Fragments. If you want to see this feature implemented please [open an issue on github](https://github.com/nullstack/nullstack/issues).
 
 ## Next steps
 

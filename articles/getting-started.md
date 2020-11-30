@@ -5,25 +5,25 @@ description: Create full-stack javascript applications within seconds
 
 Create full-stack javascript applications within seconds using *npx* to generate your project files from the latest template.
 
-replace project-name with your project name and run the command below to start a project: 
+Replace project-name with your project name and run the command below to start a project: 
 
 ```sh
 npx create-nullstack-app project-name
 ```
 
-cd into the generated folder:
+Change directory to the generated folder:
 
 ```sh
 cd app-name
 ```
 
-install the dependencies:
+Install the dependencies:
 
 ```sh
 npm install
 ```
 
-start the application in development mode:
+Start the application in development mode:
 
 ```sh
 npm start
@@ -41,7 +41,7 @@ Usually, you don't have to touch this file, but it is a convenient place to impo
 
 ### src/
 
-This folder will contain the actual source code of your application
+This folder will contain the actual source code of your application.
 
 ### src/Application.njs
 
@@ -49,7 +49,7 @@ This is your application main file.
 
 >✨ Learn more about the [njs file extension](/njs-file-extension "Nullstack Javascript").
 
-The start function will be automatically called once when you run *npm start*, use it to populate your server [context](/context) with things like [database](/database-example), [settings](/context-settings), and [secrets](/context-secrets).
+The start function will be automatically called once when you run *npm start*, use it to populate your server [context](/context-and-attributes) with things like [database](/database-example), [settings](/context-settings), and [secrets](/context-secrets).
 
 >✨ Learn more about the [application startup](/application-startup).
 
@@ -65,17 +65,11 @@ It is a good practice to import a style file in a component with the same name.
 
 Every file in here will be available to anyone from the domain root.
 
-By default *create-nullstack-app* generates the icons required for your manifest.json and images for OG meta tags
+By default *create-nullstack-app* generates the icons required for your manifest.json and images for OG meta tags.
 
 >✨ Learn more about [manifest.json](/manifest-json).
 
-Be sure to replace these images with your project identity
-
-### node_modules/
-
-As usual in node projects, your dependencies will be installed here. 
-
-> 🔥 Do not touch this folder
+Be sure to replace these images with your project identity.
 
 ### .development/
 
@@ -93,6 +87,6 @@ This is the compiled result of your application in production mode.
 
 ## Next steps
 
-⚔ Install the official [Nullstack VSCode Extension](/vscode-extension)
+⚔ Install the official [Nullstack VSCode Extension](/vscode-extension).
 
 ⚔ Render your first [full-stack javascript component](/rendering-component "Front-end and Back-end javascript components").

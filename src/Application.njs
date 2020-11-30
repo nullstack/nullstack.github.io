@@ -25,6 +25,9 @@ class Application extends Nullstack {
       <main>
         <Header />
         <Home route="/" />
+        <div route="/documentation">documentation</div>
+        <div route="/examples">examples</div>
+        <div route="/components">components</div>
         <Article route="/:slug" />
         <Footer />
       </main>

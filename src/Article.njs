@@ -6,12 +6,15 @@ class Component extends Nullstack {
   html = '';
 
   static async getArticleByKey({key}) {
-    const {readFileSync} = await import('fs');
+    const {existsSync, readFileSync} = await import('fs');
     const {default: Prism} = await import('prismjs');
     await import('prismjs/components/prism-jsx.min');
     const {Remarkable} = await import('remarkable');
     const {default: meta} = await import('remarkable-meta');
     const path = `articles/${key}.md`;
+    if(!existsSync(path)) {
+      return {html: 'Not Found', title: 'Not Found', description: 'Not Found'};
+    }
     const text = readFileSync(path, 'utf-8');
     const md = new Remarkable({
       highlight: (code) => Prism.highlight(code, Prism.languages.jsx, 'javascript')
@@ -28,6 +31,16 @@ class Component extends Nullstack {
     Object.assign(this, article);
     page.title = `${project.name} - ${article.title}`;
     page.description = article.description;
+  }
+
+  whitelist() {
+    return (
+      <article>
+        <code class="language-jsx language-sh" />
+        <blockquote />
+        <em />
+      </article>
+    )
   }
   
   render() {
