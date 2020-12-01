@@ -3,7 +3,7 @@ import Nullstack from 'nullstack';
 class Documentation extends Nullstack {
 
   renderLink({title}) {
-    const href = title.toLowerCase().split(' ').join('-');
+    const href = '/' + title.toLowerCase().split(' ').join('-');
     return (
       <a href={href} class="xl x12 p3y bcm2b ci1h"> {title} </a>
     )
