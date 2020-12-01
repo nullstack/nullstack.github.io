@@ -13,3 +13,7 @@ TODO:
 - static async methods without a call in the class body will not generate an api endpoint*
 - node fetch as dependency
 - beware security each function is an api route
+
+## Next steps
+
+⚔ Learn about [context and attributes](/context-and-attributes).

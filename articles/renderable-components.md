@@ -1,9 +1,9 @@
 ---
-title: Rendering a Component
+title: Renderable Components
 description: Import Nullstack and extend your class from it define an instance method called render which returns any JSX and export the component 
 ---
 
-The simplest component you can make is a rendering component.
+The simplest component you can make is a renderable component.
 
 Create a file in your src folder with the name of your component and the [njs extension](/njs-file-extension).
 
@@ -58,6 +58,8 @@ class Application extends Nullstack {
 
 export default Application;
 ```
+
+> 💡 Components that do nothing besides rendering are extracted into faster functional components at transpile time!
 
 ## Using HTML attributes
 
@@ -134,6 +136,8 @@ class Post extends Nullstack {
 export default HelloWorld;
 ```
 
+> 💡 Nullstack will inject a constant reference to the function at transpile time in order to completely skip the runtime lookup process!
+
 ## Boolean attributes
 
 Attributes can be assigned as a boolean.
@@ -152,7 +156,7 @@ You can shortcut attributes when you know the value will always be true.
 <button disabled> Button </button>
 ```
 
-> ✨ Learn more about [attributes](/context-and-attributes)
+> ✨ Learn more about [attributes](/context-and-attributes).
 
 ## Element tag
 
@@ -176,7 +180,7 @@ You can manipulate the SVG using attributes and events normally.
 </svg> 
 ```
 
-> ✨ Learn more about [events](/events)
+> ✨ Learn more about [events](/stateful-components).
 
 ## Components with Children
 
@@ -208,7 +212,7 @@ class Heading extends Nullstack {
 export default Heading;
 ```
 
-> ✨ This is possible because the children key is part of the [instance context](/context-and-attributes)
+> ✨ This is possible because the children key is part of the [instance context](/context-and-attributes).
 
 ## Lists
 
@@ -263,7 +267,7 @@ class List extends Nullstack {
 export default List;
 ```
 
-> ✨ Sometimes you will notice keys in the map. Learn more about [instance keys](/instance-keys)
+> ✨ Sometimes you will notice keys in the map. Learn more about the [instance key](/instance-key).
 
 ## Caveats
 
@@ -271,4 +275,4 @@ Currently, Nullstack doesn't support JSX Fragments. If you want to see this feat
 
 ## Next steps
 
-⚔ Add state to your component using [controlled components](/controlled-components).
+⚔ Add state to your component using [stateful components](/stateful-components).

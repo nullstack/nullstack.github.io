@@ -1,5 +1,5 @@
 import Nullstack from 'nullstack';
-import Snippet from './Snippet';
+import Documentation from './Documentation';
 import Article from './Article';
 import Header from './Header';
 import Footer from './Footer';
@@ -25,7 +25,7 @@ class Application extends Nullstack {
       <main>
         <Header />
         <Home route="/" />
-        <div route="/documentation">documentation</div>
+        <Documentation route="/documentation" />
         <div route="/examples">examples</div>
         <div route="/components">components</div>
         <Article route="/:slug" />

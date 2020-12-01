@@ -110,9 +110,9 @@ class Component extends Nullstack {
     return (
       <section class="x xl sm-p2x">
         <Feature 
-          title="Controlled Components"
-          key="Controlled"
-          link="/controlled-components"
+          title="Stateful Components"
+          key="Stateful"
+          link="/stateful-components"
         />
         <Feature 
           title="Two Way Binding"
@@ -127,7 +127,7 @@ class Component extends Nullstack {
         <Feature 
           title="Full-stack Lifecycle"
           key="Lifecycle"
-          link="/fullstack-lifecycle"
+          link="/full-stack-lifecycle"
         />
       </section>
     )

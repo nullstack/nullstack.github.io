@@ -19,3 +19,17 @@ TODO:
 - anythign that responds to [] can be bound by key
 - create your own bindable component
 - bind components can send extra params and trigger extra events
+- object events can be used alongside bind
+- bind disapearing coz type cast
+
+
+TODO:
+- allows to manually control form inputs
+- the new value will be sent as context key *
+- the new value will mantain the same type as the old value
+- event for each type of input
+  - checkbox
+  - select
+  - input
+  - textarea
+  - radio*

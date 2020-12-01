@@ -7,3 +7,4 @@ TODO:
 - there is one global context per tab open
 - assign a key to the context adds it to the global store
 - mutate context rerenders the application
+- every function receives the context merged with the arguments

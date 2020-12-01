@@ -67,7 +67,7 @@ Every file in here will be available to anyone from the domain root.
 
 By default *create-nullstack-app* generates the icons required for your manifest.json and images for OG meta tags.
 
->✨ Learn more about [manifest.json](/manifest-json).
+>✨ Learn more about [manifest.json](/app-manifest).
 
 Be sure to replace these images with your project identity.
 
@@ -83,10 +83,10 @@ This is the compiled result of your application in production mode.
 
 > 🔥 Do not touch this folder
 
->✨ Learn more about [how to deploy a nullstack application](/deploy).
+>✨ Learn more about [how to deploy a nullstack application](/how-to-deploy-a-nullstack-application).
 
 ## Next steps
 
 ⚔ Install the official [Nullstack VSCode Extension](/vscode-extension).
 
-⚔ Render your first [full-stack javascript component](/rendering-component "Front-end and Back-end javascript components").
+⚔ Render your first [renderable component](/renderable-components).

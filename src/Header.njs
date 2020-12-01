@@ -18,7 +18,6 @@ class Header extends Nullstack {
           <nav class="yy">
             <Link title="About" href="/" />
             <Link title="Documentation" href="/documentation" />
-            <Link title="Examples" href="/examples" />
             <Link title="Components" href="/components" />
             <Link title="Source" href="https://github.com/nullstack/nullstack" target="_blank" />
           </nav>
