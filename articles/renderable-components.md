@@ -1,9 +1,11 @@
 ---
 title: Renderable Components
-description: All you have to do is to import Nullstack and extend your class from it, define an instance method called render that returns any JSX 
+description: Renderable components are very similar to web componentsn they give you the ability to create new HTML tags that shortcut a group of other HTML tags
 ---
 
 The simplest component you can make is a renderable component.
+
+Renderable components are very similar to web components, they give you the ability to create new HTML tags that shortcut a group of other HTML tags.
 
 Create a file in your src folder with the name of your component and the [njs extension](/njs-file-extension).
 

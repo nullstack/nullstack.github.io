@@ -1,9 +1,9 @@
 ---
 title: Stateful Components
-description: Import Nullstack and extend your class from it define an instance method called render which returns any JSX and export the component 
+description: A productive full-stack web framework should not force you to think about framework details
 ---
 
-A productive framework should not force you to think about framework details.
+A productive full-stack web framework should not force you to think about framework details.
 
 Nullstack takes control of its subclasses and generates a proxy for each instance.
 

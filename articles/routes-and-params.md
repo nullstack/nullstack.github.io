@@ -1,11 +1,11 @@
 ---
 title: Routes and Params
-description: Server functions are specialized microservices that at transpile time are converted into API entry points
+description: Nullstack has built-in routes, it would make no sense otherwise since web applications are expected to have hyperlinks.
 ---
 
 Nullstack has built-in routes, it would make no sense otherwise since web applications are expected to have hyperlinks.
 
-Any tag can receive a route attribute, be it a component, inner component, or simples HTML tag.
+Any tag can receive a route attribute, be it a component, inner component, or simple HTML tag.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -42,9 +42,9 @@ Links on Nullstack are simple *a* tags with the *href* value starting with "/".
 <a href="/page/about"> About Page </a>
 ```
 
-> 💡 On the client side the click event will push history without reloading the page
+> 💡 On the client side the click event will push history without reloading the page.
 
-> ✨ You can still assign your own click event to the tag without losing the framework behavior
+> ✨ You can still assign your own click event to the tag without losing the framework behavior.
 
 ## Params
 
@@ -97,6 +97,8 @@ class Paginator extends Nullstack {
 
 export default Paginator;
 ```
+
+Assigning an empty string to a param will remove it from the url.
 
 ## Dynamic Segments
 
@@ -209,7 +211,7 @@ The url key returns everything after the domain including the path and the query
 
 The path key returns only the path without query params.
 
-> 💡 Both keys above automatically remove the trailing slash for convenience
+> 💡 Both keys above automatically remove the trailing slash for convenience.
 
 Assigning to url or path will cause a redirect.
 
@@ -239,7 +241,7 @@ class Application extends Nullstack {
 
 ## Special anchors
 
-A tags accept some convenient special attributes instead of the href.
+Anchor tags accept some convenient special attributes besides the regular href.
 
 You can set the params attribute with an object as the value.
 
