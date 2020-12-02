@@ -11,6 +11,8 @@ In this example it is going to be called HelloWorld.njs.
 
 All you have to do is to import Nullstack and extend your class from it, define an instance method called render that returns any JSX, and export the component.
 
+> ✨ Install the official [Nullstack VSCode Extension](/vscode-extension) to generate classes with a snippet.
+
 ```jsx
 import Nullstack from 'nullstack';
 
@@ -156,7 +158,7 @@ You can shortcut attributes when you know the value will always be true.
 <button disabled> Button </button>
 ```
 
-> ✨ Learn more about [attributes](/context-and-attributes).
+> ✨ Learn more about [attributes](/context).
 
 ## Element tag
 
@@ -212,7 +214,7 @@ class Header extends Nullstack {
 export default Header;
 ```
 
-> ✨ This is possible because the children key is part of the [instance context](/context-and-attributes).
+> ✨ This is possible because the children key is part of the [instance context](/context).
 
 ## Lists
 
@@ -273,6 +275,6 @@ export default List;
 
 Currently, Nullstack doesn't support JSX Fragments. If you want to see this feature implemented please [open an issue on github](https://github.com/nullstack/nullstack/issues).
 
-## Next steps
+## Next step
 
 ⚔ Add state to your component using [stateful components](/stateful-components).

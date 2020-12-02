@@ -46,8 +46,13 @@ pre {
 
 }
 
-article p, article h2, article h3, article h4, article pre, article blockquote {
+article p, article h2, article h3, article h4, article pre, article blockquote, article ul {
   margin-bottom: 1rem;
+}
+
+article ul {
+  list-style-type: circle;
+  padding-left: 1.3rem;
 }
 
 article a {

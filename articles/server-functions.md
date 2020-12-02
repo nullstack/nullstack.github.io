@@ -33,7 +33,7 @@ class Component extends Nullstack {
 export default Component;
 ```
 
-> Learn more about the [server context](/context-and-attributes).
+> Learn more about the [server context](/context).
 
 ## Client behavior
 
@@ -105,7 +105,7 @@ class Component extends Nullstack {
   // ...
 
   async initiate() {
-    const url = "https://api.github.com/repos/nullstack/nullstack/issues";
+    const url = 'https://api.github.com/repos/nullstack/nullstack/issues';
     const response = await fetch(url);
     this.issues = await response.json();
   }
@@ -144,12 +144,12 @@ export default Component;
 
 ## Caveats
 
-Automatically generated API endpoints are not meant to be used as real API endpoints for 3rd-party apps.
+Automatically generated API endpoints are not meant to be used by 3rd-party apps.
 
 The URL and implementation may change between versions of Nullstack.
 
 > ✨ If you want to build an API, learn more about [how to create an API with Nullstack](/how-to-create-an-api-with-nullstack).
 
-## Next steps
+## Next step
 
-⚔ Learn about [context and attributes](/context-and-attributes).
+⚔ Learn about the [context](/context).

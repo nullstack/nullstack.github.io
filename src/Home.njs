@@ -122,7 +122,7 @@ class Component extends Nullstack {
         <Feature 
           title="Built-in Routes"
           key="Routes"
-          link="/routes"
+          link="/routes-and-params"
         />
         <Feature 
           title="Full-stack Lifecycle"

@@ -49,7 +49,7 @@ This is your application main file.
 
 >✨ Learn more about the [njs file extension](/njs-file-extension "Nullstack Javascript").
 
-The start function will be automatically called once when you run *npm start*, use it to populate your server [context](/context-and-attributes) with things like [database](/database-example), [settings](/context-settings), and [secrets](/context-secrets).
+The start function will be automatically called once when you run *npm start*, use it to populate your server [context](/context) with things like [database](/database-example), [settings](/context-settings), and [secrets](/context-secrets).
 
 >✨ Learn more about the [application startup](/application-startup).
 
@@ -85,8 +85,6 @@ This is the compiled result of your application in production mode.
 
 >✨ Learn more about [how to deploy a nullstack application](/how-to-deploy-a-nullstack-application).
 
-## Next steps
+## Next step
 
-⚔ Install the official [Nullstack VSCode Extension](/vscode-extension).
-
-⚔ Render your first [renderable component](/renderable-components).
+⚔ Create your first [renderable component](/renderable-components).

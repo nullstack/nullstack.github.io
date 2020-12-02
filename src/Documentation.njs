@@ -35,8 +35,8 @@ class Documentation extends Nullstack {
           <Link title="Stateful components" />
           <Link title="Full-stack lifecycle" />
           <Link title="Server functions" />
-          <Link title="Context and attributes" />
-          <Link title="Routes" />
+          <Link title="Context" />
+          <Link title="Routes and params" />
           <Link title="Two way bindings" />
         </Topic>
         <Topic title="Advanced concepts" description="These are concepts that you will most likely learn as you need in your projects">
@@ -45,7 +45,6 @@ class Documentation extends Nullstack {
           <Link title="Context network" />
           <Link title="Context page" />
           <Link title="Context project" />
-          <Link title="Context router and params" />
           <Link title="Context secrets" />
           <Link title="Context self" />
           <Link title="Context server request response" />
