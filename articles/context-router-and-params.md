@@ -1,4 +1,14 @@
 TODO:
+- router is global to the client context
+- assignments to the router will cause a history push event
+- get url
+- set url
+- get path
+- set path
+- route changes are debounced
+- trailing slashes are removed
+
+TODO:
 - present in the global client context
 - has every query string param mapped to a key
 - every key value is a string

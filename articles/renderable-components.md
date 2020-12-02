@@ -1,6 +1,6 @@
 ---
 title: Renderable Components
-description: Import Nullstack and extend your class from it define an instance method called render which returns any JSX and export the component 
+description: All you have to do is to import Nullstack and extend your class from it, define an instance method called render that returns any JSX 
 ---
 
 The simplest component you can make is a renderable component.
@@ -187,9 +187,9 @@ You can manipulate the SVG using attributes and events normally.
 Your component can be invoked passing a block of content.
 
 ```jsx
-<Heading> 
+<Header> 
   <h1> Hello World </h1>
-</Heading>
+</Header>
 ```
 
 This doesn't automatically render the block since it wouldn't know where to place it.
@@ -199,7 +199,7 @@ You can destructure the children on the render method and place it in your marku
 ```jsx
 import Nullstack from 'nullstack';
 
-class Heading extends Nullstack {
+class Header extends Nullstack {
  
   render({children}) {
     return (
@@ -209,7 +209,7 @@ class Heading extends Nullstack {
 
 }
 
-export default Heading;
+export default Header;
 ```
 
 > ✨ This is possible because the children key is part of the [instance context](/context-and-attributes).

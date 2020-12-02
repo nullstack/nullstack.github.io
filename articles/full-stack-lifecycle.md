@@ -1,6 +1,6 @@
 ---
 title: Full-Stack Lifecycle
-description: Create full-stack javascript applications within seconds 
+description: Lifecycle methods are special named functions that you can declare in the class.
 ---
 
 Lifecycle methods are special named functions that you can declare in the class.
@@ -55,7 +55,9 @@ class Component extends Nullstack {
   // ...
 
   async initiate() {
-    this.task = await getTaskByDay({day: this.date});
+    this.task = await getTaskByDay({
+      day: this.date
+    });
   }
 
   // ...
@@ -83,7 +85,9 @@ class Component extends Nullstack {
   // ...
 
   async hydrate() {
-    this.timer = setInterval(() => console.log("hello"), 1000);
+    this.timer = setInterval(() => {
+      console.log(this.date);
+    }, 1000);
   }
 
   // ...
@@ -114,9 +118,9 @@ class Component extends Nullstack {
 
   async update() {
     const today = new Date();
-    if(today.getDate() != this.date) {
+    if(today.getDay() != this.date.getDay()) {
       this.date = today;
-      this.initiate();
+      await this.initiate();
     }
   }
 
@@ -135,7 +139,7 @@ This method is async and will only run in the client.
 
 This method will run after your component leaves the DOM.
 
-This is the place to clean up whatever you set up in the *hydrate*.
+This is the place to clean up whatever you set up in the *hydrate* method.
 
 The instance will be garbage collected after the promise is resolved.
 

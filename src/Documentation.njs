@@ -2,6 +2,11 @@ import Nullstack from 'nullstack';
 
 class Documentation extends Nullstack {
 
+  prepare({project, page}) {
+    page.title = `${project.name} - Documentação`;
+    page.description = '';
+  }
+
   renderLink({title}) {
     const href = '/' + title.toLowerCase().split(' ').join('-');
     return (
@@ -39,14 +44,14 @@ class Documentation extends Nullstack {
           <Link title="Context environment" />
           <Link title="Context network" />
           <Link title="Context page" />
-          <Link title="Context params" />
           <Link title="Context project" />
-          <Link title="Context router" />
+          <Link title="Context router and params" />
           <Link title="Context secrets" />
           <Link title="Context self" />
-          <Link title="Context server" />
+          <Link title="Context server request response" />
           <Link title="Context settings" />
           <Link title="App manifest" />
+          <Link title="Instance Key" />
           <Link title="Styles" />
           <Link title="NJS file extension" />
           <Link title="Server side rendering" />

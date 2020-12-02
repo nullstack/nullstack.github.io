@@ -4,3 +4,7 @@ TODO:
 - accepts express plugins via use method
 - port key
 - maximumPayloadSize 
+
+# request
+
+#response
