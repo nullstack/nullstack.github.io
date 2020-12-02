@@ -72,7 +72,7 @@ class Counter extends Nullstack {
 
 }
 
-export default TaskList;
+export default Counter;
 ```
 
 ```jsx
@@ -95,7 +95,7 @@ class Application extends Nullstack {
 
 }
 
-export default Counter;
+export default Application;
 ```
 
 ## 3 - Attributes
@@ -125,7 +125,7 @@ class Counter extends Nullstack {
 
 }
 
-export default TaskList;
+export default Counter;
 ```
 
 ```jsx
@@ -148,7 +148,7 @@ class Application extends Nullstack {
 
 }
 
-export default Counter;
+export default Application;
 ```
 
 ## Functions Context
@@ -173,7 +173,7 @@ class Counter extends Nullstack {
 
 }
 
-export default TaskList;
+export default Counter;
 ```
 
 ## Next step

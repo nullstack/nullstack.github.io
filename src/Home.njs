@@ -8,6 +8,7 @@ class Component extends Nullstack {
 
   prepare({project, page}) {
     page.title = `${project.name} - Full-stack Javascript Components`;
+    page.description = 'Nullstack is a full-stack framework for building progressive web applications';
   }
 
   renderHero() {
