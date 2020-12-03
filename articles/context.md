@@ -20,6 +20,7 @@ These are the information that the framework makes available to you by default.
 ### The available global server keys are:
 
 - [page](/context-page)
+- [environment](/context-environment)
 - [project](/context-project)
 - [server](/context-server-request-response)
 - [request](/context-server-request-response)
@@ -28,15 +29,16 @@ These are the information that the framework makes available to you by default.
 ### The available global client keys are:
 
 - [page](/context-page)
+- [environment](/context-environment)
 - [params](/routes-and-params)
 - [router](/routes-and-params)
 - [network](/context-network)
 
 ### The available instance client keys are:
 
-- [self](/context-self)
+- [self](/instance-self)
 - [children](/renderable-components)
-- [key](/context-key)
+- [key](/instance-key)
 
 ## 2 - Application store
 

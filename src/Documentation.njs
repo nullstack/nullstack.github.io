@@ -46,10 +46,10 @@ class Documentation extends Nullstack {
           <Link title="Context page" />
           <Link title="Context project" />
           <Link title="Context settings and secrets" />
-          <Link title="Context self" />
           <Link title="Context server request response" />
-          <Link title="App manifest" />
+          <Link title="Instance self" />
           <Link title="Instance Key" />
+          <Link title="App manifest" />
           <Link title="Styles" />
           <Link title="NJS file extension" />
           <Link title="Server side rendering" />
