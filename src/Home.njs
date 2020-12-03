@@ -116,7 +116,7 @@ class Component extends Nullstack {
           link="/stateful-components"
         />
         <Feature 
-          title="Two Way Binding"
+          title="Two-Way Binding"
           key="Binding"
           link="/two-way-bindings"
         />

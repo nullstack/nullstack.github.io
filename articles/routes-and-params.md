@@ -310,4 +310,4 @@ export default Application;
 
 ## Next step
 
-⚔ Learn about [two way bindings](/two-way-bindings).
+⚔ Learn about [two-way bindings](/two-way-bindings).

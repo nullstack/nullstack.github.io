@@ -10,7 +10,7 @@ class Binding extends Nullstack {
   
   render({params}) {
     return (
-      <div>
+      <form>
         <input bind={this.number} />
         <input bind={this.boolean} type="checkbox" />
         <input bind={this.object.number} />
@@ -18,7 +18,7 @@ class Binding extends Nullstack {
           <input bind={this.array[index]} />
         ))}
         <input bind={params.page} />
-      </div>
+      </form>
     )
   }
 

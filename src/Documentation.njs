@@ -37,7 +37,7 @@ class Documentation extends Nullstack {
           <Link title="Server functions" />
           <Link title="Context" />
           <Link title="Routes and params" />
-          <Link title="Two way bindings" />
+          <Link title="Two-way bindings" />
         </Topic>
         <Topic title="Advanced concepts" description="These are concepts that you will most likely learn as you need in your projects">
           <Link title="Application Startup" />
