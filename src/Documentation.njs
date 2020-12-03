@@ -29,7 +29,7 @@ class Documentation extends Nullstack {
       <section class="x sm-p2x p20y">
         <h1 class="x12 sm-f8 md+f12 m2b"> Nullstack Documentation </h1>
         <p class="x12 f4"> Nullstack features have been extracted from real life projects with convenience and consistency in mind </p>
-        <Topic title="Core Concepts" description="Start your journey in Nullstack with these basic concepts">
+        <Topic title="Core concepts" description="Start your journey in Nullstack with these basic concepts">
           <Link title="Getting started" />
           <Link title="Renderable components" />
           <Link title="Stateful components" />
@@ -45,10 +45,9 @@ class Documentation extends Nullstack {
           <Link title="Context network" />
           <Link title="Context page" />
           <Link title="Context project" />
-          <Link title="Context secrets" />
+          <Link title="Context settings and secrets" />
           <Link title="Context self" />
           <Link title="Context server request response" />
-          <Link title="Context settings" />
           <Link title="App manifest" />
           <Link title="Instance Key" />
           <Link title="Styles" />

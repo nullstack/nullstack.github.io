@@ -86,7 +86,7 @@ class Component extends Nullstack {
           icon={Refresh}
           title="Single Page Application"
           description="Subsequent requests will fetch JSON from an automatically generated API, update the application state, and rerender the page"
-          link="/fullstack-lifecycle"
+          link="/full-stack-lifecycle"
         />
         <Step 
           icon={Globe}
