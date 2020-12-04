@@ -32,8 +32,12 @@ class Component extends Nullstack {
       <div class="sm-x12 md+x6 p1">
         {!!title && 
           <div class="xsb bgm2 p4">
-            <h3 class="ff2 fw3 f4">{title}</h3>
-            <a href={link} class="ci1">documentation</a>
+            <h3 class="ff2 fw3 f4">
+              <a href={link}>{title}</a>
+            </h3>
+            <a href={link} title={title} class="ci1">
+              documentation
+            </a>
           </div>
         }
         <Snippet key={key} />
@@ -65,9 +69,13 @@ class Component extends Nullstack {
       <div class="md+x4 p1">
         <div class="xx bgm2 p8y p4x">
           <Icon height={40} class="ci1 m4b" />
-          <h3 class="x12 f6"> {title} </h3>
+          <h3 class="x12 f6">
+            <a href={link}>{title}</a>
+          </h3>
           <p class="x12 f4 m4y"> {description} </p>
-          <a href={link} class="ci1">documentation</a>
+          <a href={link} title={title} class="ci1">
+            documentation
+          </a>
         </div>
       </div>
     )

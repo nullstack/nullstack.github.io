@@ -7,9 +7,10 @@ The network object is a proxy in the *framework store* part of your context and 
 
 This key is *readonly* and available only in the *client* context.
 
-The following boolean keys are available in the environment:
+The following keys are available in the object:
 
-- processing
+- *processing*: boolean
+- *[serverFunctionName]*: boolean
 
 When a server function is called, processing will be set to true, when it's resolved processing will be set back to false.
 

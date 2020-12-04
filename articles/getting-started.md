@@ -67,7 +67,7 @@ Every file in here will be available to anyone from the domain root.
 
 By default *create-nullstack-app* generates the icons required for your manifest.json and images for OG meta tags.
 
->✨ Learn more about [manifest.json](/app-manifest).
+>✨ Learn more about [manifest.json](/context-project).
 
 Be sure to replace these images with your project identity.
 

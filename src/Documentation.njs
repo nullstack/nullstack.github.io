@@ -4,7 +4,7 @@ class Documentation extends Nullstack {
 
   prepare({project, page}) {
     page.title = `${project.name} - Documentação`;
-    page.description = '';
+    page.description = 'Follow these steps and become a full-stack javascript developer!';
   }
 
   renderLink({title}) {
@@ -28,7 +28,7 @@ class Documentation extends Nullstack {
     return (
       <section class="x sm-p2x p20y">
         <h1 class="x12 sm-f8 md+f12 m2b"> Nullstack Documentation </h1>
-        <p class="x12 f4"> Nullstack features have been extracted from real life projects with convenience and consistency in mind </p>
+        <p class="x12 f4"> Follow these steps and become a full-stack javascript developer! </p>
         <Topic title="Core concepts" description="Start your journey in Nullstack with these basic concepts">
           <Link title="Getting started" />
           <Link title="Renderable components" />
@@ -45,11 +45,11 @@ class Documentation extends Nullstack {
           <Link title="Context network" />
           <Link title="Context page" />
           <Link title="Context project" />
-          <Link title="Context settings and secrets" />
+          <Link title="Context settings" />
+          <Link title="Context secrets" />
           <Link title="Context server request response" />
           <Link title="Instance self" />
           <Link title="Instance Key" />
-          <Link title="App manifest" />
           <Link title="Styles" />
           <Link title="NJS file extension" />
           <Link title="Server side rendering" />

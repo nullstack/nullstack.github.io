@@ -7,13 +7,13 @@ The environment object is in the *framework store* part of your context and give
 
 This key is *readonly* and available in both the *client* and *server* contexts.
 
-The following boolean keys are available in the environment:
+The following keys are available in the object:
 
-- client
-- server
-- development
-- production
-- static
+- *client*: boolean
+- *server*: boolean
+- *development*: boolean
+- *production*: boolean
+- *static*: boolean
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -23,11 +23,11 @@ class Page extends Nullstack {
   render({environment}) {
     return (
       <div> 
-        <p> Am i in the client? {environment.client} </p>
-        <p> Am i in the server? {environment.server} </p>
-        <p> Am i in development mode? {environment.development} </p>
-        <p> Am i in production mode? {environment.production} </p>
-        <p> Is this a static site? {environment.static} </p>
+        {environment.client && <p> I am in the client </p>}
+        {environment.server && <p> I am in the server </p>}
+        {environment.development && <p> I am in development mode </p>}
+        {environment.production && <p> I am in production mode </p>}
+        {environment.static && <p> I am a static site </p>}
       </div>
     )
   }

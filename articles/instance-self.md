@@ -7,14 +7,14 @@ The self object is a proxy in the framework store part of your context and gives
 
 This key is *readonly* and available only in the *client* context.
 
-Each instance receives its own self object.
+Each instance receives its own *self* object.
 
-The following boolean keys are available in the environment:
+The following keys are available in the object:
 
-- initiated
-- hydrated
-- prerendered
-- element
+- *initiated*: boolean
+- *hydrated*: boolean
+- *prerendered*: boolean
+- *element*: HTMLElement
 
 When a lifecycle method is resolved, even if not declared, an equivalent key is set to true in self.
 
@@ -22,7 +22,7 @@ If the component was server-side rendered the *prerendered* key will remain true
 
 The *element* key points to the DOM selector and is only guaranteed to exist when hydrate is being called since prepare and initiate could run in the server.
 
-> 💡 do not use *element* to guess the environment, instead use the [environment](/context-environment) for that.
+> 💡 Do not use *element* to guess the environment, instead use the [environment](/context-environment) for that.
 
 Observing self is a nice way to avoid giving placeholder information to the end-user.
 
@@ -57,6 +57,8 @@ class Page extends Nullstack {
 
 export default Page;
 ```
+
+> 💡 Components that get optimized into [functional components](/renderable-components) have no access to self.
 
 ## Next step
 
