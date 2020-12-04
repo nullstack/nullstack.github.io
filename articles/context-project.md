@@ -56,6 +56,10 @@ class Application extends Nullstack {
     project.favicon = '/favicon.png';
   }
 
+  prepare({project, page}) {
+    page.title = project.name;
+  }
+
 }
 
 export default Application;

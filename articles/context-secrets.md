@@ -52,4 +52,4 @@ Any environment key starting with NULLSTACK_SECRETS_ will be mapped to the secre
 
 ## Next step
 
-⚔ Learn about the [context server request and response](/context-server-request-response).
+⚔ Learn about the [instance self](/instance-self).

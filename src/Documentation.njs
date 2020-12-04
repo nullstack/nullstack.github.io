@@ -47,9 +47,9 @@ class Documentation extends Nullstack {
           <Link title="Context project" />
           <Link title="Context settings" />
           <Link title="Context secrets" />
-          <Link title="Context server request response" />
           <Link title="Instance self" />
           <Link title="Instance Key" />
+          <Link title="Server request and response" />
           <Link title="Styles" />
           <Link title="NJS file extension" />
           <Link title="Server side rendering" />
@@ -60,7 +60,6 @@ class Documentation extends Nullstack {
           <Link title="How to use MongoDB with Nullstack" />
           <Link title="How to use Google Analytics with Nullstack" />
           <Link title="How to use Facebook Pixel with Nullstack" />
-          <Link title="How to create an API with Nullstack" />
         </Topic>
       </section>
     )
