@@ -35,7 +35,7 @@ The following folders and files will be generated:
 
 ### index.js
 
-This is the webpack entry point.
+This is the Webpack entry point.
 
 Usually, you don't have to touch this file, but it is a convenient place to import global dependencies like CSS frameworks.
 
@@ -49,7 +49,7 @@ This is your application main file.
 
 >✨ Learn more about the [njs file extension](/njs-file-extension "Nullstack Javascript").
 
-The start function will be automatically called once when you run *npm start*, use it to populate your server [context](/context) with things like [database](/database-example), [settings](/context-settings), and [secrets](/context-secrets).
+The start function will be automatically called once when you run *npm start*, use it to populate your server [context](/context) with things like [database](/how-to-use-mongodb-with-nullstack), [settings](/context-settings), and [secrets](/context-secrets).
 
 >✨ Learn more about the [application startup](/application-startup).
 
