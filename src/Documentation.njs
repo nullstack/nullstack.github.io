@@ -17,7 +17,7 @@ class Documentation extends Nullstack {
   renderTopic({title, description, children}) {
     return (
       <div class="x12">
-        <h2 class="x12 sm-f8 md+f8 m2b"> {title} </h2>
+        <h2 class="x12 sm-f6 md+f8 m2b"> {title} </h2>
         <p class="x12 f4"> {description} </p>
         <nav class="x12 m6y"> {children} </nav>
       </div>
@@ -26,8 +26,8 @@ class Documentation extends Nullstack {
   
   render() {
     return (
-      <section class="x sm-p2x p20y">
-        <h1 class="x12 sm-f8 md+f12 m2b"> Nullstack Documentation </h1>
+      <section class="x sm-p4x sm-p10y md+p20y">
+        <h1 class="x12 sm-f6 md+f12 m2b"> Nullstack Documentation </h1>
         <p class="x12 f4"> Follow these steps and become a full-stack javascript developer! </p>
         <Topic title="Core concepts" description="Start your journey in Nullstack with these basic concepts">
           <Link title="Getting started" />

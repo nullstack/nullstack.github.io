@@ -36,8 +36,8 @@ class Component extends Nullstack {
   
   render() {
     return (
-      <section class="x p20y"> 
-        <h1 class="x12 sm-f8 md+f8 m6b"> {this.title} </h1>
+      <section class="x sm-p4x sm-p10y md+p20y"> 
+        <h1 class="x12 sm-f6 md+f8 m6b"> {this.title} </h1>
         <article html={this.html} />
       </section>
     )
