@@ -1,4 +1,5 @@
 import Nullstack from 'nullstack';
+import './Article.scss';
 
 class Component extends Nullstack {
 
@@ -31,17 +32,6 @@ class Component extends Nullstack {
     Object.assign(this, article);
     page.title = `${project.name} - ${article.title}`;
     page.description = article.description;
-  }
-
-  whitelist() {
-    return (
-      <article>
-        <code class="language-jsx language-sh" />
-        <blockquote />
-        <em />
-        <ul />
-      </article>
-    )
   }
   
   render() {

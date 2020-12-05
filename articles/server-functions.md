@@ -117,6 +117,27 @@ class Component extends Nullstack {
 export default Component;
 ```
 
+## Server only imports
+
+You can use the async version of import inside a server function to import a dependency only on the server bundle.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Application extends Nullstack {
+
+  static async getTasks() {
+    const {readFileSync} = await import('fs');
+    // ...
+  }
+
+  // ...
+
+}
+
+export default Application;
+```
+
 ## Security
 
 Keep in mind that every server function is similar to an express route in API and must be coded without depending on view logic for security.

@@ -86,7 +86,7 @@ class Component extends Nullstack {
       <section class="x xx sm-p2x bcm2y p10y">
         <Step 
           icon={Cog}
-          title="Server Side Rendering"
+          title="Server-Side Rendering"
           description="Nullstack prerenders your route in a single request using local functions on the first visit and generates SEO optimized HTML"
           link="/server-side-rendering"
         />

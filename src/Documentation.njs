@@ -52,7 +52,7 @@ class Documentation extends Nullstack {
           <Link title="Server request and response" />
           <Link title="Styles" />
           <Link title="NJS file extension" />
-          <Link title="Server side rendering" />
+          <Link title="Server-side rendering" />
           <Link title="Static site generation" />
         </Topic>
         <Topic title="Examples" description="The best way to learn Nullstack is by reading some code">

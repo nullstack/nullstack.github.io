@@ -4,7 +4,6 @@ import Article from './Article';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
-
 import './Application.scss';
 
 class Application extends Nullstack {
