@@ -4,7 +4,7 @@ class Documentation extends Nullstack {
 
   prepare({project, page}) {
     page.title = `Community Components - ${project.name}`;
-    page.description = 'Follow these steps and become a full-stack javascript developer!';
+    page.description = 'A curated list of Nullstack components made by the community';
   }
 
   renderProject({title, repository}) {
@@ -40,7 +40,7 @@ class Documentation extends Nullstack {
         <Topic title="General Inputs">
           <Project title="Currency Input" repository="https://github.com/Mortaro/nullstack-currency-input" />
           <Project title="Date Input" repository="https://github.com/Mortaro/nullstack-date-input" />
-          <Project title="CK Editor Adapter" repository="https://github.com/Mortaro/nullstack-ckeditor-adapter" />
+          <Project title="CKEditor Adapter" repository="https://github.com/Mortaro/nullstack-ckeditor-adapter" />
         </Topic>
         <Topic title="Brazilian Inputs">
           <Project title="CPF and CNPJ Inputs" repository="https://github.com/Mortaro/nullstack-cpf-cnpj-input" />
