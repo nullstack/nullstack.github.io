@@ -56,7 +56,7 @@ class Component extends Nullstack {
 
   renderAbout() {
     return (
-      <section class="x xx sm-p2x p20y">
+      <section class="x xx sm-p2x sm-p10y md+p20y">
         <h2 class="x12 sm-f8 md+f12 m2b"> Nullstack is your Application </h2>
         <p class="x12 f4"> Nullstack is not another part of your stack, it is your stack </p>
         <p class="x12 f4"> Your application can be exported from back to front as a component and mounted in another application </p>
@@ -108,7 +108,7 @@ class Component extends Nullstack {
 
   renderProductivity() {
     return (
-      <section class="x xx sm-p2x p20y">
+      <section class="x xx sm-p2x sm-p10y md+p20y">
         <h2 class="x12 sm-f8 md+f12 m2b"> Productivity is in the Details </h2>
         <p class="x12 f4"> Nullstack features have been extracted from real life projects with convenience and consistency in mind </p>
       </section>
@@ -144,7 +144,7 @@ class Component extends Nullstack {
 
   renderEcosystem() {
     return (
-      <section class="x xx sm-p2x p20y">
+      <section class="x xx sm-p2x sm-p10y md+p20y">
         <p class="x12 f4 fw7"> Don't be afraid of testing a new ecosystem, because it's not new at all </p>
         <p class="x12 f4"> There is no "Nullstack Way" of doing things, it is just javascript and you can use any isomorphic vanilla package made throughout history </p>
         <a href="/documentation" class="ci1 bci1 cm1h bgi1h m6t p2y p4x"> Read the Documentation </a>
