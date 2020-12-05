@@ -30,7 +30,7 @@ class Component extends Nullstack {
   async initiate({project, page, params}) {
     const article = await this.getArticleByKey({key: params.slug});
     Object.assign(this, article);
-    page.title = `${project.name} - ${article.title}`;
+    page.title = `${article.title} - ${project.name}`;
     page.description = article.description;
   }
   

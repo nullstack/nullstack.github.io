@@ -13,7 +13,7 @@ class Header extends Nullstack {
       <header class="x12 ftl bgm1 s1 sm-off">
         <div class="x xsb yy p4y">
           <a href="/" title="Nullstack">
-            <img src="/nullstack.png" style="height: 30px" />
+            <img src="/nullstack.svg" style="height: 30px" />
           </a>
           <nav class="yy">
             <Link title="About" href="/" />

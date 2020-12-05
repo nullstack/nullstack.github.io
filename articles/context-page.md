@@ -52,6 +52,26 @@ class Page extends Nullstack {
 export default Page;
 ```
 
+## Custom Events
+
+Updating *page.title* will raise a custom *nullstack.page.title* event.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Analytics extends Nullstack {
+
+  hydrate({page}) {
+    window.addEventListener('nullstack.page.title', () => {
+      console.log(page.title);
+    });
+  }
+
+}
+
+export default Analytics;
+```
+
 ## Next step
 
 ⚔ Learn about the [context project](/context-project).

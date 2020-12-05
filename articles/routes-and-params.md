@@ -239,6 +239,26 @@ class Application extends Nullstack {
 }
 ```
 
+## Custom Events
+
+Updating *router.url* or *router.path* will raise a custom *nullstack.router.url* event.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Analytics extends Nullstack {
+
+  hydrate({router}) {
+    window.addEventListener('nullstack.router.url', () => {
+      console.log(router.url);
+    });
+  }
+
+}
+
+export default Analytics;
+```
+
 ## Special anchors
 
 Anchor tags accept some convenient special attributes besides the regular href.

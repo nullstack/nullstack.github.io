@@ -1,10 +1,11 @@
 import Nullstack from 'nullstack';
+import './Application.scss';
 import Documentation from './Documentation';
 import Article from './Article';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
-import './Application.scss';
+import GoogleAnalytics from 'nullstack-google-analytics';
 
 class Application extends Nullstack {
 
@@ -25,10 +26,10 @@ class Application extends Nullstack {
         <Header />
         <Home route="/" />
         <Documentation route="/documentation" />
-        <div route="/examples">examples</div>
         <div route="/components">components</div>
         <Article route="/:slug" />
         <Footer />
+        <GoogleAnalytics id="G-E7GZ5Z4MLN" />
       </main>
     )
   }

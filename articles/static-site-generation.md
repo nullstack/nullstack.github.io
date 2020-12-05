@@ -46,6 +46,4 @@ Nullstatic only crawls your application up to the initiate resolution, further A
 
 ## Next step
 
-> 🎉 *Congratulations*. You are done with the advanced concepts!
-
-⚔ Learn [how to deploy a nullstack application](/how-to-deploy-a-nullstack-application).
+⚔ Learn [how to deploy a Nullstack application](/how-to-deploy-a-nullstack-application).

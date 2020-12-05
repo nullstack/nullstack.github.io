@@ -3,7 +3,7 @@ import Nullstack from 'nullstack';
 class Documentation extends Nullstack {
 
   prepare({project, page}) {
-    page.title = `${project.name} - Documentação`;
+    page.title = `Documentation - ${project.name}`;
     page.description = 'Follow these steps and become a full-stack javascript developer!';
   }
 
@@ -54,9 +54,9 @@ class Documentation extends Nullstack {
           <Link title="NJS file extension" />
           <Link title="Server-side rendering" />
           <Link title="Static site generation" />
+          <Link title="How to deploy a Nullstack application" />
         </Topic>
         <Topic title="Examples" description="The best way to learn Nullstack is by reading some code">
-          <Link title="How to deploy a Nullstack application" />
           <Link title="How to use MongoDB with Nullstack" />
           <Link title="How to use Google Analytics with Nullstack" />
           <Link title="How to use Facebook Pixel with Nullstack" />

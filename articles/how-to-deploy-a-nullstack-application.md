@@ -26,3 +26,13 @@ node .production/server.js
 ```
 
 > ✨ It is recommend the usage of a process manager like [PM2](https://pm2.keymetrics.io)
+
+## How to Deploy a static generated site with Nullstack
+
+After you [generate a static site](/static-site-generation), all you have to do is move the output folder to any host machine capable of serving HTML.
+
+## Next step
+
+> 🎉 *Congratulations*. You are done with the advanced concepts!
+
+⚔ Learn [how to use MongoDB with Nullstack](/how-to-use-mongodb-with-nullstack).
