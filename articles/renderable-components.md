@@ -1,6 +1,6 @@
 ---
 title: Renderable Components
-description: Renderable components are very similar to web componentsn they give you the ability to create new HTML tags that shortcut a group of other HTML tags
+description: Renderable components are very similar to web components they give you the ability to create new HTML tags that shortcut a group of other HTML tags
 ---
 
 The simplest component you can make is a renderable component.
@@ -272,6 +272,37 @@ export default List;
 ```
 
 > ✨ Sometimes you will notice keys in the map. Learn more about the [instance key](/instance-key).
+
+## Inner HTML
+
+You can set the inner HTML of an element with the *html* attribute.
+
+Links inside the HTML string will be replaced with [routable anchors](/routes-and-params).
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Post extends Nullstack {
+
+  content = `
+    <h1> This is a Post </h1>
+    <a href="/other-post">
+      Check this other post
+    </a>
+  `;
+ 
+  render() {
+    return (
+      <article html={this.content} />
+    )
+  }
+
+}
+
+export default Post;
+```
+
+> 🔥 Be careful! When using user-generated HTML you are in risk of script injection
 
 ## Caveats
 
