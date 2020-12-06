@@ -215,8 +215,6 @@ The path key returns only the path without query params.
 
 Assigning to url or path will cause a redirect.
 
-When the route changes a "popstate" event is triggered, and the state will be updated causing a re-render.
-
 > 💡 Under the hood *a* tags and *params* use the router.
 
 ```jsx
@@ -225,15 +223,9 @@ import Nullstack from 'nullstack';
 class Application extends Nullstack {
 
   prepare({router}) {
-    if(router.url == '/') {
-      router.url = '/dashboard';
+    if(router.path == '/') {
+      router.path = '/dashboard';
     }
-  }
-
-  hydrate({router}) {
-    window.addEventListener('popstate', () => {
-      console.log(router.path);
-    });
   }
 
 }
