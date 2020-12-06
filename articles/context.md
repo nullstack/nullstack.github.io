@@ -22,9 +22,9 @@ These are the information that the framework makes available to you by default.
 - [page](/context-page)
 - [environment](/context-environment)
 - [project](/context-project)
-- [server](/context-server-request-response)
-- [request](/context-server-request-response)
-- [response](/context-server-request-response)
+- [server](/server-request-and-response)
+- [request](/server-request-and-response)
+- [response](/server-request-and-response)
 
 ### The available global client keys are:
 
