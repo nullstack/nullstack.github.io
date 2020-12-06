@@ -83,7 +83,7 @@ class Component extends Nullstack {
 
   renderCycle() {
     return (
-      <section class="x xx sm-p2x bcm2y p10y">
+      <section class="x xx sm-p2x md+bcm2y md+p10y">
         <Step 
           icon={Cog}
           title="Server-Side Rendering"
