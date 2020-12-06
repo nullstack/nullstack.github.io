@@ -39,11 +39,18 @@ article {
 
   pre code.language-jsx {
     width: 100%;
-    overflow-x: scroll;
     display: block;
     font-size: 0.8rem;
     padding: 0.5rem;
     background-color: var(--heavy-color);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  article pre code.language-jsx {
+    overflow-x: scroll;
   }
 
 }

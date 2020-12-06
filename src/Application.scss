@@ -25,10 +25,6 @@ h1, h2, h3, h4, h5 {
   letter-spacing: 1px;
 }
 
-h2 {
-  margin-top: 2rem;
-}
-
 strong {
   font-weight: 700;
 }
@@ -45,4 +41,8 @@ pre {
     overflow-x: auto;
   }
 
+}
+
+blockquote {
+  line-height: 140%;
 }

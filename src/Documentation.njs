@@ -16,10 +16,10 @@ class Documentation extends Nullstack {
 
   renderTopic({title, description, children}) {
     return (
-      <div class="x12">
+      <div class="x12 m6y">
         <h2 class="x12 sm-f6 md+f8 m2b"> {title} </h2>
-        <p class="x12 f4"> {description} </p>
-        <nav class="x12 m6y"> {children} </nav>
+        <p class="x12 f4 m6b"> {description} </p>
+        <nav class="x12"> {children} </nav>
       </div>
     )
   }

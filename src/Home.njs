@@ -142,12 +142,41 @@ class Component extends Nullstack {
     )
   }
 
-  renderEcosystem() {
+  renderWhy() {
     return (
-      <section class="x xx sm-p2x sm-p10y md+p20y">
-        <p class="x12 f4 fw7"> Don't be afraid of testing a new ecosystem, because it's not new at all </p>
-        <p class="x12 f4"> There is no "Nullstack Way" of doing things, it is just javascript and you can use any isomorphic vanilla package made throughout history </p>
-        <a href="/documentation" class="ci1 bci1 cm1h bgi1h m6t p2y p4x"> Read the Documentation </a>
+      <section class="bgm2 sm-p2x sm-m10t md+m20t p10y">
+        <div class="x xx">
+          <h2 class="x12 sm-f8 md+f12"> Why should you use Nullstack? </h2>
+          <blockquote class="xl sm-x12 md+x10 bcm2 f4 p4 m4y"> 
+            <p class="m3b"> 
+              Nullstack was made for small teams or even one-dev armies that have to quickly adapt to scope changes.
+            </p>
+            <p class="m3b cm3 cl">
+              Working as a freelancer developer it's routine to have to switch between a selection of projects on the same day, and often start projects without the client being fully aware of what he wants.
+            </p>
+            <p class="m3b"> 
+              Common patterns tend to enforce bureaucracy over flexibility. The code is so fragmented that having the overview of a feature that you implemented months ago takes longer than coding the update requested.
+            </p>
+            <p class="m3b cm3 cl"> 
+              With the rise of front-end frameworks and microservices, the server and client worlds got each time more out of sync in terms of implementation, making componentization and reusage of code between projects very tedious.
+            </p>
+            <p class="m3b">
+              Another problem was the fact that frameworks tend to have mannerisms, making you waste your knowledge and time whenever you had to change technologies or even upgrade versions.
+            </p>
+            <p class="m3b cm3 cl">
+              Nullstack was created API first, using wishful thinking inspired by the concept of 'developer happiness' from ruby and 'batteries included' from ember.js.
+            </p>
+            <p class="m3b"> 
+              The goal was to make something that could be easily overviewed and reused feature by feature while staying as close to vanilla as possible in order to use the existing ecosystem instead of having a framework version of each package.
+            </p>
+            <p class="cm3 cl"> 
+              Nullstack makes no compromises but doesn't try to impress or enforce. It is made with an aim, and might not be for everyone. It is like a bicycle that removed the training wheels so you can go faster.
+            </p>
+          </blockquote>
+          <p class="x12 f4 fw7 m3b"> Don't be afraid of testing a new ecosystem, because it's not new at all </p>
+          <p class="x12 f4"> There is no "Nullstack Way" of doing things, it is just javascript and you can use any isomorphic vanilla package made throughout history </p>
+          <a href="/documentation" class="ci1 bci1 cm1h bgi1h m6t p2y p4x"> Read the Documentation </a>
+        </div>
       </section>
     )
   }
@@ -161,7 +190,7 @@ class Component extends Nullstack {
         <Cycle />
         <Productivity />
         <Features />
-        <Ecosystem />
+        <Why />
       </div>
     )
   }

@@ -9,7 +9,7 @@ class Documentation extends Nullstack {
 
   renderProject({title, repository}) {
     return (
-      <a href={repository} class="xl x12 p3y bcm2b ci1h">
+      <a href={repository} target="_blank" class="xl x12 p3y bcm2b ci1h">
         {title}
       </a>
     )
@@ -17,9 +17,9 @@ class Documentation extends Nullstack {
 
   renderTopic({title, children}) {
     return (
-      <div class="x12">
+      <div class="x12 m6y">
         <h2 class="x12 sm-f6 md+f8"> {title} </h2>
-        <nav class="x12 m6b"> {children} </nav>
+        <nav class="x12"> {children} </nav>
       </div>
     )
   }
