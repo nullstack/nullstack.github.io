@@ -14,7 +14,7 @@ class Component extends Nullstack {
   renderHero() {
     return (
       <section class="x xx sm-p2x p20y">
-        <h1 class="x12 sm-f8 md+f12"> Full-stack Javascript Components</h1>
+        <h1 class="x12 sm-f8 md+f12"> Full-stack Javascript Components </h1>
         <div class="xx x8 m12b" style="background-image: linear-gradient(0deg, #fff 49%, #eee 50%, #fff 51%);"> 
           <p class="bgm1 f6 p2"> for one-dev armies </p>
         </div>
@@ -33,11 +33,8 @@ class Component extends Nullstack {
         {!!title && 
           <div class="xsb bgm2 p4">
             <h3 class="ff2 fw3 f4">
-              <a href={link}>{title}</a>
+              <a href={link} class="ci1">{title}</a>
             </h3>
-            <a href={link} title={title} class="ci1">
-              documentation
-            </a>
           </div>
         }
         <Snippet key={key} />
@@ -59,7 +56,7 @@ class Component extends Nullstack {
       <section class="x xx sm-p2x sm-p10y md+p20y">
         <h2 class="x12 sm-f8 md+f12 m2b"> Nullstack is your Application </h2>
         <p class="x12 f4"> Nullstack is not another part of your stack, it is your stack </p>
-        <p class="x12 f4"> Your application can be exported from back to front as a component and mounted in another application </p>
+        <p class="x12 f4"> Your application can be exported from back-end to front-end as a component and mounted in another application </p>
       </section>
     )
   }
@@ -68,14 +65,11 @@ class Component extends Nullstack {
     return (
       <div class="md+x4 p1">
         <div class="xx bgm2 p8y p4x">
-          <Icon height={40} class="ci1 m4b" />
+          <Icon height={40} class="cm3 m4b" />
           <h3 class="x12 f6">
-            <a href={link}>{title}</a>
+            <a href={link} class="ci1">{title}</a>
           </h3>
           <p class="x12 f4 m4y"> {description} </p>
-          <a href={link} title={title} class="ci1">
-            documentation
-          </a>
         </div>
       </div>
     )
@@ -87,7 +81,7 @@ class Component extends Nullstack {
         <Step 
           icon={Cog}
           title="Server-Side Rendering"
-          description="Nullstack prerenders your route in a single request using local functions on the first visit and generates SEO optimized HTML"
+          description="Nullstack prerenders your route in a single request using local functions on the first visit and generates SEO ready HTML"
           link="/server-side-rendering"
         />
         <Step 
@@ -152,19 +146,19 @@ class Component extends Nullstack {
               Nullstack was made for small teams or even one-dev armies that have to quickly adapt to scope changes.
             </p>
             <p class="m3b cm3 cl">
-              Working as a freelancer developer it's routine to have to switch between a selection of projects on the same day, and often start projects without the client being fully aware of what he wants.
+              When working as a freelance developer, it's customary to have to switch between a selection of projects on the same day, and to even start projects without the customer being fully aware of what they want.
             </p>
             <p class="m3b"> 
-              Common patterns tend to enforce bureaucracy over flexibility. The code is so fragmented that having the overview of a feature that you implemented months ago takes longer than coding the update requested.
+              Common patterns tend to enforce bureaucracy over flexibility. The code becomes so fragmented that overviewing a feature you implemented months ago takes longer than coding the requested update.
             </p>
             <p class="m3b cm3 cl"> 
-              With the rise of front-end frameworks and microservices, the server and client worlds got each time more out of sync in terms of implementation, making componentization and reusage of code between projects very tedious.
+              With the rise of front-end frameworks and microservices, the server and client worlds get more out of sync in terms of implementation, making componentization and code reusability between projects very tedious.
             </p>
             <p class="m3b">
-              Another problem was the fact that frameworks tend to have mannerisms, making you waste your knowledge and time whenever you had to change technologies or even upgrade versions.
+              Frameworks tend to have mannerisms, making you waste your time whenever you have to change or upgrade technologies.
             </p>
             <p class="m3b cm3 cl">
-              Nullstack was created API first, using wishful thinking inspired by the concept of 'developer happiness' from ruby and 'batteries included' from ember.js.
+              Nullstack is inspired by the concept of 'developer happiness' from Ruby and 'batteries included' from Ember.js.
             </p>
             <p class="m3b"> 
               The goal was to make something that could be easily overviewed and reused feature by feature while staying as close to vanilla as possible in order to use the existing ecosystem instead of having a framework version of each package.
