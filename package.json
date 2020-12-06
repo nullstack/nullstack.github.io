@@ -5,7 +5,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nullstack": "~0.7.0"
+    "nullstack": "~0.7.0",
+    "webpack-cli": "^4.2.0"
   },
   "scripts": {
     "start": "npx webpack --config node_modules/nullstack/webpack.config.js --mode=development --watch",
