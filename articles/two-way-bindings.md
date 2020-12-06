@@ -101,7 +101,7 @@ You can still declare an attribute with the same bound event.
 
 Events will not override the bound event, instead, it will be executed after bind mutates the variable.
 
-The new value will be merged into the function context.
+The new value will be merged into the function [context](/context).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -133,7 +133,7 @@ Bind can take a source attribute as well.
 
 If you declare a source, bind must be a string with the name of the key that will be mutated.
 
-The source will be merged into the context of events.
+The source will be merged into the [context](/context) of events.
 
 ```jsx
 import Nullstack from 'nullstack';

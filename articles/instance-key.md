@@ -52,7 +52,7 @@ export default Page;
 
 You can also use keys to share the instance between two elements.
 
-Only the first encounter of the key will run its lifecycle
+Only the first encounter of the key will run its [lifecycle](/full-stack-lifecycle)
 
 ```jsx
 import Nullstack from 'nullstack';

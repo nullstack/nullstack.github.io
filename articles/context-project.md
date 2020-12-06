@@ -9,7 +9,7 @@ This key is *readwrite* in the *server* context.
 
 This key is *readonly* in the *client* context.
 
-Project keys will be used to generate metatags during server-side rendering and must be assigned before *initiate* is resolved.
+Project keys will be used to generate metatags during server-side rendering and must be assigned before [initiate](/full-stack-lifecycle) is resolved.
 
 Project keys will be used to generate the app manifest and should ideally be set during the [application startup](/application-startup).
 

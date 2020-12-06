@@ -7,7 +7,7 @@ The page object is a proxy in the framework store part of your context and gives
 
 This key is *readwrite* and available only in the *client* context.
 
-Page keys will be used to generate metatags during server-side rendering and must be assigned before *initiate* is resolved.
+Page keys will be used to generate metatags during [server-side rendering](/server-side-rendering) and must be assigned before [initiate](/full-stack-lifecycle) is resolved.
 
 The following keys are available in the object:
 

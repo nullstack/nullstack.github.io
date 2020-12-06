@@ -65,7 +65,7 @@ export default Application;
 
 Every server function context is merged with the original request and response objects from express.
 
-If you raise a response manually it will override the framework's server-side rendering response.
+If you raise a response manually it will override the framework's [server-side rendering](/server-side-rendering) response.
 
 ```jsx
 import Nullstack from 'nullstack';

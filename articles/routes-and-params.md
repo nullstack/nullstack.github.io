@@ -106,7 +106,7 @@ Part of the route can be an expression started with ":" followed by a param name
 
 This value will be matched against any string in the same directory position.
 
-The value of the string in the URL will be assigned to the context params and functions below this point in the hierarchy will have access to the new key.
+The value of the string in the URL will be assigned to the [context](/context) params and functions below this point in the hierarchy will have access to the new key.
 
 > 🐱‍💻 Bellow an example that visits "/category/suspense?page=2":
 

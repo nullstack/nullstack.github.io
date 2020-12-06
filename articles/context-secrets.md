@@ -15,11 +15,11 @@ The following keys are available in the object:
 - *production*: object
 - *[anySetting]*: any
 
-You can assign keys to *development* or *production* keys in order to have different secrets per environment.
+You can assign keys to *development* or *production* keys in order to have different secrets per [environment](/context-environment).
 
 If you assign a key directly to the secrets object it will be available in both environments.
 
-When reading from a key you must read directly from the secrets object and Nullstack will return the best-suited value for that environment.
+When reading from a key you must read directly from the secrets object and Nullstack will return the best-suited value for that [environment](/context-environment).
 
 ```jsx
 import Nullstack from 'nullstack';
