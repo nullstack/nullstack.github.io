@@ -11,7 +11,7 @@ class Header extends Nullstack {
       <a 
         href={href}
         target={target}
-        onclick={{expanded: false}}
+        onclick={target ? false : {expanded: false}}
         class="sm-x12 sm-bcm2b p2 ci1h"
       > {title} </a>
     )

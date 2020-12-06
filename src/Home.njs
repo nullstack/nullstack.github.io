@@ -44,7 +44,7 @@ class Component extends Nullstack {
 
   renderDemo() {
     return (
-      <section class="x xl sm-p2x">
+      <section class="lg:x xl lg-p2x">
         <Feature key="Application" />
         <Feature key="TaskList" />
       </section>
@@ -111,7 +111,7 @@ class Component extends Nullstack {
 
   renderFeatures() {
     return (
-      <section class="x xl sm-p2x">
+      <section class="lg:x xl lg-p2x">
         <Feature 
           title="Stateful Components"
           key="Stateful"
