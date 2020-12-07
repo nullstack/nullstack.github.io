@@ -1,8 +1,8 @@
 import Nullstack from 'nullstack';
 import Snippet from './Snippet';
 import Cog from 'poisonicon/cog/stroke';
-import Refresh from 'poisonicon/refresh/stroke';
-import Globe from 'poisonicon/globe/stroke';
+import Heartbeat from 'poisonicon/heartbeat/stroke';
+import QRCode from 'poisonicon/qrcode/stroke';
 
 class Component extends Nullstack {
 
@@ -44,7 +44,7 @@ class Component extends Nullstack {
 
   renderShowcase() {
     return (
-      <section class="lg:x xl lg-p2x bcm2y p2y">
+      <section class="lg:x xl lg-p2x bcm2y p6y">
         <p class="xx x12 m2t m1b p4x" style="white-space: nowrap;">
           Bellow an example that uses 
           <a href="/server-functions" class="ci1 p1x"> server functions </a>
@@ -52,7 +52,7 @@ class Component extends Nullstack {
           <a href="/context" class="ci1 p1x"> context </a>
           available to all components.  
         </p>
-        <p class="xx x12 m2b p4x" style="white-space: nowrap;"> 
+        <p class="xx x12 m6b p4x" style="white-space: nowrap;"> 
           The tasks are listed in a specific
           <a href="/routes-and-params" class="ci1 p1x"> route </a>
           filtered by status, and displayed in a
@@ -80,7 +80,7 @@ class Component extends Nullstack {
     return (
       <div class="md+x4 p1">
         <div class="xx bgm2 p8y p4x">
-          <Icon height={40} class="cm3 m4b" />
+          <Icon height={40} class="cm2 cd m4b" />
           <h3 class="x12 f6">
             <a href={link} class="ci1">{title}</a>
           </h3>
@@ -100,13 +100,13 @@ class Component extends Nullstack {
           link="/server-side-rendering"
         />
         <Step 
-          icon={Refresh}
+          icon={Heartbeat}
           title="Single Page Application"
           description="Subsequent requests will fetch JSON from an automatically generated API, update the application state, and rerender the page"
           link="/full-stack-lifecycle"
         />
         <Step 
-          icon={Globe}
+          icon={QRCode}
           title="Static Site Generation"
           description="Optionally you can use Nullstack to generate static websites for lightning-fast static applications using the full power of Nullstack"
           link="/static-site-generation"
