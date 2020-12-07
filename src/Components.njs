@@ -9,7 +9,7 @@ class Documentation extends Nullstack {
 
   renderProject({title, repository}) {
     return (
-      <a href={repository} target="_blank" class="xl x12 p3y bcm2b ci1h">
+      <a href={repository} target="_blank" class="xl x12 p3y bcm2t ci1h">
         {title}
       </a>
     )
@@ -17,8 +17,8 @@ class Documentation extends Nullstack {
 
   renderTopic({title, children}) {
     return (
-      <div class="x12 m6y">
-        <h2 class="x12 sm-f6 md+f8"> {title} </h2>
+      <div class="x12 m6y bcm2 p4x p4t p1b">
+        <h2 class="x12 sm-f6 md+f8 m3b"> {title} </h2>
         <nav class="x12"> {children} </nav>
       </div>
     )
@@ -43,10 +43,10 @@ class Documentation extends Nullstack {
           <Project title="CKEditor Adapter" repository="https://github.com/Mortaro/nullstack-ckeditor-adapter" />
         </Topic>
         <Topic title="Brazilian Inputs">
+          <p class="bgs2 p2 m3y" title="Nullstack is a Brazilian Framework"> 🤘 Nullstack é BR porr@! </p>
           <Project title="CPF and CNPJ Inputs" repository="https://github.com/Mortaro/nullstack-cpf-cnpj-input" />
           <Project title="CEP Input" repository="https://github.com/Mortaro/nullstack-cep-input" />
           <Project title="Phone Input" repository="https://github.com/Mortaro/nullstack-phone-input" />
-          <p class="bgs2 p2 m2t" title="Nullstack is a Brazilian Framework"> 🤘 Nullstack é BR porr@! </p>
         </Topic>
       </section>
     )

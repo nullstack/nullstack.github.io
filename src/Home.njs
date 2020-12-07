@@ -15,7 +15,7 @@ class Component extends Nullstack {
     return (
       <section class="x xx sm-p2x p20y">
         <h1 class="x12 sm-f8 md+f12"> Full-stack Javascript Components </h1>
-        <div class="xx x8 m12b" style="background-image: linear-gradient(0deg, #fff 49%, #eee 50%, #fff 51%);"> 
+        <div class="xx x8 m12b" style="background-image: linear-gradient(0deg, #fff 49%, #e2e8f0 50%, #fff 52%);"> 
           <p class="bgm1 f6 p2"> for one-dev armies </p>
         </div>
         <div style="letter-spacing: 1.2px; line-height: 120%;">
@@ -42,9 +42,24 @@ class Component extends Nullstack {
     )
   }
 
-  renderDemo() {
+  renderShowcase() {
     return (
-      <section class="lg:x xl lg-p2x">
+      <section class="lg:x xl lg-p2x bcm2y p2y">
+        <p class="xx x12 m2t m1b p4x" style="white-space: nowrap;">
+          Bellow an example that uses 
+          <a href="/server-functions" class="ci1 p1x"> server functions </a>
+          to read tasks from a JSON file and store them in the 
+          <a href="/context" class="ci1 p1x"> context </a>
+          available to all components.  
+        </p>
+        <p class="xx x12 m2b p4x" style="white-space: nowrap;"> 
+          The tasks are listed in a specific
+          <a href="/routes-and-params" class="ci1 p1x"> route </a>
+          filtered by status, and displayed in a
+          <a href="/renderable-components" class="ci1 p1x"> inner component </a>
+          with inputs using
+          <a href="/two-way-bindings" class="ci1 p1l"> two-way bindings </a>.
+        </p>
         <Feature key="Application" />
         <Feature key="TaskList" />
       </section>
@@ -179,7 +194,7 @@ class Component extends Nullstack {
     return (
       <div>
         <Hero />
-        <Demo />
+        <Showcase />
         <About />
         <Cycle />
         <Productivity />

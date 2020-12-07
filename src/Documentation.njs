@@ -10,13 +10,13 @@ class Documentation extends Nullstack {
   renderLink({title}) {
     const href = '/' + title.toLowerCase().split(' ').join('-');
     return (
-      <a href={href} class="xl x12 p3y bcm2b ci1h"> {title} </a>
+      <a href={href} class="xl x12 p3y bcm2t ci1h"> {title} </a>
     )
   }
 
   renderTopic({title, description, children}) {
     return (
-      <div class="x12 m6y">
+      <div class="x12 m6y bcm2 p4x p4t p1b">
         <h2 class="x12 sm-f6 md+f8 m2b"> {title} </h2>
         <p class="x12 f4 m6b"> {description} </p>
         <nav class="x12"> {children} </nav>

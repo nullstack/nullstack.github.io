@@ -3,7 +3,7 @@ import TaskList from './TaskList';
 
 class Application extends Nullstack {
 
-  static async getTasksFromServer({limit}) {
+  static async getTasks({limit}) {
     const {readFileSync} = await import('fs');
     const json = readFileSync('tasks.json', 'utf-8');
     return JSON.parse(json).tasks.slice(0, limit);
@@ -14,7 +14,7 @@ class Application extends Nullstack {
   }
 
   async initiate(context) {
-    context.tasks = await this.getTasksFromServer({limit: 10});
+    context.tasks = await this.getTasks({limit: 10});
   }
 
   render() {
