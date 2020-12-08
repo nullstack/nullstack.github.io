@@ -11,7 +11,7 @@ Create a file in your src folder with the name of your component and the [njs ex
 
 In this example it is going to be called HelloWorld.njs.
 
-All you have to do is to import Nullstack and extend your class from it, define an instance method called render that returns any JSX, and export the component.
+All you have to do is to import Nullstack or any of its subclasses and extend your class from it, define an instance method called render that returns any JSX, and export the component.
 
 > ✨ Install the official [Nullstack VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ChristianMortaro.vscode-nullstack) to generate classes with a snippet.
 

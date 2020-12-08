@@ -5,9 +5,15 @@ description: Nullstack Javascript files let Webpack know which loaders to use at
 
 Nullstack Javascript files let Webpack know which loaders to use at transpile time.
 
-NJS files must import Nullstack because at transpile time JSX tags will be replaced with *Nullstack.element*
+NJS files must import Nullstack or one of its subclasses.
 
-This extension also allows Nullstack to make free transpile time optimizations like source injection and others mentioned in the documentation.
+If only a subclass is imported, a Nullstack import will be injected at transpile time.
+
+At transpile time JSX tags will be replaced with *Nullstack.element*
+
+This extension also allows Nullstack to make free transpile time optimizations like source injection and extracting renderable components into stateless functions.
+
+> 🔥 Each file must have only one class declaration.
 
 On the *server* bundle static async functions are mapped into a registry for security.
 
@@ -18,9 +24,9 @@ On both *server* and *client* bundles, a hash with the md5 of the original sourc
 > 🐱‍💻 Bellow an example of a original .njs file.
 
 ```jsx
-import Nullstack from 'nullstack';
+import List from './List';
 
-class Tasks extends Nullstack {
+class Tasks extends List {
 
   static async getTasks({limit}) {
     const {readFileSync} = await import('fs');
@@ -63,8 +69,11 @@ export default Tasks;
 
 ```jsx
 import Nullstack from 'nullstack';
+import List from './List';
 
-class Tasks extends Nullstack {
+class Tasks extends List {
+
+  static hash = 'd493ac09d0d57574a30f136d31da455f';
 
   static getTasks = true;
 
@@ -98,7 +107,67 @@ class Tasks extends Nullstack {
 }
 
 export default Tasks;
-Tasks.hash = 'd493ac09d0d57574a30f136d31da455f';
+```
+
+> 🐱‍💻 Bellow an example of a original .njs file.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Tasks extends Nullstack {
+
+  renderTask({task}) {
+    return (
+      <li> 
+        <input bind={task.description} />
+      </li>
+    )
+  }
+
+  render({tasks}) {
+    return (
+      <main>
+        <ul>
+          {tasks.map((task) => <Task task={task} />)}
+        </ul>
+      </main>
+    )
+  }
+
+}
+
+export default Tasks;
+```
+
+> 🐱‍💻 Bellow an example of the same transpiled .njs file.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Tasks extends Nullstack {
+
+  static renderTask({task}) {
+    return (
+      <li> 
+        <input source={task} bind="description" />
+      </li>
+    )
+  }
+
+  static render({tasks}) {
+    const Task = this.renderTask;
+    return (
+      <main>
+        <ul>
+          {tasks.map((task) => <Task task={task} />)}
+        </ul>
+      </main>
+    )
+  }
+
+}
+
+export default Tasks;
 ```
 
 ## Next step

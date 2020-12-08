@@ -163,6 +163,20 @@ export default Component;
 
 > ✨ Learn more about the [NJS file extension](/njs-file-extension).
 
+## Reserved words
+
+Server function names cannot collide with instance method names from the current class or its parent classes.
+
+The following words cannot be used in server functions:
+
+- prepare
+- initiate
+- hydrate
+- update
+- terminate
+
+Server functions named *start* will not generate an API endpoint and can only be called by other server functions.
+
 ## Caveats
 
 Automatically generated API endpoints are not meant to be used by 3rd-party apps.
