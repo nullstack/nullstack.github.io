@@ -14,6 +14,7 @@ The following keys are available in the object:
 - *development*: boolean
 - *production*: boolean
 - *static*: boolean
+- *key*: string
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -28,6 +29,7 @@ class Page extends Nullstack {
         {environment.development && <p> I am in development mode </p>}
         {environment.production && <p> I am in production mode </p>}
         {environment.static && <p> I am a static site </p>}
+        <p> My key is {environment.key} </p>
       </div>
     )
   }
@@ -36,6 +38,8 @@ class Page extends Nullstack {
 
 export default Page;
 ```
+
+The environment *key* is an md5 hash of the environment folder outputs that is appended to [assets](/styles) and [static API](/static-site-generation) path in order to assist cache control.
 
 ## Next step
 

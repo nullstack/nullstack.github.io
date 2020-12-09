@@ -95,7 +95,7 @@ class Paginator extends Nullstack {
 export default Paginator;
 ```
 
-> ✨ Learn more about [context params](/context-params).
+> ✨ Learn more about [context params](/routes-and-params).
 
 > 💡 If you do not declare a source to the event, Nullstack will inject a source={this} at transpile time in order to completely skip the runtime lookup process!
 

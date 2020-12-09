@@ -183,7 +183,7 @@ Automatically generated API endpoints are not meant to be used by 3rd-party apps
 
 The URL and implementation may change between versions of Nullstack.
 
-> ✨ If you want to build an API, learn more about [how to create an API with Nullstack](/how-to-create-an-api-with-nullstack).
+> ✨ If you want to build an API, learn more about [how to create an API with Nullstack](/server-request-and-response).
 
 ## Next step
 
