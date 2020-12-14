@@ -3,6 +3,7 @@
   font-style: normal;
   font-weight: 300;
   src: local(''), url('/roboto-v20-latin-300.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   font-style: normal;
   font-weight: 500;
   src: local(''), url('/roboto-v20-latin-500.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {

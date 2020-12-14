@@ -47,19 +47,19 @@ class Component extends Nullstack {
       <section class="lg:x xl lg-p2x bcm2b">
         <Feature key="Application" />
         <Feature key="TaskList" />
-        <p class="xx x12 m6t m2b m1b p4x" style="white-space: nowrap;">
+        <p class="xx x12 m6t p4x" style="line-height: 160%;">
           The example above uses 
           <a href="/server-functions" class="ci1 p1x"> server functions </a>
           to read tasks from a JSON file and store them in the 
           <a href="/context" class="ci1 p1x"> context </a>
           available to all components.  
         </p>
-        <p class="xx x12 m6b p4x" style="white-space: nowrap;"> 
+        <p class="xx x12 m6b p4x" style="line-height: 160%;"> 
           The tasks are listed in a specific
           <a href="/routes-and-params" class="ci1 p1x"> route </a>
-          filtered by status, and displayed in a
-          <a href="/renderable-components" class="ci1 p1x"> inner component </a>
-          with inputs using
+          that renders a component with multiple
+          <a href="/renderable-components" class="ci1 p1x"> inner components </a>
+          filtered by status with inputs using
           <a href="/two-way-bindings" class="ci1 p1l"> two-way bindings </a>.
         </p>
       </section>
