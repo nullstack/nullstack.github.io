@@ -31,7 +31,7 @@ class Component extends Nullstack {
     return (
       <div class="sm-x12 md+x6 p1">
         {!!title && 
-          <div class="xsb bgm2 p4">
+          <div class="xsb bcm2 p4">
             <h3 class="ff2 fw3 f4">
               <a href={link} class="ci1">{title}</a>
             </h3>
@@ -184,7 +184,7 @@ class Component extends Nullstack {
           </blockquote>
           <p class="x12 f4 fw7 m3b"> Don't be afraid of testing a new ecosystem, because it's not new at all </p>
           <p class="x12 f4"> There is no "Nullstack Way" of doing things, it is just javascript and you can use any isomorphic vanilla package made throughout history </p>
-          <a href="/documentation" class="ci1 bci1 cm1h bgi1h m6t p2y p4x"> Read the Documentation </a>
+          <a href="/documentation" class="bci1 cm1 ci1h bgi1 bgm1h m6t p2y p4x"> Read the Documentation </a>
         </div>
       </section>
     )

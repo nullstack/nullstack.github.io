@@ -75,3 +75,7 @@ blockquote {
     margin-right: auto;
   }
 }
+
+.token.selector, .token.tag {
+  color: #ff5d9a !important;
+}
