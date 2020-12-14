@@ -11,7 +11,9 @@ This key is *readonly* in the *client* context.
 
 Project keys will be used to generate metatags during server-side rendering and must be assigned before [initiate](/full-stack-lifecycle) is resolved.
 
-Project keys will be used to generate the app manifest and should ideally be set during the [application startup](/application-startup).
+Project keys will be used to generate the app manifest and should be set during the [application startup](/application-startup).
+
+Project keys are frozen after the [application startup](/application-startup).
 
 The following keys are available in the object:
 

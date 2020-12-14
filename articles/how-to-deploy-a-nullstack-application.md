@@ -9,7 +9,7 @@ With Nullstack it's easy to have your application up and running in production m
 
 Nullstack compiles your code and all your dependencies using Webpack.
 
-The output of the compilation is moved to the *.production* folder and is the only folder that needs to be moved into the host machine.
+The output of the compilation is moved to the *.production* folder and is the only folder besides *public* that needs to be moved into the host machine.
 
 > 💡 It is important that the *.production* folder is present for environment detection
 

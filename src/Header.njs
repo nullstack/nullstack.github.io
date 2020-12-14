@@ -23,7 +23,7 @@ class Header extends Nullstack {
         <div class="x xsb yy p4y">
           <div class="sm-x12 sm-xsb sm-p4x yy">
             <a href="/" title="Nullstack">
-              <img src="/nullstack.svg" style="height: 30px" />
+              <img src="/nullstack.svg" alt="Nullstack" style="height: 30px" />
             </a>
             <span onclick={{expanded: !this.expanded}} class="yy md+off">
               <element tag={this.expanded ? Ex : Bars} height={20} class="cm2 cd" />

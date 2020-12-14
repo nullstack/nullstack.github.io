@@ -44,9 +44,11 @@ class Component extends Nullstack {
 
   renderShowcase() {
     return (
-      <section class="lg:x xl lg-p2x bcm2y p6y">
-        <p class="xx x12 m2t m1b p4x" style="white-space: nowrap;">
-          Bellow an example that uses 
+      <section class="lg:x xl lg-p2x bcm2b">
+        <Feature key="Application" />
+        <Feature key="TaskList" />
+        <p class="xx x12 m6t m2b m1b p4x" style="white-space: nowrap;">
+          The example above uses 
           <a href="/server-functions" class="ci1 p1x"> server functions </a>
           to read tasks from a JSON file and store them in the 
           <a href="/context" class="ci1 p1x"> context </a>
@@ -60,8 +62,6 @@ class Component extends Nullstack {
           with inputs using
           <a href="/two-way-bindings" class="ci1 p1l"> two-way bindings </a>.
         </p>
-        <Feature key="Application" />
-        <Feature key="TaskList" />
       </section>
     )
   }

@@ -25,14 +25,17 @@ These are the information that the framework makes available to you by default.
 - [server](/server-request-and-response)
 - [request](/server-request-and-response)
 - [response](/server-request-and-response)
+- [worker](/service-worker)
 
 ### The available global client keys are:
 
 - [page](/context-page)
+- [project](/context-project)
 - [environment](/context-environment)
 - [params](/routes-and-params)
 - [router](/routes-and-params)
-- [network](/context-network)
+- [loading](/context-loading)
+- [worker](/service-worker)
 
 ### The available instance client keys are:
 

@@ -46,4 +46,4 @@ Nullstatic only crawls your application up to the initiate resolution, further A
 
 ## Next step
 
-⚔ Learn [how to deploy a Nullstack application](/how-to-deploy-a-nullstack-application).
+⚔ Learn more about the [service worker](/service-worker).

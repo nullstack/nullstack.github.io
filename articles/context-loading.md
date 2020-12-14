@@ -1,20 +1,17 @@
 ---
-title: Context Network
-description: The network object is a proxy in the framework store part of your context and gives you information about API calls
+title: Context Loading
+description: The loading object is a proxy in the framework store part of your context and gives you information about API calls
 ---
 
-The network object is a proxy in the *framework store* part of your context and gives you information about API calls.
+The loading object is a proxy in the *framework store* part of your context and gives you information about API calls progress.
 
 This key is *readonly* and available only in the *client* context.
 
 The following keys are available in the object:
 
-- *processing*: boolean
 - *[serverFunctionName]*: boolean
 
-When a [server function](/server-functions) is called, processing will be set to true, when it's resolved processing will be set back to false.
-
-Besides *processing* a key with the name of the [server function](/server-functions) invoked will be set to true temporarily.
+When a [server function](/server-functions) is called a key with the name of the [server function](/server-functions) invoked will be set to true until the response is resolved.
 
 Any other key you invoke will always return false instead of undefined for consistency.
 
@@ -33,13 +30,10 @@ class Page extends Nullstack {
     await this.save();
   }
  
-  render({network}) {
+  render({loading}) {
     return (
-      <form onsubmit={this.submit}> 
-        {network.processing && 
-          <p> something is loading... </p>
-        }
-        <button disabled={network.save}> 
+      <form onsubmit={this.save}> 
+        <button disabled={loading.save}> 
           Save
         </button>
       </form>

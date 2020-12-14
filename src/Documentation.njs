@@ -42,7 +42,7 @@ class Documentation extends Nullstack {
         <Topic title="Advanced concepts" description="These are concepts that you will most likely learn as you need in your projects">
           <Link title="Application Startup" />
           <Link title="Context environment" />
-          <Link title="Context network" />
+          <Link title="Context loading" />
           <Link title="Context page" />
           <Link title="Context project" />
           <Link title="Context settings" />
@@ -54,6 +54,7 @@ class Documentation extends Nullstack {
           <Link title="NJS file extension" />
           <Link title="Server-side rendering" />
           <Link title="Static site generation" />
+          <Link title="Service Worker" />
           <Link title="How to deploy a Nullstack application" />
         </Topic>
         <Topic title="Examples" description="The best way to learn Nullstack is by reading some code">

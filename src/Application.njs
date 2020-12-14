@@ -11,11 +11,28 @@ import GoogleAnalytics from 'nullstack-google-analytics';
 
 class Application extends Nullstack {
 
-  static async start(context) {
-    const {project} = context;
+  static async startWorker({worker}) {
+    const {default: path} = await import('path');
+    const {readdirSync} = await import('fs');
+    const articles = readdirSync(path.join(__dirname, '..', 'articles'));
+    worker.enabled = true;
+    worker.preload = [
+      ...articles.map((article) => '/' + article.replace('.md', '')),
+      '/nullstack.svg',
+      '/documentation',
+      '/components'
+    ]
+  }
+
+  static async startProject({project}) {
     project.name = 'Nullstack';
     project.domain = 'nullstack.app';
     project.color = '#d22365';
+  }
+
+  static async start(context) {
+    await this.startProject(context);
+    await this.startWorker(context);
   }
 
   prepare({page}) {
@@ -36,7 +53,6 @@ class Application extends Nullstack {
       </main>
     )
   }
-
 
 }
 
