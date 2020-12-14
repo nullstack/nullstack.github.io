@@ -1,5 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local(''), url('/roboto-v20-latin-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''), url('/roboto-v20-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Crete Round';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''), url('/crete-round-v9-latin-regular.woff2') format('woff2');
+  font-display: swap;
+}
 
 :root {
   --primary-font-family: 'Crete Round', serif;

@@ -6,7 +6,7 @@ class Footer extends Nullstack {
     const year = new Date().getFullYear();
     return (
       <footer class="xx bcm2t p10y">
-        <img src="/nullstack.svg" alt="Nullstack" style="height: 30px" />
+        <img src="/nullstack.svg" alt="Nullstack" width="135" height="30" />
         <p class="x12 m3t"> © {year} Nullstack </p>
       </footer>
     )
