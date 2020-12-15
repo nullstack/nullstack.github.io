@@ -1,8 +1,5 @@
 import Nullstack from 'nullstack';
 
-import 'prism-theme-one-dark/prism-onedark.css';
-import "prismjs/plugins/unescaped-markup/prism-unescaped-markup.min.js";
-
 class Snippet extends Nullstack {
 
   html = '';
@@ -20,18 +17,6 @@ class Snippet extends Nullstack {
     this.html = await this.getSnippetByKey({key});
   }
 
-  whitelist() {
-    return (
-      <div class="
-        token comment prolog doctype cdata punctuation selector
-        tag property boolean number constant symbol attr-name
-        deleted string char attr-value builtin inserted
-        operator entity url language-css style atrule
-        keyword function regex important variable bold italic
-      " />
-    )
-  }
-  
   render() {
     return (
       <pre class="bgm3 p4">

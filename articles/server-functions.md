@@ -33,7 +33,7 @@ class Component extends Nullstack {
 export default Component;
 ```
 
-> Learn more about the [server context](/context).
+> ✨ Learn more about the [server context](/context).
 
 ## Client behavior
 

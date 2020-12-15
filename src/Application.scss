@@ -50,20 +50,6 @@ strong {
   font-weight: 700;
 }
 
-pre {
-  color: #fff;
-  font-size: 1.2rem;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  
-  pre {
-    overflow-x: auto;
-  }
-
-}
-
 blockquote {
   line-height: 140%;
 }
@@ -76,6 +62,52 @@ blockquote {
   }
 }
 
+/*! purgecss start ignore */
+
+pre {
+  color: #ddbc72;
+  font-size: 1.2rem;
+  width: 100%;
+  background-color: #282c34;
+  line-height: 1.5;
+  padding: 0.5rem;
+  color: #ddbc72;
+}
+
+@media (max-width: 768px) {
+  
+  pre {
+    overflow-x: auto;
+  }
+
+}
+
 .token.selector, .token.tag {
   color: #ff5d9a !important;
 }
+
+.token.comment {
+  color: #9dbcf7 !important;
+}
+
+.token.string, .token.attr-value {
+  color: #99c47a !important;
+}
+
+.token.atrule, .token.keyword {
+  color: #e89bff !important;
+}
+
+.token.property, .token.boolean, .token.number, .token.constant, .token.symbol, .token.attr-name, .token.deleted {
+  color: #e9ac72 !important;
+}
+
+.token.function, .token.operator {
+  color: #71bfff !important;
+}
+
+.token.punctuation {
+  color: #b1b8c6 !important;
+}
+
+/*! purgecss end ignore */

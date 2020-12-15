@@ -25,7 +25,7 @@ When the title key is assigned on the client-side, the document title will be up
 
 Nullstack uses the *changes* and *priority* keys to generate the sitemap.xml.
 
-The sitemap is generated automatically only when using [static-site generation](/static-site-generation) and must be manually generated in [server-side rendered](/server-side-rendering) applications
+The sitemap is generated automatically only when using [static site generation](/static-site-generation) and must be manually generated in [server-side rendered](/server-side-rendering) applications
 
 The *changes* key represents the *changefreq* key in the sitemap.xml and if assigned must be one of the following values:
 
