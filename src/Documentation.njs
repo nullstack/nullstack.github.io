@@ -5,6 +5,7 @@ class Documentation extends Nullstack {
   prepare({project, page}) {
     page.title = `Documentation - ${project.name}`;
     page.description = 'Follow these steps and become a full-stack javascript developer!';
+    page.priority = 0.8;
   }
 
   renderLink({title}) {

@@ -5,6 +5,7 @@ class Documentation extends Nullstack {
   prepare({project, page}) {
     page.title = `Community Components - ${project.name}`;
     page.description = 'A curated list of Nullstack components made by the community';
+    page.priority = 0.3;
   }
 
   renderProject({title, repository}) {

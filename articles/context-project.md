@@ -13,6 +13,8 @@ Project keys will be used to generate metatags during server-side rendering and 
 
 Project keys will be used to generate the app manifest and should be set during the [application startup](/application-startup).
 
+The disallow key will be used to generate the robots.txt and should be set during the [application startup](/application-startup).
+
 Project keys are frozen after the [application startup](/application-startup).
 
 The following keys are available in the object:
@@ -29,6 +31,7 @@ The following keys are available in the object:
 - *root*: string
 - *icons*: object
 - *favicon*: string (relative or absolute url)
+- *disallow*: string array (relative paths)
 
 Besides *domain*, *name* and *color* all other keys have sensible defaults generated based on the application scope.
 
@@ -56,6 +59,7 @@ class Application extends Nullstack {
       '512': '/icon-512x512.png'
     };
     project.favicon = '/favicon.png';
+    project.disallow = ['/admin'];
   }
 
   prepare({project, page}) {
@@ -67,7 +71,7 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-> 💡 You can override the automatically generated manifest.json by serving your own manifest.json from the public folder
+> 💡 You can override the automatically generated manifest.json and robots.txt by serving your own file from the public folder
 
 ## Next step
 
