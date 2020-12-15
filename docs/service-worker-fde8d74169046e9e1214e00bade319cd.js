@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "df975055e349810e1e160cb67a72dd56"
+    "key": "fde8d74169046e9e1214e00bade319cd"
   },
   "project": {
     "type": "website",
@@ -25,6 +25,8 @@ self.context = {
       "384": "/icon-384x384.png",
       "512": "/icon-512x512.png"
     },
+    "disallow": [],
+    "sitemap": true,
     "name": "Nullstack",
     "domain": "nullstack.app",
     "color": "#d22365"
@@ -103,7 +105,7 @@ async function injectData(templateResponse, cachedDataResponse) {
     } else if(line.indexOf('window.page = ') > -1) {
       return `window.page = ${JSON.stringify(data.page)};`
     } else if(line.indexOf('window.worker = ') > -1) {
-      return line.replace('"online":false', '"online":true');
+      return line.replace('"online":false', '"online":true').replace('"responsive":false', '"responsive":true');
     }
     return line;
   }).join("\n");
