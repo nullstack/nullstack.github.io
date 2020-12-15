@@ -38,9 +38,20 @@ class Application extends Nullstack {
     page.locale = 'en';
   }
 
+  renderPreloader() {
+    return (
+      <head>
+        <link rel="preload" href="/roboto-v20-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="/roboto-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="/crete-round-v9-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+      </head>
+    )
+  }
+
   render() {
     return (
       <main>
+        <Preloader />  
         <Header />
         <Home route="/" />
         <Documentation route="/documentation" />

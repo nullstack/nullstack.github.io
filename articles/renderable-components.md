@@ -172,6 +172,8 @@ If you need to decide the tag name at runtime, you can use the element tag and s
 </element>
 ```
 
+When the tag attribute is omitted, Nullstack will default to a *div*.
+
 ## SVG Elements
 
 SVG can be used as if it were any regular HTML tag.
@@ -186,7 +188,7 @@ You can manipulate the SVG using attributes and events normally.
 
 > ✨ Learn more about [events](/stateful-components).
 
-## Components with Children
+## Components with children
 
 Your component can be invoked passing a block of content.
 
@@ -303,6 +305,42 @@ export default Post;
 ```
 
 > 🔥 Be careful! When using user-generated HTML you are in risk of script injection
+
+## The head tag
+
+Renderable components can render inside the head tag an unlimited number of times at any level of application.
+
+The head tag will only be updated during the [server-side rendering](/server-side-rendering) process and changes will be ignored after the [hydration](/full-stack-lifecycle) process.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Application extends Nullstack {
+
+  // ...
+
+  render() {
+    return (
+      <main>
+        <did>
+          <head>
+            <link rel="preconnect" href="https://www.googletagmanager.com" />
+          </head>
+        </div>
+        <head>
+          <link rel="preload" href="/roboto-v20-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+          <link rel="preload" href="/crete-round-v9-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+        </head>
+      </main>
+    )
+  }
+
+}
+
+export default Application;
+```
+
+> 🔥 you should not use the head tag to update [metatags](/context-page) that Nullstack already controls
 
 ## Caveats
 
