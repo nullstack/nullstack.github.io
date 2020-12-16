@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "6e3f274dffc5c0d0b5c25b26e8d5df74"
+    "key": "2b981ae7bfdf579ec498ff630180f072"
   },
   "project": {
     "type": "website",
@@ -100,7 +100,9 @@ async function injectData(templateResponse, cachedDataResponse) {
   const data = await cachedDataResponse.json();
   const input = await templateResponse.text();
   const output = input.split(`\n`).map((line) => {
-    if(line.indexOf('window.instances = ') > -1) {
+    if(line.indexOf('<meta name="generator" content="Created with Nullstack - https://nullstack.app" />') > -1) {
+      return line.replace(/(<title\b[^>]*>)[^<>]*(<\/title>)/i, `$1${data.page.title}$2`);
+    } else if(line.indexOf('window.instances = ') > -1) {
       return `window.instances = ${JSON.stringify(data.instances)};`
     } else if(line.indexOf('window.page = ') > -1) {
       return `window.page = ${JSON.stringify(data.page)};`

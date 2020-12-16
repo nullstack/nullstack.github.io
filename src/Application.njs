@@ -15,6 +15,7 @@ class Application extends Nullstack {
     const {default: path} = await import('path');
     const {readdirSync} = await import('fs');
     const articles = readdirSync(path.join(__dirname, '..', 'articles'));
+    worker.enabled = true;
     worker.preload = [
       ...articles.map((article) => '/' + article.replace('.md', '')),
       '/nullstack.svg',

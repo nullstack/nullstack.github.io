@@ -32,10 +32,13 @@ The following keys are available in the object:
 - *icons*: object
 - *favicon*: string (relative or absolute url)
 - *disallow*: string array (relative paths)
+- *sitemap* boolean or string (relative or absolute url)
 
 Besides *domain*, *name* and *color* all other keys have sensible defaults generated based on the application scope.
 
 If you do not declare the *icons* key, Nullstack will scan any icons with the name following the pattern "icon-[WIDTH]x[HEIGHT].png" in your public folder.
+
+If the *sitemap* key is set to true your robots.txt file will point the sitemap to *https://${project.domain}/sitemap.xml*.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -60,6 +63,7 @@ class Application extends Nullstack {
     };
     project.favicon = '/favicon.png';
     project.disallow = ['/admin'];
+    project.sitemap = true;
   }
 
   prepare({project, page}) {

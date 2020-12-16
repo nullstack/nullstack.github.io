@@ -308,7 +308,7 @@ export default Post;
 
 ## The head tag
 
-Renderable components can render inside the head tag an unlimited number of times at any level of application.
+Renderable components can render inside the head tag an unlimited number of times at any depth of the application.
 
 The head tag will only be updated during the [server-side rendering](/server-side-rendering) process and changes will be ignored after the [hydration](/full-stack-lifecycle) process.
 
