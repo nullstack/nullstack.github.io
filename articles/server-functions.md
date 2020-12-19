@@ -11,7 +11,7 @@ Being a static function means it has no access to the instance scope.
 
 However, instead of calling the static version from the *class*, you must invoke it as an *instance* function.
 
-Server functions can be called anytime in your code and are not limited to [prerender](full-stack-lifecycle) steps.
+Server functions can be called anytime in your code and are not limited to [prerender](/server-side-rendering) steps.
 
 ```jsx
 import Nullstack from 'nullstack';

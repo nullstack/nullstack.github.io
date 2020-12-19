@@ -15,10 +15,9 @@ class Application extends Nullstack {
     const {default: path} = await import('path');
     const {readdirSync} = await import('fs');
     const articles = readdirSync(path.join(__dirname, '..', 'articles'));
-    worker.enabled = true;
     worker.preload = [
-      ...articles.map((article) => '/' + article.replace('.md', '')),
       '/nullstack.svg',
+      ...articles.map((article) => '/' + article.replace('.md', '')),
       '/documentation',
       '/components'
     ]
@@ -28,6 +27,7 @@ class Application extends Nullstack {
     project.name = 'Nullstack';
     project.domain = 'nullstack.app';
     project.color = '#d22365';
+    project.backgroundColor = '#2d3748';
   }
 
   static async start(context) {

@@ -16,7 +16,7 @@ import Nullstack from 'nullstack';
 
 class FacebookPixel extends Nullstack {
 
-  async hydrate({id}) {
+  async hydrate({page, id}) {
     ! function(f, b, e, v, n, t, s) {
       if (f.fbq) return;
       n = f.fbq = function() {
@@ -37,7 +37,7 @@ class FacebookPixel extends Nullstack {
       'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', id);
     fbq('track', 'PageView');
-    window.addEventListener('nullstack.page.title', () => {
+    window.addEventListener(page.event, () => {
       fbq('init', id);
       fbq('track', 'PageView');
     })

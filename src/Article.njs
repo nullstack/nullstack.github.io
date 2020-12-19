@@ -14,13 +14,25 @@ class Component extends Nullstack {
     const {default: meta} = await import('remarkable-meta');
     const path = `articles/${key}.md`;
     if(!existsSync(path)) {
-      return {html: 'Not Found', title: 'Not Found', description: 'Not Found'};
+      return {};
     }
     const text = readFileSync(path, 'utf-8');
     const md = new Remarkable({
       highlight: (code) => Prism.highlight(code, Prism.languages.jsx, 'javascript')
     });
     md.use(meta);
+    md.use((md) => {
+      const originalRender = md.renderer.rules.link_open;
+      md.renderer.rules.link_open = function() {
+        let result = originalRender.apply(null, arguments);
+        const regexp = /href="([^"]*)"/;
+        const href = regexp.exec(result)[1];
+        if(!href.startsWith('/')) {
+          result = result.replace('>', ' target="_blank" rel="noopener">');
+        }
+        return result;
+      };
+    });
     return {
       html: md.render(text),
       ...md.meta
@@ -29,18 +41,46 @@ class Component extends Nullstack {
 
   async initiate({project, page, params}) {
     const article = await this.getArticleByKey({key: params.slug});
-    Object.assign(this, article);
-    page.title = `${article.title} - ${project.name}`;
-    page.description = article.description;
+    if(article.title) {
+      Object.assign(this, article);
+      page.title = `${article.title} - ${project.name}`;
+      page.description = article.description;
+    } else {
+      page.status = 404;
+      page.title = `Not Found - ${project.name}`;
+      page.description = 'Sorry, this is not the page you are looking for.';
+    }
   }
-  
-  render() {
+
+  renderArticle() {
     return (
       <section class="x sm-p4x sm-p10y md+p20y"> 
         <h1 class="x12 sm-f6 md+f8 m6b"> {this.title} </h1>
         <article html={this.html} />
       </section>
     )
+  }
+
+  renderNotFound() {
+    return (
+      <section class="x sm-p4x sm-p10y md+p20y"> 
+        <h1 class="x12 sm-f6 md+f8 m6b"> Page not Found </h1>
+        <article>
+          <p> 
+            Perhaps you want to learn about 
+            <a href="/context-page" class="m1l">how to make a 404 page with Nullstack</a>?
+          </p>
+          <p> 
+            If you are looking for something else, you should
+            <a href="/documentation" class="m1l">read the documentation</a>.
+          </p>
+        </article>
+      </section>
+    )
+  }
+  
+  render({page}) {
+    return page.status == 404 ? <NotFound /> : <Article />
   }
 
 }

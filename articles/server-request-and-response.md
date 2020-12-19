@@ -15,6 +15,7 @@ The following functions are tunneled back to the express server:
 - post
 - put
 - patch
+- delete
 - options
 - head
 - use

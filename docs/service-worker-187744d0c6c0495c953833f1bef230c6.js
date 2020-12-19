@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "2b981ae7bfdf579ec498ff630180f072"
+    "key": "187744d0c6c0495c953833f1bef230c6"
   },
   "project": {
     "type": "website",
@@ -29,7 +29,8 @@ self.context = {
     "sitemap": true,
     "name": "Nullstack",
     "domain": "nullstack.app",
-    "color": "#d22365"
+    "color": "#d22365",
+    "backgroundColor": "#2d3748"
   },
   "settings": {},
   "worker": {
@@ -66,7 +67,8 @@ self.context = {
       "/nullstack.svg",
       "/documentation",
       "/components"
-    ]
+    ],
+    "headers": {}
   }
 };
 

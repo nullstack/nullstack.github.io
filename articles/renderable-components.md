@@ -228,7 +228,7 @@ Lists that may change length must be wrapped in a parent element just for them.
 
 ```jsx
 <ul>
-  {list.map((item) => <li>item.name</li>)}
+  {list.map((item) => <li>{item.name}</li>)}
 </ul>
 ```
 

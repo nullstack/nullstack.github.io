@@ -47,7 +47,7 @@ class Application extends Nullstack {
 
   static async start({project}) {
     project.name = 'Nullstack';
-    project.shortName = Nullstack';
+    project.shortName = 'Nullstack';
     project.domain = 'nullstack.app';
     project.color = '#d22365';
     project.backgroundColor = '#d22365';

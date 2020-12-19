@@ -43,6 +43,7 @@ This, in fact, gives you not only a static generated site, but a static generate
 
 Nullstatic only crawls your application up to the initiate resolution, further API requests triggered by events will be ignored.
 
+Nullstatic will crawl a /404 URL and generate both a /404.html and a /404/index.html.
 
 ## Next step
 

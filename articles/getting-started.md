@@ -5,6 +5,8 @@ description: Create full-stack javascript applications within seconds
 
 Create full-stack javascript applications within seconds using *npx* to generate your project files from the latest template.
 
+> 🔥 The minimum required [node.js](https://nodejs.org) version for development mode is *12.12.0*.
+
 Replace project-name with your project name and run the command below to start a project: 
 
 ```sh
@@ -35,7 +37,7 @@ The following folders and files will be generated:
 
 ### index.js
 
-This is the Webpack entry point.
+This is the [Webpack](https://webpack.js.org) entry point.
 
 Usually, you don't have to touch this file, but it is a convenient place to import global dependencies like CSS frameworks.
 

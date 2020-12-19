@@ -165,6 +165,8 @@ export default Paginator;
 
 Any object that responds to a key call with "[]" can be bound.
 
+The name attribute can be overwritten.
+
 ```jsx
 import Nullstack from 'nullstack';
 
@@ -172,21 +174,31 @@ class Form extends Nullstack {
 
   number = 1;
   boolean = true;
+  character = 'a';
+  text = 'aaaa';
   
-  object = {number: 1};
+  object = {count: 1};
   array = ['a', 'b', 'c'];
-  
+
   render({params}) {
     return (
-      <form>
+      <div>
         <input bind={this.number} />
+        <textarea bind={this.text} />
+        <select bind={this.character}>
+          {this.array.map((character) => <option>{character}</option>)}
+        </select>
+        <select bind={this.boolean} name="boolean-select">
+          <option value={true}>true</option>
+          <option value={false}>false</option>
+        </select>
         <input bind={this.boolean} type="checkbox" />
-        <input bind={this.object.number} />
+        <input bind={this.object.count} />
         {this.array.map((value, index) => (
           <input bind={this.array[index]} />
         ))}
         <input bind={params.page} />
-      </form>
+      </div>
     )
   }
 
@@ -220,6 +232,7 @@ export default Paginator;
 ```
 
 ## Bindable Components
+
 You can create your own bindable component by receiving the attributes that bind generates.
 
 You must respond by calling *onchange* with a value key.

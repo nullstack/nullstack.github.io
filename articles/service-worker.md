@@ -17,6 +17,7 @@ The following keys are available in the object during the startup:
 
 - *enabled*: boolean
 - *preload*: string array (relative paths)
+- *headers*: object
 
 The *enabled* key defines if the service worker will be automatically registered by Nullstack. 
 
@@ -61,6 +62,10 @@ The following keys are available as *readonly* in the client context:
 - *responsive*: boolean
 - *installation*: BeforeInstallPromptEvent
 - *registration*: ServiceWorkerRegistration
+
+The following keys are available as *readwrite* in the client context:
+
+- *headers*: object
 
 When a [server function](/server-functions) is called *fetching* will be set to true until the response is resolved.
 
@@ -139,6 +144,40 @@ class PWAInstaller extends Nullstack {
 
 export default PWAInstaller;
 ```
+
+## Custom headers
+
+You can use the *headers* key to configure the headers that the worker will use when fetching a server function.
+
+> 🔥 Headers will be ignored when a server function is called during the [server-side rendering](/server-side-rendering) process.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class LoginPage extends Nullstack {
+
+  // ...
+
+  async submit({worker}) {
+    // ...
+    this.headers['Authorization'] = `Bearer ${token}`;
+    // ...
+  }
+
+  static async authorize({request}) {
+    const authorization = request.headers['Authorization'];
+    // ...
+  }
+  
+  // ...
+
+}
+
+
+export default LoginPage;
+```
+
+> ✨ Learn more about the [server request and response](/server-request-and-response)
 
 ## Server-side render strategy
 

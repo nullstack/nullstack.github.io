@@ -20,6 +20,7 @@ The following keys are available in the object:
 - *schema*: object
 - *changes*: string
 - *priority*: number
+- *status*: number
 
 When the title key is assigned on the client-side, the document title will be updated.
 
@@ -76,7 +77,7 @@ export default Page;
 
 ## Custom Events
 
-Updating *page.title* will raise a custom *nullstack.page.title* event.
+Updating *page.title* will raise a custom event.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -84,7 +85,7 @@ import Nullstack from 'nullstack';
 class Analytics extends Nullstack {
 
   hydrate({page}) {
-    window.addEventListener('nullstack.page.title', () => {
+    window.addEventListener(page.event, () => {
       console.log(page.title);
     });
   }
@@ -93,6 +94,39 @@ class Analytics extends Nullstack {
 
 export default Analytics;
 ```
+
+## Error pages
+
+If during the [server-side render](/server-side-rendering) process the *page.status* has any value besides 200, your application will receive another render pass that gives you the chance to adjust the interface according to the status.
+
+The status key will be raised with the HTTP response.
+
+The page status will be modified to 500 and receive another render pass if the page raise an exception while rendering
+
+```jsx
+import Nullstack from 'nullstack';
+import ErrorPage from './ErrorPage';
+import HomePage from './HomePage';
+
+class Application extends Nullstack {
+
+  // ...
+
+  render({page}) {
+    return (
+      <main>
+        {page.status !== 200 && <ErrorPage route="*" />}
+        <HomePage route="/" />
+      </main>
+    )
+  }
+
+}
+
+export default Application;
+```
+
+> 🔥 Assigning to the status key during the [single-page application](/full-stack-lifecycle) mode will have no effect.
 
 ## Next step
 

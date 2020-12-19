@@ -233,7 +233,7 @@ class Application extends Nullstack {
 
 ## Custom Events
 
-Updating *router.url* or *router.path* will raise a custom *nullstack.router.url* event.
+Updating *router.url* or *router.path* will raise a custom event.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -241,7 +241,7 @@ import Nullstack from 'nullstack';
 class Analytics extends Nullstack {
 
   hydrate({router}) {
-    window.addEventListener('nullstack.router.url', () => {
+    window.addEventListener(router.event, () => {
       console.log(router.url);
     });
   }

@@ -103,7 +103,7 @@ This method is async and will only run in the client.
 
 This method runs on every component anytime the application state changes.
 
-> 🧨 Be careful not to cause infinite loopings when mutating state inside *update*.
+> 🔥 Be careful not to cause infinite loopings when mutating state inside *update*.
 
 This will run right before rendering but will not block the rendering queue.
 

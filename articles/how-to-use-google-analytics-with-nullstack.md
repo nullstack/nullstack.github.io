@@ -26,7 +26,7 @@ class GoogleAnalytics extends Nullstack {
       page_title: page.title,
       page_path: router.url
     });
-    window.addEventListener('nullstack.page.title', () => {
+    window.addEventListener(page.event, () => {
       gtag('event', 'page_view', {
         page_title: page.title,
         page_path: router.url
