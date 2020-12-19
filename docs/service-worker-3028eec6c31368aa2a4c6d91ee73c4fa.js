@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "187744d0c6c0495c953833f1bef230c6"
+    "key": "3028eec6c31368aa2a4c6d91ee73c4fa"
   },
   "project": {
     "type": "website",
@@ -37,6 +37,7 @@ self.context = {
     "enabled": true,
     "fetching": false,
     "preload": [
+      "/nullstack.svg",
       "/application-startup",
       "/context-environment",
       "/context-loading",
@@ -64,7 +65,6 @@ self.context = {
       "/static-site-generation",
       "/styles",
       "/two-way-bindings",
-      "/nullstack.svg",
       "/documentation",
       "/components"
     ],
