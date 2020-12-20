@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "3028eec6c31368aa2a4c6d91ee73c4fa"
+    "key": "3115adc5c3ec5ba9717e1b0e697e8812"
   },
   "project": {
     "type": "website",
@@ -27,6 +27,7 @@ self.context = {
     },
     "disallow": [],
     "sitemap": true,
+    "cdn": "",
     "name": "Nullstack",
     "domain": "nullstack.app",
     "color": "#d22365",
@@ -95,14 +96,14 @@ async function extractData(response) {
   const json = `{"instances": ${instances}, "page": ${page}}`;
   return new Response(json, {
     headers: {'Content-Type': 'application/json'}
-  })
+  });
 }
 
 async function injectData(templateResponse, cachedDataResponse) {
   const data = await cachedDataResponse.json();
   const input = await templateResponse.text();
   const output = input.split(`\n`).map((line) => {
-    if(line.indexOf('<meta name="generator" content="Created with Nullstack - https://nullstack.app" />') > -1) {
+    if(line.indexOf('<title>') > -1) {
       return line.replace(/(<title\b[^>]*>)[^<>]*(<\/title>)/i, `$1${data.page.title}$2`);
     } else if(line.indexOf('window.instances = ') > -1) {
       return `window.instances = ${JSON.stringify(data.instances)};`
@@ -204,26 +205,21 @@ function activate(event) {
 self.addEventListener('activate', activate);
 
 function staticStrategy(event) {
-
-  const url = new URL(event.request.url);
-
-  if(url.origin !== location.origin) return;
-  if(event.request.method !== 'GET') return;
-
-  if(url.pathname.indexOf(self.context.environment.key) > -1) {
-    return event.respondWith(cacheFirst(event));
-  }
-
-  if(url.pathname.indexOf('.') > -1) {
-    return event.respondWith(staleWhileRevalidate(event));
-  }
-
-  if(url.pathname === '/') {
-    return event.respondWith(networkFirst(event));
-  }
-
-  event.respondWith(networkDataFirst(event));
-
+  event.waitUntil(async function() {
+    const url = new URL(event.request.url);
+    if(url.origin !== location.origin) return;
+    if(event.request.method !== 'GET') return;
+    if(url.pathname.indexOf(self.context.environment.key) > -1) {
+      return event.respondWith(cacheFirst(event));
+    }
+    if(url.pathname.indexOf('.') > -1) {
+      return event.respondWith(staleWhileRevalidate(event));
+    }
+    if(url.pathname === '/') {
+      return event.respondWith(networkFirst(event));
+    }
+    event.respondWith(networkDataFirst(event));
+  }());
 }
 
 self.addEventListener('fetch', staticStrategy);
