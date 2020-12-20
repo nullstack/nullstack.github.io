@@ -67,6 +67,7 @@ class Application extends Nullstack {
     project.favicon = '/favicon.png';
     project.disallow = ['/admin'];
     project.sitemap = true;
+    project.cdn = 'https://cdn.nullstack.app';
   }
 
   prepare({project, page}) {
