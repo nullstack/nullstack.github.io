@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "3115adc5c3ec5ba9717e1b0e697e8812"
+    "key": "26bab87791fc67ab459d4647f80f5068"
   },
   "project": {
     "type": "website",
@@ -28,6 +28,7 @@ self.context = {
     "disallow": [],
     "sitemap": true,
     "cdn": "",
+    "protocol": "https",
     "name": "Nullstack",
     "domain": "nullstack.app",
     "color": "#d22365",
@@ -67,7 +68,10 @@ self.context = {
       "/styles",
       "/two-way-bindings",
       "/documentation",
-      "/components"
+      "/components",
+      "/roboto-v20-latin-300.woff2",
+      "/roboto-v20-latin-500.woff2",
+      "/crete-round-v9-latin-regular.woff2"
     ],
     "headers": {}
   }

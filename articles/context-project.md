@@ -34,6 +34,7 @@ The following keys are available in the object:
 - *disallow*: string array (relative paths)
 - *sitemap*: boolean or string (relative or absolute url)
 - *cdn*: string (absolute url)
+- *protocol* string (http or https)
 
 Besides *domain*, *name* and *color* all other keys have sensible defaults generated based on the application scope.
 
@@ -42,6 +43,8 @@ If you do not declare the *icons* key, Nullstack will scan any icons with the na
 If the *sitemap* key is set to true your robots.txt file will point the sitemap to *https://${project.domain}/sitemap.xml*.
 
 The *cdn* key will prefix your asset bundles and will be available in the context so you can manually prefix other assets.
+
+The *protocol* key is "http" in development mode and "https" in production mode by default
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -67,7 +70,8 @@ class Application extends Nullstack {
     project.favicon = '/favicon.png';
     project.disallow = ['/admin'];
     project.sitemap = true;
-    project.cdn = 'https://cdn.nullstack.app';
+    project.cdn = 'cdn.nullstack.app';
+    project.protocol = 'https';
   }
 
   prepare({project, page}) {

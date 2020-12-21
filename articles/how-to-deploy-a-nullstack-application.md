@@ -11,6 +11,8 @@ Nullstack compiles your code and all your dependencies using [Webpack](https://w
 
 The output of the compilation is moved to the *.production* folder and is the only folder besides *public* that needs to be moved into the host machine.
 
+If you have *project.cdn* set you must move the public folder to the actual cdn.
+
 > 💡 It is important that the *.production* folder is present for environment detection
 
 The host machine must have at least node v8.10.0 installed. 

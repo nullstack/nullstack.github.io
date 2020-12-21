@@ -101,7 +101,9 @@ If during the [server-side render](/server-side-rendering) process the *page.sta
 
 The status key will be raised with the HTTP response.
 
-The page status will be modified to 500 and receive another render pass if the page raise an exception while rendering
+The page status will be modified to 500 and receive another render pass if the page raise an exception while rendering.
+
+The status of [server functions](/server-functions) responses will be set to the *page.status*.
 
 ```jsx
 import Nullstack from 'nullstack';
