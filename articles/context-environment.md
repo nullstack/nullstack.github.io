@@ -43,4 +43,4 @@ The environment *key* is an md5 hash of the environment folder outputs that is a
 
 ## Next step
 
-⚔ Learn about the [context loading](/context-loading).
+⚔ Learn about the [context page](/context-page).

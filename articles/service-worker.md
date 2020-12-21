@@ -62,12 +62,11 @@ The following keys are available as *readonly* in the client context:
 - *responsive*: boolean
 - *installation*: BeforeInstallPromptEvent
 - *registration*: ServiceWorkerRegistration
+- *loading*: object
 
 The following keys are available as *readwrite* in the client context:
 
 - *headers*: object
-
-When a [server function](/server-functions) is called *fetching* will be set to true until the response is resolved.
 
 The *responsive* key determines if the application has all the responses it needs to render the current page.
 
@@ -143,6 +142,47 @@ class PWAInstaller extends Nullstack {
 }
 
 export default PWAInstaller;
+```
+
+## Loading Screens
+
+When a [server function](/server-functions) is called *fetching* will be set to true until the response is resolved.
+
+When a [server function](/server-functions) is called a key with the name of the [server function](/server-functions) invoked will be set to true in the *loading* key until the response is resolved.
+
+Any key you invoke on the *loading* object will always return a boolean instead of undefined for consistency.
+
+When the server is emulating the client context for [server-side rendering](/server-side-rendering), every key of the *loading* object will always return false, saving multiple render cycles in performance.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Page extends Nullstack {
+
+  static async save() {
+    // ...
+  }
+
+  async submit() {
+    await this.save();
+  }
+ 
+  render({worker}) {
+    return (
+      <form onsubmit={this.save}> 
+        {worker.fetching && 
+          <span> loading... </span>
+        }
+        <button disabled={worker.loading.save}> 
+          Save
+        </button>
+      </form>
+    )
+  }
+
+}
+
+export default Page;
 ```
 
 ## Custom headers

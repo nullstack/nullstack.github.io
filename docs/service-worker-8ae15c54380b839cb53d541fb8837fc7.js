@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "26bab87791fc67ab459d4647f80f5068"
+    "key": "8ae15c54380b839cb53d541fb8837fc7"
   },
   "project": {
     "type": "website",
@@ -41,8 +41,8 @@ self.context = {
     "preload": [
       "/nullstack.svg",
       "/application-startup",
+      "/context-data",
       "/context-environment",
-      "/context-loading",
       "/context-page",
       "/context-project",
       "/context-secrets",
@@ -73,7 +73,8 @@ self.context = {
       "/roboto-v20-latin-500.woff2",
       "/crete-round-v9-latin-regular.woff2"
     ],
-    "headers": {}
+    "headers": {},
+    "loading": {}
   }
 };
 

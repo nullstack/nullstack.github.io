@@ -42,8 +42,8 @@ class Documentation extends Nullstack {
         </Topic>
         <Topic title="Advanced concepts" description="These are concepts that you will most likely learn as you need in your projects">
           <Link title="Application Startup" />
+          <Link title="Context data" />
           <Link title="Context environment" />
-          <Link title="Context loading" />
           <Link title="Context page" />
           <Link title="Context project" />
           <Link title="Context settings" />

@@ -45,4 +45,4 @@ export default Application;
 
 ## Next step
 
-⚔ Learn about the [context environment](/context-environment).
+⚔ Learn about the [context data](/context-data).

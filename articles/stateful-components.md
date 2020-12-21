@@ -103,6 +103,7 @@ export default Paginator;
 
 Attributes of the event target will be merged to the instance context and can be destructured in the function signature.
 
+
 ```jsx
 import Nullstack from 'nullstack';
 
@@ -126,6 +127,10 @@ class Counter extends Nullstack {
 
 export default Counter;
 ```
+
+> 💡 Any attribute with primitive value will be added to the DOM. 
+
+> ✨ Consider using [data attributes](/context-data) to make your html valid.
 
 ## Original Event
 
