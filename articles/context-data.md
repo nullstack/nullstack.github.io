@@ -29,8 +29,9 @@ class ContextData extends Nullstack {
   }
 
   renderInner(context) {
+    const {data} = context;
     return (
-      <div data={context.data}>
+      <div data={data}>
         {data.frameworkName}
         is same as
         {context['data-framework-name']}
