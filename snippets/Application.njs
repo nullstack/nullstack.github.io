@@ -1,10 +1,10 @@
 import Nullstack from 'nullstack';
 import TaskList from './TaskList';
+import {readFileSync} from 'fs';
 
 class Application extends Nullstack {
 
   static async getTasks({limit}) {
-    const {readFileSync} = await import('fs');
     const json = readFileSync('tasks.json', 'utf-8');
     return JSON.parse(json).tasks.slice(0, limit);
   }

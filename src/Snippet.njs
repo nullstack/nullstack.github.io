@@ -1,16 +1,16 @@
 import Nullstack from 'nullstack';
+import {readFileSync} from 'fs';
+import prismjs from 'prismjs';
 
 class Snippet extends Nullstack {
 
   html = '';
 
   static async getSnippetByKey({key}) {
-    const {readFileSync} = await import('fs');
-    const {default: Prism} = await import('prismjs');
     await import('prismjs/components/prism-jsx.min');
     const path = `snippets/${key}.njs`;
     const code = readFileSync(path, 'utf-8');
-    return Prism.highlight(code, Prism.languages.jsx, 'javascript');
+    return prismjs.highlight(code, Prism.languages.jsx, 'javascript');
   }
 
   async initiate({key}) {

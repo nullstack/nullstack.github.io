@@ -1,5 +1,9 @@
 import Nullstack from 'nullstack';
 import './Article.scss';
+import {existsSync, readFileSync} from 'fs';
+import prismjs from 'prismjs';
+import {Remarkable} from 'remarkable';
+import meta from 'remarkable-meta';
 
 class Component extends Nullstack {
 
@@ -7,18 +11,14 @@ class Component extends Nullstack {
   html = '';
 
   static async getArticleByKey({key}) {
-    const {existsSync, readFileSync} = await import('fs');
-    const {default: Prism} = await import('prismjs');
     await import('prismjs/components/prism-jsx.min');
-    const {Remarkable} = await import('remarkable');
-    const {default: meta} = await import('remarkable-meta');
     const path = `articles/${key}.md`;
     if(!existsSync(path)) {
       return {};
     }
     const text = readFileSync(path, 'utf-8');
     const md = new Remarkable({
-      highlight: (code) => Prism.highlight(code, Prism.languages.jsx, 'javascript')
+      highlight: (code) => Prism.highlight(code, prismjs.languages.jsx, 'javascript')
     });
     md.use(meta);
     md.use((md) => {

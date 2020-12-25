@@ -8,12 +8,12 @@ import Footer from './Footer';
 import Home from './Home';
 import Loader from './Loader';
 import GoogleAnalytics from 'nullstack-google-analytics';
+import path from 'path';
+import {readdirSync} from 'fs';
 
 class Application extends Nullstack {
 
   static async startWorker({worker}) {
-    const {default: path} = await import('path');
-    const {readdirSync} = await import('fs');
     const articles = readdirSync(path.join(__dirname, '..', 'articles'));
     worker.preload = [
       '/nullstack.svg',

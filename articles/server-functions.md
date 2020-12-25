@@ -119,16 +119,20 @@ export default Component;
 
 ## Server only imports
 
-You can use the async version of import inside a server function to import a dependency only on the server bundle.
+Imported dependencies that are only used inside server functions will be excluded from the client bundle.
+
+This is useful for both accessing node.js exclusive modules and reducing the client bundle size by preprocessing data like markdown without having to expose the dependency to the end-user.
 
 ```jsx
 import Nullstack from 'nullstack';
+import {readFileSync} from 'fs';
+import {Remarkable} from 'remarkable';
 
 class Application extends Nullstack {
 
   static async getTasks() {
-    const {readFileSync} = await import('fs');
-    // ...
+    const readme = readFileSync('README.md', 'utf-8');
+    return new Remarkable().render(readme);
   }
 
   // ...

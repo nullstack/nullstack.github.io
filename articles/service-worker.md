@@ -29,12 +29,12 @@ The assets required to start the application will be preloaded automatically, an
 
 ```jsx
 import Nullstack from 'nullstack';
+import path from 'path';
+import {readdirSync} from 'fs';
 
 class Application extends Nullstack {
 
   static async start({worker}) {
-    const {default: path} = await import('path');
-    const {readdirSync} = await import('fs');
     const articles = readdirSync(path.join(__dirname, '..', 'articles'));
     worker.preload = [
       ...articles.map((article) => '/' + article.replace('.md', '')),

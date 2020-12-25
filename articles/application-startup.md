@@ -11,11 +11,11 @@ The start function will run only once when your application is booted and is a g
 
 ```jsx
 import Nullstack from 'nullstack';
+import database from './database';
 
 class Application extends Nullstack {
 
   static async start(context) {
-    const {database} = await import('./database');
     context.database = database;
   }
 

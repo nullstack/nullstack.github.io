@@ -21,6 +21,7 @@ The last step is to simply assign the database connection to the server context.
 
 ```jsx
 import Nullstack from 'nullstack';
+import {MongoClient} from 'mongodb';
 
 class Application extends Nullstack {
 
@@ -33,7 +34,6 @@ class Application extends Nullstack {
 
   static async startDatabase(context) {
     const {secrets} = context;
-    const {MongoClient} = await import('mongodb');
     const databaseClient = new MongoClient(secrets.databaseHost);
     await databaseClient.connect();
     context.database = await databaseClient.db(secrets.databaseName);

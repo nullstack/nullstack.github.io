@@ -25,11 +25,11 @@ On both *server* and *client* bundles, a hash with the md5 of the original sourc
 
 ```jsx
 import List from './List';
+import {readFileSync} from 'fs';
 
 class Tasks extends List {
 
   static async getTasks({limit}) {
-    const {readFileSync} = await import('fs');
     const json = readFileSync('tasks.json', 'utf-8');
     return JSON.parse(json).tasks.slice(0, limit);
   }
