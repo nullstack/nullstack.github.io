@@ -82,9 +82,9 @@ class Component extends Nullstack {
       <div class="md+x4 p1">
         <div class="xx bgm2 p8y p4x">
           <Icon height={40} class="cm2 cd m4b" />
-          <h3 class="x12 f6">
+          <h2 class="x12 f6">
             <a href={link} class="ci1">{title}</a>
-          </h3>
+          </h2>
           <p class="x12 f4 m4y"> {description} </p>
         </div>
       </div>
