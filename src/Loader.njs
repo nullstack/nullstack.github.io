@@ -6,7 +6,7 @@ class Loader extends Nullstack {
   render({worker}) {
     if(!worker.fetching) return false;
     return (
-      <div class="z12 fbl ftr xx y12 yy bgm1" style="opacity: 0.9">
+      <div class="z24 pftl xx yy x12 xvw y12 yvh bgm1 op18">
         <Cog animation="spin" speed="slow" height={40} class="cm3" />
       </div>
     )

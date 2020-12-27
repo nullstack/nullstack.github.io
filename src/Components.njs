@@ -10,7 +10,7 @@ class Documentation extends Nullstack {
 
   renderProject({title, repository}) {
     return (
-      <a href={repository} target="_blank" rel="noopener" class="xl x12 p3y bcm2t ci1h">
+      <a href={repository} target="_blank" rel="noopener" class="xl x12 p3y bcm2t ci1:h">
         {title}
       </a>
     )
@@ -19,7 +19,7 @@ class Documentation extends Nullstack {
   renderTopic({title, children}) {
     return (
       <div class="x12 m6y bcm2 p4x p4t p1b">
-        <h2 class="x12 sm-f6 md+f8 m3b"> {title} </h2>
+        <h2 class="x12 sm-fs6 md+fs8 m3b"> {title} </h2>
         <nav class="x12"> {children} </nav>
       </div>
     )
@@ -28,8 +28,8 @@ class Documentation extends Nullstack {
   render() {
     return (
       <section class="x sm-p4x sm-p10y md+p20y">
-        <h1 class="x12 sm-f6 md+f12 m2b"> Community Components </h1>
-        <p class="x12 f4"> A curated list of Nullstack components made by the community. </p>
+        <h1 class="x12 sm-fs6 md+fs12 m2b"> Community Components </h1>
+        <p class="x12 fs4"> A curated list of Nullstack components made by the community. </p>
         <p class="m2t"> 
           If you want to add a component to this list
           <a href="https://github.com/nullstack/nullstack.github.io/issues" class="ci1"> open an issue on github </a>.

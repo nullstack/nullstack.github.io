@@ -67,7 +67,7 @@ class Component extends Nullstack {
   renderArticle() {
     return (
       <section class="x sm-p4x sm-p10y md+p20y"> 
-        <h1 class="x12 sm-f6 md+f8 m6b"> {this.title} </h1>
+        <h1 class="x12 sm-fs6 md+fs8 m6b"> {this.title} </h1>
         <article html={this.html} />
       </section>
     )
@@ -76,7 +76,7 @@ class Component extends Nullstack {
   renderNotFound() {
     return (
       <section class="x sm-p4x sm-p10y md+p20y"> 
-        <h1 class="x12 sm-f6 md+f8 m6b"> Page not Found </h1>
+        <h1 class="x12 sm-fs6 md+fs8 m6b"> Page not Found </h1>
         <article>
           <p> 
             Perhaps you want to learn about 

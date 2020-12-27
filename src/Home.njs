@@ -15,14 +15,14 @@ class Component extends Nullstack {
   renderHero() {
     return (
       <section class="x xx sm-p2x p20y">
-        <h1 class="x12 sm-f8 md+f12"> Full-stack Javascript Components </h1>
+        <h1 class="x12 sm-fs8 md+fs12"> Full-stack Javascript Components </h1>
         <div class="xx x8 m12b" style="background-image: linear-gradient(0deg, #fff 49%, #e2e8f0 50%, #fff 52%);"> 
-          <p class="bgm1 f6 p2"> for one-dev armies </p>
+          <p class="bgm1 fs6 p2"> for one-dev armies </p>
         </div>
-        <div style="letter-spacing: 1.2px; line-height: 120%;">
-          <p class="x12 f4"> Nullstack is a full-stack framework for building <strong>progressive web applications</strong>. </p>
-          <p class="x12 f4"> It connects a <strong>stateful UI</strong> layer to specialized <strong>microservices</strong> in the same component using <strong>vanilla javascript.</strong> </p>
-          <p class="x12 f4 m4t"> Focus on solving your business logic instead of writing glue code. </p>
+        <div>
+          <p class="x12 fs4 lh12 ls12"> Nullstack is a full-stack framework for building <strong>progressive web applications</strong>. </p>
+          <p class="x12 fs4 lh12 ls12"> It connects a <strong>stateful UI</strong> layer to specialized <strong>microservices</strong> in the same component using <strong>vanilla javascript.</strong> </p>
+          <p class="x12 fs4 lh12 ls12 m4t"> Focus on solving your business logic instead of writing glue code. </p>
         </div>
       </section>
     )
@@ -30,10 +30,10 @@ class Component extends Nullstack {
 
   renderFeature({title, key, link}) {
     return (
-      <div class="sm-x12 md+x6 p1">
+      <div class="md-x12 lg+x6 p1">
         {!!title && 
           <div class="xsb bcm2 p4">
-            <h3 class="ff2 fw3 f4">
+            <h3 class="ff2 fw3 fs4">
               <a href={link} class="ci1">{title}</a>
             </h3>
           </div>
@@ -45,17 +45,17 @@ class Component extends Nullstack {
 
   renderShowcase() {
     return (
-      <section class="lg:x xl lg-p2x bcm2b">
+      <section class="x lg-x12z xl lg-p2x bcm2b">
         <Feature key="Application" />
         <Feature key="TaskList" />
-        <p class="xx x12 m6t p4x" style="line-height: 160%;">
+        <p class="xx x12 m6t p4x lh16">
           The example above uses 
           <a href="/server-functions" class="ci1 p1x"> server functions </a>
           to read tasks from a JSON file and store them in the 
           <a href="/context" class="ci1 p1x"> context </a>
           available to all components.  
         </p>
-        <p class="xx x12 m6b p4x" style="line-height: 160%;"> 
+        <p class="xx x12 m6b p4x lh16"> 
           The tasks are listed in a specific
           <a href="/routes-and-params" class="ci1 p1x"> route </a>
           that renders a component with multiple
@@ -70,9 +70,9 @@ class Component extends Nullstack {
   renderAbout() {
     return (
       <section class="x xx sm-p2x sm-p10y md+p20t md+p10b">
-        <h2 class="x12 sm-f8 md+f12 m2b"> Complete Features as Components </h2>
-        <p class="x12 f4"> Nullstack is not another part of your stack, it is your stack </p>
-        <p class="x12 f4"> Your application can be exported from back-end to front-end as a component and mounted into another application </p>
+        <h2 class="x12 sm-fs8 md+fs12 m2b"> Complete Features as Components </h2>
+        <p class="x12 fs4"> Nullstack is not another part of your stack, it is your stack </p>
+        <p class="x12 fs4"> Your application can be exported from back-end to front-end as a component and mounted into another application </p>
       </section>
     )
   }
@@ -81,11 +81,11 @@ class Component extends Nullstack {
     return (
       <div class="md+x4 p1">
         <div class="xx bgm2 p8y p4x">
-          <Icon height={40} class="cm2 cd m4b" />
-          <h2 class="x12 f6">
+          <Icon height={40} class="cm2z m4b" />
+          <h2 class="x12 fs6">
             <a href={link} class="ci1">{title}</a>
           </h2>
-          <p class="x12 f4 m4y"> {description} </p>
+          <p class="x12 fs4 m4y"> {description} </p>
         </div>
       </div>
     )
@@ -119,15 +119,15 @@ class Component extends Nullstack {
   renderProductivity() {
     return (
       <section class="x xx sm-p2x sm-p10y md+p20y">
-        <h2 class="x12 sm-f8 md+f12 m2b"> Productivity is in the Details </h2>
-        <p class="x12 f4"> Nullstack features have been extracted from real life projects with convenience and consistency in mind </p>
+        <h2 class="x12 sm-fs8 md+fs12 m2b"> Productivity is in the Details </h2>
+        <p class="x12 fs4"> Nullstack features have been extracted from real life projects with convenience and consistency in mind </p>
       </section>
     )
   }
 
   renderFeatures() {
     return (
-      <section class="lg:x xl lg-p2x">
+      <section class="x lg-x12z xl lg-p2x">
         <Feature 
           title="Stateful Components"
           key="Stateful"
@@ -156,8 +156,8 @@ class Component extends Nullstack {
     return (
       <section class="bgm2 sm-p2x sm-m10t md+m20t p10y">
         <div class="x xx">
-          <h2 class="x12 sm-f8 md+f12"> Why should you use Nullstack? </h2>
-          <blockquote class="xl sm-x12 md+x10 bcm2 f4 p4 m4y"> 
+          <h2 class="x12 sm-fs8 md+fs12"> Why should you use Nullstack? </h2>
+          <blockquote class="xl sm-x12 md+x10 bcm2 fs4 p4 m4y"> 
             <p class="m3b"> 
               Nullstack was made for small teams or even one-dev armies that have to quickly adapt to scope changes.
             </p>
@@ -183,9 +183,9 @@ class Component extends Nullstack {
               Nullstack makes no compromises but doesn't try to impress or enforce. It is made with an aim, and might not be for everyone. It is like a bicycle that removed the training wheels so you can go faster.
             </p>
           </blockquote>
-          <p class="x12 f4 fw7 m3b"> Don't be afraid of testing a new ecosystem, because it's not new at all </p>
-          <p class="x12 f4"> There is no "Nullstack Way" of doing things, it is just javascript and you can use any isomorphic vanilla package made throughout history </p>
-          <a href="/documentation" class="bci1 cm1 ci1h bgi1 bgm1h m6t p2y p4x"> Read the Documentation </a>
+          <p class="x12 fs4 fw7 m3b"> Don't be afraid of testing a new ecosystem, because it's not new at all </p>
+          <p class="x12 fs4"> There is no "Nullstack Way" of doing things, it is just javascript and you can use any isomorphic vanilla package made throughout history </p>
+          <a href="/documentation" class="bci1 cm1 ci1:h bgi1 bgm1:h m6t p2y p4x"> Read the Documentation </a>
         </div>
       </section>
     )

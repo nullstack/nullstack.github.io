@@ -13,14 +13,14 @@ class Header extends Nullstack {
         target={target}
         onclick={target ? false : {expanded: false}}
         rel={target ? 'noopener' : false}
-        class="sm-x12 sm-bcm2b p2 ci1h"
+        class="sm-x12 sm-bcm2b p2 ci1:h"
       > {title} </a>
     )
   }
   
   render() {
     return (
-      <header class="x12 ftl bgm1 s1">
+      <header class="x12 pftl bgm1 bs2">
         <div class="x xsb yy p4y">
           <div class="sm-x12 sm-xsb sm-p4x yy">
             <a href="/" title="Nullstack">
@@ -37,7 +37,7 @@ class Header extends Nullstack {
             <Link title="Source" href="https://github.com/nullstack/nullstack" target="_blank" />
           </nav>
           <div class={`sm-x12 sm-p4x ${!this.expanded && 'sm-off'}`}>
-            <a href="/getting-started" onclick={{expanded: false}} class="xx sm-x12 bci1 bgi1 bgm1h cm1 ci1h p4x p2y">
+            <a href="/getting-started" onclick={{expanded: false}} class="xx sm-x12 bci1 bgi1 bgm1:h cm1 ci1:h p4x p2y">
               Get Started
             </a>
           </div>

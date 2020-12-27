@@ -11,15 +11,15 @@ class Documentation extends Nullstack {
   renderLink({title}) {
     const href = '/' + title.toLowerCase().split(' ').join('-');
     return (
-      <a href={href} class="xl x12 p3y bcm2t ci1h"> {title} </a>
+      <a href={href} class="xl x12 p3y bcm2t ci1:h"> {title} </a>
     )
   }
 
   renderTopic({title, description, children}) {
     return (
       <div class="x12 m6y bcm2 p4x p4t p1b">
-        <h2 class="x12 sm-f6 md+f8 m2b"> {title} </h2>
-        <p class="x12 f4 m6b"> {description} </p>
+        <h2 class="x12 sm-fs6 md+fs8 m2b"> {title} </h2>
+        <p class="x12 fs4 m6b"> {description} </p>
         <nav class="x12"> {children} </nav>
       </div>
     )
@@ -28,8 +28,8 @@ class Documentation extends Nullstack {
   render() {
     return (
       <section class="x sm-p4x sm-p10y md+p20y">
-        <h1 class="x12 sm-f6 md+f12 m2b"> Nullstack Documentation </h1>
-        <p class="x12 f4"> Follow these steps and become a full-stack javascript developer! </p>
+        <h1 class="x12 sm-fs6 md+fs12 m2b"> Nullstack Documentation </h1>
+        <p class="x12 fs4"> Follow these steps and become a full-stack javascript developer! </p>
         <Topic title="Core concepts" description="Start your journey in Nullstack with these basic concepts">
           <Link title="Getting started" />
           <Link title="Renderable components" />
