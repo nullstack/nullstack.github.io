@@ -69,10 +69,10 @@ class Component extends Nullstack {
 
   renderAbout() {
     return (
-      <section class="x xx sm-p2x sm-p10y md+p20y">
-        <h2 class="x12 sm-f8 md+f12 m2b"> Nullstack is your Application </h2>
+      <section class="x xx sm-p2x sm-p10y md+p20t md+p10b">
+        <h2 class="x12 sm-f8 md+f12 m2b"> Complete Features as Components </h2>
         <p class="x12 f4"> Nullstack is not another part of your stack, it is your stack </p>
-        <p class="x12 f4"> Your application can be exported from back-end to front-end as a component and mounted in another application </p>
+        <p class="x12 f4"> Your application can be exported from back-end to front-end as a component and mounted into another application </p>
       </section>
     )
   }
@@ -97,19 +97,19 @@ class Component extends Nullstack {
         <Step 
           icon={Cog}
           title="Server-Side Rendering"
-          description="Nullstack prerenders your route in a single request using local functions on the first visit and generates SEO ready HTML"
+          description="Nullstack prerenders your route in a single request using local functions on the first visit and generates SEO ready HTML optimized for the first paint with zero javascript dependencies"
           link="/server-side-rendering"
         />
         <Step 
           icon={Heartbeat}
           title="Single Page Application"
-          description="Subsequent requests will fetch JSON from an automatically generated API, update the application state, and rerender the page"
+          description="Requests after hydration will fetch JSON from an API automatically generated from the server functions, update the application state, and rerender the page"
           link="/full-stack-lifecycle"
         />
         <Step 
           icon={QRCode}
           title="Static Site Generation"
-          description="Optionally you can use Nullstack to generate static websites for lightning-fast static applications using the full power of Nullstack"
+          description="Optionally you can use Nullstack to generate lightning-fast static websites that serve HTML and become a single page application using an automatically generated static API"
           link="/static-site-generation"
         />
       </section>
@@ -195,9 +195,9 @@ class Component extends Nullstack {
     return (
       <div>
         <Hero />
-        <Showcase />
-        <About />
         <Cycle />
+        <About />
+        <Showcase />
         <Productivity />
         <Features />
         <Why />
