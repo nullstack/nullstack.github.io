@@ -33,6 +33,18 @@ class Component extends Nullstack {
         return result;
       };
     });
+    md.use((md) => {
+      md.renderer.rules.heading_open = function (tokens, i) {
+        const {content} = tokens[i+1];
+        const {hLevel} = tokens[i];
+        const id = content.toLowerCase().split(/[^a-z]/).join('-');
+        return `<h${hLevel} id="${id}"><a href="#${id}">`;
+      }
+      md.renderer.rules.heading_close = function (tokens, i) {
+        const {hLevel} = tokens[i];
+        return `</a></h${hLevel}>`;
+      }
+    });
     return {
       html: md.render(text),
       ...md.meta

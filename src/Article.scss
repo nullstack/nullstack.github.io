@@ -2,6 +2,13 @@
 
 article {
 
+  :target::before {
+    content: '';
+    display: block;
+    height: calc(80px + 1rem);
+    margin-top: calc(-80px + -1rem);
+  }
+
   h2 {
     margin-top: 2rem;
   }
@@ -21,6 +28,12 @@ article {
 
   a {
     color: var(--primary-color);
+  }
+
+  h2, h3 {
+    a {
+      color: var(--heavy-color);
+    }
   }
 
   em {
