@@ -21,7 +21,7 @@ class Component extends Nullstack {
         </div>
         <div>
           <p class="x12 fs4 lh12 ls12"> Nullstack is a full-stack framework for building <strong>progressive web applications</strong>. </p>
-          <p class="x12 fs4 lh12 ls12"> It connects a <strong>stateful UI</strong> layer to specialized <strong>microservices</strong> in the same component using <strong>vanilla javascript.</strong> </p>
+          <p class="x12 fs4 lh12 ls12"> It connects a <strong> stateful UI </strong> layer to specialized <strong>microservices</strong> in the same component using <strong>vanilla javascript.</strong> </p>
           <p class="x12 fs4 lh12 ls12 m4t"> Focus on solving your business logic instead of writing glue code. </p>
         </div>
       </section>
@@ -77,7 +77,7 @@ class Component extends Nullstack {
     )
   }
 
-  renderStep({title, description, link, icon: Icon}) {
+  renderStep({title, children, link, icon: Icon}) {
     return (
       <div class="md+x4 p1">
         <div class="xx bgm2 p8y p4x">
@@ -85,7 +85,7 @@ class Component extends Nullstack {
           <h2 class="x12 fs6">
             <a href={link} class="ci1">{title}</a>
           </h2>
-          <p class="x12 fs4 m4y"> {description} </p>
+          <p class="x12 fs4 m4y"> {children} </p>
         </div>
       </div>
     )
@@ -94,24 +94,20 @@ class Component extends Nullstack {
   renderCycle() {
     return (
       <section class="x xx sm-p2x md+bcm2y md+p10y">
-        <Step 
-          icon={Cog}
-          title="Server-Side Rendering"
-          description="Nullstack prerenders your route in a single request using local functions on the first visit and generates SEO ready HTML optimized for the first paint with zero javascript dependencies"
-          link="/server-side-rendering"
-        />
-        <Step 
-          icon={Heartbeat}
-          title="Single Page Application"
-          description="Requests after hydration will fetch JSON from an API automatically generated from the server functions, update the application state, and rerender the page"
-          link="/full-stack-lifecycle"
-        />
-        <Step 
-          icon={QRCode}
-          title="Static Site Generation"
-          description="Optionally you can use Nullstack to generate lightning-fast static websites that serve HTML and become a single page application using an automatically generated static API"
-          link="/static-site-generation"
-        />
+        <Step icon={Cog} title="Server-Side Rendering" link="/server-side-rendering">
+          Nullstack <strong> prerenders </strong> your route in a single request using local functions
+          on the first visit and generates <strong> SEO ready</strong> HTML optimized for the
+          first paint with <strong> zero javascript </strong> dependencies.
+        </Step>
+        <Step icon={Heartbeat} title="Single Page Application" link="/full-stack-lifecycle">
+          After hydration, requests will fetch JSON from an <strong> automatically generated API </strong> 
+          off server functions, update the application state, and rerender the page.
+        </Step>
+        <Step icon={QRCode} title="Static Site Generation" link="/static-site-generation">
+          You can even use Nullstack to generate lightning-fast <strong> static websites </strong> 
+          that serve HTML and become a <strong> single page application </strong> 
+          using an automatically generated <strong> static API </strong>.
+        </Step>
       </section>
     )
   }
