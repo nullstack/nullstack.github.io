@@ -13,7 +13,7 @@
     "deploy": "npx create-nullstatic-app docs"
   },
   "dependencies": {
-    "nullsheet": "github:nullsheet/nullsheet#0.2.0",
+    "nullsheet": "github:nullsheet/nullsheet",
     "nullstack-google-analytics": "^1.0.0",
     "poisonicon": "^0.1.1",
     "prismjs": "^1.22.0",

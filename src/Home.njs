@@ -45,24 +45,26 @@ class Component extends Nullstack {
 
   renderShowcase() {
     return (
-      <section class="x lg-x12z xl lg-p2x bcm2b">
-        <Feature key="Application" />
-        <Feature key="TaskList" />
-        <p class="xx x12 m6t p4x lh16">
-          The example above uses 
-          <a href="/server-functions" class="ci1 p1x"> server functions </a>
-          to read tasks from a JSON file and store them in the 
-          <a href="/context" class="ci1 p1x"> context </a>
-          available to all components.  
-        </p>
-        <p class="xx x12 m6b p4x lh16"> 
-          The tasks are listed in a specific
-          <a href="/routes-and-params" class="ci1 p1x"> route </a>
-          that renders a component with multiple
-          <a href="/renderable-components" class="ci1 p1x"> inner components </a>
-          filtered by status with inputs using
-          <a href="/two-way-bindings" class="ci1 p1l"> two-way bindings </a>.
-        </p>
+      <section class="x lg-x12z xl bcm2b">
+        <div class="xl bgm2">
+          <Feature key="Application" />
+          <Feature key="TaskList" />
+          <p class="xx x12 m5t p4x lh16">
+            The example above uses 
+            <a href="/server-functions" class="ci1 p1x"> server functions </a>
+            to read tasks from a JSON file and store them in the 
+            <a href="/context" class="ci1 p1x"> context </a>
+            available to all components.  
+          </p>
+          <p class="xx x12 m6b p4x lh16"> 
+            The tasks are listed in a specific
+            <a href="/routes-and-params" class="ci1 p1x"> route </a>
+            that renders a component with multiple
+            <a href="/renderable-components" class="ci1 p1x"> inner components </a>
+            filtered by status with inputs using
+            <a href="/two-way-bindings" class="ci1 p1l"> two-way bindings </a>.
+          </p>
+        </div>
       </section>
     )
   }
@@ -95,9 +97,9 @@ class Component extends Nullstack {
     return (
       <section class="x xx sm-p2x md+bcm2y md+p10y">
         <Step icon={Cog} title="Server-Side Rendering" link="/server-side-rendering">
-          Nullstack <strong> prerenders </strong> your route in a single request using local functions
-          on the first visit and generates <strong> SEO ready</strong> HTML optimized for the
-          first paint with <strong> zero javascript </strong> dependencies.
+          Nullstack generates <strong> SEO ready </strong> HTML optimized for the
+          first paint of your route in a single request using local functions
+          with <strong> zero javascript </strong> dependencies in the client bundle.
         </Step>
         <Step icon={Heartbeat} title="Single Page Application" link="/full-stack-lifecycle">
           After hydration, requests will fetch JSON from an <strong> automatically generated API </strong> 
@@ -105,7 +107,7 @@ class Component extends Nullstack {
         </Step>
         <Step icon={QRCode} title="Static Site Generation" link="/static-site-generation">
           You can even use Nullstack to generate lightning-fast <strong> static websites </strong> 
-          that serve HTML and become a <strong> single page application </strong> 
+          that serve HTML and become a  single page application 
           using an automatically generated <strong> static API </strong>.
         </Step>
       </section>
@@ -148,40 +150,54 @@ class Component extends Nullstack {
     )
   }
 
+  renderReason({title, description, closer, link}) {
+    return (
+      <div class="md+x6 p1">
+        <div class="xx bgm2 p8y p4x y12">
+          <Icon height={40} class="cm2z m4b" />
+          <h3 class="x12 fs6">
+            <a href={link} class="ci1">{title}</a>
+          </h3>
+          <p class="x12 fs4 m4y"> {description} </p>
+          <strong>{closer}</strong>
+        </div>
+      </div>
+    )
+  }
+
   renderWhy() {
     return (
-      <section class="bgm2 sm-p2x sm-m10t md+m20t p10y">
+      <section class="sm-p2x md+bcm2y sm-m10t md+m20t p10y">
         <div class="x xx">
           <h2 class="x12 sm-fs8 md+fs12"> Why should you use Nullstack? </h2>
-          <blockquote class="xl sm-x12 md+x10 bcm2 fs4 p4 m4y"> 
-            <p class="m3b"> 
-              Nullstack was made for small teams or even one-dev armies that have to quickly adapt to scope changes.
-            </p>
-            <p class="m3b cm3 cl">
-              When working as a freelance developer, it's customary to have to switch between a selection of projects on the same day, and to even start projects without the customer being fully aware of what they want.
-            </p>
-            <p class="m3b"> 
-              Common patterns tend to enforce bureaucracy over flexibility. The code becomes so fragmented that overviewing a feature you implemented months ago takes longer than coding the requested update.
-            </p>
-            <p class="m3b cm3 cl"> 
-              With the rise of front-end frameworks and microservices, the server and client worlds get more out of sync in terms of implementation, making componentization and code reusability between projects very tedious.
-            </p>
-            <p class="m3b">
-              Frameworks tend to have mannerisms, making you waste your time whenever you have to change or upgrade technologies.
-            </p>
-            <p class="m3b cm3 cl">
-              Nullstack is inspired by the concept of 'developer happiness' from Ruby and 'batteries included' from Ember.js.
-            </p>
-            <p class="m3b"> 
-              The goal was to make something that could be easily overviewed and reused feature by feature while staying as close to vanilla as possible in order to use the existing ecosystem instead of having a framework version of each package.
-            </p>
-            <p class="cm3 cl"> 
-              Nullstack makes no compromises but doesn't try to impress or enforce. It is made with an aim, and might not be for everyone. It is like a bicycle that removed the training wheels so you can go faster.
-            </p>
-          </blockquote>
-          <p class="x12 fs4 fw7 m3b"> Don't be afraid of testing a new ecosystem, because it's not new at all </p>
-          <p class="x12 fs4"> There is no "Nullstack Way" of doing things, it is just javascript and you can use any isomorphic vanilla package made throughout history </p>
-          <a href="/documentation" class="bci1 cm1 ci1:h bgi1 bgm1:h m6t p2y p4x"> Read the Documentation </a>
+          <div class="xl p10y">
+            <Reason 
+              title="Quickly adapt to scope changes"
+              description="The horizontal structure, as opposed to a hierarchical one, makes it a lot easier to move resources around."
+              link="/"
+              closer="Flexibility over bureaucracy."
+            />
+            <Reason 
+              title="Scalable Development"
+              description="Every project starts small and becomes complex over time. Scale as you go, no matter the size of the team."
+              link="/"
+              closer="No compromises, no enforcements."
+            />
+            <Reason 
+              title="Feature-driven Development"
+              description="Development of both back and front ends of a feature in the same component in an organized way with ease of overview."
+              link="/"
+              closer="True componentization and code reusability."
+            />
+            <Reason 
+              title="Already existing ecosystem"
+              description="Takes advantage of any isomorphic vanilla Javascript package made throughout history."
+              link="/"
+              closer="All of your application speaks the same language."
+            />
+          </div>
+          <a href="/documentation" class="bci1 cm1 ci1:h bgi1 bgm1:h p2y p4x"> Get Started </a>
+          <span class="x12 fs4"> ╰(*°▽°*)╯ </span>
         </div>
       </section>
     )

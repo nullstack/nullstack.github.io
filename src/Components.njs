@@ -10,7 +10,7 @@ class Documentation extends Nullstack {
 
   renderProject({title, repository}) {
     return (
-      <a href={repository} target="_blank" rel="noopener" class="xl x12 p3y bcm2t ci1:h">
+      <a href={repository} target="_blank" rel="noopener" class="xl x12 p3y bcm2t ci1">
         {title}
       </a>
     )

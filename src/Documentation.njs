@@ -11,7 +11,7 @@ class Documentation extends Nullstack {
   renderLink({title}) {
     const href = '/' + title.toLowerCase().split(' ').join('-');
     return (
-      <a href={href} class="xl x12 p3y bcm2t ci1:h"> {title} </a>
+      <a href={href} class="xl x12 p3y bcm2t ci1"> {title} </a>
     )
   }
 
