@@ -7,7 +7,7 @@ Create full-stack javascript applications within seconds using *npx* to generate
 
 > 🔥 The minimum required [node.js](https://nodejs.org) version for development mode is *12.12.0*.
 
-Replace project-name with your project name and run the command below to start a project: 
+Replace *project-name* with your project name and run the command below to start a project: 
 
 ```sh
 npx create-nullstack-app project-name
@@ -16,7 +16,7 @@ npx create-nullstack-app project-name
 Change directory to the generated folder:
 
 ```sh
-cd app-name
+cd project-name
 ```
 
 Install the dependencies:
