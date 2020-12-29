@@ -45,25 +45,27 @@ class Component extends Nullstack {
 
   renderShowcase() {
     return (
-      <section class="x lg-x12z xl bcm2b">
-        <div class="xl bgm2">
-          <Feature key="Application" />
-          <Feature key="TaskList" />
-          <p class="xx x12 m5t p4x lh16">
-            The example above uses 
-            <a href="/server-functions" class="ci1 p1x"> server functions </a>
-            to read tasks from a JSON file and store them in the 
-            <a href="/context" class="ci1 p1x"> context </a>
-            available to all components.  
-          </p>
-          <p class="xx x12 m6b p4x lh16"> 
-            The tasks are listed in a specific
-            <a href="/routes-and-params" class="ci1 p1x"> route </a>
-            that renders a component with multiple
-            <a href="/renderable-components" class="ci1 p1x"> inner components </a>
-            filtered by status with inputs using
-            <a href="/two-way-bindings" class="ci1 p1l"> two-way bindings </a>.
-          </p>
+      <section class="x lg-x12z xl md-p2x">
+        <Feature key="Application" />
+        <Feature key="TaskList" />
+        <div class="xl x12 p1">
+          <div class="xl x12 bcm2">
+            <p class="xx x12 m5t p4x lh16">
+              The example above uses 
+              <a href="/server-functions" class="ci1 p1x"> server functions </a>
+              to read tasks from a JSON file and store them in the 
+              <a href="/context" class="ci1 p1x"> context </a>
+              available to all components.  
+            </p>
+            <p class="xx x12 m6b p4x lh16"> 
+              The tasks are listed in a specific
+              <a href="/routes-and-params" class="ci1 p1x"> route </a>
+              that renders a component with multiple
+              <a href="/renderable-components" class="ci1 p1x"> inner components </a>
+              filtered by status with inputs using
+              <a href="/two-way-bindings" class="ci1 p1l"> two-way bindings </a>.
+            </p>
+          </div>
         </div>
       </section>
     )

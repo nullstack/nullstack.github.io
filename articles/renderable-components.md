@@ -322,7 +322,7 @@ class Application extends Nullstack {
   render() {
     return (
       <main>
-        <did>
+        <div>
           <head>
             <link rel="preconnect" href="https://www.googletagmanager.com" />
           </head>
