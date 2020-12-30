@@ -2,8 +2,6 @@ import Nullstack from 'nullstack';
 
 class About extends Nullstack {
 
-  contributors = 0;
-
   renderParagraph({text}) {
     return (
       <p class="x12 fs4 m1b">{text}</p>

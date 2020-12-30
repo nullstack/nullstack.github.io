@@ -21,6 +21,7 @@ class Application extends Nullstack {
       ...articles.map((article) => '/' + article.replace('.md', '')),
       '/documentation',
       '/components',
+      '/about',
       '/roboto-v20-latin-300.woff2',
       '/roboto-v20-latin-500.woff2',
       '/crete-round-v9-latin-regular.woff2'
