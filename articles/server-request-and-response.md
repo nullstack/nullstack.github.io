@@ -5,7 +5,7 @@ description: The server key is a proxy around the express instance that runs Nul
 
 ## The server key
 
-The server key is a proxy around the express instance that runs Nullstack under the hood.
+The server key is a proxy around the [Express](https://expressjs.com) instance that runs Nullstack under the hood.
 
 The server object is present only in the *server* context.
 
@@ -44,6 +44,7 @@ Other available keys are:
 
 - *port*: integer
 - *maximumPayloadSize*: string
+- *cors*: object
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -53,6 +54,10 @@ class Application extends Nullstack {
   static async start({server}) {
     server.port = 3000;
     server.maximumPayloadSize = '5mb';
+    server.cors = {
+      origin: 'http://localhost:6969',
+      optionsSuccessStatus: 200
+    }
   }
 
   // ...
@@ -61,6 +66,8 @@ class Application extends Nullstack {
 
 export default Application;
 ```
+
+The cors object will be passed as the argument to [express cors plugin](https://expressjs.com/en/resources/middleware/cors.html)
 
 ## Request and Response
 
