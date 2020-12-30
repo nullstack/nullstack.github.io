@@ -6,6 +6,7 @@ import Article from './Article';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
+import About from './About';
 import Loader from './Loader';
 import GoogleAnalytics from 'nullstack-google-analytics';
 import path from 'path';
@@ -52,7 +53,7 @@ class Application extends Nullstack {
     )
   }
 
-  render({page}) {
+  render() {
     return (
       <main>
         <Preloader />  
@@ -60,6 +61,7 @@ class Application extends Nullstack {
         <Home route="/" />
         <Documentation route="/documentation" />
         <Components route="/components" />
+        <About route="/about" />
         <Article route="/:slug" />
         <Footer />
         <GoogleAnalytics id="G-E7GZ5Z4MLN" />

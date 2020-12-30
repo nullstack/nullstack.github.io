@@ -1,6 +1,6 @@
 import Nullstack from 'nullstack';
-import Bars from 'poisonicon/bars/fill';
-import Ex from 'poisonicon/ex/fill';
+import Bars from 'poisonicon/bars/stroke';
+import Ex from 'poisonicon/ex/stroke';
 
 class Header extends Nullstack {
 
@@ -27,13 +27,14 @@ class Header extends Nullstack {
               <img src="/nullstack.svg" alt="Nullstack" width="135" height="30" />
             </a>
             <span onclick={{expanded: !this.expanded}} class="yy md+off">
-              <element tag={this.expanded ? Ex : Bars} height={20} class="cm2 cd" />
+              <element tag={this.expanded ? Ex : Bars} height={20} class="cm3" />
             </span>
           </div>
           <nav class={`yy sm-p4 ${!this.expanded && 'sm-off'}`}>
-            <Link title="About" href="/" />
+            <Link title="Home" href="/" />
             <Link title="Documentation" href="/documentation" />
             <Link title="Components" href="/components" />
+            <Link title="About" href="/about" />
             <Link title="Source" href="https://github.com/nullstack/nullstack" target="_blank" />
           </nav>
           <div class={`sm-x12 sm-p4x ${!this.expanded && 'sm-off'}`}>
