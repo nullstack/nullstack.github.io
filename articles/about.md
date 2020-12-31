@@ -11,11 +11,12 @@ It was created keeping in mind programmers used to developing entire systems alo
 
 With the stack of technologies used in the web nowadays, the most common flow is something like this:
 
-- Front uses a reducer over a context that calls a fetcher
-- This fetcher brings generic information over a RESTful API
-- The RESTful API calls a server route, which calls a controller which takes information of a model and resolves it into a serializer
-- If you need more than one resource, this process should be repeated until all resources are fetched
-- After all the data has been fetched, only then should the front be able to take and use it
+- Front-end uses a reducer over a context that calls a fetcher;
+- This fetcher brings generic information over a RESTful API;
+- The RESTful API calls a server route, which calls a controller, which takes the information of a model and resolves it into a serializer;
+- If you need more than one resource, this process should be repeated until all resources are fetched;
+- After all the data has been fetched, only then should the front-end be able to use it;
+- Reason about how to deal with server-side render and hydration of the steps above;
 
 Note that all you wanted was to show something from the database into a view. With Nullstack, that’s all you need to concern yourself with. Everything else is “glue code” and the framework should take care of it for you.
 
@@ -23,7 +24,7 @@ Note that all you wanted was to show something from the database into a view. Wi
 
 If you’re used to working on more than one project at a time or even if you just happen to have to give sporadic maintenance to a lot of your old projects, you might have stumbled upon this scenario: you don’t remember exactly where in your code is the logic you’re trying to fix or improve.
 
-You might have a hook whose dependencies are local variables initialized with a redux state, which was hydrated at some point by an action declared somewhere in your source tree and called in who knows where.
+You might have a hook whose dependencies are local variables initialized with a redux state, which was stored at some point by an action declared somewhere in your source tree and called in who knows where.
 
 If everything pertaining to a single feature were to be in the same file, maybe you wouldn’t need to reverse engineer your own code every time you need to update or fix something.
 
@@ -46,24 +47,26 @@ This section will explain the reasons that lead us to favor classes in the devel
 
 The reasons are actually connected to some core principles of Nullstack, being:
 
-- ### Everything as Vanilla as Possible
+### Everything as Vanilla as Possible
 
 We didn’t want to introduce a “Nullstack way” of doing things and wanted it to be accessible to anyone with some Javascript knowledge.
 
 That being said, the first big problem was to address state management in a vanilla Javascript way. Supporting functional components would require a solution similar to the hooks of React.js that would be considered a mannerism of the framework.
 
-Since we opted out of immutability as a framework constraint, we are allowed to use the native way of setting simple variables. This removes the complexity of state management that created the need of third party state management libraries in the first place.
+Since we opted out of immutability as a framework constraint, we are allowed to use the native way of setting simple variables. This removes the complexity of state management that created the need of third-party state management libraries in the first place.
 
-- ### No Glue Code or “Batteries Included”
+### No Glue Code or “Batteries Included”
 
 Nullstack borrows the concept of “battery-included” from Ember.js, but allows you to change batteries. Everything you need to make an application should be part of the framework, and still be flexible.
 
 A framework should do the heavy lifting and a programmer should focus on his own application.
 For this reason, all you have to do is to declare your classes and let Nullstack instantiate them for you. That way, we removed the most painful aspect of dealing with classes while maintaining all of the advantages of them.
 
-- ### Having a safe escape route
+### Having a safe escape route
 
 Object-oriented versus functional is not a new topic, and lately the former seems to be bullied out of most frameworks, leaving no place for developers that enjoy this pattern.
+
+Admittedly classes took too long to be standardized into Javascript and the delay might have caused some traumatic bad implementations along the way.
 
 While object-oriented programming might not be the best solution for every problem, Nullstack allows you to import functions freely and use them in the moments when they should be the weapon of choice.
 
@@ -71,7 +74,7 @@ While object-oriented programming might not be the best solution for every probl
 
 Nullstack context uses the dependency injection pattern, which means that everything you need can be requested from the framework at the signature level of the function.
 
-The context is an horizontally scoped object that is injected in all of your function calls. The non-hierarchical nature of this pattern allows you to easily move around your component's logic as your application grows, while still avoiding problems like props drilling or filling your view layer with store declarations.
+The context is a horizontally scoped object that is injected in all of your function calls. The non-hierarchical nature of this pattern allows you to easily move around your component's logic as your application grows, while still avoiding problems like props drilling or filling your view layer with store declarations.
 
 This has two major advantages:
 
@@ -81,10 +84,10 @@ This has two major advantages:
 
 ## Developer Happiness
 
-The generated application is enough to have a PWA without thinking about boilerplate, but you are completely free to override the default behaviour of each moving piece.
+The generated application is enough to have a PWA without thinking about boilerplates, but you are completely free to override the default behavior of each moving piece.
 
-A borrowed concept from Ruby is developer happiness. Nullstack aims to ease the developer’s life by simplifying everything possible without hiding things from you.
+A borrowed concept from Ruby is developer happiness. Nullstack aims to ease the developer’s life by simplifying everything possible, but without hiding things from you.
 
 The first developers we wanted to make happy are ourselves. We made Nullstack because we had fun in the process. It started as a simple prototype on top of React.js and we got carried away, each time making it more enjoyable for us until it became its own thing.
 
-We hope you enjoy using Nullstack as much as we do, because that's what keeps this project going forward.
+We hope you enjoy using Nullstack as much as we do because that's what keeps this project going forward.
