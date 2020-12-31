@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "e7ce40326d108f5407c87c630d06a2af"
+    "key": "b2c22beb6010552de0e12d408c492686"
   },
   "project": {
     "type": "website",
@@ -40,6 +40,7 @@ self.context = {
     "fetching": false,
     "preload": [
       "/nullstack.svg",
+      "/about",
       "/application-startup",
       "/context-data",
       "/context-environment",
@@ -69,6 +70,8 @@ self.context = {
       "/two-way-bindings",
       "/documentation",
       "/components",
+      "/about",
+      "/contributors",
       "/roboto-v20-latin-300.woff2",
       "/roboto-v20-latin-500.woff2",
       "/crete-round-v9-latin-regular.woff2"
