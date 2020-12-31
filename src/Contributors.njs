@@ -41,6 +41,8 @@ class Contributors extends Nullstack {
         <Paragraph text="The next updates will be guided towards fixing any bugs that are found and focus on quality of life." />
         <Paragraph text="The following updates are the next planned steps in no particular order:" />
         <ul class="m2t">
+          <Task description="Video and text tutorials in both English and Portuguese" />
+          <Task description="Internationalize the documentation" />
           <Task description="Improve error messages and unify the server and client consoles" />
           <Task description="Typescript support and better IDE support in general" />
           <Task description="Yak shaving to improve performance on things that give diminishing returns at this point" />
@@ -90,7 +92,7 @@ class Contributors extends Nullstack {
           role="Autistic Adopter" 
           github="AnnyFigueira"
           description="Rubber duck with a neck to find inconsistencies and problems, waiting till an API is approved to force us into rewriting everything."
-          contribution="An early adopter of the framework that developed real production applications to generate the feedback about how the parts fit together."
+          contribution="An early adopter of the framework that developed real production applications to validate how the parts fit together."
         />
       </Topic>
     )
