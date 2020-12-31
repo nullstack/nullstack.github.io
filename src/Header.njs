@@ -31,10 +31,10 @@ class Header extends Nullstack {
             </span>
           </div>
           <nav class={`yy sm-p4 ${!this.expanded && 'sm-off'}`}>
-            <Link title="Home" href="/" />
+            <Link title="About" href="/about" />
             <Link title="Documentation" href="/documentation" />
             <Link title="Components" href="/components" />
-            <Link title="About" href="/about" />
+            <Link title="Contributors" href="/contributors" />
             <Link title="Source" href="https://github.com/nullstack/nullstack" target="_blank" />
           </nav>
           <div class={`sm-x12 sm-p4x ${!this.expanded && 'sm-off'}`}>

@@ -1,6 +1,6 @@
 import Nullstack from 'nullstack';
 
-class About extends Nullstack {
+class Contributors extends Nullstack {
 
   renderParagraph({text}) {
     return (
@@ -90,7 +90,7 @@ class About extends Nullstack {
           role="Autistic Adopter" 
           github="AnnyFigueira"
           description="Rubber duck with a neck to find inconsistencies and problems, then wait till an API is approved to force us into rewriting everything."
-          contribution="An early adopter of the framework that developed real production applications to generate back-end focused feedback."
+          contribution="An early adopter of the framework that developed real production applications to generate the feedback about how the parts fit together."
         />
       </Topic>
     )
@@ -122,4 +122,4 @@ class About extends Nullstack {
 
 }
 
-export default About;
+export default Contributors;

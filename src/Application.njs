@@ -6,7 +6,7 @@ import Article from './Article';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
-import About from './About';
+import Contributors from './Contributors';
 import Loader from './Loader';
 import GoogleAnalytics from 'nullstack-google-analytics';
 import path from 'path';
@@ -22,6 +22,7 @@ class Application extends Nullstack {
       '/documentation',
       '/components',
       '/about',
+      '/contributors',
       '/roboto-v20-latin-300.woff2',
       '/roboto-v20-latin-500.woff2',
       '/crete-round-v9-latin-regular.woff2'
@@ -62,7 +63,7 @@ class Application extends Nullstack {
         <Home route="/" />
         <Documentation route="/documentation" />
         <Components route="/components" />
-        <About route="/about" />
+        <Contributors route="/contributors" />
         <Article route="/:slug" />
         <Footer />
         <GoogleAnalytics id="G-E7GZ5Z4MLN" />

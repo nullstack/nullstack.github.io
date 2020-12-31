@@ -174,28 +174,28 @@ class Component extends Nullstack {
           <h2 class="x12 sm-fs8 md+fs12"> Why should you use Nullstack? </h2>
           <div class="xl p10y">
             <Reason 
-              title="Quickly adapt to scope changes"
-              description="The horizontal structure, as opposed to a hierarchical one, makes it a lot easier to move resources around."
-              link="/"
-              closer="Flexibility over bureaucracy."
-            />
-            <Reason 
               title="Scalable Development"
               description="Every project starts small and becomes complex over time. Scale as you go, no matter the size of the team."
-              link="/"
+              link="/about"
               closer="No compromises, no enforcements."
             />
             <Reason 
               title="Feature-driven Development"
               description="Development of both back and front ends of a feature in the same component in an organized way with ease of overview."
-              link="/"
+              link="/about#feature-driven"
               closer="True componentization and code reusability."
             />
             <Reason 
               title="Already existing ecosystem"
               description="Takes advantage of any isomorphic vanilla Javascript package made throughout history."
-              link="/"
+              link="/about#everything-as-vanilla-as-possible"
               closer="All of your application speaks the same language."
+            />
+            <Reason 
+              title="Quickly adapt to scope changes"
+              description="The horizontal structure, as opposed to a hierarchical one, makes it a lot easier to move resources around."
+              link="/about#why-dependency-injection-instead-of-modularity"
+              closer="Flexibility over bureaucracy."
             />
           </div>
           <a href="/documentation" class="bci1 cm1 ci1:h bgi1 bgm1:h p2y p4x"> Get Started </a>
