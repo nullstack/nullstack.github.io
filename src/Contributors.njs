@@ -57,7 +57,7 @@ class Contributors extends Nullstack {
       <div class="xl x12 bcm2 p2 m2t">
         <img class="xl" src={'https://github.com/' + github + '.png'} width="90" height="90" style="height: 90px" />
         <div class="md+x10 md+p3l sm-m3t">
-          <h3> <a href={'https://github.com/' + github} class="ci1"> {name} </a> </h3>
+          <h3> <a href={'https://github.com/' + github} class="ci1" target="_blank" rel="noopener"> {name} </a> </h3>
           <h4 class="m1y"> {role} </h4>
           <p> {description} </p> 
           <p> {contribution} </p>
@@ -89,7 +89,7 @@ class Contributors extends Nullstack {
           name="Anny Figueira" 
           role="Autistic Adopter" 
           github="AnnyFigueira"
-          description="Rubber duck with a neck to find inconsistencies and problems, then wait till an API is approved to force us into rewriting everything."
+          description="Rubber duck with a neck to find inconsistencies and problems, waiting till an API is approved to force us into rewriting everything."
           contribution="An early adopter of the framework that developed real production applications to generate the feedback about how the parts fit together."
         />
       </Topic>
@@ -101,9 +101,9 @@ class Contributors extends Nullstack {
       <Topic title="How to Contribute">
         <Paragraph text="It's simple. Found a bug or want a new feature?" />
         <p class="x12 fs4 m1b">
-          <a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1"> create an issue </a>
-          or submit a 
-          <a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1"> pull request </a> with tests.
+          <a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1"> Create an issue </a>
+          or  
+          <a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1"> submit a pull request </a> with tests.
         </p>
       </Topic>
     )
