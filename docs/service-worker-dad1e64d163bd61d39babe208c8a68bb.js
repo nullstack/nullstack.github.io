@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "920964ad84aa7766ed3047780f71115d"
+    "key": "dad1e64d163bd61d39babe208c8a68bb"
   },
   "project": {
     "type": "website",
@@ -160,7 +160,8 @@ async function networkFirst(event) {
 
 async function networkDataFirst(event) {
   const cache = await caches.open(self.context.environment.key);
-  const api = event.request.url + '/index.json';
+  const url = new URL(event.request.url);
+  const api = url.pathname + '/index.json';
   try {
     const response = await load(event);
     const dataResponse = await extractData(response);

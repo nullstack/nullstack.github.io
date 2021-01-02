@@ -198,7 +198,7 @@ class Component extends Nullstack {
               closer="Flexibility over bureaucracy."
             />
           </div>
-          <a href="/documentation" class="bci1 cm1 ci1:h bgi1 bgm1:h p2y p4x"> Get Started </a>
+          <a href="/getting-started" class="bci1 cm1 ci1:h bgi1 bgm1:h p2y p4x"> Get Started </a>
           <span class="x12 fs4"> ╰(*°▽°*)╯ </span>
         </div>
       </section>
