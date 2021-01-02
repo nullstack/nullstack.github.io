@@ -2,6 +2,11 @@ import Nullstack from 'nullstack';
 
 class Contributors extends Nullstack {
 
+  prepare({page, project}) {
+    page.title = `Contributors - ${project.name}`;
+    page.description = 'Found a bug or want a new feature? Become a contributor!'
+  }
+
   renderParagraph({text}) {
     return (
       <p class="x12 fs4 m1b">{text}</p>
@@ -57,7 +62,7 @@ class Contributors extends Nullstack {
   renderContributor({github, name, role, description, contribution}) {
     return (
       <div class="xl x12 bcm2 p2 m2t">
-        <img class="xl" src={'https://github.com/' + github + '.png'} width="90" height="90" style="height: 90px" />
+        <img class="xl" src={'https://github.com/' + github + '.png'} alt={name} width="90" height="90" style="height: 90px" />
         <div class="md+x10 md+p3l sm-m3t">
           <h3> <a href={'https://github.com/' + github} class="ci1" target="_blank" rel="noopener"> {name} </a> </h3>
           <h4 class="m1y"> {role} </h4>

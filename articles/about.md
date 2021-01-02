@@ -1,5 +1,5 @@
 ---
-title: Why Nullstack exists
+title: Why Nullstack Exists
 description: The sole purpose of Nullstack is to simplify the development by eliminating glue code and letting you focus on the logic of your application
 ---
 

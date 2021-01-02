@@ -84,7 +84,7 @@ class Component extends Nullstack {
   renderStep({title, children, link, icon: Icon}) {
     return (
       <div class="md+x4 p1">
-        <div class="xx bgm2 p8y p4x">
+        <div class="xx bgm2 p8y p4x y12">
           <Icon height={40} class="cm2z m4b" />
           <h2 class="x12 fs6">
             <a href={link} class="ci1">{title}</a>
