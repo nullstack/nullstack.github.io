@@ -3,6 +3,8 @@ title: Getting Started
 description: Create full-stack javascript applications within seconds 
 ---
 
+> 📌 You can watch a video tutorial on our [Youtube Channel](https://www.youtube.com/watch?v=l23z00GEar8).
+
 Create full-stack javascript applications within seconds using *npx* to generate your project files from the latest template.
 
 > 🔥 The minimum required [node.js](https://nodejs.org) version for development mode is *12.12.0*.
