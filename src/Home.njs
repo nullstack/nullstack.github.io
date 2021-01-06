@@ -169,8 +169,8 @@ class Component extends Nullstack {
 
   renderWhy() {
     return (
-      <section class="sm-p2x md+bcm2y sm-m10t md+m20t p10y">
-        <div class="x xx">
+      <section class="sm-p2x sm-m10t md+m20t">
+        <div class="x xx md+bcm2t p10y">
           <h2 class="x12 sm-fs8 md+fs12"> Why should you use Nullstack? </h2>
           <div class="xl p10y">
             <Reason 

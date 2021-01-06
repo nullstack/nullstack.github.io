@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "dad1e64d163bd61d39babe208c8a68bb"
+    "key": "257267e4eefc7135bd7105afd3bb30e5"
   },
   "project": {
     "type": "website",
@@ -74,7 +74,8 @@ self.context = {
       "/contributors",
       "/roboto-v20-latin-300.woff2",
       "/roboto-v20-latin-500.woff2",
-      "/crete-round-v9-latin-regular.woff2"
+      "/crete-round-v9-latin-regular.woff2",
+      "/nullachan.png"
     ],
     "headers": {},
     "loading": {}
