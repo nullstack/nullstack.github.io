@@ -6,6 +6,7 @@ import Article from './Article';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
+import Waifu from './Waifu';
 import Contributors from './Contributors';
 import Loader from './Loader';
 import GoogleAnalytics from 'nullstack-google-analytics';
@@ -65,6 +66,7 @@ class Application extends Nullstack {
         <Documentation route="/documentation" />
         <Components route="/components" />
         <Contributors route="/contributors" />
+        <Waifu route="/waifu" />
         <Article route="/:slug" />
         <Footer />
         <GoogleAnalytics id="G-E7GZ5Z4MLN" />
