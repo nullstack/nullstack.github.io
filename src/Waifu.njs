@@ -21,7 +21,7 @@ class Waifu extends Nullstack {
         <div class="xx x12">
           {worker.online && <img src="/waifu.png" alt="Nulla-Chan" height="500" />}
           <div class="md+p10l">
-            <h1 class="xl m20t"> Nulla <span class="ci1">-</span> Chan </h1>
+            <h1 class="xl m14t"> Nulla <span class="ci1">-</span> Chan </h1>
             <p class="xl m8b"> Nullstack's official waifu </p>
             <ul>
               <Attribute label="🕐 Age" value="19" />
@@ -31,11 +31,15 @@ class Waifu extends Nullstack {
               <Attribute label="📏 Height" value="1.55m" />
               <Attribute label="🍨 Fav Food" value="Anything vanilla flavored" />
               <Attribute label="🧩 Hobby" value="Reinventing Wheels" />
-              <Attribute label="🎁 Neurodivergences" value="Asperger and ADHD" />
+              <Attribute label="🎁 Neurodivergences" value="ASD and ADHD" />
             </ul>
             <span class="xl m8t">
               🎨 Created by:
               <a href="https://www.instagram.com/biancazanette" target="_blank" rel="noopener" class="ci1 m2x"> Bilkaya </a>
+            </span>
+            <span class="xl m2t">
+              Check out the 
+              <a href="https://www.artstation.com/artwork/Vg4o6R" target="_blank" rel="noopener" class="ci1 m2x"> Character Concept </a>
             </span>
           </div>
         </div>
