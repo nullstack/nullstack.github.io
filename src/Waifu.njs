@@ -31,7 +31,7 @@ class Waifu extends Nullstack {
               <Attribute label="📏 Height" value="1.55m" />
               <Attribute label="🍨 Fav Food" value="Anything vanilla flavored" />
               <Attribute label="🧩 Hobby" value="Reinventing Wheels" />
-              <Attribute label="🎁 Neurodivergences" value="ASD and ADHD" />
+              <Attribute label="🧠 Neurodivergences" value="ASD and ADHD" />
             </ul>
             <span class="xl m8t">
               🎨 Created by:
