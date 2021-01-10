@@ -146,6 +146,8 @@ export default Application;
 
 Keep in mind that every server function is similar to an express route in API and must be coded without depending on view logic for security.
 
+> 🔒 Server functions with the name starting with "start" (and optionally followed by an uppercase letter) do not generate an API endpoint to avoid malicious context flooding.
+
 ```jsx
 import Nullstack from 'nullstack';
 

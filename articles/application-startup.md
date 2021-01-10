@@ -43,6 +43,8 @@ class Application extends Nullstack {
 export default Application;
 ```
 
+> 🔒 Server functions with the name starting with "start" (and optionally followed by an uppercase letter) do not generate an API endpoint to avoid malicious context flooding.
+
 ## Next step
 
 ⚔ Learn about the [context data](/context-data).
