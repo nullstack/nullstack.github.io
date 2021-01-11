@@ -54,6 +54,16 @@ blockquote {
   line-height: 140%;
 }
 
+a img {
+  transition: .1s;
+
+  &:hover {
+    transform: scale(1.1);
+    z-index: 1;
+    transition: .3s;
+  }
+}
+
 /*! purgecss start ignore */
 
 pre {

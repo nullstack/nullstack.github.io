@@ -11,11 +11,13 @@ Static sites are useful for read-only applications like blogs and documentation.
 
 All the benefits of [server-side rendering](/server-side-rendering) apply to static generated sites.
 
-You can generate a static website with the following NPX command:
+You can generate a static website from your Nullstack application with the following NPX command:
 
 ```sh
 npx create-nullstatic-app
 ```
+
+> 🔥 You must be in a Nullstack project folder to run this command.
 
 By default, it will create your Nullstatic application in the *static* folder.
 
@@ -38,6 +40,29 @@ On the first visit to your static application, HTML will be served and hydrated.
 On the subsequent requests, Nullstack will fetch the generated JSON and update the application state without ever reloading the page.
 
 This, in fact, gives you not only a static generated site, but a static generated API that feeds a Single Page Application with zero costs.
+
+## Good Pratices
+
+You can add a script to your package.json to generate your static website in a custom folder:
+
+```jsx
+{
+  "name": "nullstack.github.io",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nullstack": "~0.9.0"
+  },
+  "scripts": {
+    "start": "npx webpack --config node_modules/nullstack/webpack.config.js --mode=development --watch",
+    "build": "npx webpack --config node_modules/nullstack/webpack.config.js --mode=production",
+    "ssg": "npx create-nullstatic-app docs"
+  }
+}
+
+```
 
 ## Caveats
 

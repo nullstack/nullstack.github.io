@@ -10,7 +10,7 @@
   "scripts": {
     "start": "npx webpack --config node_modules/nullstack/webpack.config.js --mode=development --watch",
     "build": "npx webpack --config node_modules/nullstack/webpack.config.js --mode=production",
-    "deploy": "npx create-nullstatic-app docs"
+    "ssg": "npx create-nullstatic-app docs"
   },
   "dependencies": {
     "nullsheet": "~0.2.0",

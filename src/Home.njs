@@ -204,6 +204,32 @@ class Component extends Nullstack {
       </section>
     )
   }
+
+  renderVideo({code, part}) {
+    const title = `Full-stack with Nullstack - Part ${part}`;
+    return (
+      <div class="x12 md+x4 p1">
+        <a href={`https://www.youtube.com/watch?v=${code}&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId`} title={title} target="_blank" rel="noopener">
+          <img src={`/thumb-0${part}.jpg`} alt={title} height="209" />
+        </a>
+      </div>
+    )
+  }
+
+  renderPlaylist({worker}) {
+    if(!worker.online) return false;
+    return (
+      <section class="x xx md+bcm2t sm-p10t md+p20t sm-p2x">
+        <h2 class="x12 sm-fs8 md+fs12"> Watch our Nullstack video turorials </h2>
+        <p class="x12 fs4"> Nullstack cares about making its content as direct to the point and easy to understand as possible </p>
+        <div class="xl x12 p10t">
+          <Video code="l23z00GEar8" part={1} />
+          <Video code="_i5kKXkhBaM" part={2} />
+          <Video code="8PExa5-G1As" part={3} />
+        </div>
+      </section>
+    )
+  }
   
   render() {
     return (
@@ -214,6 +240,7 @@ class Component extends Nullstack {
         <Showcase />
         <Productivity />
         <Features />
+        <Playlist />
         <Why />
       </div>
     )

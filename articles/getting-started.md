@@ -3,7 +3,7 @@ title: Getting Started
 description: Create full-stack javascript applications within seconds 
 ---
 
-> 📌 You can watch a video tutorial on our [Youtube Channel](https://www.youtube.com/watch?v=l23z00GEar8).
+> 📌 You can watch a video tutorial on our [Youtube Channel](https://www.youtube.com/watch?v=l23z00GEar8&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId).
 
 Create full-stack javascript applications within seconds using *npx* to generate your project files from the latest template.
 
