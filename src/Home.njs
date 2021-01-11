@@ -210,7 +210,7 @@ class Component extends Nullstack {
     return (
       <div class="x12 md+x4 p1">
         <a href={`https://www.youtube.com/watch?v=${code}&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId`} title={title} target="_blank" rel="noopener">
-          <img src={`/thumb-0${part}.jpg`} alt={title} height="209" />
+          <img src={`/thumb-0${part}.webp`} alt={title} height="209" width="372" loading="lazy" />
         </a>
       </div>
     )
