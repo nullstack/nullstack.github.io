@@ -13,6 +13,7 @@ class Documentation extends Nullstack {
 
   async initiate({project, page, locale}) {
     this.i18n = await this.geti18nByLocale({locale});
+    console.log(this.i18n);
     page.title = `${this.i18n.title} - ${project.name}`;
     page.description = this.i18n.description;
     page.priority = 0.8;
@@ -44,7 +45,7 @@ class Documentation extends Nullstack {
       <section class="x sm-p4x sm-p10y md+p20y">
         <h1 class="x12 sm-fs6 md+fs12 m2b"> {this.i18n.heading} </h1>
         <p class="x12 fs4"> {this.i18n.tagline} </p>
-        {this.i18n.topics.map((topic) => <Topic {...topic} />)}
+        {this.i18n.topics && this.i18n.topics.map((topic) => <Topic {...topic} />)}
       </section>
     )
   }
