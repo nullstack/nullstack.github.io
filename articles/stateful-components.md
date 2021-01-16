@@ -153,7 +153,7 @@ class Form extends Nullstack {
     return (
       <form onsubmit={this.submit} default>
         <button> Submit </button>
-      </button>
+      </form>
     )
   }
 
