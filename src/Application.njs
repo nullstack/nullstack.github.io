@@ -43,10 +43,6 @@ class Application extends Nullstack {
     await this.startWorker(context);
   }
 
-  prepare({page}) {
-    page.locale = 'en';
-  }
-
   renderPreloader() {
     return (
       <head>
@@ -63,7 +59,7 @@ class Application extends Nullstack {
         <Preloader />  
         <Header />
         <Home route="/" />
-        <Documentation route="/documentation" />
+        <Documentation route="/documentation" locale="en-US" />
         <Components route="/components" />
         <Contributors route="/contributors" />
         <Waifu route="/waifu" />

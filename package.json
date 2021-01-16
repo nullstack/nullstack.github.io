@@ -18,6 +18,7 @@
     "poisonicon": "^0.1.1",
     "prismjs": "^1.22.0",
     "remarkable": "^2.0.1",
-    "remarkable-meta": "^1.0.1"
+    "remarkable-meta": "^1.0.1",
+    "yaml": "^1.10.0"
   }
 }
