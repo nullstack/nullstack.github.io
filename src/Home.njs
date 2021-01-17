@@ -126,11 +126,10 @@ class Home extends Nullstack {
     )
   }
 
-  renderVideo({code, part}) {
-    const title = `Full-stack with Nullstack - Part ${part}`;
+  renderVideo({title, link, part}) {
     return (
       <div class="x12 md+x4 p1">
-        <a href={`https://www.youtube.com/watch?v=${code}&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId`} title={title} target="_blank" rel="noopener">
+        <a href={link} title={title} target="_blank" rel="noopener">
           <img src={`/thumb-0${part}.webp`} alt={title} height="209" width="372" loading="lazy" />
         </a>
       </div>
@@ -139,14 +138,13 @@ class Home extends Nullstack {
 
   renderPlaylist({worker}) {
     if(!worker.online) return false;
+    if(!this.i18n.playlist) return false;
     return (
       <section class="x xx md+bcm2t sm-p10t md+p20t sm-p2x">
         <h2 class="x12 sm-fs8 md+fs12"> Watch our Nullstack video turorials </h2>
         <p class="x12 fs4"> Nullstack cares about making its content as direct to the point and easy to understand as possible </p>
         <div class="xl x12 p10t">
-          <Video code="l23z00GEar8" part={1} />
-          <Video code="_i5kKXkhBaM" part={2} />
-          <Video code="8PExa5-G1As" part={3} />
+          {this.i18n.playlist.videos.map((video, index) => <Video title={video.title} link={video.link} part={index+1}/> )}
         </div>
       </section>
     )
@@ -172,7 +170,7 @@ class Home extends Nullstack {
     return (
       <section class="sm-p2x sm-m10t md+m20t">
         <div class="x xx md+bcm2t p10y">
-          <h2 class="x12 sm-fs8 md+fs12"> Why should you use Nullstack? </h2>
+          <h2 class="x12 sm-fs8 md+fs12"> {this.i18n.why.heading} </h2>
           <div class="xl p10y">
             {this.i18n.why.reasons.map((reason) => 
               <Reason 
