@@ -19,11 +19,9 @@ class Documentation extends Nullstack {
     page.locale = locale || 'en-US';
   }
 
-  renderLink({locale, title}) {
-    const href = '/' + title.toLowerCase().split(' ').join('-');
-    const prefix = locale != 'en-US' ? locale.toLowerCase() : '';
+  renderLink({title, href}) {
     return (
-      <a href={prefix + href} class="xl x12 p3y bcm2t ci1"> {title} </a>
+      <a href={href} title={title} class="xl x12 p3y bcm2t ci1"> {title} </a>
     )
   }
 
@@ -33,7 +31,7 @@ class Documentation extends Nullstack {
         <h2 class="x12 sm-fs6 md+fs8 m2b"> {title} </h2>
         <p class="x12 fs4 m6b"> {description} </p>
         <nav class="x12"> 
-          {links.map(link => <Link title={link} />)} 
+          {links.map(link => <Link title={link.title} href={link.href} />)} 
         </nav>
       </div>
     )

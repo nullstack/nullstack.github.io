@@ -40,14 +40,13 @@ class Home extends Nullstack {
     )
   }
 
-  renderStep({locale, title, text, link, icon: Icon}) {
-    const prefix = locale != 'en-US' ? locale.toLowerCase() : '';
+  renderStep({ title, text, link, icon: Icon}) {
     return (
       <div class="md+x4 p1">
         <div class="xx bgm2 p8y p4x y12">
           <Icon height={40} class="cm2z m4b" />
           <h2 class="x12 fs6">
-            <a href={prefix + link} class="ci1">{title}</a>
+            <a href={link} title={title} class="ci1">{title}</a>
           </h2>
           <p class="x12 fs4 m4y" html={text} />
         </div>
@@ -59,9 +58,9 @@ class Home extends Nullstack {
     if(!this.i18n.cycle) return false;
     return (
       <section class="x xx sm-p2x md+bcm2y md+p10y">
-        <Step icon={Cog} title={this.i18n.cycle.cog.title} link="/server-side-rendering" text={this.i18n.cycle.cog.text} />
-        <Step icon={Heartbeat} title={this.i18n.cycle.heartbeat.title} link="/full-stack-lifecycle" text={this.i18n.cycle.heartbeat.text} />
-        <Step icon={QRCode} title={this.i18n.cycle.qrcode.title} link="/static-site-generation" text={this.i18n.cycle.qrcode.text} />
+        <Step icon={Cog} title={this.i18n.cycle.cog.title} link={this.i18n.cycle.cog.link} text={this.i18n.cycle.cog.text} />
+        <Step icon={Heartbeat} title={this.i18n.cycle.heartbeat.title} link={this.i18n.cycle.heartbeat.link} text={this.i18n.cycle.heartbeat.text} />
+        <Step icon={QRCode} title={this.i18n.cycle.qrcode.title} link={this.i18n.cycle.qrcode.link} text={this.i18n.cycle.qrcode.text} />
       </section>
     )
   }
@@ -76,14 +75,13 @@ class Home extends Nullstack {
     )
   }
 
-  renderFeature({locale, title, key, link}) {
-    const prefix = locale != 'en-US' ? locale.toLowerCase() : '';
+  renderFeature({title, key, link}) {
     return (
       <div class="md-x12 lg+x6 p1">
         {!!title && 
           <div class="xsb bcm2 p4">
             <h3 class="ff2 fw3 fs4">
-              <a href={prefix + link} class="ci1">{title}</a>
+              <a href={link} title={title} class="ci1">{title}</a>
             </h3>
           </div>
         }
@@ -121,26 +119,9 @@ class Home extends Nullstack {
     if(!this.i18n.features) return false;
     return (
       <section class="x lg-x12z xl lg-p2x">
-        <Feature 
-          title={this.i18n.features.stateful}
-          key="Stateful"
-          link="/stateful-components"
-        />
-        <Feature 
-          title={this.i18n.features.binding}
-          key="Binding"
-          link="/two-way-bindings"
-        />
-        <Feature 
-          title={this.i18n.features.routes}
-          key="Routes"
-          link="/routes-and-params"
-        />
-        <Feature 
-          title={this.i18n.features.lifecycle}
-          key="Lifecycle"
-          link="/full-stack-lifecycle"
-        />
+        {this.i18n.features.map((feature) => 
+          <Feature title={feature.title} key={feature.key} link={feature.link} />
+        )}
       </section>
     )
   }

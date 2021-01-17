@@ -10,17 +10,20 @@ hero:
 cycle:
   cog:
     title: "Server-Side Rendering"
+    link: "/server-side-rendering"
     text:
       "Nullstack generates <strong> SEO ready </strong> HTML optimized for the
       first paint of your route in a single request using local functions
       with <strong> zero javascript </strong> dependencies in the client bundle."
   heartbeat:
     title: "Single Page Application"
+    link: "/full-stack-lifecycle"
     text:
       "After hydration, requests will fetch JSON from an <strong> automatically generated API </strong>
       off server functions, update the application state, and rerender the page."
   qrcode:
     title: "Static Site Generation"
+    link: "/static-site-generation"
     text:
       "You can even use Nullstack to generate lightning-fast <strong> static websites </strong>
       that serve HTML and become a  single page application
@@ -38,10 +41,18 @@ productivity:
   heading: "Productivity is in the Details"
   tagline: "Nullstack features have been extracted from real life projects with convenience and consistency in mind"
 features:
-  stateful: "Stateful Components"
-  binding: "Two-Way Binding"
-  routes: "Built-in Routes"
-  lifecycle: "Full-stack Lifecycle"
+  - title: "Stateful Components"
+    key: "Stateful"
+    link: "/stateful-components"
+  - title: "Two-Way Binding"
+    key: "Binding"
+    link: "/two-way-bindings"
+  - title: "Built-in Routes"
+    key: "Routes"
+    link: "/routes-and-params"
+  - title: "Full-stack Lifecycle"
+    key: "Lifecycle"
+    link: "/full-stack-lifecycle"
 why:
   reasons:
     - title: "Scalable Development"
