@@ -52,7 +52,7 @@ class Component extends Nullstack {
   }
 
   async initiate({project, page, locale, params}) {
-    const article = await this.getArticleByKey({key: params.slug, locale: locale});
+    const article = await this.getArticleByKey({key: params.slug, locale});
     if(article.title) {
       Object.assign(this, article);
       page.title = `${article.title} - ${project.name}`;

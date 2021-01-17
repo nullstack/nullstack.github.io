@@ -63,6 +63,7 @@ class Application extends Nullstack {
         <Components route="/components" />
         <Contributors route="/contributors" />
         <Waifu route="/waifu" />
+        <Article route="/pt-br/:slug" locale="pt-BR" />
         <Article route="/:slug" locale="en-US" />
         <Footer />
         <GoogleAnalytics id="G-E7GZ5Z4MLN" />

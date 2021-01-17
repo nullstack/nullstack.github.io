@@ -32,15 +32,15 @@ class Home extends Nullstack {
           <p class="bgm1 fs6 p2"> {this.i18n.hero.tagline} </p>
         </div>
         <div>
-          {this.i18n.hero.paragraphs.map((paragraph, index, paragraphs) => 
-            <p class={`x12 fs4 lh12 ls12 ${index == paragraphs.length - 1 ? 'm4t' : ''}`} html={paragraph} />
+          {this.i18n.hero.paragraphs.map((paragraph, index, {length}) => 
+            <p class={`x12 fs4 lh12 ls12 ${index == length - 1 ? 'm4t' : ''}`} html={paragraph} />
           )}
         </div>
       </section>
     )
   }
 
-  renderStep({ title, text, link, icon: Icon}) {
+  renderStep({title, text, link, icon: Icon}) {
     return (
       <div class="md+x4 p1">
         <div class="xx bgm2 p8y p4x y12">
@@ -58,9 +58,9 @@ class Home extends Nullstack {
     if(!this.i18n.cycle) return false;
     return (
       <section class="x xx sm-p2x md+bcm2y md+p10y">
-        <Step icon={Cog} title={this.i18n.cycle.cog.title} link={this.i18n.cycle.cog.link} text={this.i18n.cycle.cog.text} />
-        <Step icon={Heartbeat} title={this.i18n.cycle.heartbeat.title} link={this.i18n.cycle.heartbeat.link} text={this.i18n.cycle.heartbeat.text} />
-        <Step icon={QRCode} title={this.i18n.cycle.qrcode.title} link={this.i18n.cycle.qrcode.link} text={this.i18n.cycle.qrcode.text} />
+        <Step icon={Cog} title={this.i18n.cycle.ssr.title} link={this.i18n.cycle.ssr.link} text={this.i18n.cycle.ssr.text} />
+        <Step icon={Heartbeat} title={this.i18n.cycle.spa.title} link={this.i18n.cycle.spa.link} text={this.i18n.cycle.spa.text} />
+        <Step icon={QRCode} title={this.i18n.cycle.ssg.title} link={this.i18n.cycle.ssg.link} text={this.i18n.cycle.ssg.text} />
       </section>
     )
   }
@@ -119,8 +119,8 @@ class Home extends Nullstack {
     if(!this.i18n.features) return false;
     return (
       <section class="x lg-x12z xl lg-p2x">
-        {this.i18n.features.map((feature) => 
-          <Feature title={feature.title} key={feature.key} link={feature.link} />
+        {this.i18n.features.map(feature => 
+          <Feature {...feature} />
         )}
       </section>
     )
@@ -144,7 +144,7 @@ class Home extends Nullstack {
         <h2 class="x12 sm-fs8 md+fs12"> Watch our Nullstack video turorials </h2>
         <p class="x12 fs4"> Nullstack cares about making its content as direct to the point and easy to understand as possible </p>
         <div class="xl x12 p10t">
-          {this.i18n.playlist.videos.map((video, index) => <Video title={video.title} link={video.link} part={index+1}/> )}
+          {this.i18n.playlist.videos.map((video, index) => <Video {...video} part={index+1} /> )}
         </div>
       </section>
     )
@@ -172,16 +172,9 @@ class Home extends Nullstack {
         <div class="x xx md+bcm2t p10y">
           <h2 class="x12 sm-fs8 md+fs12"> {this.i18n.why.heading} </h2>
           <div class="xl p10y">
-            {this.i18n.why.reasons.map((reason) => 
-              <Reason 
-                title={reason.title}
-                description={reason.description}
-                link={reason.link}
-                closer={reason.closer}
-              />
-            )}
+            {this.i18n.why.reasons.map((reason) => <Reason {...reason} />)}
           </div>
-          <a href={this.i18n.why.getStarted.link} class="bci1 cm1 ci1:h bgi1 bgm1:h p2y p4x"> {this.i18n.why.getStarted.text} </a>
+          <a href={this.i18n.why.getStarted.link} title={this.i18n.why.getStarted.text} class="bci1 cm1 ci1:h bgi1 bgm1:h p2y p4x"> {this.i18n.why.getStarted.text} </a>
           <span class="x12 fs4"> ╰(*°▽°*)╯ </span>
         </div>
       </section>

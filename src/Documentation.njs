@@ -31,7 +31,7 @@ class Documentation extends Nullstack {
         <h2 class="x12 sm-fs6 md+fs8 m2b"> {title} </h2>
         <p class="x12 fs4 m6b"> {description} </p>
         <nav class="x12"> 
-          {links.map(link => <Link title={link.title} href={link.href} />)} 
+          {links.map(link => <Link {...link} />)} 
         </nav>
       </div>
     )

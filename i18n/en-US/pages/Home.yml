@@ -8,20 +8,20 @@ hero:
     - "It connects a <strong> stateful UI </strong> layer to specialized <strong>microservices</strong> in the same component using <strong>vanilla javascript</strong>."
     - "Focus on solving your business logic instead of writing glue code."
 cycle:
-  cog:
+  ssr:
     title: "Server-Side Rendering"
     link: "/server-side-rendering"
     text:
       "Nullstack generates <strong> SEO ready </strong> HTML optimized for the
       first paint of your route in a single request using local functions
       with <strong> zero javascript </strong> dependencies in the client bundle."
-  heartbeat:
+  spa:
     title: "Single Page Application"
     link: "/full-stack-lifecycle"
     text:
       "After hydration, requests will fetch JSON from an <strong> automatically generated API </strong>
       off server functions, update the application state, and rerender the page."
-  qrcode:
+  ssg:
     title: "Static Site Generation"
     link: "/static-site-generation"
     text:
