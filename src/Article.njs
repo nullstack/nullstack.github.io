@@ -10,9 +10,9 @@ class Component extends Nullstack {
   title = '';
   html = '';
 
-  static async getArticleByKey({key}) {
+  static async getArticleByKey({locale, key}) {
     await import('prismjs/components/prism-jsx.min');
-    const path = `articles/${key}.md`;
+    const path = `i18n/${locale}/articles/${key}.md`;
     if(!existsSync(path)) {
       return {};
     }
@@ -51,8 +51,8 @@ class Component extends Nullstack {
     }
   }
 
-  async initiate({project, page, params}) {
-    const article = await this.getArticleByKey({key: params.slug});
+  async initiate({project, page, locale, params}) {
+    const article = await this.getArticleByKey({key: params.slug, locale: locale});
     if(article.title) {
       Object.assign(this, article);
       page.title = `${article.title} - ${project.name}`;

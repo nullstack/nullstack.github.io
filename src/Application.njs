@@ -16,7 +16,7 @@ import {readdirSync} from 'fs';
 class Application extends Nullstack {
 
   static async startWorker({worker}) {
-    const articles = readdirSync(path.join(__dirname, '..', 'articles'));
+    const articles = readdirSync(path.join(__dirname, '../i18n/en-US', 'articles'));
     worker.preload = [
       '/nullstack.svg',
       ...articles.map((article) => '/' + article.replace('.md', '')),
@@ -58,12 +58,12 @@ class Application extends Nullstack {
       <main>
         <Preloader />  
         <Header />
-        <Home route="/" />
+        <Home route="/" locale="en-US" />
         <Documentation route="/documentation" locale="en-US" />
         <Components route="/components" />
         <Contributors route="/contributors" />
         <Waifu route="/waifu" />
-        <Article route="/:slug" />
+        <Article route="/:slug" locale="en-US" />
         <Footer />
         <GoogleAnalytics id="G-E7GZ5Z4MLN" />
         <Loader />

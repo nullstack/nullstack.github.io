@@ -1,0 +1,65 @@
+title: "Full-stack Javascript Components"
+description: "Nullstack is a full-stack javascript framework for building progressive web applications"
+hero:
+  heading: "Full-stack Javascript Components"
+  tagline: "for one-dev armies"
+  paragraphs:
+    - "Nullstack is a full-stack framework for building <strong>progressive web applications</strong>."
+    - "It connects a <strong> stateful UI </strong> layer to specialized <strong>microservices</strong> in the same component using <strong>vanilla javascript</strong>."
+    - "Focus on solving your business logic instead of writing glue code."
+cycle:
+  cog:
+    title: "Server-Side Rendering"
+    text:
+      "Nullstack generates <strong> SEO ready </strong> HTML optimized for the
+      first paint of your route in a single request using local functions
+      with <strong> zero javascript </strong> dependencies in the client bundle."
+  heartbeat:
+    title: "Single Page Application"
+    text:
+      "After hydration, requests will fetch JSON from an <strong> automatically generated API </strong>
+      off server functions, update the application state, and rerender the page."
+  qrcode:
+    title: "Static Site Generation"
+    text:
+      "You can even use Nullstack to generate lightning-fast <strong> static websites </strong>
+      that serve HTML and become a  single page application
+      using an automatically generated <strong> static API </strong>."
+about:
+  heading: "Complete Features as Components"
+  taglines:
+    - "Nullstack is not another part of your stack, it is your stack"
+    - "Your application can be exported from back-end to front-end as a component and mounted into another application"
+showcase:
+  paragraphs:
+    - "The example above uses <a href='/server-functions' class='ci1 p1x'> server functions </a> to read tasks from a JSON file and store them in the <a href='/context' class='ci1 p1x'> context </a> available to all components."
+    - "The tasks are listed in a specific <a href='/routes-and-params' class='ci1 p1x'> route </a> that renders a component with multiple <a href='/renderable-components' class='ci1 p1x'> inner components </a> filtered by status with inputs using <a href='/two-way-bindings' class='ci1 p1l'> two-way bindings </a>."
+productivity:
+  heading: "Productivity is in the Details"
+  tagline: "Nullstack features have been extracted from real life projects with convenience and consistency in mind"
+features:
+  stateful: "Stateful Components"
+  binding: "Two-Way Binding"
+  routes: "Built-in Routes"
+  lifecycle: "Full-stack Lifecycle"
+why:
+  reasons:
+    - title: "Scalable Development"
+      description: "Every project starts small and becomes complex over time. Scale as you go, no matter the size of the team."
+      link: "/about"
+      closer: "No compromises, no enforcements."
+    - title: "Feature-driven Development"
+      description: "Development of both back and front ends of a feature in the same component in an organized way with ease of overview."
+      link: "/about#feature-driven"
+      closer: "True componentization and code reusability."
+    - title: "Already existing ecosystem"
+      description: "Takes advantage of any isomorphic vanilla Javascript package made throughout history."
+      link: "/about#everything-as-vanilla-as-possible"
+      closer: "All of your application speaks the same language."
+    - title: "Quickly adapt to scope changes"
+      description: "The horizontal structure, as opposed to a hierarchical one, makes it a lot easier to move resources around."
+      link: "/about#why-dependency-injection-instead-of-modularity"
+      closer: "Flexibility over bureaucracy."
+  getStarted:
+    text: "Get Started"
+    link: "/getting-started"

@@ -7,13 +7,12 @@ class Documentation extends Nullstack {
   i18n = {};
 
   static async geti18nByLocale({locale}) {
-    const file = readFileSync(`pages/${locale}/${this.name}.yml`, 'utf-8');
+    const file = readFileSync(`i18n/${locale}/pages/Documentation.yml`, 'utf-8');
     return YAML.parse(file);
   }
 
   async initiate({project, page, locale}) {
     this.i18n = await this.geti18nByLocale({locale});
-    console.log(this.i18n);
     page.title = `${this.i18n.title} - ${project.name}`;
     page.description = this.i18n.description;
     page.priority = 0.8;
