@@ -32,8 +32,8 @@ class Home extends Nullstack {
           <p class="bgm1 fs6 p2"> {this.i18n.hero.tagline} </p>
         </div>
         <div>
-          {this.i18n.hero.paragraphs.map((paragraph, index, {length}) => 
-            <p class={`x12 fs4 lh12 ls12 ${index == length - 1 ? 'm4t' : ''}`} html={paragraph} />
+          {this.i18n.hero.descriptions.map((description, index, {length}) => 
+            <p class={`x12 fs4 lh12 ls12 ${index == length - 1 ? 'm4t' : ''}`} html={description} />
           )}
         </div>
       </section>
@@ -58,9 +58,9 @@ class Home extends Nullstack {
     if(!this.i18n.cycle) return false;
     return (
       <section class="x xx sm-p2x md+bcm2y md+p10y">
-        <Step icon={Cog} title={this.i18n.cycle.ssr.title} link={this.i18n.cycle.ssr.link} text={this.i18n.cycle.ssr.text} />
-        <Step icon={Heartbeat} title={this.i18n.cycle.spa.title} link={this.i18n.cycle.spa.link} text={this.i18n.cycle.spa.text} />
-        <Step icon={QRCode} title={this.i18n.cycle.ssg.title} link={this.i18n.cycle.ssg.link} text={this.i18n.cycle.ssg.text} />
+        <Step icon={Cog} {...this.i18n.cycle.ssr} />
+        <Step icon={Heartbeat} {...this.i18n.cycle.spa} />
+        <Step icon={QRCode} {...this.i18n.cycle.ssg} />
       </section>
     )
   }
@@ -98,7 +98,7 @@ class Home extends Nullstack {
         <Feature key="TaskList" />
         <div class="xl x12 p1">
           <div class="xl x12 bcm2">
-            {this.i18n.showcase.paragraphs.map((paragraph) => <p class="xx x12 m5t p4x lh16" html={paragraph} />)}
+            {this.i18n.showcase.descriptions.map((description) => <p class="xx x12 m5t p4x lh16" html={description} />)}
           </div>
         </div>
       </section>
@@ -119,18 +119,16 @@ class Home extends Nullstack {
     if(!this.i18n.features) return false;
     return (
       <section class="x lg-x12z xl lg-p2x">
-        {this.i18n.features.map(feature => 
-          <Feature {...feature} />
-        )}
+        {this.i18n.features.map(feature => <Feature {...feature} />)}
       </section>
     )
   }
 
-  renderVideo({title, link, part}) {
+  renderVideo({title, link, thumbnail}) {
     return (
       <div class="x12 md+x4 p1">
         <a href={link} title={title} target="_blank" rel="noopener">
-          <img src={`/thumb-0${part}.webp`} alt={title} height="209" width="372" loading="lazy" />
+          <img src={thumbnail} alt={title} height="209" width="372" loading="lazy" />
         </a>
       </div>
     )
@@ -144,7 +142,7 @@ class Home extends Nullstack {
         <h2 class="x12 sm-fs8 md+fs12"> Watch our Nullstack video turorials </h2>
         <p class="x12 fs4"> Nullstack cares about making its content as direct to the point and easy to understand as possible </p>
         <div class="xl x12 p10t">
-          {this.i18n.playlist.videos.map((video, index) => <Video {...video} part={index+1} /> )}
+          {this.i18n.playlist.videos.map((video) => <Video {...video} /> )}
         </div>
       </section>
     )
@@ -154,7 +152,6 @@ class Home extends Nullstack {
     return (
       <div class="md+x6 p1">
         <div class="xx bgm2 p8y p4x y12">
-          <Icon height={40} class="cm2z m4b" />
           <h3 class="x12 fs6">
             <a href={link} class="ci1">{title}</a>
           </h3>

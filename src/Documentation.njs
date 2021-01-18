@@ -25,7 +25,7 @@ class Documentation extends Nullstack {
     )
   }
 
-  renderTopic({title, description, links}) {
+  renderTopic({title, description, articles}) {
     return (
       <div class="x12 m6y bcm2 p4x p4t p1b">
         <h2 class="x12 sm-fs6 md+fs8 m2b"> {title} </h2>
