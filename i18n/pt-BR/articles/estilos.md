@@ -1,13 +1,13 @@
 ---
-title: Styles
-description: Using styles with Nullstack is as simple as importing a style file
+title: Estilos
+description: Usar estilos com o Nullstack é tão simples quanto importar um arquivo de estilo.
 ---
 
-Using styles with Nullstack is as simple as importing a style file.
+Usar estilos com o Nullstack é tão simples quanto importar um arquivo de estilo.
 
-Nullstack comes with a [SASS](https://sass-lang.com) loader by default, but you can still use vanilla CSS.
+O Nullstack vem com um loader [SASS](https://sass-lang.com) por padrão, mas você ainda pode usar o CSS Vanilla.
 
-> ✨ It's a good practice to import a file with the same name as the component.
+> ✨ É uma boa prática importar um arquivo com o mesmo nome do componente.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -20,10 +20,10 @@ class Header extends Nullstack {
 export default Header;
 ```
 
-In production mode Nullstack uses [PurceCSS](https://purgecss.com), which cleans your client.css file, but has some gotchas.
+No modo de produção, o Nullstack usa [PurgeCSS](https://purgecss.com), que limpa seu arquivo client.css, mas tem alguns truques.
 
-> ✨ Learn more about [safelisting your css](https://purgecss.com/safelisting.html)
+> ✨ Saiba mais sobre [fazendo uma safelist do seu css](https://purgecss.com/safelisting.html)
 
-## Next step
+## Próximo passo
 
-⚔ Learn about the [NJS file extension](/njs-file-extension).
+⚔ Aprenda sobre a [extensão de arquivo NJS](/njs-file-extension).
