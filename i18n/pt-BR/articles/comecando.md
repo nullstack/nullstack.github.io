@@ -3,92 +3,92 @@ title: Começando
 description: Crie aplicações full-stack em javascript em meros segundos
 ---
 
-> 📌 You can watch a video tutorial on our [Youtube Channel](https://www.youtube.com/watch?v=ieLVXZGXUkI&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe).
+> 📌 Voce pode assistir um tutorial no nosso [Canal do Youtube](https://www.youtube.com/watch?v=ieLVXZGXUkI&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe).
 
-Create full-stack javascript applications within seconds using *npx* to generate your project files from the latest template.
+Crie aplicações full-stack em javascript em segundos usando *npx* para gerar os arquivos do seu projeto do último template.
 
-> 🔥 The minimum required [node.js](https://nodejs.org) version for development mode is *12.12.0*.
+> 🔥 A versão mínima necessária do [node.js](https://nodejs.org) para o modo de desenvovimento é *12.12.0*.
 
-Replace *project-name* with your project name and run the command below to start a project: 
+Troque *project-name* com o nome do seu projeto e rode o comanto abaixo para começar um projeto: 
 
 ```sh
 npx create-nullstack-app project-name
 ```
 
-Change directory to the generated folder:
+Troque o diretório para a pasta gerada:
 
 ```sh
 cd project-name
 ```
 
-Install the dependencies:
+Instale as dependências:
 
 ```sh
 npm install
 ```
 
-Start the application in development mode:
+Comece a aplicação em mode de desenvolvimento:
 
 ```sh
 npm start
 ```
 
-## Understanding the generated files
+## Entendendo os arquivos gerados
 
-The following folders and files will be generated:
+As seguintes pastas e arquivos são gerados:
 
 ### index.js
 
-This is the [Webpack](https://webpack.js.org) entry point.
+Este é o ponto de entrada do [Webpack](https://webpack.js.org).
 
-Usually, you don't have to touch this file, but it is a convenient place to import global dependencies like CSS frameworks.
+Normalmente, voce não tem que mexer neste arquivo, mas é um lugar conveniente para importar dependências globais como frameworks CSS.
 
 ### src/
 
-This folder will contain the actual source code of your application.
+Esta pasta contêm o código fonte da sua aplicação.
 
 ### src/Application.njs
 
-This is your application main file.
+Este é o arquivo principal da sua aplicação.
 
->✨ Learn more about the [njs file extension](/njs-file-extension "Nullstack Javascript").
+>✨ Saiba mais sobre a [extensão de arquivo njs](/njs-file-extension "Nullstack Javascript").
 
-The start function will be automatically called once when you run *npm start*, use it to populate your server [context](/context) with things like [database](/how-to-use-mongodb-with-nullstack), [settings](/context-settings), and [secrets](/context-secrets).
+A função *start* será automaticamente chamada uma vez que voce rode *npm start*, use a para preencher o [contexto](/context) do seu servidor com coisas como [database](/how-to-use-mongodb-with-nullstack), [configurações](/context-settings), and [segredos](/context-secrets).
 
->✨ Learn more about the [application startup](/application-startup).
+>✨ Saiba mais sobre a [inicialização da aplicação](/application-startup).
 
 ### src/Application.scss
 
-This is an empty file just to demonstrate that you can use [SCSS with nullstack](/styles).
+Este é um arquivo vazio só para demonstrar que voce pode usar [SCSS com nullstack](/styles).
 
-It is a good practice to import a style file in a component with the same name.
+É uma boa prática importa um arquivo de estilo em um componente com o mesmo nome.
 
->✨ Learn more about [styles](/styles).
+>✨ Saiba mais sobre [estilos](/styles).
 
 ### public/
 
-Every file in here will be available to anyone from the domain root.
+Cada arquivo aqui será disponível para qualquer um desde a raíz do domínio.
 
-By default *create-nullstack-app* generates the icons required for your manifest.json and images for OG meta tags.
+Por padrão *create-nullstack-app* gera os ícones necessários para o seu manifest.json e imagens para suas meta tags OG.
 
->✨ Learn more about [manifest.json](/context-project).
+>✨ Saiba mais sobre o [manifest.json](/context-project).
 
-Be sure to replace these images with your project identity.
+Tenha certeza de trocar estas imagens com a identidade do seu projeto.
 
 ### .development/
 
-This is the compiled result of your application in development mode.
+Este é o resultado compilado da sua aplicação em modo de desenvolvimento.
 
-> 🔥 Do not touch this folder
+> 🔥 Não toque nesta pasta
 
 ### .production/
 
-This is the compiled result of your application in production mode.
+Este é o resultado compilado da sua aplicação em modo de produção.
 
-> 🔥 Do not touch this folder
+> 🔥 Não toque nesta pasta
 
->✨ Learn more about [how to deploy a nullstack application](/how-to-deploy-a-nullstack-application).
+>✨ Saiba mais sobre [como implantar uma application nullstack](/how-to-deploy-a-nullstack-application).
 
 ## Next step
 
-⚔ Create your first [renderable component](/renderable-components).
+⚔ Crie seu primeiro [componente renderizável](/renderable-components).
