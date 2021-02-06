@@ -1,23 +1,23 @@
 ---
-title: Context
-description: Create full-stack javascript applications within seconds 
+title: Contexto
+description: Criar aplicações JavaScript full-stack em segundos
 ---
 
-Every function in Nullstack receives a context as the argument.
+Cada função no Nullstack recebe um contexto como argumento.
 
-There are two contexts, one for the client and another one for the server.
+Existem dois contextos, um para o cliente e outro para o servidor.
 
-The client context lives as long as the browser tab is open.
+O contexto do cliente dura enquanto a guia do navegador estiver aberta.
 
-The server context lives as long as the server is running.
+O contexto do servidor dura enquanto o servidor estiver em execução.
 
-Both contexts are proxies that merge the keys of 3 objects:
+Ambos os contextos são proxies que mesclam as chaves de 3 objetos:
 
-## 1 - Framework store
+## 1 - Framework
 
-These are the information that the framework makes available to you by default.
+Essas são as informações que a estrutura disponibiliza para você por padrão.
 
-### The available global server keys are:
+### As chaves globais do servidor são:
 
 - [page](/context-page)
 - [environment](/context-environment)
@@ -27,7 +27,7 @@ These are the information that the framework makes available to you by default.
 - [response](/server-request-and-response)
 - [worker](/service-worker)
 
-### The available global client keys are:
+### As chaves globais do cliente são:
 
 - [data](/context-data)
 - [page](/context-page)
@@ -37,20 +37,19 @@ These are the information that the framework makes available to you by default.
 - [router](/routes-and-params)
 - [worker](/service-worker)
 
-### The available instance client keys are:
+### As chaves de instância do cliente são:
 
 - [self](/instance-self)
 - [children](/renderable-components)
 - [key](/instance-key)
 
-## 2 - Application store
+## 2 - Aplicação
 
-When you set a key to the context it will be available for destructuring at any depth of the application, even the parents of your component or 3rd party applications that mount your component.
+Quando você define uma chave para o contexto, ela fica disponível para desestruturação em qualquer profundidade do aplicativo, até mesmo para os objetos pais ou aplicativos de terceiros que montam seu componente.
 
-Updating a key in the context causes the application to re-render automatically.
+Atualizar uma chave no contexto faz com que o aplicativo seja renderizado novamente automaticamente.
 
-You can think of this as a single concept to replace stores, contexts, services, and reducers at the same time using the dependency injection pattern with vanilla javascript objects instead.
-
+Você pode pensar nisso como um único conceito para substituir contextos, serviços e redutores ao mesmo tempo, usando o padrão de injeção de dependência com objetos javascript padrão.
 ```jsx
 import Nullstack from 'nullstack';
 
@@ -103,13 +102,13 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## 3 - Attributes
+## 3 - Atributos
 
-These are the attributes you declare in your tag.
+Esses são os atributos que você declara em sua tag.
 
-If the attribute is declared in a component tag every function of that component will have access to that attribute in its context.
+Se o atributo é declarado em uma tag componente cada função desse componente terá acesso a esse atributo em seu contexto.
 
-If the attribute is declared in a tag that has an event it will be merged into the event function context.
+Se o atributo for declarado em uma tag que possui um evento, ele será incorporado ao contexto da função de evento.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -156,11 +155,11 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Functions Context
+## Funções
 
-Every function of subclasses of Nullstack is injected with a copy of the instance context merged with its arguments.
+Cada função das subclasses do Nullstack é injetada com uma cópia do contexto da instância mesclada com seus argumentos.
 
-Arguments are optional, but if declared, must be a single object with keys of your choice.
+Os argumentos são opcionais, mas se declarados, devem ser um único objeto com chaves de sua escolha.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -181,6 +180,6 @@ class Counter extends Nullstack {
 export default Counter;
 ```
 
-## Next step
+## Próximo passo
 
-⚔ Learn about [routes and params](/routes-and-params).
+⚔ Aprenda sobre [Rotas e Parâmetros](/routes-and-params).
