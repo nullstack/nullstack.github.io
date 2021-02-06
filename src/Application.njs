@@ -73,8 +73,8 @@ class Application extends Nullstack {
         <Waifu route="/waifu" locale="en-US" />
         <Waifu route="/pt-br/waifu" locale="pt-BR" />
 
-        <Article route="/:slug" locale="en-US" />
         <Article route="/pt-br/:slug" locale="pt-BR" />
+        <Article route="/:slug" locale="en-US" />
 
         <Footer />
 
