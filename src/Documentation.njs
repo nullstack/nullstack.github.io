@@ -7,7 +7,7 @@ class Documentation extends Nullstack {
   i18n = {};
 
   static async geti18nByLocale({locale}) {
-    const file = readFileSync(`i18n/${locale}/pages/Documentation.yml`, 'utf-8');
+    const file = readFileSync(`i18n/${locale}/components/Documentation.yml`, 'utf-8');
     return YAML.parse(file);
   }
 
@@ -25,7 +25,7 @@ class Documentation extends Nullstack {
     )
   }
 
-  renderTopic({title, description, articles}) {
+  renderTopic({title, description, links}) {
     return (
       <div class="x12 m6y bcm2 p4x p4t p1b">
         <h2 class="x12 sm-fs6 md+fs8 m2b"> {title} </h2>

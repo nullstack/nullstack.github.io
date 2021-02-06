@@ -56,17 +56,30 @@ class Application extends Nullstack {
   render() {
     return (
       <main>
-        <Preloader />  
         <Header />
+
         <Home route="/" locale="en-US" />
+        <Home route="/pt-br" locale="pt-BR" />
+
         <Documentation route="/documentation" locale="en-US" />
-        <Components route="/components" />
-        <Contributors route="/contributors" />
-        <Waifu route="/waifu" />
-        <Article route="/pt-br/:slug" locale="pt-BR" />
+        <Documentation route="/pt-br/documentacao" locale="pt-BR" />
+
+        <Components route="/components" locale="en-US" />
+        <Components route="/pt-br/componentes" locale="pt-BR" />
+
+        <Contributors route="/contributors" locale="en-US" />
+        <Contributors route="/pt-br/contribuidores" locale="pt-BR" />
+
+        <Waifu route="/waifu" locale="en-US" />
+        <Waifu route="/pt-br/waifu" locale="pt-BR" />
+
         <Article route="/:slug" locale="en-US" />
+        <Article route="/pt-br/:slug" locale="pt-BR" />
+
         <Footer />
+
         <GoogleAnalytics id="G-E7GZ5Z4MLN" />
+        <Preloader />
         <Loader />
       </main>
     )

@@ -11,7 +11,7 @@ class Home extends Nullstack {
   i18n = {};
 
   static async geti18nByLocale({locale}) {
-    const file = readFileSync(`i18n/${locale}/pages/Home.yml`, 'utf-8');
+    const file = readFileSync(`i18n/${locale}/components/Home.yml`, 'utf-8');
     return YAML.parse(file);
   }
 
@@ -97,8 +97,8 @@ class Home extends Nullstack {
         <Feature key="Application" />
         <Feature key="TaskList" />
         <div class="xl x12 p1">
-          <div class="xl x12 bcm2">
-            {this.i18n.showcase.descriptions.map((description) => <p class="xx x12 m5t p4x lh16" html={description} />)}
+          <div class="xl x12 bcm2 p2t">
+            {this.i18n.showcase.descriptions.map((description) => <p class="xx x12 m2b p4x lh16" html={description} />)}
           </div>
         </div>
       </section>
@@ -139,8 +139,8 @@ class Home extends Nullstack {
     if(!this.i18n.playlist) return false;
     return (
       <section class="x xx md+bcm2t sm-p10t md+p20t sm-p2x">
-        <h2 class="x12 sm-fs8 md+fs12"> Watch our Nullstack video turorials </h2>
-        <p class="x12 fs4"> Nullstack cares about making its content as direct to the point and easy to understand as possible </p>
+        <h2 class="x12 sm-fs8 md+fs12"> {this.i18n.playlist.heading} </h2>
+        <p class="x12 fs4"> {this.i18n.playlist.tagline} </p>
         <div class="xl x12 p10t">
           {this.i18n.playlist.videos.map((video) => <Video {...video} /> )}
         </div>

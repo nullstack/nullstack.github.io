@@ -63,8 +63,6 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-> 💡 Components that do nothing besides rendering are extracted into faster functional components at transpile time!
-
 ## Using HTML attributes
 
 Nullstack JSX deviates a little from the spec.
