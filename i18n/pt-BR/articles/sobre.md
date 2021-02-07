@@ -1,6 +1,6 @@
 ---
 title: Por quê criamos o Nullstack?
-description: O único propósito de Nullstack é simplificar o desenvolvimento, eliminando o *Glue Code* e permitindo-lhe se concentrar na lógica de sua aplicação.
+description: O único propósito de Nullstack é simplificar o desenvolvimento, eliminando o Glue Code e permitindo-lhe se concentrar na lógica de sua aplicação.
 ---
 
 Ele foi criado tendo em mente os programadores acostumados a desenvolver sistemas inteiros sozinhos, mas é facilmente escalável para equipes pequenas ou mesmo grandes, desde que cada programador conheça o fluxo do recurso que deve desenvolver.
@@ -57,14 +57,15 @@ Uma vez que optamos pela imutabilidade como uma restrição do framework, podemo
 
 O Nullstack pega emprestado o conceito de “bateria incluída” do Ember.js, mas permite que você troque as baterias. Tudo que você precisa para fazer um aplicativo deve fazer parte do framework e ainda ser flexível.
 
-A framework should do the heavy lifting and a programmer should focus on his own application.
-For this reason, all you have to do is to declare your classes and let Nullstack instantiate them for you. That way, we removed the most painful aspect of dealing with classes while maintaining all of the advantages of them.
+O framework deve fazer o trabalho pesado e o programador deveria focar na sua própria aplicação.
+Por esse motivo tudo que você precisa fazer é declarar suas classes e deixar que o Nullstack instancie elas para você.
+Desta forma, nos removemos o aspecto mais doloroso de lidar com classes enquanto mantemos todas as vantagens delas.
 
 ### Rota de fuga segura
 
 Orientado a objetos vs. funcional não é um tópico novo e, ultimamente, o primeiro parece ter sido excluído da maioria dos frameworks, não deixando lugar para desenvolvedores que gostam desse padrão.
 
-É certo que as classes demoravam muito para serem padronizadas em Javascript e o atraso pode ter causado algumas *implementações traumáticas* ao longo do caminho.
+É certo que as classes demoraram muito para serem padronizadas em Javascript e o atraso pode ter causado algumas *implementações traumáticas* ao longo do caminho.
 
 Embora a programação orientada a objetos possa não ser a melhor solução para todos os problemas, o Nullstack permite que você importe funções livremente e as use nos momentos em que você achar melhor.
 
@@ -84,8 +85,8 @@ Isso tem duas vantagens principais:
 
 A aplicação gerada é suficiente para ser um PWA (Progressive Web App) sem pensar em *boilerplates*, e ainda mais, você é livre para substituir o comportamento padrão das funções.
 
-Um conceito emprestado do Ruby é a felicidade do desenvolvedor. O objetivo do Nullstack é facilitar a vida do desenvolvedor, simplificando tudo o que for possível sem esconder nada de você.
+Um conceito emprestado do Ruby é a “felicidade do desenvolvedor”. O objetivo do Nullstack é facilitar a vida do desenvolvedor, simplificando tudo o que for possível sem esconder nada de você.
 
 Os primeiros desenvolvedores que queríamos deixar felizes somos nós mesmos. Fizemos o Nullstack porque nos divertimos no processo. Tudo começou como um protótipo simples em cima do React.js e nos empolgamos, tornando-o cada vez mais agradável para nós até que se tornou algo próprio.
 
-Esperamos que você goste de usar o Nullstack tanto quanto nós, porque é isso que mantém este projeto em andamento.
+Esperamos que você goste de usar o Nullstack tanto quanto nós, porque é isso que mantém este projeto avançando.
