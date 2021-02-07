@@ -1,6 +1,6 @@
-import Nullstack from 'nullstack';
+import Translatable from './Translatable';
 
-class Footer extends Nullstack {
+class Footer extends Translatable {
 
   renderLink({title, href}) {
     return (
@@ -12,16 +12,20 @@ class Footer extends Nullstack {
   }
   
   render() {
+    if(!this.i18n) return false;
     return (
       <footer class="xx m20t">
         <div class="x xr md+bcm2t yy md+p10y prtl">
           <a href="/waifu">
-            <img src="/nullachan.png" alt="Nulla-Chan" title="Nulla-Chan: Nullstack's official waifu" class="pabl sm-p2l" height="160" loading="lazy" />
+            <img
+             src="/nullachan.png"
+             alt={this.i18n.nullachan.alt}
+             title={this.i18n.nullachan.title}
+             class="pabl sm-p2l" height="160" loading="lazy" 
+            />
           </a>
           <nav class="xr sm-x4 yy">
-            <Link title="YouTube" href="https://www.youtube.com/channel/UCUNPaxoppH3lu6JTrUX78Ww" />
-            <Link title="Twitter" href="https://twitter.com/nullstackapp" />
-            <Link title="GitHub" href="https://github.com/nullstack" />
+            {this.i18n.links.map((link) => <Link {...link} />)}
           </nav>
         </div>
       </footer>

@@ -2,9 +2,27 @@ import Nullstack from 'nullstack';
 
 class Contributors extends Nullstack {
 
+  documentation = [];
+  packages = [];
+
   prepare({page, project}) {
     page.title = `Contributors - ${project.name}`;
     page.description = 'Found a bug or want a new feature? Become a contributor!'
+  }
+
+  async fetchContributors({repository}) {
+    const response = await fetch(`https://api.github.com/repos/nullstack/${repository}/contributors`);
+    return await response.json();
+  }
+
+  async hydrate() {
+    this.documentation = await this.fetchContributors({repository: 'nullstack.github.io'});
+    const nullstack = await this.fetchContributors({repository: 'nullstack'});
+    const createNulstackApp = await this.fetchContributors({repository: 'create-nullstack-app'});
+    const createNulstaticApp = await this.fetchContributors({repository: 'create-nullstatic-app'});
+    const packages = [...nullstack, ...createNulstackApp, ...createNulstaticApp];
+    const logins = new Set(packages.map(({login}) => login));
+    this.packages = [...logins].map((login) => packages.find((contributor) => contributor.login == login));
   }
 
   renderParagraph({text}) {
@@ -59,7 +77,7 @@ class Contributors extends Nullstack {
     )
   }
 
-  renderContributor({github, name, role, description, contribution}) {
+  renderCoreContributor({github, name, role, description, contribution}) {
     return (
       <div class="xl x12 bcm2 p2 m2t">
         <img class="xl" src={'https://github.com/' + github + '.png'} alt={name} width="90" height="90" style="height: 90px" />
@@ -78,21 +96,21 @@ class Contributors extends Nullstack {
       <Topic title="The Core Team">
         <Paragraph text="Nullstack was developed by full-stack neuro-atypical freelancers." />
         <Paragraph text="With a heavy background in Rails, Ember.js, and React.js, the inspirations took from those projects might be obvious." />    
-        <Contributor 
+        <CoreContributor 
           name="Christian Mortaro" 
           role="Autistic Author"
           github="Mortaro"
           description="Creator of the concept. Comes with new API proposals to its favorite rubber ducks and returns with commits."
           contribution="Reverse engineered wishful thinking code into existence and then refactored it into a framework."
         />
-        <Contributor 
+        <CoreContributor 
           name="Dayson Marx" 
           role="Distracted Designer" 
           github="daysonmarx"
           description="Rubber duck with human skills that makes sure the code is not going too far outside the box, then makes the box look nice."
           contribution="API reviewer that developed third party projects to test proof of concepts from a front-end focused perspective."
         />
-        <Contributor 
+        <CoreContributor 
           name="Anny Figueira" 
           role="Autistic Adopter" 
           github="AnnyFigueira"
@@ -115,6 +133,27 @@ class Contributors extends Nullstack {
       </Topic>
     )
   }
+
+  renderContributor({login, avatar_url, html_url}) {
+    return (
+      <div class="xx sm-x6 bcm2 p2 m2t">
+        <a href={html_url} title={login} class="ci1" target="_blank" rel="noopener">
+          <img class="xl" src={avatar_url} alt={login} width="90" height="90" style="height: 90px" />
+        </a>
+      </div>
+    )
+  }
+
+  renderGithubContributors({title, key}) {
+    return (
+      <Topic title={title}>
+        <div class="xl">
+          {this[key].map((contributor) => <Contributor {...contributor} />)}
+        </div>
+        <p class="x12 fs4 m2t">* The list might take a while to update due to GitHub API cache</p>
+      </Topic>
+    )
+  }
   
   render() {
     return (
@@ -122,6 +161,8 @@ class Contributors extends Nullstack {
         <State />
         <Roadmap />
         <CoreTeam />
+        <GithubContributors title="Packages Contributors" key="packages" />
+        <GithubContributors title="Documentation Contributors" key="documentation" />
         <HowToContribute />
       </section>
     )

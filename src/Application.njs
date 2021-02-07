@@ -53,10 +53,11 @@ class Application extends Nullstack {
     )
   }
 
-  render() {
+  render({router}) {
+    const locale = router.url.startsWith('/pt-br') ? 'pt-BR' : 'en-US';
     return (
       <main>
-        <Header />
+        <Header locale={locale} />
 
         <Home route="/" locale="en-US" />
         <Home route="/pt-br" locale="pt-BR" />
@@ -76,11 +77,11 @@ class Application extends Nullstack {
         <Article route="/pt-br/:slug" locale="pt-BR" />
         <Article route="/:slug" locale="en-US" />
 
-        <Footer />
-
         <GoogleAnalytics id="G-E7GZ5Z4MLN" />
         <Preloader />
         <Loader />
+
+        <Footer locale={locale} />
       </main>
     )
   }

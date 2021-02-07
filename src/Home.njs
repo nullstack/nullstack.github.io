@@ -1,30 +1,16 @@
-import Nullstack from 'nullstack';
 import Snippet from './Snippet';
 import Cog from 'poisonicon/cog/stroke';
 import Heartbeat from 'poisonicon/heartbeat/stroke';
 import QRCode from 'poisonicon/qrcode/stroke';
-import {readFileSync} from 'fs';
-import YAML from 'yaml';
+import Translatable from './Translatable';
 
-class Home extends Nullstack {
+class Home extends Translatable {
 
-  i18n = {};
-
-  static async geti18nByLocale({locale}) {
-    const file = readFileSync(`i18n/${locale}/components/Home.yml`, 'utf-8');
-    return YAML.parse(file);
-  }
-
-  async initiate({project, page, locale}) {
-    this.i18n = await this.geti18nByLocale({locale});
-    page.title = `${project.name} - ${this.i18n.title}`;
-    page.description = this.i18n.description;
+  prepare({page}) {
     page.priority = 1;
-    page.locale = locale || 'en-US';
   }
 
   renderHero() {
-    if(!this.i18n.hero) return false;
     return (
       <section class="x xx sm-p2x p20y">
         <h1 class="x12 sm-fs8 md+fs12"> {this.i18n.hero.heading} </h1>
@@ -55,7 +41,6 @@ class Home extends Nullstack {
   }
 
   renderCycle() {
-    if(!this.i18n.cycle) return false;
     return (
       <section class="x xx sm-p2x md+bcm2y md+p10y">
         <Step icon={Cog} {...this.i18n.cycle.ssr} />
@@ -66,7 +51,6 @@ class Home extends Nullstack {
   }
 
   renderAbout() {
-    if(!this.i18n.about) return false;
     return (
       <section class="x xx sm-p2x sm-p10y md+p20t md+p10b">
         <h2 class="x12 sm-fs8 md+fs12 m2b"> {this.i18n.about.heading} </h2>
@@ -91,7 +75,6 @@ class Home extends Nullstack {
   }
 
   renderShowcase() {
-    if(!this.i18n.showcase) return false;
     return (
       <section class="x lg-x12z xl md-p2x">
         <Feature key="Application" />
@@ -106,7 +89,6 @@ class Home extends Nullstack {
   }
 
   renderProductivity() {
-    if(!this.i18n.productivity) return false;
     return (
       <section class="x xx sm-p2x sm-p10y md+p20y">
         <h2 class="x12 sm-fs8 md+fs12 m2b"> {this.i18n.productivity.heading} </h2>
@@ -116,7 +98,6 @@ class Home extends Nullstack {
   }
 
   renderFeatures() {
-    if(!this.i18n.features) return false;
     return (
       <section class="x lg-x12z xl lg-p2x">
         {this.i18n.features.map(feature => <Feature {...feature} />)}
@@ -136,7 +117,6 @@ class Home extends Nullstack {
 
   renderPlaylist({worker}) {
     if(!worker.online) return false;
-    if(!this.i18n.playlist) return false;
     return (
       <section class="x xx md+bcm2t sm-p10t md+p20t sm-p2x">
         <h2 class="x12 sm-fs8 md+fs12"> {this.i18n.playlist.heading} </h2>
@@ -163,7 +143,6 @@ class Home extends Nullstack {
   }
 
   renderWhy() {
-    if(!this.i18n.why) return false;
     return (
       <section class="sm-p2x sm-m10t md+m20t">
         <div class="x xx md+bcm2t p10y">
@@ -179,6 +158,7 @@ class Home extends Nullstack {
   }
   
   render() {
+    if(!this.i18n) return false;
     return (
       <div>
         <Hero />

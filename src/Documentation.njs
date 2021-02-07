@@ -1,22 +1,9 @@
-import Nullstack from 'nullstack';
-import {readFileSync} from 'fs';
-import YAML from 'yaml';
+import Translatable from './Translatable';
 
-class Documentation extends Nullstack {
+class Documentation extends Translatable {
   
-  i18n = {};
-
-  static async geti18nByLocale({locale}) {
-    const file = readFileSync(`i18n/${locale}/components/Documentation.yml`, 'utf-8');
-    return YAML.parse(file);
-  }
-
-  async initiate({project, page, locale}) {
-    this.i18n = await this.geti18nByLocale({locale});
-    page.title = `${this.i18n.title} - ${project.name}`;
-    page.description = this.i18n.description;
+  prepare({page}) {
     page.priority = 0.8;
-    page.locale = locale || 'en-US';
   }
 
   renderLink({title, href}) {
@@ -31,18 +18,21 @@ class Documentation extends Nullstack {
         <h2 class="x12 sm-fs6 md+fs8 m2b"> {title} </h2>
         <p class="x12 fs4 m6b"> {description} </p>
         <nav class="x12"> 
-          {links.map(link => <Link {...link} />)} 
+          {links.map((link) => <Link {...link} />)} 
         </nav>
       </div>
     )
   }
   
   render() {
-    return (
+    if(!this.i18n) return false;
+    return (       
       <section class="x sm-p4x sm-p10y md+p20y">
         <h1 class="x12 sm-fs6 md+fs12 m2b"> {this.i18n.heading} </h1>
         <p class="x12 fs4"> {this.i18n.tagline} </p>
-        {this.i18n.topics && this.i18n.topics.map((topic) => <Topic {...topic} />)}
+        <div class="x12">
+          {this.i18n.topics.map((topic) => <Topic {...topic} />)}
+        </div>
       </section>
     )
   }

@@ -12,12 +12,14 @@ topics:
         repository: "https://github.com/Mortaro/nullstack-facebook-pixel"
   - title: "General Inputs"
     projects:
-      - title: Currency Input"
+      - title: "Currency Input"
         repository: "https://github.com/Mortaro/nullstack-currency-input"
       - title: "Date Input"
         repository: "https://github.com/Mortaro/nullstack-date-input"
       - title: "CKEditor Adapter"
         repository: "https://github.com/Mortaro/nullstack-ckeditor-adapter"
+      - title: "Upload Input"
+        repository: "https://github.com/Mortaro/nullstack-upload-input"
   - title: "Brazilian Inputs"
     tagline:
       title: "Nullstack is a Brazilian Framework"
