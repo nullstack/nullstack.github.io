@@ -1,13 +1,13 @@
 ---
-title: Application Startup
-description: The start function will run only once when your application is booted and is a good place for setting up your server context
+title: Inicialização da Aplicação
+description: A função de inicialização será executada apenas uma vez quando seu aplicativo for inicializado e é um bom lugar para configurar o contexto do seu servidor
 ---
 
-The index.js file at your application root is responsible for starting your application.
+O arquivo index.js na raiz do aplicativo é responsável por iniciar a aplicação.
 
-When you run the application with *npm start* or *node .production/server.js* the index will call the start function in your *src/Application.js*.
+Quando você executa o aplicativo com *npm start* ou *node.production/server.js*, o index chama a função start em seu *src/Application.js*.
 
-The start function will run only once when your application is booted and is a good place for setting up your [server context](/context).
+A função start será executada apenas uma vez quando seu aplicativo for inicializado e é um bom lugar para configurar seu [contexto de servidor](/contexto).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -24,9 +24,9 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Dependency startup pattern
+## Padrão de inicialização de dependência
 
-A nice pattern to work with dependencies that require startup time configurations is to define a start function in the dependency and call it in the Application start function passing the [server context](/context).
+Um bom padrão para trabalhar com dependências que requerem configurações de tempo de inicialização é definir uma função de start na dependência e chamá-la na função de start do aplicativo passando o [contexto do servidor](/contexto).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -43,8 +43,8 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-> 🔒 Server functions with the name starting with "start" (and optionally followed by an uppercase letter) do not generate an API endpoint to avoid malicious context flooding.
+> 🔒 As funções de servidor com o nome começando com "start" (e opcionalmente seguido por uma letra maiúscula) não geram um endpoint de API para evitar inundação de contexto malicioso.
 
 ## Next step
 
-⚔ Learn about the [context data](/context-data).
+⚔ Aprenda sobre os [dados de contexto](/dados-de-contexto).
