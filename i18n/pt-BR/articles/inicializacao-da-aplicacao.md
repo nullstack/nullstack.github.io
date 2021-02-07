@@ -1,13 +1,13 @@
 ---
 title: Inicialização da Aplicação
-description: A função de inicialização será executada apenas uma vez quando seu aplicativo for inicializado e é um bom lugar para configurar o contexto do seu servidor
+description: A função de inicialização será executada apenas uma vez quando sua aplicação for inicializada e é um bom lugar para configurar o contexto do seu servidor
 ---
 
-O arquivo index.js na raiz do aplicativo é responsável por iniciar a aplicação.
+O arquivo index.js na raiz da aplicação é responsável por iniciar a aplicação.
 
-Quando você executa o aplicativo com *npm start* ou *node.production/server.js*, o index chama a função start em seu *src/Application.js*.
+Quando você executa a aplicação com *npm start* ou *node .production/server.js*, o index chama a função start em seu *src/Application.js*.
 
-A função start será executada apenas uma vez quando seu aplicativo for inicializado e é um bom lugar para configurar seu [contexto de servidor](/contexto).
+A função start será executada apenas uma vez quando sua aplicação for inicializada e é um bom lugar para configurar seu [contexto de servidor](/pt-br/contexto).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -26,7 +26,7 @@ export default Application;
 
 ## Padrão de inicialização de dependência
 
-Um bom padrão para trabalhar com dependências que requerem configurações de tempo de inicialização é definir uma função de start na dependência e chamá-la na função de start do aplicativo passando o [contexto do servidor](/contexto).
+Um bom padrão para trabalhar com dependências que requerem configurações em tempo de inicialização é definir uma função de start na dependência e chamá-la na função de start da aplicação passando o [contexto do servidor](/pt-br/contexto).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -47,4 +47,4 @@ export default Application;
 
 ## Next step
 
-⚔ Aprenda sobre os [dados de contexto](/dados-de-contexto).
+⚔ Aprenda sobre a [chave data do contexto](/pt-br/contexto-data).

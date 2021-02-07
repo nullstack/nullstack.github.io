@@ -26,4 +26,4 @@ No modo de produção, o Nullstack usa [PurgeCSS](https://purgecss.com), que lim
 
 ## Próximo passo
 
-⚔ Aprenda sobre a [extensão de arquivo NJS](/njs-file-extension).
+⚔ Aprenda sobre a [extensão de arquivo NJS](/pt-br/extensao-de-arquivo-njs).

@@ -1,6 +1,6 @@
 ---
 title: Contexto
-description: Criar aplicações JavaScript full-stack em segundos
+description: Cada função no Nullstack recebe um contexto como argumento.
 ---
 
 Cada função no Nullstack recebe um contexto como argumento.
@@ -15,41 +15,42 @@ Ambos os contextos são proxies que mesclam as chaves de 3 objetos:
 
 ## 1 - Framework
 
-Essas são as informações que a estrutura disponibiliza para você por padrão.
+Essas são as informações que o framework disponibiliza para você por padrão.
 
 ### As chaves globais do servidor são:
 
-- [page](/context-page)
-- [environment](/context-environment)
-- [project](/context-project)
-- [server](/server-request-and-response)
-- [request](/server-request-and-response)
-- [response](/server-request-and-response)
-- [worker](/service-worker)
+- [page](/pt-br/contexto-page)
+- [environment](/pt-br/contexto-environment)
+- [project](/pt-br/contexto-project)
+- [server](/pt-br/requisicao-e-resposta-do-servidor)
+- [request](/pt-br/requisicao-e-resposta-do-servidor)
+- [response](/pt-br/requisicao-e-resposta-do-servidor)
+- [worker](/pt-br/service-worker)
 
 ### As chaves globais do cliente são:
 
-- [data](/context-data)
-- [page](/context-page)
-- [project](/context-project)
-- [environment](/context-environment)
-- [params](/routes-and-params)
-- [router](/routes-and-params)
-- [worker](/service-worker)
+- [data](/pt-br/contexto-data)
+- [page](/pt-br/contexto-page)
+- [project](/pt-br/contexto-project)
+- [environment](/pt-br/contexto-environment)
+- [params](/pt-br/rotas-e-parametros)
+- [router](/pt-br/rotas-e-parametros)
+- [worker](/pt-br/service-worker)
 
 ### As chaves de instância do cliente são:
 
-- [self](/instance-self)
-- [children](/renderable-components)
-- [key](/instance-key)
+- [self](/pt-br/instancia-self)
+- [children](/pt-br/componentes-renderizaveis)
+- [key](/pt-br/instancia-key)
 
 ## 2 - Aplicação
 
-Quando você define uma chave para o contexto, ela fica disponível para desestruturação em qualquer profundidade do aplicativo, até mesmo para os objetos pais ou aplicativos de terceiros que montam seu componente.
+Quando você define uma chave para o contexto, ela fica disponível para desestruturação em qualquer profundidade da aplicação, até mesmo para os objetos pais ou aplicações de terceiros que montam seu componente.
 
-Atualizar uma chave no contexto faz com que o aplicativo seja renderizado novamente automaticamente.
+Atualizar uma chave no contexto faz com que a aplicação seja renderizada novamente automaticamente.
 
 Você pode pensar nisso como um único conceito para substituir contextos, serviços e redutores ao mesmo tempo, usando o padrão de injeção de dependência com objetos javascript padrão.
+
 ```jsx
 import Nullstack from 'nullstack';
 
@@ -182,4 +183,4 @@ export default Counter;
 
 ## Próximo passo
 
-⚔ Aprenda sobre [Rotas e Parâmetros](/routes-and-params).
+⚔ Aprenda sobre [Rotas e Parâmetros](/pt-br/rotas-e-parametros).

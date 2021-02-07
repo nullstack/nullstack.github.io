@@ -1,6 +1,6 @@
 ---
 title: Context
-description: Create full-stack javascript applications within seconds 
+description: Every function in Nullstack receives a context as the argument.
 ---
 
 Every function in Nullstack receives a context as the argument.
