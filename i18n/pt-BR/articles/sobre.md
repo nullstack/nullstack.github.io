@@ -1,93 +1,91 @@
 ---
-title: Why Nullstack Exists
-description: The sole purpose of Nullstack is to simplify the development by eliminating glue code and letting you focus on the logic of your application
+title: Por quê criamos o Nullstack?
+description: O único propósito de Nullstack é simplificar o desenvolvimento, eliminando o *Glue Code* e permitindo-lhe se concentrar na lógica de sua aplicação.
 ---
 
-The sole purpose of Nullstack is to simplify the development by eliminating glue code and letting you focus on the logic of your application.
+Ele foi criado tendo em mente os programadores acostumados a desenvolver sistemas inteiros sozinhos, mas é facilmente escalável para equipes pequenas ou mesmo grandes, desde que cada programador conheça o fluxo do recurso que deve desenvolver.
 
-It was created keeping in mind programmers used to developing entire systems alone, but it is easily scalable to small or even big teams, as long as each programmer knows the flow of the feature they are to develop.
+## A Stack
 
-## The Stack
+Com a maioria das tecnologias usadas na web hoje em dia, o fluxo mais comum é algo assim:
 
-With the stack of technologies used in the web nowadays, the most common flow is something like this:
+- Front-end usa um redutor sobre um contexto que chama um *fetcher*;
+- Este *fetcher* traz informações genéricas sobre uma API RESTful;
+- A API RESTful chama uma rota do servidor, que em seguida chama um controlador, que leva a informação de um modelo e o transforma em um *serializer*;
+- Se você precisar de mais de um recurso, este processo deve ser repetido até que todos os recursos sejam buscados;
+- Depois que todos os dados forem buscados, só então o front-end poderá usá-los;
+- Raciocinar sobre como lidar como o servidor processará e realizará as etapas acima;
 
-- Front-end uses a reducer over a context that calls a fetcher;
-- This fetcher brings generic information over a RESTful API;
-- The RESTful API calls a server route, which calls a controller, which takes the information of a model and resolves it into a serializer;
-- If you need more than one resource, this process should be repeated until all resources are fetched;
-- After all the data has been fetched, only then should the front-end be able to use it;
-- Reason about how to deal with server-side render and hydration of the steps above;
-
-Note that all you wanted was to show something from the database into a view. With Nullstack, that’s all you need to concern yourself with. Everything else is “glue code” and the framework should take care of it for you.
+Note que tudo que você queria era mostrar algo a partir do banco de dados em uma visualização. Com o Nullstack, você só precisa se preocupar com a lógica. Todo o resto é *Glue Code* e o framework deve cuidar disso para você.
 
 ## Feature-driven
 
-If you’re used to working on more than one project at a time or even if you just happen to have to give sporadic maintenance to a lot of your old projects, you might have stumbled upon this scenario: you don’t remember exactly where in your code is the logic you’re trying to fix or improve.
+Se você está acostumado a trabalhar em mais de um projeto ao mesmo tempo ou mesmo se por acaso tiver que dar manutenção esporádica em muitos de seus projetos antigos, você pode ter tropeçado neste cenário: você não se lembra exatamente onde em seu código está a lógica que você está tentando consertar ou melhorar.
 
-You might have a hook whose dependencies are local variables initialized with a redux state, which was stored at some point by an action declared somewhere in your source tree and called in who knows where.
+Você pode ter um gancho cujas dependências são variáveis locais inicializadas com um estado redux, que foi armazenado em algum ponto por uma ação declarada em algum lugar em seu código fonte e chamada sabe-se lá onde.
 
-If everything pertaining to a single feature were to be in the same file, maybe you wouldn’t need to reverse engineer your own code every time you need to update or fix something.
+Se tudo o que pertence a um único recurso estivesse no mesmo arquivo, talvez você não precisasse fazer engenharia reversa em seu próprio código toda vez que precisar atualizar ou corrigir algo.
 
-Putting everything in a single file may sound messy at a glance, but remember that you are the one who decides the granularity of this division.
+Colocar tudo em um único arquivo pode parecer confuso à primeira vista, mas lembre-se de que você é quem decide a granularidade dessa divisão.
 
-A "feature" might be an entire register form or something as small as a button that does some verifications before letting you submit that form. It’s entirely up to you, and since each component is as complete as an entire feature, you could call this button or even the entire form on other pages in your application. This leads us to **True Componentization and Code Reusability**.
+Um "recurso" pode ser um formulário de registro inteiro ou algo tão pequeno quanto um botão que faz algumas verificações antes de permitir que você envie esse formulário. Depende inteiramente de você e, como cada componente é tão completo quanto um recurso inteiro, você pode chamar esse botão ou até mesmo o formulário inteiro em outras páginas de seu aplicativo. Isso nos leva à **Verdadeira componentização e reutilização de código**.
 
-## Componentization and Code Reusability
+## Componentização e reutilização de código
 
-Components in Nullstack are self-sufficient.
+Os componentes do Nullstack são autossuficientes.
 
-Most frameworks are specialized in a single layer, meaning that any component will be only as complete as its framework. When exporting a Nullstack component, all the code needed to run the feature is going to be together, without the need of allocating the other layers separately.
+A maioria dos frameworks são especializados em apenas uma camada do desenvolvimento. Ao exportar um componente Nullstack, todo o código necessário para rodar o recurso vai ficar junto, sem a necessidade de alocar as outras camadas separadamente.
 
-As a side effect, entire applications can be used as components, and mounted in other applications as engines.
+Como efeito colateral, aplicativos inteiros podem ser usados como componentes e montados em outros aplicativos como *engines*.
 
-## Why object-oriented instead of functional
+## Por quê usar *Orientação à objetos* e não componentes funcionais 
 
-At first glance, classes may look more verbose than the trendy functional components.
-This section will explain the reasons that lead us to favor classes in the development of Nullstack.
+À primeira vista, as classes podem parecer mais detalhadas do que os componentes funcionais.
+Esta seção explicará os motivos que nos levam a favorecer as classes no desenvolvimento do Nullstack.
 
-The reasons are actually connected to some core principles of Nullstack, being:
+As razões estão, na verdade, conectadas a alguns princípios básicos do Nullstack, sendo:
 
-### Everything as Vanilla as Possible
+### Tudo é possivel
 
-We didn’t want to introduce a “Nullstack way” of doing things and wanted it to be accessible to anyone with some Javascript knowledge.
+Nós não queremos introduzir um “modo Nullstack” de fazer as coisas, queremos que se torne algo acessível a qualquer pessoa com algum conhecimento Javascript.
 
-That being said, the first big problem was to address state management in a vanilla Javascript way. Supporting functional components would require a solution similar to the hooks of React.js that would be considered a mannerism of the framework.
+Dito isso, o primeiro grande problema foi abordar o gerenciamento de estado de uma forma Javascript padrão. O suporte de componentes funcionais exigiria uma solução semelhante aos ganchos de React.js, que seriam considerados um maneirismo do framework.
 
-Since we opted out of immutability as a framework constraint, we are allowed to use the native way of setting simple variables. This removes the complexity of state management that created the need of third-party state management libraries in the first place.
+Uma vez que optamos pela imutabilidade como uma restrição do framework, podemos usar a forma nativa de definir variáveis simples. Isto remove a complexidade do gerenciamento de estados, o que foi responsável anteriormente pela necessidade de usar uma biblioteca de terceiros para o gerenciamento dos mesmos
 
-### No Glue Code or “Batteries Included”
+### Nenhum *Glue Code* ou “baterias incluídas”
 
-Nullstack borrows the concept of “battery-included” from Ember.js, but allows you to change batteries. Everything you need to make an application should be part of the framework, and still be flexible.
+O Nullstack pega emprestado o conceito de “bateria incluída” do Ember.js, mas permite que você troque as baterias. Tudo que você precisa para fazer um aplicativo deve fazer parte do framework e ainda ser flexível.
 
 A framework should do the heavy lifting and a programmer should focus on his own application.
 For this reason, all you have to do is to declare your classes and let Nullstack instantiate them for you. That way, we removed the most painful aspect of dealing with classes while maintaining all of the advantages of them.
 
-### Having a safe escape route
+### Rota de fuga segura
 
-Object-oriented versus functional is not a new topic, and lately the former seems to be bullied out of most frameworks, leaving no place for developers that enjoy this pattern.
+Orientado a objetos vs. funcional não é um tópico novo e, ultimamente, o primeiro parece ter sido excluído da maioria dos frameworks, não deixando lugar para desenvolvedores que gostam desse padrão.
 
-Admittedly classes took too long to be standardized into Javascript and the delay might have caused some traumatic bad implementations along the way.
+É certo que as classes demoravam muito para serem padronizadas em Javascript e o atraso pode ter causado algumas *implementações traumáticas* ao longo do caminho.
 
-While object-oriented programming might not be the best solution for every problem, Nullstack allows you to import functions freely and use them in the moments when they should be the weapon of choice.
+Embora a programação orientada a objetos possa não ser a melhor solução para todos os problemas, o Nullstack permite que você importe funções livremente e as use nos momentos em que você achar melhor.
 
-## Why dependency injection instead of modularity
+## Por que injeção de dependência em vez de modularidade
 
-Nullstack context uses the dependency injection pattern, which means that everything you need can be requested from the framework at the signature level of the function.
+O contexto do Nullstack usa o padrão de injeção de dependência, o que significa que tudo o que você precisa pode ser solicitado do framework a partir da camada em que está a função.
 
-The context is a horizontally scoped object that is injected in all of your function calls. The non-hierarchical nature of this pattern allows you to easily move around your component's logic as your application grows, while still avoiding problems like props drilling or filling your view layer with store declarations.
+O contexto é um objeto com escopo horizontal que é injetado em todas as suas chamadas de função. A natureza não hierárquica desse padrão permite que você mova facilmente a lógica de seu componente conforme seu aplicativo cresce, enquanto ainda evita problemas com *threading* ou encher seu código-fonte com inúmeras declarações para a mesma coisa.
 
-This has two major advantages:
+Isso tem duas vantagens principais:
 
-- You see the dependencies of your code at a function level instead of having them all imported on top of the file.
+- Você vê as dependências de seu código em uma função, em vez de tê-los todos importados na parte superior do arquivo.
 
-- The framework is able to give you the most precise information about the specific environment for that function call.
+- O framework é capaz de lhe dar informações mais precisas sobre o ambiente específico para essa chamada de função.
 
-## Developer Happiness
+## Felicidade do desenvolvedor
 
-The generated application is enough to have a PWA without thinking about boilerplates, but you are completely free to override the default behavior of each moving piece.
+A aplicação gerada é suficiente para ser um PWA (Progressive Web App) sem pensar em *boilerplates*, e ainda mais, você é livre para substituir o comportamento padrão das funções.
 
-A borrowed concept from Ruby is developer happiness. Nullstack aims to ease the developer’s life by simplifying everything possible, but without hiding things from you.
+Um conceito emprestado do Ruby é a felicidade do desenvolvedor. O objetivo do Nullstack é facilitar a vida do desenvolvedor, simplificando tudo o que for possível sem esconder nada de você.
 
-The first developers we wanted to make happy are ourselves. We made Nullstack because we had fun in the process. It started as a simple prototype on top of React.js and we got carried away, each time making it more enjoyable for us until it became its own thing.
+Os primeiros desenvolvedores que queríamos deixar felizes somos nós mesmos. Fizemos o Nullstack porque nos divertimos no processo. Tudo começou como um protótipo simples em cima do React.js e nos empolgamos, tornando-o cada vez mais agradável para nós até que se tornou algo próprio.
 
-We hope you enjoy using Nullstack as much as we do because that's what keeps this project going forward.
+Esperamos que você goste de usar o Nullstack tanto quanto nós, porque é isso que mantém este projeto em andamento.
