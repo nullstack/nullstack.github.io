@@ -1,40 +1,40 @@
 ---
-title: How to Deploy
-description: With Nullstack it's easy to have your application up and running in production mode
+title: Como fazer Deploy
+description: Com o Nullstack é fácil ter seu aplicativo instalado e funcionando no modo de produção
 ---
 
-With Nullstack it's easy to have your application up and running in production mode.
+Com o Nullstack é fácil ter seu aplicativo instalado e funcionando no modo de produção
 
 > 🐱‍💻 *stonks*
 
-Nullstack compiles your code and all your dependencies using [Webpack](https://webpack.js.org).
+Nullstack compila seu código e todas as suas dependências usando [Webpack](https://webpack.js.org).
 
-The output of the compilation is moved to the *.production* folder and is the only folder besides *public* that needs to be moved into the host machine.
+A saída da compilação é movida para a pasta *.production* e é a única pasta além de *public* que precisa ser movida para a máquina host.
 
-If you have *project.cdn* set you must move the public folder to the actual cdn.
+Se você tiver *project.cdn* definido, deverá mover a pasta pública para o cdn real.
 
-> 💡 It is important that the *.production* folder is present for environment detection
+> 💡 É importante que a pasta *.production* esteja presente para a detecção do ambiente
 
-The host machine must have at least node v8.10.0 installed. 
+A máquina host deve ter pelo menos a versão 8.10.0 do node instalada.
 
-You don't have to "npm install" in the host machine.
+Você não precisa executar "npm install" na máquina host.
 
-> ✨ You can configure the environment using [settings](/context-settings) and [secrets](/context-secrets)
+> ✨ Você pode configurar o ambiente usando [configurações](/contexto-settings) e [secrets](/contexto-secrets)
 
-To start the server just run:
+Para iniciar o servidor, basta executar:
 
 ```sh
 node .production/server.js
 ```
 
-> ✨ It is recommend the usage of a process manager like [PM2](https://pm2.keymetrics.io)
+> ✨ Recomenda-se o uso de um gerenciador de processos como [PM2](https://pm2.keymetrics.io)
 
-## How to Deploy a static generated site with Nullstack
+## Como fazer o Deploy de um site estático gerado com NullStack
 
-After you [generate a static site](/static-site-generation), all you have to do is move the output folder to any host machine capable of serving HTML.
+Depois de [gerar um site estático](/geracao-de-sites-estaticos), tudo o que você precisa fazer é mover a pasta de saída para qualquer máquina host capaz de servir HTML.
 
-## Next step
+## Próxima Etapa
 
-> 🎉 *Congratulations*. You are done with the advanced concepts!
+> 🎉 *Parabéns*. Você concluiu os conceitos avançados!
 
-⚔ Learn [how to use MongoDB with Nullstack](/how-to-use-mongodb-with-nullstack).
+⚔ Aprenda [como usar MongoDB com Nullstack](/como-usar-mongodb-com-nullstack).
