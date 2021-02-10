@@ -16,7 +16,7 @@ import {readdirSync} from 'fs';
 class Application extends Nullstack {
 
   static async startWorker({worker}) {
-    const articles = readdirSync(path.join(__dirname, '..', 'articles'));
+    const articles = readdirSync(path.join(__dirname, '../i18n/en-US', 'articles'));
     worker.preload = [
       '/nullstack.svg',
       ...articles.map((article) => '/' + article.replace('.md', '')),
@@ -43,10 +43,6 @@ class Application extends Nullstack {
     await this.startWorker(context);
   }
 
-  prepare({page}) {
-    page.locale = 'en';
-  }
-
   renderPreloader() {
     return (
       <head>
@@ -57,20 +53,35 @@ class Application extends Nullstack {
     )
   }
 
-  render() {
+  render({router}) {
+    const locale = router.url.startsWith('/pt-br') ? 'pt-BR' : 'en-US';
     return (
       <main>
-        <Preloader />  
-        <Header />
-        <Home route="/" />
-        <Documentation route="/documentation" />
-        <Components route="/components" />
-        <Contributors route="/contributors" />
-        <Waifu route="/waifu" />
-        <Article route="/:slug" />
-        <Footer />
+        <Header locale={locale} />
+
+        <Home route="/" locale="en-US" />
+        <Home route="/pt-br" locale="pt-BR" />
+
+        <Documentation route="/documentation" locale="en-US" />
+        <Documentation route="/pt-br/documentacao" locale="pt-BR" />
+
+        <Components route="/components" locale="en-US" />
+        <Components route="/pt-br/componentes" locale="pt-BR" />
+
+        <Contributors route="/contributors" locale="en-US" />
+        <Contributors route="/pt-br/contribuidores" locale="pt-BR" />
+
+        <Waifu route="/waifu" locale="en-US" />
+        <Waifu route="/pt-br/waifu" locale="pt-BR" />
+
+        <Article route="/pt-br/:slug" locale="pt-BR" />
+        <Article route="/:slug" locale="en-US" />
+
         <GoogleAnalytics id="G-E7GZ5Z4MLN" />
+        <Preloader />
         <Loader />
+
+        <Footer locale={locale} />
       </main>
     )
   }

@@ -1,0 +1,33 @@
+title: "Componentes da Comunidade"
+description: "Uma lista com curadoria de componentes Nullstack feitos pela comunidade."
+heading: "Componentes da Comunidade"
+tagline: "Uma lista com curadoria de componentes Nullstack feitos pela comunidade."
+contribute: "Se você deseja adicionar um componente a esta lista, <a href='https://github.com/nullstack/nullstack.github.io/issues' class='ci1'>abra uma issue no github</a>."
+topics:
+  - title: "Integrações"
+    projects:
+      - title: "Google Analytics"
+        repository: "https://github.com/Mortaro/nullstack-google-analytics"
+      - title: "Facebook Pixel"
+        repository: "https://github.com/Mortaro/nullstack-facebook-pixel"
+  - title: "Inputs Gerais"
+    projects:
+      - title: "Input Monetário"
+        repository: "https://github.com/Mortaro/nullstack-currency-input"
+      - title: "Input de Data"
+        repository: "https://github.com/Mortaro/nullstack-date-input"
+      - title: "Adaptador para CKEditor"
+        repository: "https://github.com/Mortaro/nullstack-ckeditor-adapter"
+      - title: "Input para Upload de Arquivo"
+        repository: "https://github.com/Mortaro/nullstack-upload-input"
+  - title: "Inputs Brasileiros"
+    tagline:
+      title: "English: Nullstack is a Brazilian Framework"
+      text: "🤘 Nullstack é BR porr@!"
+    projects:
+      - title: "Inputs para CPF e CNPJ"
+        repository: "https://github.com/Mortaro/nullstack-cpf-cnpj-input"
+      - title: "Input para CEP"
+        repository: "https://github.com/Mortaro/nullstack-cep-input"
+      - title: "Input para Telefone"
+        repository: "https://github.com/Mortaro/nullstack-phone-input"

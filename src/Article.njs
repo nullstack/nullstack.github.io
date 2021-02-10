@@ -10,11 +10,11 @@ class Component extends Nullstack {
   title = '';
   html = '';
 
-  static async getArticleByKey({key}) {
+  static async getArticleByKey({locale, key}) {
     await import('prismjs/components/prism-jsx.min');
-    const path = `articles/${key}.md`;
+    let path = `i18n/${locale}/articles/${key}.md`;
     if(!existsSync(path)) {
-      return {};
+      path = `i18n/${locale}/articles/404.md`;
     }
     const text = readFileSync(path, 'utf-8');
     const md = new Remarkable({
@@ -51,48 +51,23 @@ class Component extends Nullstack {
     }
   }
 
-  async initiate({project, page, params}) {
-    const article = await this.getArticleByKey({key: params.slug});
-    if(article.title) {
-      Object.assign(this, article);
-      page.title = `${article.title} - ${project.name}`;
-      page.description = article.description;
-    } else {
+  async initiate({project, page, locale, params}) {
+    const article = await this.getArticleByKey({key: params.slug, locale});
+    Object.assign(this, article);
+    page.title = `${article.title} - ${project.name}`;
+    page.description = article.description;
+    if(article.status) {
       page.status = 404;
-      page.title = `Not Found - ${project.name}`;
-      page.description = 'Sorry, this is not the page you are looking for.';
     }
   }
-
-  renderArticle() {
+  
+  render() {
     return (
       <section class="x sm-p4x sm-p10y md+p20y"> 
         <h1 class="x12 sm-fs6 md+fs8 m6b"> {this.title} </h1>
         <article html={this.html} />
       </section>
     )
-  }
-
-  renderNotFound() {
-    return (
-      <section class="x sm-p4x sm-p10y md+p20y"> 
-        <h1 class="x12 sm-fs6 md+fs8 m6b"> Page not Found </h1>
-        <article>
-          <p> 
-            Perhaps you want to learn about 
-            <a href="/context-page" class="m1l">how to make a 404 page with Nullstack</a>?
-          </p>
-          <p> 
-            If you are looking for something else, you should
-            <a href="/documentation" class="m1l">read the documentation</a>.
-          </p>
-        </article>
-      </section>
-    )
-  }
-  
-  render({page}) {
-    return page.status == 404 ? <NotFound /> : <Article />
   }
 
 }

@@ -1,0 +1,87 @@
+title: "Componentes Javascript Full-stack"
+description: "Nullstack é um framework javascript full-stack para construir aplicações web progressivas"
+hero:
+  heading: "Componentes Javascript Full-stack"
+  tagline: "para exercitos de um dev só"
+  descriptions:
+    - "Nullstack is a full-stack framework for building <strong>progressive web applications</strong>."
+    - "It connects a <strong> stateful UI </strong> layer to specialized <strong>microservices</strong> in the same component using <strong>vanilla javascript</strong>."
+    - "Focus on solving your business logic instead of writing glue code."
+cycle:
+  ssr:
+    title: "Server-Side Rendering"
+    link: "/server-side-rendering"
+    text:
+      "Nullstack generates <strong> SEO ready </strong> HTML optimized for the
+      first paint of your route in a single request using local functions
+      with <strong> zero javascript </strong> dependencies in the client bundle."
+  spa:
+    title: "Single Page Application"
+    link: "/full-stack-lifecycle"
+    text:
+      "After hydration, requests will fetch JSON from an <strong> automatically generated API </strong>
+      off server functions, update the application state, and rerender the page."
+  ssg:
+    title: "Static Site Generation"
+    link: "/static-site-generation"
+    text: "You can even use Nullstack to generate lightning-fast <strong> static websites </strong> that serve HTML and become a  single page application using an automatically generated <strong> static API </strong>."
+about:
+  heading: "Complete Features as Components"
+  taglines:
+    - "Nullstack is not another part of your stack, it is your stack"
+    - "Your application can be exported from back-end to front-end as a component and mounted into another application"
+showcase:
+  descriptions:
+    - "The example above uses <a href='/server-functions' class='ci1 p1x'> server functions </a> to read tasks from a JSON file and store them in the <a href='/context' class='ci1 p1x'> context </a> available to all components."
+    - "The tasks are listed in a specific <a href='/routes-and-params' class='ci1 p1x'> route </a> that renders a component with multiple <a href='/renderable-components' class='ci1 p1x'> inner components </a> filtered by status with inputs using <a href='/two-way-bindings' class='ci1 p1l'> two-way bindings </a>."
+productivity:
+  heading: "Productivity is in the Details"
+  tagline: "Nullstack features have been extracted from real life projects with convenience and consistency in mind"
+features:
+  - title: "Stateful Components"
+    key: "Stateful"
+    link: "/stateful-components"
+  - title: "Two-Way Binding"
+    key: "Binding"
+    link: "/two-way-bindings"
+  - title: "Built-in Routes"
+    key: "Routes"
+    link: "/routes-and-params"
+  - title: "Full-stack Lifecycle"
+    key: "Lifecycle"
+    link: "/full-stack-lifecycle"
+playlist:
+  heading: "Watch our Nullstack video turorials"
+  tagline: "Nullstack cares about making its content as direct to the point and easy to understand as possible"
+  videos:
+    - title: "Full-stack with Nullstack - Part 1"
+      link: "https://www.youtube.com/watch?v=l23z00GEar8&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
+      thumbnail: "/thumb-01.webp"
+    - title: "Full-stack with Nullstack - Part 2"
+      link: "https://www.youtube.com/watch?v=_i5kKXkhBaM&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
+      thumbnail: "/thumb-02.webp"
+    - title: "Full-stack with Nullstack - Part 3"
+      link: "https://www.youtube.com/watch?v=8PExa5-G1As&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
+      thumbnail: "/thumb-03.webp"
+why:
+  heading: "Why should you use Nullstack?"
+  reasons:
+    - title: "Scalable Development"
+      description: "Every project starts small and becomes complex over time. Scale as you go, no matter the size of the team."
+      link: "/about"
+      closer: "No compromises, no enforcements."
+    - title: "Feature-driven Development"
+      description: "Development of both back and front ends of a feature in the same component in an organized way with ease of overview."
+      link: "/about#feature-driven"
+      closer: "True componentization and code reusability."
+    - title: "Already existing ecosystem"
+      description: "Takes advantage of any isomorphic vanilla Javascript package made throughout history."
+      link: "/about#everything-as-vanilla-as-possible"
+      closer: "All of your application speaks the same language."
+    - title: "Quickly adapt to scope changes"
+      description: "The horizontal structure, as opposed to a hierarchical one, makes it a lot easier to move resources around."
+      link: "/about#why-dependency-injection-instead-of-modularity"
+      closer: "Flexibility over bureaucracy."
+  getStarted:
+    text: "Get Started"
+    link: "/getting-started"

@@ -1,0 +1,18 @@
+home: 
+  title: "Nullstack"
+  href: "/"
+links:
+  - title: "Documentação"
+    href: "/pt-br/documentacao"
+  - title: "Componentes"
+    href: "/pt-br/componentes"
+  - title: "Contribuidores"
+    href: "/pt-br/contribuidores"
+  - title: "Fonte"
+    href: "https://github.com/nullstack/nullstack"
+    target: "_blank"
+  - title: "English"
+    href: "/"
+action:
+  title: "Começar"
+  href: "/pt-br/comecando"

@@ -1,11 +1,6 @@
-import Nullstack from 'nullstack';
+import Translatable from './Translatable';
 
-class Waifu extends Nullstack {
-
-  prepare({page, project}) {
-    page.title = `Nulla-Chan - ${project.name}`;
-    page.description = `Nullstack's official waifu`;
-  }
+class Waifu extends Translatable {
 
   renderAttribute({label, value}) {
     return (
@@ -16,36 +11,29 @@ class Waifu extends Nullstack {
   }
   
   render({worker}) {
+    if(!this.i18n) return false;
     return (
       <div class="x md+p20t p10y sm-p2x"> 
         <div class="xx x12">
           {worker.online && <img src="/waifu.png" alt="Nulla-Chan" height="500" />}
           <div class="md+p10l">
             <h1 class="xl m14t"> Nulla <span class="ci1">-</span> Chan </h1>
-            <p class="xl m8b"> Nullstack's official waifu </p>
+            <p class="xl m8b"> {this.i18n.tagline} </p>
             <ul>
-              <Attribute label="🕐 Age" value="19" />
-              <Attribute label="♒ Sign" value="Aquarius" />
-              <Attribute label="🎂 Birthday" value="January 28" />
-              <Attribute label="💖 Blood Type" value="A" />
-              <Attribute label="📏 Height" value="1.55m" />
-              <Attribute label="🍨 Fav Food" value="Anything vanilla flavored" />
-              <Attribute label="🧩 Hobby" value="Reinventing Wheels" />
-              <Attribute label="🧠 Neurodivergences" value="ASD and ADHD" />
+              {this.i18n.attributes.map((attribute) => <Attribute {...attribute} />)}
             </ul>
             <span class="xl m8t">
-              🎨 Created by:
-              <a href="https://www.instagram.com/biancazanette" target="_blank" rel="noopener" class="ci1 m2x"> Bilkaya </a>
+              {this.i18n.artist.label}
+              <a href={this.i18n.artist.href} target="_blank" rel="noopener" class="ci1 m2x"> {this.i18n.artist.text} </a>
             </span>
             <span class="xl m2t">
-              Check out the 
-              <a href="https://www.artstation.com/artwork/Vg4o6R" target="_blank" rel="noopener" class="ci1 m2x"> Character Concept </a>
+              {this.i18n.concept.label}
+              <a href={this.i18n.concept.href} target="_blank" rel="noopener" class="ci1 m2x"> {this.i18n.concept.text} </a>
             </span>
           </div>
         </div>
         <blockquote class="xx x12 m10y">
-          <p class="x12"> A sweet and shy perfect waifu, is always hyperfocused in her studies but somehow distracted at the same time. </p>
-          <p class="x12"> She is always cheerful... until she has to face glue code or sees a post telling her which tech she should use. </p>
+          {this.i18n.descriptions.map((description) => <p class="x12"> {description} </p>)}
         </blockquote>
       </div>
     )
