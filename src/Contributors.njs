@@ -1,14 +1,9 @@
-import Nullstack from 'nullstack';
+import Translatable from './Translatable';
 
-class Contributors extends Nullstack {
+class Contributors extends Translatable {
 
   documentation = [];
   packages = [];
-
-  prepare({page, project}) {
-    page.title = `Contributors - ${project.name}`;
-    page.description = 'Found a bug or want a new feature? Become a contributor!'
-  }
 
   async fetchContributors({repository}) {
     const response = await fetch(`https://api.github.com/repos/nullstack/${repository}/contributors`);
@@ -44,10 +39,10 @@ class Contributors extends Nullstack {
 
   renderState() {
     return (
-      <Topic title="The State of Nullstack" main>
-        <Paragraph text="Nullstack is being developed since January 2019 with features being extracted from freelancing projects." />
-        <Paragraph text="At this point the API is stable, lifecycle methods and context keys will pretty much be frozen." />
-        <Paragraph text="We are not yet on 1.0 but really close, the only thing missing is to test it on applications made outside the core team to figure out if it fits the needs of other programmers." />
+      <Topic title={this.i18n.topics[0].title} main>
+        <Paragraph text={this.i18n.topics[0].paragraphs[0]} />
+        <Paragraph text={this.i18n.topics[0].paragraphs[1]} />
+        <Paragraph text={this.i18n.topics[0].paragraphs[2]} />
       </Topic>
     );
   }
@@ -60,11 +55,11 @@ class Contributors extends Nullstack {
 
   renderRoadmap() {
     return (
-      <Topic title="The Roadmap">
-        <Paragraph text="The next updates will be guided towards fixing any bugs that are found and focus on quality of life." />
-        <Paragraph text="The following updates are the next planned steps in no particular order:" />
+      <Topic title={this.i18n.topics[1].title}>
+        <Paragraph text={this.i18n.topics[1].paragraphs[0]} />
+        <Paragraph text={this.i18n.topics[1].paragraphs[1]} />
         <ul class="m2t">
-          <Task description="Video and text tutorials in both English and Portuguese" />
+          <Task description={this.i18n.topics[1].tasks[0]} />
           <Task description="Internationalize the documentation" />
           <Task description="Improve error messages and unify the server and client consoles" />
           <Task description="Typescript support and better IDE support in general" />
@@ -93,11 +88,11 @@ class Contributors extends Nullstack {
 
   renderCoreTeam() {
     return (
-      <Topic title="The Core Team">
+      <Topic title={this.i18n.topics[2].title}>
         <Paragraph text="Nullstack was developed by full-stack neuro-atypical freelancers." />
         <Paragraph text="With a heavy background in Rails, Ember.js, and React.js, the inspirations took from those projects might be obvious." />    
         <CoreContributor 
-          name="Christian Mortaro" 
+          name={this.i18n.topics[2].contributors[0].name} 
           role="Autistic Author"
           github="Mortaro"
           description="Creator of the concept. Comes with new API proposals to its favorite rubber ducks and returns with commits."
@@ -123,12 +118,20 @@ class Contributors extends Nullstack {
 
   renderHowToContribute() {
     return (
-      <Topic title="How to Contribute">
-        <Paragraph text="It's simple. Found a bug or want a new feature?" />
+      <Topic title={this.i18n.topics[5].title}>
+        <Paragraph text={this.i18n.topics[5].paragraphs[0]} />
         <p class="x12 fs4 m1b">
-          <a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1"> Create an issue </a>
-          or  
-          <a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1"> submit a pull request </a> with tests.
+          <a
+            href="https://github.com/nullstack/nullstack/issues"
+            target="_blank" rel="noopener" class="ci1"
+          >
+            {this.i18n.topics[5].textLinks[0]}
+          </a>
+          {this.i18n.topics[5].textLinks[1]}  
+          <a
+            href="https://github.com/nullstack/nullstack/issues"
+            target="_blank" rel="noopener" class="ci1"
+          > submit a pull request </a> with tests.
         </p>
       </Topic>
     )
@@ -150,19 +153,20 @@ class Contributors extends Nullstack {
         <div class="xl">
           {this[key].map((contributor) => <Contributor {...contributor} />)}
         </div>
-        <p class="x12 fs4 m2t">* The list might take a while to update due to GitHub API cache</p>
+        <p class="x12 fs4 m2t">{this.i18n.githubCacheWarning}</p>
       </Topic>
     )
   }
   
   render() {
+    if(!this.i18n) return false;
     return (
       <section class="x sm-p4x sm-p10y md+p20y">
         <State />
         <Roadmap />
         <CoreTeam />
-        <GithubContributors title="Packages Contributors" key="packages" />
-        <GithubContributors title="Documentation Contributors" key="documentation" />
+        <GithubContributors title={this.i18n.topics[3].title} key="packages" />
+        <GithubContributors title={this.i18n.topics[4].title} key="documentation" />
         <HowToContribute />
       </section>
     )
