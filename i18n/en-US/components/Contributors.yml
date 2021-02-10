@@ -46,7 +46,7 @@ topics:
       - "It's simple. Found a bug or want a new feature?"
     textLinks:
       - "Create an issue "
-      - "or"
-      - "submit a pull request"
+      - "or "
+      - "submit a pull request "
       - "with tests."
 githubCacheWarning: "* The list might take a while to update due to GitHub API cache"
