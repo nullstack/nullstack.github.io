@@ -10,13 +10,14 @@ class Footer extends Translatable {
       </a>
     )
   }
-  
-  render() {
+
+  render({locale}) {
     if(!this.i18n) return false;
+    const localUrl = locale !== "en-US" ? `/${locale.toLowerCase()}` : "";
     return (
       <footer class="xx m20t">
         <div class="x xr md+bcm2t yy md+p10y prtl">
-          <a href="/waifu">
+          <a href={`${localUrl}/waifu`}>
             <img
              src="/nullachan.png"
              alt={this.i18n.nullachan.alt}
