@@ -1,9 +1,9 @@
 ---
 title: Como fazer Deploy
-description: Com o Nullstack é fácil ter seu aplicativo instalado e funcionando no modo de produção
+description: Com o Nullstack é fácil ter seu aplicação instalado e funcionando no modo de produção
 ---
 
-Com o Nullstack é fácil ter seu aplicativo instalado e funcionando no modo de produção
+Com o Nullstack é fácil ter seu aplicação instalado e funcionando no modo de produção
 
 > 🐱‍💻 *stonks*
 
@@ -19,7 +19,7 @@ A máquina host deve ter pelo menos a versão 8.10.0 do node instalada.
 
 Você não precisa executar "npm install" na máquina host.
 
-> ✨ Você pode configurar o ambiente usando [configurações](/contexto-settings) e [secrets](/contexto-secrets)
+> ✨ Você pode configurar o ambiente usando [configurações](/pt-br/contexto-settings) e [secrets](/pt-br/contexto-secrets)
 
 Para iniciar o servidor, basta executar:
 
@@ -31,10 +31,10 @@ node .production/server.js
 
 ## Como fazer o Deploy de um site estático gerado com NullStack
 
-Depois de [gerar um site estático](/geracao-de-sites-estaticos), tudo o que você precisa fazer é mover a pasta de saída para qualquer máquina host capaz de servir HTML.
+Depois de [gerar um site estático](/pt-br/geracao-de-sites-estaticos), tudo o que você precisa fazer é mover a pasta de saída para qualquer máquina host capaz de servir HTML.
 
 ## Próxima Etapa
 
 > 🎉 *Parabéns*. Você concluiu os conceitos avançados!
 
-⚔ Aprenda [como usar MongoDB com Nullstack](/como-usar-mongodb-com-nullstack).
+⚔ Aprenda [como usar MongoDB com Nullstack](/pt-br/como-usar-mongodb-com-nullstack).

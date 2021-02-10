@@ -19,85 +19,50 @@ class Contributors extends Translatable {
     const logins = new Set(packages.map(({login}) => login));
     this.packages = [...logins].map((login) => packages.find((contributor) => contributor.login == login));
   }
-
-  renderParagraph({text, children}) {
-    return (
-      <p class="x12 fs4 m1b">
-        {!!children.length ? children : text}
-      </p>
-    )
-  }
   
-  renderArchor({children, link, title}) {
-    link = link || "https://github.com/nullstack/nullstack/issues";
-    const href = (
-      link.indexOf("github.com") === -1
-        ? (`https://github.com/${link}`)
-        : link
-    )
-    return (
-      <a
-        href={href}
-        title={title}
-        target="_blank"
-        rel="noopener"
-        class="ci1"
-      >
-        {children}
-      </a>
-    )
-  }
-
-  renderTopic({title, main, children}) {
+  renderTopic({title, paragraphs, main, children}) {
     return (
       <div class="x12 m10b">
         <element tag={main ? 'h1' : 'h2'} class="x12 sm-fs6 md+fs8 m2b">
           {title}
         </element>
-        {children}
+        {paragraphs &&
+          <div class="xl x12">
+            {paragraphs.map((paragraph) => <p class="x12 fs4 m1b" html={paragraph} />)}
+          </div>
+        }
+        <div class="xl x12">
+          {children}
+        </div>
       </div>
     )
   }
 
   renderState() {
+    const {state} = this.i18n;
     return (
-      <Topic title={this.i18n.topics[0].title} main>
-        {this.i18n.topics[0].paragraphs.map(text => {
-          return <Paragraph text={text}/>
-        })}
-      </Topic>
-    );
-  }
-
-  renderTask({description}) {
-    return (
-      <li class="bc1b p1y"> ⚔ {description} </li>
+      <Topic {...state} main />
     )
   }
 
   renderRoadmap() {
+    const {roadmap} = this.i18n;
     return (
-      <Topic title={this.i18n.topics[1].title}>
-        {this.i18n.topics[1].paragraphs.map(text => {
-          return <Paragraph text={text}/>
-        })}
+      <Topic {...roadmap}>
         <ul class="m2t">
-          {this.i18n.topics[1].tasks.map(task => {
-            return <Task description={task}/>
-          })}
+          {roadmap.tasks.map((task) => <li class="bc1b p1y"> ⚔ {task} </li>)}
         </ul>
       </Topic>
     )
   }
 
-  renderCoreContributor({contributor}) {
-    const { github, name, role, description, contribution } = contributor;
+  renderCoreContributor({github, name, role, description, contribution}) {
     return (
       <div class="xl x12 bcm2 p2 m2t">
-        <img class="xl" src={'https://github.com/' + github + '.png'} alt={name} width="90" height="90" style="height: 90px" />
+        <img class="xl" src={`https://github.com/${github}.png`} alt={name} width="90" height="90" style="height: 90px" />
         <div class="md+x10 md+p3l sm-m3t">
           <h3>
-            <Archor link={github}>{name}</Archor>
+            <a href={github} target="_blank" rel="noopener" class="ci1">{name}</a>
           </h3>
           <h4 class="m1y"> {role} </h4>
           <p> {description} </p> 
@@ -108,42 +73,27 @@ class Contributors extends Translatable {
   }
 
   renderCoreTeam() {
+    const {core} = this.i18n;
     return (
-      <Topic title={this.i18n.topics[2].title}>
-        {this.i18n.topics[2].paragraphs.map(text => {
-          return <Paragraph text={text}/>
-        })}
-        {this.i18n.topics[2].contributors.map(contributor => {
-          return <CoreContributor contributor={contributor} />
-        })}
+      <Topic {...core}>
+        {core.team.map((contributor) => <CoreContributor {...contributor} />)}
       </Topic>
     )
   }
 
-  renderHowToContribute() {
+  renderInstructions() {
+    const {instructions} = this.i18n;
     return (
-      <Topic title={this.i18n.topics[5].title}>
-        <Paragraph text={this.i18n.topics[5].paragraphs[0]} />
-        <Paragraph>
-          <Archor>
-            {this.i18n.topics[5].textLinks[0]}
-          </Archor>
-          {this.i18n.topics[5].textLinks[1]}
-          <Archor>
-            {this.i18n.topics[5].textLinks[2]}
-          </Archor>
-          {this.i18n.topics[5].textLinks[3]}
-        </Paragraph>
-      </Topic>
+      <Topic {...instructions} />
     )
   }
 
   renderContributor({login, avatar_url, html_url}) {
     return (
       <div class="xx sm-x6 bcm2 p2 m2t">
-        <Archor link={html_url} title={login}>
+        <a link={html_url} title={login} target="_blank" rel="noopener" class="ci1">
           <img class="xl" src={avatar_url} alt={login} width="90" height="90" style="height: 90px" />
-        </Archor>
+        </a>
       </div>
     )
   }
@@ -166,9 +116,9 @@ class Contributors extends Translatable {
         <State />
         <Roadmap />
         <CoreTeam />
-        <GithubContributors title={this.i18n.topics[3].title} key="packages" />
-        <GithubContributors title={this.i18n.topics[4].title} key="documentation" />
-        <HowToContribute />
+        <GithubContributors title={this.i18n.packages.title} key="packages" />
+        <GithubContributors title={this.i18n.documentation.title} key="documentation" />
+        <Instructions />
       </section>
     )
   }
