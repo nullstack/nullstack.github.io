@@ -1,6 +1,6 @@
 home: 
   title: "Nullstack"
-  href: "/pt-br"
+  href: "/"
 links:
   - title: "Documentation"
     href: "/documentation"
