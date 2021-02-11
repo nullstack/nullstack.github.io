@@ -5,7 +5,7 @@ description: Métodos de ciclo de vida são funções nomeadas de forma especial
 
 Métodos de ciclo de vida são funções nomeadas de forma especial que você pode declarar na classe.
 
-Cada método de ciclo de vida roda em uma fila de ordem específica, garantindo que todos os componentes do ciclo corrente sejam preparados antes do primeiro ser iniciado.
+Cada método de ciclo de vida roda em uma fila de ordem específica, garantindo que todos os componentes do ciclo atual sejam preparados antes do primeiro ser iniciado.
 
 ## Prepare
 
@@ -13,7 +13,7 @@ Esse método é bloqueante e roda antes da primeira renderização do componente
 
 Você pode usar essa função para definir o estado que o usuário verá antes do carregamento.
 
-Se o usuário estiver entrando através dessa rota, *prepare* irá rodar no servidor antes do Nullstack [renderizar sua aplicação no lado do servidor](/server-side-rendering).
+Se o usuário estiver entrando através dessa rota, *prepare* irá rodar no servidor antes do Nullstack [renderizar sua aplicação no lado do servidor](/pt-br/renderizando-no-servidor).
 
 Se o usuário estiver navegando por outra rota, esse método rodará no cliente.
 
@@ -66,7 +66,7 @@ class Component extends Nullstack {
 
 export default Component;
 ```
-> ✨ Aprenda mais sobre [funções do servidor](/server-functions).
+> ✨ Aprenda mais sobre [funções do servidor](/pt-br/funcoes-de-servidor).
 
 ## Hydrate
 
@@ -162,4 +162,4 @@ export default Component;
 
 ## Próximos passos
 
-⚔ Aprenda sobre [funções do servidor](/server-functions).
+⚔ Aprenda sobre [funções do servidor](/pt-br/funcoes-de-servidor).
