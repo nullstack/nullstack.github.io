@@ -16,3 +16,5 @@ links:
 action:
   title: "Get Started"
   href: "/getting-started"
+nightMode: "Night Mode"
+dayMode: "Day Mode"

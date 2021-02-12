@@ -64,6 +64,36 @@ section a img {
   }
 }
 
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+body * {
+  transition: all 50ms;
+}
+
+@mixin darkMode {
+  background-color: var(--heavy-color);
+  color: var(--soft-color);
+}
+
+.dark {
+  min-height: 100vh;
+  @include darkMode();
+
+  & article h2 a,
+  & article h3 a,
+  & .loader-cog,
+  & .loader-cog svg {
+    @include darkMode();
+  }
+
+  & .bgm2,
+  & .menu-links {
+    color: var(--heavy-color);
+  }
+}
+
 /*! purgecss start ignore */
 
 pre {

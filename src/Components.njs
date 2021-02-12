@@ -19,7 +19,7 @@ class Components extends Translatable {
       <div class="x12 m6y bcm2 p4x p4t p1b">
         <h2 class="x12 sm-fs6 md+fs8 m3b"> {title} </h2>
         {tagline &&
-          <p class="bgs2 p2 m3y" title={tagline.title}> {tagline.text} </p>
+          <p class="p2 m3y" title={tagline.title}> {tagline.text} </p>
         }
         <nav class="x12"> 
           {projects.map(project => <Project {...project} />)} 

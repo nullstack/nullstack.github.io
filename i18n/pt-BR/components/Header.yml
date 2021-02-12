@@ -16,3 +16,5 @@ links:
 action:
   title: "Começar"
   href: "/pt-br/comecando"
+nightMode: "Modo Noite"
+dayMode: "Modo Dia"

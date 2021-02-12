@@ -53,10 +53,10 @@ class Application extends Nullstack {
     )
   }
 
-  render({router}) {
+  render({router, isDark}) {
     const locale = router.url.startsWith('/pt-br') ? 'pt-BR' : 'en-US';
     return (
-      <main>
+      <main class={isDark ? `dark` : ''}>
         <Header locale={locale} />
 
         <Home route="/" locale="en-US" />
