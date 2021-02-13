@@ -107,7 +107,7 @@ class Home extends Translatable {
 
   renderVideo({title, link, thumbnail}) {
     return (
-      <div class="x12 md+x4 p1">
+      <div class="xx x12 md+x4 p1">
         <a href={link} title={title} target="_blank" rel="noopener">
           <img src={thumbnail} alt={title} height="209" width="372" loading="lazy" />
         </a>

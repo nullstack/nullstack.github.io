@@ -1,21 +1,21 @@
 ---
-title: Full-Stack Lifecycle
-description: Lifecycle methods are special named functions that you can declare in the class.
+title: Ciclo de Vida Full-Stack
+description: Métodos de ciclo de vida são funções nomeadas de forma especial que você pode declarar na classe
 ---
 
-Lifecycle methods are special named functions that you can declare in the class.
+Métodos de ciclo de vida são funções nomeadas de forma especial que você pode declarar na classe.
 
-Each lifecycle method runs in a specific order in a queue so it's guaranteed that all components initiated in that cycle will be prepared before the first one is initiated.
+Cada método de ciclo de vida roda em uma fila de ordem específica, garantindo que todos os componentes do ciclo atual sejam preparados antes do primeiro ser iniciado.
 
 ## Prepare
 
-This method is blocking and runs before the first time the component is rendered.
+Esse método é bloqueante e roda antes da primeira renderização do componente.
 
-You can use this function to set the state that the user will see before things are loaded.
+Você pode usar essa função para definir o estado que o usuário verá antes do carregamento.
 
-If the user is entering from this route *prepare* will run in the server before Nullstack [server-side renders](/server-side-rendering) your application.
+Se o usuário estiver entrando através dessa rota, *prepare* irá rodar no servidor antes do Nullstack [renderizar sua aplicação no lado do servidor](/pt-br/renderizando-no-servidor).
 
-If the user is navigating from another route this method will run in the client.
+Se o usuário estiver navegando por outra rota, esse método rodará no cliente.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -37,15 +37,15 @@ export default Component;
 
 ## Initiate
 
-This method can be async and runs right after the component is prepared and rendered for the first time.
+Esse método pode ser assíncrono, e roda assim que o componente for preparado e renderizado pela primeira vez.
 
-You can use this function to invoke another server function and load the data to present the page.
+Você pode usá-lo para invocar outra função do servidor e carregar os dados para apresentar a página.
 
-If the user is entering from this route *initiate* will run in the server.
+Se o usuário estiver entrando através dessa rota, *initiate* rodará no servidor.
 
-Nullstack will wait till the promise is resolved and then finally generate the HTML that will be served.
+Nullstack irá esperar até que a promise seja resolvida e então finalmente irá gerar o HTML que será servido.
 
-If the user is navigating from another route this method will run in the client.
+Se o usuário estiver navegando por outra rota, esse método rodará no cliente.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -66,16 +66,15 @@ class Component extends Nullstack {
 
 export default Component;
 ```
-
-> ✨ Learn more about [server functions](/server-functions).
+> ✨ Aprenda mais sobre [funções do servidor](/pt-br/funcoes-de-servidor).
 
 ## Hydrate
 
-This method is async and will only run in the client.
+Esse método é assíncrono e rodará apenas no cliente.
 
-This method will always run no matter which environment started the component.
+Ele sempre rodará independente do ambiente que iniciou o componente.
 
-This is a good place to trigger dependencies that manipulate the dom or can only run on the client-side.
+Esse é um bom lugar para acionar dependências que manipulam o DOM ou que podem rodar apenas no lado do cliente.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -99,15 +98,15 @@ export default Component;
 
 ## Update
 
-This method is async and will only run in the client.
+Esse método é assíncrono e rodará apenas no cliente.
 
-This method runs on every component anytime the application state changes.
+Ele roda em todos os componentes sempre que o estado da aplicação mudar.
 
-> 🔥 Be careful not to cause infinite loopings when mutating state inside *update*.
+> 🔥 Tome cuidado para não causar loops infinitos quando mutacionar o estado dentro de *update*.
 
-This will run right before rendering but will not block the rendering queue.
+Ele irá rodar logo antes da renderização, mas não irá bloquear a fila.
 
-The *update* function will not start running until the application is rendered after the initiate.
+A função *update* não rodará até que a aplicação seja renderizada após *initiate*.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -131,17 +130,17 @@ class Component extends Nullstack {
 export default Component;
 ```
 
-> ✨ Lifecycle methods have no special side effects, you can call them manually without causing problems.
+> ✨ Métodos de ciclo de vida não têm efeitos colaterais, você pode chamá-los manualmentes sem causar problemas.
 
 ## Terminate
 
-This method is async and will only run in the client.
+Esse método é assíncrono e rodará apenas no cliente.
 
-This method will run after your component leaves the DOM.
+Ele irá rodar após o componente deixar o DOM.
 
-This is the place to clean up whatever you set up in the *hydrate* method.
+Esse é o lugar para limpar qualquer coisa que você definiu no método *hydrate*.
 
-The instance will be garbage collected after the promise is resolved.
+Essa instância será levada pelo garbage collector após a resolução da promise.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -161,6 +160,6 @@ class Component extends Nullstack {
 export default Component;
 ```
 
-## Next steps
+## Próximos passos
 
-⚔ Learn about [server functions](/server-functions).
+⚔ Aprenda sobre [funções do servidor](/pt-br/funcoes-de-servidor).

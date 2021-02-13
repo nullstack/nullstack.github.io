@@ -81,6 +81,12 @@ main {
   padding-top: 70px;
 }
 
+@media (min-width: 1600px) {
+  .lg-x12z {
+    max-width: 1400px;
+  }
+}
+
 /*! purgecss start ignore */
 
 pre {
@@ -91,6 +97,12 @@ pre {
   line-height: 1.5;
   padding: 0.5rem;
   color: #ddbc72;
+}
+
+@-moz-document url-prefix() {
+  pre {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 768px) {
