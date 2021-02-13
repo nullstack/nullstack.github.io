@@ -62,7 +62,7 @@ class Contributors extends Translatable {
         <img class="xl" src={`https://github.com/${github}.png`} alt={name} width="90" height="90" style="height: 90px" />
         <div class="md+x10 md+p3l sm-m3t">
           <h3>
-            <a href={github} target="_blank" rel="noopener" class="ci1">{name}</a>
+            <a href={`https://github.com/${github}`} target="_blank" rel="noopener" class="ci1">{name}</a>
           </h3>
           <h4 class="m1y"> {role} </h4>
           <p> {description} </p> 
@@ -91,7 +91,7 @@ class Contributors extends Translatable {
   renderContributor({login, avatar_url, html_url}) {
     return (
       <div class="xx sm-x6 bcm2 p2 m2t">
-        <a link={html_url} title={login} target="_blank" rel="noopener" class="ci1">
+        <a href={html_url} title={login} target="_blank" rel="noopener" class="ci1">
           <img class="xl" src={avatar_url} alt={login} width="90" height="90" style="height: 90px" />
         </a>
       </div>

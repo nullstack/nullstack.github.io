@@ -1,6 +1,6 @@
 home: 
   title: "Nullstack"
-  href: "/"
+  href: "/pt-br"
 links:
   - title: "Documentação"
     href: "/pt-br/documentacao"
@@ -16,3 +16,6 @@ links:
 action:
   title: "Começar"
   href: "/pt-br/comecando"
+mode:
+  dark: "Modo Noite"
+  light: "Modo Dia"

@@ -14,8 +14,8 @@ class Home extends Translatable {
     return (
       <section class="x xx sm-p2x p20y">
         <h1 class="x12 sm-fs8 md+fs12"> {this.i18n.hero.heading} </h1>
-        <div class="xx x8 m12b" style="background-image: linear-gradient(0deg, #fff 49%, #e2e8f0 50%, #fff 52%);"> 
-          <p class="bgm1 fs6 p2"> {this.i18n.hero.tagline} </p>
+        <div class="xx x8 m12b"> 
+          <p class="fs6 p2"> {this.i18n.hero.tagline} </p>
         </div>
         <div>
           {this.i18n.hero.descriptions.map((description, index, {length}) => 
@@ -107,7 +107,7 @@ class Home extends Translatable {
 
   renderVideo({title, link, thumbnail}) {
     return (
-      <div class="x12 md+x4 p1">
+      <div class="xx x12 md+x4 p1">
         <a href={link} title={title} target="_blank" rel="noopener">
           <img src={thumbnail} alt={title} height="209" width="372" loading="lazy" />
         </a>

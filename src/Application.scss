@@ -22,7 +22,9 @@
   font-display: swap;
 }
 
-:root {
+/*! purgecss start ignore */
+
+.light {
   --primary-font-family: 'Crete Round', serif;
   --secondary-font-family: 'Roboto', sans-serif;
   --primary-color: #d22365;
@@ -32,11 +34,21 @@
   --warning-color: #ffffd6;
 }
 
+.dark {
+  --primary-font-family: 'Crete Round', serif;
+  --secondary-font-family: 'Roboto', sans-serif;
+  --primary-color: #d22365;
+  --soft-color: #2c3748;
+  --neutral-color: #282c34;
+  --heavy-color: #fff;
+  --warning-color: #ffffd6;
+}
+
+/*! purgecss end ignore */
+
 body {
   font-family: var(--secondary-font-family);
   font-weight: 300;
-  color: var(--heavy-color);
-  padding-top: 70px;
   overflow-y: scroll;
 }
 
@@ -64,6 +76,17 @@ section a img {
   }
 }
 
+main {
+  min-height: 100vh;
+  padding-top: 70px;
+}
+
+@media (min-width: 1600px) {
+  .lg-x12z {
+    max-width: 1400px;
+  }
+}
+
 /*! purgecss start ignore */
 
 pre {
@@ -74,6 +97,12 @@ pre {
   line-height: 1.5;
   padding: 0.5rem;
   color: #ddbc72;
+}
+
+@-moz-document url-prefix() {
+  pre {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 768px) {

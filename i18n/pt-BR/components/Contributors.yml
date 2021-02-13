@@ -49,5 +49,5 @@ instructions:
   title: "Como Contribuir"
   paragraphs:
     - "É simples. Encontrou um bug ou deseja um novo recurso?"
-    - 'Crie uma issue <a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1">Crie uma issue </a> ou <a href="https://github.com/nullstack/nullstack/pulls" target="_blank" rel="noopener" class="ci1"> envie uma pull request </a> com testes'
+    - '<a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1">Crie uma issue</a> ou <a href="https://github.com/nullstack/nullstack/pulls" target="_blank" rel="noopener" class="ci1">envie uma pull request</a> com testes'
 githubCacheWarning: "* A lista pode demorar um pouco para ser atualizada devido ao cache da API do GitHub"

@@ -19,7 +19,7 @@ class Snippet extends Nullstack {
 
   render() {
     return (
-      <pre class="bgm3 p4">
+      <pre class="p4">
         <code html={this.html} />
       </pre>
     )
