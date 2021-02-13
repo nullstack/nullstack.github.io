@@ -53,10 +53,24 @@ class Application extends Nullstack {
     )
   }
 
-  render({router}) {
+  prepare(context) {
+    context.mode = 'light';
+    context.oppositeMode = 'dark';
+  }
+
+  hydrate(context) {
+    if(localStorage['mode']) {
+      context.mode = localStorage['mode'];
+      if(context.mode === 'dark') {
+        context.oppositeMode = 'light';
+      }
+    }
+  }
+
+  render({router, mode}) {
     const locale = router.url.startsWith('/pt-br') ? 'pt-BR' : 'en-US';
     return (
-      <main>
+      <main class={`${mode} bgm1 cm3`}>
         <Header locale={locale} />
 
         <Home route="/" locale="en-US" />

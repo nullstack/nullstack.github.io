@@ -16,3 +16,6 @@ links:
 action:
   title: "Começar"
   href: "/pt-br/comecando"
+mode:
+  dark: "Modo Noite"
+  light: "Modo Dia"
