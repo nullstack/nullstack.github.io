@@ -1,15 +1,15 @@
 ---
 title: Google Analytics
-description: Take advantage of the context and custom events to create a component that dynamically sends GTAG events
+description: Aproveite as vantagens do contexto e dos eventos personalizados para criar um componente que envia eventos GTAG dinamicamente.
 ---
 
-According to [analytics.google.com](https://analytics.google.com):
+De acordo com [analytics.google.com](https://analytics.google.com):
 
-"Google Analytics lets you measure your advertising ROI as well as track your Flash, video, and social networking sites and applications."
+"O Google Analytics permite que você avalie o ROI de publicidade, bem como rastreie o Flash, vídeo e mídias sociais em sites e aplicativos."
 
-You can take advantage of the [context](/context) and [custom events](/context-page) to create a component that dynamically sends GTAG events.
+Você pode aproveitar as vantagens do [contexto](/pt-br/contexto) e dos [eventos personalizados](/pt-br/contexto-page) para criar um componente que envia eventos GTAG dinamicamente.
 
-GTAG can only be called after [hydrate](/full-stack-lifecycle) to ensure it is running in the client.
+O GTAG só pode ser chamado depois de [hydrate](/pt-br/ciclo-de-vida-full-stack) para garantir que está sendo executado no cliente.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -59,7 +59,7 @@ class Application extends Nullstack {
   render() {
     return (
       <main>
-        <GoogleAnalytics id="REPLACE_WITH_YOUR_GOOGLE_ANALYTICS_ID" />
+        <GoogleAnalytics id="SUBSTITUA_COM_SEU_ID_DO_GOOGLE_ANALYTICS" />
       </main>
     )
   }
@@ -70,9 +70,9 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Using a Wrapper
+## Usando um Wrapper
 
-Alternatively, you can install [nullstack-google-analytics](https://github.com/Mortaro/nullstack-google-analytics) as a dependency:
+Alternativamente, você pode instalar o [nullstack-google-analytics](https://github.com/Mortaro/nullstack-google-analytics) como uma dependência:
 
 ```sh
 npm install nullstack-google-analytics
@@ -89,7 +89,7 @@ class Application extends Nullstack {
   render() {
     return (
       <main>
-        <GoogleAnalytics id="REPLACE_WITH_YOUR_GOOGLE_ANALYTICS_ID" />
+        <GoogleAnalytics id="SUBSTITUA_COM_SEU_ID_DO_GOOGLE_ANALYTICS" />
       </main>
     )
   }
@@ -100,6 +100,6 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Next step
+## Próximo Passo
 
-⚔ Learn [how to use Facebook Pixel with Nullstack](/how-to-use-facebook-pixel-with-nullstack).
+⚔ Aprenda [como usar o Facebook Pixel com o Nullstack](/pt-br/como-usar-facebook-pixel-no-nullstack).
