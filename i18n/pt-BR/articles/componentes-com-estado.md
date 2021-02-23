@@ -20,21 +20,21 @@ As funções são vinculadas automaticamente ao proxy da instância e podem ser 
 Os eventos são declarados como atributos HTML normais.
 
 ```jsx
-import Nullstack from "nullstack";
+import Nullstack from "nullstack"
 
 class Counter extends Nullstack {
-  count = 0;
+  count = 0
 
   increment() {
-    this.count++;
+    this.count++
   }
 
   render() {
-    return <button onclick={this.increment}>{this.count}</button>;
+    return <button onclick={this.increment}>{this.count}</button>
   }
 }
 
-export default Counter;
+export default Counter
 ```
 
 > 💡 As atualizações são feitas em lotes, geralmente enquanto aguardam chamadas assíncronas, portanto, fazer várias atribuições não tem custos de desempenho!
@@ -46,17 +46,17 @@ Você pode atar eventos que são atribuições simples passando um objeto para o
 Cada chave do objeto será atribuída à instância.
 
 ```jsx
-import Nullstack from "nullstack";
+import Nullstack from "nullstack"
 
 class Counter extends Nullstack {
-  count = 0;
+  count = 0
 
   render() {
-    return <button onclick={{ count: this.count + 1 }}>{this.count}</button>;
+    return <button onclick={{ count: this.count + 1 }}>{this.count}</button>
   }
 }
 
-export default Counter;
+export default Counter
 ```
 
 ## Fonte de evento
@@ -66,7 +66,7 @@ Por padrão, os eventos referem-se a isso quando você passa um objeto.
 Você pode usar o atributo `source` para definir qual objeto receberá as atribuições.
 
 ```jsx
-import Nullstack from "nullstack";
+import Nullstack from "nullstack"
 
 class Paginator extends Nullstack {
   render({ params }) {
@@ -74,11 +74,11 @@ class Paginator extends Nullstack {
       <button source={params} onclick={{ page: 1 }}>
         First Page
       </button>
-    );
+    )
   }
 }
 
-export default Paginator;
+export default Paginator
 ```
 
 > ✨ Aprenda mais sobre [parâmetros de contexto](/rotas-e-parametros).
@@ -90,13 +90,13 @@ export default Paginator;
 Os atributos de destino do evento serão mesclados ao contexto da instância e podem ser desestruturados na assinatura da função.
 
 ```jsx
-import Nullstack from "nullstack";
+import Nullstack from "nullstack"
 
 class Counter extends Nullstack {
-  count = 0;
+  count = 0
 
   increment({ delta }) {
-    this.count += delta;
+    this.count += delta
   }
 
   render() {
@@ -104,11 +104,11 @@ class Counter extends Nullstack {
       <button onclick={this.increment} delta={2}>
         {this.count}
       </button>
-    );
+    )
   }
 }
 
-export default Counter;
+export default Counter
 ```
 
 > 💡 Qualquer atributo com valor primitivo será adicionado ao DOM.
@@ -124,11 +124,11 @@ Você pode desativar isso declarando um atributo padrão para o elemento de even
 Uma referência ao evento original é sempre mesclada com o contexto da função.
 
 ```jsx
-import Nullstack from "nullstack";
+import Nullstack from "nullstack"
 
 class Form extends Nullstack {
   submit({ event }) {
-    event.preventDefault();
+    event.preventDefault()
   }
 
   render() {
@@ -136,11 +136,11 @@ class Form extends Nullstack {
       <form onsubmit={this.submit} default>
         <button> Submit </button>
       </form>
-    );
+    )
   }
 }
 
-export default Form;
+export default Form
 ```
 
 ## Próximos passos
