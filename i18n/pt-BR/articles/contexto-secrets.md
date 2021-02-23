@@ -1,25 +1,25 @@
 ---
-title: Context Secrets
-description: The secrets object is a proxy in the framework store part of your context which you can use to configure your application with private information
+Título: Contexto *Secrets*
+Descrição: O objeto *secrets* é uma interface de acesso ao contexto de armazenamento do framework, no qual você pode usar para configurar dados sensíveis para sua aplicação.
 ---
 
-The secrets object is a proxy in the framework store part of your context which you can use to configure your application with private information.
+O objeto *secrets* é uma interface de acesso ao contexto de armazenamento do framework, no qual você pode usar para configurar dados sensíveis para sua aplicação.
 
-This key is *readwrite* and available only in the *server* context.
+Essa chave é *readwrite* e disponível apenas no contexto *server*.
 
-Secrets keys are frozen after the [application startup](/application-startup).
+Chaves secretas são congeladas depois da [inicialização da aplicação](/application-startup).
 
-The following keys are available in the object:
+As seguintes chaves estão disponíveis no objeto:
 
 - *development*: object
 - *production*: object
-- *[anySetting]*: any
+- *[qualquerOutraCoisa]*: any
 
-You can assign keys to *development* or *production* keys in order to have different secrets per [environment](/context-environment).
+Você pode definir chaves diferentes para as chaves *development* e *production*, obtendo assim valores diferentes para cada [ambiente](/context-environment).
 
-If you assign a key directly to the secrets object it will be available in both environments.
+Caso uma chave seja definida diretamente no objeto *secrets* ela ficará disponível para ambos ambientes.
 
-When reading from a key you must read directly from the secrets object and Nullstack will return the best-suited value for that [environment](/context-environment).
+A leitura das chaves deve ser feita diretamente do objeto *secrets*, pois o Nullstack vai retornar o valor referido de acordo com o [ambiente](/context-environment).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -46,10 +46,10 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-Any environment key starting with NULLSTACK_SECRETS_ will be mapped to the secrets in that environment.
+Qualquer chave de ambiente iniciada por NULLSTACK_SECRETS_ será mapeada para o *secrets* de seu respectivo ambiente.
 
-> 🐱‍💻 NULLSTACK_SECRETS_PRIVATE_KEY will be mapped to secrets.privateKey
+> 🐱‍💻 NULLSTACK_SECRETS_PRIVATE_KEY será mapeada para *secrets.privateKey*
 
-## Next step
+## Próximo passo
 
-⚔ Learn about the [instance self](/instance-self).
+⚔ Aprendendo sobre [instância self](/instance-self).
