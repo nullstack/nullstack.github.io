@@ -1,9 +1,9 @@
 ---
 title: Como fazer Deploy
-description: Com o Nullstack é fácil ter seu aplicação instalado e funcionando no modo de produção
+description: Com o Nullstack é fácil ter sua aplicação instalada e funcionando no modo de produção
 ---
 
-Com o Nullstack é fácil ter seu aplicação instalado e funcionando no modo de produção
+Com o Nullstack é fácil ter sua aplicação instalada e funcionando no modo de produção
 
 > 🐱‍💻 *stonks*
 

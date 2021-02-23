@@ -1,15 +1,15 @@
 ---
-title: Facebook's Pixel
-description: Take advantage of the [context](/context) and [custom events](/context-page) to create a component that dynamically sends Pixel events
+title: Facebook Pixel
+description: Aproveite as vantagens do [contexto](/pt-br/contexto) e [eventos personalizados](/pt-br/contexto-page) para criar um componente que envia eventos Pixel dinamicamente.
 ---
 
-According to [developers.facebook.com](https://developers.facebook.com/docs/facebook-pixel/):
+De acordo com [developers.facebook.com](https://developers.facebook.com/docs/facebook-pixel/):
 
-"The Facebook pixel is a snippet of JavaScript code that allows you to track visitor activity on your website."
+"O Facebook Pixel é um trecho de código JavaScript que permite rastrear a atividade do visitante em seu site."
 
-You can take advantage of the [context](/context) and [custom events](/context-page) to create a component that dynamically sends Pixel events.
+Você pode aproveitar as vantagens do [contexto](/pt-br/contexto) e dos [eventos personalizados](/pt-br/contexto-page) para criar um componente que envia eventos Pixel dinamicamente.
 
-Facebook's Pixel can only be called after [hydrate](/full-stack-lifecycle) to ensure it is running in the client.
+O Facebook Pixel só pode ser chamado depois de [hydrate](/pt-br/ciclo-de-vida-full-stack) para garantir que está sendo executado no cliente.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -58,7 +58,7 @@ class Application extends Nullstack {
   render() {
     return (
       <main>
-        <FacebookPixel id="REPLACE_WITH_YOUR_FACEBOOK_PIXEL_ID" />
+        <FacebookPixel id="SUBSTITUA_COM_SEU_ID_DO_FACEBOOK_PIXEL" />
       </main>
     )
   }
@@ -69,9 +69,9 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Using a Wrapper
+## Usando um Wrapper
 
-Alternatively, you can install [nullstack-facebook-pixel](https://github.com/Mortaro/nullstack-facebook-pixel) as a dependency:
+Alternativamente, você pode instalar [nullstack-facebook-pixel](https://github.com/Mortaro/nullstack-facebook-pixel) como uma dependência:
 
 ```sh
 npm install nullstack-facebook-pixel
@@ -88,7 +88,7 @@ class Application extends Nullstack {
   render() {
     return (
       <main>
-        <FacebookPixel id="REPLACE_WITH_YOUR_FACEBOOK_PIXEL_ID" />
+        <FacebookPixel id="SUBSTITUA_COM_SEU_ID_DO_FACEBOOK_PIXEL" />
       </main>
     )
   }
@@ -99,8 +99,8 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Next step
+## Próximo Passo
 
-> 🎉 *Congratulations*. You are done with the documentation!
+> 🎉 *Parabéns*. Você concluiu a documentação!
 
-⚔ If you want to see this more examples please [open an issue on github](https://github.com/nullstack/nullstack/issues).
+⚔ Se você deseja ver mais exemplos aqui, [abra uma issue no github](https://github.com/nullstack/nullstack/issues).

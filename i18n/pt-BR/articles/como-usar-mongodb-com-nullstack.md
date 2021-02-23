@@ -1,23 +1,23 @@
 ---
-title: How to use MongoDB
-description: You can use any database with Nullstack, but the javascript integration and flexibility of MongoDB looks especially good with Nullstack applications
+title: Como usar MongoDB
+description: Você pode usar qualquer banco de dados com Nullstack, mas a integração javascript e flexibilidade do MongoDB parece especialmente boa com aplicativos Nullstack
 ---
 
-According to [mongodb.com](https://www.mongodb.com):
+De acordo com [mongodb.com](https://www.mongodb.com):
 
-"MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era."
+"O MongoDB é um banco de dados distribuído de propósito geral, baseado em documentos, criado para desenvolvedores de aplicativos modernos e para a era da nuvem."
 
-You can use any database with Nullstack, but the javascript integration and flexibility of MongoDB looks especially good with Nullstack applications.
+Você pode usar qualquer banco de dados com Nullstack, mas a integração javascript e flexibilidade do MongoDB parece especialmente boa com aplicativos Nullstack.
 
-Install the MongoDB driver from npm: 
+Instale o driver MongoDB do npm:
 
 ```sh
 npm install mongodb
 ```
 
-Configure the database credentials using [secrets](/context-secrets).
+Configure as credenciais do banco de dados usando [secrets](/pt-br/contexto-secrets).
 
-The last step is to simply assign the database connection to the server context.
+O último passo é simplesmente atribuir a conexão do banco de dados ao contexto do servidor.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -44,7 +44,7 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-The example above will make the database key available to all your server functions.
+O exemplo acima tornará a chave do banco de dados disponível para todas as funções do servidor.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -68,6 +68,6 @@ class BooksList extends Nullstack {
 export default BooksList;
 ```
 
-## Next step
+## Próximo Passo
 
-⚔ Learn [how to use Google Analytics with Nullstack](/how-to-use-google-analytics-with-nullstack).
+⚔ Aprenda [como usar Google Analytics no Nullstack](/pt-br/como-usar-google-analytics-no-nullstack).
