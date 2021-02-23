@@ -4,32 +4,32 @@ hero:
   heading: "Componentes Javascript Full-stack"
   tagline: "para exercitos de um dev só"
   descriptions:
-    - "Nullstack is a full-stack framework for building <strong>progressive web applications</strong>."
-    - "It connects a <strong> stateful UI </strong> layer to specialized <strong>microservices</strong> in the same component using <strong>vanilla javascript</strong>."
-    - "Focus on solving your business logic instead of writing glue code."
+    - "Nullstack é uma estrutura full-stack para construir <strong>aplicações web progressivas</strong>"
+    - "Ele conecta uma camada <strong>de estado UI</strong> a <strong>microserviços</strong> especializados no mesmo componente usando <strong>vanilla javascript</strong>"
+    - "Lhe permite concentrar-se em resolver sua lógica de negócios em vez de escrever códigos colados."
 cycle:
   ssr:
-    title: "Server-Side Rendering"
+    title: "Renderização no Lado Servidor"
     link: "/server-side-rendering"
     text:
-      "Nullstack generates <strong> SEO ready </strong> HTML optimized for the
-      first paint of your route in a single request using local functions
-      with <strong> zero javascript </strong> dependencies in the client bundle."
+      "Nullstack gera um HTML otimizado e <strong>pronto para SEO</strong> para o
+      primeiro rascunho de sua rota em uma simples requsição de funções locais
+      com <strong> zero javascript </strong> de dependências em seu lado cliente"
   spa:
     title: "Single Page Application"
     link: "/full-stack-lifecycle"
     text:
-      "After hydration, requests will fetch JSON from an <strong> automatically generated API </strong>
-      off server functions, update the application state, and rerender the page."
+      "Após hidratação, requsições buscarão JSON de uma <strong> API automaticamente gerada </strong>
+      fora das funções do servidor, atualize o estado do aplicativo e renderize a página novamente."
   ssg:
-    title: "Static Site Generation"
+    title: "Geração de Site Estático"
     link: "/static-site-generation"
-    text: "You can even use Nullstack to generate lightning-fast <strong> static websites </strong> that serve HTML and become a  single page application using an automatically generated <strong> static API </strong>."
+    text: "Você pode até usar o Nullstack para gerar de forma ultra-rápida <strong> websites estáticos </strong> que servirão HTML de uma forma que torne o aplicativo em página única usando uma <strong> API estática </strong> gerada automaticamente."
 about:
-  heading: "Complete Features as Components"
+  heading: "Recursos Completos como Componentes"
   taglines:
-    - "Nullstack is not another part of your stack, it is your stack"
-    - "Your application can be exported from back-end to front-end as a component and mounted into another application"
+    - "Nullstack não é apenas uma outra parte de sua stack, mas sim a sua stack"
+    - "Seu aplicativo pode ser exportado do back-end para o front-end como um componente e montado em outro aplicativo"
 showcase:
   descriptions:
     - "The example above uses <a href='/server-functions' class='ci1 p1x'> server functions </a> to read tasks from a JSON file and store them in the <a href='/context' class='ci1 p1x'> context </a> available to all components."
