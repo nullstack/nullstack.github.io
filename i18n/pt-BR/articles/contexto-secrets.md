@@ -1,13 +1,13 @@
 ---
-Título: Contexto *Secrets*
-Descrição: O objeto *secrets* é uma interface de acesso ao contexto de armazenamento do framework, no qual você pode usar para configurar dados sensíveis para sua aplicação.
+Título: Contexto Secrets
+Descrição: O objeto secrets é um proxy na parte do framework no contexto, no qual você pode usar para configurar dados sensíveis para sua aplicação.
 ---
 
-O objeto *secrets* é uma interface de acesso ao contexto de armazenamento do framework, no qual você pode usar para configurar dados sensíveis para sua aplicação.
+O objeto *secrets* é um proxy na parte do framework no contexto, no qual você pode usar para configurar dados sensíveis para sua aplicação.
 
 Essa chave é *readwrite* e disponível apenas no contexto *server*.
 
-Chaves secretas são congeladas depois da [inicialização da aplicação](/application-startup).
+Chaves secretas são congeladas depois da [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 
 As seguintes chaves estão disponíveis no objeto:
 
@@ -15,11 +15,11 @@ As seguintes chaves estão disponíveis no objeto:
 - *production*: object
 - *[qualquerOutraCoisa]*: any
 
-Você pode definir chaves diferentes para as chaves *development* e *production*, obtendo assim valores diferentes para cada [ambiente](/context-environment).
+Você pode definir chaves diferentes para as chaves *development* e *production*, obtendo assim valores diferentes para cada [ambiente](/pt-br/contexto-environment).
 
 Caso uma chave seja definida diretamente no objeto *secrets* ela ficará disponível para ambos ambientes.
 
-A leitura das chaves deve ser feita diretamente do objeto *secrets*, pois o Nullstack vai retornar o valor referido de acordo com o [ambiente](/context-environment).
+A leitura das chaves deve ser feita diretamente do objeto *secrets*, pois o Nullstack vai retornar o valor referido de acordo com o [ambiente](/pt-br/contexto-environment).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -52,4 +52,4 @@ Qualquer chave de ambiente iniciada por NULLSTACK_SECRETS_ será mapeada para o 
 
 ## Próximo passo
 
-⚔ Aprendendo sobre [instância self](/instance-self).
+⚔ Aprendendo sobre [instância self](/pt-br/instancia-self).
