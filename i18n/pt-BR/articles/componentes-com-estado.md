@@ -81,7 +81,7 @@ class Paginator extends Nullstack {
 export default Paginator
 ```
 
-> ✨ Aprenda mais sobre [parâmetros de contexto](/rotas-e-parametros).
+> ✨ Aprenda mais sobre [parâmetros de contexto](/pt-br/rotas-e-parametros).
 
 > 💡 Se você não declarar uma fonte para o evento, o Nullstack injetará `source={this}` no tempo de transpilação para pular completamente o processo de pesquisa em tempo de execução!
 
@@ -113,7 +113,7 @@ export default Counter
 
 > 💡 Qualquer atributo com valor primitivo será adicionado ao DOM.
 
-> ✨ Considere usar o [atributo `data`](/contexto-data) para tornar seu HTML válido.
+> ✨ Considere usar o [atributo `data`](/pt-br/contexto-data) para tornar seu HTML válido.
 
 ## Evento Original
 
@@ -145,4 +145,4 @@ export default Form
 
 ## Próximos passos
 
-⚔ Aprenda sobre o [ciclo da vida full-stack](/ciclo-de-vida-full-stack).
+⚔ Aprenda sobre o [ciclo da vida full-stack](/pt-br/ciclo-de-vida-full-stack).
