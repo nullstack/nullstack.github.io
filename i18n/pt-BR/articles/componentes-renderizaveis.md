@@ -1,129 +1,121 @@
 ---
-title: Renderable Components
-description: Renderable components are very similar to web components they give you the ability to create new HTML tags that shortcut a group of other HTML tags
+title: Componentes renderizáveis
+description: Componentes renderizáveis são muito semelhantes aos componentes da Web que fornecem a capacidade de criar novas tags HTML que atalham um grupo de outras tags HTML
 ---
 
-The simplest component you can make is a renderable component.
+O componente mais simples que você pode fazer é um componente renderizável.
 
-Renderable components are very similar to web components, they give you the ability to create new HTML tags that shortcut a group of other HTML tags.
+Componentes renderizáveis são muito semelhantes aos componentes da Web que fornecem a capacidade de criar novas tags HTML que atalham um grupo de outras tags HTML.
 
-Create a file in your src folder with the name of your component and the [njs extension](/njs-file-extension).
+Crie um arquivo em sua pasta src com o nome de seu componente e com a [extensão `.njs`](/extensão-de-arquivo-njs).
 
-In this example it is going to be called HelloWorld.njs.
+Neste exemplo, vai ser chamado `helloworld.njs`.
 
-All you have to do is to import Nullstack or any of its subclasses and extend your class from it, define an instance method called render that returns any JSX, and export the component.
+Tudo o que você precisa fazer é importar `nullstack` ou qualquer uma das suas subclasses e estender sua classe dele, definir um método de instância chamado `render` que retorna qualquer JSX e exporte o componente.
 
-> ✨ Install the official [Nullstack VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ChristianMortaro.vscode-nullstack) to generate classes with a snippet.
+> ✨ Instale a extensão official [Nullstack para VSCode](https://marketplace.visualstudio.com/items?itemName=ChristianMortaro.vscode-nullstack) para gerar classes com snippets.
 
 ```jsx
-import Nullstack from 'nullstack';
+import Nullstack from "nullstack"
 
 class HelloWorld extends Nullstack {
- 
   render() {
-    return (
-      <div> Hello World </div>
-    )
+    return <div> Hello World </div>
   }
-
 }
 
-export default HelloWorld;
+export default HelloWorld
 ```
 
-The code above is just declaring the component, you still have to use it.
+O código acima apenas declara o componente, você ainda tem que usá-lo.
 
-Importing the component in your application gives you the ability to use a new tag in your render.
+Importando o componente em seu aplicativo, temos a capacidade de usar uma nova tag em sua renderização.
 
-This tag will be replaced with whatever you returned in your component render.
+Esta tag será substituída pelo que você retornou no método `render` do componente.
 
 ```jsx
-import Nullstack from 'nullstack';
+import Nullstack from "nullstack"
 
-import './Application.scss';
+import "./Application.scss"
 
-import HelloWorld from './HelloWorld';
+import HelloWorld from "./HelloWorld"
 
 class Application extends Nullstack {
-
   // ...
 
-  render({page}) {
+  render({ page }) {
     return (
       <main>
         <h1> {page.title} </h1>
-        <a href="https://nullstack.app/documentation" target="_blank"> Read the documentation </a>
+        <a href="https://nullstack.app/documentation" target="_blank">
+          {" "}
+          Read the documentation{" "}
+        </a>
         <HelloWorld />
       </main>
     )
   }
-
 }
 
-export default Application;
+export default Application
 ```
 
-## Using HTML attributes
+## Usando atributos HTML.
 
-Nullstack JSX deviates a little from the spec.
+Nullstack JSX se desvia um pouco das especificações.
 
-You can use the normal HTML attributes like *class* and *for* directly.
+Você pode usar os atributos HTML normais como `class` e `for` diretamente.
 
 ```jsx
-<label for="input" class="dont-label-me"> I am a label </label>
+<label for="input" class="dont-label-me">
+  Eu sou um rótulo
+</label>
 ```
 
-## Headless components
+## Componentes Headless
 
-If you want to skip rendering the component at all you can simply return false from the render.
+Se você deseja pular a renderização do componente, você pode simplesmente retornar false da renderização.
 
 ```jsx
-import Nullstack from 'nullstack';
+import Nullstack from "nullstack"
 
 class Headless extends Nullstack {
- 
   render() {
-    return false;
+    return false
   }
-
 }
 
-export default Headless;
+export default Headless
 ```
 
-This will allocate DOM space for when you decide to render markup there.
+Isso alocará o espaço no DOM para quando você decidir renderizar a marcação lá.
 
-This is also useful for conditional rendering.
+Isso também é útil para renderização condicional.
 
-If all you want to do is to generate an invisible component you can skip defining the render method at all.
+Se tudo o que você deseja fazer é gerar um componente invisível, você pode ignorar a definição do método de renderização.
 
-## Inner components
+## Componentes internos
 
-Instead of creating a new component just to organize code-splitting, you can create an inner component.
+Em vez de criar um novo componente apenas para organizar a divisão de código, você pode criar um componente interno.
 
-Inner components are any method that the name starts with render followed by an uppercase character.
+**Componentes internos** são qualquer método cujo o nome seja iniciado com `render` seguido por um caractere maiúsculo.
 
-Inner components share the same instance and scope as the main component, therefore, are very convenient to avoid problems like props drilling.
+Componentes internos compartilham a mesma instância e escopo, pois o componente principal, portanto, são muito convenientes para evitar problemas como adereços de perfuração.
 
-To invoke the inner component use a JSX tag with the method name without the render prefix.
+Para invocar o componente interno, use uma tag JSX com o nome do método sem o prefixo `render`.
 
 ```jsx
-import Nullstack from 'nullstack';
+import Nullstack from "nullstack"
 
 class Post extends Nullstack {
-
   renderArticle() {
-    return (
-      <article> Content </article>
-    )
+    return <article> Conteúdo </article>
   }
 
   renderAside() {
-    return (
-      <aside> Related content </aside>
-    )
+    return <aside> Conteúdo Relacionado </aside>
   }
- 
+
   render() {
     return (
       <div>
@@ -132,105 +124,102 @@ class Post extends Nullstack {
       </div>
     )
   }
-
 }
 
-export default HelloWorld;
+export default HelloWorld
 ```
 
-> 💡 Nullstack will inject a constant reference to the function at transpile time in order to completely skip the runtime lookup process!
+> 💡 Nullstack injetará uma referência constante à função no tempo de transpilação, a fim de ignorar completamente o processo de pesquisa de tempo de execução!
 
-## Boolean attributes
+## Atributos booleanos
 
-Attributes can be assigned as a boolean.
+Os atributos podem ser atribuídos como booleanos.
 
-When the value is false the attribute will not be rendered at all.
+Quando o valor é `false`, o atributo não será renderizado.
 
-When the value is true it will be rendered as a boolean attribute without a string value.
+Quando o valor for `true`, ele será processado como um atributo booleano sem um valor de string.
 
 ```jsx
-<button disabled={false}> Button </button>
+<button disabled={false}> Botão </button>
 ```
 
-You can shortcut attributes when you know the value will always be true.
+Você pode abreviar atributos quando sabe que o valor será sempre verdadeiro.
 
 ```jsx
-<button disabled> Button </button>
+<button disabled> Botão </button>
 ```
 
-> ✨ Learn more about [attributes](/context).
+> ✨ Aprender mais sobre[atributos](/contexto).
 
-## Element tag
+## Tag do elemento
 
-If you need to decide the tag name at runtime, you can use the element tag and set the tag attribute conditionally.
+Se você precisar decidir o nome da tag em tempo de execução, pode usar a tag do elemento e definir o atributo da tag condicionalmente.
 
 ```jsx
-<element tag={!!link ? 'a' : 'span'} href={link || false}>
-  some arbitrary text
+<element tag={!!link ? "a" : "span"} href={link || false}>
+  algum texto arbitrário
 </element>
 ```
 
-When the tag attribute is omitted, Nullstack will default to a *div*.
+Quando o atributo tag é omitido, Nullstack assumirá como padrão um `div`.
 
-## SVG Elements
+## Elementos SVG
 
-SVG can be used as if it were any regular HTML tag.
+O SVG pode ser usado como se fosse qualquer tag HTML normal.
 
-You can manipulate the SVG using attributes and events normally.
+Você pode manipular o SVG usando atributos e eventos normalmente.
 
 ```jsx
 <svg height={this.size} viewBox="0 0 100 100">
   <circle cx="50" cy="50" r="40" onclick={this.grow} />
-</svg> 
+</svg>
 ```
 
-> ✨ Learn more about [events](/stateful-components).
+> ✨ Aprender mais sobre [eventos](/componentes-com-estado).
 
-## Components with children
+## Componentes com filhos
 
-Your component can be invoked passing a block of content.
+Seu componente pode ser invocado passando um bloco de conteúdo.
 
 ```jsx
-<Header> 
-  <h1> Hello World </h1>
+<Header>
+  <h1> Olá Mundo</h1>
 </Header>
 ```
 
-This doesn't automatically render the block since it wouldn't know where to place it.
+Isso não renderiza automaticamente o bloco, pois não saberia onde colocá-lo.
 
-You can destructure the children on the render method and place it in your markup.
+Você pode desestruturar os filhos no método de renderização e colocá-los em sua marcação.
 
 ```jsx
-import Nullstack from 'nullstack';
+import Nullstack from "nullstack"
 
 class Header extends Nullstack {
- 
-  render({children}) {
-    return (
-      <div>{children}</div>
-    )
+  render({ children }) {
+    return <div>{children}</div>
   }
-
 }
 
-export default Header;
+export default Header
 ```
 
-> ✨ This is possible because the children key is part of the [instance context](/context).
+> ✨ Isso é possível porque a chave `children` faz parte da [instância do contexto](/contexto).
 
-## Lists
+## Listas
 
-You can map over lists without declaring a key.
+Você pode mapear listas sem declarar uma chave.
 
-Lists that may change length must be wrapped in a parent element just for them.
+As listas que podem mudar de comprimento devem ser agrupadas em um elemento pai apenas para elas.
 
 ```jsx
 <ul>
-  {list.map((item) => <li>{item.name}</li>)}
+  {list.map((item) => (
+    <li>{item.name}</li>
+  ))}
 </ul>
 ```
 
-You can emulate a fixed-size list by returning false instead of an element to reserve dom space.
+Você pode emular uma lista de tamanho fixo, retornando false em vez de um elemento para reservar espaço no Dom.
 
 ```jsx
 {list.map((item) => (
@@ -238,83 +227,76 @@ You can emulate a fixed-size list by returning false instead of an element to re
 )}
 ```
 
-It's a nice practice to use inner components combined with lists to clean up your code.
+É uma boa prática usar componentes internos combinados com listas para limpar seu código.
 
 ```jsx
-import Nullstack from 'nullstack';
+import Nullstack from "nullstack"
 
 class List extends Nullstack {
-
   items = [
-    {visible: true, number: 1},
-    {visible: false, number: 2},
-    {visible: true, number: 3}
+    { visible: true, number: 1 },
+    { visible: false, number: 2 },
+    { visible: true, number: 3 },
   ]
 
-  renderItem({visible, number}) {
-    if(!visible) return false;
-    return (
-      <li> {number} </li>
-    )
+  renderItem({ visible, number }) {
+    if (!visible) return false
+    return <li> {number} </li>
   }
- 
+
   render() {
     return (
       <ul>
-        {this.items.map((item) => <Item {...item} />)}
+        {this.items.map((item) => (
+          <Item {...item} />
+        ))}
       </ul>
     )
   }
-
 }
 
-export default List;
+export default List
 ```
 
-> ✨ Sometimes you will notice keys in the map. Learn more about the [instance key](/instance-key).
+> ✨ Às vezes, você notará chaves no mapa. Saiba mais sobre o [instância key](/instancia-key).
 
-## Inner HTML
+## HTML interno
 
-You can set the inner HTML of an element with the *html* attribute.
+Você pode definir o HTML interno de um elemento com o atributo `html`.
 
-Links inside the HTML string will be replaced with [routable anchors](/routes-and-params).
+Links dentro da string HTML serão substituídos por [Âncoras Roteáveis](/rotas-e-parametros).
 
 ```jsx
-import Nullstack from 'nullstack';
+import Nullstack from "nullstack"
 
 class Post extends Nullstack {
-
   content = `
-    <h1> This is a Post </h1>
+    <h1> Este é um post </h1>
     <a href="/other-post">
-      Check this other post
+      Confira este outro post
     </a>
-  `;
- 
-  render() {
-    return (
-      <article html={this.content} />
-    )
-  }
+  `
 
+  render() {
+    return <article html={this.content} />
+  }
 }
 
-export default Post;
+export default Post
 ```
 
-> 🔥 Be careful! When using user-generated HTML you are in risk of script injection
+> 🔥 Tome cuidado!Ao usar o HTML gerado pelo usuário, você está em risco de injeção de script
 
-## The head tag
+## A tag `head`
 
-Renderable components can render inside the head tag an unlimited number of times at any depth of the application.
+Componentes renderizáveis podem renderizar dentro da tag `head` um número ilimitado de vezes em qualquer profundidade do aplicativo.
 
-The head tag will only be updated during the [server-side rendering](/server-side-rendering) process and changes will be ignored after the [hydration](/full-stack-lifecycle) process.
+A tag head só será atualizada durante o processo de [renderização no servidor](/renderizacao-no-servidor) e mudanças serão ignorados após o processo de [hidratação](/ciclo-de-vida-full-stack).
 
 ```jsx
-import Nullstack from 'nullstack';
+import Nullstack from "nullstack"
 
 class Application extends Nullstack {
-
   // ...
 
   render() {
@@ -326,24 +308,35 @@ class Application extends Nullstack {
           </head>
         </div>
         <head>
-          <link rel="preload" href="/roboto-v20-latin-300.woff2" as="font" type="font/woff2" crossorigin />
-          <link rel="preload" href="/crete-round-v9-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+          <link
+            rel="preload"
+            href="/roboto-v20-latin-300.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+          />
+          <link
+            rel="preload"
+            href="/crete-round-v9-latin-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+          />
         </head>
       </main>
     )
   }
-
 }
 
-export default Application;
+export default Application
 ```
 
-> 🔥 you should not use the head tag to update [metatags](/context-page) that Nullstack already controls
+> 🔥 Você não deve usar a tag head para atualizar [metatags](/contexto-page) que o Nullstack já controla.
 
-## Caveats
+## Ressalvas
 
-Currently, Nullstack doesn't support JSX Fragments. If you want to see this feature implemented please [open an issue on github](https://github.com/nullstack/nullstack/issues).
+Atualmente, o Nullstack não suporta fragmentos JSX.Se você quiser ver este recurso implementado, por favor [abra uma issue no github](https://github.com/nullstack/nullstack/issues).
 
-## Next step
+## Próxima Etapa
 
-⚔ Add state to your component using [stateful components](/stateful-components).
+⚔ Adicione estado ao seu componente usando [componentes com estado](/componentes-com-estado).
