@@ -7,7 +7,7 @@ O componente mais simples que você pode fazer é um componente renderizável.
 
 Componentes renderizáveis são muito semelhantes aos componentes da Web que fornecem a capacidade de criar novas tags HTML que atalham um grupo de outras tags HTML.
 
-Crie um arquivo em sua pasta src com o nome de seu componente e com a [extensão `.njs`](/extensão-de-arquivo-njs).
+Crie um arquivo em sua pasta src com o nome de seu componente e com a [extensão `.njs`](/pt-br/extensão-de-arquivo-njs).
 
 Neste exemplo, vai ser chamado `helloworld.njs`.
 
@@ -175,7 +175,7 @@ Você pode manipular o SVG usando atributos e eventos normalmente.
 </svg>
 ```
 
-> ✨ Aprender mais sobre [eventos](/componentes-com-estado).
+> ✨ Aprender mais sobre [eventos](/pt-br/componentes-com-estado).
 
 ## Componentes com filhos
 
@@ -203,7 +203,7 @@ class Header extends Nullstack {
 export default Header
 ```
 
-> ✨ Isso é possível porque a chave `children` faz parte da [instância do contexto](/contexto).
+> ✨ Isso é possível porque a chave `children` faz parte da [instância do contexto](/pt-br/contexto).
 
 ## Listas
 
@@ -258,13 +258,13 @@ class List extends Nullstack {
 export default List
 ```
 
-> ✨ Às vezes, você notará chaves no mapa. Saiba mais sobre o [instância key](/instancia-key).
+> ✨ Às vezes, você notará chaves no mapa. Saiba mais sobre o [instância key](/pt-br/instancia-key).
 
 ## HTML interno
 
 Você pode definir o HTML interno de um elemento com o atributo `html`.
 
-Links dentro da string HTML serão substituídos por [Âncoras Roteáveis](/rotas-e-parametros).
+Links dentro da string HTML serão substituídos por [Âncoras Roteáveis](/pt-br/rotas-e-parametros).
 
 ```jsx
 import Nullstack from "nullstack"
@@ -291,7 +291,7 @@ export default Post
 
 Componentes renderizáveis podem renderizar dentro da tag `head` um número ilimitado de vezes em qualquer profundidade do aplicativo.
 
-A tag head só será atualizada durante o processo de [renderização no servidor](/renderizacao-no-servidor) e mudanças serão ignorados após o processo de [hidratação](/ciclo-de-vida-full-stack).
+A tag head só será atualizada durante o processo de [renderização no servidor](/pt-br/renderizacao-no-servidor) e mudanças serão ignorados após o processo de [hidratação](/pt-br/ciclo-de-vida-full-stack).
 
 ```jsx
 import Nullstack from "nullstack"
@@ -331,7 +331,7 @@ class Application extends Nullstack {
 export default Application
 ```
 
-> 🔥 Você não deve usar a tag head para atualizar [metatags](/contexto-page) que o Nullstack já controla.
+> 🔥 Você não deve usar a tag head para atualizar [metatags](/pt-br/contexto-page) que o Nullstack já controla.
 
 ## Ressalvas
 
@@ -339,4 +339,4 @@ Atualmente, o Nullstack não suporta fragmentos JSX.Se você quiser ver este rec
 
 ## Próxima Etapa
 
-⚔ Adicione estado ao seu componente usando [componentes com estado](/componentes-com-estado).
+⚔ Adicione estado ao seu componente usando [componentes com estado](/pt-br/componentes-com-estado).
