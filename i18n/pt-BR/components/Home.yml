@@ -53,13 +53,13 @@ playlist:
   videos:
     - title: "Full-stack com Nullstack - Parte 1"
       link: "https://www.youtube.com/watch?v=ieLVXZGXUkI&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumb-br-01.jpg"
+      thumbnail: "/thumbnail-pt-br-1.webp"
     - title: "Full-stack com Nullstack - Parte 2"
       link: "https://www.youtube.com/watch?v=BHrNgi2UZ6Q&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumb-br-02.jpg"
+      thumbnail: "/thumbnail-pt-br-2.webp"
     - title: "Full-stack com Nullstack - Parte 3"
       link: "https://www.youtube.com/watch?v=uRlvILvJ0Oc&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumb-br-03.jpg"
+      thumbnail: "/thumbnail-pt-br-3.webp"
 why:
   heading: "Por que você deve usar o Nullstack?"
   reasons:
