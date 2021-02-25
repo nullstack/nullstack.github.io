@@ -41,6 +41,17 @@ core:
       github: "AnnyFigueira"
       description: "Pato de borracha com um pescoço para encontrar inconsistências e problemas, esperando até que uma API seja aprovada para nos forçar a reescrever tudo."
       contribution: "Adotante antecipada do framework que desenvolveu aplicações reais em produção para validar como as partes se encaixam."
+    - name: "Bianca Augusta"
+      role: "Artista Autista"
+      github: "Bilkaya"
+      description: "Ilustradora freelancer a 10 anos. Viciada em Warcraft, aspirante a cosplayer e druida tanker no WoW."
+      contribution: "Mamãe da Nulla-Chan e volta e meia lê scripts por pura pressão do Mortaro."
+    - name: "Guilherme Correia"
+      role: "Tradutor Transtornado"
+      github: "GuiDevloper"
+      description: "Descreve algo aqui"
+      contribution: "Especialista em criar features sem documentação e criador de issues para exigir documentação que ele mesmo vai fazer."
+
 packages:
   title: "Contribuidores dos Pacotes"
 documentation:
