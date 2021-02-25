@@ -51,7 +51,7 @@ features:
     key: "Lifecycle"
     link: "/full-stack-lifecycle"
 playlist:
-  heading: "Watch our Nullstack video turorials"
+  heading: "Watch our Nullstack video tutorials"
   tagline: "Nullstack cares about making its content as direct to the point and easy to understand as possible"
   videos:
     - title: "Full-stack with Nullstack - Part 1"
