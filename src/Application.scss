@@ -76,6 +76,10 @@ section a img {
   }
 }
 
+.bg-tagline-home {
+  background-image: linear-gradient(0deg, var(--soft-color) 49%, rgba(107, 107, 107, 0.4) 50%, var(--soft-color) 52%);
+}
+
 main {
   min-height: 100vh;
   padding-top: 70px;
