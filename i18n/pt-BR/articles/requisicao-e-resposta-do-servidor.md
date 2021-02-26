@@ -1,15 +1,16 @@
 ---
-title: Server request and response
-description: The server key is a proxy around the express instance that runs Nullstack under the hood
+title: Requisição e resposta do servidor
+description: A key do servidor é um proxy em volta da instância do express, que roda o Nullstack por baixo dos panos
+
 ---
 
-## The server key
+## A key do servidor
 
-The server key is a proxy around the [Express](https://expressjs.com) instance that runs Nullstack under the hood.
+A key do servidor é um proxy em volta de uma instância do [Express](https://expressjs.com) que roda por baixo dos panos.
 
-The server object is present only in the *server* context.
+O objeto do servidor está presenta apenas no contexto do *servidor*.
 
-The following functions are tunneled back to the express server:
+As seguintes funções são redirecionadas para o servidor express:
 
 - get
 - post
@@ -20,7 +21,8 @@ The following functions are tunneled back to the express server:
 - head
 - use
 
-> ✨ If you wanna know how to make an API with Nullstack, this is the way.
+
+> ✨ Se você quer aprender como fazer uma API com Nullstack, este é o jeito.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -40,7 +42,7 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-Other available keys are:
+Outras keys disponíves são:
 
 - *port*: integer
 - *maximumPayloadSize*: string
@@ -67,13 +69,13 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-The cors object will be passed as the argument to [express cors plugin](https://expressjs.com/en/resources/middleware/cors.html)
+O objeto do cors irá ser passado como argumento para o plugin do [cors no express](https://expressjs.com/en/resources/middleware/cors.html)
 
-## Request and Response
+## Requisição e resposta
 
-Every server function context is merged with the original request and response objects from express.
+Toda função que está no contexto do servidor é mesclada com os objetos de requisição e resposta do express.
 
-If you raise a response manually it will override the framework's [server-side rendering](/server-side-rendering) response.
+Se você der uma resposta manualmente ela irá sobrescrever a resposta [server-side rendering](/server-side-rendering) do framework.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -93,6 +95,6 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Next step
+## Próximo passo
 
-⚔ Learn about [styles](/styles).
+⚔ Aprenda sobre [estilos](/styles).
