@@ -48,11 +48,7 @@ class Contributors extends Translatable {
   renderRoadmap() {
     const {roadmap} = this.i18n;
     return (
-      <Topic {...roadmap}>
-        <ul class="m2t">
-          {roadmap.tasks.map((task) => <li class="bc1b p1y"> ⚔ {task} </li>)}
-        </ul>
-      </Topic>
+      <Topic {...roadmap} />
     )
   }
 
@@ -64,7 +60,7 @@ class Contributors extends Translatable {
           <h3>
             <a href={`https://github.com/${github}`} target="_blank" rel="noopener" class="ci1">{name}</a>
           </h3>
-          <h4 class="m1y"> {role} </h4>
+          <h4 class="m1y" html={role} />
           <p> {description} </p> 
           <p> {contribution} </p>
         </div>
