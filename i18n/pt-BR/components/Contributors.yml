@@ -10,21 +10,12 @@ roadmap:
   title: "O Mapa da Estrada"
   paragraphs:
     - "As próximas atualizações serão direcionadas a correções de quaisquer bugs encontrados e terão foco na qualidade de vida."
-    - "As atualizações a seguir são as próximas etapas planejadas em nenhuma ordem específica:"
-  tasks:
-    - "Tutoriais em vídeo e texto em ambos Inglês e Português"
-    - "Internacionalizar a documentação"
-    - "Melhorar as mensagens de erro e unificar os consoles de servidor e cliente"
-    - "Suporte à Typescript e melhor suporte de IDEs em geral"
-    - "Trabalhar pelas beiradas para melhorar o desempenho de coisas que estão dando retornos decrescentes neste ponto"
-    - "Plugins para implantação de aplicações nos hosts mais comuns"
-    - "Ferramentas de desenvolvimento no navegador para inspeção de contexto e instâncias da aplicação"
-    - "Integração nativa com aplicativos híbridos, se os PWAs não os eliminarem antes de chegarmos a eles"
+    - 'As atualizações listadas nas <a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1">issues do Nullstack</a> são as próximas etapas planejadas sem nenhuma ordem específica.'
 core:
   title: "A Equipe Principal"
   paragraphs:
     - "O Nullstack foi desenvolvido por freelancers full-stacks neuroatípicos."
-    - "Com um histórico pesado em Rails, Ember.js e React.js, as inspirações tiradas desses projetos podem ser óbvias."
+    - "Com um histórico pesado em Rails, Ember.js, React.js e filosofia Vue.js as inspirações tiradas desses projetos podem ser óbvias."
   team:
     - name: "Christian Mortaro"
       role: "Autor Autista"
@@ -41,10 +32,21 @@ core:
       github: "AnnyFigueira"
       description: "Pato de borracha com um pescoço para encontrar inconsistências e problemas, esperando até que uma API seja aprovada para nos forçar a reescrever tudo."
       contribution: "Adotante antecipada do framework que desenvolveu aplicações reais em produção para validar como as partes se encaixam."
+    - name: "Bianca Augusta"
+      role: "Artista Autista"
+      github: "Bilkaya"
+      description: "Ilustradora freelancer faz 10 anos. Viciada em Warcraft, aspirante a cosplayer e druida tanker no WoW."
+      contribution: "Mamãe da Nulla-Chan e volta e meia lê scripts por pura pressão do Mortaro."
+    - name: "Guilherme Correia"
+      role: "import Membro from <a href='https://github.com/vuejs-br' target='_blank' rel='noopener' class='ci1'>vuejs-br</a>"
+      github: "GuiDevloper"
+      description: "Experimentalista, escritor de universos, sonhador e desenvolvedor quando acha e toca a fita K7 sem título certa."
+      contribution: "Usuário de features não documentadas e criador de issues exigindo documentação que ele mesmo vai fazer."
+
 packages:
   title: "Contribuidores dos Pacotes"
 documentation:
-  title: "Contribuidores da documentação"
+  title: "Contribuidores da Documentação"
 instructions:
   title: "Como Contribuir"
   paragraphs:

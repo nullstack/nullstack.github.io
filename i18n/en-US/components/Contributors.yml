@@ -10,21 +10,12 @@ roadmap:
   title: "The Roadmap"
   paragraphs:
     - "The next updates will be guided towards fixing any bugs that are found and focus on quality of life."
-    - "The following updates are the next planned steps in no particular order:"
-  tasks:
-    - "Video and text tutorials in both English and Portuguese"
-    - "Internationalize the documentation"
-    - "Improve error messages and unify the server and client consoles"
-    - "Typescript support and better IDE support in general"
-    - "Yak shaving to improve performance on things that give diminishing returns at this point"
-    - "Plugins for deployment in the most common hosts"
-    - "Browser dev tools for context and instances inspection"
-    - "Out of the box integration with hybrid apps, if PWAs don't kill them before we get to it"
+    - 'The updates listed on <a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1">Nullstack issues</a> are the next planned steps without any particular order.'
 core:
   title: "The Core Team"
   paragraphs:
     - "Nullstack was developed by full-stack neuro-atypical freelancers."
-    - "With a heavy background in Rails, Ember.js, and React.js, the inspirations took from those projects might be obvious."
+    - "With a heavy background in Rails, Ember.js, React.js and the Vue.js philosophy the inspirations took from those projects might be obvious."
   team:
     - name: "Christian Mortaro"
       role: "Autistic Author"
@@ -41,6 +32,17 @@ core:
       github: "AnnyFigueira"
       description: "Rubber duck with a neck to find inconsistencies and problems, waiting till an API is approved to force us into rewriting everything."
       contribution: "An early adopter of the framework that developed real production applications to validate how the parts fit together."
+    - name: "Bianca Augusta"
+      role: "Autistic Artist"
+      github: "Bilkaya"
+      description: "Freelance illustrator for 10 years. Warcraft addict, aspiring cosplayer and druid tanker in WoW."
+      contribution: "Mother of Nulla-Chan and reads scripts here and there under pure pressure from Mortaro."
+    - name: "Guilherme Correia"
+      role: "import Member from <a href='https://github.com/vuejs-br' target='_blank' rel='noopener' class='ci1'>vuejs-br</a>"
+      github: "GuiDevloper"
+      description: "Experimentalist, universes writer, dreamer and developer when finds and plays the right untitled cassette tape."
+      contribution: "User of undocumented features and creator of issues requiring documentation that he will do himself."
+
 packages:
   title: "Packages Contributors"
 documentation:

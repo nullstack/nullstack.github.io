@@ -23,7 +23,7 @@ The *enabled* key defines if the service worker will be automatically registered
 
 By default *enabled* is set to true on production mode and false on development mode.
 
-Preload is an array of paths that will be cached when the service worker is installed.
+*preload* is an array of paths that will be cached when the service worker is installed.
 
 The assets required to start the application will be preloaded automatically, and you should configure only the extra pages you want to have available offline.
 
@@ -70,11 +70,11 @@ The following keys are available as *readwrite* in the client context:
 
 The *responsive* key determines if the application has all the responses it needs to render the current page.
 
-Nullstack will try to keep your application *responsive* as long as possible and set the key to false only when there are no ways of retrieving any response from the network or offline according to the fetch strategy for the [environment](/context-environment).
+Nullstack will try to keep your application responsive as long as possible and set the key to false only when there are no ways of retrieving any response from the network or offline according to the fetch strategy for the [environment](/context-environment).
 
 The *online* key will listen for network events and rerender the application when navigator.onLine value changes.
 
-When the application is back online Nullstack will try to make the application *responsive* again and rerender if necessary.
+When the application is back online Nullstack will try to make the application responsive again and rerender if necessary.
 
 ```jsx
 import Nullstack from 'nullstack';

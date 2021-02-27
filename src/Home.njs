@@ -14,8 +14,8 @@ class Home extends Translatable {
     return (
       <section class="x xx sm-p2x p20y">
         <h1 class="x12 sm-fs8 md+fs12"> {this.i18n.hero.heading} </h1>
-        <div class="xx x8 m12b"> 
-          <p class="fs6 p2"> {this.i18n.hero.tagline} </p>
+        <div class="bgm1 xx x8 m12b p2b bg-tagline-home"> 
+          <p class="bgm1 fs6 p2"> {this.i18n.hero.tagline} </p>
         </div>
         <div>
           {this.i18n.hero.descriptions.map((description, index, {length}) => 
@@ -118,7 +118,7 @@ class Home extends Translatable {
   renderPlaylist({worker}) {
     if(!worker.online) return false;
     return (
-      <section class="x xx md+bcm2t sm-p10t md+p20t sm-p2x">
+      <section class="x xx sm-p10t md+p20t sm-p2x">
         <h2 class="x12 sm-fs8 md+fs12"> {this.i18n.playlist.heading} </h2>
         <p class="x12 fs4"> {this.i18n.playlist.tagline} </p>
         <div class="xl x12 p10t">

@@ -18,7 +18,6 @@ class Application extends Nullstack {
   static async startWorker({worker}) {
     const articles = readdirSync(path.join(__dirname, '../i18n/en-US', 'articles'));
     worker.preload = [
-      '/nullstack.svg',
       ...articles.map((article) => '/' + article.replace('.md', '')),
       '/documentation',
       '/components',

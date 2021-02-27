@@ -1,62 +1,59 @@
 ---
-title: Context Data
-description: The data is an object in the framework store part of your context and gives you information about the element dataset.
+title: Contexto Data
+description: O data é um objeto no framework que armazena parte de seu contexto e fornece informações sobre o conjunto de dados do elemento.
 ---
 
-The data is an object in the framework store part of your context and gives you information about the element dataset.
+O `data` é um objeto no framework que armazena parte de seu contexto e fornece informações sobre o conjunto de dados do elemento.
 
-You can use this key to avoid polluting your DOM with invalid attributes.
+Você pode usar esta chave para evitar poluir seu DOM com atributos inválidos.
 
-> 💡 This helps Nullstack set attributes without wasting time validating them.
+> 💡 Isso ajuda o Nullstack a definir atributos sem perder tempo validando-os.
 
-This key is *readonly* and available only in the *client* context.
+Esta chave é _readonly_ e disponível apenas no contexto do _client_.
 
-Any *data-\** attributes will receive a respective camelized key on the data object.
+Quaisquer atributos `data-`\* receberão uma chave camelizada respectiva no objeto de dados.
 
-You can assign data attributes both via data-* and a data key that accepts an object with camelized keys.
+Você pode atribuir atributos **data** via `data-`\* e uma chave de dados que aceita um objeto com chaves camelizadas.
 
-The kebab version is also available in the context.
+A versão kebab também está disponível no contexto.
 
 ```jsx
-import Nullstack from 'nullstack';
+import Nullstack from "nullstack"
 
 class ContextData extends Nullstack {
+  count = 1
 
-  count = 1;
-
-  calculate({data}) {
-    this.count = this.count * data.multiply + data.sum;
+  calculate({ data }) {
+    this.count = this.count * data.multiply + data.sum
   }
 
   renderInner(context) {
-    const {data} = context;
+    const { data } = context
     return (
       <div data={data}>
-        {data.frameworkName}
-        is same as
-        {context['data-framework-name']}
+        {data.frameworkName}é o mesmo que
+        {context["data-framework-name"]}
       </div>
     )
   }
-  
-  render({data}) {
+
+  render({ data }) {
     return (
-      <div> 
-        <button onclick={this.calculate} data-multiply={3} data={{sum: 2}}>
-          Calculate
+      <div>
+        <button onclick={this.calculate} data-multiply={3} data={{ sum: 2 }}>
+          Calcular
         </button>
         <Inner data-framework-name="Nullstack" />
       </div>
     )
   }
-
 }
 
-export default ContextData;
+export default ContextData
 ```
 
-> 💡 Camelized keys from the data object will result in kebab attributes in the DOM.
+> 💡 Chaves camelizadas do objeto de dados resultarão em atributos kebab no DOM.
 
-## Next step
+## Próxima Etapa
 
-⚔ Learn about the [context environment](/context-environment).
+⚔ Aprenda sobre o[contexto environment](/pt-br/contexto-environment).

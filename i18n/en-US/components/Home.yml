@@ -51,18 +51,18 @@ features:
     key: "Lifecycle"
     link: "/full-stack-lifecycle"
 playlist:
-  heading: "Watch our Nullstack video turorials"
+  heading: "Watch our Nullstack video tutorials"
   tagline: "Nullstack cares about making its content as direct to the point and easy to understand as possible"
   videos:
     - title: "Full-stack with Nullstack - Part 1"
       link: "https://www.youtube.com/watch?v=l23z00GEar8&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
-      thumbnail: "/thumb-01.webp"
+      thumbnail: "/thumbnail-en-us-1.webp"
     - title: "Full-stack with Nullstack - Part 2"
       link: "https://www.youtube.com/watch?v=_i5kKXkhBaM&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
-      thumbnail: "/thumb-02.webp"
+      thumbnail: "/thumbnail-en-us-2.webp"
     - title: "Full-stack with Nullstack - Part 3"
       link: "https://www.youtube.com/watch?v=8PExa5-G1As&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
-      thumbnail: "/thumb-03.webp"
+      thumbnail: "/thumbnail-en-us-3.webp"
 why:
   heading: "Why should you use Nullstack?"
   reasons:
