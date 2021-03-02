@@ -24,12 +24,12 @@ class Page extends Nullstack {
   render({environment}) {
     return (
       <div> 
-        {environment.client && <p> I am in the client </p>}
-        {environment.server && <p> I am in the server </p>}
-        {environment.development && <p> I am in development mode </p>}
-        {environment.production && <p> I am in production mode </p>}
-        {environment.static && <p> I am a static site </p>}
-        <p> My key is {environment.key} </p>
+        {environment.client && <p>I'm in the client</p>}
+        {environment.server && <p>I'm in the server</p>}
+        {environment.development && <p>I'm in development mode</p>}
+        {environment.production && <p>I'm in production mode</p>}
+        {environment.static && <p>I'm in a static site</p>}
+        <p> My key is {environment.key}</p>
       </div>
     )
   }
@@ -39,7 +39,7 @@ class Page extends Nullstack {
 export default Page;
 ```
 
-The environment *key* is an md5 hash of the environment folder outputs that is appended to [assets](/styles) and [static API](/static-site-generation) path in order to assist cache control.
+The environment *key* is an md5 hash of the current environment folder outputs. The key is appended to [assets](/styles) and [static API](/static-site-generation) path to assist cache control.
 
 ## Next step
 
