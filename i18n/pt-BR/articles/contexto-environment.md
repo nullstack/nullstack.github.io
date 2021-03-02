@@ -1,13 +1,13 @@
 ---
-title: Context Environment
-description: The environment object is in the framework store part of your context and gives you information about the current environment
+title: Contexto Ambiente
+description: O objeto environment está armazenado na parte da estrutura do seu contexto e fornece informações sobre o ambiente atual
 ---
 
-The environment object is in the *framework store* part of your context and gives you information about the current environment.
+A variável do ambiente está no *armazenamento da estrutura* do seu contexto e fornece informações sobre o ambiente atual.
 
-This key is *readonly* and available in both the *client* and *server* contexts.
+Esta chave é *somente leitura* e está disponível nos contextos *client* e *server*.
 
-The following keys are available in the object:
+As seguintes chaves estão disponíveis no objeto:
 
 - *client*: boolean
 - *server*: boolean
@@ -24,12 +24,12 @@ class Page extends Nullstack {
   render({environment}) {
     return (
       <div> 
-        {environment.client && <p> I am in the client </p>}
-        {environment.server && <p> I am in the server </p>}
-        {environment.development && <p> I am in development mode </p>}
-        {environment.production && <p> I am in production mode </p>}
-        {environment.static && <p> I am a static site </p>}
-        <p> My key is {environment.key} </p>
+        {environment.client && <p>Estou no cliente</p>}
+        {environment.server && <p>Estou no servidor</p>}
+        {environment.development && <p>Estou em modo de desenvolvimento</p>}
+        {environment.production && <p>Estou em modo de produção</p>}
+        {environment.static && <p>Estou em um site estático</p>}
+        <p>Minha chave é {environment.key}</p>
       </div>
     )
   }
@@ -39,8 +39,8 @@ class Page extends Nullstack {
 export default Page;
 ```
 
-The environment *key* is an md5 hash of the environment folder outputs that is appended to [assets](/styles) and [static API](/static-site-generation) path in order to assist cache control.
+A *chave* do contexto de ambiente é uma hash md5 nas saídas das pasta do ambiente em que é anexado e nos caminhos [ativos](/pt-br/estilos) e [API estática](/pt-br/geracao-de-sites-estaticos) para auxiliar no controle de cache.
 
-## Next step
+## Próxima Etapa
 
-⚔ Learn about the [context page](/context-page).
+⚔ Aprenda sobre o [contexto da página](/pt-br/contexto-page).
