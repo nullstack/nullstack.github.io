@@ -3,7 +3,7 @@ title: Context Environment
 description: The environment object is in the framework store part of your context and gives you information about the current environment
 ---
 
-The environment variable is in the *framework store* part of your context and gives you information about the current environment.
+The environment object is in the *framework store* part of your context and gives you information about the current environment.
 
 This key is *readonly* and available in both the *client* and *server* contexts.
 
@@ -39,7 +39,7 @@ class Page extends Nullstack {
 export default Page;
 ```
 
-The environment *key* is an md5 hash of the environment folder outputs that is appended to [assets](/styles) and [static API](/static-site-generation) path in order to assist cache control.
+The environment *key* is an md5 hash of the current environment folder outputs. The key is appended to [assets](/styles) and [static API](/static-site-generation) path to assist cache control.
 
 ## Next step
 
