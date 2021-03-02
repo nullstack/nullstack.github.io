@@ -1,9 +1,9 @@
 ---
-title: Contexto Environment
+title: Contexto Ambiente
 description: O objeto environment está armazenado na parte da estrutura do seu contexto e fornece informações sobre o ambiente atual
 ---
 
-O objeto environment está no *armazenamento da estrutura* do seu contexto e fornece informações sobre o ambiente atual.
+A variável do ambiente está no *armazenamento da estrutura* do seu contexto e fornece informações sobre o ambiente atual.
 
 Esta chave é *somente leitura* e está disponível nos contextos *client* e *server*.
 
@@ -28,7 +28,7 @@ class Page extends Nullstack {
         {environment.server && <p>Estou no servidor</p>}
         {environment.development && <p>Estou em modo de desenvolvimento</p>}
         {environment.production && <p>Estou em modo de produção</p>}
-        {environment.static && <p>Eu sou um site estático</p>}
+        {environment.static && <p>Estou em um site estático</p>}
         <p>Minha chave é {environment.key}</p>
       </div>
     )
@@ -39,7 +39,7 @@ class Page extends Nullstack {
 export default Page;
 ```
 
-A *chave* do contexto environment é um hash md5 nas saídas das pasta do ambiente que é anexado e nos caminhos [ativos](/pt-br/estilos) e [API estática](/pt-br/geracao-de-sites-estaticos) para auxiliar no controle de cache.
+A *chave* do contexto de ambiente é uma hash md5 nas saídas das pasta do ambiente em que é anexado e nos caminhos [ativos](/pt-br/estilos) e [API estática](/pt-br/geracao-de-sites-estaticos) para auxiliar no controle de cache.
 
 ## Próxima Etapa
 
