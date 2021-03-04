@@ -7,40 +7,40 @@ The page object is a proxy in the framework store part of your context and gives
 
 This key is *readwrite* and available only in the *client* context.
 
-Page keys will be used to generate metatags during [server-side rendering](/server-side-rendering) and must be assigned before [initiate](/full-stack-lifecycle) is resolved.
+Page keys will be used to generate metatags during [server-side rendering](/server-side-rendering) and must be assigned before [initiate](/full-stack-lifecycle) while this resolved.
 
 The following keys are available in the object:
 
-- *title*: string
-- *image*: string (absolute or relative URL)
-- *description*: string
-- *canonical*: string (absolute or relative URL)
-- *locale*: string
-- *robots*: string
-- *schema*: object
-- *changes*: string
-- *priority*: number
-- *status*: number
+- **title**: `string`
+- **image**: `string (absolute or relative URL)`
+- **description**: `string`
+- **canonical**: `string (absolute or relative URL)`
+- **locale**: `string`
+- **robots**: `string`
+- **schema**: `object`
+- **changes**: `string`
+- **priority**: `number`
+- **status**: `number`
 
 When the title key is assigned on the client-side, the document title will be updated.
 
-Nullstack uses the *changes* and *priority* keys to generate the sitemap.xml.
+Nullstack uses the *changes* and *priority* keys to generate the `sitemap.xml`
 
 The sitemap is generated automatically only when using [static site generation](/static-site-generation) and must be manually generated in [server-side rendered](/server-side-rendering) applications
 
-The *changes* key represents the *changefreq* key in the sitemap.xml and if assigned must be one of the following values:
+The *changes* key represents the *changefreq* key in the `sitemap.xml` and if assigned must be one of the following values:
 
-- always
-- hourly
-- daily
-- weekly
-- monthly
-- yearly
-- never
+- **always**
+- **hourly**
+- **daily**
+- **weekly**
+- **monthly**
+- **yearly**
+- **never**
 
-The *priority* key is a number between 0.0 and 1.0 that represents the *priority* key in the sitemap.xml.
+The *priority* key is a number between `0.0` and `1.0` that represents the *priority* key in the `sitemap.xml`
 
-Nullstack does not set a default priority, however, sitemaps assume a 0.5 priority when not explicitly set.
+Nullstack does not set a default priority, however, sitemaps assume a `0.5` priority when not explicitly set.
 
 Besides *title* and *locale* all other keys have sensible defaults generated based on the application scope.
 
@@ -64,8 +64,8 @@ class Page extends Nullstack {
   render({page}) {
     return (
       <div>
-        <h1> {page.title} </h1>
-        <p> {page.description} </p>
+        <h1>{page.title}</h1>
+        <p>{page.description}</p>
       </div>
     )
   }
