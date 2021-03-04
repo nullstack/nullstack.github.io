@@ -132,4 +132,4 @@ export default Application;
 
 ## Próxima Etapa
 
-⚔ Aprenda sobre o [contexto do projeto](/context-project).
+⚔ Aprenda sobre o [contexto do projeto](/pt-br/contexto-project).
