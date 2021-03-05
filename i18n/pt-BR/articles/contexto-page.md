@@ -1,9 +1,9 @@
 ---
-title: Contexto da página
+title: Contexto Page
 description: O objeto da página é um proxy armazenado da estrutura de seu contexto e fornece informações sobre as metatags do cabeçalho do documento
 ---
 
-O objeto da página é um proxy armazenado na estrutura de seu contexto e fornece informações sobre as metatags do cabeçalho do documento.
+O objeto *page* é um proxy armazenado na estrutura de seu contexto e fornece informações sobre as metatags do cabeçalho do documento.
 
 Esta chave é de *leitura e escrita* e está disponível apenas no contexto *client-side*.
 
