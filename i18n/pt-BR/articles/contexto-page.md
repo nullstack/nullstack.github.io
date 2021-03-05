@@ -1,48 +1,48 @@
 ---
-title: Context Page
-description: The page object is a proxy in the framework store part of your context and gives you information about the document head metatags
+title: Contexto Page
+description: O objeto da página é um proxy armazenado da estrutura de seu contexto e fornece informações sobre as metatags do cabeçalho do documento
 ---
 
-The page object is a proxy in the framework store part of your context and gives you information about the document head metatags.
+O objeto *page* é um proxy armazenado na estrutura de seu contexto e fornece informações sobre as metatags do cabeçalho do documento.
 
-This key is *readwrite* and available only in the *client* context.
+Esta chave é de *leitura e escrita* e está disponível apenas no contexto *client-side*.
 
-Page keys will be used to generate metatags during [server-side rendering](/server-side-rendering) and must be assigned before [initiate](/full-stack-lifecycle) is resolved.
+Chaves da página serão usadas para gerar as metatags durante a [renderização no lado do servidor](/pt-br/renderizando-no-servidor) e devem ser atribuídas antes do ciclo de [inicialização](/pt-br/ciclo-de-vida-full-stack) ser resolvido.
 
-The following keys are available in the object:
+As seguintes chaves estão disponíveis no objeto:
 
-- *title*: string
-- *image*: string (absolute or relative URL)
-- *description*: string
-- *canonical*: string (absolute or relative URL)
-- *locale*: string
-- *robots*: string
-- *schema*: object
-- *changes*: string
-- *priority*: number
-- *status*: number
+- **title**: `string`
+- **image**: `string (URL absoluto ou relativo)`
+- **description**: `string`
+- **canonical**: `string (URL absoluto ou relativo)`
+- **locale**: `string`
+- **robots**: `string`
+- **schema**: `object`
+- **changes**: `string`
+- **priority**: `number`
+- **status**: `number`
 
-When the title key is assigned on the client-side, the document title will be updated.
+Quando a chave de título é atribuída no lado client-side, o título do documento será atualizado.
 
-Nullstack uses the *changes* and *priority* keys to generate the sitemap.xml.
+Nullstack utiliza as chaves *changes* e *priority* para gerar o `sitemap.xml`
 
-The sitemap is generated automatically only when using [static site generation](/static-site-generation) and must be manually generated in [server-side rendered](/server-side-rendering) applications
+O mapa do site é gerado automaticamente apenas ao utilizar a [geração de site estático](/pt-br/geracao-de-sites-estaticos) e deve ser gerado manualmente em aplicativos com a [renderização no lado do servidor](/pt-br/renderizando-no-servidor)
 
-The *changes* key represents the *changefreq* key in the sitemap.xml and if assigned must be one of the following values:
+A chave *changes* representa a chave *changefreq* no `sitemap.xml` e se for atribuída será um dos seguintes valores:
 
-- always
-- hourly
-- daily
-- weekly
-- monthly
-- yearly
-- never
+- **always**
+- **hourly**
+- **daily**
+- **weekly**
+- **monthly**
+- **yearly**
+- **never**
 
-The *priority* key is a number between 0.0 and 1.0 that represents the *priority* key in the sitemap.xml.
+A chave *priority* é um número entre `0.0` e `1.0` que representada no `sitemap.xml`
 
-Nullstack does not set a default priority, however, sitemaps assume a 0.5 priority when not explicitly set.
+Nullstack não define uma prioridade padrão, no entanto, os sitemap assumem uma prioridade `0.5` quando não são definidos explicitamente.
 
-Besides *title* and *locale* all other keys have sensible defaults generated based on the application scope.
+Além de *title* e *locale*, todas as outras chaves tem padrões sensíveis e gerados com base no escopo do aplicativo.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -50,10 +50,10 @@ import Nullstack from 'nullstack';
 class Page extends Nullstack {
 
   prepare({project, page}) {
-    page.title = `${project.name} - Page Title`;
-    page.image = '/image.jpg';
-    page.description = 'Page meta description';
-    page.canonical = 'http://absolute.url/canonical-link';
+    page.title = `${project.name} - Título da página`;
+    page.image = '/imagem.jpg';
+    page.description = 'Meta descrição da página';
+    page.canonical = 'http://absoluto.url/canonical-link';
     page.locale = 'pt-BR';
     page.robots = 'index, follow';
     page.schema = {};
@@ -64,8 +64,8 @@ class Page extends Nullstack {
   render({page}) {
     return (
       <div>
-        <h1> {page.title} </h1>
-        <p> {page.description} </p>
+        <h1>{page.title}</h1>
+        <p>{page.description}</p>
       </div>
     )
   }
@@ -75,9 +75,9 @@ class Page extends Nullstack {
 export default Page;
 ```
 
-## Custom Events
+## Eventos Personalizados
 
-Updating *page.title* will raise a custom event.
+Atualizando *page.title* gerando um evento personalizado.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -95,15 +95,15 @@ class Analytics extends Nullstack {
 export default Analytics;
 ```
 
-## Error pages
+## Páginas de erro
 
-If during the [server-side render](/server-side-rendering) process the *page.status* has any value besides 200, your application will receive another render pass that gives you the chance to adjust the interface according to the status.
+Se durante o processo de [renderização no lado do servidor](/pt-br/renderizando-no-servidor) o *page.status* estiver com qualquer valor além de 200, seu aplicativo receberá outra passagem na renderização e lhe possibilitará ajustar a interface de acordo com o status retornado.
 
-The status key will be raised with the HTTP response.
+A chave de status será gerada na resposta HTTP.
 
-The page status will be modified to 500 and receive another render pass if the page raise an exception while rendering.
+O status da página será modificado para 500 e receberá outra passagem na renderização se a página gerar uma exceção enquanto renderiza.
 
-The status of [server functions](/server-functions) responses will be set to the *page.status*.
+O status das respostas de [funções do servidor](/pt-br/funcoes-de-servidor) será definido no *page.status*.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -128,8 +128,8 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-> 🔥 Assigning to the status key during the [single-page application](/full-stack-lifecycle) mode will have no effect.
+> 🔥 A atribuição à chave de status durante o modo [aplicativo de página única](/pt-br/ciclo-de-vida-full-stack) não terá efeito.
 
-## Next step
+## Próxima Etapa
 
-⚔ Learn about the [context project](/context-project).
+⚔ Aprenda sobre o [contexto do projeto](/pt-br/contexto-project).
