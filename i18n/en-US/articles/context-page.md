@@ -3,11 +3,11 @@ title: Context Page
 description: The page object is a proxy in the framework store part of your context and gives you information about the document head metatags
 ---
 
-The page object is a proxy in the framework store part of your context and gives you information about the document head metatags.
+The `page` object is a proxy in the framework store part of your context and gives you information about the document head metatags.
 
-This key is *readwrite* and available only in the *client* context.
+This key is **readwrite** and available only in the **client** context.
 
-Page keys will be used to generate metatags during [server-side rendering](/server-side-rendering) and must be assigned before [initiate](/full-stack-lifecycle) while this resolved.
+`page` keys will be used to generate metatags during [server-side rendering](/server-side-rendering) and must be assigned before [`initiate`](/full-stack-lifecycle) while this resolved.
 
 The following keys are available in the object:
 
@@ -22,13 +22,13 @@ The following keys are available in the object:
 - **priority**: `number`
 - **status**: `number`
 
-When the title key is assigned on the client-side, the document title will be updated.
+When the `title` key is assigned on the client-side, the document title will be updated.
 
-Nullstack uses the *changes* and *priority* keys to generate the `sitemap.xml`
+Nullstack uses the `changes` and `priority` keys to generate the **sitemap.xml**
 
 The sitemap is generated automatically only when using [static site generation](/static-site-generation) and must be manually generated in [server-side rendered](/server-side-rendering) applications
 
-The *changes* key represents the *changefreq* key in the `sitemap.xml` and if assigned must be one of the following values:
+The `changes` key represents the `changefreq` key in the **sitemap.xml** and if assigned must be one of the following values:
 
 - **always**
 - **hourly**
@@ -38,11 +38,11 @@ The *changes* key represents the *changefreq* key in the `sitemap.xml` and if as
 - **yearly**
 - **never**
 
-The *priority* key is a number between `0.0` and `1.0` that represents the *priority* key in the `sitemap.xml`
+The `priority` key is a number between `0.0` and `1.0` that represents the `priority` key in the **sitemap.xml**.
 
 Nullstack does not set a default priority, however, sitemaps assume a `0.5` priority when not explicitly set.
 
-Besides *title* and *locale* all other keys have sensible defaults generated based on the application scope.
+Besides `title` and `locale` all other keys have sensible defaults generated based on the application scope.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -77,7 +77,7 @@ export default Page;
 
 ## Custom Events
 
-Updating *page.title* will raise a custom event.
+Updating `page.title` will raise a custom event.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -97,13 +97,13 @@ export default Analytics;
 
 ## Error pages
 
-If during the [server-side render](/server-side-rendering) process the *page.status* has any value besides 200, your application will receive another render pass that gives you the chance to adjust the interface according to the status.
+If during the [server-side render](/server-side-rendering) process the `page.status` has any value besides `200`, your application will receive another render pass that gives you the chance to adjust the interface according to the status.
 
 The status key will be raised with the HTTP response.
 
-The page status will be modified to 500 and receive another render pass if the page raise an exception while rendering.
+The page status will be modified to `500` and receive another render pass if the page raise an exception while rendering.
 
-The status of [server functions](/server-functions) responses will be set to the *page.status*.
+The status of [server functions](/server-functions) responses will be set to the `page.status`.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -132,4 +132,4 @@ export default Application;
 
 ## Next step
 
-⚔ Learn about the [context project](/context-project).
+⚔ Learn about the [context `project`](/context-project).

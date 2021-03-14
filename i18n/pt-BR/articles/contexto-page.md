@@ -3,11 +3,11 @@ title: Contexto Page
 description: O objeto da página é um proxy armazenado da estrutura de seu contexto e fornece informações sobre as metatags do cabeçalho do documento
 ---
 
-O objeto *page* é um proxy armazenado na estrutura de seu contexto e fornece informações sobre as metatags do cabeçalho do documento.
+O objeto `page` é um proxy de parte do armazenamento do framework no seu contexto e fornece informações sobre as metatags do cabeçalho do documento.
 
-Esta chave é de *leitura e escrita* e está disponível apenas no contexto *client-side*.
+Esta chave é de **leitura e escrita** e está disponível apenas no contexto **client-side**.
 
-Chaves da página serão usadas para gerar as metatags durante a [renderização no lado do servidor](/pt-br/renderizando-no-servidor) e devem ser atribuídas antes do ciclo de [inicialização](/pt-br/ciclo-de-vida-full-stack) ser resolvido.
+Chaves de `page` serão usadas para gerar as metatags durante a [renderização no lado do servidor](/pt-br/renderizando-no-servidor) e devem ser atribuídas antes do ciclo [`initiate`](/pt-br/ciclo-de-vida-full-stack) ser resolvido.
 
 As seguintes chaves estão disponíveis no objeto:
 
@@ -22,13 +22,13 @@ As seguintes chaves estão disponíveis no objeto:
 - **priority**: `number`
 - **status**: `number`
 
-Quando a chave de título é atribuída no lado client-side, o título do documento será atualizado.
+Quando a chave `title` é atribuída no lado do client, o título do documento será atualizado.
 
-Nullstack utiliza as chaves *changes* e *priority* para gerar o `sitemap.xml`
+Nullstack utiliza as chaves `changes` e `priority` para gerar o **sitemap.xml**.
 
-O mapa do site é gerado automaticamente apenas ao utilizar a [geração de site estático](/pt-br/geracao-de-sites-estaticos) e deve ser gerado manualmente em aplicativos com a [renderização no lado do servidor](/pt-br/renderizando-no-servidor)
+O mapa do site é gerado automaticamente apenas ao utilizar a [geração de site estático](/pt-br/geracao-de-sites-estaticos) e deve ser gerado manualmente em aplicativos com a [renderização no lado do servidor](/pt-br/renderizando-no-servidor).
 
-A chave *changes* representa a chave *changefreq* no `sitemap.xml` e se for atribuída será um dos seguintes valores:
+A chave `changes` representa a chave `changefreq` no **sitemap.xml** e se for atribuída deverá ser um dos seguintes valores:
 
 - **always**
 - **hourly**
@@ -38,11 +38,11 @@ A chave *changes* representa a chave *changefreq* no `sitemap.xml` e se for atri
 - **yearly**
 - **never**
 
-A chave *priority* é um número entre `0.0` e `1.0` que representada no `sitemap.xml`
+A chave `priority` é um número entre `0.0` e `1.0` que representa a chave `priority` no **sitemap.xml**.
 
-Nullstack não define uma prioridade padrão, no entanto, os sitemap assumem uma prioridade `0.5` quando não são definidos explicitamente.
+Nullstack não define uma prioridade padrão, no entanto, sitemaps assumem uma prioridade `0.5` quando não são definidas explicitamente.
 
-Além de *title* e *locale*, todas as outras chaves tem padrões sensíveis e gerados com base no escopo do aplicativo.
+Além de `title` e `locale`, todas as outras chaves tem padrões sensíveis e gerados com base no escopo do aplicativo.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -77,7 +77,7 @@ export default Page;
 
 ## Eventos Personalizados
 
-Atualizando *page.title* gerando um evento personalizado.
+Atualizando `page.title` gerará um evento personalizado.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -97,13 +97,13 @@ export default Analytics;
 
 ## Páginas de erro
 
-Se durante o processo de [renderização no lado do servidor](/pt-br/renderizando-no-servidor) o *page.status* estiver com qualquer valor além de 200, seu aplicativo receberá outra passagem na renderização e lhe possibilitará ajustar a interface de acordo com o status retornado.
+Se durante o processo de [renderização no lado do servidor](/pt-br/renderizando-no-servidor) o `page.status` estiver com qualquer valor além de `200`, seu aplicativo receberá outra passagem na renderização e lhe possibilitará ajustar a interface de acordo com o status retornado.
 
 A chave de status será gerada na resposta HTTP.
 
-O status da página será modificado para 500 e receberá outra passagem na renderização se a página gerar uma exceção enquanto renderiza.
+O status da página será modificado para `500` e receberá outra passagem na renderização se a página gerar uma exceção enquanto renderiza.
 
-O status das respostas de [funções do servidor](/pt-br/funcoes-de-servidor) será definido no *page.status*.
+O status das respostas de [funções do servidor](/pt-br/funcoes-de-servidor) será definido no `page.status`.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -130,6 +130,6 @@ export default Application;
 
 > 🔥 A atribuição à chave de status durante o modo [aplicativo de página única](/pt-br/ciclo-de-vida-full-stack) não terá efeito.
 
-## Próxima Etapa
+## Próximo Passo
 
-⚔ Aprenda sobre o [contexto do projeto](/pt-br/contexto-project).
+⚔ Aprenda sobre o [contexto `project`](/pt-br/contexto-project).
