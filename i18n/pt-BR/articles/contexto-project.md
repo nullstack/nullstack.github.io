@@ -1,50 +1,50 @@
 ---
-title: Context Project
-description: The project object is a proxy in the framework store part of your context and gives you information about the app manifest and some metatags
+title: Contexto Project
+description: O objeto project é um proxy de parte do armazenamento do framework no seu contexto e te dá informações sobre o manifest do app e algumas metatags
 ---
 
-The project object is a proxy in the framework store part of your context and gives you information about the app manifest and some metatags.
+O objeto `project` é um proxy de parte do armazenamento do framework no seu contexto e te dá informações sobre o manifest do app e algumas metatags.
 
-This key is *readwrite* in the *server* context.
+Essa chave é **readwrite** no contexto do **server**.
 
-This key is *readonly* in the *client* context.
+Essa chave é **readonly** no contexto do **client**.
 
-Project keys will be used to generate metatags during server-side rendering and must be assigned before [initiate](/full-stack-lifecycle) is resolved.
+As chaves de `project` serão usadas para gerar metatags durante a renderização do lado do servidor e devem ser definidas antes que [`initiate`](/pt-br/ciclo-de-vida-full-stack) seja resolvido.
 
-Project keys will be used to generate the app manifest and should be set during the [application startup](/application-startup).
+As chaves de `project` serão usadas para gerar o **manifest** do app e devem ser definidas durante a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 
-The disallow key will be used to generate the robots.txt and should be set during the [application startup](/application-startup).
+A chave `disallow` será usada para gerar o **robots.txt** e deverá ser definida durante a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 
-Project keys are frozen after the [application startup](/application-startup).
+As chaves de `project` serão congeladas após a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 
-The following keys are available in the object:
+As chaves a seguir estão disponíveis no objeto:
 
-- *domain*: string
-- *name*: string
-- *shortName*: string
-- *color*: string
-- *backgroundColor*: string
-- *type*: string
-- *display*: string
-- *orientation*: string
-- *scope*: string
-- *root*: string
-- *icons*: object
-- *favicon*: string (relative or absolute url)
-- *disallow*: string array (relative paths)
-- *sitemap*: boolean or string (relative or absolute url)
-- *cdn*: string (absolute url)
-- *protocol* string (http or https)
+- **domain**: `string`
+- **name**: `string`
+- **shortName**: `string`
+- **color**: `string`
+- **backgroundColor**: `string`
+- **type**: `string`
+- **display**: `string`
+- **orientation**: `string`
+- **scope**: `string`
+- **root**: `string`
+- **icons**: `object`
+- **favicon**: `string` (url relativo ou absoluto)
+- **disallow**: `array` de `string` (caminhos relativos)
+- **sitemap**: `boolean` ou `string` (url relativo ou absoluto)
+- **cdn**: `string` (url absoluto)
+- **protocol**: `string` (http or https)
 
-Besides *domain*, *name* and *color* all other keys have sensible defaults generated based on the application scope.
+Além de `domain`, `name` and `color` todas as outras chaves tem padrões sensíveis gerados com base no escopo do aplicativo.
 
-If you do not declare the *icons* key, Nullstack will scan any icons with the name following the pattern "icon-[WIDTH]x[HEIGHT].png" in your public folder.
+Se você não declarar a chave `icons`, Nullstack irá escanear quaisquer ícones com o nome seguindo o padrão "icon-[LARGURA]x[ALTURA].png" na sua pasta **public**.
 
-If the *sitemap* key is set to true your robots.txt file will point the sitemap to *https://${project.domain}/sitemap.xml*.
+Se a chave `sitemap` estiver definida como `true` o seu arquivo **robots.txt** irá apontar o sitemap para `https://${project.domain}/sitemap.xml`.
 
-The *cdn* key will prefix your asset bundles and will be available in the context so you can manually prefix other assets.
+A chave `cdn` irá prefixar seu pacote de assets e ficará disponível no contexto para que você possa manualmente prefixar outros ativos.
 
-The *protocol* key is "http" in development mode and "https" in production mode by default
+A chave `protocol` é "http" no modo de desenvolvimento e "https" e no modo produção por predefinição.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -83,8 +83,8 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-> 💡 You can override the automatically generated manifest.json and robots.txt by serving your own file from the public folder
+> 💡 Você pode substituir o **manifest.json** gerado automaticamente e **robots.txt** inserindo o seu próprio arquivo na pasta **public**
 
-## Next step
+## Próximo Passo
 
-⚔ Learn about the [context settings](/context-settings).
+⚔ Aprenda sobre o [contexto `settings`](/pt-br/contexto-settings).

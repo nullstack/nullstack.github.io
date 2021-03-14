@@ -52,6 +52,14 @@ article {
 
   }
 
+  li,
+  & > p {
+    & code:not(.language-jsx) {
+      font-size: 1.1rem;
+      vertical-align: text-bottom;
+    }
+  }
+
 }
 
 @media (max-width: 768px) {
