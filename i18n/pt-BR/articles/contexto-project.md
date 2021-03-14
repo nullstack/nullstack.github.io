@@ -1,48 +1,50 @@
 ---
-title: Contexto do Projeto
-description: O objeto do projeto é um proxy na parte da loja de framework do seu contexto e te dá informações sobre o manifesto do app e alguns metatags
---- 
+title: Contexto Project
+description: O objeto project é um proxy de parte do armazenamento do framework no seu contexto e te dá informações sobre o manifest do app e algumas metatags
+---
 
-Essa chave é *readwrite* no contexto do *server*.
+O objeto `project` é um proxy de parte do armazenamento do framework no seu contexto e te dá informações sobre o manifest do app e algumas metatags.
 
-Essa chave é *readonly* no contexto do *client*.
+Essa chave é **readwrite** no contexto do **server**.
 
-As chaves do projeto serão usadas para gerar metatags durante a renderização do lado do servidor e deve ser designado antes que [inicialize](/ciclo de vida full-stack) seja resolvido.
+Essa chave é **readonly** no contexto do **client**.
 
-As chaves do projeto serão usadas para gerar o manifesto do app e devem ser definidos durante a [inicialização do aplicativo](/inicialização do aplicativo).
+As chaves de `project` serão usadas para gerar metatags durante a renderização do lado do servidor e devem ser definidas antes que [`initiate`](/pt-br/ciclo-de-vida-full-stack) seja resolvido.
 
-A chave disallow será usada para gerar o robots.txt e deverá ser definida durante a [inicialização do aplicativo](/inicialização do aplicativo).
+As chaves de `project` serão usadas para gerar o **manifest** do app e devem ser definidas durante a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 
-As chaves do projeto serão congeladas após a [inicialização do aplicativo](/inicialização do aplicativo). 
+A chave `disallow` será usada para gerar o **robots.txt** e deverá ser definida durante a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
+
+As chaves de `project` serão congeladas após a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 
 As chaves a seguir estão disponíveis no objeto:
 
-- *domain*: string
-- *name*: string
-- *shortName*: string
-- *color*: string
-- *backgroundColor*: string
-- *type*: string
-- *display*: string
-- *orientation*: string
-- *scope*: string
-- *root*: string
-- *icons*: object
-- *favicon*: string (url relativo ou absoluto)
-- *disallow*: string array (caminhos relativos)
-- *sitemap*: boolean or string (url relativo ou absoluto)
-- *cdn*: string (url absoluto)
-- *protocol* string (http or https)
+- **domain**: `string`
+- **name**: `string`
+- **shortName**: `string`
+- **color**: `string`
+- **backgroundColor**: `string`
+- **type**: `string`
+- **display**: `string`
+- **orientation**: `string`
+- **scope**: `string`
+- **root**: `string`
+- **icons**: `object`
+- **favicon**: `string` (url relativo ou absoluto)
+- **disallow**: `array` de `string` (caminhos relativos)
+- **sitemap**: `boolean` ou `string` (url relativo ou absoluto)
+- **cdn**: `string` (url absoluto)
+- **protocol**: `string` (http or https)
 
-Além de *domain*, *name* and *color* todas as outras chaves tem padrões sensíveis gerados com base no escopo do aplicativo.
+Além de `domain`, `name` and `color` todas as outras chaves tem padrões sensíveis gerados com base no escopo do aplicativo.
 
-Se você não declarar a chave *icons*, Nullstack irá escanear quaisquer ícones com o nome seguindo o padrão "icon-[WIDTH]x[HEIGHT].png" na sua pasta pública.
+Se você não declarar a chave `icons`, Nullstack irá escanear quaisquer ícones com o nome seguindo o padrão "icon-[LARGURA]x[ALTURA].png" na sua pasta **public**.
 
-Se a chave *sitemap* estiver definada como verdadeira o seu arquivo robots.txt wirá apontar o sitemap para *https://${project.domain}/sitemap.xml*.
+Se a chave `sitemap` estiver definida como `true` o seu arquivo **robots.txt** irá apontar o sitemap para `https://${project.domain}/sitemap.xml`.
 
-A chave *cdn* irá prefixar seu pacote de ativos e ficará disponível no contexto para que você possa manualmente prefixar outros ativos.
+A chave `cdn` irá prefixar seu pacote de assets e ficará disponível no contexto para que você possa manualmente prefixar outros ativos.
 
-A chave *protocol* é "http" no modo de desenvolvimento e "https" e no modo produção por predefinição
+A chave `protocol` é "http" no modo de desenvolvimento e "https" e no modo produção por predefinição.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -81,8 +83,8 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-> 💡 Você pode substituir o manifest.json gerado automaticamente e robots.txt inserindo o seu próprio arquivo da pasta pública 
+> 💡 Você pode substituir o **manifest.json** gerado automaticamente e **robots.txt** inserindo o seu próprio arquivo na pasta **public**
 
-## Próximo passo
+## Próximo Passo
 
-⚔ Aprenda sobre as [configurações de contexto](/configurações de contexto).
+⚔ Aprenda sobre o [contexto `settings`](/pt-br/contexto-settings).
