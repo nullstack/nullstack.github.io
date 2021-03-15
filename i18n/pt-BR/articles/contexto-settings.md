@@ -1,29 +1,29 @@
 ---
-title: Context Settings
-description: The settings object is a proxy in the framework store part of your context which you can use to configure your application with public information
+title: Contexto de Configurações
+description: O objeto de configurações é um proxy na parte da loja de framework do seu contexto que você pode usar para configurar seu aplicativo com informações públicas
 ---
 
-The settings object is a proxy in the framework store part of your context which you can use to configure your application with public information.
+O objeto de configurações é um proxy na parte da loja de framework do seu contexto que você pode usar para configurar seu aplicativo com informações públicas.
 
-This key is *readwrite* in the *server* context.
+Essa chave é readwrite no contexto do server.
 
-This key is *readonly* in the *client* context.
+Essa chave é readonly no contexto do client.
 
-Settings keys are frozen after the [application startup](/application-startup).
+As chaves de configurações serão congeladas após a [inicialização do aplicativo] (/ inicialização do aplicativo).
 
-The following keys are available in the object:
+As chaves a seguir estão disponíveis no objeto:
 
-- *development*: object
-- *production*: object
-- *[anySetting]*: any
+- development: object
+- production: object
+- [anySetting]: any
 
-You can assign keys to *development* or *production* keys in order to have different settings per [environment](/context-environment).
+Você pode declarar as chaves para development ou para production para ter diferentes configurações por [ambiente] (/ contexto-ambiente). 
 
-If you assign a key directly to the settings object it will be available in both environments.
+Se você declarar uma chave diretamente para o objeto de configurações ficará disponível em ambos os ambientes.
 
-When reading from a key you must read directly from the settings object and Nullstack will return the best-suited value for that [environment](/context-environment).
+Quando lendo de uma chave você deve ler diretamente do objeto de configurações e Nullstack irá retornar o valor mais adequado para aquele [ambiente] (/ contexto-ambiente).
 
-```jsx
+jsx
 import Nullstack from 'nullstack';
 
 class Application extends Nullstack {
@@ -46,12 +46,12 @@ class Application extends Nullstack {
 }
 
 export default Application;
-```
 
-Any environment key starting with NULLSTACK_SETTINGS_ will be mapped to the settings in that environment.
 
-> 🐱‍💻 NULLSTACK_SETTINGS_PUBLIC_KEY will be mapped to settings.publicKey
+Qualquer chave de ambiente começando com NULLSTACK_SETTINGS_ será mapeado para as confirgurações daquele ambiente.
 
-## Next step
+> 🐱‍💻 NULLSTACK_SETTINGS_PUBLIC_KEY será mapeado para settings.publicKey
 
-⚔ Learn about the [context secrets](/context-secrets).
+## Próximo passo
+
+⚔ Aprenda sobre [segredos de contexto](/ segredos de contexto).
