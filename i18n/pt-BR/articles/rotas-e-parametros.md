@@ -106,7 +106,7 @@ Parte da rota pode ser uma expressão começada com ":" segida por um nome de pa
 
 Esse valor será comparado com qualquer string na mesma posição de diretório.
 
-O valor da string na URL será atribuído para o [contexto](/context), parâmetros e funções abaixo desse ponto na hierarquia terão acesso a nova chave.
+O valor da string na URL será atribuído para o [contexto](/pt-br/contexto), parâmetros e funções abaixo desse ponto na hierarquia terão acesso a nova chave.
 
 > 🐱‍💻 Abaixo um exemplo que visita "/category/suspense?page=2":
 
@@ -321,4 +321,4 @@ export default Application;
 
 ## Próximo passo
 
-⚔ aprenda sobre [vínculos bidirecionais](/two-way-bindings).
+⚔ aprenda sobre [vínculos bidirecionais](/pt-br/vinculo-bidirecional).
