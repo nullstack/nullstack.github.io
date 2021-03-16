@@ -22,6 +22,13 @@ core:
       github: "Mortaro"
       description: "Criador do conceito. Vai com novas propostas de API para seus patos de borracha favoritos e retorna com commits."
       contribution: "Fez a engenharia reversa de código de pensamento positivo para sua existência e depois o refatorou em um framework."
+
+    - name: "Alisson Suassuna"
+      role: "Autor Autista Suassuna"
+      github: "Alisson Suassuna"
+      description: "Instrutor da TipsCode. Desenvolvedor Full Stack JavaScript, apaixonado por tecnologia e servo do Senhor Jesus Cristo"
+      contribution: "Faço parte da criação de conteúdo sobre o Nullstack, aulas, dicas e tutorias. Com objetivo de tornar o Nullstack facil de usar"
+
     - name: "Dayson Marx"
       role: "Designer Distraído"
       github: "daysonmarx"
