@@ -1,11 +1,11 @@
 ---
-title: Routes and Params
-description: Nullstack has built-in routes, it would make no sense otherwise since web applications are expected to have hyperlinks.
+title: Rotas e Parâmetros
+description: Nullstack tem rotas embutidas, não faria sentido não ser assim já que se espera que aplicações web tenham hyperlinks.
 ---
 
-Nullstack has built-in routes, it would make no sense otherwise since web applications are expected to have hyperlinks.
+Nullstack tem rotas embutidas, não faria sentido não ser assim já que se espera que aplicações web tenham hyperlinks.
 
-Any tag can receive a route attribute, be it a component, inner component, or simple HTML tag.
+Qualquer tag pode receber um atributo de rota, seja um componente, componente interno ou uma tag HTML simples.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -36,29 +36,29 @@ export default Application;
 
 ## Links
 
-Links on Nullstack are simple *a* tags with the *href* value starting with "/".
+Links no Nullstack são tags *a* simples com o valor de *href* começando com "/".
 
 ```jsx
 <a href="/page/about"> About Page </a>
 ```
 
-> 💡 On the client side the click event will push history without reloading the page.
+> 💡 No lado do cliente o evento de clique irá push histórico sem recarregar a página.
 
-> ✨ You can still assign your own click event to the tag without losing the framework behavior.
+> ✨ Você aida pode atribuir seu próprio evento de clique para a tag sem perder o comportamento do framework.
 
-## Params
+## Parâmetros
 
-The params key is an object proxy injected into every client instance.
+A chave parâmetros é um proxy de objeto injetdo em cada instância de cliente.
 
-Each query string param is mapped to this object.
+Cada parâmetro de string de consulta é mapeado para esse objeto.
 
-By default any key you request from this object will return a string.
+Por padrão qualquer chave requisitada deste objeto retornará uma string.
 
-If the value is undefined it will return an empty string.
+Se o valor for undefined retornará uma string vazia.
 
-If the value is true or false it will return a boolean instead.
+Se o valor for verdadeiro ou falso retornará um boleano, ao invés de uma string.
 
-> 🐱‍💻 Bellow an exemple that visits "/books?expanded=true&page=2":
+> 🐱‍💻 Abaixo um exemplo que visita "/books?expanded=true&page=2":
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -77,11 +77,11 @@ class Books extends Nullstack {
 export default Books;
 ```
 
-Assigning to a params key will cause a redirect to the route with updated params.
+Realizar atribuição para uma chave de parâmetro causará um redirecionamento para a rota com os parâmetros atualizados.
 
-When you assign to a param, the value will be converted to JSON before being set.
-
-> 💡 Redirects work in batches, so there is no performance loss in multiple assignments.
+Quando quando realizar atribuição para um parâmetro, o valor será convertido para JSON antes de ser definido.
+\
+> 💡 Redirecionamentos funcionam em lotes, então não há perca de performance em multiplas atribuições.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -98,17 +98,17 @@ class Paginator extends Nullstack {
 export default Paginator;
 ```
 
-Assigning an empty string to a param will remove it from the url.
+Atribuir uma string vazia para um parâmetro o removerá da url.
 
-## Dynamic Segments
+## Segmentos dinâmicos
 
-Part of the route can be an expression started with ":" followed by a param name.
+Parte da rota pode ser uma expressão começada com ":" segida por um nome de parâmetro.
 
-This value will be matched against any string in the same directory position.
+Esse valor será comparado com qualquer string na mesma posição de diretório.
 
-The value of the string in the URL will be assigned to the [context](/context) params and functions below this point in the hierarchy will have access to the new key.
+O valor da string na URL será atribuído para o [contexto](/pt-br/contexto), parâmetros e funções abaixo desse ponto na hierarquia terão acesso a nova chave.
 
-> 🐱‍💻 Bellow an example that visits "/category/suspense?page=2":
+> 🐱‍💻 Abaixo um exemplo que visita "/category/suspense?page=2":
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -143,19 +143,19 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-When a dynamic segment is changed, as for example moving from "/category/suspense" to "/category/comedy", the component will be terminated and a new instance will be created.
+Quando um segmento dinâmico é alterado, como por exemplo mover de "/category/suspense" para "/category/comedy", o componente será desfeito e uma nova instância será criada.
 
-Changing a query param will not re-instantiate the component.
+Mudar um parâmetro de consulta não re-instnaciará o componente.
 
-Children of the component will not be re-instantiated automatically, you can set the same route to the children or do it manually if you desire this behavior.
+Os filhos do componente não serão re-instanciados automaticamente, você pode definir a mesma rota para os filhos ou fazer isso manualmente se desejar esse comportamento.
 
-> 💡 The behavior mentioned above solves many of the problems you have to normally deal with manually.
+> 💡 O comportamento mencionado acima resolve muitos dos problemas que você teria normalmente que lidar manualmente.
 
-## Wildcards
+## Curingas
 
-Wildcards are routes declared with "*" as the attribute value.
+Curingas são rotas declaradas com "*" com o valor do atributo
 
-These routes will match anything if nothing above it matches the requested URL.
+Esssas rotas corresponderão a qualquer coisa se nada acima delas corresponder a URL requisitada.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -175,9 +175,9 @@ class Application extends Nullstack {
 }
 ```
 
-Wildcards can be prefixed with a segment.
+Curingas podem ser prefixados com um segmento.
 
-> ✨ this is especially useful for engines that can be mounted in your application.
+> ✨ Isso é especialmente útil para engines que podem ser montadas em suas aplicações.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -198,24 +198,24 @@ class Application extends Nullstack {
 }
 ```
 
-## Router
+## Roteador
 
-The router key is an object proxy injected into every client instance.
+A chave roteador é um proxy de objeto injetado em cada instância de cliente.
 
-The router has two keys:
+O roteador tem duas chaves:
 
 - url
-- path
+- caminho
 
-The url key returns everything after the domain including the path and the query params as a string.
+A chave de URL retorna tudo depois do domínio, incluindo o caminho e os parâmetros de consulta como uma string.
 
-The path key returns only the path without query params.
+A chade de caminho retorna apenas o caminho sem os parâmetros de consulta.
 
-> 💡 Both keys above automatically remove the trailing slash for convenience.
+> 💡 Ambas as chaves acima automaticamente removem a barra final por conveniência.
 
-Assigning to url or path will cause a redirect.
+Atribuir a URL ou o caminho causará redirecionamento.
 
-> 💡 Under the hood *a* tags and *params* use the router.
+> 💡 Por baixo dos panos tags *a* e *parâmetros* usam o roteador.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -230,10 +230,9 @@ class Application extends Nullstack {
 
 }
 ```
+## Eventos customizados
 
-## Custom Events
-
-Updating *router.url* or *router.path* will raise a custom event.
+Atualizar *router.url* ou *router.path* irá gerar um evento personalizado.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -251,45 +250,45 @@ class Analytics extends Nullstack {
 export default Analytics;
 ```
 
-## Special anchors
+## Âncoras especiais
 
-Anchor tags accept some convenient special attributes besides the regular href.
+Tags de âncora aceitam somente alguns atributos especiais convenientes além do *href* comum.
 
-You can set the params attribute with an object as the value.
+Você pode atribuir o atributo dos parâmetros com um objeto como valor.
 
-The path will remain the same as the current router path, but the params will be replaced by the new params you specify.
+O caminho permanecerá o mesmo do caminho atual do roteador, mas os parâmetros serão substituídos pelos novos parâmetros que você especificar.
 
 ```jsx
 <a params={{page: 1}}> First Page </a>
 ```
 
-If you wish to just update some params and keep the others, you can use the javascript spread operator for that.
+E você deseja apenas atualizar alguns parâmetros e manter outros, você pode usar o operador javascript *spread* para isso.
 
 ```jsx
 <a params={{...params, page: 1}}> First Page </a>
 ```
 
-You can set the path attribute with a string starting with "/" and no query params.
+Você pode definir o atributo do caminho com uma string começando com "/" e sem parâmetros de consulta.
 
-The params will remain the same, but the path will be updated.
+Os parâmetros permanecerã os mesmos, mas, o caminho será atualizado.
 
 ```jsx
 <a path="/category/suspense"> Suspense Books </a>
 ```
 
-Both attributes above can be used at the same time.
+Ambos os atributos acima podem ser utilizados ao mesmo tempo.
 
 ```jsx
 <a path="/category/suspense" params={{...params, page: 1}}> Suspense Books </a>
 ```
 
-## Nested routes 
+## Rotas aninhadas
 
-The first route to be matched will be rendered.
+A primeira rota a ser correspondida será renderizada.
 
-The other elements with a route will not be rendered, however, elements on the same level without a route attribute will render normally.
+Os outros elementos com uma rota não serão renderizados, no entanto, os elementos no mesmo nível sem um atributo de rota serão renderizados normalmente.
 
-The router will lookup for one route per dom depth level, this allows you to have nested routing behavior.
+O roteador irá procurar uma rota por nível de profundidade DOM, isso permite que você tenha um comportamento de roteamento aninhado.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -320,6 +319,6 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Next step
+## Próximo passo
 
-⚔ Learn about [two-way bindings](/two-way-bindings).
+⚔ aprenda sobre [vínculos bidirecionais](/pt-br/vinculo-bidirecional).
