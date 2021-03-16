@@ -1,4 +1,4 @@
-import Logo from './Logo';
+import Logo from 'nullstack/logo';
 import Bars from 'poisonicon/bars/stroke';
 import Ex from 'poisonicon/ex/stroke';
 import Translatable from './Translatable';
@@ -26,14 +26,14 @@ class Header extends Translatable {
     window.localStorage.setItem('mode', context.mode);
   }
 
-  render({oppositeMode}) {
+  render({mode, oppositeMode}) {
     if(!this.i18n) return false;
     return (
       <header class="x12 pftl bgm1 bs2">
         <div class="x xsb yy p5y">
           <div class="sm-x12 sm-xsb sm-p4x yy">
             <a {...this.i18n.home}>
-              <Logo height="30" theme={oppositeMode} />
+              <Logo height="30" light={mode === 'dark'} />
             </a>
             <span onclick={{expanded: !this.expanded}} class="yy md+off">
               <element tag={this.expanded ? Ex : Bars} height={20} class="cm3" />
