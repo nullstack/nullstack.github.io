@@ -42,6 +42,11 @@ core:
       github: "GuiDevloper"
       description: "Experimentalista, escritor de universos, sonhador e desenvolvedor quando acha e toca a fita K7 sem título certa."
       contribution: "Usuário de features não documentadas e criador de issues exigindo documentação que ele mesmo vai fazer."
+    - name: "Alisson Suassuna"
+      role: "Servo de Deus"
+      github: "alissonsuassuna"
+      description: "Instrutor da TipsCode. Desenvolvedor Full-stack JavaScript, apaixonado por tecnologia e servo do Senhor Jesus Cristo."
+      contribution: "Encarregado da criação de conteúdo sobre o Nullstack, aulas, dicas e tutorias. Com objetivo de tornar o Nullstack facil de usar."
 
 packages:
   title: "Contribuidores dos Pacotes"

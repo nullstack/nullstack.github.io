@@ -42,6 +42,11 @@ core:
       github: "GuiDevloper"
       description: "Experimentalist, universes writer, dreamer and developer when finds and plays the right untitled cassette tape."
       contribution: "User of undocumented features and creator of issues requiring documentation that he will do himself."
+    - name: "Alisson Suassuna"
+      role: "God's servant"
+      github: "alissonsuassuna"
+      description: "TipsCode instructor. Full-stack JavaScript developer, passionate about technology and servant of the Lord Jesus Christ."
+      contribution: "In charge of creating content about Nullstack, classes, tips and tutorials. Focused in making Nullstack easy to use." 
 
 packages:
   title: "Packages Contributors"
