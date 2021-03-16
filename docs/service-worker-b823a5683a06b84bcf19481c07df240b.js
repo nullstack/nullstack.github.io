@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "2137ac59f362163cb7cf664276c51f64"
+    "key": "b823a5683a06b84bcf19481c07df240b"
   },
   "project": {
     "type": "website",
@@ -78,7 +78,7 @@ self.context = {
       "/nullachan.png"
     ],
     "headers": {},
-    "loading": {}
+    "queues": {}
   }
 };
 
