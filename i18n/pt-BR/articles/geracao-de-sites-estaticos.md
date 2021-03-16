@@ -1,49 +1,49 @@
 ---
-title: Static Site Generation
-description: Use Nullstack to generate static websites for lightning-fast static applications using the full power of Nullstack without the need for a node.js back-end
+título: Geração de Site Estático
+descrição: Use Nullstack para gerar websites estáticos para aplicações estáticas ultrarrápidas usando todo o potencial de Nullstack sem a necessidade de ter um back-end de node.js
 ---
 
-Use Nullstack to generate static websites for lightning-fast static applications using the full power of the Nullstack client without the need for a node.js back-end.
+Use Nullstack para gerar websites estáticos para aplicações estáticas ultrarrápidas usando todo o potencial do cliente Nullstack sem a necessidade de haver um back-end de node.js.
 
-Static sites are useful for read-only applications like blogs and documentation.
+Websites estáticos são úteis para aplicações read-only como blogs e documentação
 
-> 💡 This documentation is actually a static site generated with Nullstack.
+> 💡 Esta documentação é na verdade um site estático gerado com Nullstack
 
-All the benefits of [server-side rendering](/server-side-rendering) apply to static generated sites.
+Todos os benefícios de [renderização no lado do servidor](/pt-br/renderizando-no-servidor) se aplicam para websites gerados estáticamente.
 
-You can generate a static website from your Nullstack application with the following NPX command:
+Você pode gerar um website estático a partir da sua aplicação Nullstack com o seguinte comando NPX:
 
 ```sh
 npx create-nullstatic-app
 ```
 
-> 🔥 You must be in a Nullstack project folder to run this command.
+> 🔥 Você deve estar em uma pasta de projeto Nullstack para executar esse comando.
 
-By default, it will create your Nullstatic application in the *static* folder.
+Por padrão, a sua aplicação Nullstack será criada na pasta *static*.
 
-You can change the folder by passing it as an argument to the command:
+Você pode mudar a pasta padrão por passá-la para o comando como um argumento:
 
 ```sh
 npx create-nullstatic-app docs
 ```
 
-The Nullstatic generator will run your application in production mode and crawl every link to an internal route it finds in your DOM.
+O Nullstatic generator irá executar a sua aplicação no modo produção e irá rastrear cada link para uma rota interna que encontrar no seu DOM.
 
-> 💡 Make sure to have the server production port free when you run this command.
+> 💡 Certifique-se que a porta de produção do servidor se encontra livre quando executar esse comando.
 
-The [manifest.json](/context-project) and the contents of the public folder will be copied into the target folder.
+O [manifest.json](/pt-br/contexto-project) e o conteúdo da pasta pública serão copiados para a pasta de destino.
 
-Besides generating raw HTML it will also generate a JSON file for each route with a copy of the state.
+Além de gerar raw HTML também irá gerar um arquivo JSON para cada rota com uma cópia do estado.
 
-On the first visit to your static application, HTML will be served and hydrated.
+Na primeira visita para a sua aplicação estática, HTML será veiculado e hidratado.
 
-On the subsequent requests, Nullstack will fetch the generated JSON and update the application state without ever reloading the page.
+Nos pedidos subsequentes, Nullstack irá buscar o JSON gerado e atualizar o estado da aplicação sem que haja a necessidade de recarregar a página.
 
-This, in fact, gives you not only a static generated site, but a static generated API that feeds a Single Page Application with zero costs.
+Isso, na verdade, oferece não apenas um site estático gerado, mas um API gerado estaticamente que alimenta a Single Page Application sem nenhum custo.
 
-## Good Pratices
+## Boas Práticas
 
-You can add a script to your package.json to generate your static website in a custom folder:
+Você pode adicionar um script para a sua package.json a fim de gerar o seu website estático em uma pasta personalizada:
 
 ```jsx
 {
@@ -64,12 +64,12 @@ You can add a script to your package.json to generate your static website in a c
 
 ```
 
-## Caveats
+## Ressalvas
 
-Nullstatic only crawls your application up to the initiate resolution, further API requests triggered by events will be ignored.
+Nullstatic rastreia a sua aplicação apenas até a resolução inicial, outras solicitações de API acionadas por eventos serão ignoradas.
 
-Nullstatic will crawl a /404 URL and generate both a /404.html and a /404/index.html.
+Nullstatic rastreará um URL / 404 e gerará um /404.html e um /404/index.html.
 
-## Next step
+## Próximo passo
 
-⚔ Learn more about the [service worker](/service-worker).
+⚔ Aprenda mais sobre o [trabalhador de serviço](/pt-br/trabalhador-serviço).
