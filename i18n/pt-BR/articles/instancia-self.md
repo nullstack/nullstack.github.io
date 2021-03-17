@@ -1,30 +1,31 @@
 ---
-title: Instance Self
-description: The self object is a proxy in the framework store part of your context and gives you information about the instance lifecycle
+title: Instância *self*
+description: O objeto *self* é um proxy na store do framework na parte do seu contexto e forne informações sobre o ciclo de vida da instância
 ---
 
-The self object is a proxy in the framework store part of your context and gives you information about the instance lifecycle.
+O objeto *self* é um proxy na store do framework na parte do seu contexto e fornece informações sobre o ciclo de vida da instância.
 
-This key is *readonly* and available only in the *client* context.
+Essa *key* é *readonly* e só está disponível no contexto do *client*.
 
-Each instance receives its own *self* object.
+Cada instância recebe seu própio objeto *self*.
 
-The following keys are available in the object:
+As seguintes *keys* estão disponíveis no objeto:
 
 - *initiated*: boolean
 - *hydrated*: boolean
 - *prerendered*: boolean
 - *element*: HTMLElement
 
-When a lifecycle method is resolved, even if not declared, an equivalent key is set to true in self.
+Quando um método do ciclo de vida é resolvido, mesmo que não declarado, uma *key* equivalente é setado para true no *self*
 
-If the component was server-side rendered the *prerendered* key will remain true until it is terminated.
+Se o componente tiver sido renderizado no lado do servidor a *key* *prerendered* continuará como *true* até que seja finalizado.
 
-The *element* key points to the DOM selector and is only guaranteed to exist when hydrate is being called since prepare and initiate could run in the server.
+A *key* *element* aponta para o seletor na DOM e sua existência só é garantida quando o *hydrate* está sendo chamado e o *initiate* pode rodar no servidor.
 
-> 💡 Do not use *element* to guess the environment, instead use the [environment](/context-environment) for that.
+> 💡 Não use a *key* *element* para adivinhar o ambiente, ao invés use [environment](/context-environment) para isso.
 
 Observing self is a nice way to avoid giving placeholder information to the end-user.
+Observar o *self* é um bom jeito de evitar dar informações irrelevantes para o usuário final
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -58,8 +59,8 @@ class Page extends Nullstack {
 export default Page;
 ```
 
-> 💡 Components that get optimized into [functional components](/renderable-components) have no access to self.
+> 💡 Componentes que estão otimizados em [functional components](/renderable-components) não tem acesso ao *self*.
 
-## Next step
+## Próximo passo
 
-⚔ Learn about the [instance key](/instance-key).
+⚔ Aprenda sobre [instance key](/instance-key).
