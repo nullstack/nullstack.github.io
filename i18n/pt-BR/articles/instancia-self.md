@@ -22,9 +22,8 @@ Se o componente tiver sido renderizado no lado do servidor a *key* *prerendered*
 
 A *key* *element* aponta para o seletor na DOM e sua existência só é garantida quando o *hydrate* está sendo chamado e o *initiate* pode rodar no servidor.
 
-> 💡 Não use a *key* *element* para adivinhar o ambiente, ao invés use [environment](/context-environment) para isso.
+> 💡 Não use a *key* *element* para adivinhar o ambiente, ao invés use [environment](/pt-br/contexto-environment) para isso.
 
-Observing self is a nice way to avoid giving placeholder information to the end-user.
 Observar o *self* é um bom jeito de evitar dar informações irrelevantes para o usuário final
 
 ```jsx
@@ -59,8 +58,8 @@ class Page extends Nullstack {
 export default Page;
 ```
 
-> 💡 Componentes que estão otimizados em [functional components](/renderable-components) não tem acesso ao *self*.
+> 💡 Componentes que estão otimizados em [functional components](/pt-br/componentes-renderizaveis) não tem acesso ao *self*.
 
 ## Próximo passo
 
-⚔ Aprenda sobre [instance key](/instance-key).
+⚔ Aprenda sobre [instance key](/pt-br/instancia-key).
