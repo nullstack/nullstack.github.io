@@ -123,7 +123,7 @@ class Counter extends Nullstack {
   render({count, delta}) {
     return (
       <button onclick={this.add} amount={1}> 
-        add {delta} to {count}
+        adicionar {delta} em {count}
       </button>
     )
   }
@@ -156,7 +156,7 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Funções
+## Contexto de Funções
 
 Cada função das subclasses do Nullstack é injetada com uma cópia do contexto da instância mesclada com seus argumentos.
 

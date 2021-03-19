@@ -11,7 +11,7 @@ Being a static function means it has no access to the instance scope.
 
 However, instead of calling the static version from the *class*, you must invoke it as an *instance* function.
 
-Server functions can be called anytime in your code and are not limited to [prerender](/server-side-rendering) steps.
+Server functions can be called anytime in your code and are not limited to [prerender](/pt-br/renderizando-no-servidor) steps.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -33,7 +33,7 @@ class Component extends Nullstack {
 export default Component;
 ```
 
-> ✨ Learn more about the [server context](/context).
+> ✨ Learn more about the [server context](/pt-br/contexto).
 
 ## Client behavior
 
@@ -167,7 +167,7 @@ export default Component;
 
 > 💡 Server functions are not exposed to the client.
 
-> ✨ Learn more about the [NJS file extension](/njs-file-extension).
+> ✨ Learn more about the [NJS file extension](/pt-br/extensao-de-arquivo-njs).
 
 ## Reserved words
 
@@ -189,8 +189,8 @@ Automatically generated API endpoints are not meant to be used by 3rd-party apps
 
 The URL and implementation may change between versions of Nullstack.
 
-> ✨ If you want to build an API, learn more about [how to create an API with Nullstack](/server-request-and-response).
+> ✨ If you want to build an API, learn more about [how to create an API with Nullstack](/pt-br/requisicao-e-resposta-do-servidor).
 
 ## Next step
 
-⚔ Learn about the [context](/context).
+⚔ Learn about the [context](/pt-br/contexto).

@@ -23,8 +23,8 @@ class Application extends Nullstack {
     return (
       <main>
         <Home route="/" />
-        <Page route="/page">
-        <abbr route="/abbreviations"> Abbreviations </abbr>
+        <Page route="/page" />
+        <abbr route="/abbreviations"> Abreviações </abbr>
       </main>
     )
   }
@@ -36,27 +36,27 @@ export default Application;
 
 ## Links
 
-Links no Nullstack são tags *a* simples com o valor de *href* começando com "/".
+Links no Nullstack são tags `a` simples com o valor de `href` começando com "/".
 
 ```jsx
-<a href="/page/about"> About Page </a>
+<a href="/page/about"> Página About </a>
 ```
 
-> 💡 No lado do cliente o evento de clique irá push histórico sem recarregar a página.
+> 💡 No lado do cliente o evento de clique modificará o histórico sem recarregar a página.
 
-> ✨ Você aida pode atribuir seu próprio evento de clique para a tag sem perder o comportamento do framework.
+> ✨ Você ainda pode atribuir seu próprio evento de clique para a tag sem perder o comportamento do framework.
 
 ## Parâmetros
 
-A chave parâmetros é um proxy de objeto injetdo em cada instância de cliente.
+A chave `params` é um proxy de objeto injetado em cada instância de cliente.
 
-Cada parâmetro de string de consulta é mapeado para esse objeto.
+Cada parâmetro da string de *query* é mapeado para esse objeto.
 
 Por padrão qualquer chave requisitada deste objeto retornará uma string.
 
-Se o valor for undefined retornará uma string vazia.
+Se o valor for `undefined` retornará uma string vazia.
 
-Se o valor for verdadeiro ou falso retornará um boleano, ao invés de uma string.
+Se o valor for `true` ou `false` retornará um boleano, ao invés de uma string.
 
 > 🐱‍💻 Abaixo um exemplo que visita "/books?expanded=true&page=2":
 
@@ -77,10 +77,10 @@ class Books extends Nullstack {
 export default Books;
 ```
 
-Realizar atribuição para uma chave de parâmetro causará um redirecionamento para a rota com os parâmetros atualizados.
+Realizar atribuição para uma chave de `params` causará um redirecionamento para a rota com os parâmetros atualizados.
 
-Quando quando realizar atribuição para um parâmetro, o valor será convertido para JSON antes de ser definido.
-\
+Quando realizar atribuição para um parâmetro, o valor será convertido para JSON antes de ser definido.
+
 > 💡 Redirecionamentos funcionam em lotes, então não há perca de performance em multiplas atribuições.
 
 ```jsx
@@ -98,9 +98,9 @@ class Paginator extends Nullstack {
 export default Paginator;
 ```
 
-Atribuir uma string vazia para um parâmetro o removerá da url.
+Atribuir uma string vazia a um parâmetro irá removê-lo da url.
 
-## Segmentos dinâmicos
+## Segmentos Dinâmicos
 
 Parte da rota pode ser uma expressão começada com ":" segida por um nome de parâmetro.
 
@@ -153,9 +153,9 @@ Os filhos do componente não serão re-instanciados automaticamente, você pode 
 
 ## Curingas
 
-Curingas são rotas declaradas com "*" com o valor do atributo
+Curingas são rotas declaradas com "*" como valor do atributo
 
-Esssas rotas corresponderão a qualquer coisa se nada acima delas corresponder a URL requisitada.
+Essas rotas corresponderão a qualquer coisa se nada acima delas corresponder a URL requisitada.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -200,22 +200,22 @@ class Application extends Nullstack {
 
 ## Roteador
 
-A chave roteador é um proxy de objeto injetado em cada instância de cliente.
+A chave `router` é um proxy de objeto injetado em cada instância de cliente.
 
-O roteador tem duas chaves:
+O `router` tem duas chaves:
 
-- url
-- caminho
+- **`url`**
+- **`path`**
 
-A chave de URL retorna tudo depois do domínio, incluindo o caminho e os parâmetros de consulta como uma string.
+A chave `url` retorna tudo depois do domínio, incluindo o caminho e os parâmetros de query como uma string.
 
-A chade de caminho retorna apenas o caminho sem os parâmetros de consulta.
+A chade `path` retorna apenas o caminho sem os parâmetros de consulta.
 
 > 💡 Ambas as chaves acima automaticamente removem a barra final por conveniência.
 
-Atribuir a URL ou o caminho causará redirecionamento.
+Atribuir a `url` ou `path` causará redirecionamento.
 
-> 💡 Por baixo dos panos tags *a* e *parâmetros* usam o roteador.
+> 💡 Por baixo dos panos tags `a` e `parâmetros` usam o roteador.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -232,7 +232,7 @@ class Application extends Nullstack {
 ```
 ## Eventos customizados
 
-Atualizar *router.url* ou *router.path* irá gerar um evento personalizado.
+Atualizar `router.url` ou `router.path` irá gerar um evento personalizado.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -252,9 +252,9 @@ export default Analytics;
 
 ## Âncoras especiais
 
-Tags de âncora aceitam somente alguns atributos especiais convenientes além do *href* comum.
+Tags de âncora aceitam somente alguns atributos especiais convenientes além do `href` comum.
 
-Você pode atribuir o atributo dos parâmetros com um objeto como valor.
+Você pode atribuir o atributo `params` com um objeto como valor.
 
 O caminho permanecerá o mesmo do caminho atual do roteador, mas os parâmetros serão substituídos pelos novos parâmetros que você especificar.
 
@@ -268,9 +268,9 @@ E você deseja apenas atualizar alguns parâmetros e manter outros, você pode u
 <a params={{...params, page: 1}}> First Page </a>
 ```
 
-Você pode definir o atributo do caminho com uma string começando com "/" e sem parâmetros de consulta.
+Você pode definir o atributo `path` com uma string começando com "/" e sem parâmetros de query.
 
-Os parâmetros permanecerã os mesmos, mas, o caminho será atualizado.
+Os parâmetros permanecerão os mesmos, mas, o caminho será atualizado.
 
 ```jsx
 <a path="/category/suspense"> Suspense Books </a>
@@ -309,7 +309,7 @@ class Application extends Nullstack {
     return (
       <main>
         <Home route="/" />
-        <Page route="/page/:slug">
+        <Page route="/page/:slug" />
       </main>
     )
   }
@@ -321,4 +321,4 @@ export default Application;
 
 ## Próximo passo
 
-⚔ aprenda sobre [vínculos bidirecionais](/pt-br/vinculo-bidirecional).
+⚔ Aprenda sobre [vínculos bidirecionais](/pt-br/vinculo-bidirecional).

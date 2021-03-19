@@ -23,7 +23,7 @@ class Application extends Nullstack {
     return (
       <main>
         <Home route="/" />
-        <Page route="/page">
+        <Page route="/page" />
         <abbr route="/abbreviations"> Abbreviations </abbr>
       </main>
     )
@@ -36,7 +36,7 @@ export default Application;
 
 ## Links
 
-Links on Nullstack are simple *a* tags with the *href* value starting with "/".
+Links on Nullstack are simple `a` tags with the `href` value starting with "/".
 
 ```jsx
 <a href="/page/about"> About Page </a>
@@ -48,15 +48,15 @@ Links on Nullstack are simple *a* tags with the *href* value starting with "/".
 
 ## Params
 
-The params key is an object proxy injected into every client instance.
+The `params` key is an object proxy injected into every client instance.
 
 Each query string param is mapped to this object.
 
 By default any key you request from this object will return a string.
 
-If the value is undefined it will return an empty string.
+If the value is `undefined` it will return an empty string.
 
-If the value is true or false it will return a boolean instead.
+If the value is `true` or `false` it will return a boolean instead.
 
 > 🐱‍💻 Bellow an exemple that visits "/books?expanded=true&page=2":
 
@@ -200,22 +200,22 @@ class Application extends Nullstack {
 
 ## Router
 
-The router key is an object proxy injected into every client instance.
+The `router` key is an object proxy injected into every client instance.
 
-The router has two keys:
+The `router` has two keys:
 
-- url
-- path
+- **`url`**
+- **`path`**
 
-The url key returns everything after the domain including the path and the query params as a string.
+The `url` key returns everything after the domain including the path and the query params as a string.
 
-The path key returns only the path without query params.
+The `path` key returns only the path without query params.
 
 > 💡 Both keys above automatically remove the trailing slash for convenience.
 
-Assigning to url or path will cause a redirect.
+Assigning to `url` or `path` will cause a redirect.
 
-> 💡 Under the hood *a* tags and *params* use the router.
+> 💡 Under the hood `a` tags and `params` use the router.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -233,7 +233,7 @@ class Application extends Nullstack {
 
 ## Custom Events
 
-Updating *router.url* or *router.path* will raise a custom event.
+Updating `router.url` or `router.path` will raise a custom event.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -253,9 +253,9 @@ export default Analytics;
 
 ## Special anchors
 
-Anchor tags accept some convenient special attributes besides the regular href.
+Anchor tags accept some convenient special attributes besides the regular `href`.
 
-You can set the params attribute with an object as the value.
+You can set the `params` attribute with an object as the value.
 
 The path will remain the same as the current router path, but the params will be replaced by the new params you specify.
 
@@ -269,7 +269,7 @@ If you wish to just update some params and keep the others, you can use the java
 <a params={{...params, page: 1}}> First Page </a>
 ```
 
-You can set the path attribute with a string starting with "/" and no query params.
+You can set the `path` attribute with a string starting with "/" and no query params.
 
 The params will remain the same, but the path will be updated.
 
@@ -310,7 +310,7 @@ class Application extends Nullstack {
     return (
       <main>
         <Home route="/" />
-        <Page route="/page/:slug">
+        <Page route="/page/:slug" />
       </main>
     )
   }
