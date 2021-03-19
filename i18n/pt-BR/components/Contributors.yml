@@ -46,7 +46,7 @@ core:
       role: "Servo de Deus"
       github: "alissonsuassuna"
       description: "Instrutor da TipsCode. Desenvolvedor Full-stack JavaScript, apaixonado por tecnologia e servo do Senhor Jesus Cristo."
-      contribution: "Encarregado da criação de conteúdo sobre o Nullstack, aulas, dicas e tutorias. Com objetivo de tornar o Nullstack facil de usar."
+      contribution: "Encarregado da criação de conteúdo sobre o Nullstack, aulas, dicas e tutoriais. Com objetivo de tornar o Nullstack fácil de usar."
 
 packages:
   title: "Contribuidores dos Pacotes"
@@ -56,5 +56,5 @@ instructions:
   title: "Como Contribuir"
   paragraphs:
     - "É simples. Encontrou um bug ou deseja um novo recurso?"
-    - '<a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1">Crie uma issue</a> ou <a href="https://github.com/nullstack/nullstack/pulls" target="_blank" rel="noopener" class="ci1">envie uma pull request</a> com testes'
+    - '<a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1">Crie uma issue</a> ou <a href="https://github.com/nullstack/nullstack/pulls" target="_blank" rel="noopener" class="ci1">envie uma pull request</a> com testes.'
 githubCacheWarning: "* A lista pode demorar um pouco para ser atualizada devido ao cache da API do GitHub"
