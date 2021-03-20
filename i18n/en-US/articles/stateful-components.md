@@ -73,9 +73,9 @@ export default Counter;
 
 ## Event Source
 
-By default, events refer to this when you pass an object.
+By default, events refer to `this` when you pass an object.
 
-You can use the source attribute to define which object will receive the assignments.
+You can use the `source` attribute to define which object will receive the assignments.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -102,7 +102,6 @@ export default Paginator;
 ## Event Context
 
 Attributes of the event target will be merged to the instance context and can be destructured in the function signature.
-
 
 ```jsx
 import Nullstack from 'nullstack';
