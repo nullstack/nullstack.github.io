@@ -1,9 +1,9 @@
 ---
-title: A *key* instance
-description: A *key* *instance* é uma string na *store* do framework na parte do seu contexto e permite que você persista a instância quando é movida para a DOM.
+title: A key instance
+description: A key da instância é uma string no contexto do componente e permite que você persista a instância quando é movida para a DOM.
 ---
 
-A *key* *instance* é uma string na *store* do framework na parte do seu contexto e permite que você persista a instância quando é movida para a DOM.
+A *key* da instância é uma string no contexto do componente e permite que você persista a instância quando é movida para a DOM.
 
 Esta *key* é *readonly* depois que você inserir um valor no atributo e está disponível apenas no contexto do cliente.
 
@@ -17,7 +17,7 @@ As *keys* devem ser globalmente únicas já que o componente poderá ser movido 
 
 ## Preservando o estado
 
-As *keys* são úteis para preservar o estado em [stateful components](/stateful-components) quando você os move para dentro da DOM.
+As *keys* são úteis para preservar o estado em [componentes com estado](/pt-br/componentes-com-estado) quando você os move para dentro da DOM.
 
 Isto é especialmente útil para listas com tamanho dinâmico que invocam os componentes.
 
@@ -52,7 +52,7 @@ export default Page;
 
 Você também pode usar as *keys* para compartilhar a instância entre dois elementos.
 
-Apenas o primeiro encontro da *key* irá executar o [lifecycle](/full-stack-lifecycle)
+Apenas o primeiro encontro da *key* irá executar o [lifecycle](/pt-br/ciclo-de-vida-full-stack)
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -99,4 +99,4 @@ export default Application;
 
 ## Próximo passo
 
-⚔ Aprenda sobre [server request and response](/server-request-and-response).
+⚔ Aprenda sobre [requisicao e resposta do servidor](/pt-br/requisicao-e-resposta-do-servidor).
