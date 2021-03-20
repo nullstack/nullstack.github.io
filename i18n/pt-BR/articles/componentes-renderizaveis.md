@@ -16,7 +16,7 @@ Tudo o que você precisa fazer é importar `nullstack` ou qualquer uma das suas 
 > ✨ Instale a extensão official [Nullstack para VSCode](https://marketplace.visualstudio.com/items?itemName=ChristianMortaro.vscode-nullstack) para gerar classes com snippets.
 
 ```jsx
-import Nullstack from "nullstack"
+import Nullstack from "nullstack";
 
 class HelloWorld extends Nullstack {
   render() {
@@ -24,7 +24,7 @@ class HelloWorld extends Nullstack {
   }
 }
 
-export default HelloWorld
+export default HelloWorld;
 ```
 
 O código acima apenas declara o componente, você ainda tem que usá-lo.
@@ -34,11 +34,11 @@ Importando o componente em seu aplicativo, temos a capacidade de usar uma nova t
 Esta tag será substituída pelo que você retornou no método `render` do componente.
 
 ```jsx
-import Nullstack from "nullstack"
+import Nullstack from "nullstack";
 
-import "./Application.scss"
+import "./Application.scss";
 
-import HelloWorld from "./HelloWorld"
+import HelloWorld from "./HelloWorld";
 
 class Application extends Nullstack {
   // ...
@@ -48,8 +48,7 @@ class Application extends Nullstack {
       <main>
         <h1> {page.title} </h1>
         <a href="https://nullstack.app/documentation" target="_blank">
-          {" "}
-          Read the documentation{" "}
+          Read the documentation
         </a>
         <HelloWorld />
       </main>
@@ -57,7 +56,7 @@ class Application extends Nullstack {
   }
 }
 
-export default Application
+export default Application;
 ```
 
 ## Usando atributos HTML.
@@ -67,7 +66,7 @@ Nullstack JSX se desvia um pouco das especificações.
 Você pode usar os atributos HTML normais como `class` e `for` diretamente.
 
 ```jsx
-<label for="input" class="dont-label-me">
+<label for="input" class="nao-me-rotule">
   Eu sou um rótulo
 </label>
 ```
@@ -77,15 +76,15 @@ Você pode usar os atributos HTML normais como `class` e `for` diretamente.
 Se você deseja pular a renderização do componente, você pode simplesmente retornar false da renderização.
 
 ```jsx
-import Nullstack from "nullstack"
+import Nullstack from "nullstack";
 
 class Headless extends Nullstack {
   render() {
-    return false
+    return false;
   }
 }
 
-export default Headless
+export default Headless;
 ```
 
 Isso alocará o espaço no DOM para quando você decidir renderizar a marcação lá.
@@ -126,7 +125,7 @@ class Post extends Nullstack {
   }
 }
 
-export default HelloWorld
+export default HelloWorld;
 ```
 
 > 💡 Nullstack injetará uma referência constante à função no tempo de transpilação, a fim de ignorar completamente o processo de pesquisa de tempo de execução!
@@ -149,7 +148,7 @@ Você pode abreviar atributos quando sabe que o valor será sempre verdadeiro.
 <button disabled> Botão </button>
 ```
 
-> ✨ Aprender mais sobre[atributos](/contexto).
+> ✨ Aprender mais sobre [atributos](/pt-br/contexto).
 
 ## Tag do elemento
 
@@ -192,7 +191,7 @@ Isso não renderiza automaticamente o bloco, pois não saberia onde colocá-lo.
 Você pode desestruturar os filhos no método de renderização e colocá-los em sua marcação.
 
 ```jsx
-import Nullstack from "nullstack"
+import Nullstack from "nullstack";
 
 class Header extends Nullstack {
   render({ children }) {
@@ -200,7 +199,7 @@ class Header extends Nullstack {
   }
 }
 
-export default Header
+export default Header;
 ```
 
 > ✨ Isso é possível porque a chave `children` faz parte da [instância do contexto](/pt-br/contexto).
@@ -230,7 +229,7 @@ Você pode emular uma lista de tamanho fixo, retornando false em vez de um eleme
 É uma boa prática usar componentes internos combinados com listas para limpar seu código.
 
 ```jsx
-import Nullstack from "nullstack"
+import Nullstack from "nullstack";
 
 class List extends Nullstack {
   items = [
@@ -240,7 +239,7 @@ class List extends Nullstack {
   ]
 
   renderItem({ visible, number }) {
-    if (!visible) return false
+    if (!visible) return false;
     return <li> {number} </li>
   }
 
@@ -255,7 +254,7 @@ class List extends Nullstack {
   }
 }
 
-export default List
+export default List;
 ```
 
 > ✨ Às vezes, você notará chaves no mapa. Saiba mais sobre o [instância key](/pt-br/instancia-key).
@@ -267,7 +266,7 @@ Você pode definir o HTML interno de um elemento com o atributo `html`.
 Links dentro da string HTML serão substituídos por [Âncoras Roteáveis](/pt-br/rotas-e-parametros).
 
 ```jsx
-import Nullstack from "nullstack"
+import Nullstack from "nullstack";
 
 class Post extends Nullstack {
   content = `
@@ -275,17 +274,17 @@ class Post extends Nullstack {
     <a href="/other-post">
       Confira este outro post
     </a>
-  `
+  `;
 
   render() {
     return <article html={this.content} />
   }
 }
 
-export default Post
+export default Post;
 ```
 
-> 🔥 Tome cuidado!Ao usar o HTML gerado pelo usuário, você está em risco de injeção de script
+> 🔥 Tome cuidado! Ao usar o HTML gerado pelo usuário, você está em risco de injeção de script
 
 ## A tag `head`
 
@@ -294,7 +293,7 @@ Componentes renderizáveis podem renderizar dentro da tag `head` um número ilim
 A tag head só será atualizada durante o processo de [renderização no servidor](/pt-br/renderizacao-no-servidor) e mudanças serão ignorados após o processo de [hidratação](/pt-br/ciclo-de-vida-full-stack).
 
 ```jsx
-import Nullstack from "nullstack"
+import Nullstack from "nullstack";
 
 class Application extends Nullstack {
   // ...
@@ -328,14 +327,14 @@ class Application extends Nullstack {
   }
 }
 
-export default Application
+export default Application;
 ```
 
 > 🔥 Você não deve usar a tag head para atualizar [metatags](/pt-br/contexto-page) que o Nullstack já controla.
 
 ## Ressalvas
 
-Atualmente, o Nullstack não suporta fragmentos JSX.Se você quiser ver este recurso implementado, por favor [abra uma issue no github](https://github.com/nullstack/nullstack/issues).
+Atualmente, o Nullstack não suporta fragmentos JSX. Se você quiser ver este recurso implementado, por favor [abra uma issue no github](https://github.com/nullstack/nullstack/issues).
 
 ## Próxima Etapa
 

@@ -59,13 +59,13 @@ export default Form;
 
 Bind reduces drastically the amount of glue code you have to type in your application.
 
-You can shortcut setting a value, name, and event with the bind attribute.
+You can shortcut setting a `value`, `name`, and event with the `bind` attribute.
 
-> 💡 Nullstack will simply replace bind with the value, name, and event under the hood.
+> 💡 Nullstack will simply replace `bind` with the `value`, `name`, and event under the hood.
 
 Bind will generate an event that automatically typecasts to the previous primitive type the value was.
 
-You can pass any variable to the bind as long as its parent object is mentioned.
+You can pass any variable to the `bind` as long as its parent object is mentioned.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -93,15 +93,15 @@ export default Form;
 
 The following events are set for each type of input:
 
-- *onclick* for inputs with the checkbox type
-- *oninput* for other inputs and textareas
-- *onchange* for anything else
+- `onclick` for inputs with the checkbox type
+- `oninput` for other inputs and textareas
+- `onchange` for anything else
 
 You can still declare an attribute with the same bound event.
 
 Events will not override the bound event, instead, it will be executed after bind mutates the variable.
 
-The new value will be merged into the function [context](/context).
+The new value will be merged into the function [context](/pt-br/contexto).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -127,13 +127,13 @@ export default Form;
 
 ## Bind source
 
-Bind can take a source attribute as well.
+Bind can take a `source` attribute as well.
 
-> 💡 If you do not declare a source to the bind, Nullstack will inject a source={this} at transpile time in order to completely skip the runtime lookup process!
+> 💡 If you do not declare a source to the bind, Nullstack will inject a `source={this}` at transpile time in order to completely skip the runtime lookup process!
 
-If you declare a source, bind must be a string with the name of the key that will be mutated.
+If you declare a source, `bind` must be a string with the name of the key that will be mutated.
 
-The source will be merged into the [context](/context) of events.
+The source will be merged into the [context](/pt-br/contexto) of events.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -165,7 +165,7 @@ export default Paginator;
 
 Any object that responds to a key call with "[]" can be bound.
 
-The name attribute can be overwritten.
+The `name` attribute can be overwritten.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -209,7 +209,7 @@ export default Form;
 
 ## Object Events
 
-You can use [object events](/stateful-components) alongside bind normally.
+You can use [object events](/pt-br/componentes-com-estado) alongside bind normally.
 
 The event will run after the variable is mutated.
 
@@ -235,7 +235,7 @@ export default Paginator;
 
 You can create your own bindable component by receiving the attributes that bind generates.
 
-You must respond by calling *onchange* with a value key.
+You must respond by calling `onchange` with a value key.
 
 You can also merge any other keys you wish to send to the component user.
 
@@ -280,6 +280,6 @@ export default Form;
 
 ## Next step
 
-> 🎉 *Congratulations*. You are done with the core concepts!
+> 🎉 **Congratulations!**. You are done with the core concepts!
 
-⚔ Learn about the [application startup](/application-startup).
+⚔ Learn about the [application startup](/pt-br/inicializacao-da-aplicacao).

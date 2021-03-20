@@ -1,25 +1,25 @@
 ---
-title: Instance Key
-description: The instance key is a string in the framework store part of your context and allows you to persist the instance when it moves in the dom
+title: A key instance
+description: A key da instância é uma string no contexto do componente e permite que você persista a instância quando é movida para a DOM.
 ---
 
-The instance key is a string in the framework store part of your context and allows you to persist the instance when it moves in the dom.
+A *key* da instância é uma string no contexto do componente e permite que você persista a instância quando é movida para a DOM.
 
-This key is *readonly* after you assign the attribute and available only in the *client* context.
+Esta *key* é *readonly* depois que você inserir um valor no atributo e está disponível apenas no contexto do cliente.
 
-You can declare one key per instance.
+Você pode declarar uma *key* por instância.
 
-> 💡 If you do not declare a key nullstack will generate one based on dom depth.
+> 💡 Se você não declarar a *key* o nullstack irá gerar uma baseada na profundidade da dom
 
-> 🔥 Keys cannot start with "_." to avoid conflicts with Nullstack generated keys
+> 🔥 As *keys* não podem começar com "_." para evitar conflito com as *keys* geradas pelo Nullstack
 
-Keys must be globally unique since the component could move anywhere around the dom and not only between its siblings.
+As *keys* devem ser globalmente únicas já que o componente poderá ser movido para qualquer lugar da DOM e não apenas entre os componentes irmãos.
 
-## Preserving state
+## Preservando o estado
 
-Keys are useful to preserve state in [stateful components](/stateful-components) when you move them in the dom.
+As *keys* são úteis para preservar o estado em [componentes com estado](/pt-br/componentes-com-estado) quando você os move para dentro da DOM.
 
-This is especially useful for dynamically sized lists that invoke components.
+Isto é especialmente útil para listas com tamanho dinâmico que invocam os componentes.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -48,11 +48,11 @@ class List extends Nullstack {
 export default Page;
 ```
 
-## Shared Instances
+## Instâncias compartilhadas
 
-You can also use keys to share the instance between two elements.
+Você também pode usar as *keys* para compartilhar a instância entre dois elementos.
 
-Only the first encounter of the key will run its [lifecycle](/full-stack-lifecycle)
+Apenas o primeiro encontro da *key* irá executar o [lifecycle](/pt-br/ciclo-de-vida-full-stack)
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -97,6 +97,6 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Next step
+## Próximo passo
 
-⚔ Learn about the [server request and response](/server-request-and-response).
+⚔ Aprenda sobre [requisicao e resposta do servidor](/pt-br/requisicao-e-resposta-do-servidor).

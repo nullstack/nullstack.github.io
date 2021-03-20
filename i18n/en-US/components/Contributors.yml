@@ -56,5 +56,5 @@ instructions:
   title: "How to Contribute"
   paragraphs:
     - "It's simple. Found a bug or want a new feature?"
-    - '<a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1">Create an issue</a> or <a href="https://github.com/nullstack/nullstack/pulls" target="_blank" rel="noopener" class="ci1">submit a pull request</a> with tests'
+    - '<a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1">Create an issue</a> or <a href="https://github.com/nullstack/nullstack/pulls" target="_blank" rel="noopener" class="ci1">submit a pull request</a> with tests.'
 githubCacheWarning: "* The list might take a while to update due to GitHub API cache"
