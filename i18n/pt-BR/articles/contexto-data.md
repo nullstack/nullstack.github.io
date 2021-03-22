@@ -1,15 +1,18 @@
 ---
 title: Contexto Data
-description: O data é um objeto no framework que armazena parte de seu contexto e fornece informações sobre o conjunto de dados do elemento.
+description: O objeto data é um proxy no Contexto Nullstack disponível no client e te dá informações sobre o conjunto de dados do elemento
 ---
 
-O `data` é um objeto no framework que armazena parte de seu contexto e fornece informações sobre o conjunto de dados do elemento.
+- Tipo: `object`
+- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Disponibilidade: **client**
+- **readonly** no contexto do **client**
+
+Ele te dá informações sobre o conjunto de dados do elemento.
 
 Você pode usar esta chave para evitar poluir seu DOM com atributos inválidos.
 
 > 💡 Isso ajuda o Nullstack a definir atributos sem perder tempo validando-os.
-
-Esta chave é _readonly_ e disponível apenas no contexto do _client_.
 
 Quaisquer atributos `data-`\* receberão uma chave camelizada respectiva no objeto de dados.
 
@@ -56,4 +59,4 @@ export default ContextData
 
 ## Próxima Etapa
 
-⚔ Aprenda sobre o[contexto environment](/pt-br/contexto-environment).
+⚔ Aprenda sobre o [contexto environment](/pt-br/contexto-environment).

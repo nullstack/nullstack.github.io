@@ -1,11 +1,14 @@
 ---
 title: Instance Self
-description: The self object is a proxy in the framework store part of your context and gives you information about the instance lifecycle
+description: The self object is a proxy in the Nullstack Context available in client and gives you information about the instance lifecycle
 ---
 
-The self object is a proxy in the framework store part of your context and gives you information about the instance lifecycle.
+- Type: `object`
+- Origin: [Nullstack Context](/context#----nullstack-context)
+- Availability: **client**
+- **readonly** in **client** context
 
-This key is *readonly* and available only in the *client* context.
+It gives you information about the instance lifecycle.
 
 Each instance receives its own *self* object.
 

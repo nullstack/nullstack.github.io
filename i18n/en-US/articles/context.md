@@ -22,8 +22,8 @@ These are the information that the framework makes available to you by default.
 - [`page`](/context-page)
 - [`project`](/context-project)
 - [`environment`](/context-environment)
-- [`params`](/routes-and-params)
-- [`router`](/routes-and-params)
+- [`params`](/routes-and-params#params)
+- [`router`](/routes-and-params#router)
 - [`settings`](/context-settings)
 - [`worker`](/service-worker)
 
@@ -37,8 +37,8 @@ These are the information that the framework makes available to you by default.
 ### The available instance client keys are:
 
 - [`self`](/instance-self)
-- [`children`](/renderable-components)
-- [`key`](/instance-key)
+- [`children`](/renderable-components#components-with-children)
+- [`key`](/instance-key) (belongs to [Component Context](#----component-context) when developer-defined)
 - [`data`](/context-data)
 
 ## 2 - Application Context

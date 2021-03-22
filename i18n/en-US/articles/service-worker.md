@@ -1,6 +1,6 @@
 ---
 title: Context Service Worker
-description: The worker object is a proxy in the Nullstack Context available in both client and server and gives you granular control of your PWA behavior.
+description: The worker object is a proxy in the Nullstack Context available in both client and server and gives you granular control of your PWA behavior
 ---
 
 - Type: `object`

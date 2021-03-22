@@ -1,11 +1,14 @@
 ---
-title: Instância *self*
-description: O objeto *self* é um proxy na store do framework na parte do seu contexto e forne informações sobre o ciclo de vida da instância
+title: Instância Self
+description: O objeto self é um proxy no Contexto Nullstack disponível no client e te dá informações sobre o ciclo de vida da instância
 ---
 
-O objeto *self* é um proxy na store do framework na parte do seu contexto e fornece informações sobre o ciclo de vida da instância.
+- Tipo: `object`
+- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Disponibilidade: **client**
+- **readonly** no contexto do **client**
 
-Essa *key* é *readonly* e só está disponível no contexto do *client*.
+Ele te dá informações sobre o ciclo de vida da instância.
 
 Cada instância recebe seu própio objeto *self*.
 

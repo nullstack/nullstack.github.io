@@ -1,11 +1,14 @@
 ---
 title: Instance Key
-description: The instance key is a string in the framework store part of your context and allows you to persist the instance when it moves in the dom
+description: The instance key is a string in the Component Context available in client and allows you to persist the instance when it moves in the dom
 ---
 
-The instance key is a string in the framework store part of your context and allows you to persist the instance when it moves in the dom.
+- Type: `string`
+- Origin: [Component Context](/context#----component-context)
+- Availability: **client**
+- **readonly** in **client** context or after defined it's value as attribute
 
-This key is *readonly* after you assign the attribute and available only in the *client* context.
+It allows you to persist the instance when it moves in the dom.
 
 You can declare one key per instance.
 

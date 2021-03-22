@@ -1,11 +1,14 @@
 ---
-title: A key instance
-description: A key da instância é uma string no contexto do componente e permite que você persista a instância quando é movida para a DOM.
+title: Instância Key
+description: A key da instância é uma string no Contexto Componente e permite que você persista a instância quando é movida para a DOM
 ---
 
-A *key* da instância é uma string no contexto do componente e permite que você persista a instância quando é movida para a DOM.
+- Tipo: `string`
+- Origem: [Contexto Componente](/pt-br/contexto#----contexto-componente)
+- Disponibilidade: **client**
+- **readonly** no contexto do **client** ou depois de definido seu valor como atributo
 
-Esta *key* é *readonly* depois que você inserir um valor no atributo e está disponível apenas no contexto do cliente.
+Ele permite que você persista a instância quando é movida no DOM.
 
 Você pode declarar uma *key* por instância.
 

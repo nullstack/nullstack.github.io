@@ -1,11 +1,14 @@
 ---
 title: Contexto Environment
-description: O objeto environment está armazenado na parte da estrutura do seu contexto e fornece informações sobre o ambiente atual
+description: O objeto environment é um proxy no Contexto Nullstack disponível em ambos client e server e te dá informações sobre o ambiente atual
 ---
 
-O objeto *environment* está na parte do framework no contexto e fornece informações sobre o ambiente atual.
+- Tipo: `object`
+- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Disponibilidade: server/client
+- **readonly** em ambos **server** e **client**
 
-Esta chave é *somente leitura* e está disponível nos contextos *client* e *server*.
+Ele te dá informações sobre o ambiente atual.
 
 As seguintes chaves estão disponíveis no objeto:
 

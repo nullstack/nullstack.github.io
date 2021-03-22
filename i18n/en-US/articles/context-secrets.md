@@ -1,6 +1,6 @@
 ---
 title: Context Secrets
-description: The settings object is a proxy in the Nullstack Context available in server which you can use to configure your application with private information
+description: The secrets object is a proxy in the Nullstack Context available in server which you can use to configure your application with private information
 ---
 
 - Type: `object`
