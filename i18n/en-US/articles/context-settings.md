@@ -1,13 +1,15 @@
 ---
 title: Context Settings
-description: The settings object is a proxy in the framework store part of your context which you can use to configure your application with public information
+description: The settings object is a proxy in the Nullstack Context available in both client and server which you can use to configure your application with public information
 ---
 
-The settings object is a proxy in the framework store part of your context which you can use to configure your application with public information.
+- Type: `object`
+- Origin: [Nullstack Context](/context#----nullstack-context)
+- Availability: server/client
+- **readwrite** in **server** context
+- **readonly** in **client** context
 
-This key is *readwrite* in the *server* context.
-
-This key is *readonly* in the *client* context.
+You can use it to configure your application with public information.
 
 Settings keys are frozen after the [application startup](/application-startup).
 

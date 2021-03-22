@@ -13,37 +13,35 @@ The server context lives as long as the server is running.
 
 Both contexts are proxies that merge the keys of 3 objects:
 
-## 1 - Framework store
+## 1 - Nullstack Context
 
 These are the information that the framework makes available to you by default.
 
-### The available global server keys are:
+### The available global keys in both server and client are:
 
-- [page](/context-page)
-- [environment](/context-environment)
-- [project](/context-project)
-- [server](/server-request-and-response)
-- [request](/server-request-and-response)
-- [response](/server-request-and-response)
-- [worker](/service-worker)
+- [`page`](/context-page)
+- [`project`](/context-project)
+- [`environment`](/context-environment)
+- [`params`](/routes-and-params)
+- [`router`](/routes-and-params)
+- [`settings`](/context-settings)
+- [`worker`](/service-worker)
 
-### The available global client keys are:
+### The keys available only in server functions are:
 
-- [data](/context-data)
-- [page](/context-page)
-- [project](/context-project)
-- [environment](/context-environment)
-- [params](/routes-and-params)
-- [router](/routes-and-params)
-- [worker](/service-worker)
+- [`server`](/server-request-and-response)
+- [`request`](/server-request-and-response#request-and-response)
+- [`response`](/server-request-and-response#request-and-response)
+- [`secrets`](/context-secrets)
 
 ### The available instance client keys are:
 
-- [self](/instance-self)
-- [children](/renderable-components)
-- [key](/instance-key)
+- [`self`](/instance-self)
+- [`children`](/renderable-components)
+- [`key`](/instance-key)
+- [`data`](/context-data)
 
-## 2 - Application store
+## 2 - Application Context
 
 When you set a key to the context it will be available for destructuring at any depth of the application, even the parents of your component or 3rd party applications that mount your component.
 
@@ -61,14 +59,14 @@ class Counter extends Nullstack {
   }
 
   static async updateTotalCount(context) {
-    context.totalCount += count;
+    context.totalCount += context.count;
   }
 
   async double(context) {
     context.count += context.count;
-    await this.updateTotalCount({count: context.count});
+    await this.updateTotalCount();
   }
-  
+
   render({count}) {
     return (
       <button onclick={this.double}> {count} </button>
@@ -89,7 +87,7 @@ class Application extends Nullstack {
   static async start(context) {
     context.totalCount = 0;
   }
- 
+
   render({count}) {
     return (
       <main>
@@ -103,9 +101,9 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## 3 - Attributes
+## 3 - Component Context
 
-These are the attributes you declare in your tag.
+This one contains the attributes you declare in your tag.
 
 If the attribute is declared in a component tag every function of that component will have access to that attribute in its context.
 
@@ -119,10 +117,10 @@ class Counter extends Nullstack {
   add(context) {
     context.count += context.delta + context.amount;
   }
-  
+
   render({count, delta}) {
     return (
-      <button onclick={this.add} amount={1}> 
+      <button onclick={this.add} amount={1}>
         add {delta} to {count}
       </button>
     )
@@ -142,11 +140,11 @@ class Application extends Nullstack {
   prepare(context) {
     context.count = 0;
   }
- 
+
   render() {
     return (
       <main>
-        <Counter delta={2} />}
+        <Counter delta={2} />
       </main>
     )
   }
@@ -167,13 +165,18 @@ import Nullstack from 'nullstack';
 
 class Counter extends Nullstack {
 
-  prepare() {
-    this.add();
-    this.add({amount: 2});
-  }
-
   add(context) {
     context.count += context.amount || 1;
+  }
+
+  prepare(context) {
+    context.count = 0;
+    this.add();            // sums 1
+    this.add({amount: 2}); // sums 2
+  }
+
+  async initiate(context) {
+    console.log(context.count); // 3
   }
 
 }

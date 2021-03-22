@@ -1,11 +1,14 @@
 ---
 title: Context Environment
-description: The environment object is in the framework store part of your context and gives you information about the current environment
+description: The environment object is a proxy in the Nullstack Context available in both client and server and gives you information about the current environment
 ---
 
-The environment object is in the *framework store* part of your context and gives you information about the current environment.
+- Type: `object`
+- Origin: [Nullstack Context](/context#----nullstack-context)
+- Availability: server/client
+- **readonly** in server/client context
 
-This key is *readonly* and available in both the *client* and *server* contexts.
+It gives you information about the current environment.
 
 The following keys are available in the object:
 
