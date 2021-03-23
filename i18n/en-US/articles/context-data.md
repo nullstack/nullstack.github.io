@@ -1,10 +1,10 @@
 ---
 title: Context Data
-description: The data object is a proxy in the Nullstack Context available in client and gives you information about the element dataset
+description: The data object is a proxy in the Component Context available in client and gives you information about the element dataset
 ---
 
 - Type: `object`
-- Origin: [Nullstack Context](/context#----nullstack-context)
+- Origin: [Component Context](/context#----component-context)
 - Availability: **client**
 - **readonly** in **client** context
 

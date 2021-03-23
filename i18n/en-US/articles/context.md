@@ -38,8 +38,6 @@ These are the information that the framework makes available to you by default.
 
 - [`self`](/instance-self)
 - [`children`](/renderable-components#components-with-children)
-- [`key`](/instance-key) (belongs to [Component Context](#----component-context) when developer-defined)
-- [`data`](/context-data)
 
 ## 2 - Application Context
 
@@ -103,7 +101,7 @@ export default Application;
 
 ## 3 - Component Context
 
-This one contains the attributes you declare in your tag.
+This one contains the attributes you declare in your tag, including [`data`](/context-data).
 
 If the attribute is declared in a component tag every function of that component will have access to that attribute in its context.
 

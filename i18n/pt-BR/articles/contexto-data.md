@@ -1,10 +1,10 @@
 ---
 title: Contexto Data
-description: O objeto data é um proxy no Contexto Nullstack disponível no client e te dá informações sobre o conjunto de dados do elemento
+description: O objeto data é um proxy no Contexto Componente disponível no client e te dá informações sobre o conjunto de dados do elemento
 ---
 
 - Tipo: `object`
-- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Origem: [Contexto Componente](/pt-br/contexto#----contexto-componente)
 - Disponibilidade: **client**
 - **readonly** no contexto do **client**
 

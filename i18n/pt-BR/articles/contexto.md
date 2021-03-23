@@ -38,8 +38,6 @@ Essas são as informações que o framework disponibiliza para você por padrão
 
 - [`self`](/pt-br/instancia-self)
 - [`children`](/pt-br/componentes-renderizaveis#componentes-com-filhos)
-- [`key`](/pt-br/instancia-key) (pertence ao [Contexto Componente](#----contexto-componente) quando definida pelo desenvolvedor)
-- [`data`](/pt-br/contexto-data)
 
 ## 2 - Contexto Aplicação
 
@@ -103,7 +101,7 @@ export default Application;
 
 ## 3 - Contexto Componente
 
-Este contém os atributos que você declara em sua tag.
+Este contém os atributos que você declara em sua tag, incluindo os [`data`](/pt-br/contexto-data).
 
 Se o atributo é declarado em uma tag componente cada função desse componente terá acesso a esse atributo em seu contexto.
 
