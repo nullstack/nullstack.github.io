@@ -1,11 +1,14 @@
 ---
 title: Contexto Secrets
-description: O objeto secrets é um proxy na parte do framework no contexto, no qual você pode usar para configurar dados sensíveis para sua aplicação.
+description: O objeto secrets é um proxy no Contexto Nullstack disponível no server que você pode usar para configurar dados sensíveis para sua aplicação
 ---
 
-O objeto *secrets* é um proxy na parte do framework no contexto, no qual você pode usar para configurar dados sensíveis para sua aplicação.
+- Tipo: `object`
+- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Disponibilidade: **server**
+- **readwrite** no contexto do **server**
 
-Essa chave é *readwrite* e disponível apenas no contexto *server*.
+Você pode usá-lo para configurar dados sensíveis para sua aplicação.
 
 Chaves secretas são congeladas depois da [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 

@@ -1,13 +1,15 @@
 ---
 title: Contexto Settings
-description: O objeto de configurações é um proxy na parte da loja de framework do seu contexto que você pode usar para configurar seu aplicativo com informações públicas
+description: O objeto settings é um proxy no Contexto Nullstack disponível em ambos client e server que você pode usar para configurar seu aplicativo com informações públicas
 ---
 
-O objeto `settings` é um proxy na parte da loja de framework do seu contexto que você pode usar para configurar seu aplicativo com informações públicas.
+- Tipo: `object`
+- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Disponibilidade: server/client
+- **readwrite** no contexto do **server**
+- **readonly** no contexto do **client**
 
-Essa chave é readwrite no contexto do server.
-
-Essa chave é readonly no contexto do client.
+Você pode usá-lo para configurar seu aplicativo com informações públicas.
 
 As chaves de configurações serão congeladas após a [inicialização do aplicativo](/pt-br/inicializacao-da-aplicacao).
 

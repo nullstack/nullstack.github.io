@@ -1,11 +1,14 @@
 ---
 title: Context Secrets
-description: The secrets object is a proxy in the framework store part of your context which you can use to configure your application with private information
+description: The secrets object is a proxy in the Nullstack Context available in server which you can use to configure your application with private information
 ---
 
-The secrets object is a proxy in the framework store part of your context which you can use to configure your application with private information.
+- Type: `object`
+- Origin: [Nullstack Context](/context#----nullstack-context)
+- Availability: **server**
+- **readwrite** in **server** context
 
-This key is *readwrite* and available only in the *server* context.
+You can use it to configure your application with private information.
 
 Secrets keys are frozen after the [application startup](/application-startup).
 

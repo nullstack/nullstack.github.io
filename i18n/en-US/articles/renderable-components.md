@@ -216,7 +216,7 @@ class Header extends Nullstack {
 export default Header;
 ```
 
-> ✨ This is possible because the children key is part of the [instance context](/context).
+> ✨ This is possible because the children key is part of the [instance context](/context#the-available-instance-client-keys-are-).
 
 ## Lists
 
@@ -271,7 +271,7 @@ class List extends Nullstack {
 export default List;
 ```
 
-> ✨ Sometimes you will notice keys in the map. Learn more about the [instance key](/instance-key).
+> ✨ Sometimes you will notice keys in the map. Learn more about the [instance key](/instance-self#instance-key).
 
 ## Inner HTML
 

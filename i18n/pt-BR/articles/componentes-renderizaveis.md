@@ -202,7 +202,7 @@ class Header extends Nullstack {
 export default Header;
 ```
 
-> ✨ Isso é possível porque a chave `children` faz parte da [instância do contexto](/pt-br/contexto).
+> ✨ Isso é possível porque a chave `children` faz parte do [contexto da instância](/pt-br/contexto##as-chaves-de-inst-ncia-do-cliente-s-o-).
 
 ## Listas
 
@@ -257,7 +257,7 @@ class List extends Nullstack {
 export default List;
 ```
 
-> ✨ Às vezes, você notará chaves no mapa. Saiba mais sobre o [instância key](/pt-br/instancia-key).
+> ✨ Às vezes, você notará chaves no mapa. Saiba mais sobre a [key da instância](/pt-br/instancia-self#key-da-inst-ncia).
 
 ## HTML interno
 

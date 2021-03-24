@@ -1,14 +1,15 @@
 ---
-title: Context Service Worker
-description: The worker is a proxy in the framework store part of your context and gives you granular control of your PWA behavior.
+title: Contexto Service Worker
+description: O objeto worker é um proxy no Contexto Nullstack disponível em ambos client e server e te dá controle granular do comportamento do seu PWA
 ---
 
+- Tipo: `object`
+- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Disponibilidade: server/client
+- **readwrite** no contexto do **server**
+- **readonly** no contexto do **client**
 
-O *worker* é um proxy na parte do framework no contexto e da controle granular do comportamento do seu PWA
-
-Essa chave é *readwrite* no contexto do *servidor*
-
-Essa chave é *readonly* no contexto do *cliente*.
+Ele te dá controle granular do comportamento do seu PWA.
 
 As chave do worker serão usadas para gerar o arquivo do service worker e devem ser setadas durante o [processo de inicialização](/pt-br/inicializacao-da-aplicacao).
 

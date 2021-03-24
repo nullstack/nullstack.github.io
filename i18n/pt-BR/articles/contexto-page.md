@@ -1,11 +1,14 @@
 ---
 title: Contexto Page
-description: O objeto da página é um proxy armazenado da estrutura de seu contexto e fornece informações sobre as metatags do cabeçalho do documento
+description: O objeto page é um proxy no Contexto Nullstack disponível em ambos client e server e te dá informações sobre as metatags da head do documento
 ---
 
-O objeto `page` é um proxy de parte do armazenamento do framework no seu contexto e fornece informações sobre as metatags do cabeçalho do documento.
+- Tipo: `object`
+- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Disponibilidade: server/client
+- **readwrite** em ambos **server** e **client**
 
-Esta chave é de **leitura e escrita** e está disponível apenas no contexto **client-side**.
+Ele fornece informações sobre as metatags da `head` do documento.
 
 Chaves de `page` serão usadas para gerar as metatags durante a [renderização no lado do servidor](/pt-br/renderizando-no-servidor) e devem ser atribuídas antes do ciclo [`initiate`](/pt-br/ciclo-de-vida-full-stack) ser resolvido.
 

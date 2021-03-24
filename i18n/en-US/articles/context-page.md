@@ -1,11 +1,14 @@
 ---
 title: Context Page
-description: The page object is a proxy in the framework store part of your context and gives you information about the document head metatags
+description: The page object is a proxy in the Nullstack Context available in both client and server and gives you information about the document head metatags
 ---
 
-The `page` object is a proxy in the framework store part of your context and gives you information about the document head metatags.
+- Type: `object`
+- Origin: [Nullstack Context](/context#----nullstack-context)
+- Availability: server/client
+- **readwrite** in server/client context
 
-This key is **readwrite** and available only in the **client** context.
+It gives you information about the document `head` metatags.
 
 `page` keys will be used to generate metatags during [server-side rendering](/server-side-rendering) and must be assigned before [`initiate`](/full-stack-lifecycle) while this resolved.
 
@@ -86,7 +89,7 @@ class Analytics extends Nullstack {
 
   hydrate({page}) {
     window.addEventListener(page.event, () => {
-      console.log(page.title);
+      console.log(`New title: ${page.title}`);
     });
   }
 
@@ -94,6 +97,8 @@ class Analytics extends Nullstack {
 
 export default Analytics;
 ```
+
+> 🔥 `page.event` is only available in client functions/lifecycles.
 
 ## Error pages
 
