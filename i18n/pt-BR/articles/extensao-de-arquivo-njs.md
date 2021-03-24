@@ -1,29 +1,26 @@
 ---
-title: NJS File Extension
-description: Nullstack Javascript files let Webpack know which loaders to use at transpile time
+title: Extensão de arquivos NJS
+description: Os arquivos Nullstack permitem que o Webpack saiba quais carregadores usar no momento da transpilação
 ---
 
-Nullstack Javascript files let [Webpack](https://webpack.js.org) know which loaders to use at transpile time.
+Os arquivos do Nullstack permitem ao [Webpack](https://webpack.js.org) saber quais carregadores usar no momento da transpilação.
 
-NJS files must import Nullstack or one of its subclasses.
+Os arquivos NJS devem importar o Nullstack ou uma de suas subclasses.
 
-If only a subclass is imported, a Nullstack import will be injected at transpile time.
+Se apenas uma subclasse for importada, uma importação Nullstack será injetada no momento da transpilação.
 
-At transpile time JSX tags will be replaced with *Nullstack.element*
+No momento da transpilação, as tags JSX serão substituídas por *Nullstack.element*
 
-This extension also allows Nullstack to make free transpile time optimizations like source injection.
+Essa extensão também permite que o Nullstack faça otimizações em tempo de transpilação, como a injeção de origem.
 
-> 🔥 Each file must have only one class declaration.
+> 🔥 Cada arquivo deve ter apenas uma classe declarada.
 
-On the *server* bundle static async functions are mapped into a registry for security.
+* No bundle **server**, as funções assíncronas estáticas são mapeadas em um registro para segurança.
+* No bundle **client**, as funções assíncronas estáticas são removidas e substituídas por um método invoke.
+* No bundle **client**, as funções assíncronas estáticas com o nome começando com **"start"** (e opcionalmente seguido por uma letra maiúscula) são completamente removidas.
+* Nos bundles **server** e **client**, um hash com o md5 do código-fonte original é adicionado na classe.
 
-On the *client* bundle static async functions are removed and replaced with a invoke method.
-
-On the *client* bundle static async functions with the name starting with "start" (and optionally followed by an uppercase letter)  are completely removed.
-
-On both *server* and *client* bundles, a hash with the md5 of the original source code is added to the class.
-
-> 🐱‍💻 Bellow an example of a original .njs file.
+> 🐱‍💻 Abaixo um exemplo do arquivo .njs raiz.
 
 ```jsx
 import List from './List';
@@ -67,7 +64,7 @@ class Tasks extends List {
 export default Tasks;
 ```
 
-> 🐱‍💻 Bellow an example of the same transpiled .njs file.
+> 🐱‍💻 Abaixo um exemplo do mesmo arquivo .njs transpilado.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -111,6 +108,6 @@ class Tasks extends List {
 export default Tasks;
 ```
 
-## Next step
+## Próximo Passo
 
-⚔ Learn about [server-side rendering](/server-side-rendering).
+⚔ Aprenda sobre a [renderização no servidor](/pt-br/renderizando-no-servidor).
