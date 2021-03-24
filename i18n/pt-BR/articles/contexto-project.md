@@ -89,4 +89,4 @@ export default Application;
 
 ## Próximo Passo
 
-⚔ Aprenda sobre o [contexto `settings`](/pt-br/contexto-settings).
+⚔ Aprenda sobre a [chave `settings` do contexto](/pt-br/contexto-settings).

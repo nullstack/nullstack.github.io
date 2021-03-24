@@ -10,25 +10,25 @@ description: O objeto self é um proxy no Contexto Nullstack disponível no clie
 
 Ele te dá informações sobre o ciclo de vida da instância e sua [`key`](#key-da-inst-ncia) única.
 
-Cada instância recebe seu própio objeto *self*.
+Cada instância recebe seu própio objeto `self`.
 
 As seguintes *keys* estão disponíveis no objeto:
 
-- *initiated*: boolean
-- *hydrated*: boolean
-- *prerendered*: boolean
-- *element*: HTMLElement
-- [`key`](#key-da-inst-ncia): string
+- **initiated**: `boolean`
+- **hydrated**: `boolean`
+- **prerendered**: `boolean`
+- **element**: `HTMLElement`
+- [`key`](#key-da-inst-ncia): `string`
 
-Quando um método do ciclo de vida é resolvido, mesmo que não declarado, uma *key* equivalente é setado para true no *self*
+Quando um método do ciclo de vida é resolvido, mesmo que não declarado, uma chave equivalente é setada para `true` no `self`.
 
-Se o componente tiver sido renderizado no lado do servidor a *key* *prerendered* continuará como *true* até que seja finalizado.
+Se o componente tiver sido renderizado no lado do servidor a chave `prerendered` continuará como `true` até que seja finalizado.
 
-A *key* *element* aponta para o seletor na DOM e sua existência só é garantida quando o *hydrate* está sendo chamado e o *initiate* pode rodar no servidor.
+A chave `element` aponta para o seletor na DOM e sua existência só é garantida quando o `hydrate` está sendo chamado, pois `prepare` e `initiate` podem estar rodando no servidor.
 
-> 💡 Não use a *key* *element* para adivinhar o ambiente, ao invés use [environment](/pt-br/contexto-environment) para isso.
+> 💡 Não use a chave `element` para adivinhar o ambiente, ao invés use [`environment`](/pt-br/contexto-environment) para isso.
 
-Observar o *self* é um bom jeito de evitar dar informações irrelevantes para o usuário final
+Observar o `self` é um bom jeito de evitar dar informações irrelevantes para o usuário final
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -62,7 +62,7 @@ class Page extends Nullstack {
 export default Page;
 ```
 
-> 💡 Componentes que estão otimizados em [functional components](/pt-br/componentes-renderizaveis) não tem acesso ao *self*.
+> 💡 Componentes que estão otimizados em [functional components](/pt-br/componentes-renderizaveis) não tem acesso ao `self`.
 
 ## key da Instância
 
@@ -73,9 +73,9 @@ export default Page;
 
 Ele permite que você persista a instância quando é movida no DOM.
 
-Você pode declarar uma *key* por instância.
+Você pode declarar uma `key` por instância.
 
-> 💡 Se você não declarar a *key* o nullstack irá gerar uma baseada na profundidade da dom
+> 💡 Se você não declarar a `key` o nullstack irá gerar uma baseada na profundidade da dom.
 
 > 🔥 As *keys* não podem começar com "_." para evitar conflito com as *keys* geradas pelo Nullstack
 
@@ -119,7 +119,7 @@ export default Page;
 
 Você também pode usar as *keys* para compartilhar a instância entre dois elementos.
 
-Apenas o primeiro encontro da *key* irá executar o [lifecycle](/pt-br/ciclo-de-vida-full-stack)
+Apenas o primeiro encontro da `key` irá executar o [lifecycle](/pt-br/ciclo-de-vida-full-stack).
 
 ```jsx
 import Nullstack from 'nullstack';

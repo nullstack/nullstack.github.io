@@ -14,9 +14,9 @@ Você pode usar esta chave para evitar poluir seu DOM com atributos inválidos.
 
 > 💡 Isso ajuda o Nullstack a definir atributos sem perder tempo validando-os.
 
-Quaisquer atributos `data-`\* receberão uma chave camelizada respectiva no objeto de dados.
+Quaisquer atributos `data-*` receberão uma chave camelizada respectiva no objeto de dados.
 
-Você pode atribuir atributos **data** via `data-`\* e uma chave de dados que aceita um objeto com chaves camelizadas.
+Você pode atribuir atributos `data` ambos via `data-*` e uma chave `data` que aceita um objeto com chaves camelizadas.
 
 A versão kebab também está disponível no contexto.
 
@@ -55,8 +55,8 @@ class ContextData extends Nullstack {
 export default ContextData
 ```
 
-> 💡 Chaves camelizadas do objeto de dados resultarão em atributos kebab no DOM.
+> 💡 Chaves camelizadas do objeto `data` resultarão em atributos kebab no DOM.
 
 ## Próxima Etapa
 
-⚔ Aprenda sobre o [contexto environment](/pt-br/contexto-environment).
+⚔ Aprenda sobre a [chave `environment` do contexto](/pt-br/contexto-environment).

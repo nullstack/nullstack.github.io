@@ -12,12 +12,12 @@ Ele te dá informações sobre o ambiente atual.
 
 As seguintes chaves estão disponíveis no objeto:
 
-- *client*: boolean
-- *server*: boolean
-- *development*: boolean
-- *production*: boolean
-- *static*: boolean
-- *key*: string
+- **client**: `boolean`
+- **server**: `boolean`
+- **development**: `boolean`
+- **production**: `boolean`
+- **static**: `boolean`
+- **key**: `string`
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -42,8 +42,8 @@ class Page extends Nullstack {
 export default Page;
 ```
 
-A chave *key* do *environment* é uma hash md5 nas saídas das pasta do ambiente atual. A chave é anexada nos caminhos dos [assets](/pt-br/estilos) e na [API estática](/pt-br/geracao-de-sites-estaticos) para auxiliar no controle de cache.
+A chave `key` do `environment` é um hash md5 das saídas da pasta do ambiente atual. A `key` é anexada nos caminhos dos [assets](/pt-br/estilos) e na [API estática](/pt-br/geracao-de-sites-estaticos) para auxiliar no controle de cache.
 
 ## Próxima Etapa
 
-⚔ Aprenda sobre o [contexto da página](/pt-br/contexto-page).
+⚔ Aprenda sobre a [chave `page` do contexto](/pt-br/contexto-page).

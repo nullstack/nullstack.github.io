@@ -11,7 +11,7 @@ Websites estáticos são úteis para aplicações read-only como blogs e documen
 
 Todos os benefícios de [renderização no lado do servidor](/pt-br/renderizando-no-servidor) se aplicam para websites gerados estáticamente.
 
-Você pode gerar um website estático a partir da sua aplicação Nullstack com o seguinte comando NPX:
+Você pode gerar um website estático a partir da sua aplicação Nullstack com o seguinte comando `npx`:
 
 ```sh
 npx create-nullstatic-app
@@ -19,7 +19,7 @@ npx create-nullstatic-app
 
 > 🔥 Você deve estar em uma pasta de projeto Nullstack para executar esse comando.
 
-Por padrão, a sua aplicação Nullstack será criada na pasta *static*.
+Por padrão, a sua aplicação Nullstack será criada na pasta **static**.
 
 Você pode mudar a pasta padrão por passá-la para o comando como um argumento:
 
@@ -43,7 +43,7 @@ Isso, na verdade, oferece não apenas um site estático gerado, mas um API gerad
 
 ## Boas Práticas
 
-Você pode adicionar um script para a sua package.json a fim de gerar o seu website estático em uma pasta personalizada:
+Você pode adicionar um script para a sua **package.json** a fim de gerar o seu website estático em uma pasta personalizada:
 
 ```jsx
 {
@@ -66,9 +66,9 @@ Você pode adicionar um script para a sua package.json a fim de gerar o seu webs
 
 ## Ressalvas
 
-Nullstatic rastreia a sua aplicação apenas até a resolução inicial, outras solicitações de API acionadas por eventos serão ignoradas.
+Nullstatic rastreia a sua aplicação apenas até a resolução de `initiate`, outras solicitações de API acionadas por eventos serão ignoradas.
 
-Nullstatic rastreará um URL / 404 e gerará um /404.html e um /404/index.html.
+Nullstatic rastreará um URL "/404" e gerará um "/404.html" e um "/404/index.html".
 
 ## Próximo passo
 

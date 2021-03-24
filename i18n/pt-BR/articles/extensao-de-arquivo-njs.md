@@ -9,7 +9,7 @@ Os arquivos NJS devem importar o Nullstack ou uma de suas subclasses.
 
 Se apenas uma subclasse for importada, uma importação Nullstack será injetada no momento da transpilação.
 
-No momento da transpilação, as tags JSX serão substituídas por *Nullstack.element*
+No momento da transpilação, as tags JSX serão substituídas por `Nullstack.element`.
 
 Essa extensão também permite que o Nullstack faça otimizações em tempo de transpilação, como a injeção de origem.
 
@@ -20,7 +20,7 @@ Essa extensão também permite que o Nullstack faça otimizações em tempo de t
 * No bundle **client**, as funções assíncronas estáticas com o nome começando com **"start"** (e opcionalmente seguido por uma letra maiúscula) são completamente removidas.
 * Nos bundles **server** e **client**, um hash com o md5 do código-fonte original é adicionado na classe.
 
-> 🐱‍💻 Abaixo um exemplo do arquivo .njs raiz.
+> 🐱‍💻 Abaixo um exemplo de arquivo .njs original.
 
 ```jsx
 import List from './List';
