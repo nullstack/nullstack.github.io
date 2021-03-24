@@ -5,7 +5,7 @@ description: Nullstack has built-in routes, it would make no sense otherwise sin
 
 Nullstack has built-in routes, it would make no sense otherwise since web applications are expected to have hyperlinks.
 
-Any tag can receive a route attribute, be it a component, inner component, or simple HTML tag.
+Any tag can receive a `route` attribute, be it a component, inner component, or simple HTML tag.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -167,7 +167,7 @@ class Application extends Nullstack {
     return (
       <main>
         <Home route="/" />
-        <div route="*"> Wildcard </abbr>
+        <div route="*"> Wildcard </div>
       </main>
     )
   }
@@ -215,8 +215,6 @@ The `path` key returns only the path without query params.
 
 Assigning to `url` or `path` will cause a redirect.
 
-> 💡 Under the hood `a` tags and `params` use the router.
-
 ```jsx
 import Nullstack from 'nullstack';
 
@@ -230,6 +228,8 @@ class Application extends Nullstack {
 
 }
 ```
+
+> 💡 Under the hood `a` tags with `params` use the `router`.
 
 ## Custom Events
 
@@ -257,7 +257,7 @@ Anchor tags accept some convenient special attributes besides the regular `href`
 
 You can set the `params` attribute with an object as the value.
 
-The path will remain the same as the current router path, but the params will be replaced by the new params you specify.
+The path will remain the same as the current router path, but the `params` will be replaced by the new params you specify.
 
 ```jsx
 <a params={{page: 1}}> First Page </a>
@@ -271,7 +271,7 @@ If you wish to just update some params and keep the others, you can use the java
 
 You can set the `path` attribute with a string starting with "/" and no query params.
 
-The params will remain the same, but the path will be updated.
+The params will remain the same, but the `path` will be updated.
 
 ```jsx
 <a path="/category/suspense"> Suspense Books </a>
@@ -287,7 +287,7 @@ Both attributes above can be used at the same time.
 
 The first route to be matched will be rendered.
 
-The other elements with a route will not be rendered, however, elements on the same level without a route attribute will render normally.
+The other elements with a route will not be rendered, however, elements on the same level without a `route` attribute will render normally.
 
 The router will lookup for one route per dom depth level, this allows you to have nested routing behavior.
 

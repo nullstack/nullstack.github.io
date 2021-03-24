@@ -12,12 +12,12 @@ It gives you information about the current environment.
 
 The following keys are available in the object:
 
-- *client*: boolean
-- *server*: boolean
-- *development*: boolean
-- *production*: boolean
-- *static*: boolean
-- *key*: string
+- **client**: `boolean`
+- **server**: `boolean`
+- **development**: `boolean`
+- **production**: `boolean`
+- **static**: `boolean`
+- **key**: `string`
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -46,4 +46,4 @@ The environment *key* is an md5 hash of the current environment folder outputs. 
 
 ## Next step
 
-⚔ Learn about the [context page](/context-page).
+⚔ Learn about the [context `page`](/context-page).

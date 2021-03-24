@@ -9,7 +9,7 @@ According to [analytics.google.com](https://analytics.google.com):
 
 You can take advantage of the [context](/context) and [custom events](/context-page) to create a component that dynamically sends GTAG events.
 
-GTAG can only be called after [hydrate](/full-stack-lifecycle) to ensure it is running in the client.
+GTAG can only be called after [`hydrate`](/full-stack-lifecycle) to ensure it is running in the client.
 
 ```jsx
 import Nullstack from 'nullstack';

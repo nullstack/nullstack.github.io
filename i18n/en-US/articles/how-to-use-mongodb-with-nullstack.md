@@ -15,7 +15,7 @@ Install the MongoDB driver from npm:
 npm install mongodb
 ```
 
-Configure the database credentials using [secrets](/context-secrets).
+Configure the database credentials using [`secrets`](/context-secrets).
 
 The last step is to simply assign the database connection to the server context.
 
@@ -44,7 +44,7 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-The example above will make the database key available to all your server functions.
+The example above will make the `database` key available to all your server functions.
 
 ```jsx
 import Nullstack from 'nullstack';

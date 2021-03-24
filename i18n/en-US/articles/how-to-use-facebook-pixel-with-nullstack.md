@@ -9,7 +9,7 @@ According to [developers.facebook.com](https://developers.facebook.com/docs/face
 
 You can take advantage of the [context](/context) and [custom events](/context-page) to create a component that dynamically sends Pixel events.
 
-Facebook's Pixel can only be called after [hydrate](/full-stack-lifecycle) to ensure it is running in the client.
+Facebook's Pixel can only be called after [`hydrate`](/full-stack-lifecycle) to ensure it is running in the client.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -101,6 +101,6 @@ export default Application;
 
 ## Next step
 
-> 🎉 *Congratulations*. You are done with the documentation!
+> 🎉 **Congratulations**. You are done with the documentation!
 
 ⚔ If you want to see this more examples please [open an issue on github](https://github.com/nullstack/nullstack/issues).

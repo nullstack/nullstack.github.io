@@ -10,25 +10,25 @@ description: The self object is a proxy in the Nullstack Context available in cl
 
 It gives you information about the instance lifecycle and it's unique [`key`](#instance-key).
 
-Each instance receives its own *self* object.
+Each instance receives its own `self` object.
 
 The following keys are available in the object:
 
-- *initiated*: boolean
-- *hydrated*: boolean
-- *prerendered*: boolean
-- *element*: HTMLElement
-- [`key`](#instance-key): string
+- **initiated**: `boolean`
+- **hydrated**: `boolean`
+- **prerendered**: `boolean`
+- **element**: `HTMLElement`
+- [`key`](#instance-key): `string`
 
-When a lifecycle method is resolved, even if not declared, an equivalent key is set to true in self.
+When a lifecycle method is resolved, even if not declared, an equivalent key is set to `true` in `self`.
 
-If the component was server-side rendered the *prerendered* key will remain true until it is terminated.
+If the component was server-side rendered the `prerendered` key will remain `true` until it is terminated.
 
-The *element* key points to the DOM selector and is only guaranteed to exist when hydrate is being called since prepare and initiate could run in the server.
+The `element` key points to the DOM selector and is only guaranteed to exist when `hydrate` is being called since `prepare` and `initiate` could run in the server.
 
-> 💡 Do not use *element* to guess the environment, instead use the [environment](/context-environment) for that.
+> 💡 Do not use `element` to guess the environment, instead use the [`environment`](/context-environment) for that.
 
-Observing self is a nice way to avoid giving placeholder information to the end-user.
+Observing `self` is a nice way to avoid giving placeholder information to the end-user.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -62,7 +62,7 @@ class Page extends Nullstack {
 export default Page;
 ```
 
-> 💡 Components that get optimized into [functional components](/renderable-components) have no access to self.
+> 💡 Components that get optimized into [functional components](/renderable-components) have no access to `self`.
 
 ## Instance Key
 
@@ -73,9 +73,9 @@ export default Page;
 
 It allows you to persist the instance when it moves in the dom.
 
-You can declare one key per instance.
+You can declare one `key` per instance.
 
-> 💡 If you do not declare a key nullstack will generate one based on dom depth.
+> 💡 If you do not declare a `key` nullstack will generate one based on dom depth.
 
 > 🔥 Keys cannot start with "_." to avoid conflicts with Nullstack generated keys
 
@@ -119,7 +119,7 @@ export default Page;
 
 You can also use keys to share the instance between two elements.
 
-Only the first encounter of the key will run its [lifecycle](/full-stack-lifecycle)
+Only the first encounter of the `key` will run its [lifecycle](/full-stack-lifecycle).
 
 ```jsx
 import Nullstack from 'nullstack';
