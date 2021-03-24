@@ -14,7 +14,7 @@ Você pode usar esta chave para evitar poluir seu DOM com atributos inválidos.
 
 > 💡 Isso ajuda o Nullstack a definir atributos sem perder tempo validando-os.
 
-Quaisquer atributos `data-*` receberão uma chave camelizada respectiva no objeto de dados.
+Quaisquer atributos `data-*` receberão uma chave camelizada respectiva no objeto `data`.
 
 Você pode atribuir atributos `data` ambos via `data-*` e uma chave `data` que aceita um objeto com chaves camelizadas.
 
