@@ -1,20 +1,23 @@
 ---
 title: Contexto Page
-description: O objeto da página é um proxy armazenado da estrutura de seu contexto e fornece informações sobre as metatags do cabeçalho do documento
+description: O objeto page é um proxy no Contexto Nullstack disponível em ambos client e server e te dá informações sobre as metatags da head do documento
 ---
 
-O objeto `page` é um proxy de parte do armazenamento do framework no seu contexto e fornece informações sobre as metatags do cabeçalho do documento.
+- Tipo: `object`
+- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Disponibilidade: server/client
+- **readwrite** em ambos **server** e **client**
 
-Esta chave é de **leitura e escrita** e está disponível apenas no contexto **client-side**.
+Ele fornece informações sobre as metatags da `head` do documento.
 
 Chaves de `page` serão usadas para gerar as metatags durante a [renderização no lado do servidor](/pt-br/renderizando-no-servidor) e devem ser atribuídas antes do ciclo [`initiate`](/pt-br/ciclo-de-vida-full-stack) ser resolvido.
 
 As seguintes chaves estão disponíveis no objeto:
 
 - **title**: `string`
-- **image**: `string (URL absoluto ou relativo)`
+- **image**: `string` (URL absoluto ou relativo)
 - **description**: `string`
-- **canonical**: `string (URL absoluto ou relativo)`
+- **canonical**: `string` (URL absoluto ou relativo)
 - **locale**: `string`
 - **robots**: `string`
 - **schema**: `object`
@@ -99,7 +102,7 @@ export default Analytics;
 
 Se durante o processo de [renderização no lado do servidor](/pt-br/renderizando-no-servidor) o `page.status` estiver com qualquer valor além de `200`, seu aplicativo receberá outra passagem na renderização e lhe possibilitará ajustar a interface de acordo com o status retornado.
 
-A chave de status será gerada na resposta HTTP.
+A chave `status` será gerada na resposta HTTP.
 
 O status da página será modificado para `500` e receberá outra passagem na renderização se a página gerar uma exceção enquanto renderiza.
 
@@ -128,8 +131,8 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-> 🔥 A atribuição à chave de status durante o modo [aplicativo de página única](/pt-br/ciclo-de-vida-full-stack) não terá efeito.
+> 🔥 A atribuição à chave `status` durante o modo [aplicativo de página única](/pt-br/ciclo-de-vida-full-stack) não terá efeito.
 
 ## Próximo Passo
 
-⚔ Aprenda sobre o [contexto `project`](/pt-br/contexto-project).
+⚔ Aprenda sobre a [chave `project` do contexto](/pt-br/contexto-project).

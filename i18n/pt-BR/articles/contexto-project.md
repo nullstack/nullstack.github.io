@@ -1,13 +1,15 @@
 ---
 title: Contexto Project
-description: O objeto project é um proxy de parte do armazenamento do framework no seu contexto e te dá informações sobre o manifest do app e algumas metatags
+description: O objeto project é um proxy no Contexto Nullstack disponível em ambos client e server e te dá informações sobre o manifest do app e algumas metatags
 ---
 
-O objeto `project` é um proxy de parte do armazenamento do framework no seu contexto e te dá informações sobre o manifest do app e algumas metatags.
+- Tipo: `object`
+- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Disponibilidade: server/client
+- **readwrite** no contexto do **server**
+- **readonly** no contexto do **client**
 
-Essa chave é **readwrite** no contexto do **server**.
-
-Essa chave é **readonly** no contexto do **client**.
+Ele te dá informações sobre o manifest do app e algumas metatags.
 
 As chaves de `project` serão usadas para gerar metatags durante a renderização do lado do servidor e devem ser definidas antes que [`initiate`](/pt-br/ciclo-de-vida-full-stack) seja resolvido.
 
@@ -87,4 +89,4 @@ export default Application;
 
 ## Próximo Passo
 
-⚔ Aprenda sobre o [contexto `settings`](/pt-br/contexto-settings).
+⚔ Aprenda sobre a [chave `settings` do contexto](/pt-br/contexto-settings).

@@ -13,43 +13,39 @@ O contexto do servidor dura enquanto o servidor estiver em execução.
 
 Ambos os contextos são proxies que mesclam as chaves de 3 objetos:
 
-## 1 - Framework
+## 1 - Contexto Nullstack
 
 Essas são as informações que o framework disponibiliza para você por padrão.
 
-### As chaves globais do servidor são:
+### As chaves globais disponíveis em ambos server e client são:
 
-- [page](/pt-br/contexto-page)
-- [environment](/pt-br/contexto-environment)
-- [project](/pt-br/contexto-project)
-- [server](/pt-br/requisicao-e-resposta-do-servidor)
-- [request](/pt-br/requisicao-e-resposta-do-servidor)
-- [response](/pt-br/requisicao-e-resposta-do-servidor)
-- [worker](/pt-br/service-worker)
+- [`page`](/pt-br/contexto-page)
+- [`project`](/pt-br/contexto-project)
+- [`environment`](/pt-br/contexto-environment)
+- [`params`](/pt-br/rotas-e-parametros#par-metros)
+- [`router`](/pt-br/rotas-e-parametros#roteador)
+- [`settings`](/pt-br/contexto-settings)
+- [`worker`](/pt-br/service-worker)
 
-### As chaves globais do cliente são:
+### As chaves disponíveis apenas em funções do servidor são:
 
-- [data](/pt-br/contexto-data)
-- [page](/pt-br/contexto-page)
-- [project](/pt-br/contexto-project)
-- [environment](/pt-br/contexto-environment)
-- [params](/pt-br/rotas-e-parametros)
-- [router](/pt-br/rotas-e-parametros)
-- [worker](/pt-br/service-worker)
+- [`server`](/pt-br/requisicao-e-resposta-do-servidor)
+- [`request`](/pt-br/requisicao-e-resposta-do-servidor#requisi--o-e-resposta)
+- [`response`](/pt-br/requisicao-e-resposta-do-servidor#requisi--o-e-resposta)
+- [`secrets`](/pt-br/contexto-secrets)
 
 ### As chaves de instância do cliente são:
 
-- [self](/pt-br/instancia-self)
-- [children](/pt-br/componentes-renderizaveis)
-- [key](/pt-br/instancia-key)
+- [`self`](/pt-br/instancia-self)
+- [`children`](/pt-br/componentes-renderizaveis#componentes-com-filhos)
 
-## 2 - Aplicação
+## 2 - Contexto Aplicação
 
 Quando você define uma chave para o contexto, ela fica disponível para desestruturação em qualquer profundidade da aplicação, até mesmo para os objetos pais ou aplicações de terceiros que montam seu componente.
 
 Atualizar uma chave no contexto faz com que a aplicação seja renderizada novamente automaticamente.
 
-Você pode pensar nisso como um único conceito para substituir contextos, serviços e redutores ao mesmo tempo, usando o padrão de injeção de dependência com objetos javascript padrão.
+Você pode pensar nisso como um único conceito para substituir **stores**, **contexts**, **services**, e **reducers** ao mesmo tempo, usando o padrão de injeção de dependência com objetos javascript padrão.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -61,14 +57,14 @@ class Counter extends Nullstack {
   }
 
   static async updateTotalCount(context) {
-    context.totalCount += count;
+    context.totalCount += context.count;
   }
 
   async double(context) {
     context.count += context.count;
-    await this.updateTotalCount({count: context.count});
+    await this.updateTotalCount();
   }
-  
+
   render({count}) {
     return (
       <button onclick={this.double}> {count} </button>
@@ -89,7 +85,7 @@ class Application extends Nullstack {
   static async start(context) {
     context.totalCount = 0;
   }
- 
+
   render({count}) {
     return (
       <main>
@@ -103,9 +99,9 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## 3 - Atributos
+## 3 - Contexto Componente
 
-Esses são os atributos que você declara em sua tag.
+Este contém os atributos que você declara em sua tag, incluindo os [`data`](/pt-br/contexto-data).
 
 Se o atributo é declarado em uma tag componente cada função desse componente terá acesso a esse atributo em seu contexto.
 
@@ -119,10 +115,10 @@ class Counter extends Nullstack {
   add(context) {
     context.count += context.delta + context.amount;
   }
-  
+
   render({count, delta}) {
     return (
-      <button onclick={this.add} amount={1}> 
+      <button onclick={this.add} amount={1}>
         adicionar {delta} em {count}
       </button>
     )
@@ -142,11 +138,11 @@ class Application extends Nullstack {
   prepare(context) {
     context.count = 0;
   }
- 
+
   render() {
     return (
       <main>
-        <Counter delta={2} />}
+        <Counter delta={2} />
       </main>
     )
   }
@@ -167,13 +163,18 @@ import Nullstack from 'nullstack';
 
 class Counter extends Nullstack {
 
-  prepare() {
-    this.add();
-    this.add({amount: 2});
-  }
-
   add(context) {
     context.count += context.amount || 1;
+  }
+
+  prepare(context) {
+    context.count = 0;
+    this.add();            // soma 1
+    this.add({amount: 2}); // soma 2
+  }
+
+  async initiate(context) {
+    console.log(context.count); // 3
   }
 
 }

@@ -5,7 +5,7 @@ description: Nullstack tem rotas embutidas, não faria sentido não ser assim j�
 
 Nullstack tem rotas embutidas, não faria sentido não ser assim já que se espera que aplicações web tenham hyperlinks.
 
-Qualquer tag pode receber um atributo de rota, seja um componente, componente interno ou uma tag HTML simples.
+Qualquer tag pode receber um atributo `route`, seja um componente, componente interno ou uma tag HTML simples.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -167,7 +167,7 @@ class Application extends Nullstack {
     return (
       <main>
         <Home route="/" />
-        <div route="*"> Wildcard </abbr>
+        <div route="*"> Curinga </div>
       </main>
     )
   }
@@ -209,13 +209,11 @@ O `router` tem duas chaves:
 
 A chave `url` retorna tudo depois do domínio, incluindo o caminho e os parâmetros de query como uma string.
 
-A chade `path` retorna apenas o caminho sem os parâmetros de consulta.
+A chave `path` retorna apenas o caminho sem os parâmetros de consulta.
 
 > 💡 Ambas as chaves acima automaticamente removem a barra final por conveniência.
 
 Atribuir a `url` ou `path` causará redirecionamento.
-
-> 💡 Por baixo dos panos tags `a` e `parâmetros` usam o roteador.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -230,6 +228,9 @@ class Application extends Nullstack {
 
 }
 ```
+
+> 💡 Por baixo dos panos tags `a` e `params` usam o `router`.
+
 ## Eventos customizados
 
 Atualizar `router.url` ou `router.path` irá gerar um evento personalizado.
@@ -256,37 +257,37 @@ Tags de âncora aceitam somente alguns atributos especiais convenientes além do
 
 Você pode atribuir o atributo `params` com um objeto como valor.
 
-O caminho permanecerá o mesmo do caminho atual do roteador, mas os parâmetros serão substituídos pelos novos parâmetros que você especificar.
+O caminho permanecerá o mesmo do caminho atual do roteador, mas os `params` serão substituídos pelos novos parâmetros que você especificar.
 
 ```jsx
-<a params={{page: 1}}> First Page </a>
+<a params={{page: 1}}> Primeira Página </a>
 ```
 
 E você deseja apenas atualizar alguns parâmetros e manter outros, você pode usar o operador javascript *spread* para isso.
 
 ```jsx
-<a params={{...params, page: 1}}> First Page </a>
+<a params={{...params, page: 1}}> Primeira Página </a>
 ```
 
 Você pode definir o atributo `path` com uma string começando com "/" e sem parâmetros de query.
 
-Os parâmetros permanecerão os mesmos, mas, o caminho será atualizado.
+Os parâmetros permanecerão os mesmos, mas, o `path` será atualizado.
 
 ```jsx
-<a path="/category/suspense"> Suspense Books </a>
+<a path="/category/suspense"> Livros de Suspense </a>
 ```
 
 Ambos os atributos acima podem ser utilizados ao mesmo tempo.
 
 ```jsx
-<a path="/category/suspense" params={{...params, page: 1}}> Suspense Books </a>
+<a path="/category/suspense" params={{...params, page: 1}}> Livros de Suspense </a>
 ```
 
 ## Rotas aninhadas
 
 A primeira rota a ser correspondida será renderizada.
 
-Os outros elementos com uma rota não serão renderizados, no entanto, os elementos no mesmo nível sem um atributo de rota serão renderizados normalmente.
+Os outros elementos com uma rota não serão renderizados, no entanto, os elementos no mesmo nível sem um atributo `route` serão renderizados normalmente.
 
 O roteador irá procurar uma rota por nível de profundidade DOM, isso permite que você tenha um comportamento de roteamento aninhado.
 

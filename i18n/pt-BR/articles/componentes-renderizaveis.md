@@ -13,15 +13,19 @@ Neste exemplo, vai ser chamado `helloworld.njs`.
 
 Tudo o que você precisa fazer é importar `nullstack` ou qualquer uma das suas subclasses e estender sua classe dele, definir um método de instância chamado `render` que retorna qualquer JSX e exporte o componente.
 
-> ✨ Instale a extensão official [Nullstack para VSCode](https://marketplace.visualstudio.com/items?itemName=ChristianMortaro.vscode-nullstack) para gerar classes com snippets.
+> ✨ Instale a extensão oficial [Nullstack para VSCode](https://marketplace.visualstudio.com/items?itemName=ChristianMortaro.vscode-nullstack) para gerar classes com snippets.
 
 ```jsx
 import Nullstack from "nullstack";
 
 class HelloWorld extends Nullstack {
+
   render() {
-    return <div> Hello World </div>
+    return (
+      <div> Olá Mundo </div>
+    )
   }
+
 }
 
 export default HelloWorld;
@@ -66,22 +70,22 @@ Nullstack JSX se desvia um pouco das especificações.
 Você pode usar os atributos HTML normais como `class` e `for` diretamente.
 
 ```jsx
-<label for="input" class="nao-me-rotule">
-  Eu sou um rótulo
-</label>
+<label for="input" class="nao-me-rotule"> Eu sou um rótulo </label>
 ```
 
 ## Componentes Headless
 
-Se você deseja pular a renderização do componente, você pode simplesmente retornar false da renderização.
+Se você deseja pular a renderização do componente, você pode simplesmente retornar `false` da renderização.
 
 ```jsx
 import Nullstack from "nullstack";
 
 class Headless extends Nullstack {
+
   render() {
     return false;
   }
+
 }
 
 export default Headless;
@@ -97,7 +101,7 @@ Se tudo o que você deseja fazer é gerar um componente invisível, você pode i
 
 Em vez de criar um novo componente apenas para organizar a divisão de código, você pode criar um componente interno.
 
-**Componentes internos** são qualquer método cujo o nome seja iniciado com `render` seguido por um caractere maiúsculo.
+**Componentes internos** são quaisquer métodos cujo nome seja iniciado com `render` seguido por um caractere maiúsculo.
 
 Componentes internos compartilham a mesma instância e escopo, pois o componente principal, portanto, são muito convenientes para evitar problemas como adereços de perfuração.
 
@@ -107,12 +111,17 @@ Para invocar o componente interno, use uma tag JSX com o nome do método sem o p
 import Nullstack from "nullstack"
 
 class Post extends Nullstack {
+
   renderArticle() {
-    return <article> Conteúdo </article>
+    return (
+      <article> Conteúdo </article>
+    )
   }
 
   renderAside() {
-    return <aside> Conteúdo Relacionado </aside>
+    return (
+      <aside> Conteúdo Relacionado </aside>
+    )
   }
 
   render() {
@@ -123,6 +132,7 @@ class Post extends Nullstack {
       </div>
     )
   }
+
 }
 
 export default HelloWorld;
@@ -194,19 +204,23 @@ Você pode desestruturar os filhos no método de renderização e colocá-los em
 import Nullstack from "nullstack";
 
 class Header extends Nullstack {
+
   render({ children }) {
-    return <div>{children}</div>
+    return (
+      <div>{children}</div>
+    )
   }
+
 }
 
 export default Header;
 ```
 
-> ✨ Isso é possível porque a chave `children` faz parte da [instância do contexto](/pt-br/contexto).
+> ✨ Isso é possível porque a chave `children` faz parte do [contexto da instância](/pt-br/contexto##as-chaves-de-inst-ncia-do-cliente-s-o-).
 
 ## Listas
 
-Você pode mapear listas sem declarar uma chave.
+Você pode mapear listas sem declarar uma `key`.
 
 As listas que podem mudar de comprimento devem ser agrupadas em um elemento pai apenas para elas.
 
@@ -218,7 +232,7 @@ As listas que podem mudar de comprimento devem ser agrupadas em um elemento pai 
 </ul>
 ```
 
-Você pode emular uma lista de tamanho fixo, retornando false em vez de um elemento para reservar espaço no Dom.
+Você pode emular uma lista de tamanho fixo, retornando `false` em vez de um elemento para reservar espaço no Dom.
 
 ```jsx
 {list.map((item) => (
@@ -257,7 +271,7 @@ class List extends Nullstack {
 export default List;
 ```
 
-> ✨ Às vezes, você notará chaves no mapa. Saiba mais sobre o [instância key](/pt-br/instancia-key).
+> ✨ Às vezes, você notará chaves no mapa. Saiba mais sobre a [key da instância](/pt-br/instancia-self#key-da-inst-ncia).
 
 ## HTML interno
 
@@ -269,6 +283,7 @@ Links dentro da string HTML serão substituídos por [Âncoras Roteáveis](/pt-b
 import Nullstack from "nullstack";
 
 class Post extends Nullstack {
+
   content = `
     <h1> Este é um post </h1>
     <a href="/other-post">
@@ -277,8 +292,11 @@ class Post extends Nullstack {
   `;
 
   render() {
-    return <article html={this.content} />
+    return (
+      <article html={this.content} />
+    )
   }
+
 }
 
 export default Post;
@@ -290,12 +308,13 @@ export default Post;
 
 Componentes renderizáveis podem renderizar dentro da tag `head` um número ilimitado de vezes em qualquer profundidade do aplicativo.
 
-A tag head só será atualizada durante o processo de [renderização no servidor](/pt-br/renderizacao-no-servidor) e mudanças serão ignorados após o processo de [hidratação](/pt-br/ciclo-de-vida-full-stack).
+A tag `head` só será atualizada durante o processo de [renderização no servidor](/pt-br/renderizacao-no-servidor) e mudanças serão ignorados após o processo de [hidratação](/pt-br/ciclo-de-vida-full-stack).
 
 ```jsx
-import Nullstack from "nullstack";
+import Nullstack from 'nullstack';
 
 class Application extends Nullstack {
+
   // ...
 
   render() {
@@ -307,34 +326,19 @@ class Application extends Nullstack {
           </head>
         </div>
         <head>
-          <link
-            rel="preload"
-            href="/roboto-v20-latin-300.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin
-          />
-          <link
-            rel="preload"
-            href="/crete-round-v9-latin-regular.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin
-          />
+          <link rel="preload" href="/roboto-v20-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+          <link rel="preload" href="/crete-round-v9-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
         </head>
       </main>
     )
   }
+
 }
 
 export default Application;
 ```
 
-> 🔥 Você não deve usar a tag head para atualizar [metatags](/pt-br/contexto-page) que o Nullstack já controla.
-
-## Ressalvas
-
-Atualmente, o Nullstack não suporta fragmentos JSX. Se você quiser ver este recurso implementado, por favor [abra uma issue no github](https://github.com/nullstack/nullstack/issues).
+> 🔥 Você não deve usar a tag `head` para atualizar [metatags](/pt-br/contexto-page) que o Nullstack já controla.
 
 ## Próxima Etapa
 

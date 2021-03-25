@@ -9,16 +9,16 @@ The server key is a proxy around the [Express](https://expressjs.com) instance t
 
 The server object is present only in the *server* context.
 
-The following functions are tunneled back to the express server:
+The following functions are tunneled back to the Express server:
 
-- get
-- post
-- put
-- patch
-- delete
-- options
-- head
-- use
+- `get`
+- `post`
+- `put`
+- `patch`
+- `delete`
+- `options`
+- `head`
+- `use`
 
 > ✨ If you wanna know how to make an API with Nullstack, this is the way.
 
@@ -42,9 +42,9 @@ export default Application;
 
 Other available keys are:
 
-- *port*: integer
-- *maximumPayloadSize*: string
-- *cors*: object
+- **port**: `integer`
+- **maximumPayloadSize**: `string`
+- **cors**: `object`
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -67,13 +67,13 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-The cors object will be passed as the argument to [express cors plugin](https://expressjs.com/en/resources/middleware/cors.html)
+The `cors` object will be passed as the argument to [express cors plugin](https://expressjs.com/en/resources/middleware/cors.html).
 
 ## Request and Response
 
-Every server function context is merged with the original request and response objects from express.
+Every server function context is merged with the original `request` and `response` objects from Express.
 
-If you raise a response manually it will override the framework's [server-side rendering](/server-side-rendering) response.
+If you raise a response manually it will override the framework's [server-side rendering](/server-side-rendering) `response`.
 
 ```jsx
 import Nullstack from 'nullstack';

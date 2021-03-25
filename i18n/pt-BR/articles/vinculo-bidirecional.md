@@ -209,11 +209,11 @@ export default Form;
 
 ## Object Events
 
-You can use [object events](/pt-br/componentes-com-estado) alongside bind normally.
+You can use [object events](/pt-br/componentes-com-estado) alongside `bind` normally.
 
 The event will run after the variable is mutated.
 
-The event will share the *bind* source.
+The event will share the `bind` source.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -233,9 +233,9 @@ export default Paginator;
 
 ## Bindable Components
 
-You can create your own bindable component by receiving the attributes that bind generates.
+You can create your own bindable component by receiving the attributes that `bind` generates.
 
-You must respond by calling `onchange` with a value key.
+You must respond by calling `onchange` with a `value` key.
 
 You can also merge any other keys you wish to send to the component user.
 

@@ -20,7 +20,7 @@ class Header extends Nullstack {
 export default Header;
 ```
 
-No modo de produção, o Nullstack usa [PurgeCSS](https://purgecss.com), que limpa seu arquivo client.css, mas tem alguns truques.
+No modo de produção, o Nullstack usa [PurgeCSS](https://purgecss.com), que limpa seu arquivo **client.css**, mas tem alguns truques.
 
 > ✨ Saiba mais sobre [fazendo uma safelist do seu css](https://purgecss.com/safelisting.html)
 

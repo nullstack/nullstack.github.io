@@ -1,13 +1,15 @@
 ---
 title: Context Project
-description: The project object is a proxy in the framework store part of your context and gives you information about the app manifest and some metatags
+description: The project object is a proxy in the Nullstack Context available in both client and server and gives you information about the app manifest and some metatags
 ---
 
-The `project` object is a proxy in the framework store part of your context and gives you information about the app manifest and some metatags.
+- Type: `object`
+- Origin: [Nullstack Context](/context#----nullstack-context)
+- Availability: server/client
+- **readwrite** in the **server** context
+- **readonly** in the **client** context
 
-This key is **readwrite* in the **server* context.
-
-This key is **readonly** in the **client** context.
+It gives you information about the app manifest and some metatags.
 
 `project` keys will be used to generate metatags during server-side rendering and must be assigned before [`initiate`](/full-stack-lifecycle) is resolved.
 
@@ -44,7 +46,7 @@ If the `sitemap` key is set to true your **robots.txt** file will point the site
 
 The `cdn` key will prefix your asset bundles and will be available in the context so you can manually prefix other assets.
 
-The `protocol` key is "http" in development mode and "https" in production mode by default
+The `protocol` key is "http" in development mode and "https" in production mode by default.
 
 ```jsx
 import Nullstack from 'nullstack';

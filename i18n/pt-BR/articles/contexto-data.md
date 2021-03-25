@@ -1,19 +1,22 @@
 ---
 title: Contexto Data
-description: O data é um objeto no framework que armazena parte de seu contexto e fornece informações sobre o conjunto de dados do elemento.
+description: O objeto data é um proxy no Contexto Componente disponível no client e te dá informações sobre o conjunto de dados do elemento
 ---
 
-O `data` é um objeto no framework que armazena parte de seu contexto e fornece informações sobre o conjunto de dados do elemento.
+- Tipo: `object`
+- Origem: [Contexto Componente](/pt-br/contexto#----contexto-componente)
+- Disponibilidade: **client**
+- **readonly** no contexto do **client**
+
+Ele te dá informações sobre o conjunto de dados do elemento.
 
 Você pode usar esta chave para evitar poluir seu DOM com atributos inválidos.
 
 > 💡 Isso ajuda o Nullstack a definir atributos sem perder tempo validando-os.
 
-Esta chave é _readonly_ e disponível apenas no contexto do _client_.
+Quaisquer atributos `data-*` receberão uma chave camelizada respectiva no objeto `data`.
 
-Quaisquer atributos `data-`\* receberão uma chave camelizada respectiva no objeto de dados.
-
-Você pode atribuir atributos **data** via `data-`\* e uma chave de dados que aceita um objeto com chaves camelizadas.
+Você pode atribuir atributos `data` ambos via `data-*` e uma chave `data` que aceita um objeto com chaves camelizadas.
 
 A versão kebab também está disponível no contexto.
 
@@ -52,8 +55,8 @@ class ContextData extends Nullstack {
 export default ContextData
 ```
 
-> 💡 Chaves camelizadas do objeto de dados resultarão em atributos kebab no DOM.
+> 💡 Chaves camelizadas do objeto `data` resultarão em atributos kebab no DOM.
 
 ## Próxima Etapa
 
-⚔ Aprenda sobre o[contexto environment](/pt-br/contexto-environment).
+⚔ Aprenda sobre a [chave `environment` do contexto](/pt-br/contexto-environment).

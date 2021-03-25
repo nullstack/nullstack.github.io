@@ -1,25 +1,28 @@
 ---
 title: Contexto Secrets
-description: O objeto secrets é um proxy na parte do framework no contexto, no qual você pode usar para configurar dados sensíveis para sua aplicação.
+description: O objeto secrets é um proxy no Contexto Nullstack disponível no server que você pode usar para configurar dados sensíveis para sua aplicação
 ---
 
-O objeto *secrets* é um proxy na parte do framework no contexto, no qual você pode usar para configurar dados sensíveis para sua aplicação.
+- Tipo: `object`
+- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Disponibilidade: **server**
+- **readwrite** no contexto do **server**
 
-Essa chave é *readwrite* e disponível apenas no contexto *server*.
+Você pode usá-lo para configurar dados sensíveis para sua aplicação.
 
-Chaves secretas são congeladas depois da [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
+Chaves de `secrets` são congeladas depois da [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 
 As seguintes chaves estão disponíveis no objeto:
 
-- *development*: object
-- *production*: object
-- *[qualquerOutraCoisa]*: any
+- **development**: `object`
+- **production**: `object`
+- **[qualquerSegredo]**: `any`
 
-Você pode definir chaves diferentes para as chaves *development* e *production*, obtendo assim valores diferentes para cada [ambiente](/pt-br/contexto-environment).
+Você pode definir chaves diferentes para as chaves `development` e `production`, obtendo assim valores diferentes para cada [ambiente](/pt-br/contexto-environment).
 
-Caso uma chave seja definida diretamente no objeto *secrets* ela ficará disponível para ambos ambientes.
+Caso uma chave seja definida diretamente no objeto `secrets` ela ficará disponível para ambos os ambientes.
 
-A leitura das chaves deve ser feita diretamente do objeto *secrets*, pois o Nullstack vai retornar o valor referido de acordo com o [ambiente](/pt-br/contexto-environment).
+A leitura das chaves deve ser feita diretamente do objeto `secrets`, pois o Nullstack vai retornar o valor referido de acordo com o [ambiente](/pt-br/contexto-environment).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -48,8 +51,8 @@ export default Application;
 
 Qualquer chave de ambiente iniciada por NULLSTACK_SECRETS_ será mapeada para o *secrets* de seu respectivo ambiente.
 
-> 🐱‍💻 NULLSTACK_SECRETS_PRIVATE_KEY será mapeada para *secrets.privateKey*
+> 🐱‍💻 NULLSTACK_SECRETS_PRIVATE_KEY será mapeada para `secrets.privateKey`
 
 ## Próximo passo
 
-⚔ Aprendendo sobre [instância self](/pt-br/instancia-self).
+⚔ Aprendendo sobre o [`self` da instância](/pt-br/instancia-self).

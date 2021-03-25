@@ -67,7 +67,7 @@ export default Application;
 
 Nullstack JSX deviates a little from the spec.
 
-You can use the normal HTML attributes like *class* and *for* directly.
+You can use the normal HTML attributes like `class` and `for` directly.
 
 ```jsx
 <label for="input" class="dont-label-me"> I am a label </label>
@@ -75,7 +75,7 @@ You can use the normal HTML attributes like *class* and *for* directly.
 
 ## Headless components
 
-If you want to skip rendering the component at all you can simply return false from the render.
+If you want to skip rendering the component at all you can simply return `false` from the render.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -101,11 +101,11 @@ If all you want to do is to generate an invisible component you can skip definin
 
 Instead of creating a new component just to organize code-splitting, you can create an inner component.
 
-Inner components are any method that the name starts with render followed by an uppercase character.
+Inner components are any method that the name starts with `render` followed by an uppercase character.
 
 Inner components share the same instance and scope as the main component, therefore, are very convenient to avoid problems like props drilling.
 
-To invoke the inner component use a JSX tag with the method name without the render prefix.
+To invoke the inner component use a JSX tag with the method name without the `render` prefix.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -144,9 +144,9 @@ export default HelloWorld;
 
 Attributes can be assigned as a boolean.
 
-When the value is false the attribute will not be rendered at all.
+When the value is `false` the attribute will not be rendered at all.
 
-When the value is true it will be rendered as a boolean attribute without a string value.
+When the value is `true` it will be rendered as a boolean attribute without a string value.
 
 ```jsx
 <button disabled={false}> Button </button>
@@ -170,7 +170,7 @@ If you need to decide the tag name at runtime, you can use the element tag and s
 </element>
 ```
 
-When the tag attribute is omitted, Nullstack will default to a *div*.
+When the tag attribute is omitted, Nullstack will default to a `div`.
 
 ## SVG Elements
 
@@ -216,11 +216,11 @@ class Header extends Nullstack {
 export default Header;
 ```
 
-> ✨ This is possible because the children key is part of the [instance context](/context).
+> ✨ This is possible because the `children` key is part of the [instance context](/context#the-available-instance-client-keys-are-).
 
 ## Lists
 
-You can map over lists without declaring a key.
+You can map over lists without declaring a `key`.
 
 Lists that may change length must be wrapped in a parent element just for them.
 
@@ -230,7 +230,7 @@ Lists that may change length must be wrapped in a parent element just for them.
 </ul>
 ```
 
-You can emulate a fixed-size list by returning false instead of an element to reserve dom space.
+You can emulate a fixed-size list by returning `false` instead of an element to reserve dom space.
 
 ```jsx
 {list.map((item) => (
@@ -271,11 +271,11 @@ class List extends Nullstack {
 export default List;
 ```
 
-> ✨ Sometimes you will notice keys in the map. Learn more about the [instance key](/instance-key).
+> ✨ Sometimes you will notice keys in the map. Learn more about the [instance key](/instance-self#instance-key).
 
 ## Inner HTML
 
-You can set the inner HTML of an element with the *html* attribute.
+You can set the inner HTML of an element with the `html` attribute.
 
 Links inside the HTML string will be replaced with [routable anchors](/routes-and-params).
 
@@ -306,9 +306,9 @@ export default Post;
 
 ## The head tag
 
-Renderable components can render inside the head tag an unlimited number of times at any depth of the application.
+Renderable components can render inside the `head` tag an unlimited number of times at any depth of the application.
 
-The head tag will only be updated during the [server-side rendering](/server-side-rendering) process and changes will be ignored after the [hydration](/full-stack-lifecycle) process.
+The `head` tag will only be updated during the [server-side rendering](/server-side-rendering) process and changes will be ignored after the [hydration](/full-stack-lifecycle) process.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -338,11 +338,7 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-> 🔥 you should not use the head tag to update [metatags](/context-page) that Nullstack already controls
-
-## Caveats
-
-Currently, Nullstack doesn't support JSX Fragments. If you want to see this feature implemented please [open an issue on github](https://github.com/nullstack/nullstack/issues).
+> 🔥 You should not use the `head` tag to update [metatags](/context-page) that Nullstack already controls
 
 ## Next step
 

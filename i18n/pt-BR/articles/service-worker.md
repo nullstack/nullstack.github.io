@@ -1,30 +1,31 @@
 ---
-title: Context Service Worker
-description: The worker is a proxy in the framework store part of your context and gives you granular control of your PWA behavior.
+title: Contexto Service Worker
+description: O objeto worker é um proxy no Contexto Nullstack disponível em ambos client e server e te dá controle granular do comportamento do seu PWA
 ---
 
+- Tipo: `object`
+- Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
+- Disponibilidade: server/client
+- **readwrite** no contexto do **server**
+- **readonly** no contexto do **client**
 
-O *worker* é um proxy na parte do framework no contexto e da controle granular do comportamento do seu PWA
+Ele te dá controle granular do comportamento do seu PWA.
 
-Essa chave é *readwrite* no contexto do *servidor*
+Chaves do `worker` serão usadas para gerar o arquivo do service worker e devem ser setadas durante o [processo de inicialização](/pt-br/inicializacao-da-aplicacao).
 
-Essa chave é *readonly* no contexto do *cliente*.
-
-As chave do worker serão usadas para gerar o arquivo do service worker e devem ser setadas durante o [processo de inicialização](/pt-br/inicializacao-da-aplicacao).
-
-As chave do worker são congeladas após o [processo de inicialização](/pt-br/inicializacao-da-aplicacao). 
+Chaves do `worker` são congeladas após o [processo de inicialização](/pt-br/inicializacao-da-aplicacao). 
 
 As seguintes keys estão disponíveis no objeto durante a inicialização:
 
-- *enabled*: boolean
-- *preload*: string array (relative paths)
-- *headers*: object
+- **enabled**: `boolean`
+- **preload**: `string array` (relative paths)
+- **headers**: `object`
 
-A chave *enabled* define se o service worker será registrado automaticamente pelo Nullstack. 
+A chave `enabled` define se o service worker será registrado automaticamente pelo Nullstack. 
 
-Por padrão a key *enabled* é setada como true no modo de produção e false no modo de desenvolvimento.
+Por padrão a chave `enabled` é setada como `true` no modo de produção e `false` no modo de desenvolvimento.
 
-O array *preload* é composto por caminhos que serão cacheados quando o service worker for instalado.
+O array `preload` é composto por caminhos que serão cacheados quando o service worker for instalado.
 
 Os assets requeridos para inicializar a aplicação serão pré-carregados automaticamente, e você deverá apenas as páginas extras que você quer que estejam disponíveis em modo offline.
 
@@ -54,26 +55,26 @@ export default Application;
 
 > 💡 O exemplo acima foi extraido deste repositório e permite que a documentação esteja totalmente acessível em modo offline.
 
-As seguintes chaves estão disponíveis como *readonly* no contexto do cliente:
+As seguintes chaves estão disponíveis como **readonly** no contexto do cliente:
 
-- *enabled*: boolean
-- *preload*: string array (relative paths)
-- *online*: boolean
-- *fetching*: boolean
-- *responsive*: boolean
-- *installation*: BeforeInstallPromptEvent
-- *registration*: ServiceWorkerRegistration
-- *loading*: object
+- **enabled**: `boolean`
+- **preload**: `string array` (relative paths)
+- **online**: `boolean`
+- **fetching**: `boolean`
+- **responsive**: `boolean`
+- **installation**: `BeforeInstallPromptEvent`
+- **registration**: `ServiceWorkerRegistration`
+- **loading**: `object`
 
-As seguintes chaves estão disponíveis como *readwrite* no contexto do cliente:
+As seguintes chaves estão disponíveis como **readwrite** no contexto do cliente:
 
-- *headers*: object
+- **headers**: `object`
 
-A chave *responsive* determina se a aplicação tem todas as respostas necessárias para renderizar a página atual.
+A chave `responsive` determina se a aplicação tem todas as respostas necessárias para renderizar a página atual.
 
-O Nullstack irá tentar manter sua aplicação respondendo o maior tempo possível e irá setar a chave para false somente quando não houver mais alternativas de recuperar qualquer resposta da rede ou offline usando a estratégia de busca para o [ambiente](/pt-br/contexto-environment).
+O Nullstack irá tentar manter sua aplicação respondendo o maior tempo possível e setará a chave para `false` somente quando não houver mais alternativas de recuperar qualquer resposta da rede ou offline usando a estratégia de busca para o [ambiente](/pt-br/contexto-environment).
 
-A chave *online* irá monitorar os eventos da rede e re-renderizar a aplicação quando o valor de navigator.onLine mudar.
+A chave `online` irá monitorar os eventos da rede e re-renderizar a aplicação quando o valor de `navigator.onLine` mudar.
 
 Quando a aplicação voltar a ficar online o Nullstack irá tentar fazer a aplicação responder novamente e re-renderizar se necessário.
 
@@ -99,11 +100,11 @@ class Application extends Nullstack {
 }
 ```
 
-Você pode acessar a *registration* e *installation* do service worker atual pela chave worker para controlar o fluxo do seu PWA.
+Você pode acessar a **registration** e **installation** do service worker atual pela chave `worker` para controlar o fluxo do seu PWA.
 
-A chave *registration* se refere ao registro do service worker e só estará disponível uma vez que o processo de registro esteja completo. 
+A chave `registration` se refere ao registro do service worker e só estará disponível uma vez que o processo de registro esteja completo. 
 
-A chave *installation* se refere a instalação delegada no evento do prompt e apenas estará disponível se o evento *beforeinstallprompt* ocorrer.
+A chave `installation` se refere a instalação delegada no evento do prompt e apenas estará disponível se o evento `beforeinstallprompt` ocorrer.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -147,14 +148,13 @@ export default PWAInstaller;
 
 ## Carregando telas
 
-Quando uma [função do servidor](/pt-br/funcoes-de-servidor) é chamada o *fetching* será setado como true até a requisição ser resolvida.
+Quando uma [função do servidor](/pt-br/funcoes-de-servidor) é chamada o `fetching` será setado como `true` até a requisição ser resolvida.
 
-Quando uma [função do servidor](/pt-br/funcoes-de-servidor) é chamada a key com o nome da [função do servidor](/pt-br/funcoes-de-servidor)
-invocada será setada como true na chave *loading* até a requisição for resolvida. 
+Quando uma [função do servidor](/pt-br/funcoes-de-servidor) é chamada a chave com o nome da [função do servidor](/pt-br/funcoes-de-servidor) invocada será setada como `true` na chave `loading` até a requisição ser resolvida.
 
-Qualquer chave que for chamada no objeto *loading* sempre irá retornar um valor booleano ao invés de undefined por consistência.
+Qualquer chave que for chamada no objeto `loading` sempre irá retornar um valor booleano ao invés de `undefined` por consistência.
 
-Quando o servidor estiver emulando o contexto do cliente para [renderização no lado do servidor](/pt-br/renderizando-no-servidor), todas as chaves de *loading* vão sempre retornar falso, pulando multiplos ciclos de render por performance.
+Quando o servidor estiver emulando o contexto do cliente para [renderização no lado do servidor](/pt-br/renderizando-no-servidor), todas as chaves de `loading` vão sempre retornar `false`, pulando multiplos ciclos de render por performance.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -189,7 +189,7 @@ export default Page;
 
 ## Headers customizadas
 
-Você pode usar a chave *headers* para configurar as headers que o *worker* usará na requisição para uma função do servidor
+Você pode usar a chave `headers` para configurar as headers que o *worker* usará na requisição para uma função do servidor
 
 > 🔥 headers serão ignorados quando uma função do servidor for chamada durante o processo de [renderização do lado do servidor](/pt-br/renderizando-no-servidor) 
 
@@ -227,9 +227,8 @@ export default LoginPage;
 - Requisições diferentes do método GET serão realizadas normalmente;
 - Assets com Fingerprints serão carregados no cache no momento da instalação;
 - Assets com Fingerprints serão carregados do cache primeiro, e só então retornados para a rede, se necessário;
-- Caminhos com uma extensão serão recuperaados e atualizarão o cache em segundo plano para uma requisição subsequente;
-- Os caminhos navegados serão carregados da rede e se falhar serão retornados do cache para a página na qual o *worker.responsive* e o *worker.online* estiverem setados como false;
-
+- Caminhos com uma extensão serão recuperados e atualizarão o cache em segundo plano para uma requisição subsequente;
+- Os caminhos navegados serão carregados da rede e se falhar serão retornados do cache para a página na qual o `worker.responsive` e o `worker.online` estiverem setados como `false`;
 
 ## Estratégia de geração de site estático
 
@@ -241,25 +240,25 @@ export default LoginPage;
 - A página inicial será carregada na rede primeiro, e se necessário será retornada uma cópia em cache;
 - Caminhos navegados irão carregar apenas os dados da API estática e mesclar com o template da aplicação para gerar a resposta.
 - Navegar para uma rota estática irá fazer cache apenas dos dados daquela página;
-- Quando os dados estiverem indisponíveis no cache ou na rede irá retornar uma página na qual *worker.responsive* e *worker.online* estiverem setados como false;
+- Quando os dados estiverem indisponíveis no cache ou na rede irá retornar uma página na qual `worker.responsive` e `worker.online` estiverem setados como `false`;
 
 ## Estratégia customizada
 
-O Nullstack irá instalar automaticamente seu service worker se *enabled* estiver setado como true com os seguintes eventos:
+O Nullstack irá instalar automaticamente seu service worker se `enabled` estiver setado como `true` com os seguintes eventos:
 
-- install
-- activate
-- fetch
+- `install`
+- `activate`
+- `fetch`
 
-Você pode sobreescrever qualquer um desses eventos criando um *service-worker.js* na pasta public;
+Você pode sobreescrever qualquer um desses eventos criando um **service-worker.js** na pasta public;
 
-Se qualquer uma das palavras chaves acima for encontrada o Nullstack ira injetar sua função no código do service worker ao invés do padrão.
+Se qualquer uma das palavras chaves acima for encontrada o Nullstack injetará sua função no código do service worker ao invés do padrão.
 
-Por conviniência uma chave chamada *context* é injetada no *self* do service worker com as seguintes chaves:
+Por conveniência uma chave chamada `context` é injetada no `self` do service worker com as seguintes chaves:
 
-- worker
-- [project](/pt-br/contexto-project)
-- [environment](/pt-br/contexto-environment)
+- `worker`
+- [`project`](/pt-br/contexto-project)
+- [`environment`](/pt-br/contexto-environment)
 
 ```jsx
 function activate(event) {
@@ -277,7 +276,7 @@ function activate(event) {
 self.addEventListener('activate', activate);
 ```
 
-> 💡 O exemplo acima foi extraido do service worker gerado e usa self.context.enviroment.key
+> 💡 O exemplo acima foi extraido do service worker gerado e usa `self.context.enviroment.key`
 
 ## Próximo passo
 

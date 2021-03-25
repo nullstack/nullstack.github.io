@@ -41,8 +41,6 @@ topics:
         href: "/context-secrets"
       - title: "Instance self"
         href: "/instance-self"
-      - title: "Instance Key"
-        href: "/instance-key"
       - title: "Server request and response"
         href: "/server-request-and-response"
       - title: "Styles"

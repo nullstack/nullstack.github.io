@@ -9,7 +9,7 @@ De acordo com [developers.facebook.com](https://developers.facebook.com/docs/fac
 
 Você pode aproveitar as vantagens do [contexto](/pt-br/contexto) e dos [eventos personalizados](/pt-br/contexto-page) para criar um componente que envia eventos Pixel dinamicamente.
 
-O Facebook Pixel só pode ser chamado depois de [hydrate](/pt-br/ciclo-de-vida-full-stack) para garantir que está sendo executado no cliente.
+O Facebook Pixel só pode ser chamado depois de [`hydrate`](/pt-br/ciclo-de-vida-full-stack) para garantir que está sendo executado no cliente.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -101,6 +101,6 @@ export default Application;
 
 ## Próximo Passo
 
-> 🎉 *Parabéns*. Você concluiu a documentação!
+> 🎉 **Parabéns**. Você concluiu a documentação!
 
 ⚔ Se você deseja ver mais exemplos aqui, [abra uma issue no github](https://github.com/nullstack/nullstack/issues).

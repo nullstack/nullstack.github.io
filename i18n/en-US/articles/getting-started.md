@@ -71,7 +71,7 @@ It is a good practice to import a style file in a component with the same name.
 
 Every file in here will be available to anyone from the domain root.
 
-By default `create-nullstack-app` generates the icons required for your `manifest.json` and images for OG meta tags.
+By default `create-nullstack-app` generates the icons required for your **manifest.json** and images for OG meta tags.
 
 >✨ Learn more about [manifest.json](/context-project).
 

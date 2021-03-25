@@ -1,29 +1,31 @@
 ---
 title: Context Service Worker
-description: The worker is a proxy in the framework store part of your context and gives you granular control of your PWA behavior.
+description: The worker object is a proxy in the Nullstack Context available in both client and server and gives you granular control of your PWA behavior
 ---
 
-The *worker* is a proxy in the framework store part of your context and gives you granular control of your PWA behavior.
+- Type: `object`
+- Origin: [Nullstack Context](/context#----nullstack-context)
+- Availability: server/client
+- **readwrite** in **server** context
+- **readonly** in **client** context
 
-This key is *readwrite* in the *server* context.
+It gives you granular control of your PWA behavior.
 
-This key is *readonly* in the *client* context.
+`worker` keys will be used to generate the service worker file and should be set during the [application startup](/application-startup).
 
-Worker keys will be used to generate the service worker file and should be set during the [application startup](/application-startup).
-
-Worker keys are frozen after the [application startup](/application-startup).
+`worker` keys are frozen after the [application startup](/application-startup).
 
 The following keys are available in the object during the startup:
 
-- *enabled*: boolean
-- *preload*: string array (relative paths)
-- *headers*: object
+- **enabled**: `boolean`
+- **preload**: `string array` (relative paths)
+- **headers**: `object`
 
-The *enabled* key defines if the service worker will be automatically registered by Nullstack. 
+The `enabled` key defines if the service worker will be automatically registered by Nullstack. 
 
-By default *enabled* is set to true on production mode and false on development mode.
+By default `enabled` is set to `true` on production mode and `false` on development mode.
 
-*preload* is an array of paths that will be cached when the service worker is installed.
+`preload` is an array of paths that will be cached when the service worker is installed.
 
 The assets required to start the application will be preloaded automatically, and you should configure only the extra pages you want to have available offline.
 
@@ -53,26 +55,26 @@ export default Application;
 
 > 💡 the example above is extracted from this repository and allows the documentation to be fully accessible offline.
 
-The following keys are available as *readonly* in the client context:
+The following keys are available as **readonly** in the client context:
 
-- *enabled*: boolean
-- *preload*: string array (relative paths)
-- *online*: boolean
-- *fetching*: boolean
-- *responsive*: boolean
-- *installation*: BeforeInstallPromptEvent
-- *registration*: ServiceWorkerRegistration
-- *loading*: object
+- **enabled**: `boolean`
+- **preload**: `string array` (relative paths)
+- **online**: `boolean`
+- **fetching**: `boolean`
+- **responsive**: `boolean`
+- **installation**: `BeforeInstallPromptEvent`
+- **registration**: `ServiceWorkerRegistration`
+- **loading**: `object`
 
-The following keys are available as *readwrite* in the client context:
+The following keys are available as **readwrite** in the client context:
 
-- *headers*: object
+- **headers**: `object`
 
-The *responsive* key determines if the application has all the responses it needs to render the current page.
+The `responsive` key determines if the application has all the responses it needs to render the current page.
 
-Nullstack will try to keep your application responsive as long as possible and set the key to false only when there are no ways of retrieving any response from the network or offline according to the fetch strategy for the [environment](/context-environment).
+Nullstack will try to keep your application responsive as long as possible and set the key to `false` only when there are no ways of retrieving any response from the network or offline according to the fetch strategy for the [environment](/context-environment).
 
-The *online* key will listen for network events and rerender the application when navigator.onLine value changes.
+The `online` key will listen for network events and rerender the application when `navigator.onLine` value changes.
 
 When the application is back online Nullstack will try to make the application responsive again and rerender if necessary.
 
@@ -98,11 +100,11 @@ class Application extends Nullstack {
 }
 ```
 
-You can access the current service worker *registration* and *installation* from the worker key to control the flow of your PWA.
+You can access the current service worker **registration** and **installation** from the `worker` key to control the flow of your PWA.
 
-The *registration* key refers to the service worker registration and will be only available once the registration process is complete.
+The `registration` key refers to the service worker registration and will be only available once the registration process is complete.
 
-The *installation* key refers to the deferred installation prompt event and will only be available if the *beforeinstallprompt* event is triggered.
+The `installation` key refers to the deferred installation prompt event and will only be available if the `beforeinstallprompt` event is triggered.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -146,13 +148,13 @@ export default PWAInstaller;
 
 ## Loading Screens
 
-When a [server function](/server-functions) is called *fetching* will be set to true until the response is resolved.
+When a [server function](/server-functions) is called `fetching` will be set to `true` until the response is resolved.
 
-When a [server function](/server-functions) is called a key with the name of the [server function](/server-functions) invoked will be set to true in the *loading* key until the response is resolved.
+When a [server function](/server-functions) is called a key with the name of the [server function](/server-functions) invoked will be set to `true` in the `loading` key until the response is resolved.
 
-Any key you invoke on the *loading* object will always return a boolean instead of undefined for consistency.
+Any key you invoke on the `loading` object will always return a boolean instead of `undefined` for consistency.
 
-When the server is emulating the client context for [server-side rendering](/server-side-rendering), every key of the *loading* object will always return false, saving multiple render cycles in performance.
+When the server is emulating the client context for [server-side rendering](/server-side-rendering), every key of the `loading` object will always return `false`, saving multiple render cycles in performance.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -187,7 +189,7 @@ export default Page;
 
 ## Custom headers
 
-You can use the *headers* key to configure the headers that the worker will use when fetching a server function.
+You can use the `headers` key to configure the headers that the worker will use when fetching a server function.
 
 > 🔥 Headers will be ignored when a server function is called during the [server-side rendering](/server-side-rendering) process.
 
@@ -226,7 +228,7 @@ export default LoginPage;
 - Fingerprinted assets will be loaded into cache at installation time;
 - Fingerprinted assets will be loaded from cache first then fallback to the network if needed;
 - Paths with an extension will be retrieved stale and update the cache in the background for subsequent request;
-- Navigation paths will be loaded from the network then fallback to a page in which *worker.responsive* and *worker.online* are set to false;
+- Navigation paths will be loaded from the network then fallback to a page in which `worker.responsive` and `worker.online` are set to `false`;
 
 ## Static-site generation strategy
 
@@ -238,26 +240,25 @@ export default LoginPage;
 - The home page will be loaded network first and then fallback to a cached copy if needed;
 - Navigation paths will instead load only the static API data and merge it with the application template to generate a response.
 - Navigating to a static route will cache only the data of that page;
-- When data is not available in the cache or network it will fallback to a page in which *worker.responsive* and *worker.online* are set to false;
-
+- When data is not available in the cache or network it will fallback to a page in which `worker.responsive` and `worker.online` are set to `false`;
 
 ## Custom Strategy
 
-Nullstack will install automatically your service worker if *enabled* is set to true with the following events:
+Nullstack will install automatically your service worker if `enabled` is set to `true` with the following events:
 
-- install
-- activate
-- fetch
+- `install`
+- `activate`
+- `fetch`
 
-You can override any of those events by creating a *service-worker.js* in the public folder;
+You can override any of those events by creating a **service-worker.js** in the public folder;
 
 If any of the keywords above are found Nullstack will inject your function in the service worker code instead of the default.
 
-For convenience a *context* key is injected in the service worker *self* with the following keys:
+For convenience a `context` key is injected in the service worker `self` with the following keys:
 
-- worker
-- [project](/context-project)
-- [environment](/context-environment)
+- `worker`
+- [`project`](/context-project)
+- [`environment`](/context-environment)
 
 ```jsx
 function activate(event) {
@@ -275,7 +276,7 @@ function activate(event) {
 self.addEventListener('activate', activate);
 ```
 
-> 💡 The example above is extracted from the generated service worker and uses self.context.environment.key
+> 💡 The example above is extracted from the generated service worker and uses `self.context.environment.key`
 
 ## Next step
 

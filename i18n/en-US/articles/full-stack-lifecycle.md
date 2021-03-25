@@ -13,7 +13,7 @@ This method is blocking and runs before the first time the component is rendered
 
 You can use this function to set the state that the user will see before things are loaded.
 
-If the user is entering from this route *prepare* will run in the server before Nullstack [server-side renders](/server-side-rendering) your application.
+If the user is entering from this route `prepare` will run in the server before Nullstack [server-side renders](/server-side-rendering) your application.
 
 If the user is navigating from another route this method will run in the client.
 
@@ -41,7 +41,7 @@ This method can be async and runs right after the component is prepared and rend
 
 You can use this function to invoke another server function and load the data to present the page.
 
-If the user is entering from this route *initiate* will run in the server.
+If the user is entering from this route `initiate` will run in the server.
 
 Nullstack will wait till the promise is resolved and then finally generate the HTML that will be served.
 
@@ -103,11 +103,11 @@ This method is async and will only run in the client.
 
 This method runs on every component anytime the application state changes.
 
-> 🔥 Be careful not to cause infinite loopings when mutating state inside *update*.
+> 🔥 Be careful not to cause infinite loopings when mutating state inside `update`.
 
 This will run right before rendering but will not block the rendering queue.
 
-The *update* function will not start running until the application is rendered after the initiate.
+The `update` function will not start running until the application is rendered after the `initiate`.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -139,9 +139,9 @@ This method is async and will only run in the client.
 
 This method will run after your component leaves the DOM.
 
-This is the place to clean up whatever you set up in the *hydrate* method.
+This is the place to clean up whatever you set up in the `hydrate` method.
 
-The instance will be garbage collected after the promise is resolved.
+The instance will be garbage collected after the `Promise` is resolved.
 
 ```jsx
 import Nullstack from 'nullstack';
