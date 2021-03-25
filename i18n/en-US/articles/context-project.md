@@ -46,7 +46,7 @@ If the `sitemap` key is set to true your **robots.txt** file will point the site
 
 The `cdn` key will prefix your asset bundles and will be available in the context so you can manually prefix other assets.
 
-The `protocol` key is "http" in development mode and "https" in production mode by default
+The `protocol` key is "http" in development mode and "https" in production mode by default.
 
 ```jsx
 import Nullstack from 'nullstack';

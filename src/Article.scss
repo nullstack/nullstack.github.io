@@ -52,15 +52,12 @@ article {
 
   }
 
-  li,
-  & > p {
-    & code:not([class^=language]) {
-      font-size: 1.1rem;
-      vertical-align: text-bottom;
-      background: var(--neutral-color);
-      padding: 0 2px;
-      border-radius: 2px;
-    }
+  & code:not([class^=language]) {
+    font-size: 1.1rem;
+    vertical-align: 1px;
+    background: var(--neutral-color);
+    padding: 0 2px;
+    border-radius: 2px;
   }
 
 }

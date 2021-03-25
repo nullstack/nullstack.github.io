@@ -15,9 +15,9 @@ Chaves de `page` serão usadas para gerar as metatags durante a [renderização 
 As seguintes chaves estão disponíveis no objeto:
 
 - **title**: `string`
-- **image**: `string (URL absoluto ou relativo)`
+- **image**: `string` (URL absoluto ou relativo)
 - **description**: `string`
-- **canonical**: `string (URL absoluto ou relativo)`
+- **canonical**: `string` (URL absoluto ou relativo)
 - **locale**: `string`
 - **robots**: `string`
 - **schema**: `object`
@@ -102,7 +102,7 @@ export default Analytics;
 
 Se durante o processo de [renderização no lado do servidor](/pt-br/renderizando-no-servidor) o `page.status` estiver com qualquer valor além de `200`, seu aplicativo receberá outra passagem na renderização e lhe possibilitará ajustar a interface de acordo com o status retornado.
 
-A chave de status será gerada na resposta HTTP.
+A chave `status` será gerada na resposta HTTP.
 
 O status da página será modificado para `500` e receberá outra passagem na renderização se a página gerar uma exceção enquanto renderiza.
 
@@ -131,8 +131,8 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-> 🔥 A atribuição à chave de status durante o modo [aplicativo de página única](/pt-br/ciclo-de-vida-full-stack) não terá efeito.
+> 🔥 A atribuição à chave `status` durante o modo [aplicativo de página única](/pt-br/ciclo-de-vida-full-stack) não terá efeito.
 
 ## Próximo Passo
 
-⚔ Aprenda sobre o [contexto `project`](/pt-br/contexto-project).
+⚔ Aprenda sobre a [chave `project` do contexto](/pt-br/contexto-project).

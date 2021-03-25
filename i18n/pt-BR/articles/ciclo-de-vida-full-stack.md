@@ -13,7 +13,7 @@ Esse método é bloqueante e roda antes da primeira renderização do componente
 
 Você pode usar essa função para definir o estado que o usuário verá antes do carregamento.
 
-Se o usuário estiver entrando através dessa rota, *prepare* irá rodar no servidor antes do Nullstack [renderizar sua aplicação no lado do servidor](/pt-br/renderizando-no-servidor).
+Se o usuário estiver entrando através dessa rota, `prepare` irá rodar no servidor antes do Nullstack [renderizar sua aplicação no lado do servidor](/pt-br/renderizando-no-servidor).
 
 Se o usuário estiver navegando por outra rota, esse método rodará no cliente.
 
@@ -41,7 +41,7 @@ Esse método pode ser assíncrono, e roda assim que o componente for preparado e
 
 Você pode usá-lo para invocar outra função do servidor e carregar os dados para apresentar a página.
 
-Se o usuário estiver entrando através dessa rota, *initiate* rodará no servidor.
+Se o usuário estiver entrando através dessa rota, `initiate` rodará no servidor.
 
 Nullstack irá esperar até que a promise seja resolvida e então finalmente irá gerar o HTML que será servido.
 
@@ -102,11 +102,11 @@ Esse método é assíncrono e rodará apenas no cliente.
 
 Ele roda em todos os componentes sempre que o estado da aplicação mudar.
 
-> 🔥 Tome cuidado para não causar loops infinitos quando mutacionar o estado dentro de *update*.
+> 🔥 Tome cuidado para não causar loops infinitos quando mutacionar o estado dentro de `update`.
 
 Ele irá rodar logo antes da renderização, mas não irá bloquear a fila.
 
-A função *update* não rodará até que a aplicação seja renderizada após *initiate*.
+A função `update` não rodará até que a aplicação seja renderizada após `initiate`.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -138,9 +138,9 @@ Esse método é assíncrono e rodará apenas no cliente.
 
 Ele irá rodar após o componente deixar o DOM.
 
-Esse é o lugar para limpar qualquer coisa que você definiu no método *hydrate*.
+Esse é o lugar para limpar qualquer coisa que você definiu no método `hydrate`.
 
-Essa instância será levada pelo garbage collector após a resolução da promise.
+Essa instância será levada pelo garbage collector após a resolução da `Promise`.
 
 ```jsx
 import Nullstack from 'nullstack';

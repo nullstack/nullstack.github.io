@@ -5,21 +5,21 @@ description: Com o Nullstack é fácil ter sua aplicação instalada e funcionan
 
 Com o Nullstack é fácil ter sua aplicação instalada e funcionando no modo de produção
 
-> 🐱‍💻 *stonks*
+> 🐱‍💻 **stonks**
 
 Nullstack compila seu código e todas as suas dependências usando [Webpack](https://webpack.js.org).
 
-A saída da compilação é movida para a pasta *.production* e é a única pasta além de *public* que precisa ser movida para a máquina host.
+A saída da compilação é movida para a pasta **.production** e é a única pasta além de **public** que precisa ser movida para a máquina host.
 
-Se você tiver *project.cdn* definido, deverá mover a pasta pública para o cdn real.
+Se você tiver `project.cdn` definido, deverá mover a pasta **public** para o cdn real.
 
-> 💡 É importante que a pasta *.production* esteja presente para a detecção do ambiente
+> 💡 É importante que a pasta **.production** esteja presente para a detecção do ambiente
 
 A máquina host deve ter pelo menos a versão 8.10.0 do node instalada.
 
 Você não precisa executar "npm install" na máquina host.
 
-> ✨ Você pode configurar o ambiente usando [configurações](/pt-br/contexto-settings) e [secrets](/pt-br/contexto-secrets)
+> ✨ Você pode configurar o ambiente usando [`settings`](/pt-br/contexto-settings) e [`secrets`](/pt-br/contexto-secrets)
 
 Para iniciar o servidor, basta executar:
 
@@ -35,6 +35,6 @@ Depois de [gerar um site estático](/pt-br/geracao-de-sites-estaticos), tudo o q
 
 ## Próxima Etapa
 
-> 🎉 *Parabéns*. Você concluiu os conceitos avançados!
+> 🎉 **Parabéns**. Você concluiu os conceitos avançados!
 
 ⚔ Aprenda [como usar MongoDB com Nullstack](/pt-br/como-usar-mongodb-com-nullstack).

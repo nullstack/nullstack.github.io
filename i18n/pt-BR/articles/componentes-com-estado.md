@@ -23,6 +23,7 @@ Os eventos são declarados como atributos HTML normais.
 import Nullstack from "nullstack";
 
 class Counter extends Nullstack {
+
   count = 0;
 
   increment() {
@@ -30,8 +31,13 @@ class Counter extends Nullstack {
   }
 
   render() {
-    return <button onclick={this.increment}>{this.count}</button>
+    return (
+      <button onclick={this.increment}>
+        {this.count}
+      </button>
+    )
   }
+
 }
 
 export default Counter;
@@ -59,6 +65,7 @@ class Counter extends Nullstack {
       </button>
     )
   }
+
 }
 
 export default Counter;
@@ -74,6 +81,7 @@ Você pode usar o atributo `source` para definir qual objeto receberá as atribu
 import Nullstack from "nullstack";
 
 class Paginator extends Nullstack {
+
   render({ params }) {
     return (
       <button source={params} onclick={{ page: 1 }}>
@@ -81,12 +89,13 @@ class Paginator extends Nullstack {
       </button>
     )
   }
+
 }
 
 export default Paginator;
 ```
 
-> ✨ Aprenda mais sobre [parâmetros de contexto](/pt-br/rotas-e-parametros).
+> ✨ Aprenda mais sobre a [chave `params` do contexto](/pt-br/rotas-e-parametros).
 
 > 💡 Se você não declarar uma fonte para o evento, o Nullstack injetará `source={this}` no tempo de transpilação para pular completamente o processo de pesquisa em tempo de execução!
 
@@ -98,6 +107,7 @@ Os atributos do elemento-alvo do evento serão mesclados ao `context` da instân
 import Nullstack from "nullstack";
 
 class Counter extends Nullstack {
+
   count = 0;
 
   increment({ delta }) {
@@ -111,6 +121,7 @@ class Counter extends Nullstack {
       </button>
     )
   }
+
 }
 
 export default Counter;
@@ -118,13 +129,13 @@ export default Counter;
 
 > 💡 Qualquer atributo com valor primitivo será adicionado ao DOM.
 
-> ✨ Considere usar o [atributo `data`](/pt-br/contexto-data) para tornar seu HTML válido.
+> ✨ Considere usar [atributos `data`](/pt-br/contexto-data) para tornar seu HTML válido.
 
 ## Evento Original
 
 O comportamento padrão do navegador é impedido por padrão.
 
-Você pode desativar isso declarando um atributo padrão para o elemento de evento.
+Você pode desativar isso declarando um atributo `default` para o elemento de evento.
 
 Uma referência ao evento original é sempre mesclada com o contexto da função.
 

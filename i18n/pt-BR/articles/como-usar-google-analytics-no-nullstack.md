@@ -9,7 +9,7 @@ De acordo com [analytics.google.com](https://analytics.google.com):
 
 Você pode aproveitar as vantagens do [contexto](/pt-br/contexto) e dos [eventos personalizados](/pt-br/contexto-page) para criar um componente que envia eventos GTAG dinamicamente.
 
-O GTAG só pode ser chamado depois de [hydrate](/pt-br/ciclo-de-vida-full-stack) para garantir que está sendo executado no cliente.
+O GTAG só pode ser chamado depois de [`hydrate`](/pt-br/ciclo-de-vida-full-stack) para garantir que está sendo executado no cliente.
 
 ```jsx
 import Nullstack from 'nullstack';

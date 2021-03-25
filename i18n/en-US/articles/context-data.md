@@ -14,9 +14,9 @@ You can use this key to avoid polluting your DOM with invalid attributes.
 
 > 💡 This helps Nullstack set attributes without wasting time validating them.
 
-Any *data-\** attributes will receive a respective camelized key on the data object.
+Any `data-*` attributes will receive a respective camelized key on the `data` object.
 
-You can assign data attributes both via data-* and a data key that accepts an object with camelized keys.
+You can assign `data` attributes both via `data-*` and a `data` key that accepts an object with camelized keys.
 
 The kebab version is also available in the context.
 
@@ -58,8 +58,8 @@ class ContextData extends Nullstack {
 export default ContextData;
 ```
 
-> 💡 Camelized keys from the data object will result in kebab attributes in the DOM.
+> 💡 Camelized keys from the `data` object will result in kebab attributes in the DOM.
 
 ## Next step
 
-⚔ Learn about the [context environment](/context-environment).
+⚔ Learn about the [context `environment`](/context-environment).

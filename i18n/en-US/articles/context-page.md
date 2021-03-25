@@ -15,9 +15,9 @@ It gives you information about the document `head` metatags.
 The following keys are available in the object:
 
 - **title**: `string`
-- **image**: `string (absolute or relative URL)`
+- **image**: `string` (absolute or relative URL)
 - **description**: `string`
-- **canonical**: `string (absolute or relative URL)`
+- **canonical**: `string` (absolute or relative URL)
 - **locale**: `string`
 - **robots**: `string`
 - **schema**: `object`
@@ -27,9 +27,9 @@ The following keys are available in the object:
 
 When the `title` key is assigned on the client-side, the document title will be updated.
 
-Nullstack uses the `changes` and `priority` keys to generate the **sitemap.xml**
+Nullstack uses the `changes` and `priority` keys to generate the **sitemap.xml**.
 
-The sitemap is generated automatically only when using [static site generation](/static-site-generation) and must be manually generated in [server-side rendered](/server-side-rendering) applications
+The sitemap is generated automatically only when using [static site generation](/static-site-generation) and must be manually generated in [server-side rendered](/server-side-rendering) applications.
 
 The `changes` key represents the `changefreq` key in the **sitemap.xml** and if assigned must be one of the following values:
 
@@ -104,7 +104,7 @@ export default Analytics;
 
 If during the [server-side render](/server-side-rendering) process the `page.status` has any value besides `200`, your application will receive another render pass that gives you the chance to adjust the interface according to the status.
 
-The status key will be raised with the HTTP response.
+The `status` key will be raised with the HTTP response.
 
 The page status will be modified to `500` and receive another render pass if the page raise an exception while rendering.
 
@@ -133,7 +133,7 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-> 🔥 Assigning to the status key during the [single-page application](/full-stack-lifecycle) mode will have no effect.
+> 🔥 Assigning to the `status` key during the [single-page application](/full-stack-lifecycle) mode will have no effect.
 
 ## Next step
 

@@ -95,9 +95,9 @@ class Paginator extends Nullstack {
 export default Paginator;
 ```
 
-> ✨ Learn more about [context params](/routes-and-params).
+> ✨ Learn more about [context `params`](/routes-and-params).
 
-> 💡 If you do not declare a source to the event, Nullstack will inject a source={this} at transpile time in order to completely skip the runtime lookup process!
+> 💡 If you do not declare a source to the event, Nullstack will inject a `source={this}` at transpile time in order to completely skip the runtime lookup process!
 
 ## Event Context
 
@@ -129,13 +129,13 @@ export default Counter;
 
 > 💡 Any attribute with primitive value will be added to the DOM. 
 
-> ✨ Consider using [data attributes](/context-data) to make your html valid.
+> ✨ Consider using [`data` attributes](/context-data) to make your html valid.
 
 ## Original Event
 
 The browser default behavior is prevented by default.
 
-You can opt-out of this by declaring a default attribute to the event element.
+You can opt-out of this by declaring a `default` attribute to the event element.
 
 A reference to the original event is always merged with the function context.
 

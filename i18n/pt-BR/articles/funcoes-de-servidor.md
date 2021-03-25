@@ -5,7 +5,7 @@ description: Server functions are specialized microservices that at transpile ti
 
 Server functions are specialized microservices that at transpile time are converted into API entry points.
 
-To flag a function as a server function, you must declare it as *static async*.
+To flag a function as a server function, you must declare it as `static async`.
 
 Being a static function means it has no access to the instance scope.
 
@@ -66,11 +66,11 @@ export default Component;
 
 ## Server behavior
 
-Server functions will be used as local functions, simply aliasing the *instance* call to the *class* and merging the arguments with the server context
+Server functions will be used as local functions, simply aliasing the *instance* call to the *class* and merging the arguments with the server context.
 
 ## Date Convenience
 
-Dates are serialized as UTC in JSON and deserialized back to date objects.
+Dates are serialized as UTC in JSON and deserialized back to `Date` objects.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -95,7 +95,7 @@ export default Component;
 
 ## Fetch Convenience
 
-Fetch is available in both server and client functions for the sake of isomorphy.
+`fetch` is available in both server and client functions for the sake of isomorphy.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -144,7 +144,7 @@ export default Application;
 
 ## Security
 
-Keep in mind that every server function is similar to an express route in API and must be coded without depending on view logic for security.
+Keep in mind that every server function is similar to an Express route in API and must be coded without depending on view logic for security.
 
 > 🔒 Server functions with the name starting with "start" (and optionally followed by an uppercase letter) do not generate an API endpoint to avoid malicious context flooding.
 
@@ -175,13 +175,13 @@ Server function names cannot collide with instance method names from the current
 
 The following words cannot be used in server functions:
 
-- prepare
-- initiate
-- hydrate
-- update
-- terminate
+- `prepare`
+- `initiate`
+- `hydrate`
+- `update`
+- `terminate`
 
-Server functions named *start* will not generate an API endpoint and can only be called by other server functions.
+Server functions named `start` will not generate an API endpoint and can only be called by other server functions.
 
 ## Caveats
 

@@ -71,7 +71,7 @@ Este é um arquivo vazio só para demonstrar que você pode usar [SCSS com Nulls
 
 Todo arquivo aqui ficará disponível para qualquer um na raíz do domínio.
 
-Por padrão `create-nullstack-app` gera os ícones necessários para o seu `manifest.json` e imagens para meta tags OG.
+Por padrão `create-nullstack-app` gera os ícones necessários para o seu **manifest.json** e imagens para meta tags OG.
 
 >✨ Saiba mais sobre o [manifest.json](/pt-br/contexto-project).
 
