@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "cf94e639f15e035c605213991305cfe1"
+    "key": "38d4097ba93f9c9dfb68420ddc8faeba"
   },
   "project": {
     "type": "website",
@@ -55,7 +55,6 @@ self.context = {
       "/how-to-use-facebook-pixel-with-nullstack",
       "/how-to-use-google-analytics-with-nullstack",
       "/how-to-use-mongodb-with-nullstack",
-      "/instance-key",
       "/instance-self",
       "/njs-file-extension",
       "/renderable-components",
