@@ -77,8 +77,8 @@ class Home extends Translatable {
   renderShowcase() {
     return (
       <section class="x lg-x12z xl md-p2x">
-        <Feature key="Application" />
-        <Feature key="TaskList" />
+        <Feature key="ProductList" />
+        <Feature key="ProductForm" />
         <div class="xl x12 p1">
           <div class="xl x12 bcm2 p2t">
             {this.i18n.showcase.descriptions.map((description) => <p class="xx x12 m2b p4x lh16" html={description} />)}
@@ -150,7 +150,13 @@ class Home extends Translatable {
           <div class="xl p10y">
             {this.i18n.why.reasons.map((reason) => <Reason {...reason} />)}
           </div>
-          <a href={this.i18n.why.getStarted.link} title={this.i18n.why.getStarted.text} class="bci1 cm1 ci1:h bgi1 bgm1:h p2y p4x"> {this.i18n.why.getStarted.text} </a>
+          <a 
+            href={this.i18n.why.getStarted.link} 
+            title={this.i18n.why.getStarted.text} 
+            class="bci1 cm1 ci1:h bgi1 bgm1:h p2y p4x"
+          > 
+            {this.i18n.why.getStarted.text} 
+          </a>
           <span class="x12 fs4"> ╰(*°▽°*)╯ </span>
         </div>
       </section>
