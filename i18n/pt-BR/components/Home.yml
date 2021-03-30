@@ -17,7 +17,7 @@ cycle:
     title: "Single Page Application"
     link: "/pt-br/ciclo-de-vida-full-stack"
     text:
-      "Após hidratação, requisições irão buscar JSON de uma <strong>API gerada automaticamente</strong> por funções do servidor, atualizar o estado do aplicativo e renderizar a página novamente."
+      "Após hidratação, requisições irão buscar JSON de uma <strong>API gerada automaticamente</strong> por funções do servidor, atualizar o estado da aplicação e renderizar a página novamente."
   ssg:
     title: "Geração de Site Estático"
     link: "/pt-br/geracao-de-sites-estaticos"
@@ -26,11 +26,11 @@ about:
   heading: "Recursos Completos como Componentes"
   taglines:
     - "Nullstack não é apenas outra parte de sua stack, mas sim a sua stack"
-    - "Seu aplicativo pode ser exportado do back-end para o front-end como um componente e montado em outro aplicativo"
+    - "Sua aplicação pode ser exportado do back-end para o front-end como um componente e montado em outra aplicação"
 showcase:
   descriptions:
-    - "O exemplo acima usa <a href='/pt-br/funcoes-de-servidor' class='ci1 p1x'>funções de servidor</a> para ler tarefas de um arquivo JSON e armazená-las no <a href='/pt-br/contexto' class='ci1 p1x'>contexto</a> disponível para todos os componentes."
-    - "As tarefas são listadas em uma <a href='/pt-br/rotas-e-parametros' class='ci1 p1x'>rota</a> específica que renderiza um componente com vários <a href='/pt-br/componentes-renderizaveis' class='ci1 p1x'>componentes internos</a> filtrado por status e com inputs usando <a href='/pt-br/vinculo-bidirecional' class='ci1 p1l'>vínculos bidirecionais</a>."
+    - "O exemplo acima é o código completo de uma listagem de produtos e um formulário de edição sem esconder nenhuma linha."
+    - "Ambos os componentes invocam funções de servidor para ter acesso ao banco de dados MySQL no meio do JavaScript sem você ter que pensar em APIs."
 productivity:
   heading: "A Produtividade está nos Detalhes"
   tagline: "Os recursos do Nullstack foram extraídos de projetos da vida real com conveniência e consistência em mente"
@@ -74,7 +74,7 @@ why:
     - title: "Ecossistema já existente"
       description: "Tira proveito de todo e qualquer pacote isomórfico em Vanilla Javascript já feito em toda história."
       link: "/pt-br/sobre#tudo---possivel"
-      closer: "Todo o seu aplicativo fala a mesma língua."
+      closer: "Todo o sua aplicação fala a mesma língua."
     - title: "Adapte-se rapidamente às mudanças de escopo"
       description: "A estrutura horizontal, ao contrário de uma hierárquica, torna muito mais fácil mover os recursos."
       link: "/pt-br/sobre#por-que-inje--o-de-depend-ncia-em-vez-de-modularidade"
