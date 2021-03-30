@@ -32,8 +32,8 @@ about:
     - "Your application can be exported from back-end to front-end as a component and mounted into another application"
 showcase:
   descriptions:
-    - "The example above uses <a href='/server-functions' class='ci1 p1x'> server functions </a> to read tasks from a JSON file and store them in the <a href='/context' class='ci1 p1x'> context </a> available to all components."
-    - "The tasks are listed in a specific <a href='/routes-and-params' class='ci1 p1x'> route </a> that renders a component with multiple <a href='/renderable-components' class='ci1 p1x'> inner components </a> filtered by status with inputs using <a href='/two-way-bindings' class='ci1 p1l'> two-way bindings </a>."
+    - "The example above is the complete code of a product list and edit form without hiding a single line."
+    - "Both components invoke server functions to access a MySQL database inside JavaScript without you having to think about APIs"
 productivity:
   heading: "Productivity is in the Details"
   tagline: "Nullstack features have been extracted from real life projects with convenience and consistency in mind"
