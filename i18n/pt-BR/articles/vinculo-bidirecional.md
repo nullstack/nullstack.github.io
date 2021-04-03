@@ -1,6 +1,6 @@
 ---
-title: Two-Way Binding
-description: Bind reduces drastically the amount of glue code you have to type in your application.
+title: Vínculo Bidirecional
+description: O vínculo bidirecional reduz drasticamente a quantidade de `glue code` que você precisa digitar em sua aplicação.
 ---
 
 Big chunks of code in a progressive web application is dedicated to reacting to user input.
