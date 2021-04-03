@@ -63,13 +63,13 @@ export default Form;
 
 O atributo `bind` reduz drasticamente a quantidade de 'glue code' que você precisa digitar em sua aplicação.
 
-Você pode definir um atalho para definir um `value`,` name` e evento com o atributo `bind`.
+Você pode criar um atalho para definir um `value`, ` name` e evento com o atributo `bind`.
 
 > 💡O Nullstack simplesmente substituirá o atributo `bind` pelo ` value`, `name` e evento subjacente.
 
-Bind will generate an event that automatically typecasts to the previous primitive type the value was.
+O `bind` irá gerar um evento que automaticamente retornará para o tipo primitivo anterior em que o valor era.
 
-You can pass any variable to the `bind` as long as its parent object is mentioned.
+Você pode passar qualquer variável para o `bind`, desde que seu objeto pai seja mencionado.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -93,19 +93,19 @@ class Form extends Nullstack {
 export default Form;
 ```
 
-## Bound Events 
+## Eventos vinculados
 
-The following events are set for each type of input:
+Os seguintes eventos são definidos para cada tipo de entrada:
 
-- `onclick` for inputs with the checkbox type
-- `oninput` for other inputs and textareas
-- `onchange` for anything else
+- `onclick` para entradas com o tipo de caixa de seleção
+- `oninput` para outras entradas e áreas de texto
+- `onchange` para qualquer outra coisa
 
-You can still declare an attribute with the same bound event.
+Você ainda pode declarar um atributo com o mesmo evento vinculado.
 
-Events will not override the bound event, instead, it will be executed after bind mutates the variable.
+Os eventos não substituirão o evento vinculado, em vez disso, serão executados depois que o vínculo transformar a variável.
 
-The new value will be merged into the function [context](/pt-br/contexto).
+O novo valor será mesclado na função [contexto](/pt-br/contexto).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -129,15 +129,15 @@ class Form extends Nullstack {
 export default Form;
 ```
 
-## Bind source
+## Fonte de vinculação
 
-Bind can take a `source` attribute as well.
+O `bind` também pode receber um atributo `source`.
 
-> 💡 If you do not declare a source to the bind, Nullstack will inject a `source={this}` at transpile time in order to completely skip the runtime lookup process!
+> 💡 Se você não declarar um `source` para o `bind`, o Nullstack injetará um `source = {this}` no tempo de transpilação para pular completamente o processo de pesquisa em tempo de execução!
 
-If you declare a source, `bind` must be a string with the name of the key that will be mutated.
+Se você declarar um `source`, o `bind` deverá ser uma string com o nome da chave que será modificada.
 
-The source will be merged into the [context](/pt-br/contexto) of events.
+A fonte será mesclada no  [contexto](/pt-br/contexto) de eventos.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -165,11 +165,11 @@ class Paginator extends Nullstack {
 export default Paginator;
 ```
 
-> 💡 Binding by reference is possible because all binds are converted to the format above at transpile time.
+> 💡 A vinculação por referência é possível porque todas as vinculações são convertidas para o formato acima no momento da transpilação.
 
-Any object that responds to a key call with "[]" can be bound.
+Qualquer objeto que responde a uma chamada de tecla com "[]" pode ser vinculado.
 
-The `name` attribute can be overwritten.
+O atributo `name` pode ser substituído.
 
 ```jsx
 import Nullstack from 'nullstack';
