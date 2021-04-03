@@ -1,6 +1,6 @@
 ---
 title: Vínculo Bidirecional
-description: O vínculo bidirecional reduz drasticamente a quantidade de 'glue code' que você precisa digitar em sua aplicação.
+description: O atributo bind reduz drasticamente a quantidade de 'glue code' que você precisa digitar em sua aplicação.
 ---
 
 Grandes pedaços de código em uma `Progressive Web Application (PWA)` são dedicados a reagir as entradas do usuário.
@@ -59,13 +59,13 @@ class Form extends Nullstack {
 export default Form;
 ```
 
-## The bind attribute
+## O atributo bind 
 
-Bind reduces drastically the amount of glue code you have to type in your application.
+O atributo `bind` reduz drasticamente a quantidade de 'glue code' que você precisa digitar em sua aplicação.
 
-You can shortcut setting a `value`, `name`, and event with the `bind` attribute.
+Você pode definir um atalho para definir um `value`,` name` e evento com o atributo `bind`.
 
-> 💡 Nullstack will simply replace `bind` with the `value`, `name`, and event under the hood.
+> 💡O Nullstack simplesmente substituirá o atributo `bind` pelo ` value`, `name` e evento subjacente.
 
 Bind will generate an event that automatically typecasts to the previous primitive type the value was.
 
