@@ -1,19 +1,23 @@
 ---
 title: Vínculo Bidirecional
-description: O vínculo bidirecional reduz drasticamente a quantidade de `glue code` que você precisa digitar em sua aplicação.
+description: O vínculo bidirecional reduz drasticamente a quantidade de 'glue code' que você precisa digitar em sua aplicação.
 ---
 
-Big chunks of code in a progressive web application is dedicated to reacting to user input.
+Grandes pedaços de código em uma `Progressive Web Application (PWA)` são dedicados a reagir as entradas do usuário.
 
-The process of controlling user input can be broken into 3 tedious steps:
+O processo de controlar a entrada do usuário pode ser dividido em 3 etapas tediosas:
 
-- Declaring a variable with the initial value;
-- Passing the initial value to the input;
-- Observing changes in the input and assigning the new value to the variable.
+- Declarar uma variável com o valor inicial;
 
-The last step might include typecasting and other value treatments.
+- Passando o valor inicial para a entrada;
 
-This process in which you manually do all these steps is called *one-way binding*, it is the default in many frameworks, and is possible in Nullstack.
+- Observar mudanças na entrada e atribuir o novo valor à variável.
+
+  
+
+A última etapa pode incluir modelagem e outros tratamentos de valor.
+
+Este processo no qual você faz manualmente todas essas etapas é chamado de *one-way binding*, é o padrão em muitos frameworks, e é possível no Nullstack.
 
 ```jsx
 import Nullstack from 'nullstack';
