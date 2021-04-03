@@ -26,6 +26,7 @@ Essas são as informações que o framework disponibiliza para você por padrão
 - [`router`](/pt-br/rotas-e-parametros#roteador)
 - [`settings`](/pt-br/contexto-settings)
 - [`worker`](/pt-br/service-worker)
+- [`instances`](/pt-br/contexto-instances)
 
 ### As chaves disponíveis apenas em funções do servidor são:
 

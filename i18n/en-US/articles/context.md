@@ -26,6 +26,7 @@ These are the information that the framework makes available to you by default.
 - [`router`](/routes-and-params#router)
 - [`settings`](/context-settings)
 - [`worker`](/service-worker)
+- [`instances`](/context-instances)
 
 ### The keys available only in server functions are:
 
