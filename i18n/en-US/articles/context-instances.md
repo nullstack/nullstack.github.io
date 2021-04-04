@@ -1,35 +1,33 @@
 ---
 title: Context Instances
-description: The instances object is a proxy in the Nullstack Context available in both client and server and gives you all active instances in application
+description: The instances object is a proxy in the Nullstack Context available in client and gives you all active instances in application
 ---
 
 - Type: `object`
 - Origin: [Nullstack Context](/context#----nullstack-context)
-- Availability: server/client
-- **readwrite** in server/client context
+- Availability: **client**
+- **readwrite** in **client** context
 
 It gives you all active instances of the application.
 
-> 🔥 Active instances are the ones rendered at current route
+> 🔥 Active instances are the ones created and not yet [terminated](/full-stack-lifecycle#terminate)
 
 As explained in [instance `key`](/instance-self#instance-key), keys play a big role on defining an unique identifier for components.
 
-Based on it, was right around the corner the implementation of an listing of instances (more documented on [this article](https://guiwriter.netlify.app/tech/nullstack-instances/) in portuguese).
-
-To explain how this concept works, let's use the historically simplest example: The To-do.
+Based on it, was right around the corner the implementation of an listing of instances.
 
 ```jsx
 import Nullstack from 'nullstack';
-import Todo from './Todo';
-import Undone from './Undone';
+import Counter from './Counter';
+import Count from './Count';
 
 class Application extends Nullstack {
 
   render() {
     return (
       <main>
-        <Undone key="undone" />
-        <Todo/>
+        <Count key="count" />
+        <Counter/>
       </main>
     )
   }
@@ -39,76 +37,49 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-In the above code we import and render **Todo** and **Undone**, and especially add an unique `key` to **Undone**.
-
-**Undone** is focused on the solely task of showing how many undone to-dos are out there.
-
-And, simpler than that, we doesn't even need to code the access to those to-dos here.
+Adding an unique `key` to **Count** makes it available on `instances` list.
 
 ```jsx
 import Nullstack from 'nullstack';
 
-class Undone extends Nullstack {
+class Count extends Nullstack {
 
-  undones = 0;
+  count = 0;
+  add() {
+    this.count++;
+  }
+
   render() {
-    return <p> Undones: {this.undones} </p>
+    return <p> Count: {this.count} </p>
   }
 
 }
 
-export default Undone;
+export default Count;
 ```
 
-Last but not least, here is where main magic happens, the **Todo** component:
+Without the need to call an update of the value on **Count**, you can do it directly on **Counter**:
 
 ```jsx
 import Nullstack from 'nullstack';
 
-class Todo extends Nullstack {
+class Counter extends Nullstack {
 
-  todos = [];
-  newTodo = '';
-
-  addTodo({ instances }) {
-    this.todos.push(this.newTodo);
-    // accessing 'undone' component
-    instances.undone.undones = this.todos.length;
-  }
-
-  render() {
+  render({ instances }) {
+    const { count } = instances;
     return (
-      <>
-        <ol>
-          {this.todos.map(todo => <li>{todo}</li>)}
-        </ol>
-
-        {/* binding value to newTodo */}
-        <input type="text" bind={this.newTodo} />
-        <button onclick={this.addTodo}>
-          Add to-do
-        </button>
-      </>
+      <button onclick={count.add}>
+        Add count
+      </button>
     )
   }
+
 }
 
-export default Todo;
+export default Counter;
 ```
 
-Going by parts, in `render` we are listing `todos`, which stays empty until user types the `newTodo` in `input`, and press button, calling our `addTodo`.
-
-In the `addTodo` method we are [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) `instances` from [`context`](/context), bringing the list of active instances and making possible to directly set value of `undones` array from the **Undone** component.
-
-And going beyond, imagine if in **Undone** we do more than showing and have an calculation method or one to store this count at database, in **Todo** we could directly do:
-
-```jsx
-// destructuring again
-const { undone } = instances;
-const count = this.todos.length;
-undone.calculate(count);
-await undone.storeUndones(); // async storing
-```
+[Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) `instances` from [`context`](/context) at `render`, and there is **Count** and all it's properties to be called or updated.
 
 Well, this was a focused demo of the concept, but take your time to imagine:
 

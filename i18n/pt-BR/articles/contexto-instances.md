@@ -1,35 +1,33 @@
 ---
 title: Contexto Instances
-description: O objeto instances é um proxy no Contexto Nullstack disponível em ambos client e server e fornece todas as instâncias ativas da aplicação
+description: O objeto instances é um proxy no Contexto Nullstack disponível no client e fornece todas as instâncias ativas da aplicação
 ---
 
 - Tipo: `object`
 - Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
-- Disponibilidade: server/client
-- **readwrite** em ambos **server** e **client**
+- Disponibilidade: **client**
+- **readwrite** no contexto do **client**
 
 Fornece todas as instâncias ativas da aplicação.
 
-> 🔥 Instâncias ativas são as renderizadas na rota atual
+> 🔥 Instâncias ativas são as criadas e ainda não [terminadas](/pt-br/ciclo-de-vida-full-stack#terminate)
 
 Conforme explicado em [`key` da instância](/pt-br/instancia-self#key-da-inst-ncia), keys desempenham um grande papel na definição de um identificador único para componentes.
 
-Baseado nisso, estava no virar da esquina uma implementação de uma listagem de instâncias (mais documentada [neste artigo](https://guiwriter.netlify.app/tech/nullstack-instances/)).
-
-Para explicar como esse conceito funciona, vamos usar o exemplo historicamente mais simples: O To-do.
+Baseado nisso, estava no virar da esquina uma implementação de uma listagem de instâncias.
 
 ```jsx
 import Nullstack from 'nullstack';
-import Todo from './Todo';
-import Undone from './Undone';
+import Counter from './Counter';
+import Count from './Count';
 
 class Application extends Nullstack {
 
   render() {
     return (
       <main>
-        <Undone key="undone" />
-        <Todo/>
+        <Count key="count" />
+        <Counter/>
       </main>
     )
   }
@@ -39,76 +37,48 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-No código acima, importamos e renderizamos **Todo** e **Undone** e, especialmente, adicionamos uma `key` única em **Undone**.
-
-O **Undone** concentra-se na tarefa única de exibir quantas tarefas não feitas existem.
-
-E, mais simples que isso, nem precisamos codificar o acesso a essas tarefas aqui.
+Adicionando uma `key` única ao **Count** torna-o disponível na lista `instances`.
 
 ```jsx
 import Nullstack from 'nullstack';
 
-class Undone extends Nullstack {
+class Count extends Nullstack {
 
-  undones = 0;
+  count = 0;
+  add() {
+    this.count++;
+  }
+
   render() {
-    return <p> Undones: {this.undones} </p>
+    return <p> Contagem: {this.count} </p>
   }
 
 }
 
-export default Undone;
+export default Count;
 ```
 
-Por último, mas não menos importante, aqui é onde a mágica principal acontece, o componente **Todo**:
-
+Sem a necessidade de chamar uma modificação do valor em **Count**, você pode fazer isso diretamente no **Counter**:
 ```jsx
 import Nullstack from 'nullstack';
 
-class Todo extends Nullstack {
+class Counter extends Nullstack {
 
-  todos = [];
-  newTodo = '';
-
-  addTodo({ instances }) {
-    this.todos.push(this.newTodo);
-    // acessando o componente 'undone'
-    instances.undone.undones = this.todos.length;
-  }
-
-  render() {
+  render({ instances }) {
+    const { count } = instances;
     return (
-      <>
-        <ol>
-          {this.todos.map(todo => <li>{todo}</li>)}
-        </ol>
-
-        {/* vinculando valor a newTodo */}
-        <input type="text" bind={this.newTodo} />
-        <button onclick={this.addTodo}>
-          Adicionar to-do
-        </button>
-      </>
+      <button onclick={count.add}>
+        Adicionar contagem
+      </button>
     )
   }
+
 }
 
-export default Todo;
+export default Counter;
 ```
 
-Indo por partes, no `render` estamos listando `todos`, que permanece vazio até que o usuário digite o `newTodo` no `input` e pressione o botão, chamando nosso `addTodo`.
-
-No método `addTodo` estamos [desestruturando](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) `instances` do [`context`](/pt-br/contexto), trazendo a lista de instâncias ativas e possibilitando definir diretamente o valor do array `undones` do componente **Undone**.
-
-E indo além, imagine se em **Undone** fizéssemos mais do que exibir e tivéssemos um método de cálculo ou para armazenar essa contagem no banco de dados, em **Todo** poderíamos fazer diretamente:
-
-```jsx
-// desestruturando novamente
-const { undone } = instances;
-const count = this.todos.length;
-undone.calculate(count);
-await undone.storeUndones(); // armazenando assincronamente
-```
+[Desestruturando](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) `instances` do [`context`](/pt-br/contexto) no `render`, e ali está o **Count** e todas as suas propriedades para serem chamadas ou modificadas.
 
 Bem, esta foi uma demonstração focada do conceito, mas tome seu tempo para imaginar:
 
