@@ -34,10 +34,9 @@ Essas são as informações que o framework disponibiliza para você por padrão
 - [`response`](/pt-br/requisicao-e-resposta-do-servidor#requisi--o-e-resposta)
 - [`secrets`](/pt-br/contexto-secrets)
 
-### As chaves de instância do cliente são:
+### A chave disponível apenas no cliente:
 
-- [`self`](/pt-br/instancia-self)
-- [`children`](/pt-br/componentes-renderizaveis#componentes-com-filhos)
+- [`instances`](/pt-br/contexto-instances)
 
 ## 2 - Contexto Aplicação
 
@@ -101,7 +100,11 @@ export default Application;
 
 ## 3 - Contexto Componente
 
-Este contém os atributos que você declara em sua tag, incluindo os [`data`](/pt-br/contexto-data).
+Este contém os atributos que você declara em sua tag, e incluindo:
+
+- [`data`](/pt-br/contexto-data)
+- [`self`](/pt-br/instancia-self)
+- [`children`](/pt-br/componentes-renderizaveis#componentes-com-filhos)
 
 Se o atributo é declarado em uma tag componente cada função desse componente terá acesso a esse atributo em seu contexto.
 

@@ -29,6 +29,8 @@ topics:
         href: "/pt-br/inicializacao-da-aplicacao"
       - title: "Contexto data"
         href: "/pt-br/contexto-data"
+      - title: "Contexto Instances"
+        href: "/pt-br/contexto-instances"
       - title: "Contexto Environment"
         href: "/pt-br/contexto-environment"
       - title: "Contexto Page"
