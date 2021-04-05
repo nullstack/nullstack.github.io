@@ -34,10 +34,9 @@ These are the information that the framework makes available to you by default.
 - [`response`](/server-request-and-response#request-and-response)
 - [`secrets`](/context-secrets)
 
-### The available instance client keys are:
+### The key available only in client:
 
-- [`self`](/instance-self)
-- [`children`](/renderable-components#components-with-children)
+- [`instances`](/context-instances)
 
 ## 2 - Application Context
 
@@ -101,7 +100,11 @@ export default Application;
 
 ## 3 - Component Context
 
-This one contains the attributes you declare in your tag, including [`data`](/context-data).
+This one contains the attributes you declare in your tag, and including:
+
+- [`data`](/context-data)
+- [`self`](/instance-self)
+- [`children`](/renderable-components#components-with-children)
 
 If the attribute is declared in a component tag every function of that component will have access to that attribute in its context.
 

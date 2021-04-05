@@ -62,4 +62,4 @@ export default ContextData;
 
 ## Next step
 
-⚔ Learn about the [context `environment`](/context-environment).
+⚔ Learn about the [context `instances`](/context-instances).
