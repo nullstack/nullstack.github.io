@@ -15,7 +15,12 @@ Install the MongoDB driver from npm:
 npm install mongodb
 ```
 
-Configure the database credentials using [`secrets`](/context-secrets).
+Configure the database credentials using [`secrets`](/context-secrets) in your `.env` file.
+
+```
+NULLSTACK_SECRETS_MONGODB_URI="mongodb://localhost:27017/dbname"
+NULLSTACK_SECRETS_DATABASE_NAME="dbname"
+```
 
 The last step is to simply assign the database connection to the server context.
 
@@ -26,15 +31,12 @@ import {MongoClient} from 'mongodb';
 class Application extends Nullstack {
 
   static async start(context) {
-    const {secrets} = context;
-    secrets.development.databaseHost = 'mongodb://localhost:27017/dbname';
-    secrets.databaseName = 'dbname';
     await this.startDatabase(context);
   }
 
   static async startDatabase(context) {
     const {secrets} = context;
-    const databaseClient = new MongoClient(secrets.databaseHost);
+    const databaseClient = new MongoClient(secrets.databaseUri);
     await databaseClient.connect();
     context.database = await databaseClient.db(secrets.databaseName);
   }

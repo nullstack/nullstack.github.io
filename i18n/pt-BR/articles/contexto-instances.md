@@ -10,24 +10,26 @@ description: O objeto instances é um proxy no Contexto Nullstack disponível no
 
 Fornece todas as instâncias ativas da aplicação.
 
-> 🔥 Instâncias ativas são as criadas e ainda não [terminadas](/pt-br/ciclo-de-vida-full-stack#terminate)
+> 💡 Instâncias ativas são as criadas e ainda não [terminadas](/pt-br/ciclo-de-vida-full-stack#terminate)
 
 Conforme explicado em [`key` da instância](/pt-br/instancia-self#key-da-inst-ncia), keys desempenham um grande papel na definição de um identificador único para componentes.
 
-Baseado nisso, estava no virar da esquina uma implementação de uma listagem de instâncias.
+> 🔥 Nullstack confia que seus desensolvedores sabem o que estão fazendo e expoe o máximo de comportamento interno possivel para o programador usar como quiser, use com precaução.
+
+Adicionando uma `key` única ao **Counter** torna-o disponível na lista `instances`.
 
 ```jsx
 import Nullstack from 'nullstack';
 import Counter from './Counter';
-import Count from './Count';
+import AnyOtherComponent from './AnyOtherComponent';
 
 class Application extends Nullstack {
 
   render() {
     return (
       <main>
-        <Count key="count" />
-        <Counter/>
+        <Counter key="counter" />
+        <AnyOtherComponent/>
       </main>
     )
   }
@@ -37,40 +39,21 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-Adicionando uma `key` única ao **Count** torna-o disponível na lista `instances`.
 
-```jsx
-import Nullstack from 'nullstack';
 
-class Count extends Nullstack {
-
-  count = 0;
-  add() {
-    this.count++;
-  }
-
-  render() {
-    return <p> Contagem: {this.count} </p>
-  }
-
-}
-
-export default Count;
-```
-
-Sem a necessidade de chamar uma modificação do valor em **Count**, você pode fazer isso diretamente no **Counter**:
 ```jsx
 import Nullstack from 'nullstack';
 
 class Counter extends Nullstack {
 
-  render({ instances }) {
-    const { count } = instances;
-    return (
-      <button onclick={count.add}>
-        Adicionar contagem
-      </button>
-    )
+  value = 0;
+
+  increment() {
+    this.value++;
+  }
+
+  render() {
+    return <p> Contador: {this.value} </p>
   }
 
 }
@@ -78,13 +61,32 @@ class Counter extends Nullstack {
 export default Counter;
 ```
 
-[Desestruturando](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) `instances` do [`context`](/pt-br/contexto) no `render`, e ali está o **Count** e todas as suas propriedades para serem chamadas ou modificadas.
+Você pode acessar qualquer metodo e variavel de instância da instância **counter** em **AnyOtherComponent**
 
-Bem, esta foi uma demonstração focada do conceito, mas tome seu tempo para imaginar:
+```jsx
+import Nullstack from 'nullstack';
 
-- Um ícone de notificação na navbar, atualizando em cada leitura no componente de mensagens e tendo um método para marcar todas elas como lidas também
-- Uma contagem na header mostrando quantas postagens/e-mails você leu, não leu ou gostou, sem a necessidade de um gerenciamento de estado global ou solicitações à API
-- Algo que nem nós imaginamos, então, sonhe livremente!
+class AnyOtherComponent extends Nullstack {
+
+  render({ instances }) {
+    return (
+      <button onclick={instances.counter.increment}>
+        Add 1 ao {instances.counter.value}
+      </button>
+    )
+  }
+
+}
+
+export default AnyOtherComponent;
+```
+
+O uso de `instances` libera possibilidades ilimitadas de novos comportamentos como:
+
+- Um ícone de notificação na navbar que pode ser atualizado de outros componenter em certas ações
+- Um componente de *toast* que pode ser invocado de qualquer lugar de sua aplicação
+- Um sistema de *store*  com ações customizadas similares ao Redux
+- Algo que nos nem imaginamos, seja criativo e poste suas ideias no GitHub!
 
 ## Próxima Etapa
 

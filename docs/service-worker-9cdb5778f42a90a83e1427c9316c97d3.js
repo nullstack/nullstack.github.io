@@ -44,6 +44,7 @@ self.context = {
       "/application-startup",
       "/context-data",
       "/context-environment",
+      "/context-instances",
       "/context-page",
       "/context-project",
       "/context-secrets",
