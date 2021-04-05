@@ -8,12 +8,10 @@ Grandes pedaços de código em uma `Progressive Web Application (PWA)` são dedi
 O processo de controlar a entrada do usuário pode ser dividido em 3 etapas tediosas:
 
 - Declarar uma variável com o valor inicial;
+- Passar o valor inicial para a entrada;
+- Observar as mudanças na entrada e atribuir o novo valor à variável.
 
-- Passando o valor inicial para a entrada;
 
-- Observar mudanças na entrada e atribuir o novo valor à variável.
-
-  
 
 A última etapa pode incluir modelagem e outros tratamentos de valor.
 
@@ -67,7 +65,7 @@ Você pode criar um atalho para definir um `value`, ` name` e evento com o atrib
 
 > 💡O Nullstack simplesmente substituirá o atributo `bind` pelo ` value`, `name` e evento subjacente.
 
-O `bind` irá gerar um evento que automaticamente retornará para o tipo primitivo anterior em que o valor era.
+O `bind` irá gerar um evento que automaticamente retornará para o tipo primitivo anterior que o valor era.
 
 Você pode passar qualquer variável para o `bind`, desde que seu objeto pai seja mencionado.
 
@@ -211,13 +209,13 @@ class Form extends Nullstack {
 export default Form;
 ```
 
-## Object Events
+## Objeto de Eventos
 
-You can use [object events](/pt-br/componentes-com-estado) alongside `bind` normally.
+Você pode usar o [objeto de eventos](/pt-br/componentes-com-estado) ao lado do `bind` normalmente.
 
-The event will run after the variable is mutated.
+O evento será executado após a alteração da variável.
 
-The event will share the `bind` source.
+O evento irá compartilhar a fonte do `bind`.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -235,13 +233,13 @@ class Paginator extends Nullstack {
 export default Paginator;
 ```
 
-## Bindable Components
+## Componentes vinculáveis 
 
-You can create your own bindable component by receiving the attributes that `bind` generates.
+Você pode criar seu próprio componente vinculável recebendo os atributos gerados pelo `bind`.
 
-You must respond by calling `onchange` with a `value` key.
+Você deve responder chamando `onchange` com uma chave ` value`.
 
-You can also merge any other keys you wish to send to the component user.
+Você também pode mesclar quaisquer outras chaves que deseja enviar ao usuário do componente.
 
 ```jsx
 class CurrencyInput extends Nullstack {
@@ -282,8 +280,9 @@ class Form extends Nullstack {
 export default Form;
 ```
 
-## Next step
+## Próximos passos
 
-> 🎉 **Congratulations!**. You are done with the core concepts!
+> 🎉 **Parabéns!** Você concluiu os conceitos básicos!
 
-⚔ Learn about the [application startup](/pt-br/inicializacao-da-aplicacao).
+⚔ Aprenda sobre a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
+
