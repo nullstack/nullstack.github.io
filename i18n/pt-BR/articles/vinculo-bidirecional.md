@@ -1,19 +1,21 @@
 ---
-title: Two-Way Binding
-description: Bind reduces drastically the amount of glue code you have to type in your application.
+title: Vínculo Bidirecional
+description: O atributo bind reduz drasticamente a quantidade de "glue code" que você precisa digitar em sua aplicação.
 ---
 
-Big chunks of code in a progressive web application is dedicated to reacting to user input.
+Grandes pedaços de código em uma `Progressive Web Application (PWA)` são dedicados a reagir as entradas do usuário.
 
-The process of controlling user input can be broken into 3 tedious steps:
+O processo de controlar a entrada do usuário pode ser dividido em 3 etapas tediosas:
 
-- Declaring a variable with the initial value;
-- Passing the initial value to the input;
-- Observing changes in the input and assigning the new value to the variable.
+- Declarar uma variável com o valor inicial;
+- Passar o valor inicial para a entrada;
+- Observar as mudanças na entrada e atribuir o novo valor à variável.
 
-The last step might include typecasting and other value treatments.
 
-This process in which you manually do all these steps is called *one-way binding*, it is the default in many frameworks, and is possible in Nullstack.
+
+A última etapa pode incluir modelagem e outros tratamentos de valor.
+
+Este processo no qual você faz manualmente todas essas etapas é chamado de *one-way binding*, é o padrão em muitos frameworks, e é possível no Nullstack.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -55,17 +57,17 @@ class Form extends Nullstack {
 export default Form;
 ```
 
-## The bind attribute
+## O atributo bind 
 
-Bind reduces drastically the amount of glue code you have to type in your application.
+O atributo `bind` reduz drasticamente a quantidade de 'glue code' que você precisa digitar em sua aplicação.
 
-You can shortcut setting a `value`, `name`, and event with the `bind` attribute.
+Você pode criar um atalho para definir um `value`, ` name` e evento com o atributo `bind`.
 
-> 💡 Nullstack will simply replace `bind` with the `value`, `name`, and event under the hood.
+> 💡O Nullstack simplesmente substituirá o atributo `bind` pelo ` value`, `name` e evento subjacente.
 
-Bind will generate an event that automatically typecasts to the previous primitive type the value was.
+O `bind` irá gerar um evento que automaticamente retornará para o tipo primitivo anterior que o valor era.
 
-You can pass any variable to the `bind` as long as its parent object is mentioned.
+Você pode passar qualquer variável para o `bind`, desde que seu objeto pai seja mencionado.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -89,19 +91,19 @@ class Form extends Nullstack {
 export default Form;
 ```
 
-## Bound Events 
+## Eventos vinculados
 
-The following events are set for each type of input:
+Os seguintes eventos são definidos para cada tipo de entrada:
 
-- `onclick` for inputs with the checkbox type
-- `oninput` for other inputs and textareas
-- `onchange` for anything else
+- `onclick` para entradas com o tipo de caixa de seleção
+- `oninput` para outras entradas e áreas de texto
+- `onchange` para qualquer outra coisa
 
-You can still declare an attribute with the same bound event.
+Você ainda pode declarar um atributo com o mesmo evento vinculado.
 
-Events will not override the bound event, instead, it will be executed after bind mutates the variable.
+Os eventos não substituirão o evento vinculado, em vez disso, serão executados depois que o vínculo transformar a variável.
 
-The new value will be merged into the function [context](/pt-br/contexto).
+O novo valor será mesclado na função [contexto](/pt-br/contexto).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -125,15 +127,15 @@ class Form extends Nullstack {
 export default Form;
 ```
 
-## Bind source
+## Fonte de vinculação
 
-Bind can take a `source` attribute as well.
+O `bind` também pode receber um atributo `source`.
 
-> 💡 If you do not declare a source to the bind, Nullstack will inject a `source={this}` at transpile time in order to completely skip the runtime lookup process!
+> 💡 Se você não declarar um `source` para o `bind`, o Nullstack injetará um `source = {this}` no tempo de transpilação para pular completamente o processo de pesquisa em tempo de execução!
 
-If you declare a source, `bind` must be a string with the name of the key that will be mutated.
+Se você declarar um `source`, o `bind` deverá ser uma string com o nome da chave que será modificada.
 
-The source will be merged into the [context](/pt-br/contexto) of events.
+A fonte será mesclada no  [contexto](/pt-br/contexto) de eventos.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -161,11 +163,11 @@ class Paginator extends Nullstack {
 export default Paginator;
 ```
 
-> 💡 Binding by reference is possible because all binds are converted to the format above at transpile time.
+> 💡 A vinculação por referência é possível porque todas as vinculações são convertidas para o formato acima no momento da transpilação.
 
-Any object that responds to a key call with "[]" can be bound.
+Qualquer objeto que responde a uma chamada de tecla com "[]" pode ser vinculado.
 
-The `name` attribute can be overwritten.
+O atributo `name` pode ser substituído.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -207,13 +209,13 @@ class Form extends Nullstack {
 export default Form;
 ```
 
-## Object Events
+## Objeto de Eventos
 
-You can use [object events](/pt-br/componentes-com-estado) alongside `bind` normally.
+Você pode usar o [objeto de eventos](/pt-br/componentes-com-estado) ao lado do `bind` normalmente.
 
-The event will run after the variable is mutated.
+O evento será executado após a alteração da variável.
 
-The event will share the `bind` source.
+O evento irá compartilhar a fonte do `bind`.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -231,13 +233,13 @@ class Paginator extends Nullstack {
 export default Paginator;
 ```
 
-## Bindable Components
+## Componentes vinculáveis 
 
-You can create your own bindable component by receiving the attributes that `bind` generates.
+Você pode criar seu próprio componente vinculável recebendo os atributos gerados pelo `bind`.
 
-You must respond by calling `onchange` with a `value` key.
+Você deve responder chamando `onchange` com uma chave ` value`.
 
-You can also merge any other keys you wish to send to the component user.
+Você também pode mesclar quaisquer outras chaves que deseja enviar ao usuário do componente.
 
 ```jsx
 class CurrencyInput extends Nullstack {
@@ -278,8 +280,9 @@ class Form extends Nullstack {
 export default Form;
 ```
 
-## Next step
+## Próximos passos
 
-> 🎉 **Congratulations!**. You are done with the core concepts!
+> 🎉 **Parabéns!** Você concluiu os conceitos básicos!
 
-⚔ Learn about the [application startup](/pt-br/inicializacao-da-aplicacao).
+⚔ Aprenda sobre a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
+
