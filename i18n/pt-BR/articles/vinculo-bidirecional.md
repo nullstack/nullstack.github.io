@@ -1,6 +1,6 @@
 ---
 title: Vínculo Bidirecional
-description: O atributo bind reduz drasticamente a quantidade de 'glue code' que você precisa digitar em sua aplicação.
+description: O atributo bind reduz drasticamente a quantidade de "glue code" que você precisa digitar em sua aplicação.
 ---
 
 Grandes pedaços de código em uma `Progressive Web Application (PWA)` são dedicados a reagir as entradas do usuário.
