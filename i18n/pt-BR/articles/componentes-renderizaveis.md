@@ -160,9 +160,9 @@ Você pode abreviar atributos quando sabe que o valor será sempre verdadeiro.
 
 > ✨ Aprender mais sobre [atributos](/pt-br/contexto).
 
-## Tag do elemento
+## Tag Elemento
 
-Se você precisar decidir o nome da tag em tempo de execução, pode usar a tag do elemento e definir o atributo da tag condicionalmente.
+Se você precisar decidir o nome da tag em tempo de execução, pode usar a tag `element` e definir o atributo `tag` condicionalmente.
 
 ```jsx
 <element tag={!!link ? "a" : "span"} href={link || false}>
@@ -170,7 +170,7 @@ Se você precisar decidir o nome da tag em tempo de execução, pode usar a tag 
 </element>
 ```
 
-Quando o atributo tag é omitido, Nullstack assumirá como padrão um `div`.
+Quando o atributo `tag` é omitido, Nullstack assumirá como padrão um `div`.
 
 ## Fragmentos
 
@@ -188,6 +188,7 @@ export default function Fragmented() {
   )
 }
 ```
+
 Onde quer que seja usado, o componente funcional acima será renderizado da seguinte forma:
 
 ```html
