@@ -172,6 +172,29 @@ Se você precisar decidir o nome da tag em tempo de execução, pode usar a tag 
 
 Quando o atributo tag é omitido, Nullstack assumirá como padrão um `div`.
 
+## Fragmentos
+
+Fragmentos são elementos que renderizam o seu conteúdo no componente pai.
+
+```jsx
+export default function Fragmented() {
+  return (
+    <>
+      <>
+        <button> Eu sou um botão! </button>
+      </>
+      <p> Parágrafo! </p>
+    </>
+  )
+}
+```
+Onde quer que seja usado, o componente funcional acima será renderizado da seguinte forma:
+
+```html
+<button> Eu sou um botão! </button>
+<p> Parágrafo! </p>
+```
+
 ## Elementos SVG
 
 O SVG pode ser usado como se fosse qualquer tag HTML normal.
