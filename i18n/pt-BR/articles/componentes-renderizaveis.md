@@ -3,7 +3,7 @@ title: Componentes renderizáveis
 description: Componentes renderizáveis são muito semelhantes aos componentes da Web que fornecem a capacidade de criar novas tags HTML que atalham um grupo de outras tags HTML
 ---
 
-O componente mais simples que você pode fazer é um componente renderizável.
+O componente mais simples que você pode fazer é um componente renderizável, com exceção de [componentes funcionais](/pt-br/componentes-funcionais).
 
 Componentes renderizáveis são muito semelhantes aos componentes da Web que fornecem a capacidade de criar novas tags HTML que atalham um grupo de outras tags HTML.
 
