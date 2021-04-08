@@ -3,7 +3,7 @@ title: Renderable Components
 description: Renderable components are very similar to web components they give you the ability to create new HTML tags that shortcut a group of other HTML tags
 ---
 
-The simplest component you can make is a renderable component.
+The simplest component you can make is a renderable component, with exception of [functional components](/functional-components).
 
 Renderable components are very similar to web components, they give you the ability to create new HTML tags that shortcut a group of other HTML tags.
 

@@ -27,6 +27,8 @@ topics:
     links:
       - title: "Application Startup"
         href: "/application-startup"
+      - title: "Functional Components"
+        href: "/functional-components"
       - title: "Context data"
         href: "/context-data"
       - title: "Context instances"
