@@ -172,6 +172,30 @@ If you need to decide the tag name at runtime, you can use the element tag and s
 
 When the tag attribute is omitted, Nullstack will default to a `div`.
 
+## Fragments
+
+Fragments are elements that renders it's contents in the parent component.
+
+```jsx
+export default function Fragmented() {
+  return (
+    <>
+      <>
+        <button> I'm a button! </button>
+      </>
+      <p> Paragraph! </p>
+    </>
+  )
+}
+```
+
+Wherever it is used, the above functional component will be rendered as follows:
+
+```html
+<button> I'm a button! </button>
+<p> Paragraph! </p>
+```
+
 ## SVG Elements
 
 SVG can be used as if it were any regular HTML tag.
