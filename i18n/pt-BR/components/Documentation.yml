@@ -27,6 +27,8 @@ topics:
     links:
       - title: "Inicialização da aplicação"
         href: "/pt-br/inicializacao-da-aplicacao"
+      - title: "Componentes Funcionais"
+        href: "/pt-br/componentes-funcionais"
       - title: "Contexto data"
         href: "/pt-br/contexto-data"
       - title: "Contexto Instances"
