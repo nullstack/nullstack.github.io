@@ -1,113 +1,99 @@
-import Snippet from './Snippet';
-import Cog from 'poisonicon/cog/stroke';
-import Heartbeat from 'poisonicon/heartbeat/stroke';
-import QRCode from 'poisonicon/qrcode/stroke';
-import Translatable from './Translatable';
+import Nullstack from "nullstack";
+import Snippet from "./Snippet";
 
-class Home extends Translatable {
-
-  prepare({page}) {
-    page.priority = 1;
-  }
-
+class Home extends Nullstack {
   renderHero() {
     return (
-      <section class="x xx sm-p2x p20y">
-        <h1 class="x12 sm-fs8 md+fs12"> {this.i18n.hero.heading} </h1>
-        <div class="bgm1 xx x8 m12b p2b bg-tagline-home"> 
-          <p class="bgm1 fs6 p2"> {this.i18n.hero.tagline} </p>
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap">
+        <div class="sm:w-5/12 grid gap-8 mt-12 sm:mt-0">
+          <h1 class="w-full">
+            <span class="text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">
+              Full-Stack
+            </span>
+            <span class="text-pink-600 text-3xl sm:text-5xl font-light block sm:mb-3">
+              Javascript Components
+            </span>
+            <span class="text-gray-900 text-2xl sm:text-4xl font-light block">
+              For one-dev armies
+            </span>
+          </h1>
+          <p class="text-gray-600 text-xl sm:text-2xl">
+            Write the back-end and the front-end of a feature in a single
+            component and let the framework decide where the code should run.
+          </p>
+          <p class="text-gray-600 text-xl sm:text-2xl">
+            Nullstack gives you all the tools you need to stay focused on your
+            business logic.
+          </p>
+          <div>
+            <button class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-white hover:text-pink-600 inline-block">
+              npx create-nullstack-app
+            </button>
+          </div>
         </div>
+        <img src="/hero.jpg" alt="Nulla-Chan" class="max-w-full" />
+      </section>
+    );
+  }
+
+  renderRole({ image, title, children }) {
+    return (
+      <div class="sm:w-1/3 px-8 flex flex-wrap justify-center text-center">
         <div>
-          {this.i18n.hero.descriptions.map((description, index, {length}) => 
-            <p class={`x12 fs4 lh12 ls12 ${index == length - 1 ? 'm4t' : ''}`} html={description} />
-          )}
+          <img src={image} class="h-48 transform hover:scale-105 transition delay-100" />
         </div>
-      </section>
-    )
+        <h3 class="w-full text-center text-pink-600 text-2xl font-light mb-4 px-20">
+          {title}
+        </h3>
+        <p class="w-full text-center text-xl font-gray-600">{children}</p>
+      </div>
+    );
   }
 
-  renderStep({title, text, link, icon: Icon}) {
+  renderTrinity() {
     return (
-      <div class="md+x4 p1">
-        <div class="xx bgm2 p8y p4x y12">
-          <Icon height={40} class="cm2z m4b" />
-          <h2 class="x12 fs6">
-            <a href={link} title={title} class="ci1">{title}</a>
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
+        <Role image="/tanker.png" title="Optimized for first render">
+          On the first render you'll get SEO ready HTML optimized for the first
+          paint of your route in a single request using local functions with
+          zero javascript dependencies in the client bundle
+        </Role>
+        <Role image="/healer.png" title="Snappy PWA experience">
+          After the content is served and the network is idle Nullstack
+          javascript is loaded, the state of the application is restored through
+          hydration and it becomes a single page application
+        </Role>
+        <Role image="/damage.png" title="Lightweight API requests">
+          Subsequent server functions will fetch JSON from an automaticallty
+          generated microservice API, deserialize the response, update the
+          aplication state, and rerender the page out of the box
+        </Role>
+      </section>
+    );
+  }
+
+  renderFeature({ snippet, image, title, children, inverted }) {
+    return (
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
+        <div class={`w-full sm:w-5/12 ${inverted ? 'sm:order-2' : ''}`}>
+          <Snippet key={snippet} />
+        </div>
+        <div class="mt-12 sm:mt-0 sm:w-5/12">
+          <h2 class="text-pink-600 text-3xl sm:text-4xl font-light mb-4">
+            {title}
           </h2>
-          <p class="x12 fs4 m4y" html={text} />
-        </div>
-      </div>
-    )
-  }
-
-  renderCycle() {
-    return (
-      <section class="x xx sm-p2x md+bcm2y md+p10y">
-        <Step icon={Cog} {...this.i18n.cycle.ssr} />
-        <Step icon={Heartbeat} {...this.i18n.cycle.spa} />
-        <Step icon={QRCode} {...this.i18n.cycle.ssg} />
-      </section>
-    )
-  }
-
-  renderAbout() {
-    return (
-      <section class="x xx sm-p2x sm-p10y md+p20t md+p10b">
-        <h2 class="x12 sm-fs8 md+fs12 m2b"> {this.i18n.about.heading} </h2>
-        {this.i18n.about.taglines.map((tagline) => <p class="x12 fs4" html={tagline} />)}
-      </section>
-    )
-  }
-
-  renderFeature({title, key, link}) {
-    return (
-      <div class="md-x12 lg+x6 p1">
-        {!!title && 
-          <div class="xsb bcm2 p4">
-            <h3 class="ff2 fw3 fs4">
-              <a href={link} title={title} class="ci1">{title}</a>
-            </h3>
-          </div>
-        }
-        <Snippet key={key} />
-      </div>
-    )
-  }
-
-  renderShowcase() {
-    return (
-      <section class="x lg-x12z xl md-p2x">
-        <Feature key="ProductList" />
-        <Feature key="ProductForm" />
-        <div class="xl x12 p1">
-          <div class="xl x12 bcm2 p2t">
-            {this.i18n.showcase.descriptions.map((description) => <p class="xx x12 m2b p4x lh16" html={description} />)}
-          </div>
+          <p class="text-xl font-gray-600">
+            {children}
+          </p>
+          <img src={image} />
         </div>
       </section>
-    )
+    );
   }
 
-  renderProductivity() {
+  renderVideo({ link, title, thumbnail }) {
     return (
-      <section class="x xx sm-p2x sm-p10y md+p20y">
-        <h2 class="x12 sm-fs8 md+fs12 m2b"> {this.i18n.productivity.heading} </h2>
-        <p class="x12 fs4"> {this.i18n.productivity.tagline} </p>
-      </section>
-    )
-  }
-
-  renderFeatures() {
-    return (
-      <section class="x lg-x12z xl lg-p2x">
-        {this.i18n.features.map(feature => <Feature {...feature} />)}
-      </section>
-    )
-  }
-
-  renderVideo({title, link, thumbnail}) {
-    return (
-      <div class="xx x12 md+x4 p1">
+      <div class="w-full sm:w-1/3 p-1 flex justify-center">
         <a href={link} title={title} target="_blank" rel="noopener">
           <img src={thumbnail} alt={title} height="209" width="372" loading="lazy" />
         </a>
@@ -115,70 +101,65 @@ class Home extends Translatable {
     )
   }
 
-  renderPlaylist({worker}) {
-    if(!worker.online) return false;
+  renderPlaylist() {
     return (
-      <section class="x xx sm-p10t md+p20t sm-p2x">
-        <h2 class="x12 sm-fs8 md+fs12"> {this.i18n.playlist.heading} </h2>
-        <p class="x12 fs4"> {this.i18n.playlist.tagline} </p>
-        <div class="xl x12 p10t">
-          {this.i18n.playlist.videos.map((video) => <Video {...video} /> )}
-        </div>
-      </section>
-    )
-  }
-
-  renderReason({title, description, closer, link}) {
-    return (
-      <div class="md+x6 p1">
-        <div class="xx bgm2 p8y p4x y12">
-          <h3 class="x12 fs6">
-            <a href={link} class="ci1">{title}</a>
-          </h3>
-          <p class="x12 fs4 m4y"> {description} </p>
-          <strong>{closer}</strong>
-        </div>
+      <div>
+        <section class="max-w-screen-xl mx-auto px-4 flex justify-center items-center flex-wrap py-12 sm:pt-36">
+          <h2 class="text-gray-800 text-2xl sm:text-4xl font-light mb-4"> 
+            Learn with our <del class="text-gray-400">Dweebs</del> <span class="text-pink-600">Experts </span>
+          </h2>
+          <div class="sm:flex items-center justify-center w-full mt-12 flex-wrap">
+            <Video thumbnail="/thumbnail-en-us-1.webp" title="Some video Title" link="#" />
+            <Video thumbnail="/thumbnail-en-us-1.webp" title="Some video Title" link="#" />
+            <Video thumbnail="/thumbnail-en-us-1.webp" title="Some video Title" link="#" />
+          </div>
+        </section>
       </div>
     )
   }
 
-  renderWhy() {
+  renderSeparator() {
     return (
-      <section class="sm-p2x sm-m10t md+m20t">
-        <div class="x xx md+bcm2t p10y">
-          <h2 class="x12 sm-fs8 md+fs12"> {this.i18n.why.heading} </h2>
-          <div class="xl p10y">
-            {this.i18n.why.reasons.map((reason) => <Reason {...reason} />)}
-          </div>
-          <a 
-            href={this.i18n.why.getStarted.link} 
-            title={this.i18n.why.getStarted.text} 
-            class="bci1 cm1 ci1:h bgi1 bgm1:h p2y p4x"
-          > 
-            {this.i18n.why.getStarted.text} 
-          </a>
-          <span class="x12 fs4"> ╰(*°▽°*)╯ </span>
-        </div>
-      </section>
+      <div class="w-full max-w-screen-xl mx-auto flex justify-center items-start flex-wrap border-t-4 border-gray-200 text-center">
+        <img src="/arrow.png" class="-mt-1" />
+      </div>
     )
   }
-  
+
   render() {
-    if(!this.i18n) return false;
     return (
       <div>
         <Hero />
-        <Cycle />
-        <About />
-        <Showcase />
-        <Productivity />
-        <Features />
+        <Separator />
+        <Trinity />
+        <Separator />
+        <Feature snippet="GlueCode" image="/home-glue-code.jpg" title="No more glue code">
+          A full-stack Lifecycle combined with a feature-driven mindset allows
+          you to write clean and reusable code without the need to create APIs
+          manually.
+        </Feature>
+        <Separator />
+        <Feature snippet="Vanilla" image="/home-glue-code.jpg" title="Become a better programmer" inverted>
+          Your components are just POJOs.
+          Take advantage of the existing ecosystem while you write Javascript as it is supposed to be,
+          and see the result reflected in the dom.
+        </Feature>
+        <Separator />
+        <Feature snippet="Modern" image="/home-glue-code.jpg" title="You already know Nullstack">
+          Routes are simple attributes you can assign to any tag, and links are just a tags.
+          You will find out that Nullstack is just a modern version of your current stack.
+        </Feature>
+        <Separator />
+        <Feature snippet="Batteries" image="/home-glue-code.jpg" title="All the tools you need" inverted>
+          Most chores are very repetitive. 
+          Save your energy for the real challenges using the shortcuts we created, 
+          like object events and two-way bindings
+        </Feature>
+        <Separator />
         <Playlist />
-        <Why />
       </div>
-    )
+    );
   }
-
 }
 
 export default Home;

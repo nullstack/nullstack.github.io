@@ -5,17 +5,23 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nullstack": "~0.10.0"
+    "autoprefixer": "^10.2.5",
+    "nullstack": "~0.10.0",
+    "postcss": "^8.2.10",
+    "tailwindcss": "^2.1.1"
   },
   "scripts": {
     "start": "npx webpack --config node_modules/nullstack/webpack.config.js --mode=development --watch",
     "build": "npx webpack --config node_modules/nullstack/webpack.config.js --mode=production",
+    "tailwind": "npx tailwindcss-cli build -o src/tailwind.css",
     "ssg": "npx create-nullstatic-app docs"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.4.0",
     "nullsheet": "~0.2.0",
     "nullstack-google-analytics": "^1.0.0",
     "poisonicon": "^0.1.1",
+    "postcss-cli": "^8.3.1",
     "prismjs": "^1.22.0",
     "remarkable": "^2.0.1",
     "remarkable-meta": "^1.0.1",

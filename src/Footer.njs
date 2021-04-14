@@ -15,19 +15,14 @@ class Footer extends Translatable {
     if(!this.i18n) return false;
     const localUrl = locale !== "en-US" ? `/${locale.toLowerCase()}` : "";
     return (
-      <footer class="xx m20t">
-        <div class="x xr md+bcm2t yy md+p10y prtl">
-          <a href={`${localUrl}/waifu`}>
-            <img
-             src="/nullachan.png"
-             alt={this.i18n.nullachan.alt}
-             title={this.i18n.nullachan.title}
-             class="pabl sm-p2l" height="160" loading="lazy" 
-            />
+      <footer class="flex flex-wrap w-full justify-center relative">
+        <img src="/footer.png" class="absolute bottom-20" />
+        <img src="/stars.png" class="transform hover:scale-105 transition delay-100" />
+        <div class="bg-gray-800 w-full text-center"> 
+          <a href="https://github.com/nullstack/nullstack/stargazers" class="text-white p-4 inline-block text-xl">
+            <span>Leave a star on</span>
+            <span class="font-bold block">GitHub</span>
           </a>
-          <nav class="xr sm-x4 yy">
-            {this.i18n.links.map((link) => <Link {...link} />)}
-          </nav>
         </div>
       </footer>
     )

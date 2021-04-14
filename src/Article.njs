@@ -60,12 +60,31 @@ class Component extends Nullstack {
       page.status = 404;
     }
   }
+
+  renderLink() {
+    return (
+      <a href="/" class="text-gray-500 block"> Getting Started </a>
+    )
+  }
   
   render() {
     return (
-      <section class="x sm-p4x sm-p10y md+p20y"> 
-        <h1 class="x12 sm-fs6 md+fs8 m6b"> {this.title} </h1>
-        <article html={this.html} />
+      <section class="max-w-screen-xl mx-auto px-4 flex flex-wrap sm:flex-nowrap py-16">
+        <aside class="w-full sm:w-80 pl-4">
+          <h5> Core Concepts </h5>
+          <nav>
+            <Link />
+            <Link />
+            <Link />
+            <Link />
+            <Link />
+            <Link />
+          </nav>
+        </aside>
+        <article class="w-full">
+          <h1 class="text-gray-900 text-4xl font-light block mb-8"> {this.title} </h1>
+          <div html={this.html} class="prose max-w-none" />
+        </article>
       </section>
     )
   }
