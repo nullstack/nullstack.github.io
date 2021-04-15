@@ -64,7 +64,7 @@ As seguintes chaves estão disponíveis como **readonly** no contexto do cliente
 - **responsive**: `boolean`
 - **installation**: `BeforeInstallPromptEvent`
 - **registration**: `ServiceWorkerRegistration`
-- **loading**: `object`
+- **queues**: `object`
 
 As seguintes chaves estão disponíveis como **readwrite** no contexto do cliente:
 
@@ -146,37 +146,42 @@ class PWAInstaller extends Nullstack {
 export default PWAInstaller;
 ```
 
-## Carregando telas
+## Telas de Carregamento
 
 Quando uma [função do servidor](/pt-br/funcoes-de-servidor) é chamada o `fetching` será setado como `true` até a requisição ser resolvida.
 
-Quando uma [função do servidor](/pt-br/funcoes-de-servidor) é chamada a chave com o nome da [função do servidor](/pt-br/funcoes-de-servidor) invocada será setada como `true` na chave `loading` até a requisição ser resolvida.
+Quando uma [função do servidor](/pt-br/funcoes-de-servidor) é chamada uma chave com o nome da [função do servidor](/pt-br/funcoes-de-servidor) invocada será setada no objeto `queues` até a requisição ser resolvida.
 
-Qualquer chave que for chamada no objeto `loading` sempre irá retornar um valor booleano ao invés de `undefined` por consistência.
+A chave será um array com todos os argumentos passados ​​para a função do servidor.
 
-Quando o servidor estiver emulando o contexto do cliente para [renderização no lado do servidor](/pt-br/renderizando-no-servidor), todas as chaves de `loading` vão sempre retornar `false`, pulando multiplos ciclos de render por performance.
+Qualquer chave que for chamada no objeto `queues` sempre irá retornar um array ao invés de `undefined` por consistência.
+
+Quando o servidor estiver emulando o contexto do cliente para [renderização no lado do servidor](/pt-br/renderizando-no-servidor), todas as chaves de `queues` vão sempre retornar um array vazio, pulando múltiplos ciclos de render por performance.
 
 ```jsx
 import Nullstack from 'nullstack';
 
 class Page extends Nullstack {
 
-  static async save() {
+  static async save({ valid }) {
     // ...
   }
 
   async submit() {
-    await this.save();
+    await this.save({ valid: true });
   }
- 
-  render({worker}) {
+
+  render({ worker }) {
+    const loadingValidSave = !!worker.queues.save
+      .find(args => args.valid);
+
     return (
-      <form onsubmit={this.save}> 
-        {worker.fetching && 
-          <span> loading... </span>
+      <form onsubmit={this.submit}>
+        {worker.fetching &&
+          <span> carregando... </span>
         }
-        <button disabled={worker.loading.save}> 
-          Save
+        <button disabled={loadingValidSave}>
+          Salvar
         </button>
       </form>
     )
