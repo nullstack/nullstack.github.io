@@ -8,11 +8,8 @@ links:
     href: "/pt-br/componentes"
   - title: "Contribuidores"
     href: "/pt-br/contribuidores"
-  - title: "Fonte"
-    href: "https://github.com/nullstack/nullstack"
-    target: "_blank"
-  - title: "English"
-    href: "/"
+  - title: "Waifu"
+    href: "/pt-br/waifu"
 action:
   title: "Começar"
   href: "/pt-br/comecando"

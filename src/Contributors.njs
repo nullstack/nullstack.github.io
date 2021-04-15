@@ -22,13 +22,13 @@ class Contributors extends Translatable {
   
   renderTopic({title, paragraphs, main, children}) {
     return (
-      <div class="x12 m10b">
-        <element tag={main ? 'h1' : 'h2'} class="x12 sm-fs6 md+fs8 m2b">
+      <div class="w-full mb-12">
+        <element tag={main ? 'h1' : 'h2'} class="text-gray-800 text-xl sm:text-4xl font-light mb-4">
           {title}
         </element>
         {paragraphs &&
-          <div class="xl x12">
-            {paragraphs.map((paragraph) => <p class="x12 fs4 m1b" html={paragraph} />)}
+          <div class="text-xl">
+            {paragraphs.map((paragraph) => <p class="w-full mb-1" html={paragraph} />)}
           </div>
         }
         <div class="xl x12">
@@ -54,13 +54,13 @@ class Contributors extends Translatable {
 
   renderCoreContributor({github, name, role, description, contribution}) {
     return (
-      <div class="xl x12 bcm2 p2 m2t">
-        <img class="xl" src={`https://github.com/${github}.png`} alt={name} width="90" height="90" style="height: 90px" />
-        <div class="md+x10 md+p3l sm-m3t">
+      <div class="border border-gray-100 p-2 mt-2 flex flex-wrap">
+        <img src={`https://github.com/${github}.png`} alt={name} width="90" height="90" class="w-24 h-24 mb-2 sm:mb-0" />
+        <div class="w-full sm:w-10/12 sm:pl-3">
           <h3>
-            <a href={`https://github.com/${github}`} target="_blank" rel="noopener" class="ci1">{name}</a>
+            <a href={`https://github.com/${github}`} target="_blank" rel="noopener" class="text-pink-600">{name}</a>
           </h3>
-          <h4 class="m1y" html={role} />
+          <h4 html={role} />
           <p> {description} </p> 
           <p> {contribution} </p>
         </div>
@@ -86,21 +86,19 @@ class Contributors extends Translatable {
 
   renderContributor({login, avatar_url, html_url}) {
     return (
-      <div class="xx sm-x6 bcm2 p2 m2t">
-        <a href={html_url} title={login} target="_blank" rel="noopener" class="ci1">
-          <img class="xl" src={avatar_url} alt={login} width="90" height="90" style="height: 90px" />
-        </a>
-      </div>
+      <a href={html_url} title={login} target="_blank" rel="noopener" class="ci1">
+        <img src={avatar_url} alt={login} width="90" height="90" class="h-24 w-24" />
+      </a>
     )
   }
 
   renderGithubContributors({title, key}) {
     return (
       <Topic title={title}>
-        <div class="xl">
+        <div class="flex justify-start flex-wrap">
           {this[key].map((contributor) => <Contributor {...contributor} />)}
         </div>
-        <p class="x12 fs4 m2t">{this.i18n.githubCacheWarning}</p>
+        <p class="w-full mt-2">{this.i18n.githubCacheWarning}</p>
       </Topic>
     )
   }
@@ -108,7 +106,7 @@ class Contributors extends Translatable {
   render() {
     if(!this.i18n) return false;
     return (
-      <section class="x sm-p4x sm-p10y md+p20y">
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-24">
         <State />
         <Roadmap />
         <CoreTeam />

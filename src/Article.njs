@@ -4,8 +4,9 @@ import {existsSync, readFileSync} from 'fs';
 import prismjs from 'prismjs';
 import {Remarkable} from 'remarkable';
 import meta from 'remarkable-meta';
+import YAML from 'yaml';
 
-class Component extends Nullstack {
+class Article extends Nullstack {
 
   title = '';
   html = '';
@@ -51,9 +52,16 @@ class Component extends Nullstack {
     }
   }
 
+  static async getArticlesList({locale}) {
+    const file = readFileSync(`i18n/${locale}/components/Documentation.yml`, 'utf-8');
+    return YAML.parse(file);
+  }
+
   async initiate({project, page, locale, params}) {
     const article = await this.getArticleByKey({key: params.slug, locale});
     Object.assign(this, article);
+    const { topics } = await this.getArticlesList({locale});
+    this.topics = topics
     page.title = `${article.title} - ${project.name}`;
     page.description = article.description;
     if(article.status) {
@@ -61,25 +69,28 @@ class Component extends Nullstack {
     }
   }
 
-  renderLink() {
+  renderLink({ title, href }) {
     return (
-      <a href="/" class="text-gray-500 block"> Getting Started </a>
+      <a href={href} class="text-gray-500 hover:text-pink-600 block w-full"> {title} </a>
+    )
+  }
+
+  renderTopic({ title, links }) {
+    return (
+      <div class="mb-3">
+        <h5> {title} </h5>
+        <nav>
+          {links.map((link) => <Link {...link} />)}
+        </nav>
+      </div>
     )
   }
   
   render() {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex flex-wrap sm:flex-nowrap py-16">
-        <aside class="w-full sm:w-80 pl-4">
-          <h5> Core Concepts </h5>
-          <nav>
-            <Link />
-            <Link />
-            <Link />
-            <Link />
-            <Link />
-            <Link />
-          </nav>
+        <aside class="w-full sm:w-80 pr-4">
+          {this.topics?.map((topic) => <Topic {...topic} />)}
         </aside>
         <article class="w-full">
           <h1 class="text-gray-900 text-4xl font-light block mb-8"> {this.title} </h1>
@@ -91,4 +102,4 @@ class Component extends Nullstack {
 
 }
 
-export default Component;
+export default Article;

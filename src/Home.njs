@@ -42,7 +42,7 @@ class Home extends Nullstack {
         <div>
           <img src={image} class="h-48 transform hover:scale-105 transition delay-100" />
         </div>
-        <h3 class="w-full text-center text-pink-600 text-2xl font-light mb-4 px-20">
+        <h3 class="w-full text-center text-pink-600 text-xl sm:text-2xl font-light mb-4 sm:px-20">
           {title}
         </h3>
         <p class="w-full text-center text-xl font-gray-600">{children}</p>
