@@ -23,7 +23,7 @@ class Header extends Translatable {
   render({ mode }) {
     if (!this.i18n) return false;
     return (
-      <header class="fixed w-full bg-white shadow top-0 left-0 z-20">
+      <header class="fixed w-full bg-white dark:bg-gray-900 shadow top-0 left-0 z-20">
         <div class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-4">
           <div class="w-full sm:w-auto justify-between sm:justify-self-start sm:px-0 items-center flex">
             <a {...this.i18n.home}>
@@ -54,7 +54,7 @@ class Header extends Translatable {
             <a
               href={this.i18n.action.href}
               onclick={{ expanded: false }}
-              class="bg-pink-600 text-white px-4 py-2 border border-pink-600 hover:bg-white hover:text-pink-600 w-full sm:w-auto"
+              class="bg-pink-600 text-white px-4 py-2 border border-pink-600 hover:bg-transparent hover:text-pink-600 w-full sm:w-auto"
             >
               {this.i18n.action.title}
             </a>

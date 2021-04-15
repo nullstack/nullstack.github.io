@@ -23,7 +23,7 @@ class Contributors extends Translatable {
   renderTopic({title, paragraphs, main, children}) {
     return (
       <div class="w-full mb-12">
-        <element tag={main ? 'h1' : 'h2'} class="text-gray-800 text-xl sm:text-4xl font-light mb-4">
+        <element tag={main ? 'h1' : 'h2'} class="text-xl sm:text-4xl font-light mb-4">
           {title}
         </element>
         {paragraphs &&
@@ -54,7 +54,7 @@ class Contributors extends Translatable {
 
   renderCoreContributor({github, name, role, description, contribution}) {
     return (
-      <div class="border border-gray-100 p-2 mt-2 flex flex-wrap">
+      <div class="border border-gray-100 dark:border-gray-800 p-2 mt-2 flex flex-wrap">
         <img src={`https://github.com/${github}.png`} alt={name} width="90" height="90" class="w-24 h-24 mb-2 sm:mb-0" />
         <div class="w-full sm:w-10/12 sm:pl-3">
           <h3>

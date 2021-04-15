@@ -14,6 +14,9 @@ module.exports = {
   variants: {
     extend: {
       backgroundSize: ['hover'],
+      opacity: ['dark'],
+      typography: ['dark'],
+      borderColor: ['dark'],
     },
   },
   plugins: [

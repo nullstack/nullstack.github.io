@@ -13,26 +13,26 @@ class Home extends Nullstack {
             <span class="text-pink-600 text-3xl sm:text-5xl font-light block sm:mb-3">
               Javascript Components
             </span>
-            <span class="text-gray-900 text-2xl sm:text-4xl font-light block">
+            <span class="text-gray-900 dark:text-white text-2xl sm:text-4xl font-light block">
               For one-dev armies
             </span>
           </h1>
-          <p class="text-gray-600 text-xl sm:text-2xl">
+          <p class="text-xl sm:text-2xl">
             Write the back-end and the front-end of a feature in a single
             component and let the framework decide where the code should run.
           </p>
-          <p class="text-gray-600 text-xl sm:text-2xl">
+          <p class="text-xl sm:text-2xl">
             Nullstack gives you all the tools you need to stay focused on your
             business logic.
           </p>
           <div>
-            <button class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-white hover:text-pink-600 inline-block">
+            <button class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 inline-block">
               npx create-nullstack-app
             </button>
           </div>
         </div>
-        <div class="bg-center bg-0 hover:bg-100 bg-repeat-y" style="background-image: url(/stars.png); transition: background-size 3s;">
-        <img src="/hero.png" alt="Nulla-Chan" class="max-w-full" />
+        <div class="bg-center bg-0 hover:bg-100 bg-repeat-y mt-6" style="background-image: url(/stars.png); transition: background-size 3s;">
+          <img src="/hero.png" alt="Nulla-Chan" class="max-w-full" />
         </div>
       </section>
     );
@@ -84,7 +84,7 @@ class Home extends Nullstack {
           <h2 class="text-pink-600 text-xl sm:text-4xl font-light mb-4">
             {title}
           </h2>
-          <p class="text-xl font-gray-600">
+          <p class="text-xl">
             {children}
           </p>
           <img src={image} />
@@ -107,7 +107,7 @@ class Home extends Nullstack {
     return (
       <div>
         <section class="max-w-screen-xl mx-auto px-4 flex justify-center items-center flex-wrap py-12 sm:pt-36">
-          <h2 class="text-gray-800 text-xl sm:text-4xl font-light mb-4"> 
+          <h2 class="text-xl sm:text-4xl font-light mb-4"> 
             Learn with our <del class="text-gray-400">Dweebs</del> <span class="text-pink-600">Experts </span>
           </h2>
           <div class="sm:flex items-center justify-center w-full mt-12 flex-wrap">
@@ -122,7 +122,7 @@ class Home extends Nullstack {
 
   renderSeparator() {
     return (
-      <div class="w-full max-w-screen-xl mx-auto flex justify-center items-start flex-wrap border-t-4 border-gray-200 text-center">
+      <div class="w-full max-w-screen-xl mx-auto flex justify-center items-start flex-wrap border-t-4 border-gray-200 text-center dark:opacity-10">
         <img src="/arrow.png" class="-mt-1" />
       </div>
     )
@@ -135,24 +135,24 @@ class Home extends Nullstack {
         <Separator />
         <Trinity />
         <Separator />
-        <Feature snippet="GlueCode" image="/home-glue-code.jpg" title="No more glue code">
+        <Feature snippet="GlueCode" image="/glue-code.png" title="No more glue code">
           A full-stack Lifecycle combined with a feature-driven mindset allows
           you to write clean and reusable code without the need to create APIs
           manually.
         </Feature>
         <Separator />
-        <Feature snippet="Vanilla" image="/home-glue-code.jpg" title="Become a better programmer" inverted>
+        <Feature snippet="Vanilla" image="/glue-code.png" title="Become a better programmer" inverted>
           Your components are just POJOs.
           Take advantage of the existing ecosystem while you write Javascript as it is supposed to be,
           and see the result reflected in the dom.
         </Feature>
         <Separator />
-        <Feature snippet="Modern" image="/home-glue-code.jpg" title="You already know Nullstack">
+        <Feature snippet="Modern" image="/glue-code.png" title="You already know Nullstack">
           Routes are simple attributes you can assign to any tag, and links are just a tags.
           You will find out that Nullstack is just a modern version of your current stack.
         </Feature>
         <Separator />
-        <Feature snippet="Batteries" image="/home-glue-code.jpg" title="All the tools you need" inverted>
+        <Feature snippet="Batteries" image="/glue-code.png" title="All the tools you need" inverted>
           Most chores are very repetitive. 
           Save your energy for the real challenges using the shortcuts we created, 
           like object events and two-way bindings

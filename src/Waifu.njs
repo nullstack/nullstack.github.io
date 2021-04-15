@@ -13,7 +13,7 @@ class Waifu extends Translatable {
   render({worker}) {
     if(!this.i18n) return false;
     return (
-      <div class="x md+p20t p10y sm-p2x"> 
+      <div class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-24"> 
         <div class="xx x12">
           {worker.online && <img src="/waifu.png" alt="Nulla-Chan" height="500" />}
           <div class="md+p10l">
