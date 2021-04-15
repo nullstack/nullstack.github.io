@@ -16,8 +16,9 @@ class Footer extends Translatable {
     const localUrl = locale !== "en-US" ? `/${locale.toLowerCase()}` : "";
     return (
       <footer class="flex flex-wrap w-full justify-center relative">
-        <img src="/footer.png" class="absolute bottom-20" />
-        <img src="/stars.png" class="transform hover:scale-105 transition delay-100" />
+        <div class="w-full relative flex justify-center h-80 bg-70 hover:bg-100 bg-center bg-no-repeat" style="background-image: url(/stars.png); transition: background-size 3s;">
+          <img src="/footer.png" class="absolute bottom-0" />
+        </div>
         <div class="bg-gray-800 w-full text-center"> 
           <a href="https://github.com/nullstack/nullstack/stargazers" class="text-white p-4 inline-block text-xl">
             <span>Leave a star on</span>

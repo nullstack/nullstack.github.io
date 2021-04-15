@@ -93,11 +93,11 @@ class Article extends Nullstack {
         <button onclick={{expanded: !this.expanded}} class="fixed bottom-10 right-10 bg-pink-600 text-white shadow-xl rounded-full py-2 px-4 z-50 md:hidden ring-0"> 
           <Triangle height={15} rotation={this.expanded ? 180 : 0} />
         </button>
-        <aside class={`w-full md:w-80 fixed top-0 left-0 md:relative z-40 md:z-auto bg-white h-screen md:h-auto p-4 overflow-y-auto md:p-0 md:pr-4 transform pb-24 sm:pb-0 ${this.expanded ? '-translate-x-0 transition delay-300' : '-translate-x-full md:-translate-x-0'}`}>
+        <aside class={`w-full md:w-80 fixed top-0 left-0 md:relative z-40 md:z-auto bg-white h-screen md:h-auto p-4 overflow-y-auto md:p-0 md:pr-4 transform pb-24 sm:pb-0 ${this.expanded ? 'translate-y-0 transition delay-500' : 'translate-y-full md:translate-y-0'}`}>
           {this.topics?.map((topic) => <Topic {...topic} />)}
         </aside>
         <article class="w-full pb-24">
-          <h1 class="text-gray-900 text-4xl font-light block mb-8"> {this.title} </h1>
+          <h1 class="text-pink-600 text-4xl font-light block mb-8"> {this.title} </h1>
           <div html={this.html} class="prose max-w-none" />
         </article>
       </section>

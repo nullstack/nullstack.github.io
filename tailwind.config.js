@@ -2,12 +2,22 @@ module.exports = {
   purge: ["./src/**/*.njs"],
   darkMode: "class",
   theme: {
-    extend: {},
+    backgroundSize: {
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+      '0': '0%',
+      '70': '70%',
+      '100': '100%',
+    }
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundSize: ['hover'],
+    },
   },
   plugins: [
+    require('autoprefixer'),
     require('@tailwindcss/typography'),
   ],
 };

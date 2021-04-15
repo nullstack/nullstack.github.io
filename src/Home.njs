@@ -31,7 +31,9 @@ class Home extends Nullstack {
             </button>
           </div>
         </div>
-        <img src="/hero.jpg" alt="Nulla-Chan" class="max-w-full" />
+        <div class="bg-center bg-0 hover:bg-100 bg-repeat-y" style="background-image: url(/stars.png); transition: background-size 3s;">
+        <img src="/hero.png" alt="Nulla-Chan" class="max-w-full" />
+        </div>
       </section>
     );
   }
@@ -39,7 +41,7 @@ class Home extends Nullstack {
   renderRole({ image, title, children }) {
     return (
       <div class="sm:w-1/3 px-8 flex flex-wrap justify-center text-center">
-        <div>
+        <div class="bg-center bg-0 hover:bg-100" style="background-image: url(/stars.png); transition: background-size 3s;">
           <img src={image} class="h-48 transform hover:scale-105 transition delay-100" />
         </div>
         <h3 class="w-full text-center text-pink-600 text-xl sm:text-2xl font-light mb-4 sm:px-20">
