@@ -107,6 +107,24 @@ export default function BindPureComponent(context) {
 }
 ```
 
+Ou, até mesmo usar funções locais executadas por eventos para fazer essa modificação:
+
+```jsx
+export default function EventPureComponent(context) {
+  const multiple = 2;
+  function multiply() {
+    context.count *= multiple;
+  }
+
+  return (
+    <div>
+      <button onclick={multiply}>Multiply</button>
+      <p>{context.count}</p>
+    </div>
+  )
+}
+```
+
 > 💡 Com sua versatilidade e simplicidade, os componentes funcionais são perfeitos para bibliotecas de componentes sem estado
 
 ## Próxima Etapa

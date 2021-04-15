@@ -107,6 +107,24 @@ export default function BindPureComponent(context) {
 }
 ```
 
+Or, even use local functions ran by events to do this update:
+
+```jsx
+export default function EventPureComponent(context) {
+  const multiple = 2;
+  function multiply() {
+    context.count *= multiple;
+  }
+
+  return (
+    <div>
+      <button onclick={multiply}>Multiply</button>
+      <p>{context.count}</p>
+    </div>
+  )
+}
+```
+
 > 💡 With it's versatility and simplicity functional components are perfect for stateless components libraries
 
 ## Next step
