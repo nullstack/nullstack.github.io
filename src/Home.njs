@@ -79,7 +79,7 @@ class Home extends Nullstack {
           <Snippet key={snippet} />
         </div>
         <div class="mt-12 sm:mt-0 sm:w-5/12">
-          <h2 class="text-pink-600 text-3xl sm:text-4xl font-light mb-4">
+          <h2 class="text-pink-600 text-xl sm:text-4xl font-light mb-4">
             {title}
           </h2>
           <p class="text-xl font-gray-600">
@@ -105,7 +105,7 @@ class Home extends Nullstack {
     return (
       <div>
         <section class="max-w-screen-xl mx-auto px-4 flex justify-center items-center flex-wrap py-12 sm:pt-36">
-          <h2 class="text-gray-800 text-2xl sm:text-4xl font-light mb-4"> 
+          <h2 class="text-gray-800 text-xl sm:text-4xl font-light mb-4"> 
             Learn with our <del class="text-gray-400">Dweebs</del> <span class="text-pink-600">Experts </span>
           </h2>
           <div class="sm:flex items-center justify-center w-full mt-12 flex-wrap">
