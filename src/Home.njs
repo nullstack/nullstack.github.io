@@ -61,11 +61,11 @@ class Home extends Translatable {
     );
   }
 
-  renderFeature({ snippet, image, title, text, inverted }) {
+  renderFeature({ snippet, image, title, text, inverted, locale }) {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
         <div class={`w-full sm:w-5/12 ${inverted ? 'sm:order-2' : ''}`}>
-          <Snippet key={snippet} />
+          <Snippet key={snippet} locale={locale} />
         </div>
         <div class="mt-12 sm:mt-0 sm:w-5/12">
           <h2 class="text-pink-600 text-xl sm:text-4xl font-light mb-4">
