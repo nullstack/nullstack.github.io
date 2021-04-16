@@ -1,14 +1,14 @@
 class Vanilla extends Nullstack {
 
-  // variables are just variables
+  // variáveis ​​são apenas variáveis
   count = 0;
 
-  // mutations reflect in the dom
+  // mutações refletem no dom
   increment() {
     this.count++
   }
-  
-  // this is bound by default
+
+  // 'this' é vinculado por padrão
   render() {
     return (
       <button onclick={this.increment}> 
