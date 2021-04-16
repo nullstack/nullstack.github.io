@@ -22,43 +22,36 @@ trinity:
     title: "Solicitações de API leves"
     text:
       "As funções de servidor subsequentes buscarão JSON de uma API de microsserviços gerada automaticamente, desserializarão a resposta, atualizarão o estado do aplicativo e renderizarão a página sem nenhuma escrita adicional"
-productivity:
-  heading: "A Produtividade está nos Detalhes"
-  tagline: "Os recursos do Nullstack foram extraídos de projetos da vida real com conveniência e consistência em mente"
 features:
-  - title: "No more glue code"
+  - title: "Sem mais código para interoperabilidade"
     snippet: "GlueCode"
     image: "/home-glue-code.jpg"
     text:
-      "A full-stack Lifecycle combined with a feature-driven mindset allows
-      you to write clean and reusable code without the need to create APIs
-      manually."
-  - title: "Become a better programmer"
+      "Um ciclo de vida full-stack combinado com uma mentalidade orientada a recursos permite que você escreva código limpo e reutilizável sem a necessidade de criar APIs manualmente."
+  - title: "Torne-se um programador melhor"
     snippet: "Vanilla"
     image: "/home-glue-code.jpg"
     inverted: true
     text:
-      "Your components are just POJOs.
-      Take advantage of the existing ecosystem while you write Javascript as it is supposed to be,
-      and see the result reflected in the dom."
-  - title: "You already know Nullstack"
+      "Seus componentes são apenas POJOs.
+      Aproveite as vantagens do ecossistema existente enquanto escreve Javascript como deve ser e veja o resultado refletido no dom."
+  - title: "Você já sabe Nullstack"
     snippet: "Modern"
     image: "/home-glue-code.jpg"
     text:
-      "Routes are simple attributes you can assign to any tag, and links are just a tags.
-      You will find out that Nullstack is just a modern version of your current stack."
-  - title: "All the tools you need"
+      "As rotas são atributos simples que você pode atribuir a qualquer tag, e os links são apenas tags 'a'.
+      Você descobrirá que Nullstack é apenas uma versão moderna de sua stack atual."
+  - title: "Todas as ferramentas que você precisa"
     snippet: "Batteries"
     image: "/home-glue-code.jpg"
     inverted: true
     text:
-      "Most chores are very repetitive. 
-      Save your energy for the real challenges using the shortcuts we created, 
-      like object events and two-way bindings"
+      "A maioria das tarefas é muito repetitiva.
+      Economize sua energia para os desafios reais usando os atalhos que criamos, como eventos em objeto e vínculos bidirecionais."
 playlist:
-  heading: "Learn with our "
+  heading: "Aprenda com nossos "
   slang: "Dweebs"
-  realWord: " Experts"
+  realWord: " Especialistas"
   videos:
     - title: "Full-stack com Nullstack - Parte 1"
       link: "https://www.youtube.com/watch?v=ieLVXZGXUkI&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"

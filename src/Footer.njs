@@ -21,7 +21,7 @@ class Footer extends Translatable {
         </div>
         <div class="bg-gray-800 w-full text-center"> 
           <a href="https://github.com/nullstack/nullstack/stargazers" class="text-white p-4 inline-block text-xl">
-            <span>Leave a star on</span>
+            <span>{this.i18n.star}</span>
             <span class="font-bold block">GitHub</span>
           </a>
         </div>

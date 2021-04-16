@@ -49,7 +49,7 @@ features:
     snippet: "Modern"
     image: "/home-glue-code.jpg"
     text:
-      "Routes are simple attributes you can assign to any tag, and links are just a tags.
+      "Routes are simple attributes you can assign to any tag, and links are just 'a' tags.
       You will find out that Nullstack is just a modern version of your current stack."
   - title: "All the tools you need"
     snippet: "Batteries"
@@ -58,7 +58,7 @@ features:
     text:
       "Most chores are very repetitive. 
       Save your energy for the real challenges using the shortcuts we created, 
-      like object events and two-way bindings"
+      like object events and two-way bindings."
 playlist:
   heading: "Learn with our "
   slang: "Dweebs"
