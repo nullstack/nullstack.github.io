@@ -2,6 +2,17 @@ import Translatable from './Translatable';
 import Snippet from "./Snippet";
 
 class Home extends Translatable {
+
+  async getStarted({ router, href }) {
+    if('clipboard' in navigator) {
+      const command = 'npx create-nullstack-app';
+      await navigator.clipboard.writeText(command);
+    }
+    this.gettingStarted = setInterval(() => {
+      router.url = href;
+    }, 3000)
+  }
+
   renderHero() {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap">
@@ -25,8 +36,12 @@ class Home extends Translatable {
             )}
           </>
           <div>
-            <button class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-white hover:text-pink-600 inline-block">
-              {this.i18n.hero.callToAction}
+            <button 
+              class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 inline-block" 
+              onclick={this.getStarted}
+              href={this.i18n.hero.actionLink}
+            >
+              {this.gettingStarted ? this.i18n.hero.actionCallback : this.i18n.hero.callToAction}
             </button>
           </div>
         </div>
@@ -34,7 +49,7 @@ class Home extends Translatable {
           <img src="/illustrations/nulla-hero.webp" alt="Nulla-Chan" class="max-w-full" width="627" height="765" loading="lazy" />
         </div>
       </section>
-    );
+    )
   }
 
   renderRole({ image, title, text }) {
@@ -48,7 +63,7 @@ class Home extends Translatable {
         </h2>
         <p class="w-full text-center text-xl font-gray-600">{text}</p>
       </div>
-    );
+    )
   }
 
   renderTrinity() {
@@ -56,7 +71,7 @@ class Home extends Translatable {
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
         {this.i18n.trinity.map((role) => <Role {...role} />)}
       </section>
-    );
+    )
   }
 
   renderFeature({ snippet, image, title, text, inverted, locale }) {
@@ -75,7 +90,7 @@ class Home extends Translatable {
           <img src={image} alt={title} class="mt-6" width="520" height="272" loading="lazy" />
         </div>
       </section>
-    );
+    )
   }
 
   renderVideo({ link, title, thumbnail }) {
@@ -130,8 +145,9 @@ class Home extends Translatable {
         )}
         <Playlist />
       </div>
-    );
+    )
   }
+
 }
 
 export default Home;

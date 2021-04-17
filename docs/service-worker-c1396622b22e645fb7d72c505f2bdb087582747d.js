@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "static": true,
-    "key": "f03d17586d94c6b7ceedd9a71e511aea36f80aad"
+    "key": "c1396622b22e645fb7d72c505f2bdb087582747d"
   },
   "project": {
     "cdn": "",
@@ -68,6 +68,7 @@ self.context = {
       "/styles",
       "/two-way-bindings",
       "/illustrations/nulla-dps.webp",
+      "/illustrations/nulla-fullbody.png",
       "/illustrations/nulla-glue.webp",
       "/illustrations/nulla-healer.webp",
       "/illustrations/nulla-hero.webp",

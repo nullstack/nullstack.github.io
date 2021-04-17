@@ -10,6 +10,8 @@ hero:
     - "Nullstack gives you all the tools you need to stay focused on your
       business logic."
   callToAction: "npx create-nullstack-app"
+  actionLink: '/getting-started'
+  actionCallback: 'Command copied, paste it on the terminal'
 trinity:
   - title: "Optimized for first render"
     image: "/illustrations/nulla-tanker.webp"
