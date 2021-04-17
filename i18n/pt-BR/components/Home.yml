@@ -1,55 +1,64 @@
 title: "Componentes Javascript Full-stack"
 description: "Nullstack é um framework javascript full-stack para construir aplicações web progressivas"
 hero:
-  heading: "Componentes Javascript Full-stack"
+  heading: "Full-stack"
+  subHeading: "em Componentes Javascript"
   tagline: "para exércitos de um dev só"
   descriptions:
-    - "Nullstack é um framework full-stack para construir <strong>aplicações web progressivas</strong>."
-    - "Ele conecta uma camada de <strong>UI com estado</strong> a <strong>microserviços</strong> especializados no mesmo componente usando <strong>vanilla javascript</strong>."
-    - "Concentre-se em resolver sua lógica de negócios em vez de escrever código para interoperabilidade."
-cycle:
-  ssr:
-    title: "Renderização no Servidor"
-    link: "/pt-br/renderizando-no-servidor"
+    - "Escreva o back-end e o front-end de um recurso em um único
+      componente e deixe o framework decidir onde o código deve ser executado."
+    - "O Nullstack oferece todas as ferramentas de que você precisa para manter o foco em sua lógica de negócios."
+  callToAction: "npx create-nullstack-app"
+trinity:
+  optimized:
+    title: "Otimizado para a primeira renderização"
     text:
-      "Nullstack gera HTML otimizado e com <strong>SEO pronto</strong> para o primeiro rascunho de sua rota em uma única requisição usando funções locais e com <strong> zero dependências javascript </strong> no cliente."
-  spa:
-    title: "Single Page Application"
-    link: "/pt-br/ciclo-de-vida-full-stack"
+      "Na primeira renderização, você terá HTML pronto para SEO e otimizado para a primeira pintura de sua rota em uma única solicitação usando funções locais com nenhuma dependência de javascript no pacote do cliente"
+  pwa:
+    title: "Pertinente Experiência de PWA"
     text:
-      "Após hidratação, requisições irão buscar JSON de uma <strong>API gerada automaticamente</strong> por funções do servidor, atualizar o estado da aplicação e renderizar a página novamente."
-  ssg:
-    title: "Geração de Site Estático"
-    link: "/pt-br/geracao-de-sites-estaticos"
-    text: "Você pode até usar o Nullstack para gerar <strong>sites estáticos</strong> ultra-rápidos que servem HTML e se tornam uma Single Page Application usando uma <strong>API estática</strong> gerada automaticamente."
-about:
-  heading: "Recursos Completos como Componentes"
-  taglines:
-    - "Nullstack não é apenas outra parte de sua stack, mas sim a sua stack"
-    - "Sua aplicação pode ser exportado do back-end para o front-end como um componente e montado em outra aplicação"
-showcase:
-  descriptions:
-    - "O exemplo acima é o código completo de uma listagem de produtos e um formulário de edição sem esconder nenhuma linha."
-    - "Ambos os componentes invocam funções de servidor para ter acesso ao banco de dados MySQL no meio do JavaScript sem você ter que pensar em APIs."
+      "Depois que o conteúdo é servido e a rede está ociosa, o javascript do Nullstack é carregado, o estado do aplicativo é restaurado por meio de hidratação e torna-se um aplicativo de página única"
+  api:
+    title: "Solicitações de API leves"
+    text:
+      "As funções de servidor subsequentes buscarão JSON de uma API de microsserviços gerada automaticamente, desserializarão a resposta, atualizarão o estado do aplicativo e renderizarão a página sem nenhuma escrita adicional"
 productivity:
   heading: "A Produtividade está nos Detalhes"
   tagline: "Os recursos do Nullstack foram extraídos de projetos da vida real com conveniência e consistência em mente"
 features:
-  - title: "Componentes com Estado"
-    key: "Stateful"
-    link: "/pt-br/componentes-com-estado"
-  - title: "Vínculo Bidirecional"
-    key: "Binding"
-    link: "/pt-br/vinculo-bidirecional"
-  - title: "Rotas Integradas"
-    key: "Routes"
-    link: "/pt-br/rotas-e-parametros"
-  - title: "Ciclo de Vida Full-stack"
-    key: "Lifecycle"
-    link: "/pt-br/ciclo-de-vida-full-stack"
+  - title: "No more glue code"
+    snippet: "GlueCode"
+    image: "/home-glue-code.jpg"
+    text:
+      "A full-stack Lifecycle combined with a feature-driven mindset allows
+      you to write clean and reusable code without the need to create APIs
+      manually."
+  - title: "Become a better programmer"
+    snippet: "Vanilla"
+    image: "/home-glue-code.jpg"
+    inverted: true
+    text:
+      "Your components are just POJOs.
+      Take advantage of the existing ecosystem while you write Javascript as it is supposed to be,
+      and see the result reflected in the dom."
+  - title: "You already know Nullstack"
+    snippet: "Modern"
+    image: "/home-glue-code.jpg"
+    text:
+      "Routes are simple attributes you can assign to any tag, and links are just a tags.
+      You will find out that Nullstack is just a modern version of your current stack."
+  - title: "All the tools you need"
+    snippet: "Batteries"
+    image: "/home-glue-code.jpg"
+    inverted: true
+    text:
+      "Most chores are very repetitive. 
+      Save your energy for the real challenges using the shortcuts we created, 
+      like object events and two-way bindings"
 playlist:
-  heading: "Assista aos nossos vídeos tutoriais do Nullstack"
-  tagline: "Nullstack se preocupa em tornar seu conteúdo o mais direto ao ponto e fácil de entender quanto possível"
+  heading: "Learn with our "
+  slang: "Dweebs"
+  realWord: " Experts"
   videos:
     - title: "Full-stack com Nullstack - Parte 1"
       link: "https://www.youtube.com/watch?v=ieLVXZGXUkI&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
@@ -60,25 +69,3 @@ playlist:
     - title: "Full-stack com Nullstack - Parte 3"
       link: "https://www.youtube.com/watch?v=uRlvILvJ0Oc&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
       thumbnail: "/thumbnail-pt-br-3.webp"
-why:
-  heading: "Por que você deve usar o Nullstack?"
-  reasons:
-    - title: "Desenvolvimento Escalável"
-      description: "Cada projeto começa pequeno e se torna complexo com o tempo. Escale conforme avança, não importa o tamanho da equipe."
-      link: "/pt-br/sobre"
-      closer: "Sem compromissos, sem imposições."
-    - title: "Desenvolvimento Orientado a Recursos"
-      description: "Desenvolvimento de back e front end de um recurso no mesmo componente de forma organizada com facilidade de visão geral."
-      link: "/pt-br/sobre#feature-driven"
-      closer: "Verdadeira componentização e reutilização de código."
-    - title: "Ecossistema já existente"
-      description: "Tira proveito de todo e qualquer pacote isomórfico em Vanilla Javascript já feito em toda história."
-      link: "/pt-br/sobre#tudo---possivel"
-      closer: "Todo o sua aplicação fala a mesma língua."
-    - title: "Adapte-se rapidamente às mudanças de escopo"
-      description: "A estrutura horizontal, ao contrário de uma hierárquica, torna muito mais fácil mover os recursos."
-      link: "/pt-br/sobre#por-que-inje--o-de-depend-ncia-em-vez-de-modularidade"
-      closer: "Flexibilidade acima de burocracia."
-  getStarted:
-    text: "Começar!"
-    link: "/pt-br/comecando"

@@ -1,58 +1,68 @@
 title: "Full-stack Javascript Components"
 description: "Nullstack is a full-stack javascript framework for building progressive web applications"
 hero:
-  heading: "Full-stack Javascript Components"
-  tagline: "for one-dev armies"
+  heading: "Full-stack"
+  subHeading: "Javascript Components"
+  tagline: "For one-dev armies"
   descriptions:
-    - "Nullstack is a full-stack framework for building <strong>progressive web applications</strong>."
-    - "It connects a <strong> stateful UI </strong> layer to specialized <strong>microservices</strong> in the same component using <strong>vanilla javascript</strong>."
-    - "Focus on solving your business logic instead of writing glue code."
-cycle:
-  ssr:
-    title: "Server-Side Rendering"
-    link: "/server-side-rendering"
+    - "Write the back-end and the front-end of a feature in a single
+      component and let the framework decide where the code should run."
+    - "Nullstack gives you all the tools you need to stay focused on your
+      business logic."
+  callToAction: "npx create-nullstack-app"
+trinity:
+  optimized:
+    title: "Optimized for first render"
     text:
-      "Nullstack generates <strong> SEO ready </strong> HTML optimized for the
-      first paint of your route in a single request using local functions
-      with <strong> zero javascript </strong> dependencies in the client bundle."
-  spa:
-    title: "Single Page Application"
-    link: "/full-stack-lifecycle"
+      "On the first render you'll get SEO ready HTML optimized for the first
+      paint of your route in a single request using local functions with
+      zero javascript dependencies in the client bundle"
+  pwa:
+    title: "Snappy PWA experience"
     text:
-      "After hydration, requests will fetch JSON from an <strong> automatically generated API </strong>
-      off server functions, update the application state, and rerender the page."
-  ssg:
-    title: "Static Site Generation"
-    link: "/static-site-generation"
-    text: "You can even use Nullstack to generate lightning-fast <strong> static websites </strong> that serve HTML and become a  single page application using an automatically generated <strong> static API </strong>."
-about:
-  heading: "Complete Features as Components"
-  taglines:
-    - "Nullstack is not another part of your stack, it is your stack"
-    - "Your application can be exported from back-end to front-end as a component and mounted into another application"
-showcase:
-  descriptions:
-    - "The example above is the complete code of a product list and edit form without hiding a single line."
-    - "Both components invoke server functions to access a MySQL database inside JavaScript without you having to think about APIs"
-productivity:
-  heading: "Productivity is in the Details"
-  tagline: "Nullstack features have been extracted from real life projects with convenience and consistency in mind"
+      "After the content is served and the network is idle Nullstack
+      javascript is loaded, the state of the application is restored through
+      hydration and it becomes a single page application"
+  api:
+    title: "Lightweight API requests"
+    text:
+      "Subsequent server functions will fetch JSON from an automaticallty
+      generated microservice API, deserialize the response, update the
+      aplication state, and rerender the page out of the box"
 features:
-  - title: "Stateful Components"
-    key: "Stateful"
-    link: "/stateful-components"
-  - title: "Two-Way Binding"
-    key: "Binding"
-    link: "/two-way-bindings"
-  - title: "Built-in Routes"
-    key: "Routes"
-    link: "/routes-and-params"
-  - title: "Full-stack Lifecycle"
-    key: "Lifecycle"
-    link: "/full-stack-lifecycle"
+  - title: "No more glue code"
+    snippet: "GlueCode"
+    image: "/nulla-glue.webp"
+    text:
+      "A full-stack Lifecycle combined with a feature-driven mindset allows
+      you to write clean and reusable code without the need to create APIs
+      manually."
+  - title: "Become a better programmer"
+    snippet: "Vanilla"
+    image: "/nulla-scrolls.jpg"
+    inverted: true
+    text:
+      "Your components are just POJOs.
+      Take advantage of the existing ecosystem while you write Javascript as it is supposed to be,
+      and see the result reflected in the dom."
+  - title: "You already know Nullstack"
+    snippet: "Modern"
+    image: "/nulla-map.jpg"
+    text:
+      "Routes are simple attributes you can assign to any tag, and links are just a tags.
+      You will find out that Nullstack is just a modern version of your current stack."
+  - title: "All the tools you need"
+    snippet: "Batteries"
+    image: "/nulla-tools.webp"
+    inverted: true
+    text:
+      "Most chores are very repetitive. 
+      Save your energy for the real challenges using the shortcuts we created, 
+      like object events and two-way bindings"
 playlist:
-  heading: "Watch our Nullstack video tutorials"
-  tagline: "Nullstack cares about making its content as direct to the point and easy to understand as possible"
+  heading: "Learn with our "
+  slang: "Dweebs"
+  realWord: " Experts"
   videos:
     - title: "Full-stack with Nullstack - Part 1"
       link: "https://www.youtube.com/watch?v=l23z00GEar8&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
@@ -63,25 +73,3 @@ playlist:
     - title: "Full-stack with Nullstack - Part 3"
       link: "https://www.youtube.com/watch?v=8PExa5-G1As&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
       thumbnail: "/thumbnail-en-us-3.webp"
-why:
-  heading: "Why should you use Nullstack?"
-  reasons:
-    - title: "Scalable Development"
-      description: "Every project starts small and becomes complex over time. Scale as you go, no matter the size of the team."
-      link: "/about"
-      closer: "No compromises, no enforcements."
-    - title: "Feature-driven Development"
-      description: "Development of both back and front ends of a feature in the same component in an organized way with ease of overview."
-      link: "/about#feature-driven"
-      closer: "True componentization and code reusability."
-    - title: "Already existing ecosystem"
-      description: "Takes advantage of any isomorphic vanilla Javascript package made throughout history."
-      link: "/about#everything-as-vanilla-as-possible"
-      closer: "All of your application speaks the same language."
-    - title: "Quickly adapt to scope changes"
-      description: "The horizontal structure, as opposed to a hierarchical one, makes it a lot easier to move resources around."
-      link: "/about#why-dependency-injection-instead-of-modularity"
-      closer: "Flexibility over bureaucracy."
-  getStarted:
-    text: "Get Started"
-    link: "/getting-started"

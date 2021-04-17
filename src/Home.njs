@@ -1,33 +1,32 @@
-import Nullstack from "nullstack";
+import Translatable from './Translatable';
 import Snippet from "./Snippet";
 
-class Home extends Nullstack {
+class Home extends Translatable {
   renderHero() {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap">
         <div class="sm:w-5/12 grid gap-8 mt-12 sm:mt-0">
           <h1 class="w-full">
             <span class="text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">
-              Full-Stack
+              {this.i18n.hero.heading}
             </span>
             <span class="text-pink-600 text-3xl sm:text-5xl font-light block sm:mb-3">
-              Javascript Components
+              {this.i18n.hero.subHeading}
             </span>
-            <span class="text-gray-900 dark:text-white text-2xl sm:text-4xl font-light block">
-              For one-dev armies
+            <span class="text-gray-900 text-2xl sm:text-4xl font-light block">
+              {this.i18n.hero.tagline}
             </span>
           </h1>
-          <p class="text-xl sm:text-2xl">
-            Write the back-end and the front-end of a feature in a single
-            component and let the framework decide where the code should run.
-          </p>
-          <p class="text-xl sm:text-2xl">
-            Nullstack gives you all the tools you need to stay focused on your
-            business logic.
-          </p>
+          <>
+            {this.i18n.hero.descriptions.map(description => 
+              <p class="text-xl sm:text-2xl">
+                {description}
+              </p>
+            )}
+          </>
           <div>
-            <button class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 inline-block">
-              npx create-nullstack-app
+            <button class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-white hover:text-pink-600 inline-block">
+              {this.i18n.hero.callToAction}
             </button>
           </div>
         </div>
@@ -38,16 +37,16 @@ class Home extends Nullstack {
     );
   }
 
-  renderRole({ image, title, children }) {
+  renderRole({ image, title, text }) {
     return (
       <div class="sm:w-1/3 px-8 flex flex-wrap justify-center text-center">
         <div class="bg-center bg-0 hover:bg-100" style="background-image: url(/stars.png); transition: background-size 3s;">
-          <img src={image} class="h-48 transform hover:scale-105 transition delay-100" />
+          <img src={image} alt={title} class="h-48 transform hover:scale-105 transition delay-100" />
         </div>
-        <h3 class="w-full text-center text-pink-600 text-xl sm:text-2xl font-light mb-4 sm:px-20">
+        <h2 class="w-full text-center text-pink-600 text-xl sm:text-2xl font-light mb-4 sm:px-20">
           {title}
-        </h3>
-        <p class="w-full text-center text-xl font-gray-600">{children}</p>
+        </h2>
+        <p class="w-full text-center text-xl font-gray-600">{text}</p>
       </div>
     );
   }
@@ -55,39 +54,27 @@ class Home extends Nullstack {
   renderTrinity() {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
-        <Role image="/tanker.png" title="Optimized for first render">
-          On the first render you'll get SEO ready HTML optimized for the first
-          paint of your route in a single request using local functions with
-          zero javascript dependencies in the client bundle
-        </Role>
-        <Role image="/healer.png" title="Snappy PWA experience">
-          After the content is served and the network is idle Nullstack
-          javascript is loaded, the state of the application is restored through
-          hydration and it becomes a single page application
-        </Role>
-        <Role image="/damage.png" title="Lightweight API requests">
-          Subsequent server functions will fetch JSON from an automaticallty
-          generated microservice API, deserialize the response, update the
-          aplication state, and rerender the page out of the box
-        </Role>
+        <Role image="/tanker.png" {...this.i18n.trinity.optimized} />
+        <Role image="/healer.png" {...this.i18n.trinity.pwa} />
+        <Role image="/damage.png" {...this.i18n.trinity.api} />
       </section>
     );
   }
 
-  renderFeature({ snippet, image, title, children, inverted }) {
+  renderFeature({ snippet, image, title, text, inverted }) {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
         <div class={`w-full sm:w-5/12 ${inverted ? 'sm:order-2' : ''}`}>
           <Snippet key={snippet} />
         </div>
         <div class="mt-12 sm:mt-0 sm:w-5/12">
-          <h2 class="text-pink-600 text-xl sm:text-4xl font-light mb-4">
+          <h3 class="text-pink-600 text-xl sm:text-4xl font-light mb-4">
             {title}
-          </h2>
-          <p class="text-xl">
-            {children}
+          </h3>
+          <p class="text-xl font-gray-600">
+            {text}
           </p>
-          <img src={image} />
+          <img src={image} alt={title} class="mt-6" />
         </div>
       </section>
     );
@@ -108,12 +95,12 @@ class Home extends Nullstack {
       <div>
         <section class="max-w-screen-xl mx-auto px-4 flex justify-center items-center flex-wrap py-12 sm:pt-36">
           <h2 class="text-xl sm:text-4xl font-light mb-4"> 
-            Learn with our <del class="text-gray-400">Dweebs</del> <span class="text-pink-600">Experts </span>
+            {this.i18n.playlist.heading}
+            <del>{this.i18n.playlist.slang}</del>
+            <span class="text-pink-600">{this.i18n.playlist.realWord}</span>
           </h2>
           <div class="sm:flex items-center justify-center w-full mt-12 flex-wrap">
-            <Video thumbnail="/thumbnail-en-us-1.webp" title="Some video Title" link="#" />
-            <Video thumbnail="/thumbnail-en-us-1.webp" title="Some video Title" link="#" />
-            <Video thumbnail="/thumbnail-en-us-1.webp" title="Some video Title" link="#" />
+            {this.i18n.playlist.videos.map(video => <Video {...video} />)}
           </div>
         </section>
       </div>
@@ -129,35 +116,19 @@ class Home extends Nullstack {
   }
 
   render() {
+    if(!this.i18n) return false;
     return (
       <div>
         <Hero />
         <Separator />
         <Trinity />
         <Separator />
-        <Feature snippet="GlueCode" image="/glue-code.png" title="No more glue code">
-          A full-stack Lifecycle combined with a feature-driven mindset allows
-          you to write clean and reusable code without the need to create APIs
-          manually.
-        </Feature>
-        <Separator />
-        <Feature snippet="Vanilla" image="/glue-code.png" title="Become a better programmer" inverted>
-          Your components are just POJOs.
-          Take advantage of the existing ecosystem while you write Javascript as it is supposed to be,
-          and see the result reflected in the dom.
-        </Feature>
-        <Separator />
-        <Feature snippet="Modern" image="/glue-code.png" title="You already know Nullstack">
-          Routes are simple attributes you can assign to any tag, and links are just a tags.
-          You will find out that Nullstack is just a modern version of your current stack.
-        </Feature>
-        <Separator />
-        <Feature snippet="Batteries" image="/glue-code.png" title="All the tools you need" inverted>
-          Most chores are very repetitive. 
-          Save your energy for the real challenges using the shortcuts we created, 
-          like object events and two-way bindings
-        </Feature>
-        <Separator />
+        {this.i18n.features.map(feature =>
+          <>
+            <Feature {...feature} />
+            <Separator />
+          </>
+        )}
         <Playlist />
       </div>
     );

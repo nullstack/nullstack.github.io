@@ -13,6 +13,9 @@ links:
 action:
   title: "Get Started"
   href: "/getting-started"
+language: 
+  title: "Português"
+  href: "/pt-br"
 mode:
   dark: "Night Mode"
   light: "Day Mode"

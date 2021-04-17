@@ -22,32 +22,10 @@
   font-display: swap;
 }
 
-/*! purgecss start ignore */
-
-.light {
-  --primary-font-family: "Crete Round", serif;
-  --secondary-font-family: "Roboto", sans-serif;
-  --primary-color: #d22365;
-  --soft-color: #fff;
-  --neutral-color: #f0f0f2;
-  --heavy-color: #282c34;
-  --warning-color: #ffffd6;
-}
-
-.dark {
-  --primary-font-family: "Crete Round", serif;
-  --secondary-font-family: "Roboto", sans-serif;
-  --primary-color: #ddbc72;
-  --soft-color: #2c3748;
-  --neutral-color: #282c34;
-  --heavy-color: #fff;
-  --warning-color: #ffffd6;
-}
-
-/*! purgecss end ignore */
-
 body {
   font-family: var(--secondary-font-family);
+  --primary-font-family: "Crete Round", serif;
+  --secondary-font-family: "Roboto", sans-serif;
   font-weight: 300;
   overflow-y: scroll;
 }
@@ -91,7 +69,7 @@ section a img {
 
 main {
   min-height: 100vh;
-  padding-top: 70px;
+  padding-top: 61px;
 }
 
 @media (min-width: 1600px) {
