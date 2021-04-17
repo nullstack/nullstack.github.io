@@ -64,7 +64,7 @@ The following keys are available as **readonly** in the client context:
 - **responsive**: `boolean`
 - **installation**: `BeforeInstallPromptEvent`
 - **registration**: `ServiceWorkerRegistration`
-- **loading**: `object`
+- **queues**: `object`
 
 The following keys are available as **readwrite** in the client context:
 
@@ -150,32 +150,37 @@ export default PWAInstaller;
 
 When a [server function](/server-functions) is called `fetching` will be set to `true` until the response is resolved.
 
-When a [server function](/server-functions) is called a key with the name of the [server function](/server-functions) invoked will be set to `true` in the `loading` key until the response is resolved.
+When a [server function](/server-functions) is called a key with the name of the [server function](/server-functions) invoked will be set in the `queues` object until the response is resolved.
 
-Any key you invoke on the `loading` object will always return a boolean instead of `undefined` for consistency.
+The key will be an array with all arguments passed to the server function.
 
-When the server is emulating the client context for [server-side rendering](/server-side-rendering), every key of the `loading` object will always return `false`, saving multiple render cycles in performance.
+Any key you invoke on the `queues` object will always return an array instead of `undefined` for consistency.
+
+When the server is emulating the client context for [server-side rendering](/server-side-rendering), every key of the `queues` object will always return an empty array, saving multiple render cycles in performance.
 
 ```jsx
 import Nullstack from 'nullstack';
 
 class Page extends Nullstack {
 
-  static async save() {
+  static async save({ valid }) {
     // ...
   }
 
   async submit() {
-    await this.save();
+    await this.save({ valid: true });
   }
- 
-  render({worker}) {
+
+  render({ worker }) {
+    const loadingValidSave = !!worker.queues.save
+      .find(args => args.valid);
+
     return (
-      <form onsubmit={this.save}> 
-        {worker.fetching && 
+      <form onsubmit={this.submit}>
+        {worker.fetching &&
           <span> loading... </span>
         }
-        <button disabled={worker.loading.save}> 
+        <button disabled={loadingValidSave}>
           Save
         </button>
       </form>

@@ -3,7 +3,7 @@ title: Componentes renderizáveis
 description: Componentes renderizáveis são muito semelhantes aos componentes da Web que fornecem a capacidade de criar novas tags HTML que atalham um grupo de outras tags HTML
 ---
 
-O componente mais simples que você pode fazer é um componente renderizável.
+O componente mais simples que você pode fazer é um componente renderizável, com exceção de [componentes funcionais](/pt-br/componentes-funcionais).
 
 Componentes renderizáveis são muito semelhantes aos componentes da Web que fornecem a capacidade de criar novas tags HTML que atalham um grupo de outras tags HTML.
 
@@ -160,9 +160,9 @@ Você pode abreviar atributos quando sabe que o valor será sempre verdadeiro.
 
 > ✨ Aprender mais sobre [atributos](/pt-br/contexto).
 
-## Tag do elemento
+## Tag Elemento
 
-Se você precisar decidir o nome da tag em tempo de execução, pode usar a tag do elemento e definir o atributo da tag condicionalmente.
+Se você precisar decidir o nome da tag em tempo de execução, pode usar a tag `element` e definir o atributo `tag` condicionalmente.
 
 ```jsx
 <element tag={!!link ? "a" : "span"} href={link || false}>
@@ -170,7 +170,31 @@ Se você precisar decidir o nome da tag em tempo de execução, pode usar a tag 
 </element>
 ```
 
-Quando o atributo tag é omitido, Nullstack assumirá como padrão um `div`.
+Quando o atributo `tag` é omitido, Nullstack assumirá como padrão um `div`.
+
+## Fragmentos
+
+Fragmentos são elementos que renderizam o seu conteúdo no componente pai.
+
+```jsx
+export default function Fragmented() {
+  return (
+    <>
+      <>
+        <button> Eu sou um botão! </button>
+      </>
+      <p> Parágrafo! </p>
+    </>
+  )
+}
+```
+
+Onde quer que seja usado, o componente funcional acima será renderizado da seguinte forma:
+
+```html
+<button> Eu sou um botão! </button>
+<p> Parágrafo! </p>
+```
 
 ## Elementos SVG
 

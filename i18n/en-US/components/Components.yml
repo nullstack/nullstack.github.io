@@ -31,3 +31,7 @@ topics:
         repository: "https://github.com/Mortaro/nullstack-cep-input"
       - title: "Phone Input"
         repository: "https://github.com/Mortaro/nullstack-phone-input"
+  - title: "Assets"
+    projects:
+      - title: "Nullstack Logo"
+        repository: "/nullstack-logo"

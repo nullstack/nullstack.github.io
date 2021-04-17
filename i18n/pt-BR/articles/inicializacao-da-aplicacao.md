@@ -45,6 +45,6 @@ export default Application;
 
 > 🔒 As funções de servidor com o nome começando com "start" (e opcionalmente seguido por uma letra maiúscula) não geram um endpoint de API para evitar inundação de contexto malicioso.
 
-## Next step
+## Próxima Etapa
 
-⚔ Aprenda sobre a [chave `data` do contexto](/pt-br/contexto-data).
+⚔ Aprenda sobre [componentes funcionais](/pt-br/componentes-funcionais).

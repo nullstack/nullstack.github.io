@@ -3,7 +3,7 @@ title: Renderable Components
 description: Renderable components are very similar to web components they give you the ability to create new HTML tags that shortcut a group of other HTML tags
 ---
 
-The simplest component you can make is a renderable component.
+The simplest component you can make is a renderable component, with exception of [functional components](/functional-components).
 
 Renderable components are very similar to web components, they give you the ability to create new HTML tags that shortcut a group of other HTML tags.
 
@@ -171,6 +171,30 @@ If you need to decide the tag name at runtime, you can use the element tag and s
 ```
 
 When the tag attribute is omitted, Nullstack will default to a `div`.
+
+## Fragments
+
+Fragments are elements that renders it's contents in the parent component.
+
+```jsx
+export default function Fragmented() {
+  return (
+    <>
+      <>
+        <button> I'm a button! </button>
+      </>
+      <p> Paragraph! </p>
+    </>
+  )
+}
+```
+
+Wherever it is used, the above functional component will be rendered as follows:
+
+```html
+<button> I'm a button! </button>
+<p> Paragraph! </p>
+```
 
 ## SVG Elements
 
