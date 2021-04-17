@@ -30,8 +30,8 @@ class Home extends Translatable {
             </button>
           </div>
         </div>
-        <div class="bg-center bg-0 hover:bg-100 bg-repeat-y mt-6" style="background-image: url(/stars.png); transition: background-size 3s;">
-          <img src="/hero.png" alt="Nulla-Chan" class="max-w-full" />
+        <div class="bg-center bg-0 hover:bg-100 bg-repeat-y mt-6" style="background-image: url(/stars.webp); transition: background-size 3s;">
+          <img src="/illustrations/nulla-hero.webp" alt="Nulla-Chan" class="max-w-full" width="627" height="765" loading="lazy" />
         </div>
       </section>
     );
@@ -40,10 +40,10 @@ class Home extends Translatable {
   renderRole({ image, title, text }) {
     return (
       <div class="sm:w-1/3 px-8 flex flex-wrap justify-center text-center">
-        <div class="bg-center bg-0 hover:bg-100" style="background-image: url(/stars.png); transition: background-size 3s;">
-          <img src={image} alt={title} class="h-48 transform hover:scale-105 transition delay-100" />
+        <div class="bg-center bg-0 hover:bg-100" style="background-image: url(/stars.webp); transition: background-size 3s;">
+          <img src={image} alt={title} width="192" height="192" class="transform hover:scale-105 transition delay-100" loading="lazy" />
         </div>
-        <h2 class="w-full text-center text-pink-600 text-xl sm:text-2xl font-light mb-4 sm:px-20">
+        <h2 class="w-full text-center text-pink-600 dark:text-pink-500 text-xl sm:text-2xl font-light mb-4 sm:px-20">
           {title}
         </h2>
         <p class="w-full text-center text-xl font-gray-600">{text}</p>
@@ -54,27 +54,25 @@ class Home extends Translatable {
   renderTrinity() {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
-        <Role image="/tanker.png" {...this.i18n.trinity.optimized} />
-        <Role image="/healer.png" {...this.i18n.trinity.pwa} />
-        <Role image="/damage.png" {...this.i18n.trinity.api} />
+        {this.i18n.trinity.map((role) => <Role {...role} />)}
       </section>
     );
   }
 
-  renderFeature({ snippet, image, title, text, inverted }) {
+  renderFeature({ snippet, image, title, text, inverted, locale }) {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
         <div class={`w-full sm:w-5/12 ${inverted ? 'sm:order-2' : ''}`}>
-          <Snippet key={snippet} />
+          <Snippet key={snippet} locale={locale} />
         </div>
         <div class="mt-12 sm:mt-0 sm:w-5/12">
-          <h3 class="text-pink-600 text-xl sm:text-4xl font-light mb-4">
+          <h3 class="text-pink-600 dark:text-pink-500 text-xl sm:text-4xl font-light mb-4">
             {title}
           </h3>
           <p class="text-xl font-gray-600">
             {text}
           </p>
-          <img src={image} alt={title} class="mt-6" />
+          <img src={image} alt={title} class="mt-6" width="520" height="272" loading="lazy" />
         </div>
       </section>
     );
@@ -97,7 +95,7 @@ class Home extends Translatable {
           <h2 class="text-xl sm:text-4xl font-light mb-4"> 
             {this.i18n.playlist.heading}
             <del>{this.i18n.playlist.slang}</del>
-            <span class="text-pink-600">{this.i18n.playlist.realWord}</span>
+            <span class="text-pink-600 dark:text-pink-500">{this.i18n.playlist.realWord}</span>
           </h2>
           <div class="sm:flex items-center justify-center w-full mt-12 flex-wrap">
             {this.i18n.playlist.videos.map(video => <Video {...video} />)}
@@ -109,8 +107,9 @@ class Home extends Translatable {
 
   renderSeparator() {
     return (
-      <div class="w-full max-w-screen-xl mx-auto flex justify-center items-start flex-wrap border-t-4 border-gray-200 text-center dark:opacity-10">
-        <img src="/arrow.png" class="-mt-1" />
+      <div 
+        class="h-5 bg-center bg-no-repeat w-full max-w-screen-xl mx-auto flex justify-center items-start flex-wrap border-t-4 border-gray-200 text-center dark:opacity-10"
+      >
       </div>
     )
   }

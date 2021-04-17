@@ -5,7 +5,6 @@ import YAML from 'yaml';
 class Translatable extends Nullstack {
 
   static async geti18nByLocale({locale}) {
-    console.log(this)
     const [name] = this.name.split('_');
     const file = readFileSync(`i18n/${locale}/components/${name}.yml`, 'utf-8');
     return YAML.parse(file);

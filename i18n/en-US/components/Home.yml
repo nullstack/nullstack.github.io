@@ -11,20 +11,20 @@ hero:
       business logic."
   callToAction: "npx create-nullstack-app"
 trinity:
-  optimized:
-    title: "Optimized for first render"
+  - title: "Optimized for first render"
+    image: "/illustrations/nulla-tanker.webp"
     text:
       "On the first render you'll get SEO ready HTML optimized for the first
       paint of your route in a single request using local functions with
       zero javascript dependencies in the client bundle"
-  pwa:
-    title: "Snappy PWA experience"
+  - title: "Snappy PWA experience"
+    image: "/illustrations/nulla-healer.webp"
     text:
       "After the content is served and the network is idle Nullstack
       javascript is loaded, the state of the application is restored through
       hydration and it becomes a single page application"
-  api:
-    title: "Lightweight API requests"
+  - title: "Lightweight API requests"
+    image: "/illustrations/nulla-dps.webp"
     text:
       "Subsequent server functions will fetch JSON from an automaticallty
       generated microservice API, deserialize the response, update the
@@ -32,14 +32,14 @@ trinity:
 features:
   - title: "No more glue code"
     snippet: "GlueCode"
-    image: "/nulla-glue.webp"
+    image: "/illustrations/nulla-glue.webp"
     text:
       "A full-stack Lifecycle combined with a feature-driven mindset allows
       you to write clean and reusable code without the need to create APIs
       manually."
   - title: "Become a better programmer"
     snippet: "Vanilla"
-    image: "/nulla-scrolls.jpg"
+    image: "/illustrations/nulla-scrolls.webp"
     inverted: true
     text:
       "Your components are just POJOs.
@@ -47,18 +47,18 @@ features:
       and see the result reflected in the dom."
   - title: "You already know Nullstack"
     snippet: "Modern"
-    image: "/nulla-map.jpg"
+    image: "/illustrations/nulla-map.webp"
     text:
-      "Routes are simple attributes you can assign to any tag, and links are just a tags.
+      "Routes are simple attributes you can assign to any tag, and links are just 'a' tags.
       You will find out that Nullstack is just a modern version of your current stack."
   - title: "All the tools you need"
     snippet: "Batteries"
-    image: "/nulla-tools.webp"
+    image: "/illustrations/nulla-tools.webp"
     inverted: true
     text:
       "Most chores are very repetitive. 
       Save your energy for the real challenges using the shortcuts we created, 
-      like object events and two-way bindings"
+      like object events and two-way bindings."
 playlist:
   heading: "Learn with our "
   slang: "Dweebs"

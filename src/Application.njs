@@ -17,16 +17,19 @@ class Application extends Nullstack {
 
   static async startWorker({worker}) {
     const articles = readdirSync(path.join(__dirname, '../i18n/en-US', 'articles'));
+    const illustrations = readdirSync(path.join(__dirname, '../public', 'illustrations'));
     worker.preload = [
       ...articles.map((article) => '/' + article.replace('.md', '')),
+      ...illustrations.map((illustration) => '/illustrations/' + illustration),
+      '/arrow.webp',
+      '/stars.webp',
+      '/footer.webp',
       '/documentation',
       '/components',
-      '/about',
       '/contributors',
       '/roboto-v20-latin-300.woff2',
       '/roboto-v20-latin-500.woff2',
       '/crete-round-v9-latin-regular.woff2',
-      '/nullachan.png'
     ]
   }
 
