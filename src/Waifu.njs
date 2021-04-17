@@ -18,39 +18,88 @@ class Waifu extends Translatable {
     this.fannarts = this.fannarts.sort(() => (Math.random() > .5) ? 1 : -1);
   }
 
-  renderAttribute({label, value}) {
+  // renderAttribute({label, value}) {
+  //   return (
+  //     <li class="xl m2b">
+  //       <b>{label}</b>: {value}
+  //     </li>
+  //   )
+  // }
+
+  // renderAttributes() {
+  //   <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap">
+  //     <img src="/illustrations/nulla-fullbody.png" alt="Nulla-Chan" class="max-w-full" width="319" height="587" loading="lazy" />
+  //     <div class="sm:w-5/12 grid gap-8 mt-12 sm:mt-0">
+  //       <ul>
+  //         {this.i18n.attributes.map((attribute) => <Attribute {...attribute} />)}
+  //       </ul>
+  //     </div>
+  //   </section>
+  // }
+
+  renderLink({ href, title }) {
     return (
-      <li class="xl m2b">
-        <b>{label}</b>: {value}
-      </li>
+      <a 
+        href={href} 
+        title={title}
+        target="_blank"
+        rel="noopener"
+        class="hover:text-pink-600 inline-block"
+      >
+      {title}
+      </a>
     )
   }
 
+
   renderCard({src, name}) {
     return (
-      <div class="rounded-3xl p-2 shadow">
-        <img src={src} alt={name}/>
+      <div class="flex flex-col rounded-3xl p-3 shadow items-center space-y-1">
+        <img src={src} alt={name} title={`Nulla-chan by ${name}`}/>
+        <Link href={`https://www.instagram.com/${name}`} title={`@${name}`} />
       </div>)
   }
 
   renderFannarts({self}) {
     if(!self.hydrated) return false
     return (
-    <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 w-full">
-      {this.fannarts.map(fannart => 
-        { 
-          console.log({fannart})
-          return (<Card src={`/fannarts/${fannart}`} name={fannart.split('.')} />)}
-      )}
-    </div>
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-24">
+        <h2 class="w-full">
+          <span class="text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">
+            {this.i18n.fanarts.heading}
+          </span>
+        </h2>
+        <span class="text-gray-900 text-2xl sm:text-4xl font-light block">
+            {this.i18n.fanarts.tagline}
+        </span>
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 w-full mt-8">
+        {this.fannarts.map(fannart => 
+          { 
+            console.log({fannart})
+            return (<Card src={`/fannarts/${fannart}`} name={fannart.slice(0,-4)} />)}
+        )}
+      </div>
+    </section>
+    )
+  }
+
+  renderSeparator() {
+    return (
+      <div 
+        class="h-5 bg-center bg-no-repeat w-full max-w-screen-xl mx-auto flex justify-center items-start flex-wrap border-t-4 border-gray-200 text-center dark:opacity-10"
+      >
+      </div>
     )
   }
   
   render({worker}) {
     if(!this.i18n) return false;
     return (
-      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-24">
+      <div>
+        {/* <Attributes />
+        <Separator /> */}
         <Fannarts />
+        <Separator />
         {/* <div class="xx x12">
           {worker.online && <img src="/waifu.png" alt="Nulla-Chan" height="500" />}
           <div class="md+p10l">
@@ -72,7 +121,7 @@ class Waifu extends Translatable {
         <blockquote class="xx x12 m10y">
           {this.i18n.descriptions.map((description) => <p class="x12"> {description} </p>)}
         </blockquote> */}
-      </section>
+      </div>
     )
   }
 
