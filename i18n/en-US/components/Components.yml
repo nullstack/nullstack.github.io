@@ -2,7 +2,7 @@ title: "Community Components"
 description: "A curated list of Nullstack components made by the community"
 heading: "Community Components"
 tagline: "A curated list of Nullstack components made by the community."
-contribute: "If you want to add a component to this list <a href='https://github.com/nullstack/nullstack.github.io/issues' class='ci1'> open an issue on github</a>."
+contribute: "If you want to add a component to this list <a href='https://github.com/nullstack/nullstack.github.io/issues'> open an issue on github</a>."
 topics:
   - title: "Integrations"
     projects:

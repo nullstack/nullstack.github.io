@@ -9,57 +9,6 @@ article {
     margin-top: calc(-80px + -1rem);
   }
 
-  h2 {
-    margin-top: 2rem;
-  }
-
-  p, h2, h3, h4, pre, blockquote, ul {
-    margin-bottom: 1rem;
-  }
-
-  ul {
-    list-style-type: circle;
-    padding-left: 1.3rem;
-  }
-
-  li {
-    padding: 0.35rem 0;
-  }
-
-  a {
-    color: var(--primary-color);
-  }
-
-  h2, h3 {
-    a {
-      color: var(--heavy-color);
-    }
-  }
-
-  em {
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  blockquote {
-    border: 1px solid var(--neutral-color);
-    padding: 0.5rem;
-    margin-left: 0;
-    
-    p {
-      margin-bottom: 0;
-    }
-
-  }
-
-  & code:not([class^=language]) {
-    font-size: 1.1rem;
-    vertical-align: 1px;
-    background: var(--neutral-color);
-    padding: 0 2px;
-    border-radius: 2px;
-  }
-
 }
 
 @media (max-width: 768px) {

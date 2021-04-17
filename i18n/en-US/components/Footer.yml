@@ -1,6 +1,3 @@
-nullachan: 
-  alt: "Nulla-Chan"
-  title: "Nulla-Chan: Nullstack's official waifu"
 links: 
   - title: "YouTube"
     href: "https://www.youtube.com/channel/UCUNPaxoppH3lu6JTrUX78Ww"
@@ -8,3 +5,4 @@ links:
     href: "https://twitter.com/nullstackapp"
   - title: "GitHub"
     href: "https://github.com/nullstack"
+star: "leave an star on "

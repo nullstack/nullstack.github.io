@@ -1,58 +1,40 @@
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
-  src: local(''), url('/roboto-v20-latin-300.woff2') format('woff2');
+  src: local(""), url("/roboto-v20-latin-300.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
-  src: local(''), url('/roboto-v20-latin-500.woff2') format('woff2');
+  src: local(""), url("/roboto-v20-latin-500.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Crete Round';
+  font-family: "Crete Round";
   font-style: normal;
   font-weight: 400;
-  src: local(''), url('/crete-round-v9-latin-regular.woff2') format('woff2');
+  src: local(""), url("/crete-round-v9-latin-regular.woff2") format("woff2");
   font-display: swap;
 }
-
-/*! purgecss start ignore */
-
-.light {
-  --primary-font-family: 'Crete Round', serif;
-  --secondary-font-family: 'Roboto', sans-serif;
-  --primary-color: #d22365;
-  --soft-color: #fff;
-  --neutral-color: #f0f0f2;
-  --heavy-color: #282c34;
-  --warning-color: #ffffd6;
-}
-
-.dark {
-  --primary-font-family: 'Crete Round', serif;
-  --secondary-font-family: 'Roboto', sans-serif;
-  --primary-color: #ddbc72;
-  --soft-color: #2c3748;
-  --neutral-color: #282c34;
-  --heavy-color: #fff;
-  --warning-color: #ffffd6;
-}
-
-/*! purgecss end ignore */
 
 body {
   font-family: var(--secondary-font-family);
+  --primary-font-family: "Crete Round", serif;
+  --secondary-font-family: "Roboto", sans-serif;
   font-weight: 300;
   overflow-y: scroll;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--primary-font-family);
   font-weight: 700;
   letter-spacing: 1px;
@@ -67,35 +49,34 @@ blockquote {
 }
 
 section a img {
-  transition: .1s;
+  transition: 0.1s;
 
   &:hover {
     transform: scale(1.1);
     z-index: 1;
-    transition: .3s;
+    transition: 0.3s;
   }
 }
 
 .bg-tagline-home {
-  background-image: linear-gradient(0deg, var(--soft-color) 49%, rgba(107, 107, 107, 0.4) 50%, var(--soft-color) 52%);
+  background-image: linear-gradient(
+    0deg,
+    var(--soft-color) 49%,
+    rgba(107, 107, 107, 0.4) 50%,
+    var(--soft-color) 52%
+  );
 }
 
 main {
   min-height: 100vh;
-  padding-top: 70px;
-}
-
-@media (min-width: 1600px) {
-  .lg-x12z {
-    max-width: 1400px;
-  }
+  padding-top: 61px;
 }
 
 /*! purgecss start ignore */
 
 pre {
   color: #ddbc72;
-  font-size: 1.2rem;
+  font-size: 1rem;
   width: 100%;
   background-color: #282c34;
   line-height: 1.5;
@@ -111,14 +92,13 @@ pre {
 }
 
 @media (max-width: 768px) {
-  
   pre {
     overflow-x: auto;
   }
-
 }
 
-.token.selector, .token.tag {
+.token.selector,
+.token.tag {
   color: #ff5d9a !important;
 }
 
@@ -126,19 +106,28 @@ pre {
   color: #9dbcf7 !important;
 }
 
-.token.string, .token.attr-value {
+.token.string,
+.token.attr-value {
   color: #99c47a !important;
 }
 
-.token.atrule, .token.keyword {
+.token.atrule,
+.token.keyword {
   color: #e89bff !important;
 }
 
-.token.property, .token.boolean, .token.number, .token.constant, .token.symbol, .token.attr-name, .token.deleted {
+.token.property,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.attr-name,
+.token.deleted {
   color: #e9ac72 !important;
 }
 
-.token.function, .token.operator {
+.token.function,
+.token.operator {
   color: #71bfff !important;
 }
 

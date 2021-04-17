@@ -11,7 +11,8 @@ class Components extends Translatable {
       <a
         href={repository}
         target={repository.indexOf('http') === 0 && "_blank"}
-        rel="noopener" class="xl x12 p3y bcm2t ci1"
+        rel="noopener"
+        class="block text-pink-600 border-t border-gray-100 dark:border-gray-800 py-2 mt-2"
       >
         {title}
       </a>
@@ -20,12 +21,12 @@ class Components extends Translatable {
 
   renderTopic({title, projects, tagline}) {
     return (
-      <div class="x12 m6y bcm2 p4x p4t p1b">
-        <h2 class="x12 sm-fs6 md+fs8 m3b"> {title} </h2>
+      <div class="w-full my-6">
+        <h2 class="w-full text-xl sm:text-4xl font-light mb-4"> {title} </h2>
         {tagline &&
-          <p class="m3y" title={tagline.title}> {tagline.text} </p>
+          <p class="my-3" title={tagline.title}> {tagline.text} </p>
         }
-        <nav class="x12"> 
+        <nav class="w-full"> 
           {projects.map(project => <Project {...project} />)} 
         </nav>
       </div>
@@ -35,11 +36,11 @@ class Components extends Translatable {
   render() {
     if(!this.i18n) return false;
     return (
-      <section class="x sm-p4x sm-p10y md+p20y">
-        <h1 class="x12 sm-fs6 md+fs12 m2b"> {this.i18n.heading} </h1>
-        <p class="x12 fs4"> {this.i18n.tagline} </p>
-        <p class="m2t" html={this.i18n.contribute} />
-        <div class="x12">
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-24">
+        <h1 class="w-full text-xl sm:text-4xl font-light mb-4"> {this.i18n.heading} </h1>
+        <p class="w-full text-xl"> {this.i18n.tagline} </p>
+        <p class="w-full prose max-w-none" html={this.i18n.contribute} />
+        <div class="w-full">
           {this.i18n.topics.map((topic) => <Topic {...topic} />)}
         </div>
       </section>
