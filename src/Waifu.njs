@@ -3,64 +3,60 @@ import Translatable from './Translatable';
 
 class Waifu extends Translatable {
 
-  fannarts = []
+  fanarts = [];
 
-  static async populateFannarts () {
-    return readdirSync('public/fannarts')
+  static async getFanarts() {
+    return readdirSync('public/fanarts')
   }
 
   async initiate(context) {
     super.initiate(context)
-    this.fannarts = await this.populateFannarts()
+    this.fanarts = await this.getFanarts()
   }
 
   hydrate() {
-    this.fannarts = this.fannarts.sort(() => (Math.random() > .5) ? 1 : -1);
+    this.fanarts.sort(() => (Math.random() > .5) ? 1 : -1);
   }
 
-  // renderAttribute({label, value}) {
-  //   return (
-  //     <li class="xl m2b">
-  //       <b>{label}</b>: {value}
-  //     </li>
-  //   )
-  // }
-
-  // renderAttributes() {
-  //   <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap">
-  //     <img src="/illustrations/nulla-fullbody.png" alt="Nulla-Chan" class="max-w-full" width="319" height="587" loading="lazy" />
-  //     <div class="sm:w-5/12 grid gap-8 mt-12 sm:mt-0">
-  //       <ul>
-  //         {this.i18n.attributes.map((attribute) => <Attribute {...attribute} />)}
-  //       </ul>
-  //     </div>
-  //   </section>
-  // }
-
-  renderLink({ href, title }) {
+  renderAttribute({ label, value }) {
     return (
-      <a 
-        href={href} 
-        title={title}
-        target="_blank"
-        rel="noopener"
-        class="hover:text-pink-600 inline-block"
-      >
-      {title}
-      </a>
+      <li class="xl m2b">
+        <b>{label}</b>: {value}
+      </li>
     )
   }
 
+  renderAttributes() {
+    return (
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap">
+        <img src="/illustrations/nulla-fullbody.png" alt="Nulla-Chan" class="max-w-full" width="319" height="587" loading="lazy" />
+        <div class="sm:w-5/12 grid gap-8 mt-12 sm:mt-0">
+          <ul>
+            {this.i18n.attributes.map((attribute) => <Attribute {...attribute} />)}
+          </ul>
+        </div>
+      </section>
+    )
+  }
 
-  renderCard({src, name}) {
+  renderFanart({ image }) {
+    const name = image.slice(0, -4);
+    const src = `/fanarts/${image}`;
     return (
       <div class="flex flex-col rounded-3xl p-3 shadow items-center space-y-1">
         <img src={src} alt={name} title={`Nulla-chan by ${name}`}/>
-        <Link href={`https://www.instagram.com/${name}`} title={`@${name}`} />
+        <a 
+          href={`https://www.instagram.com/${name}`} 
+          target="_blank"
+          rel="noopener"
+          class="hover:text-pink-600 inline-block"
+        >
+          @{name}
+        </a>
       </div>)
   }
 
-  renderFannarts({self}) {
+  renderFanarts({ self }) {
     if(!self.hydrated) return false
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-24">
@@ -70,16 +66,12 @@ class Waifu extends Translatable {
           </span>
         </h2>
         <span class="text-gray-900 text-2xl sm:text-4xl font-light block">
-            {this.i18n.fanarts.tagline}
+          {this.i18n.fanarts.tagline}
         </span>
-      <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 w-full mt-8">
-        {this.fannarts.map(fannart => 
-          { 
-            console.log({fannart})
-            return (<Card src={`/fannarts/${fannart}`} name={fannart.slice(0,-4)} />)}
-        )}
-      </div>
-    </section>
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 w-full mt-8">
+          {this.fanarts.map(fanart => <Fanart image={fanart} />)}
+        </div>
+      </section>
     )
   }
 
@@ -92,13 +84,13 @@ class Waifu extends Translatable {
     )
   }
   
-  render({worker}) {
+  render({ worker }) {
     if(!this.i18n) return false;
     return (
       <div>
-        {/* <Attributes />
-        <Separator /> */}
-        <Fannarts />
+        <Attributes />
+        {/* <Separator /> */}
+        <Fanarts />
         <Separator />
         {/* <div class="xx x12">
           {worker.online && <img src="/waifu.png" alt="Nulla-Chan" height="500" />}
