@@ -89,9 +89,8 @@ class Waifu extends Translatable {
     return (
       <div>
         <Attributes />
-        {/* <Separator /> */}
-        <Fanarts />
         <Separator />
+        <Fanarts />
         {/* <div class="xx x12">
           {worker.online && <img src="/waifu.png" alt="Nulla-Chan" height="500" />}
           <div class="md+p10l">

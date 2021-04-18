@@ -2,9 +2,9 @@ import Logo from "nullstack/logo";
 import Translatable from "./Translatable";
 import Hamburger from "../icons/Hamburger";
 import Close from "../icons/Close";
-import DayMode from "../icons/DayMode";
-import NightMode from "../icons/NightMode";
+import Mode from "../icons/Mode";
 import Brasil from "../icons/Brasil";
+import Gringo from "../icons/Gringo";
 
 class Header extends Translatable {
 
@@ -31,7 +31,7 @@ class Header extends Translatable {
     window.localStorage.setItem('mode', context.mode);
   }
 
-  render({ mode, oppositeMode }) {
+  render({ mode, oppositeMode, locale }) {
     if (!this.i18n) return false;
     return (
       <header class="fixed w-full bg-white dark:bg-gray-900 shadow top-0 left-0 z-20">
@@ -60,16 +60,17 @@ class Header extends Translatable {
             <Link onclick={this.toggleMode} title={this.i18n.mode[oppositeMode]} mobile />
           </nav>
           <div class={`flex w-full sm:w-auto mt-4 sm:mt-0 sm:space-x-2 items-center ${!this.expanded && "hidden sm:flex"}`}>
-            <a href={this.i18n.language.href} title={this.i18n.language.title} class="hidden sm:flex">
-              <Brasil size={25} />
+            <a href={this.i18n.language.href} title={this.i18n.language.title} class="hidden sm:flex text-pink-600">
+              {locale === 'pt-BR' && <Gringo size={30} />}
+              {locale !== 'pt-BR' && <Brasil size={30} />}
             </a>
             <button onclick={this.toggleMode} title={this.i18n.mode[oppositeMode]} class="hidden sm:flex text-pink-600 dark:text-white">
-              <DayMode size={25} />
+              <Mode size={25} />
             </button>
             <a
               href={this.i18n.action.href}
               onclick={{ expanded: false }}
-              class="bg-pink-600 text-white px-4 py-2 border border-pink-600 hover:bg-transparent hover:text-pink-600 w-full sm:w-auto"
+              class="bg-pink-600 text-white px-4 py-2 border border-pink-600 hover:bg-transparent hover:text-pink-600 w-full sm:w-auto min-w-32 text-center"
             >
               {this.i18n.action.title}
             </a>
