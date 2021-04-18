@@ -20,20 +20,44 @@ class Waifu extends Translatable {
 
   renderAttribute({ label, value }) {
     return (
-      <li class="xl m2b">
+      <li>
         <b>{label}</b>: {value}
       </li>
     )
   }
 
-  renderAttributes() {
+  renderProfile() {
     return (
-      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap">
-        <img src="/illustrations/nulla-fullbody.png" alt="Nulla-Chan" class="max-w-full" width="319" height="587" loading="lazy" />
-        <div class="sm:w-5/12 grid gap-8 mt-12 sm:mt-0">
-          <ul>
-            {this.i18n.attributes.map((attribute) => <Attribute {...attribute} />)}
-          </ul>
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-24">
+        <div class="w-full">
+          <h2 class="w-full text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">
+            {this.i18n.title}
+          </h2>
+          <span class="text-2xl sm:text-4xl font-light block mb-8">
+            {this.i18n.description}
+          </span>
+        </div>
+        <div class="flex flex-wrap justify-between w-full">
+          <div class="flex w-full sm:w-6/12 bg-yellow-300 dark:bg-gray-800 justify-center py-8">
+            <img src="/illustrations/nulla-fullbody.png" alt="Nulla-Chan" class="max-w-full" width="319" height="587" loading="lazy" />
+          </div>
+          <div class="flex w-full sm:w-6/12 sm:bg-yellow-200 sm:dark:bg-gray-700 justify-center py-8 items-center">
+            <ul class="sm:w-6/12 grid gap-4 sm:mt-0">
+              {this.i18n.attributes.map((attribute) => <Attribute {...attribute} />)}
+              <li>
+                <b> {this.i18n.artist.label} </b>
+                <a href={this.i18n.artist.href} target="_blank" rel="noopener" class="underline"> 
+                  {this.i18n.artist.text} 
+                </a>
+              </li>
+              <li>
+                <b> {this.i18n.concept.label} </b>
+                <a href={this.i18n.concept.href} target="_blank" rel="noopener" class="underline"> 
+                  {this.i18n.concept.text}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     )
@@ -59,16 +83,14 @@ class Waifu extends Translatable {
   renderFanarts({ self }) {
     if(!self.hydrated) return false
     return (
-      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-24">
-        <h2 class="w-full">
-          <span class="text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">
-            {this.i18n.fanarts.heading}
-          </span>
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap pb-12 sm:pb-24">
+        <h2 class="w-full text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">
+          {this.i18n.fanarts.heading}
         </h2>
-        <span class="text-gray-900 text-2xl sm:text-4xl font-light block">
+        <span class="text-2xl sm:text-4xl font-light block mb-8">
           {this.i18n.fanarts.tagline}
         </span>
-        <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 w-full mt-8">
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 w-full">
           {this.fanarts.map(fanart => <Fanart image={fanart} />)}
         </div>
       </section>
@@ -84,12 +106,12 @@ class Waifu extends Translatable {
     )
   }
   
-  render({ worker }) {
+  render({}) {
     if(!this.i18n) return false;
     return (
       <div>
-        <Attributes />
-        <Separator />
+        <Profile />
+        {/* <Separator /> */}
         <Fanarts />
         {/* <div class="xx x12">
           {worker.online && <img src="/waifu.png" alt="Nulla-Chan" height="500" />}

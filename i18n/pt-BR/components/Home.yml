@@ -1,14 +1,16 @@
 title: "Componentes Javascript Full-stack"
 description: "Nullstack é um framework javascript full-stack para construir aplicações web progressivas"
 hero:
-  heading: "Full-stack"
-  subHeading: "em Componentes Javascript"
+  heading: "Componentes Javascript"
+  subHeading: "Full-stack"
   tagline: "para exércitos de um dev só"
   descriptions:
     - "Escreva o back-end e o front-end de um recurso em um único
       componente e deixe o framework decidir onde o código deve ser executado."
     - "O Nullstack oferece todas as ferramentas de que você precisa para manter o foco em sua lógica de negócios."
   callToAction: "npx create-nullstack-app"
+  actionLink: '/pt-br/comecando'
+  actionCallback: 'Comando copiado, cole no terminal'
 trinity:
   - title: "Otimizado para a primeira renderização"
     image: "/illustrations/nulla-tanker.webp"
@@ -53,12 +55,12 @@ playlist:
   slang: "Dweebs"
   realWord: " Especialistas"
   videos:
-    - title: "Full-stack com Nullstack - Parte 1"
-      link: "https://www.youtube.com/watch?v=ieLVXZGXUkI&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumbnail-pt-br-1.webp"
-    - title: "Full-stack com Nullstack - Parte 2"
-      link: "https://www.youtube.com/watch?v=BHrNgi2UZ6Q&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumbnail-pt-br-2.webp"
-    - title: "Full-stack com Nullstack - Parte 3"
-      link: "https://www.youtube.com/watch?v=uRlvILvJ0Oc&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumbnail-pt-br-3.webp"
+    - title: "Full-stack with Nullstack"
+      link: "https://www.youtube.com/watch?v=l23z00GEar8&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
+      thumbnail: "/thumbnails/pt-br-pokepoll.webp"
+    - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
+      link: "https://www.youtube.com/watch?v=ud3IF5Xtd1s"
+      thumbnail: "/thumbnails/pt-br-contribute.webp"
+    - title: "Full-stack with Nullstack - Part 2"
+      link: "https://www.youtube.com/watch?v=3yNwTz9w5Fw"
+      thumbnail: "/thumbnails/pt-br-components.webp"
