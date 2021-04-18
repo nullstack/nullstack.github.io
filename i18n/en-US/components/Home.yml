@@ -13,24 +13,27 @@ hero:
   actionLink: '/getting-started'
   actionCallback: 'Command copied, paste it on the terminal'
 trinity:
-  - title: "Optimized for first render"
-    image: "/illustrations/nulla-tanker.webp"
-    text:
-      "On the first render you'll get SEO ready HTML optimized for the first
-      paint of your route in a single request using local functions with
-      zero javascript dependencies in the client bundle"
-  - title: "Snappy PWA experience"
-    image: "/illustrations/nulla-healer.webp"
-    text:
-      "After the content is served and the network is idle Nullstack
-      javascript is loaded, the state of the application is restored through
-      hydration and it becomes a single page application"
-  - title: "Lightweight API requests"
-    image: "/illustrations/nulla-dps.webp"
-    text:
-      "Subsequent server functions will fetch JSON from an automaticallty
-      generated microservice API, deserialize the response, update the
-      aplication state, and rerender the page out of the box"
+  heading: "The Holly Trinity"
+  subHeading: "of progressive web apps development"
+  roles:
+    - title: "Optimized for first render"
+      image: "/illustrations/nulla-tanker.webp"
+      text:
+        "On the first render you'll get SEO ready HTML optimized for the first
+        paint of your route in a single request using local functions with
+        zero javascript dependencies in the client bundle"
+    - title: "Snappy PWA experience"
+      image: "/illustrations/nulla-healer.webp"
+      text:
+        "After the content is served and the network is idle Nullstack
+        javascript is loaded, the state of the application is restored through
+        hydration and it becomes a single page application"
+    - title: "Lightweight API requests"
+      image: "/illustrations/nulla-dps.webp"
+      text:
+        "Subsequent server functions will fetch JSON from an automaticallty
+        generated microservice API, deserialize the response, update the
+        aplication state, and rerender the page out of the box"
 features:
   - title: "No more glue code"
     snippet: "GlueCode"
@@ -72,6 +75,6 @@ playlist:
     - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
       link: "https://www.youtube.com/watch?v=ud3IF5Xtd1s"
       thumbnail: "/thumbnails/en-us-contribute.webp"
-    - title: "Full-stack with Nullstack - Part 2"
-      link: "https://www.youtube.com/watch?v=H2i5_A1txG"
+    - title: "What are Javascript Components?"
+      link: "https://www.youtube.com/watch?v=H2i5_A1txGI"
       thumbnail: "/thumbnails/en-us-components.webp"

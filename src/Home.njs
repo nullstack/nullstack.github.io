@@ -55,7 +55,7 @@ class Home extends Translatable {
 
   renderRole({ image, title, text }) {
     return (
-      <div class="sm:w-1/3 px-8 flex flex-wrap justify-center text-center">
+      <div class="sm:w-1/3 px-8 flex flex-wrap justify-center text-center mb-8 sm:mb-0">
         <div class="bg-center bg-0 hover:bg-100" style="background-image: url(/stars.webp); transition: background-size 3s;">
           <img src={image} alt={title} width="192" height="192" class="transform hover:scale-105 transition delay-100" loading="lazy" />
         </div>
@@ -70,7 +70,11 @@ class Home extends Translatable {
   renderTrinity() {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
-        {this.i18n.trinity.map((role) => <Role {...role} />)}
+        <h2 class="w-full text-center mb-8 sm:mb-24"> 
+          <span class="w-full text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">{this.i18n.trinity.heading}</span>
+          <span class="sm:text-xl block">{this.i18n.trinity.subHeading}</span>
+        </h2>
+        {this.i18n.trinity.roles.map((role) => <Role {...role} />)}
       </section>
     )
   }

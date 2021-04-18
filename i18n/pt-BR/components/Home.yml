@@ -7,23 +7,26 @@ hero:
   descriptions:
     - "Escreva o back-end e o front-end de um recurso em um único
       componente e deixe o framework decidir onde o código deve ser executado."
-    - "O Nullstack oferece todas as ferramentas de que você precisa para manter o foco em sua lógica de negócios."
+    - "O Nullstack oferece todas as ferramentas que você precisa para manter o foco em sua lógica de negócios."
   callToAction: "npx create-nullstack-app"
   actionLink: '/pt-br/comecando'
   actionCallback: 'Comando copiado, cole no terminal'
 trinity:
-  - title: "Otimizado para a primeira renderização"
-    image: "/illustrations/nulla-tanker.webp"
-    text:
-      "Na primeira renderização, você terá HTML pronto para SEO e otimizado para a primeira pintura de sua rota em uma única solicitação usando funções locais com nenhuma dependência de javascript no pacote do cliente"
-  - title: "Pertinente Experiência de PWA"
-    image: "/illustrations/nulla-healer.webp"
-    text:
-      "Depois que o conteúdo é servido e a rede está ociosa, o javascript do Nullstack é carregado, o estado do aplicativo é restaurado por meio de hidratação e torna-se um aplicativo de página única"
-  - title: "Solicitações de API leves"
-    image: "/illustrations/nulla-dps.webp"
-    text:
-      "As funções de servidor subsequentes buscarão JSON de uma API de microsserviços gerada automaticamente, desserializarão a resposta, atualizarão o estado do aplicativo e renderizarão a página sem nenhuma escrita adicional"
+  heading: "A Santa Trindade"
+  subHeading: "do desinvolvimento de aplicativos web progressivos"
+  roles:
+    - title: "Otimizado para a primeira renderização"
+      image: "/illustrations/nulla-tanker.webp"
+      text:
+        "Na primeira renderização, você terá HTML pronto para SEO e otimizado para a primeira pintura de sua rota em uma única solicitação usando funções locais com nenhuma dependência de javascript no pacote do cliente"
+    - title: "Pertinente Experiência de PWA"
+      image: "/illustrations/nulla-healer.webp"
+      text:
+        "Depois que o conteúdo é servido e a rede está ociosa, o javascript do Nullstack é carregado, o estado do aplicativo é restaurado por meio de hidratação e torna-se um aplicativo de página única"
+    - title: "Solicitações de API leves"
+      image: "/illustrations/nulla-dps.webp"
+      text:
+        "As funções de servidor subsequentes buscarão JSON de uma API de microsserviços gerada automaticamente, desserializarão a resposta, atualizarão o estado do aplicativo e renderizarão a página sem nenhuma escrita adicional"
 features:
   - title: "Sem mais código para interoperabilidade"
     snippet: "GlueCode"
@@ -61,6 +64,6 @@ playlist:
     - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
       link: "https://www.youtube.com/watch?v=ud3IF5Xtd1s"
       thumbnail: "/thumbnails/pt-br-contribute.webp"
-    - title: "Full-stack with Nullstack - Part 2"
+    - title: "O que são Componentes em Javascript?"
       link: "https://www.youtube.com/watch?v=3yNwTz9w5Fw"
       thumbnail: "/thumbnails/pt-br-components.webp"
