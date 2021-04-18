@@ -1,9 +1,10 @@
 import Logo from "nullstack/logo";
-import Bars from "poisonicon/bars/stroke";
-import Ex from "poisonicon/ex/stroke";
-import Globe from "poisonicon/globe/stroke";
-import Bullseye from "poisonicon/bullseye/stroke";
 import Translatable from "./Translatable";
+import Hamburger from "../icons/Hamburger";
+import Close from "../icons/Close";
+import DayMode from "../icons/DayMode";
+import NightMode from "../icons/NightMode";
+import Brasil from "../icons/Brasil";
 
 class Header extends Translatable {
 
@@ -43,8 +44,8 @@ class Header extends Translatable {
               onclick={{ expanded: !this.expanded }}
               class="flex items-center sm:hidden"
             >
-              {this.expanded && <Ex height={20} class="text-gray-900 dark:text-white" />}
-              {!this.expanded && <Bars height={20} class="text-gray-900 dark:text-white" />}
+              {this.expanded && <Close size={20} class="text-gray-900 dark:text-white" />}
+              {!this.expanded && <Hamburger size={20} class="text-gray-900 dark:text-white" />}
             </span>
           </div>
           <nav
@@ -60,10 +61,10 @@ class Header extends Translatable {
           </nav>
           <div class={`flex w-full sm:w-auto mt-4 sm:mt-0 sm:space-x-2 items-center ${!this.expanded && "hidden sm:flex"}`}>
             <a href={this.i18n.language.href} title={this.i18n.language.title} class="hidden sm:flex">
-              <Globe height={20} />
+              <Brasil size={25} />
             </a>
-            <button onclick={this.toggleMode} title={this.i18n.mode[oppositeMode]} class="hidden sm:flex">
-              <Bullseye height={20} />
+            <button onclick={this.toggleMode} title={this.i18n.mode[oppositeMode]} class="hidden sm:flex text-pink-600 dark:text-white">
+              <DayMode size={25} />
             </button>
             <a
               href={this.i18n.action.href}

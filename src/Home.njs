@@ -8,7 +8,8 @@ class Home extends Translatable {
       const command = 'npx create-nullstack-app';
       await navigator.clipboard.writeText(command);
     }
-    this.gettingStarted = setInterval(() => {
+    clearTimeout(this.gettingStarted);
+    this.gettingStarted = setTimeout(() => {
       router.url = href;
     }, 3000)
   }

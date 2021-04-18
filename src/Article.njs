@@ -98,7 +98,7 @@ class Article extends Nullstack {
         </aside>
         <article class="w-full pb-24">
           <h1 class="text-pink-600 text-4xl font-light block mb-8"> {this.title} </h1>
-          <div html={this.html} class="prose max-w-none" />
+          <div html={this.html} class="prose dark:prose-dark max-w-none" />
         </article>
       </section>
     )
