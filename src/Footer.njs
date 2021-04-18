@@ -30,15 +30,17 @@ class Footer extends Translatable {
             <Link href="https://github.com/nullstack/nullstack" title="Github" icon={GitHub} /> 
             <Link href="https://www.youtube.com/nullstack" title="Youtube" icon={YouTube} /> 
           </nav>
-          <nav class="w-full flex items-center justify-center space-x-1">
+          <nav class="w-full flex flex-wrap items-center justify-center space-x-1">
+            <p class="text-center mt-3 w-full text-gray-400"> 
+              {this.i18n.star.story}
+            </p>
             <a 
               href="https://github.com/nullstack/nullstack/stargazers" 
-              class="text-white flex flex-wrap text-xl text-center mt-3"
+              class="text-white flex flex-wrap text-xl text-center"
               target="_blank"
               rel="noopener"
             >
-              <span class="block w-full">{this.i18n.star}</span>
-              <span class="font-bold block w-full">GitHub</span>
+              <span class="block w-full">{this.i18n.star.action}</span>
             </a>
           </nav>
         </div>

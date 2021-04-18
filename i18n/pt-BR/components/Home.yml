@@ -55,8 +55,8 @@ playlist:
   slang: "Dweebs"
   realWord: " Especialistas"
   videos:
-    - title: "Full-stack with Nullstack"
-      link: "https://www.youtube.com/watch?v=l23z00GEar8&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
+    - title: "Full-stack com Nullstack"
+      link: "https://www.youtube.com/watch?v=ieLVXZGXUkI&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
       thumbnail: "/thumbnails/pt-br-pokepoll.webp"
     - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
       link: "https://www.youtube.com/watch?v=ud3IF5Xtd1s"

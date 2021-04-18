@@ -5,4 +5,6 @@ links:
     href: "https://twitter.com/nullstackapp"
   - title: "GitHub"
     href: "https://github.com/nullstack"
-star: "leave an star on "
+star: 
+  story: "Want to show your love and help us spread the word?"
+  action: "Leave a start on GitHub"
