@@ -70,9 +70,15 @@ class Article extends Nullstack {
     }
   }
 
-  renderLink({ title, href }) {
+  renderLink({ title, href, router }) {
+    const grayText = "text-gray-500 dark:text-gray-300 ";
+    const pinkText = "text-pink-600 dark:text-pink-400 font-normal";
+    const classList = router.path === href ? pinkText : grayText;
     return (
-      <a href={href} class="text-gray-500 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 block w-full" onclick={{expanded: true}}> {title} </a>
+      <a href={href} class={`${classList} hover:text-pink-600 dark:hover:text-pink-400 block w-full`} onclick={{expanded: true}}
+      >
+        {title}
+      </a>
     )
   }
 
