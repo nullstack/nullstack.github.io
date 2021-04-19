@@ -25,7 +25,7 @@ class Home extends Translatable {
             <span class={`text-pink-600 ${page.locale !== 'pt-BR' ? 'text-3xl sm:text-5xl' : 'text-4xl sm:text-6xl'} font-light block sm:mb-3`}>
               {this.i18n.hero.subHeading}
             </span>
-            <span class="text-gray-900 text-2xl sm:text-4xl font-light block">
+            <span class="text-2xl sm:text-4xl font-light block">
               {this.i18n.hero.tagline}
             </span>
           </h1>

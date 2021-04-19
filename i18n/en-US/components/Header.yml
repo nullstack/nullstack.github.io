@@ -3,7 +3,7 @@ home:
   href: "/"
 links:
   - title: "Documentation"
-    href: "/documentation"
+    href: "/getting-started"
   - title: "Components"
     href: "/components"
   - title: "Contributors"
