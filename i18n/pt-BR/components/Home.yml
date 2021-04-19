@@ -7,7 +7,7 @@ hero:
   descriptions:
     - "Escreva o back-end e o front-end de um recurso em um único
       componente e deixe o framework decidir onde o código deve ser executado."
-    - "O Nullstack oferece todas as ferramentas que você precisa para manter o foco em sua lógica de negócios."
+    - "O Nullstack oferece todas as ferramentas que você precisa para manter o foco na lógica de negócios."
   callToAction: "npx create-nullstack-app"
   actionLink: '/pt-br/comecando'
   actionCallback: 'Comando copiado, cole no terminal'
@@ -15,25 +15,25 @@ trinity:
   heading: "A Santa Trindade"
   subHeading: "do desinvolvimento de aplicativos web progressivos"
   roles:
-    - title: "Otimizado para a primeira renderização"
+    - title: "Primeira visita otimizada"
       image: "/illustrations/nulla-tanker.webp"
       text:
-        "Na primeira renderização, você terá HTML pronto para SEO e otimizado para a primeira pintura de sua rota em uma única solicitação usando funções locais com nenhuma dependência de javascript no pacote do cliente"
-    - title: "Pertinente Experiência de PWA"
+        "Na primeira visita, você terá HTML pronto para SEO e otimizado para a primeira renderização de sua rota em uma única solicitação usando funções locais com nenhuma dependência de javascript no pacote do cliente"
+    - title: "Experiência de PWA fluida"
       image: "/illustrations/nulla-healer.webp"
       text:
-        "Depois que o conteúdo é servido e a rede está ociosa, o javascript do Nullstack é carregado, o estado do aplicativo é restaurado por meio de hidratação e torna-se um aplicativo de página única"
+        "Depois que o conteúdo é servido e a rede está ociosa, o javascript do Nullstack é carregado, o estado da aplicação é restaurado por meio de hidratação e torna-se um aplicativo de página única (SPA)"
     - title: "Solicitações de API leves"
       image: "/illustrations/nulla-dps.webp"
       text:
-        "As funções de servidor subsequentes buscarão JSON de uma API de microsserviços gerada automaticamente, desserializarão a resposta, atualizarão o estado do aplicativo e renderizarão a página sem nenhuma escrita adicional"
+        "As funções de servidor subsequentes buscarão JSON de uma API de microsserviços gerada automaticamente, desserializarão a resposta, atualizarão o estado da aplicação e renderizarão a página sem nenhum código adicional"
 features:
-  - title: "Sem mais código para interoperabilidade"
+  - title: "Não perca mais tempo colando um código no outro"
     snippet: "GlueCode"
     image: "/illustrations/nulla-glue.webp"
     text:
-      "Um ciclo de vida full-stack combinado com uma mentalidade orientada a recursos permite que você escreva código limpo e reutilizável sem a necessidade de criar APIs manualmente."
-  - title: "Torne-se um programador melhor"
+      "Um ciclo de vida full-stack combinado com uma abordagem orientada a recursos permite que você escreva código limpo e reutilizável sem a necessidade de criar APIs manualmente."
+  - title: "Torne-se um programador menos dependente de ferramentas"
     snippet: "Vanilla"
     image: "/illustrations/nulla-scrolls.webp"
     inverted: true
@@ -46,12 +46,12 @@ features:
     text:
       "As rotas são atributos simples que você pode atribuir a qualquer tag, e os links são apenas tags 'a'.
       Você descobrirá que Nullstack é apenas uma versão moderna de sua stack atual."
-  - title: "Todas as ferramentas que você precisa"
+  - title: "Todas as ferramentas que você precisa falando a mesma língua"
     snippet: "Batteries"
     image: "/illustrations/nulla-tools.webp"
     inverted: true
     text:
-      "A maioria das tarefas é muito repetitiva.
+      "A maioria das tarefas são muito repetitivas.
       Economize sua energia para os desafios reais usando os atalhos que criamos, como eventos em objeto e vínculos bidirecionais."
 playlist:
   heading: "Aprenda com nossos "
