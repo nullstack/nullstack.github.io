@@ -18,5 +18,25 @@ article {
   }
 
 }
+@media (min-width: 768px) {
+
+  .sidebar {
+    height: 80vh;
+    top: 20vh;
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #484848;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: darken($color: #484848, $amount: 10);
+    }
+  }
+
+}
 
 /*! purgecss end ignore */
