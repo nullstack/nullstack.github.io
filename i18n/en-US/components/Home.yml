@@ -16,7 +16,7 @@ trinity:
   heading: "The Holy Trinity"
   subHeading: "of progressive web apps development"
   roles:
-    - title: "Optimized for first render"
+    - title: "Optimized for the first render"
       image: "/illustrations/nulla-tanker.webp"
       text:
         "On the first render you'll get SEO ready HTML optimized for the first
@@ -42,7 +42,7 @@ features:
       "A full-stack Lifecycle combined with a feature-driven mindset allows
       you to write clean and reusable code without the need to create APIs
       manually."
-  - title: "Become a programmer less dependent on tools"
+  - title: "Become a programmer less dependent on gimmicks"
     snippet: "Vanilla"
     image: "/illustrations/nulla-scrolls.webp"
     inverted: true

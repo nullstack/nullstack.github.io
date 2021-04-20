@@ -33,7 +33,7 @@ features:
     image: "/illustrations/nulla-glue.webp"
     text:
       "Um ciclo de vida full-stack combinado com uma abordagem orientada a recursos permite que você escreva código limpo e reutilizável sem a necessidade de criar APIs manualmente."
-  - title: "Torne-se um programador menos dependente de ferramentas"
+  - title: "Torne-se um programador menos dependente de maneirismos"
     snippet: "Vanilla"
     image: "/illustrations/nulla-scrolls.webp"
     inverted: true
