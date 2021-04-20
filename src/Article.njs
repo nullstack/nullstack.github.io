@@ -70,9 +70,10 @@ class Article extends Nullstack {
     }
   }
 
-  renderLink({ title, href }) {
+  renderLink({ title, href, router }) {
+    const active = router.url === href;
     return (
-      <a href={href} class="text-gray-500 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 block w-full" onclick={{expanded: true}}> {title} </a>
+      <a href={href} class={`${active ? 'text-pink-500 dark:text-pink-500' : 'text-gray-500 dark:text-gray-300'} hover:text-pink-600 dark:hover:text-pink-400 block w-full`} onclick={{expanded: true}}> {title} </a>
     )
   }
 
