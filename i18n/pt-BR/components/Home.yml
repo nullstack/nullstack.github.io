@@ -13,7 +13,7 @@ hero:
   actionCallback: 'Comando copiado, cole no terminal'
 trinity:
   heading: "A Santa Trindade"
-  subHeading: "do desinvolvimento de aplicativos web progressivos"
+  subHeading: "do desenvolvimento de aplicativos web progressivos"
   roles:
     - title: "Primeira visita otimizada"
       image: "/illustrations/nulla-tanker.webp"

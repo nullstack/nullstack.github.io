@@ -12,7 +12,7 @@ class Components extends Translatable {
         href={repository}
         target={repository.indexOf('http') === 0 && "_blank"}
         rel="noopener"
-        class="block text-pink-600 border-t border-gray-100 dark:border-gray-800 py-2 mt-2"
+        class="block text-pink-600 dark:text-pink-500 border-t border-gray-100 dark:border-gray-800 py-2 mt-2"
       >
         {title}
       </a>

@@ -1,5 +1,6 @@
 import Translatable from './Translatable';
 import Snippet from "./Snippet";
+import Arrow from '../icons/Arrow';
 
 class Home extends Translatable {
 
@@ -16,29 +17,29 @@ class Home extends Translatable {
 
   renderHero({ page }) {
     return (
-      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap">
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap sm:mt-12">
         <div class="sm:w-5/12 grid gap-8 mt-12 sm:mt-0">
           <h1 class="w-full">
-            <span class={`text-pink-600 ${page.locale === 'pt-BR' ? 'text-3xl sm:text-4xl' : 'text-4xl sm:text-6xl'} font-light block sm:mb-3`}>
+            <span class={`text-pink-600 ${page.locale === 'pt-BR' ? 'text-2xl sm:text-4xl' : 'text-4xl sm:text-6xl'} font-light block sm:mb-3 text-center sm:text-left`}>
               {this.i18n.hero.heading}
             </span>
-            <span class={`text-pink-600 ${page.locale !== 'pt-BR' ? 'text-3xl sm:text-5xl' : 'text-4xl sm:text-6xl'} font-light block sm:mb-3`}>
+            <span class={`text-pink-600 ${page.locale !== 'pt-BR' ? 'text-3xl sm:text-5xl' : 'text-4xl sm:text-6xl'} font-light block sm:mb-3 text-center sm:text-left`}>
               {this.i18n.hero.subHeading}
             </span>
-            <span class="text-2xl sm:text-4xl font-light block">
+            <span class="text-2xl sm:text-4xl font-light block text-center sm:text-left">
               {this.i18n.hero.tagline}
             </span>
           </h1>
           <>
             {this.i18n.hero.descriptions.map(description => 
-              <p class="text-xl sm:text-2xl">
+              <p class="text-xl sm:text-2xl text-center sm:text-left">
                 {description}
               </p>
             )}
           </>
           <div>
             <button 
-              class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 inline-block" 
+              class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 inline-block w-full sm:w-auto" 
               onclick={this.getStarted}
               href={this.i18n.hero.actionLink}
             >
@@ -128,8 +129,9 @@ class Home extends Translatable {
   renderSeparator() {
     return (
       <div 
-        class="h-5 bg-center bg-no-repeat w-full max-w-screen-xl mx-auto flex justify-center items-start flex-wrap border-t-4 border-gray-200 text-center dark:opacity-10"
+        class="h-5 bg-center bg-no-repeat w-full max-w-screen-xl mx-auto flex justify-center items-start flex-wrap border-t-4 border-gray-200 text-center dark:opacity-10 text-gray-300"
       >
+        <Arrow size={30} />
       </div>
     )
   }
