@@ -3,19 +3,19 @@ home:
   href: "/pt-br"
 links:
   - title: "Documentação"
-    href: "/pt-br/documentacao"
+    href: "/pt-br/comecando"
   - title: "Componentes"
     href: "/pt-br/componentes"
   - title: "Contribuidores"
     href: "/pt-br/contribuidores"
-  - title: "Fonte"
-    href: "https://github.com/nullstack/nullstack"
-    target: "_blank"
-  - title: "English"
-    href: "/"
+  - title: "Waifu"
+    href: "/pt-br/waifu"
 action:
   title: "Começar"
   href: "/pt-br/comecando"
+language: 
+  title: "English"
+  href: "/"
 mode:
   dark: "Modo Noite"
   light: "Modo Dia"

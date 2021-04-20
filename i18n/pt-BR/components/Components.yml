@@ -2,7 +2,7 @@ title: "Componentes da Comunidade"
 description: "Uma lista com curadoria de componentes Nullstack feitos pela comunidade."
 heading: "Componentes da Comunidade"
 tagline: "Uma lista com curadoria de componentes Nullstack feitos pela comunidade."
-contribute: "Se você deseja adicionar um componente a esta lista, <a href='https://github.com/nullstack/nullstack.github.io/issues' class='ci1'>abra uma issue no github</a>."
+contribute: "Se você deseja adicionar um componente a esta lista, <a href='https://github.com/nullstack/nullstack.github.io/issues'>abra uma issue no github</a>."
 topics:
   - title: "Integrações"
     projects:
@@ -31,3 +31,7 @@ topics:
         repository: "https://github.com/Mortaro/nullstack-cep-input"
       - title: "Input para Telefone"
         repository: "https://github.com/Mortaro/nullstack-phone-input"
+  - title: "Assets"
+    projects:
+      - title: "Logo Nullstack"
+        repository: "/pt-br/nullstack-logo"

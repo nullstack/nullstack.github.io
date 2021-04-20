@@ -10,7 +10,7 @@ roadmap:
   title: "O Mapa da Estrada"
   paragraphs:
     - "As próximas atualizações serão direcionadas a correções de quaisquer bugs encontrados e terão foco na qualidade de vida."
-    - 'As atualizações listadas nas <a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1">issues do Nullstack</a> são as próximas etapas planejadas sem nenhuma ordem específica.'
+    - 'As atualizações listadas nas <a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener">issues do Nullstack</a> são as próximas etapas planejadas sem nenhuma ordem específica.'
 core:
   title: "A Equipe Principal"
   paragraphs:
@@ -38,7 +38,7 @@ core:
       description: "Ilustradora freelancer faz 10 anos. Viciada em Warcraft, aspirante a cosplayer e druida tanker no WoW."
       contribution: "Mamãe da Nulla-Chan e volta e meia lê scripts por pura pressão do Mortaro."
     - name: "Guilherme Correia"
-      role: "import Membro from <a href='https://github.com/vuejs-br' target='_blank' rel='noopener' class='ci1'>vuejs-br</a>"
+      role: "import Membro from <a href='https://github.com/vuejs-br' target='_blank' rel='noopener'>vuejs-br</a>"
       github: "GuiDevloper"
       description: "Experimentalista, escritor de universos, sonhador e desenvolvedor quando acha e toca a fita K7 sem título certa."
       contribution: "Usuário de features não documentadas e criador de issues exigindo documentação que ele mesmo vai fazer."
@@ -56,5 +56,5 @@ instructions:
   title: "Como Contribuir"
   paragraphs:
     - "É simples. Encontrou um bug ou deseja um novo recurso?"
-    - '<a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener" class="ci1">Crie uma issue</a> ou <a href="https://github.com/nullstack/nullstack/pulls" target="_blank" rel="noopener" class="ci1">envie uma pull request</a> com testes.'
+    - '<a href="https://github.com/nullstack/nullstack/issues" target="_blank" rel="noopener">Crie uma issue</a> ou <a href="https://github.com/nullstack/nullstack/pulls" target="_blank" rel="noopener">envie uma pull request</a> com testes.'
 githubCacheWarning: "* A lista pode demorar um pouco para ser atualizada devido ao cache da API do GitHub"

@@ -14,7 +14,7 @@ Fornece todas as instâncias ativas da aplicação.
 
 Conforme explicado em [`key` da instância](/pt-br/instancia-self#key-da-inst-ncia), keys desempenham um grande papel na definição de um identificador único para componentes.
 
-> 🔥 Nullstack confia que seus desensolvedores sabem o que estão fazendo e expoe o máximo de comportamento interno possivel para o programador usar como quiser, use com precaução.
+> 🔥 Nullstack confia que seus desenvolvedores sabem o que estão fazendo e expõe o máximo de comportamentos internos possíveis para o programador usar como quiser, use com precaução.
 
 Adicionando uma `key` única ao **Counter** torna-o disponível na lista `instances`.
 
@@ -61,7 +61,7 @@ class Counter extends Nullstack {
 export default Counter;
 ```
 
-Você pode acessar qualquer metodo e variavel de instância da instância **counter** em **AnyOtherComponent**
+Você pode acessar qualquer método e variável de instância da instância **counter** em **AnyOtherComponent**
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -83,10 +83,10 @@ export default AnyOtherComponent;
 
 O uso de `instances` libera possibilidades ilimitadas de novos comportamentos como:
 
-- Um ícone de notificação na navbar que pode ser atualizado de outros componenter em certas ações
+- Um ícone de notificação na navbar que pode ser atualizado de outros componentes em certas ações
 - Um componente de *toast* que pode ser invocado de qualquer lugar de sua aplicação
-- Um sistema de *store*  com ações customizadas similares ao Redux
-- Algo que nos nem imaginamos, seja criativo e poste suas ideias no GitHub!
+- Um sistema de *store* com ações customizadas similares ao Redux
+- Algo que nós nem imaginamos, sonhe criativamente e poste suas ideias no GitHub!
 
 ## Próxima Etapa
 

@@ -1,84 +1,69 @@
 title: "Componentes Javascript Full-stack"
 description: "Nullstack é um framework javascript full-stack para construir aplicações web progressivas"
 hero:
-  heading: "Componentes Javascript Full-stack"
+  heading: "Componentes Javascript"
+  subHeading: "Full-stack"
   tagline: "para exércitos de um dev só"
   descriptions:
-    - "Nullstack é um framework full-stack para construir <strong>aplicações web progressivas</strong>."
-    - "Ele conecta uma camada de <strong>UI com estado</strong> a <strong>microserviços</strong> especializados no mesmo componente usando <strong>vanilla javascript</strong>."
-    - "Concentre-se em resolver sua lógica de negócios em vez de escrever código para interoperabilidade."
-cycle:
-  ssr:
-    title: "Renderização no Servidor"
-    link: "/pt-br/renderizando-no-servidor"
-    text:
-      "Nullstack gera HTML otimizado e com <strong>SEO pronto</strong> para o primeiro rascunho de sua rota em uma única requisição usando funções locais e com <strong> zero dependências javascript </strong> no cliente."
-  spa:
-    title: "Single Page Application"
-    link: "/pt-br/ciclo-de-vida-full-stack"
-    text:
-      "Após hidratação, requisições irão buscar JSON de uma <strong>API gerada automaticamente</strong> por funções do servidor, atualizar o estado da aplicação e renderizar a página novamente."
-  ssg:
-    title: "Geração de Site Estático"
-    link: "/pt-br/geracao-de-sites-estaticos"
-    text: "Você pode até usar o Nullstack para gerar <strong>sites estáticos</strong> ultra-rápidos que servem HTML e se tornam uma Single Page Application usando uma <strong>API estática</strong> gerada automaticamente."
-about:
-  heading: "Recursos Completos como Componentes"
-  taglines:
-    - "Nullstack não é apenas outra parte de sua stack, mas sim a sua stack"
-    - "Sua aplicação pode ser exportado do back-end para o front-end como um componente e montado em outra aplicação"
-showcase:
-  descriptions:
-    - "O exemplo acima é o código completo de uma listagem de produtos e um formulário de edição sem esconder nenhuma linha."
-    - "Ambos os componentes invocam funções de servidor para ter acesso ao banco de dados MySQL no meio do JavaScript sem você ter que pensar em APIs."
-productivity:
-  heading: "A Produtividade está nos Detalhes"
-  tagline: "Os recursos do Nullstack foram extraídos de projetos da vida real com conveniência e consistência em mente"
+    - "Escreva o back-end e o front-end de um recurso em um único
+      componente e deixe o framework decidir onde o código deve ser executado."
+    - "O Nullstack oferece todas as ferramentas que você precisa para manter o foco na lógica de negócios."
+  callToAction: "npx create-nullstack-app"
+  actionLink: '/pt-br/comecando'
+  actionCallback: 'Comando copiado, cole no terminal'
+trinity:
+  heading: "A Santa Trindade"
+  subHeading: "do desenvolvimento de aplicativos web progressivos"
+  roles:
+    - title: "Primeira visita otimizada"
+      image: "/illustrations/nulla-tanker.webp"
+      text:
+        "Na primeira visita, você terá HTML pronto para SEO e otimizado para a primeira renderização de sua rota em uma única solicitação usando funções locais com nenhuma dependência de javascript no pacote do cliente"
+    - title: "Experiência de PWA fluida"
+      image: "/illustrations/nulla-healer.webp"
+      text:
+        "Depois que o conteúdo é servido e a rede está ociosa, o javascript do Nullstack é carregado, o estado da aplicação é restaurado por meio de hidratação e torna-se um aplicativo de página única (SPA)"
+    - title: "Solicitações de API leves"
+      image: "/illustrations/nulla-dps.webp"
+      text:
+        "As funções de servidor subsequentes buscarão JSON de uma API de microsserviços gerada automaticamente, desserializarão a resposta, atualizarão o estado da aplicação e renderizarão a página sem nenhum código adicional"
 features:
-  - title: "Componentes com Estado"
-    key: "Stateful"
-    link: "/pt-br/componentes-com-estado"
-  - title: "Vínculo Bidirecional"
-    key: "Binding"
-    link: "/pt-br/vinculo-bidirecional"
-  - title: "Rotas Integradas"
-    key: "Routes"
-    link: "/pt-br/rotas-e-parametros"
-  - title: "Ciclo de Vida Full-stack"
-    key: "Lifecycle"
-    link: "/pt-br/ciclo-de-vida-full-stack"
+  - title: "Não perca mais tempo colando um código no outro"
+    snippet: "GlueCode"
+    image: "/illustrations/nulla-glue.webp"
+    text:
+      "Um ciclo de vida full-stack combinado com uma abordagem orientada a recursos permite que você escreva código limpo e reutilizável sem a necessidade de criar APIs manualmente."
+  - title: "Torne-se um programador menos dependente de maneirismos"
+    snippet: "Vanilla"
+    image: "/illustrations/nulla-scrolls.webp"
+    inverted: true
+    text:
+      "Seus componentes são apenas POJOs.
+      Aproveite as vantagens do ecossistema existente enquanto escreve Javascript como deve ser e veja o resultado refletido no dom."
+  - title: "Você já sabe Nullstack"
+    snippet: "Modern"
+    image: "/illustrations/nulla-map.webp"
+    text:
+      "As rotas são atributos simples que você pode atribuir a qualquer tag, e os links são apenas tags 'a'.
+      Você descobrirá que Nullstack é apenas uma versão moderna de sua stack atual."
+  - title: "Todas as ferramentas que você precisa falando a mesma língua"
+    snippet: "Batteries"
+    image: "/illustrations/nulla-tools.webp"
+    inverted: true
+    text:
+      "A maioria das tarefas são muito repetitivas.
+      Economize sua energia para os desafios reais usando os atalhos que criamos, como eventos em objeto e vínculos bidirecionais."
 playlist:
-  heading: "Assista aos nossos vídeos tutoriais do Nullstack"
-  tagline: "Nullstack se preocupa em tornar seu conteúdo o mais direto ao ponto e fácil de entender quanto possível"
+  heading: "Aprenda com nossos "
+  slang: "Dweebs"
+  realWord: " Especialistas"
   videos:
-    - title: "Full-stack com Nullstack - Parte 1"
+    - title: "Full-stack com Nullstack"
       link: "https://www.youtube.com/watch?v=ieLVXZGXUkI&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumbnail-pt-br-1.webp"
-    - title: "Full-stack com Nullstack - Parte 2"
-      link: "https://www.youtube.com/watch?v=BHrNgi2UZ6Q&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumbnail-pt-br-2.webp"
-    - title: "Full-stack com Nullstack - Parte 3"
-      link: "https://www.youtube.com/watch?v=uRlvILvJ0Oc&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumbnail-pt-br-3.webp"
-why:
-  heading: "Por que você deve usar o Nullstack?"
-  reasons:
-    - title: "Desenvolvimento Escalável"
-      description: "Cada projeto começa pequeno e se torna complexo com o tempo. Escale conforme avança, não importa o tamanho da equipe."
-      link: "/pt-br/sobre"
-      closer: "Sem compromissos, sem imposições."
-    - title: "Desenvolvimento Orientado a Recursos"
-      description: "Desenvolvimento de back e front end de um recurso no mesmo componente de forma organizada com facilidade de visão geral."
-      link: "/pt-br/sobre#feature-driven"
-      closer: "Verdadeira componentização e reutilização de código."
-    - title: "Ecossistema já existente"
-      description: "Tira proveito de todo e qualquer pacote isomórfico em Vanilla Javascript já feito em toda história."
-      link: "/pt-br/sobre#tudo---possivel"
-      closer: "Todo o sua aplicação fala a mesma língua."
-    - title: "Adapte-se rapidamente às mudanças de escopo"
-      description: "A estrutura horizontal, ao contrário de uma hierárquica, torna muito mais fácil mover os recursos."
-      link: "/pt-br/sobre#por-que-inje--o-de-depend-ncia-em-vez-de-modularidade"
-      closer: "Flexibilidade acima de burocracia."
-  getStarted:
-    text: "Começar!"
-    link: "/pt-br/comecando"
+      thumbnail: "/thumbnails/pt-br-pokepoll.webp"
+    - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
+      link: "https://www.youtube.com/watch?v=ud3IF5Xtd1s"
+      thumbnail: "/thumbnails/pt-br-contribute.webp"
+    - title: "O que são Componentes em Javascript?"
+      link: "https://www.youtube.com/watch?v=3yNwTz9w5Fw"
+      thumbnail: "/thumbnails/pt-br-components.webp"

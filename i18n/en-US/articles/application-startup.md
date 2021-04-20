@@ -47,4 +47,4 @@ export default Application;
 
 ## Next step
 
-⚔ Learn about the [context `data`](/context-data).
+⚔ Learn about [functional components](/functional-components).

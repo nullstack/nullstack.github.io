@@ -1,6 +1,5 @@
 title: "Nulla-Chan"
 description: "Waifu oficial do Nullstack"
-tagline: "Waifu oficial do Nullstack"
 attributes:
   - label: "🕐 Idade"
     value: "19"
@@ -23,9 +22,13 @@ artist:
   href: "https://www.instagram.com/biancazanette"
   text: "Bilkaya"
 concept:
-  label: "Confira o"
+  label: "👀 Confira:"
   href: "https://www.artstation.com/artwork/Vg4o6R"
   text: "Conceito da Personagem"
 descriptions:
   - "Uma doce e tímida waifu perfeita, está sempre hiperfocada em seus estudos, mas de alguma forma distraída ao mesmo tempo."
   - "Está sempre alegre... até que ela tenha que enfrentar código grudento ou ver um post dizendo que tecnologia ela deve usar."
+  - "GitHub é a casa dela e o LinkedIn a deixa depressiva."
+fanarts:
+  heading: "Fanarts"
+  tagline: "Feitas por artistas maravilhosos ❤️"
