@@ -1,6 +1,5 @@
-# title: "Nulla-Chan"
-# description: "Nullstack's official waifu"
-# tagline: "Nullstack's official waifu"
+title: "Nulla-Chan"
+description: "Nullstack's official waifu"
 attributes:
   - label: "🕐 Age"
     value: "19"
@@ -18,18 +17,18 @@ attributes:
     value: "Reinventing Wheels"
   - label: "🧠 Neurodivergences"
     value: "ASD and ADHD"
-# artist:
-#   label: "🎨 Created by:"
-#   href: "https://www.instagram.com/biancazanette"
-#   text: "Bilkaya"
-# concept:
-#   label: "Check out the"
-#   href: "https://www.artstation.com/artwork/Vg4o6R"
-#   text: "Character Concept"
-# descriptions:
-#   - "A sweet and shy perfect waifu, is always hyperfocused in her studies but somehow distracted at the same time."
-#   - "She is always cheerful... until she has to face glue code or sees a post telling her which tech she should use."
-
+artist:
+  label: "🎨 Created by:"
+  href: "https://www.instagram.com/biancazanette"
+  text: "Bilkaya"
+concept:
+  label: "👀 Check out:"
+  href: "https://www.artstation.com/artwork/Vg4o6R"
+  text: "Character Concept"
+descriptions:
+  - "A sweet and shy perfect waifu, is always hyperfocused in her studies but somehow distracted at the same time."
+  - "She is always cheerful... until she has to face glue code or sees a post telling her which tech she should use."
+  - "GitHub is her home and LinkedIn makes her depressed."
 fanarts:
   heading: "Fanarts"
   tagline: "Made by amazing artirts ❤️"

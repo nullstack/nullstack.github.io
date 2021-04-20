@@ -1,34 +1,39 @@
 title: "Componentes Javascript Full-stack"
 description: "Nullstack é um framework javascript full-stack para construir aplicações web progressivas"
 hero:
-  heading: "Full-stack"
-  subHeading: "em Componentes Javascript"
+  heading: "Componentes Javascript"
+  subHeading: "Full-stack"
   tagline: "para exércitos de um dev só"
   descriptions:
     - "Escreva o back-end e o front-end de um recurso em um único
       componente e deixe o framework decidir onde o código deve ser executado."
-    - "O Nullstack oferece todas as ferramentas de que você precisa para manter o foco em sua lógica de negócios."
+    - "O Nullstack oferece todas as ferramentas que você precisa para manter o foco na lógica de negócios."
   callToAction: "npx create-nullstack-app"
+  actionLink: '/pt-br/comecando'
+  actionCallback: 'Comando copiado, cole no terminal'
 trinity:
-  - title: "Otimizado para a primeira renderização"
-    image: "/illustrations/nulla-tanker.webp"
-    text:
-      "Na primeira renderização, você terá HTML pronto para SEO e otimizado para a primeira pintura de sua rota em uma única solicitação usando funções locais com nenhuma dependência de javascript no pacote do cliente"
-  - title: "Pertinente Experiência de PWA"
-    image: "/illustrations/nulla-healer.webp"
-    text:
-      "Depois que o conteúdo é servido e a rede está ociosa, o javascript do Nullstack é carregado, o estado do aplicativo é restaurado por meio de hidratação e torna-se um aplicativo de página única"
-  - title: "Solicitações de API leves"
-    image: "/illustrations/nulla-dps.webp"
-    text:
-      "As funções de servidor subsequentes buscarão JSON de uma API de microsserviços gerada automaticamente, desserializarão a resposta, atualizarão o estado do aplicativo e renderizarão a página sem nenhuma escrita adicional"
+  heading: "A Santa Trindade"
+  subHeading: "do desenvolvimento de aplicativos web progressivos"
+  roles:
+    - title: "Primeira visita otimizada"
+      image: "/illustrations/nulla-tanker.webp"
+      text:
+        "Na primeira visita, você terá HTML pronto para SEO e otimizado para a primeira renderização de sua rota em uma única solicitação usando funções locais com nenhuma dependência de javascript no pacote do cliente"
+    - title: "Experiência de PWA fluida"
+      image: "/illustrations/nulla-healer.webp"
+      text:
+        "Depois que o conteúdo é servido e a rede está ociosa, o javascript do Nullstack é carregado, o estado da aplicação é restaurado por meio de hidratação e torna-se um aplicativo de página única (SPA)"
+    - title: "Solicitações de API leves"
+      image: "/illustrations/nulla-dps.webp"
+      text:
+        "As funções de servidor subsequentes buscarão JSON de uma API de microsserviços gerada automaticamente, desserializarão a resposta, atualizarão o estado da aplicação e renderizarão a página sem nenhum código adicional"
 features:
-  - title: "Sem mais código para interoperabilidade"
+  - title: "Não perca mais tempo colando um código no outro"
     snippet: "GlueCode"
     image: "/illustrations/nulla-glue.webp"
     text:
-      "Um ciclo de vida full-stack combinado com uma mentalidade orientada a recursos permite que você escreva código limpo e reutilizável sem a necessidade de criar APIs manualmente."
-  - title: "Torne-se um programador melhor"
+      "Um ciclo de vida full-stack combinado com uma abordagem orientada a recursos permite que você escreva código limpo e reutilizável sem a necessidade de criar APIs manualmente."
+  - title: "Torne-se um programador menos dependente de maneirismos"
     snippet: "Vanilla"
     image: "/illustrations/nulla-scrolls.webp"
     inverted: true
@@ -41,24 +46,24 @@ features:
     text:
       "As rotas são atributos simples que você pode atribuir a qualquer tag, e os links são apenas tags 'a'.
       Você descobrirá que Nullstack é apenas uma versão moderna de sua stack atual."
-  - title: "Todas as ferramentas que você precisa"
+  - title: "Todas as ferramentas que você precisa falando a mesma língua"
     snippet: "Batteries"
     image: "/illustrations/nulla-tools.webp"
     inverted: true
     text:
-      "A maioria das tarefas é muito repetitiva.
+      "A maioria das tarefas são muito repetitivas.
       Economize sua energia para os desafios reais usando os atalhos que criamos, como eventos em objeto e vínculos bidirecionais."
 playlist:
   heading: "Aprenda com nossos "
   slang: "Dweebs"
   realWord: " Especialistas"
   videos:
-    - title: "Full-stack com Nullstack - Parte 1"
+    - title: "Full-stack com Nullstack"
       link: "https://www.youtube.com/watch?v=ieLVXZGXUkI&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumbnail-pt-br-1.webp"
-    - title: "Full-stack com Nullstack - Parte 2"
-      link: "https://www.youtube.com/watch?v=BHrNgi2UZ6Q&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumbnail-pt-br-2.webp"
-    - title: "Full-stack com Nullstack - Parte 3"
-      link: "https://www.youtube.com/watch?v=uRlvILvJ0Oc&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
-      thumbnail: "/thumbnail-pt-br-3.webp"
+      thumbnail: "/thumbnails/pt-br-pokepoll.webp"
+    - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
+      link: "https://www.youtube.com/watch?v=ud3IF5Xtd1s"
+      thumbnail: "/thumbnails/pt-br-contribute.webp"
+    - title: "O que são Componentes em Javascript?"
+      link: "https://www.youtube.com/watch?v=3yNwTz9w5Fw"
+      thumbnail: "/thumbnails/pt-br-components.webp"

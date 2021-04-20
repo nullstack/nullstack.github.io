@@ -13,33 +13,36 @@ hero:
   actionLink: '/getting-started'
   actionCallback: 'Command copied, paste it on the terminal'
 trinity:
-  - title: "Optimized for first render"
-    image: "/illustrations/nulla-tanker.webp"
-    text:
-      "On the first render you'll get SEO ready HTML optimized for the first
-      paint of your route in a single request using local functions with
-      zero javascript dependencies in the client bundle"
-  - title: "Snappy PWA experience"
-    image: "/illustrations/nulla-healer.webp"
-    text:
-      "After the content is served and the network is idle Nullstack
-      javascript is loaded, the state of the application is restored through
-      hydration and it becomes a single page application"
-  - title: "Lightweight API requests"
-    image: "/illustrations/nulla-dps.webp"
-    text:
-      "Subsequent server functions will fetch JSON from an automaticallty
-      generated microservice API, deserialize the response, update the
-      aplication state, and rerender the page out of the box"
+  heading: "The Holy Trinity"
+  subHeading: "of progressive web apps development"
+  roles:
+    - title: "Optimized for the first render"
+      image: "/illustrations/nulla-tanker.webp"
+      text:
+        "On the first render you'll get SEO ready HTML optimized for the first
+        paint of your route in a single request using local functions with
+        zero javascript dependencies in the client bundle"
+    - title: "Fluid PWA experience"
+      image: "/illustrations/nulla-healer.webp"
+      text:
+        "After the content is served and the network is idle Nullstack
+        javascript is loaded, the state of the application is restored through
+        hydration and it becomes a single page application"
+    - title: "Lightweight API requests"
+      image: "/illustrations/nulla-dps.webp"
+      text:
+        "Subsequent server functions will fetch JSON from an automaticallty
+        generated microservice API, deserialize the response, update the
+        aplication state, and rerender the page out of the box"
 features:
-  - title: "No more glue code"
+  - title: "Stop wasting time glueing code together"
     snippet: "GlueCode"
     image: "/illustrations/nulla-glue.webp"
     text:
       "A full-stack Lifecycle combined with a feature-driven mindset allows
       you to write clean and reusable code without the need to create APIs
       manually."
-  - title: "Become a better programmer"
+  - title: "Become a programmer less dependent on gimmicks"
     snippet: "Vanilla"
     image: "/illustrations/nulla-scrolls.webp"
     inverted: true
@@ -53,7 +56,7 @@ features:
     text:
       "Routes are simple attributes you can assign to any tag, and links are just 'a' tags.
       You will find out that Nullstack is just a modern version of your current stack."
-  - title: "All the tools you need"
+  - title: "All the tools you need speak the same language"
     snippet: "Batteries"
     image: "/illustrations/nulla-tools.webp"
     inverted: true
@@ -66,12 +69,12 @@ playlist:
   slang: "Dweebs"
   realWord: " Experts"
   videos:
-    - title: "Full-stack with Nullstack - Part 1"
+    - title: "Full-stack with Nullstack"
       link: "https://www.youtube.com/watch?v=l23z00GEar8&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
-      thumbnail: "/thumbnail-en-us-1.webp"
-    - title: "Full-stack with Nullstack - Part 2"
-      link: "https://www.youtube.com/watch?v=_i5kKXkhBaM&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
-      thumbnail: "/thumbnail-en-us-2.webp"
-    - title: "Full-stack with Nullstack - Part 3"
-      link: "https://www.youtube.com/watch?v=8PExa5-G1As&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
-      thumbnail: "/thumbnail-en-us-3.webp"
+      thumbnail: "/thumbnails/en-us-pokepoll.webp"
+    - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
+      link: "https://www.youtube.com/watch?v=ud3IF5Xtd1s"
+      thumbnail: "/thumbnails/en-us-contribute.webp"
+    - title: "What are Javascript Components?"
+      link: "https://www.youtube.com/watch?v=H2i5_A1txGI"
+      thumbnail: "/thumbnails/en-us-components.webp"

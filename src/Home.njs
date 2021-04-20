@@ -1,5 +1,6 @@
 import Translatable from './Translatable';
 import Snippet from "./Snippet";
+import Arrow from '../icons/Arrow';
 
 class Home extends Translatable {
 
@@ -8,36 +9,37 @@ class Home extends Translatable {
       const command = 'npx create-nullstack-app';
       await navigator.clipboard.writeText(command);
     }
-    this.gettingStarted = setInterval(() => {
+    clearTimeout(this.gettingStarted);
+    this.gettingStarted = setTimeout(() => {
       router.url = href;
     }, 3000)
   }
 
-  renderHero() {
+  renderHero({ page }) {
     return (
-      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap">
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap sm:mt-12">
         <div class="sm:w-5/12 grid gap-8 mt-12 sm:mt-0">
           <h1 class="w-full">
-            <span class="text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">
+            <span class={`text-pink-600 ${page.locale === 'pt-BR' ? 'text-2xl sm:text-4xl' : 'text-4xl sm:text-6xl'} font-light block sm:mb-3 text-center sm:text-left`}>
               {this.i18n.hero.heading}
             </span>
-            <span class="text-pink-600 text-3xl sm:text-5xl font-light block sm:mb-3">
+            <span class={`text-pink-600 ${page.locale !== 'pt-BR' ? 'text-3xl sm:text-5xl' : 'text-4xl sm:text-6xl'} font-light block sm:mb-3 text-center sm:text-left`}>
               {this.i18n.hero.subHeading}
             </span>
-            <span class="text-gray-900 text-2xl sm:text-4xl font-light block">
+            <span class="text-2xl sm:text-4xl font-light block text-center sm:text-left">
               {this.i18n.hero.tagline}
             </span>
           </h1>
           <>
             {this.i18n.hero.descriptions.map(description => 
-              <p class="text-xl sm:text-2xl">
+              <p class="text-xl sm:text-2xl text-center sm:text-left">
                 {description}
               </p>
             )}
           </>
           <div>
             <button 
-              class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 inline-block" 
+              class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 inline-block w-full sm:w-auto" 
               onclick={this.getStarted}
               href={this.i18n.hero.actionLink}
             >
@@ -54,7 +56,7 @@ class Home extends Translatable {
 
   renderRole({ image, title, text }) {
     return (
-      <div class="sm:w-1/3 px-8 flex flex-wrap justify-center text-center">
+      <div class="sm:w-1/3 px-8 flex flex-wrap justify-center text-center mb-8 sm:mb-0">
         <div class="bg-center bg-0 hover:bg-100" style="background-image: url(/stars.webp); transition: background-size 3s;">
           <img src={image} alt={title} width="192" height="192" class="transform hover:scale-105 transition delay-100" loading="lazy" />
         </div>
@@ -69,7 +71,11 @@ class Home extends Translatable {
   renderTrinity() {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
-        {this.i18n.trinity.map((role) => <Role {...role} />)}
+        <h2 class="w-full text-center mb-8 sm:mb-24"> 
+          <span class="w-full text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">{this.i18n.trinity.heading}</span>
+          <span class="sm:text-xl block">{this.i18n.trinity.subHeading}</span>
+        </h2>
+        {this.i18n.trinity.roles.map((role) => <Role {...role} />)}
       </section>
     )
   }
@@ -95,7 +101,7 @@ class Home extends Translatable {
 
   renderVideo({ link, title, thumbnail }) {
     return (
-      <div class="w-full sm:w-1/3 p-1 flex justify-center">
+      <div class="w-full sm:w-auto p-1 flex justify-center">
         <a href={link} title={title} target="_blank" rel="noopener">
           <img src={thumbnail} alt={title} height="209" width="372" loading="lazy" />
         </a>
@@ -123,8 +129,9 @@ class Home extends Translatable {
   renderSeparator() {
     return (
       <div 
-        class="h-5 bg-center bg-no-repeat w-full max-w-screen-xl mx-auto flex justify-center items-start flex-wrap border-t-4 border-gray-200 text-center dark:opacity-10"
+        class="h-5 bg-center bg-no-repeat w-full max-w-screen-xl mx-auto flex justify-center items-start flex-wrap border-t-4 border-gray-200 text-center dark:opacity-10 text-gray-300"
       >
+        <Arrow size={30} />
       </div>
     )
   }
