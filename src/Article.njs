@@ -96,7 +96,7 @@ class Article extends Nullstack {
           class={`transition delay-300 fixed bottom-10 right-10 bg-pink-600 text-white shadow-xl rounded-full py-2 px-4 z-50 md:hidden ring-0 transform ${this.expanded ? 'rotate-180 transform' : ''}`}>
             <Arrow size={20} />
         </button>
-        <aside class={`w-full md:w-80 fixed top-0 left-0 md:relative z-40 md:z-auto bg-white dark:bg-gray-900 h-screen md:h-auto p-4 overflow-y-auto md:p-0 md:pr-4 transform pb-24 sm:pb-0 transition delay-500 ${this.expanded ? 'translate-y-0' : 'translate-y-full md:translate-y-0'}`}>
+        <aside class={`w-full md:w-80 fixed top-0 left-0 md:relative z-40 md:z-auto bg-white dark:bg-gray-900 h-screen md:h-auto p-4 overflow-y-auto md:p-0 md:pr-4 transform pb-24 sm:pb-0 transition sm:transition-none delay-500 delay-0 ${this.expanded ? 'translate-y-0' : 'translate-y-full md:translate-y-0'}`}>
           {this.topics?.map((topic) => <Topic {...topic} />)}
         </aside>
         <article class="w-full pb-24">

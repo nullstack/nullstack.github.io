@@ -65,7 +65,7 @@ class Waifu extends Translatable {
   }
 
   renderFanart({ image }) {
-    const name = image.slice(0, -5);
+    const name = image.slice(0, -5).replace(/\[dot\]/g, '.');
     const src = `/fanarts/${image}`;
     return (
       <div class="flex flex-col p-3 shadow items-center space-y-1">

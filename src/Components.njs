@@ -39,7 +39,7 @@ class Components extends Translatable {
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-24">
         <h1 class="w-full text-xl sm:text-4xl font-light mb-4"> {this.i18n.heading} </h1>
         <p class="w-full text-xl"> {this.i18n.tagline} </p>
-        <p class="w-full prose max-w-none" html={this.i18n.contribute} />
+        <p class="w-full prose dark:prose-dark max-w-none" html={this.i18n.contribute} />
         <div class="w-full">
           {this.i18n.topics.map((topic) => <Topic {...topic} />)}
         </div>
