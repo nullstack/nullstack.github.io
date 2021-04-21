@@ -36,7 +36,9 @@ class Waifu extends Translatable {
           <span class="text-2xl sm:text-4xl font-light block mb-3">
             {this.i18n.description}
           </span>
-          {this.i18n.descriptions.map((description) => <p class="text-xl"> {description} </p>)}
+          <blockquote>
+            {this.i18n.descriptions.map((description) => <p class="text-xl"> {description} </p>)}
+          </blockquote>
         </div>
         <div class="flex flex-wrap justify-between w-full">
           <div class="flex w-full sm:w-6/12 bg-yellow-300 dark:bg-gray-800 justify-center py-8">
@@ -65,7 +67,7 @@ class Waifu extends Translatable {
   }
 
   renderFanart({ image }) {
-    const name = image.slice(0, -5).replace(/\[dot\]/g, '.');
+    const name = image.slice(0, -5).replace(/\[dot\]/g, '.').replace(/\[u\]/g, '.');
     const src = `/fanarts/${image}`;
     return (
       <div class="flex flex-col p-3 shadow items-center space-y-1">
