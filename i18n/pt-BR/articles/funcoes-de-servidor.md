@@ -1,17 +1,17 @@
 ---
-title: Server Functions
-description: Server functions are specialized microservices that at transpile time are converted into API entry points
+title: Funções de Servidor
+description: As funções do servidor são microsserviços especializados que no momento da transpilação são convertidos em pontos de entrada da API.
 ---
 
-Server functions are specialized microservices that at transpile time are converted into API entry points.
+As funções do servidor são microsserviços especializados que no momento da transpilação são convertidos em pontos de entrada da API.
 
-To flag a function as a server function, you must declare it as `static async`.
+Para sinalizar uma função como uma função de servidor, você deve declará-la como `static async`.
 
-Being a static function means it has no access to the instance scope.
+Ser uma função estática significa que ela não tem acesso ao escopo da instância.
 
-However, instead of calling the static version from the *class*, you must invoke it as an *instance* function.
+No entanto, em vez de chamar a versão estática da *classe*, você deve invocá-la como uma função de *instância*.
 
-Server functions can be called anytime in your code and are not limited to [prerender](/pt-br/renderizando-no-servidor) steps.
+As funções do servidor podem ser chamadas a qualquer momento em seu código e não estão limitadas a etapas de [pré-processamento](/pt-br/renderizando-no-servidor).
 
 ```jsx
 import Nullstack from 'nullstack';
