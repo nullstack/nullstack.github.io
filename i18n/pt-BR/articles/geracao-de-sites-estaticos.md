@@ -1,6 +1,6 @@
 ---
-título: Geração de Site Estático
-descrição: Use Nullstack para gerar websites estáticos para aplicações estáticas ultrarrápidas usando todo o potencial de Nullstack sem a necessidade de ter um back-end de node.js
+title: Geração de Site Estático
+description: Use Nullstack para gerar websites estáticos para aplicações estáticas ultrarrápidas usando todo o potencial de Nullstack sem a necessidade de ter um back-end de node.js
 ---
 
 Use Nullstack para gerar websites estáticos para aplicações estáticas ultrarrápidas usando todo o potencial do cliente Nullstack sem a necessidade de haver um back-end de node.js.

@@ -1,24 +1,24 @@
 ---
-title: Server-Side Rendering
-description: Nullstack optimizes SEO and response times out of the box by generating HTML for the route that you enter the application from
+title: Renderizando no servidor
+description: O Nullstack otimiza o SEO e também o tempo de resposta, gerando HTML para a rota de sua aplicação.
 ---
 
-Nullstack optimizes SEO and response times out of the box by generating HTML for the [route](/routes-and-params) that you enter the application from.
+O Nullstack otimiza o SEO e também o tempo de resposta, gerando HTML para as [rotas](/pt-br/rotas-e-parametros) de sua aplicação.
 
-Server-side rendering is good for SEO since it gives as fast as possible crawlable markup for search engines.
+A renderização no servidor é excelente para o SEO, pois fornece marcação rastreável bem veloz para os mecanismos de busca.
 
-Nullstack starts the application for the user by first serving HTML of only the requested page with no overhead.
+O Nullstack inicia a aplicação para o usuário servindo primeiro a página HTML solicitada, sem ocorrer sobrecarga.
 
-Before serving the HTML, Nullstack will wait for [prepare](/full-stack-lifecycle) and [initiate](/full-stack-lifecycle) of all components of that route to be resolved.
+Antes de servir o HTML, o Nullstack esperará pela [prepare](/pt-br/ciclo-de-vida-full-stack) e [initiate](/pt-br/ciclo-de-vida-full-stack) de todos os componentes da rota a serem resolvidos.
 
-While server-side rendering all server functions run locally without the need to fetch an API, making the process even faster.
+Durante a renderização, todas as funções do servidor são executadas localmente, sem a necessidade de buscar uma API, tornando o processo ainda mais rápido.
 
-After the document is already painted in the browser, Nullstack loads the javascript client bundle and starts the [hydration](/full-stack-lifecycle) process. 
+Depois que o documento já está no navegador, o Nullstack carrega o pacote no lado do cliente e inicia o processo de [hydration] (/pt-br/ciclo-de-vida-full-stack).
 
-No further requests to the server are made to recover the application state during [hydration](/full-stack-lifecycle).
+Nenhuma outra solicitação ao servidor é feita, para recuperar o estado da aplicação durante o [hydration] (/pt-br/ciclo-de-vida-full-stack).
 
-The page head will generate the necessary meta tags for SEO based on the contents of the [project](/context-project) and [page](/context-page) context keys.
+O head da página gerará as meta tags necessárias para SEO com base no conteúdo das chaves de contexto [project] (/context-project) e [page] (/context-page).
 
-## Next step
+## Próximos passos
 
-⚔ Learn about [static site generation](/static-site-generation).
+⚔ Aprenda sobre [geração de site estático](/pt-br/geracao-de-sites-estaticos).

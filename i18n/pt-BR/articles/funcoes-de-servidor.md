@@ -1,17 +1,17 @@
 ---
-title: Server Functions
-description: Server functions are specialized microservices that at transpile time are converted into API entry points
+title: Funções de Servidor
+description: As funções do servidor são microsserviços especializados que no momento da transpilação são convertidos em pontos de entrada da API.
 ---
 
-Server functions are specialized microservices that at transpile time are converted into API entry points.
+As funções do servidor são microsserviços especializados que no momento da transpilação são convertidos em pontos de entrada da API.
 
-To flag a function as a server function, you must declare it as `static async`.
+Para sinalizar uma função como uma função de servidor, você deve declará-la como `static async`.
 
-Being a static function means it has no access to the instance scope.
+Ser uma função estática significa que ela não tem acesso ao escopo da instância.
 
-However, instead of calling the static version from the *class*, you must invoke it as an *instance* function.
+No entanto, em vez de chamar a versão estática da *classe*, você deve invocá-la como uma função de *instância*.
 
-Server functions can be called anytime in your code and are not limited to [prerender](/pt-br/renderizando-no-servidor) steps.
+As funções do servidor podem ser chamadas a qualquer momento em seu código e não estão limitadas a etapas de [pré-processamento](/pt-br/renderizando-no-servidor).
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -33,15 +33,15 @@ class Component extends Nullstack {
 export default Component;
 ```
 
-> ✨ Learn more about the [server context](/pt-br/contexto).
+> ✨ Aprenda mais sobre [contexto](/pt-br/contexto).
 
-## Client behavior
+## Comportamento do cliente
 
-When you call a server function from the client, the arguments will be serialized as JSON.
+Ao chamar uma função de servidor do cliente, os argumentos serão serializados como JSON.
 
-The arguments will be posted against the automatically generated API and merged with the server context when it reaches the server.
+Os argumentos serão postados contra a API gerada automaticamente e mesclados com o contexto do servidor quando atingir o servidor.
 
-The return value of the server function will be serialized back to the client and can be seamlessly used as if it were a local function.
+O valor de retorno da função do servidor será serializado de volta para o cliente e pode ser usado perfeitamente como se fosse uma função local.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -64,13 +64,13 @@ class Component extends Nullstack {
 export default Component;
 ```
 
-## Server behavior
+## Comportamento do servidor
 
-Server functions will be used as local functions, simply aliasing the *instance* call to the *class* and merging the arguments with the server context.
+As funções de servidor serão usadas como funções locais, simplesmente criando um alias da chamada *instância* para a *classe* e mesclando os argumentos com o contexto do servidor.
 
 ## Date Convenience
 
-Dates are serialized as UTC in JSON and deserialized back to `Date` objects.
+As datas são serializadas como UTC em JSON e desserializadas de volta para objetos `Date`.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -95,7 +95,7 @@ export default Component;
 
 ## Fetch Convenience
 
-`fetch` is available in both server and client functions for the sake of isomorphy.
+`fetch` está disponível em funções de servidor e cliente para fins de isomorfia.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -117,11 +117,11 @@ class Component extends Nullstack {
 export default Component;
 ```
 
-## Server only imports
+## Importações apenas de servidor
 
-Imported dependencies that are only used inside server functions will be excluded from the client bundle.
+As dependências importadas que são usadas apenas dentro das funções do servidor serão excluídas do pacote do cliente.
 
-This is useful for both accessing node.js exclusive modules and reducing the client bundle size by preprocessing data like markdown without having to expose the dependency to the end-user.
+Isso é útil para acessar módulos exclusivos do node.js e reduzir o tamanho do pacote do cliente por meio do pré-processamento de dados, como o markdown, sem ter que expor a dependência ao usuário final.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -142,11 +142,11 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Security
+## Segurança
 
-Keep in mind that every server function is similar to an Express route in API and must be coded without depending on view logic for security.
+Lembre-se de que cada função do servidor é semelhante a uma rota do Express na API, e deve ser codificada sem depender da lógica de exibição para a segurança.
 
-> 🔒 Server functions with the name starting with "start" (and optionally followed by an uppercase letter) do not generate an API endpoint to avoid malicious context flooding.
+> 🔒 As funções de servidor com o nome começando com "start" (e opcionalmente seguido por uma letra maiúscula) não geram um endpoint de API, para evitar inundação de contexto malicioso.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -165,15 +165,15 @@ class Component extends Nullstack {
 export default Component;
 ```
 
-> 💡 Server functions are not exposed to the client.
+> 💡 As funções do servidor não são expostas ao cliente.
 
-> ✨ Learn more about the [NJS file extension](/pt-br/extensao-de-arquivo-njs).
+> ✨ Aprenda mais sobre a [extensão de arquivo NJS](/pt-br/extensao-de-arquivo-njs).
 
-## Reserved words
+## Palavras reservadas
 
-Server function names cannot collide with instance method names from the current class or its parent classes.
+Os nomes das funções do servidor não podem colidir com os nomes dos métodos de instância da classe atual ou de suas classes pai.
 
-The following words cannot be used in server functions:
+As seguintes palavras não podem ser usadas em funções de servidor:
 
 - `prepare`
 - `initiate`
@@ -181,16 +181,16 @@ The following words cannot be used in server functions:
 - `update`
 - `terminate`
 
-Server functions named `start` will not generate an API endpoint and can only be called by other server functions.
+As funções de servidor chamadas `start` não irão gerar um endpoint de API e só podem ser chamadas por outras funções de servidor.
 
-## Caveats
+## Ressalvas
 
-Automatically generated API endpoints are not meant to be used by 3rd-party apps.
+Os endpoints de API gerados automaticamente não devem ser usados por aplicativos de terceiros.
 
-The URL and implementation may change between versions of Nullstack.
+A URL e a implementação podem mudar entre as versões do Nullstack.
 
-> ✨ If you want to build an API, learn more about [how to create an API with Nullstack](/pt-br/requisicao-e-resposta-do-servidor).
+> ✨ Se você deseja construir uma API, aprenda mais sobre [como criar uma API com o Nullstack](/pt-br/requisicao-e-resposta-do-servidor).
 
 ## Next step
 
-⚔ Learn about the [context](/pt-br/contexto).
+⚔ Saiba mais sobre o [contexto](/pt-br/contexto).
