@@ -144,9 +144,7 @@ export default Application;
 
 ## Segurança
 
-Keep in mind that every server function is similar to an Express route in API and must be coded without depending on view logic for security.
-
-Lembre-se de que cada função do servidor é semelhante a uma rota do Express na API, e deve ser codificada sem depender da lógica de exibição por segurança.
+Lembre-se de que cada função do servidor é semelhante a uma rota do Express na API, e deve ser codificada sem depender da lógica de exibição para a segurança.
 
 > 🔒 As funções de servidor com o nome começando com "start" (e opcionalmente seguido por uma letra maiúscula) não geram um endpoint de API, para evitar inundação de contexto malicioso.
 
