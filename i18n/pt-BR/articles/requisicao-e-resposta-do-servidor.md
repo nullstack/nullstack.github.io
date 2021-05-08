@@ -8,7 +8,7 @@ description: A key do servidor é um proxy em volta da instância do express, qu
 
 A key do servidor é um proxy em volta de uma instância do [Express](https://expressjs.com) que roda por baixo dos panos.
 
-O objeto do servidor está presenta apenas no contexto do *servidor*.
+O objeto do servidor está presente apenas no contexto do *servidor*.
 
 As seguintes funções são redirecionadas para o servidor Express:
 
