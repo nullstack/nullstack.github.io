@@ -1,5 +1,5 @@
 <div align="right">
-  <a href="./README.br.md">
+  <a href="./README.md">
     <img src="https://raw.githubusercontent.com/GuiDevloper/multi-language-readme-template/master/.github/lg-button-en.png" alt="pt-br" width="180px">
   </a>
 </div>
