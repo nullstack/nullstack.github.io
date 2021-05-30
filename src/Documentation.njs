@@ -2,7 +2,7 @@ import Translatable from './Translatable';
 
 class Documentation extends Translatable {
   
-  prepare({ router, page }) {
+  hydrate({ router, page }) {
     if(page.locale === 'pt-BR') {
       router.url = '/pt-br/comecando'
     } else {
