@@ -4,12 +4,10 @@ self.context = {
     "server": true,
     "development": false,
     "production": true,
-    "static": true,
-    "key": "f39a9b16c73928364ac59b1302f6726842b75aa6"
+    "mode": "ssg",
+    "key": "eb9c2b0f896b155a1ab65e26f7d8446733b7de3a"
   },
   "project": {
-    "cdn": "",
-    "protocol": "https",
     "domain": "nullstack.app",
     "name": "Nullstack",
     "color": "#d22365",
@@ -89,6 +87,9 @@ self.context = {
       "/crete-round-v9-latin-regular.woff2"
     ],
     "headers": {},
+    "api": "",
+    "cdn": "",
+    "protocol": "https",
     "queues": {}
   }
 };

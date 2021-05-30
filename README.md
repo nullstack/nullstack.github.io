@@ -16,4 +16,6 @@ Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
 ## Learn more about Nullstack
 
-[Read the documentation](https://nullstack.app/documentation)
+[Read the documentation](https://nullstack.app/getting-started)
+
+<a href="./README.br.md"> Leia em Português </a>
