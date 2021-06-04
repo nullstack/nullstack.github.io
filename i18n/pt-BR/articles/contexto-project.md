@@ -35,8 +35,6 @@ As chaves a seguir estão disponíveis no objeto:
 - **favicon**: `string` (url relativo ou absoluto)
 - **disallow**: `array` de `string` (caminhos relativos)
 - **sitemap**: `boolean` ou `string` (url relativo ou absoluto)
-- **cdn**: `string` (url absoluto)
-- **protocol**: `string` (http or https)
 
 Além de `domain`, `name` and `color` todas as outras chaves tem padrões sensíveis gerados com base no escopo do aplicativo.
 
