@@ -1,6 +1,5 @@
 topics:
   - title: "Core concepts"
-    description: "Start your journey in Nullstack with these basic concepts"
     links:
       - title: "Getting started"
         href: "/getting-started"
@@ -19,7 +18,6 @@ topics:
       - title: "Two-way bindings"
         href: "/two-way-bindings"
   - title: "Advanced concepts"
-    description: "These are concepts that you will most likely learn as you need in your projects"
     links:
       - title: "Application Startup"
         href: "/application-startup"
@@ -47,16 +45,19 @@ topics:
         href: "/styles"
       - title: "NJS file extension"
         href: "/njs-file-extension"
-      - title: "Server-side rendering"
-        href: "/server-side-rendering"
-      - title: "Static site generation"
-        href: "/static-site-generation"
       - title: "Service Worker"
         href: "/service-worker"
       - title: "How to deploy"
         href: "/how-to-deploy-a-nullstack-application"
+  - title: "Build Modes"
+    links:
+      - title: "Server-side rendering"
+        href: "/server-side-rendering"
+      - title: "Static site generation"
+        href: "/static-site-generation"
+      - title: "Single page applications"
+        href: "/single-page-applications"
   - title: "Examples"
-    description: "The best way to learn Nullstack is by reading some code"
     links:
       - title: "How to use MongoDB"
         href: "/how-to-use-mongodb-with-nullstack"
