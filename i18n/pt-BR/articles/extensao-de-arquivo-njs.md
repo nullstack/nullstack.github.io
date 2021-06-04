@@ -110,4 +110,4 @@ export default Tasks;
 
 ## Próximo Passo
 
-⚔ Aprenda sobre a [renderização no servidor](/pt-br/renderizando-no-servidor).
+⚔ Aprenda mais sobre o [service-worker](/pt-br/service-worker).
