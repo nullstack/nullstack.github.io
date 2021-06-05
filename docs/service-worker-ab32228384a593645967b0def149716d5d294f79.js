@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "mode": "ssg",
-    "key": "eb9c2b0f896b155a1ab65e26f7d8446733b7de3a"
+    "key": "ab32228384a593645967b0def149716d5d294f79"
   },
   "project": {
     "domain": "nullstack.app",
@@ -63,6 +63,7 @@ self.context = {
       "/server-request-and-response",
       "/server-side-rendering",
       "/service-worker",
+      "/single-page-applications",
       "/stateful-components",
       "/static-site-generation",
       "/styles",

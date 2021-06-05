@@ -13,11 +13,15 @@ Antes de servir o HTML, o Nullstack esperará pela [prepare](/pt-br/ciclo-de-vid
 
 Durante a renderização, todas as funções do servidor são executadas localmente, sem a necessidade de buscar uma API, tornando o processo ainda mais rápido.
 
-Depois que o documento já está no navegador, o Nullstack carrega o pacote no lado do cliente e inicia o processo de [hydration] (/pt-br/ciclo-de-vida-full-stack).
+Depois que o documento já está no navegador, o Nullstack carrega o pacote no lado do cliente e inicia o processo de [hydration](/pt-br/ciclo-de-vida-full-stack).
 
-Nenhuma outra solicitação ao servidor é feita, para recuperar o estado da aplicação durante o [hydration] (/pt-br/ciclo-de-vida-full-stack).
+Nenhuma outra solicitação ao servidor é feita, para recuperar o estado da aplicação durante o [hydration](/pt-br/ciclo-de-vida-full-stack).
 
-O head da página gerará as meta tags necessárias para SEO com base no conteúdo das chaves de contexto [project] (/context-project) e [page] (/context-page).
+O head da página gerará as meta tags necessárias para SEO com base no conteúdo das chaves de contexto [`project`](/context-project) e [`page`](/context-page).
+
+Este é o modo de construção padrão e também o modo usado para desenvolvimento.
+
+É uma boa prática seguir os padrões de SSR no desenvolvimento para poder mudar facilmente entre os modos de compilação na produção.
 
 ## Próximos passos
 

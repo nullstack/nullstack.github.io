@@ -14,22 +14,14 @@ Todos os benefícios de [renderização no lado do servidor](/pt-br/renderizando
 Você pode gerar um website estático a partir da sua aplicação Nullstack com o seguinte comando `npx`:
 
 ```sh
-npx create-nullstatic-app
+npx nullstack build --mode=ssg --output=ssg
 ```
 
 > 🔥 Você deve estar em uma pasta de projeto Nullstack para executar esse comando.
 
-Por padrão, a sua aplicação Nullstack será criada na pasta **static**.
+Por padrão, ele criará sua aplicação estática na pasta **ssg** que você pode sobrescrever com o sinalizador `--output`.
 
-Você pode mudar a pasta padrão por passá-la para o comando como um argumento:
-
-```sh
-npx create-nullstatic-app docs
-```
-
-O Nullstatic generator irá executar a sua aplicação no modo produção e irá rastrear cada link para uma rota interna que encontrar no seu DOM.
-
-> 💡 Certifique-se que a porta de produção do servidor se encontra livre quando executar esse comando.
+O construtor executará seu aplicativo no modo de produção e rastreará todos os atributos `href` encontrados em seu DOM.
 
 O [manifest.json](/pt-br/contexto-project) e o conteúdo da pasta pública serão copiados para a pasta de destino.
 
@@ -39,7 +31,7 @@ Na primeira visita para a sua aplicação estática, HTML será veiculado e hidr
 
 Nos pedidos subsequentes, Nullstack irá buscar o JSON gerado e atualizar o estado da aplicação sem que haja a necessidade de recarregar a página.
 
-Isso, na verdade, oferece não apenas um site estático gerado, mas um API gerado estaticamente que alimenta a Single Page Application sem nenhum custo.
+Isso, na verdade, fornece não apenas um site gerado estático, mas uma API gerada estática com o estado calculado que alimenta a Single Page Application com custo zero.
 
 ## Boas Práticas
 
@@ -48,28 +40,22 @@ Você pode adicionar um script para a sua **package.json** a fim de gerar o seu 
 ```jsx
 {
   "name": "nullstack.github.io",
-  "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "nullstack": "~0.9.0"
-  },
   "scripts": {
-    "start": "npx webpack --config node_modules/nullstack/webpack.config.js --mode=development --watch",
-    "build": "npx webpack --config node_modules/nullstack/webpack.config.js --mode=production",
-    "ssg": "npx create-nullstatic-app docs"
+    "start": "npx nullstack start",
+    "build": "npx nullstack build --mode=ssg --output=docs",
   }
+
+  ...
 }
 
 ```
 
 ## Ressalvas
 
-Nullstatic rastreia a sua aplicação apenas até a resolução de `initiate`, outras solicitações de API acionadas por eventos serão ignoradas.
+Antes de gerar o HTML, o Nullstack irá esperar que [`prepare`](/ciclo-de-vida-full-stack) e [`initiate`](/ciclo-de-vida-full-stack) de todos os componentes dessa rota sejam resolvidos.
 
-Nullstatic rastreará um URL "/404" e gerará um "/404.html" e um "/404/index.html".
+Você pode misturar modos e solicitar outras funções de servidor apontando `worker.api` e hospedando o pacote do servidor em um ambiente node.js.
 
 ## Próximo passo
 
-⚔ Aprenda mais sobre o [trabalhador de serviço](/pt-br/trabalhador-serviço).
+⚔ Aprenda mais sobre [single page applications](/pt-br/aplicacao-de-pagina-unica).

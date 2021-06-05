@@ -37,4 +37,4 @@ Depois de [gerar um site estático](/pt-br/geracao-de-sites-estaticos), tudo o q
 
 > 🎉 **Parabéns**. Você concluiu os conceitos avançados!
 
-⚔ Aprenda [como usar MongoDB com Nullstack](/pt-br/como-usar-mongodb-com-nullstack).
+⚔ Aprenda sobre [renderização do lado do servidor](/pt-br/renderizando-no-servidor).

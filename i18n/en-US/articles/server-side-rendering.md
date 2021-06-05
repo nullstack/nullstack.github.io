@@ -19,6 +19,10 @@ No further requests to the server are made to recover the application state duri
 
 The page head will generate the necessary meta tags for SEO based on the contents of the [`project`](/context-project) and [`page`](/context-page) context keys.
 
+This is the default build mode and also the mode used for development.
+
+It is a good pratice to follow SSR patterns in development in order to be able to easily change betweeb build modes in production.
+
 ## Next step
 
 ⚔ Learn about [static site generation](/static-site-generation).

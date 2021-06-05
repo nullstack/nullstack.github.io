@@ -20,6 +20,9 @@ The following keys are available in the object during the startup:
 - **enabled**: `boolean`
 - **preload**: `string array` (relative paths)
 - **headers**: `object`
+- **cdn**: `string` (absolute url)
+- **api**: `string` (absolute url)
+- **protocol**: `string` (http or https)
 
 The `enabled` key defines if the service worker will be automatically registered by Nullstack. 
 
