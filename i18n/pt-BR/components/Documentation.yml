@@ -56,11 +56,11 @@ topics:
   - title: "Modos de Construção"
     links:
       - title: "Renderizando no servidor"
-      href: "/pt-br/renderizando-no-servidor"
+        href: "/pt-br/renderizando-no-servidor"
       - title: "Geração de sites estáticos"
-      href: "/pt-br/geracao-de-sites-estaticos"
+        href: "/pt-br/geracao-de-sites-estaticos"
       - title: "Single page applications"
-      href: "/pt-br/single-page-applications"
+        href: "/pt-br/aplicacao-de-pagina-unica"
   - title: "Exemplos"
     links:
       - title: "Como usar MongoDB"

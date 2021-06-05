@@ -22,7 +22,7 @@ trinity:
     - title: "Experiência de PWA fluida"
       image: "/illustrations/nulla-healer.webp"
       text:
-        "Depois que o conteúdo é servido e a rede está ociosa, o javascript do Nullstack é carregado, o estado da aplicação é restaurado por meio de hidratação e torna-se um aplicativo de página única (SPA)"
+        "Depois que o conteúdo é servido e a rede está ociosa, o javascript do Nullstack é carregado, o estado da aplicação é restaurado por meio de hidratação e torna-se uma aplicação de página única (SPA)"
     - title: "Solicitações de API leves"
       image: "/illustrations/nulla-dps.webp"
       text:

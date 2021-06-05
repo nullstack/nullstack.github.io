@@ -58,4 +58,4 @@ Você pode misturar modos e solicitar outras funções de servidor apontando `wo
 
 ## Próximo passo
 
-⚔ Aprenda mais sobre [single page applications](/pt-br/single-page-applications).
+⚔ Aprenda mais sobre [single page applications](/pt-br/aplicacao-de-pagina-unica).
