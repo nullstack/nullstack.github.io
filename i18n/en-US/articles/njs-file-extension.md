@@ -110,4 +110,4 @@ export default Tasks;
 
 ## Next step
 
-⚔ Learn about [server-side rendering](/server-side-rendering).
+⚔ Learn more about the [service worker](/service-worker).

@@ -37,4 +37,4 @@ After you [generate a static site](/static-site-generation), all you have to do 
 
 > 🎉 **Congratulations**. You are done with the advanced concepts!
 
-⚔ Learn [how to use MongoDB with Nullstack](/how-to-use-mongodb-with-nullstack).
+⚔ Learn about [server-side rendering](/server-side-rendering).

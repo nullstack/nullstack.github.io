@@ -35,8 +35,6 @@ The following keys are available in the object:
 - **favicon**: `string` (relative or absolute url)
 - **disallow**: `string array` (relative paths)
 - **sitemap**: `boolean` or `string` (relative or absolute url)
-- **cdn**: `string` (absolute url)
-- **protocol**: `string` (http or https)
 
 Besides `domain`, `name` and `color` all other keys have sensible defaults generated based on the application scope.
 
