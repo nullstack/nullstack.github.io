@@ -1,9 +1,9 @@
 ---
 title: NJS File Extension
-description: Nullstack Javascript files let Webpack know which loaders to use at transpile time
+description: Nullstack JavaScript files let Webpack know which loaders to use at transpile time
 ---
 
-Nullstack Javascript files let [Webpack](https://webpack.js.org) know which loaders to use at transpile time.
+Nullstack JavaScript files let [Webpack](https://webpack.js.org) know which loaders to use at transpile time.
 
 NJS files must import Nullstack or one of its subclasses.
 

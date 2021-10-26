@@ -13,7 +13,7 @@ Before serving the HTML, Nullstack will wait for [`prepare`](/full-stack-lifecyc
 
 While server-side rendering all server functions run locally without the need to fetch an API, making the process even faster.
 
-After the document is already painted in the browser, Nullstack loads the javascript client bundle and starts the [hydration](/full-stack-lifecycle) process. 
+After the document is already painted in the browser, Nullstack loads the JavaScript client bundle and starts the [hydration](/full-stack-lifecycle) process. 
 
 No further requests to the server are made to recover the application state during [hydration](/full-stack-lifecycle).
 

@@ -263,7 +263,7 @@ O caminho permanecerá o mesmo do caminho atual do roteador, mas os `params` ser
 <a params={{page: 1}}> Primeira Página </a>
 ```
 
-E você deseja apenas atualizar alguns parâmetros e manter outros, você pode usar o operador javascript *spread* para isso.
+E você deseja apenas atualizar alguns parâmetros e manter outros, você pode usar o operador JavaScript *spread* para isso.
 
 ```jsx
 <a params={{...params, page: 1}}> Primeira Página </a>

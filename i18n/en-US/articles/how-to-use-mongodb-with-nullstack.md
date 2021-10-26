@@ -1,13 +1,13 @@
 ---
 title: How to use MongoDB
-description: You can use any database with Nullstack, but the javascript integration and flexibility of MongoDB looks especially good with Nullstack applications
+description: You can use any database with Nullstack, but the JavaScript integration and flexibility of MongoDB looks especially good with Nullstack applications
 ---
 
 According to [mongodb.com](https://www.mongodb.com):
 
 "MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era."
 
-You can use any database with Nullstack, but the javascript integration and flexibility of MongoDB looks especially good with Nullstack applications.
+You can use any database with Nullstack, but the JavaScript integration and flexibility of MongoDB looks especially good with Nullstack applications.
 
 Install the MongoDB driver from npm: 
 

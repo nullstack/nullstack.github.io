@@ -21,7 +21,7 @@ The builder will run your application in production mode and generate an empty i
 
 The [manifest.json](/context-project) and the contents of the public folder will be copied into the target folder.
 
-On the first visit to your static application the javascript bundle will be loaded and start a SPA.
+On the first visit to your static application the JavaScript bundle will be loaded and start a SPA.
 
 On the subsequent requests, Nullstack will push history and update the application state without ever reloading the page.
 
