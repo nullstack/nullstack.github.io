@@ -1,5 +1,5 @@
-title: "Full-stack Javascript Components"
-description: "Nullstack is a full-stack javascript framework for building progressive web applications"
+title: "Full-stack JavaScript Components"
+description: "Nullstack is a full-stack JavaScript framework for building progressive web applications"
 hero:
   heading: "Full-stack"
   subHeading: "Javascript Components"
@@ -21,12 +21,12 @@ trinity:
       text:
         "On the first render you'll get SEO ready HTML optimized for the first
         paint of your route in a single request using local functions with
-        zero javascript dependencies in the client bundle"
+        zero JavaScript dependencies in the client bundle"
     - title: "Fluid PWA experience"
       image: "/illustrations/nulla-healer.webp"
       text:
         "After the content is served and the network is idle Nullstack
-        javascript is loaded, the state of the application is restored through
+        JavaScript is loaded, the state of the application is restored through
         hydration and it becomes a single page application"
     - title: "Lightweight API requests"
       image: "/illustrations/nulla-dps.webp"
@@ -48,7 +48,7 @@ features:
     inverted: true
     text:
       "Your components are just POJOs.
-      Take advantage of the existing ecosystem while you write Javascript as it is supposed to be,
+      Take advantage of the existing ecosystem while you write JavaScript as it is supposed to be,
       and see the result reflected in the dom."
   - title: "You already know Nullstack"
     snippet: "Modern"
@@ -75,6 +75,6 @@ playlist:
     - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
       link: "https://www.youtube.com/watch?v=ud3IF5Xtd1s"
       thumbnail: "/thumbnails/en-us-contribute.webp"
-    - title: "What are Javascript Components?"
+    - title: "What are JavaScript Components?"
       link: "https://www.youtube.com/watch?v=H2i5_A1txGI"
       thumbnail: "/thumbnails/en-us-components.webp"

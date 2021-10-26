@@ -9,7 +9,7 @@ Nullstack takes control of its subclasses and generates a proxy for each instanc
 
 When you call anything on your class you are actually telling Nullstack what to do with the environment behind the scenes.
 
-This allows you to use vanilla javascript operations like assigning to a variable and see the reflection in the dom.
+This allows you to use vanilla JavaScript operations like assigning to a variable and see the reflection in the dom.
 
 ## Mutability
 

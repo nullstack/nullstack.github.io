@@ -44,7 +44,7 @@ Quando você define uma chave para o contexto, ela fica disponível para desestr
 
 Atualizar uma chave no contexto faz com que a aplicação seja renderizada novamente automaticamente.
 
-Você pode pensar nisso como um único conceito para substituir **stores**, **contexts**, **services**, e **reducers** ao mesmo tempo, usando o padrão de injeção de dependência com objetos javascript padrão.
+Você pode pensar nisso como um único conceito para substituir **stores**, **contexts**, **services**, e **reducers** ao mesmo tempo, usando o padrão de injeção de dependência com objetos JavaScript padrão.
 
 ```jsx
 import Nullstack from 'nullstack';
