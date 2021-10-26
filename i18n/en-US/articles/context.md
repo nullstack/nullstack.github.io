@@ -44,7 +44,7 @@ When you set a key to the context it will be available for destructuring at any 
 
 Updating a key in the context causes the application to re-render automatically.
 
-You can think of this as a single concept to replace **stores**, **contexts**, **services**, and **reducers** at the same time using the dependency injection pattern with vanilla javascript objects instead.
+You can think of this as a single concept to replace **stores**, **contexts**, **services**, and **reducers** at the same time using the dependency injection pattern with vanilla JavaScript objects instead.
 
 ```jsx
 import Nullstack from 'nullstack';

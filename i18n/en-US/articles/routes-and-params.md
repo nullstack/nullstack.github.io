@@ -263,7 +263,7 @@ The path will remain the same as the current router path, but the `params` will 
 <a params={{page: 1}}> First Page </a>
 ```
 
-If you wish to just update some params and keep the others, you can use the javascript spread operator for that.
+If you wish to just update some params and keep the others, you can use the JavaScript spread operator for that.
 
 ```jsx
 <a params={{...params, page: 1}}> First Page </a>

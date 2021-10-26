@@ -20,7 +20,7 @@ O construtor executará seu aplicativo no modo de produção e gerará um index.
 
 O [manifest.json](/pt-br/contexto-project) e o conteúdo da pasta pública serão copiados para a pasta de destino.
 
-Na primeira visita ao seu aplicativo estático, o pacote javascript será carregado e iniciará um SPA.
+Na primeira visita ao seu aplicativo estático, o pacote JavaScript será carregado e iniciará um SPA.
 
 Nas solicitações subsequentes, o Nullstack irá empurrar o histórico e atualizar o estado do aplicativo sem nunca recarregar a página.
 

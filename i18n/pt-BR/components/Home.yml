@@ -1,5 +1,5 @@
-title: "Componentes Javascript Full-stack"
-description: "Nullstack é um framework javascript full-stack para construir aplicações web progressivas"
+title: "Componentes JavaScript Full-stack"
+description: "Nullstack é um framework JavaScript full-stack para construir aplicações web progressivas"
 hero:
   heading: "Componentes Javascript"
   subHeading: "Full-stack"
@@ -18,11 +18,11 @@ trinity:
     - title: "Primeira visita otimizada"
       image: "/illustrations/nulla-tanker.webp"
       text:
-        "Na primeira visita, você terá HTML pronto para SEO e otimizado para a primeira renderização de sua rota em uma única solicitação usando funções locais com nenhuma dependência de javascript no pacote do cliente"
+        "Na primeira visita, você terá HTML pronto para SEO e otimizado para a primeira renderização de sua rota em uma única solicitação usando funções locais com nenhuma dependência de JavaScript no pacote do cliente"
     - title: "Experiência de PWA fluida"
       image: "/illustrations/nulla-healer.webp"
       text:
-        "Depois que o conteúdo é servido e a rede está ociosa, o javascript do Nullstack é carregado, o estado da aplicação é restaurado por meio de hidratação e torna-se uma aplicação de página única (SPA)"
+        "Depois que o conteúdo é servido e a rede está ociosa, o JavaScript do Nullstack é carregado, o estado da aplicação é restaurado por meio de hidratação e torna-se uma aplicação de página única (SPA)"
     - title: "Solicitações de API leves"
       image: "/illustrations/nulla-dps.webp"
       text:
@@ -39,7 +39,7 @@ features:
     inverted: true
     text:
       "Seus componentes são apenas POJOs.
-      Aproveite as vantagens do ecossistema existente enquanto escreve Javascript como deve ser e veja o resultado refletido no dom."
+      Aproveite as vantagens do ecossistema existente enquanto escreve JavaScript como deve ser e veja o resultado refletido no dom."
   - title: "Você já sabe Nullstack"
     snippet: "Modern"
     image: "/illustrations/nulla-map.webp"
