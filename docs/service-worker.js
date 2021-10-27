@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "mode": "ssg",
-    "key": "cc61b076a353c39098b73c80a8ddabfd5446ae39"
+    "key": "360045b75355bf43c2fdd604465e03af35097bee"
   },
   "project": {
     "domain": "nullstack.app",
