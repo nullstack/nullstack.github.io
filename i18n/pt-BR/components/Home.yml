@@ -1,7 +1,7 @@
 title: "Componentes JavaScript Full-stack"
 description: "Nullstack é um framework JavaScript full-stack para construir aplicações web progressivas"
 hero:
-  heading: "Componentes Javascript"
+  heading: "Componentes JavaScript"
   subHeading: "Full-stack"
   tagline: "para exércitos de um dev só"
   descriptions:
@@ -64,6 +64,6 @@ playlist:
     - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
       link: "https://www.youtube.com/watch?v=ud3IF5Xtd1s"
       thumbnail: "/thumbnails/pt-br-contribute.webp"
-    - title: "O que são Componentes em Javascript?"
+    - title: "O que são Componentes em JavaScript?"
       link: "https://www.youtube.com/watch?v=3yNwTz9w5Fw"
       thumbnail: "/thumbnails/pt-br-components.webp"
