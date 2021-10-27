@@ -53,7 +53,7 @@ Esta pasta contêm o código fonte da sua aplicação.
 
 Este é o arquivo principal da sua aplicação.
 
->✨ Saiba mais sobre a [extensão de arquivo njs](/pt-br/extensao-de-arquivo-njs "Nullstack Javascript").
+>✨ Saiba mais sobre a [extensão de arquivo njs](/pt-br/extensao-de-arquivo-njs "Nullstack JavaScript").
 
 A função `start` será automaticamente chamada uma vez que você rode `npm start`, use a para preencher o [contexto](/pt-br/contexto) do seu servidor com coisas como [banco de dados](/pt-br/como-usar-mongodb-com-nullstack), [configurações](/pt-br/contexto-settings), e [segredos](/pt-br/contexto-secrets).
 
