@@ -33,6 +33,10 @@ node .production/server.js
 
 After you [generate a static site](/static-site-generation), all you have to do is move the output folder to any host machine capable of serving HTML.
 
+## Deploying to recommended hosts
+
+As Nullstack evolves we maintain guides following steps of how to deploy in most used hosts, you can find those [here](https://github.com/GuiDevloper/nulla#tutorials-with-nulla).
+
 ## Next step
 
 > 🎉 **Congratulations**. You are done with the advanced concepts!

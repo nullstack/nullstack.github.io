@@ -33,6 +33,10 @@ node .production/server.js
 
 Depois de [gerar um site estático](/pt-br/geracao-de-sites-estaticos), tudo o que você precisa fazer é mover a pasta de saída para qualquer máquina host capaz de servir HTML.
 
+## Fazendo Deploy em hospedagens recomendadas
+
+À medida que o Nullstack evolui, mantemos guias seguindo as etapas de como realizar *deploy* nas hospedagens mais usadas, você pode encontrá-los [aqui](https://github.com/GuiDevloper/nulla/blob/master/README.BR.md#tutoriais).
+
 ## Próxima Etapa
 
 > 🎉 **Parabéns**. Você concluiu os conceitos avançados!
