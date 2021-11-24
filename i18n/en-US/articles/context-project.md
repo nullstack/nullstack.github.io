@@ -19,12 +19,12 @@ The `disallow` key will be used to generate the **robots.txt** and should be set
 
 `project` keys are frozen after the [application startup](/application-startup).
 
-The following keys are available in the object:
+The following keys are available in the object and supported as environment variables as follows:
 
-- **domain**: `string`
-- **name**: `string`
-- **shortName**: `string`
-- **color**: `string`
+- **domain**: `string` (`NULLSTACK_PROJECT_DOMAIN`)
+- **name**: `string` (`NULLSTACK_PROJECT_NAME`)
+- **shortName**: `string` (`NULLSTACK_PROJECT_SHORT_NAME`)
+- **color**: `string` (`NULLSTACK_PROJECT_COLOR`)
 - **backgroundColor**: `string`
 - **type**: `string`
 - **display**: `string`
@@ -35,6 +35,8 @@ The following keys are available in the object:
 - **favicon**: `string` (relative or absolute url)
 - **disallow**: `string array` (relative paths)
 - **sitemap**: `boolean` or `string` (relative or absolute url)
+- **cdn**: `string` (`NULLSTACK_PROJECT_CDN`)
+- **protocol**: `string` (`NULLSTACK_PROJECT_PROTOCOL`)
 
 Besides `domain`, `name` and `color` all other keys have sensible defaults generated based on the application scope.
 
