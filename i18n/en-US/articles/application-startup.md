@@ -45,6 +45,52 @@ export default Application;
 
 > 🔒 Server functions with the name starting with "start" (and optionally followed by an uppercase letter) do not generate an API endpoint to avoid malicious context flooding.
 
+## Chained startup pattern
+
+Another pattern to use when working with startup time dependencies is chained startup on your **index.js** file:
+
+```jsx
+import Nullstack from 'nullstack';
+import Application from './src/Application';
+import NameSetter from './src/NameSetter';
+import DomainSetter from './src/DomainSetter';
+
+Nullstack.start(Application, NameSetter, DomainSetter);
+```
+
+With each of those components being started sequentially, together with having the `context` passed to their `start` method.
+
+## Application export
+
+The whole application can be exported making it possible to be used as a serverless function out-of-box:
+
+```jsx
+import Nullstack from 'nullstack';
+import Application from './src/Application';
+
+export default Nullstack.start(Application);
+```
+
+> 💡 This presents the app in the perfect state to be deployed to Node serverless hosts
+
+Adding to this possibility of decoupling, after a compilation the exported application `context` can be accessed and updated even using a "*script runner*" pattern:
+
+```js
+// scripts/getProjectName.js
+const { default: app } = require('../.development/server.js');
+
+async function getProjectName() {
+  const context = await app.start();
+  // the project name after all starting logic
+  console.log(context.project.name);
+}
+getProjectName();
+```
+
+Which could work running as a Node command at root: `node scripts/getProjectName.js`.
+
+> 💡 This has many use cases, as for updating the database stored on `context` right when starting the application at specific environment
+
 ## Next step
 
 ⚔ Learn about [functional components](/functional-components).
