@@ -1,6 +1,6 @@
-import "./src/tailwind.css";
-
 import Nullstack from "nullstack";
 import Application from "./src/Application";
 
-export default Nullstack.start(Application);
+const context = Nullstack.start(Application);
+
+export default context

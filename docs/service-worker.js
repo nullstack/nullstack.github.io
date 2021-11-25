@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "mode": "ssg",
-    "key": "360045b75355bf43c2fdd604465e03af35097bee"
+    "key": "dd981f7940e4d78bac6ca2abe788cc0438f7d9dc"
   },
   "project": {
     "domain": "nullstack.app",
@@ -32,7 +32,10 @@ self.context = {
     },
     "backgroundColor": "#2d3748"
   },
-  "settings": {},
+  "settings": {
+    "production": {},
+    "development": {}
+  },
   "worker": {
     "enabled": true,
     "fetching": false,
@@ -196,9 +199,6 @@ function install(event) {
   const urls = [
     '/',
     ...self.context.worker.preload.map(toAPI),
-    '/nullstack/' + self.context.environment.key + '/offline/index.html',
-    '/nullstack/' + self.context.environment.key + '/client.css',
-    '/nullstack/' + self.context.environment.key + '/client.js',
     '/manifest.json'
   ];
   event.waitUntil(async function () {

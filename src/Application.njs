@@ -1,49 +1,19 @@
 import Nullstack from 'nullstack';
-import './Application.scss';
-import Documentation from './Documentation';
-import Components from './Components'
-import Article from './Article';
-import Header from './Header';
-import Footer from './Footer';
-import Home from './Home';
-import Waifu from './Waifu';
-import Contributors from './Contributors';
-import Loader from './Loader';
 import GoogleAnalytics from 'nullstack-google-analytics';
-import path from 'path';
-import {readdirSync} from 'fs';
+import './Application.scss';
+import Article from './Article';
+import Components from './Components';
+import Contributors from './Contributors';
+import Documentation from './Documentation';
+import Footer from './Footer';
+import Header from './Header';
+import Home from './Home';
+import Loader from './Loader';
+import "./tailwind.css";
+import Waifu from './Waifu';
+
 
 class Application extends Nullstack {
-
-  static async startWorker({worker}) {
-    const articles = readdirSync(path.join(__dirname, '../i18n/en-US', 'articles'));
-    const illustrations = readdirSync(path.join(__dirname, '../public', 'illustrations'));
-    worker.preload = [
-      ...articles.map((article) => '/' + article.replace('.md', '')),
-      ...illustrations.map((illustration) => '/illustrations/' + illustration),
-      '/arrow.webp',
-      '/stars.webp',
-      '/footer.webp',
-      '/documentation',
-      '/components',
-      '/contributors',
-      '/roboto-v20-latin-300.woff2',
-      '/roboto-v20-latin-500.woff2',
-      '/crete-round-v9-latin-regular.woff2',
-    ]
-  }
-
-  static async startProject({project}) {
-    project.name = 'Nullstack';
-    project.domain = 'nullstack.app';
-    project.color = '#d22365';
-    project.backgroundColor = '#2d3748';
-  }
-
-  static async start(context) {
-    await this.startProject(context);
-    await this.startWorker(context);
-  }
 
   renderPreloader() {
     return (
@@ -61,15 +31,15 @@ class Application extends Nullstack {
   }
 
   hydrate(context) {
-    if(localStorage['mode']) {
+    if (localStorage['mode']) {
       context.mode = localStorage['mode'];
-      if(context.mode === 'dark') {
+      if (context.mode === 'dark') {
         context.oppositeMode = 'light';
       }
     }
   }
 
-  render({router, mode}) {
+  render({ router, mode }) {
     const locale = router.url.startsWith('/pt-br') ? 'pt-BR' : 'en-US';
     return (
       <main class={mode}>
