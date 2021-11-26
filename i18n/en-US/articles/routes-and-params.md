@@ -202,18 +202,23 @@ class Application extends Nullstack {
 
 The `router` key is an object proxy injected into every client instance.
 
-The `router` has two keys:
+The `router` has three keys:
 
 - **`url`**
 - **`path`**
+- **`base`**
 
 The `url` key returns everything after the domain including the path and the query params as a string.
 
 The `path` key returns only the path without query params.
 
-> 💡 Both keys above automatically remove the trailing slash for convenience.
+The `base` key returns only the base url (e.g: `https://nullstack.app` or `http://localhost:5000`).
+
+> 💡 Those keys above automatically remove the trailing slash for convenience.
 
 Assigning to `url` or `path` will cause a redirect.
+
+Assigning a absolute url to `url` will cause a full reload.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -222,7 +227,9 @@ class Application extends Nullstack {
 
   prepare({router}) {
     if(router.path == '/') {
-      router.path = '/dashboard';
+      router.path = '/dashboard'; // simple route change
+    } else {
+      router.url = 'https://my-domain.app' // full reload
     }
   }
 

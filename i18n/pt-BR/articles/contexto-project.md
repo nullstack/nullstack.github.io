@@ -19,12 +19,12 @@ A chave `disallow` será usada para gerar o **robots.txt** e deverá ser definid
 
 As chaves de `project` serão congeladas após a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 
-As chaves a seguir estão disponíveis no objeto:
+As chaves a seguir estão disponíveis no objeto e são suportadas como variáveis de ambiente da seguinte maneira:
 
-- **domain**: `string`
-- **name**: `string`
-- **shortName**: `string`
-- **color**: `string`
+- **domain**: `string` (`NULLSTACK_PROJECT_DOMAIN`)
+- **name**: `string` (`NULLSTACK_PROJECT_NAME`)
+- **shortName**: `string` (`NULLSTACK_PROJECT_SHORT_NAME`)
+- **color**: `string` (`NULLSTACK_PROJECT_COLOR`)
 - **backgroundColor**: `string`
 - **type**: `string`
 - **display**: `string`
@@ -35,6 +35,8 @@ As chaves a seguir estão disponíveis no objeto:
 - **favicon**: `string` (url relativo ou absoluto)
 - **disallow**: `array` de `string` (caminhos relativos)
 - **sitemap**: `boolean` ou `string` (url relativo ou absoluto)
+- **cdn**: `string` (`NULLSTACK_PROJECT_CDN`)
+- **protocol**: `string` (`NULLSTACK_PROJECT_PROTOCOL`)
 
 Além de `domain`, `name` and `color` todas as outras chaves tem padrões sensíveis gerados com base no escopo do aplicativo.
 

@@ -202,18 +202,23 @@ class Application extends Nullstack {
 
 A chave `router` é um proxy de objeto injetado em cada instância de cliente.
 
-O `router` tem duas chaves:
+O `router` tem três chaves:
 
 - **`url`**
 - **`path`**
+- **`base`**
 
 A chave `url` retorna tudo depois do domínio, incluindo o caminho e os parâmetros de query como uma string.
 
 A chave `path` retorna apenas o caminho sem os parâmetros de consulta.
 
-> 💡 Ambas as chaves acima automaticamente removem a barra final por conveniência.
+A chave `base` retorna apenas a url base (ex: `https://nullstack.app` ou `http://localhost:5000`).
+
+> 💡 As chaves acima automaticamente removem a barra final por conveniência.
 
 Atribuir a `url` ou `path` causará redirecionamento.
+
+Atribuir uma url absoluta a `url` causará uma recarga completa.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -222,7 +227,9 @@ class Application extends Nullstack {
 
   prepare({router}) {
     if(router.path == '/') {
-      router.path = '/dashboard';
+      router.path = '/dashboard'; // simples mudança de rota
+    } else {
+      router.url = 'https://my-domain.app' // recarga completa
     }
   }
 
