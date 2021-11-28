@@ -11,30 +11,31 @@ description: The settings object is a proxy in the Nullstack Context available i
 
 You can use it to configure your application with public information.
 
-`settings` keys are frozen after the [application startup](/application-startup).
+You can assign any keys with any type to the object.
 
-The following keys are available in the object:
-
-- **development**: `object`
-- **production**: `object`
-- **[anySetting]**: `any`
-
-You can assign keys to `development` or `production` keys in order to have different settings per [environment](/context-environment).
-
-If you assign a key directly to the `settings` object it will be available in both environments.
-
-When reading from a key you must read directly from the `settings` object and Nullstack will return the best-suited value for that [environment](/context-environment).
+You can assign keys to `settings` dynamically based on current environment using [`context.environment`](/context-environment).
 
 ```jsx
+// server.js
+import Nullstack from 'nullstack';
+import Application from './src/Application';
+
+const context = Nullstack.start(Application);
+
+context.start = function() {
+  const { settings, environment } = context;
+  settings.endpoint = 'https://domain.com/api';
+  settings.privateKey = environment.development ? 'DEV_API_KEY' : 'PROD_API_KEY';
+}
+
+export default context;
+```
+
+```jsx
+// src/Application.njs
 import Nullstack from 'nullstack';
 
 class Application extends Nullstack {
-
-  static async start({settings}) {
-    settings.development.publicKey = 'SANDBOX_API_KEY';
-    settings.production.publicKey = 'PRODUCTION_API_KEY';
-    settings.endpoint = 'https://domain.com/api';
-  }
 
   async hydrate({settings}) {
     const response = await fetch(settings.endpoint, {
@@ -50,7 +51,7 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-Any environment key starting with NULLSTACK_SETTINGS_ will be mapped to the settings in that environment.
+Any environment variable starting with NULLSTACK_SETTINGS_ will be mapped to the `settings` in that environment.
 
 > 🐱‍💻 NULLSTACK_SETTINGS_PUBLIC_KEY will be mapped to `settings.publicKey`
 
