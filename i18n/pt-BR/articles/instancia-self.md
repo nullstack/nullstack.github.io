@@ -5,8 +5,8 @@ description: O objeto self é um proxy no Contexto Nullstack disponível no clie
 
 - Tipo: `object`
 - Origem: [Contexto Nullstack](/pt-br/contexto#----contexto-nullstack)
-- Disponibilidade: **client**
-- **readonly** no contexto do **client**
+- Disponibilidade: **server/client**
+- **readonly** no contexto do **server** e **client**
 
 Ele te dá informações sobre o ciclo de vida da instância e sua [`key`](#key-da-inst-ncia) única.
 
@@ -17,7 +17,8 @@ As seguintes *keys* estão disponíveis no objeto:
 - **initiated**: `boolean`
 - **hydrated**: `boolean`
 - **prerendered**: `boolean`
-- **element**: `HTMLElement`
+- **persistent**: `boolean` (detalhes [aqui](/pt-br/componentes-persistentes))
+- **element**: `HTMLElement` (somente no **client**)
 - [`key`](#key-da-inst-ncia): `string`
 
 Quando um método do ciclo de vida é resolvido, mesmo que não declarado, uma chave equivalente é setada para `true` no `self`.
@@ -114,6 +115,8 @@ class List extends Nullstack {
 
 export default Page;
 ```
+
+> 💡 Para preservar totalmente um componente com estado no cache, dê uma olhada na opção de componente [`persistent`](/pt-br/componentes-persistentes).
 
 ### Instâncias compartilhadas
 
