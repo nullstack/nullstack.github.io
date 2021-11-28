@@ -11,11 +11,9 @@ description: O objeto worker é um proxy no Contexto Nullstack disponível em am
 
 Ele te dá controle granular do comportamento do seu PWA.
 
-Chaves do `worker` serão usadas para gerar o arquivo do service worker e devem ser setadas durante o [processo de inicialização](/pt-br/inicializacao-da-aplicacao).
+Chaves do `worker` serão usadas para gerar o arquivo do *service worker* e devem ser atribuídas durante o [processo de inicialização](/pt-br/inicializacao-da-aplicacao).
 
-Chaves do `worker` são congeladas após o [processo de inicialização](/pt-br/inicializacao-da-aplicacao). 
-
-As seguintes keys estão disponíveis no objeto durante a inicialização:
+As seguintes chaves estão disponíveis no objeto durante a inicialização:
 
 - **enabled**: `boolean`
 - **preload**: `string array` (relative paths)
@@ -33,27 +31,27 @@ O array `preload` é composto por caminhos que serão cacheados quando o service
 Os assets requeridos para inicializar a aplicação serão pré-carregados automaticamente, e você deverá apenas as páginas extras que você quer que estejam disponíveis em modo offline.
 
 ```jsx
-import Nullstack from 'nullstack';
+import { readdirSync } from 'fs';
+import Nullstack from "nullstack";
 import path from 'path';
-import {readdirSync} from 'fs';
+import Application from "./src/Application";
 
-class Application extends Nullstack {
+const context = Nullstack.start(Application);
 
-  static async start({worker}) {
-    const articles = readdirSync(path.join(__dirname, '..', 'articles'));
-    worker.preload = [
-      ...articles.map((article) => '/' + article.replace('.md', '')),
-      '/nullstack.svg',
-      '/documentation',
-      '/components'
-    ]
-  }
-  
+const { worker } = context;
+
+const articles = readdirSync(path.join(__dirname, '../i18n/en-US', 'articles'));
+worker.preload = [
+  ...articles.map((article) => '/' + article.replace('.md', '')),
+  ...illustrations.map((illustration) => '/illustrations/' + illustration),
+  '/arrow.webp',
+  '/stars.webp',
+  '/documentation',
+  '/components'
   // ...
+]
 
-}
-
-export default Application;
+export default context;
 ```
 
 > 💡 O exemplo acima foi extraido deste repositório e permite que a documentação esteja totalmente acessível em modo offline.

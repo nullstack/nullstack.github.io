@@ -11,30 +11,31 @@ description: O objeto settings é um proxy no Contexto Nullstack disponível em 
 
 Você pode usá-lo para configurar seu aplicativo com informações públicas.
 
-Chaves de `settings` serão congeladas após a [inicialização do aplicativo](/pt-br/inicializacao-da-aplicacao).
+Você pode atribuir qualquer chave com qualquer tipo ao objeto.
 
-As chaves a seguir estão disponíveis no objeto:
-
-- **development**: `object`
-- **production**: `object`
-- **[anySetting]**: `any`
-
-Você pode declarar as chaves para as chaves `development` ou `production` para ter diferentes configurações por [ambiente](/pt-br/contexto-environment). 
-
-Se você declarar uma chave diretamente para o objeto `settings` ela ficará disponível em ambos os ambientes.
-
-Quando lendo de uma chave você deve ler diretamente do objeto `settings` e o Nullstack retornará o valor mais adequado para aquele [ambiente](/pt-br/contexto-environment).
+Você pode atribuir chaves a `settings` dinamicamente com base no ambiente atual usando [`context.environment`](/pt-br/contexto-environment).
 
 ```jsx
+// server.js
+import Nullstack from 'nullstack';
+import Application from './src/Application';
+
+const context = Nullstack.start(Application);
+
+context.start = function() {
+  const { settings, environment } = context;
+  settings.endpoint = 'https://domain.com/api';
+  settings.privateKey = environment.development ? 'DEV_API_KEY' : 'PROD_API_KEY';
+}
+
+export default context;
+```
+
+```jsx
+// src/Application.njs
 import Nullstack from 'nullstack';
 
 class Application extends Nullstack {
-
-  static async start({settings}) {
-    settings.development.publicKey = 'SANDBOX_API_KEY';
-    settings.production.publicKey = 'PRODUCTION_API_KEY';
-    settings.endpoint = 'https://domain.com/api';
-  }
 
   async hydrate({settings}) {
     const response = await fetch(settings.endpoint, {
@@ -50,8 +51,7 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-
-Qualquer chave de ambiente começando com NULLSTACK_SETTINGS_ será mapeado para as confirgurações daquele ambiente.
+Qualquer variável de ambiente começando com NULLSTACK_SETTINGS_ será mapeado para o `settings` daquele ambiente.
 
 > 🐱‍💻 NULLSTACK_SETTINGS_PUBLIC_KEY será mapeado para `settings.publicKey`
 

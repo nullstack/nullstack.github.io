@@ -7,7 +7,7 @@ description: Crie aplicações full-stack em JavaScript em meros segundos
 
 Crie aplicações JavaScript full-stack em segundos usando `npx` para gerar os arquivos do seu projeto usando o template mais recente.
 
-> 🔥 A versão mínima necessária do [node.js](https://nodejs.org/pt-br/) para o modo de desenvovimento é *12.12.0*.
+> 🔥 A versão mínima necessária do [node.js](https://nodejs.org/pt-br/) para o modo de desenvovimento é *12.20.0*.
 
 > ⚠ Se o diretório em que você está contém espaços, você usa Windows e o `npx` der erros, leia sobre o [bug conhecido do npx](#bug-conhecido-do-npx).
 
@@ -39,11 +39,17 @@ npm start
 
 As seguintes pastas e arquivos serão gerados:
 
-### index.js
+### server.js
 
-Este é o ponto de entrada do [Webpack](https://webpack.js.org).
+Esta é a ponto de entrada e geração do servidor.
 
-Normalmente, você não precisará mexer neste arquivo, mas é um lugar conveniente para importar dependências globais como frameworks CSS.
+É um lugar conveniente para configurar coisas globais como [banco de dados](/pt-br/como-usar-mongodb-com-nullstack) e manipular o `contexto` do servidor, detalhes em [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
+
+### client.js
+
+Esta é a ponto de entrada e geração do cliente.
+
+É um lugar conveniente para importar dependências globais como frameworks CSS e manipular o `contexto` do cliente.
 
 ### src/
 
@@ -55,7 +61,7 @@ Este é o arquivo principal da sua aplicação.
 
 >✨ Saiba mais sobre a [extensão de arquivo njs](/pt-br/extensao-de-arquivo-njs "Nullstack JavaScript").
 
-A função `start` será automaticamente chamada uma vez que você rode `npm start`, use a para preencher o [contexto](/pt-br/contexto) do seu servidor com coisas como [banco de dados](/pt-br/como-usar-mongodb-com-nullstack), [configurações](/pt-br/contexto-settings), e [segredos](/pt-br/contexto-secrets).
+Quando você executa `npm start`, ele é consumido nos arquivos JS **server**/**client** por suas funções `Nullstack.start`, que inicia e retorna o [`context`](/pt-br/contexto), que você pode usar para configurar coisas como [banco de dados](/pt-br/como-usar-mongodb-com-nullstack) usando [configurações](/pt-br/contexto-settings) e [segredos](/pt-br/contexto-secrets).
 
 >✨ Saiba mais sobre a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 
