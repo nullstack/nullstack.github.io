@@ -23,6 +23,8 @@ topics:
         href: "/application-startup"
       - title: "Functional Components"
         href: "/functional-components"
+      - title: "Persistent Components"
+        href: "/persistent-components"
       - title: "Context data"
         href: "/context-data"
       - title: "Context instances"
