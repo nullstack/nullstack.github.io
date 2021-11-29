@@ -25,25 +25,21 @@ NULLSTACK_SECRETS_DATABASE_NAME="dbname"
 O último passo é simplesmente atribuir a conexão do banco de dados ao contexto do servidor.
 
 ```jsx
+// server.js
 import Nullstack from 'nullstack';
-import {MongoClient} from 'mongodb';
+import Application from './src/Application';
+import { MongoClient } from 'mongodb';
 
-class Application extends Nullstack {
+const context = Nullstack.start(Application);
 
-  static async start(context) {
-    await this.startDatabase(context);
-  }
-
-  static async startDatabase(context) {
-    const {secrets} = context;
-    const databaseClient = new MongoClient(secrets.databaseUri);
-    await databaseClient.connect();
-    context.database = await databaseClient.db(secrets.databaseName);
-  }
-
+context.start = async function() {
+  const { secrets } = context;
+  const databaseClient = new MongoClient(secrets.databaseUri);
+  await databaseClient.connect();
+  context.database = await databaseClient.db(secrets.databaseName);
 }
 
-export default Application;
+export default context;
 ```
 
 O exemplo acima tornará a chave `database` disponível para todas as funções do servidor.

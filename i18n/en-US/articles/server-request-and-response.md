@@ -23,21 +23,17 @@ The following functions are tunneled back to the Express server:
 > ✨ If you wanna know how to make an API with Nullstack, this is the way.
 
 ```jsx
+// server.js
 import Nullstack from 'nullstack';
+import Application from './src/Application';
 
-class Application extends Nullstack {
+const context = Nullstack.start(Application);
 
-  static async start({server}) {
-    server.get('/api/books', (request, response) => {
-      response.json({books: []});
-    });
-  }
+context.server.get('/api/books', (request, response) => {
+  response.json({books: []});
+});
 
-  // ...
-
-}
-
-export default Application;
+export default context;
 ```
 
 Other available keys are:
@@ -47,24 +43,21 @@ Other available keys are:
 - **cors**: `object`
 
 ```jsx
+// server.js
 import Nullstack from 'nullstack';
+import Application from './src/Application';
 
-class Application extends Nullstack {
+const context = Nullstack.start(Application);
 
-  static async start({server}) {
-    server.port = 3000;
-    server.maximumPayloadSize = '5mb';
-    server.cors = {
-      origin: 'http://localhost:6969',
-      optionsSuccessStatus: 200
-    }
-  }
-
-  // ...
-
+const { server } = context;
+server.port = 3000;
+server.maximumPayloadSize = '5mb';
+server.cors = {
+  origin: 'http://localhost:6969',
+  optionsSuccessStatus: 200
 }
 
-export default Application;
+export default context;
 ```
 
 The `cors` object will be passed as the argument to [express cors plugin](https://expressjs.com/en/resources/middleware/cors.html).

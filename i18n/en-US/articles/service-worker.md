@@ -13,8 +13,6 @@ It gives you granular control of your PWA behavior.
 
 `worker` keys will be used to generate the service worker file and should be set during the [application startup](/application-startup).
 
-`worker` keys are frozen after the [application startup](/application-startup).
-
 The following keys are available in the object during the startup:
 
 - **enabled**: `boolean`
@@ -33,30 +31,30 @@ By default `enabled` is set to `true` on production mode and `false` on developm
 The assets required to start the application will be preloaded automatically, and you should configure only the extra pages you want to have available offline.
 
 ```jsx
-import Nullstack from 'nullstack';
+import { readdirSync } from 'fs';
+import Nullstack from "nullstack";
 import path from 'path';
-import {readdirSync} from 'fs';
+import Application from "./src/Application";
 
-class Application extends Nullstack {
+const context = Nullstack.start(Application);
 
-  static async start({worker}) {
-    const articles = readdirSync(path.join(__dirname, '..', 'articles'));
-    worker.preload = [
-      ...articles.map((article) => '/' + article.replace('.md', '')),
-      '/nullstack.svg',
-      '/documentation',
-      '/components'
-    ]
-  }
-  
+const { worker } = context;
+
+const articles = readdirSync(path.join(__dirname, '../i18n/en-US', 'articles'));
+worker.preload = [
+  ...articles.map((article) => '/' + article.replace('.md', '')),
+  ...illustrations.map((illustration) => '/illustrations/' + illustration),
+  '/arrow.webp',
+  '/stars.webp',
+  '/documentation',
+  '/components'
   // ...
+]
 
-}
-
-export default Application;
+export default context;
 ```
 
-> 💡 the example above is extracted from this repository and allows the documentation to be fully accessible offline.
+> 💡 The example above is extracted from this repository and allows the documentation to be fully accessible offline.
 
 The following keys are available as **readonly** in the client context:
 

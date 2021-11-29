@@ -129,4 +129,4 @@ export default function EventPureComponent(context) {
 
 ## Next step
 
-⚔ Learn about the [context `data`](/context-data).
+⚔ Learn about [persistent components](/persistent-components).

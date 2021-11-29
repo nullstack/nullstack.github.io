@@ -81,7 +81,7 @@ import Counter from './Counter';
 
 class Application extends Nullstack {
 
-  static async start(context) {
+  prepare(context) {
     context.totalCount = 0;
   }
 

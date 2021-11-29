@@ -7,7 +7,7 @@ description: Create full-stack JavaScript applications within seconds
 
 Create full-stack JavaScript applications within seconds using `npx` to generate your project files from the latest template.
 
-> 🔥 The minimum required [node.js](https://nodejs.org) version for development mode is *12.12.0*.
+> 🔥 The minimum required [node.js](https://nodejs.org) version for development mode is *12.20.0*.
 
 > ⚠ If the directory you are in contains spaces, you use Windows and `npx` gives errors, read about [the known npx bug](#the-known-npx-bug).
 
@@ -39,11 +39,17 @@ npm start
 
 The following folders and files will be generated:
 
-### index.js
+### server.js
 
-This is the [Webpack](https://webpack.js.org) entry point.
+This is the server entry and generator point.
 
-Usually, you don't have to touch this file, but it is a convenient place to import global dependencies like CSS frameworks.
+It is a convenient place to set up global things like [database](/how-to-use-mongodb-with-nullstack) and manipulate server `context`, details in [application startup](/application-startup).
+
+### client.js
+
+This is the client entry and generator point.
+
+It is a convenient place to import global dependencies like CSS frameworks and manipulate client `context`.
 
 ### src/
 
@@ -55,7 +61,7 @@ This is your application main file.
 
 >✨ Learn more about the [njs file extension](/njs-file-extension "Nullstack JavaScript").
 
-The `start` function will be automatically called once when you run `npm start`, use it to populate your server [context](/context) with things like [database](/how-to-use-mongodb-with-nullstack), [settings](/context-settings), and [secrets](/context-secrets).
+When you run `npm start` it is consumed in **server**/**client** JS files by their `Nullstack.start` function, which starts and returns both [`context`](/context), that you can use to set up things like [database](/how-to-use-mongodb-with-nullstack) using [settings](/context-settings) and [secrets](/context-secrets).
 
 >✨ Learn more about the [application startup](/application-startup).
 

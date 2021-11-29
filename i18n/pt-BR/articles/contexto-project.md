@@ -13,18 +13,16 @@ Ele te dá informações sobre o manifest do app e algumas metatags.
 
 As chaves de `project` serão usadas para gerar metatags durante a renderização do lado do servidor e devem ser definidas antes que [`initiate`](/pt-br/ciclo-de-vida-full-stack) seja resolvido.
 
-As chaves de `project` serão usadas para gerar o **manifest** do app e devem ser definidas durante a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
+As chaves de `project` serão usadas para gerar o **manifest** do app.
 
-A chave `disallow` será usada para gerar o **robots.txt** e deverá ser definida durante a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
+A chave `disallow` será usada para gerar o **robots.txt**.
 
-As chaves de `project` serão congeladas após a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
+As chaves a seguir estão disponíveis no objeto e são suportadas como variáveis de ambiente da seguinte maneira:
 
-As chaves a seguir estão disponíveis no objeto:
-
-- **domain**: `string`
-- **name**: `string`
-- **shortName**: `string`
-- **color**: `string`
+- **domain**: `string` (`NULLSTACK_PROJECT_DOMAIN`)
+- **name**: `string` (`NULLSTACK_PROJECT_NAME`)
+- **shortName**: `string` (`NULLSTACK_PROJECT_SHORT_NAME`)
+- **color**: `string` (`NULLSTACK_PROJECT_COLOR`)
 - **backgroundColor**: `string`
 - **type**: `string`
 - **display**: `string`
@@ -35,6 +33,8 @@ As chaves a seguir estão disponíveis no objeto:
 - **favicon**: `string` (url relativo ou absoluto)
 - **disallow**: `array` de `string` (caminhos relativos)
 - **sitemap**: `boolean` ou `string` (url relativo ou absoluto)
+- **cdn**: `string` (`NULLSTACK_PROJECT_CDN`)
+- **protocol**: `string` (`NULLSTACK_PROJECT_PROTOCOL`)
 
 Além de `domain`, `name` and `color` todas as outras chaves tem padrões sensíveis gerados com base no escopo do aplicativo.
 
@@ -47,32 +47,46 @@ A chave `cdn` irá prefixar seu pacote de assets e ficará disponível no contex
 A chave `protocol` é "http" no modo de desenvolvimento e "https" e no modo produção por predefinição.
 
 ```jsx
+// server.js
+import Nullstack from 'nullstack';
+import Application from './src/Application';
+
+const context = Nullstack.start(Application);
+
+context.start = function() {
+  const { project } = context;
+  project.name = 'Nullstack';
+  project.shortName = 'Nullstack';
+  project.domain = 'nullstack.app';
+  project.color = '#d22365';
+  project.backgroundColor = '#d22365';
+  project.type = 'website';
+  project.display = 'standalone';
+  project.orientation = 'portrait';
+  project.scope = '/';
+  project.root = '/';
+  project.icons = {
+    '72': '/icon-72x72.png',
+    '128': '/icon-128x128.png',
+    '512': '/icon-512x512.png'
+  };
+  project.favicon = '/favicon.png';
+  project.disallow = ['/admin'];
+  project.sitemap = true;
+  project.cdn = 'cdn.nullstack.app';
+  project.protocol = 'https';
+}
+
+export default context;
+```
+
+> Mais sobre o `context.start` em [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
+
+```jsx
+// src/Application.njs
 import Nullstack from 'nullstack';
 
 class Application extends Nullstack {
-
-  static async start({project}) {
-    project.name = 'Nullstack';
-    project.shortName = 'Nullstack';
-    project.domain = 'nullstack.app';
-    project.color = '#d22365';
-    project.backgroundColor = '#d22365';
-    project.type = 'website';
-    project.display = 'standalone';
-    project.orientation = 'portrait';
-    project.scope = '/';
-    project.root = '/';
-    project.icons = {
-      '72': '/icon-72x72.png',
-      '128': '/icon-128x128.png',
-      '512': '/icon-512x512.png'
-    };
-    project.favicon = '/favicon.png';
-    project.disallow = ['/admin'];
-    project.sitemap = true;
-    project.cdn = 'cdn.nullstack.app';
-    project.protocol = 'https';
-  }
 
   prepare({project, page}) {
     page.title = project.name;

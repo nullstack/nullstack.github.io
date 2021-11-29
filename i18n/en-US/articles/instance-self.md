@@ -5,8 +5,8 @@ description: The self object is a proxy in the Nullstack Context available in cl
 
 - Type: `object`
 - Origin: [Nullstack Context](/context#----nullstack-context)
-- Availability: **client**
-- **readonly** in **client** context
+- Availability: **server/client**
+- **readonly** in **server/client** context
 
 It gives you information about the instance lifecycle and it's unique [`key`](#instance-key).
 
@@ -17,7 +17,8 @@ The following keys are available in the object:
 - **initiated**: `boolean`
 - **hydrated**: `boolean`
 - **prerendered**: `boolean`
-- **element**: `HTMLElement`
+- **persistent**: `boolean` (details [here](/persistent-components))
+- **element**: `HTMLElement` (only on client)
 - [`key`](#instance-key): `string`
 
 When a lifecycle method is resolved, even if not declared, an equivalent key is set to `true` in `self`.
@@ -114,6 +115,8 @@ class List extends Nullstack {
 
 export default Page;
 ```
+
+> 💡 For fully preserving a stateful component in cache take a look at the [`persistent`](/persistent-components) component option.
 
 ### Shared Instances
 

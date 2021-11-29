@@ -1,11 +1,11 @@
-import Translatable from './Translatable';
-import Snippet from "./Snippet";
 import Arrow from '../icons/Arrow';
+import Snippet from "./Snippet";
+import Translatable from './Translatable';
 
 class Home extends Translatable {
 
   async getStarted({ router, href }) {
-    if('clipboard' in navigator) {
+    if ('clipboard' in navigator) {
       const command = 'npx create-nullstack-app';
       await navigator.clipboard.writeText(command);
     }
@@ -31,15 +31,15 @@ class Home extends Translatable {
             </span>
           </h1>
           <>
-            {this.i18n.hero.descriptions.map(description => 
+            {this.i18n.hero.descriptions.map(description =>
               <p class="text-xl sm:text-2xl text-center sm:text-left">
                 {description}
               </p>
             )}
           </>
           <div>
-            <button 
-              class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 inline-block w-full sm:w-auto" 
+            <button
+              class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 inline-block w-full sm:w-auto"
               onclick={this.getStarted}
               href={this.i18n.hero.actionLink}
             >
@@ -71,7 +71,7 @@ class Home extends Translatable {
   renderTrinity() {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
-        <h2 class="w-full text-center mb-8 sm:mb-24"> 
+        <h2 class="w-full text-center mb-8 sm:mb-24">
           <span class="w-full text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">{this.i18n.trinity.heading}</span>
           <span class="sm:text-xl block">{this.i18n.trinity.subHeading}</span>
         </h2>
@@ -109,11 +109,12 @@ class Home extends Translatable {
     )
   }
 
-  renderPlaylist() {
+  renderPlaylist({ worker }) {
+    if (!worker.online) return false
     return (
       <div>
         <section class="max-w-screen-xl mx-auto px-4 flex justify-center items-center flex-wrap py-12 sm:pt-36">
-          <h2 class="text-xl sm:text-4xl font-light mb-4"> 
+          <h2 class="text-xl sm:text-4xl font-light mb-4">
             {this.i18n.playlist.heading}
             <del>{this.i18n.playlist.slang}</del>
             <span class="text-pink-600 dark:text-pink-500">{this.i18n.playlist.realWord}</span>
@@ -128,7 +129,7 @@ class Home extends Translatable {
 
   renderSeparator() {
     return (
-      <div 
+      <div
         class="h-5 bg-center bg-no-repeat w-full max-w-screen-xl mx-auto flex justify-center items-start flex-wrap border-t-4 border-gray-200 text-center dark:opacity-10 text-gray-300"
       >
         <Arrow size={30} />
@@ -137,7 +138,7 @@ class Home extends Translatable {
   }
 
   render() {
-    if(!this.i18n) return false;
+    if (!this.i18n) return false;
     return (
       <div>
         <Hero />

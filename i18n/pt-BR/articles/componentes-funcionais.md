@@ -129,4 +129,4 @@ export default function EventPureComponent(context) {
 
 ## Próxima Etapa
 
-⚔ Aprenda sobre a [chave `data` do contexto](/pt-br/contexto-data).
+⚔ Aprenda sobre [componentes persistentes](/pt-br/componentes-persistentes).
