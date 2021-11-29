@@ -11,7 +11,7 @@ const articles = readdirSync(path.join(__dirname, '../i18n/en-US', 'articles'));
 const illustrations = readdirSync(path.join(__dirname, '../public', 'illustrations'));
 
 worker.preload = [
-  ...articles.map((article) => '/' + article.replace('.md', '')),
+  ...articles.map((article) => '/' + article.replace('.md', '')).filter((article) => article.indexOf('404') === -1),
   ...illustrations.map((illustration) => '/illustrations/' + illustration),
   '/arrow.webp',
   '/stars.webp',

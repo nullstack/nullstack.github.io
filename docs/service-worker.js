@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "mode": "ssg",
-    "key": "dd981f7940e4d78bac6ca2abe788cc0438f7d9dc"
+    "key": "2ea000420cf0548997525127c55ca77c274d2dd0"
   },
   "project": {
     "domain": "nullstack.app",
@@ -32,15 +32,11 @@ self.context = {
     },
     "backgroundColor": "#2d3748"
   },
-  "settings": {
-    "production": {},
-    "development": {}
-  },
+  "settings": {},
   "worker": {
     "enabled": true,
     "fetching": false,
     "preload": [
-      "/404",
       "/application-startup",
       "/context-data",
       "/context-environment",
@@ -60,6 +56,7 @@ self.context = {
       "/instance-self",
       "/njs-file-extension",
       "/nullstack-logo",
+      "/persistent-components",
       "/renderable-components",
       "/routes-and-params",
       "/server-functions",
@@ -104,12 +101,11 @@ async function load(event) {
   return await fetch(event.request);
 }
 
-function toAPI(url) {
+function withAPI(url) {
   let [path, query] = url.split('?');
-  if(path.indexOf('.') === -1) {
-    path += '/index.json';
-  }
-  return query ? `${path}?${query}` : path;
+  if (path.includes('.')) return url;
+  path += '/index.json';
+  return query ? [url, `${path}?${query}`] : [url, path];
 }
 
 async function extractData(response) {
@@ -120,27 +116,7 @@ async function extractData(response) {
   const page = html.split("\n").find((line) => line.indexOf(pageLookup) > -1).split(pageLookup)[1].slice(0, -1);
   const json = `{"instances": ${instances}, "page": ${page}}`;
   return new Response(json, {
-    headers: {'Content-Type': 'application/json'}
-  });
-}
-
-async function injectData(templateResponse, cachedDataResponse) {
-  const data = await cachedDataResponse.json();
-  const input = await templateResponse.text();
-  const output = input.split(`\n`).map((line) => {
-    if(line.indexOf('<title>') > -1) {
-      return line.replace(/(<title\b[^>]*>)[^<>]*(<\/title>)/i, `$1${data.page.title}$2`);
-    } else if(line.indexOf('window.instances = ') > -1) {
-      return `window.instances = ${JSON.stringify(data.instances)};`
-    } else if(line.indexOf('window.page = ') > -1) {
-      return `window.page = ${JSON.stringify(data.page)};`
-    } else if(line.indexOf('window.worker = ') > -1) {
-      return line.replace('"online":false', '"online":true').replace('"responsive":false', '"responsive":true');
-    }
-    return line;
-  }).join("\n");
-  return new Response(output, {
-    headers: {'Content-Type': 'text/html'}
+    headers: { 'Content-Type': 'application/json' }
   });
 }
 
@@ -185,22 +161,20 @@ async function networkDataFirst(event) {
     await cache.put(api, dataResponse);
     return response;
   } catch (error) {
-    const fallbackResponse = await cache.match(`/nullstack/${self.context.environment.key}/offline/index.html`);
-    const cachedDataResponse = await cache.match(api);
-    if (cachedDataResponse) {
-      return await injectData(fallbackResponse, cachedDataResponse);
-    } else {
-      return fallbackResponse;
-    }
+    const cachedDataResponse = await cache.match(url);
+    return cachedDataResponse || await cache.match(`/nullstack/${self.context.environment.key}/offline/index.html`);
   }
 }
 
 function install(event) {
   const urls = [
     '/',
-    ...self.context.worker.preload.map(toAPI),
-    '/manifest.json'
-  ];
+    ...self.context.worker.preload.map(withAPI),
+    '/manifest.json',
+    `/client.css?fingerprint=${self.context.environment.key}`,
+    `/client.js?fingerprint=2ea000420cf0548997525127c55ca77c274d2dd0`,
+    `/nullstack/${self.context.environment.key}/offline/index.html`
+  ].flat();
   event.waitUntil(async function () {
     const cache = await caches.open(self.context.environment.key);
     await cache.addAll([...new Set(urls)]);
