@@ -115,7 +115,7 @@ Então, você pode executá-lo com um comando Node da seguinte maneira:
 
 ```bash
 > node script.js
-MeuProject tem 49 usuários registrados!
+MeuProjeto tem 49 usuários registrados!
 ```
 
 > 💡 Os executores de script são ótimos para muitas coisas, como popular um banco de dados em um ambiente específico, testar comportamentos do `context` e automatizar tarefas de aplicativos
