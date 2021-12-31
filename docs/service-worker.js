@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "mode": "ssg",
-    "key": "2ea000420cf0548997525127c55ca77c274d2dd0"
+    "key": "9a96c2ab9e0d374dadd40fd00fb821f32cdc7b49"
   },
   "project": {
     "domain": "nullstack.app",
@@ -172,7 +172,7 @@ function install(event) {
     ...self.context.worker.preload.map(withAPI),
     '/manifest.json',
     `/client.css?fingerprint=${self.context.environment.key}`,
-    `/client.js?fingerprint=2ea000420cf0548997525127c55ca77c274d2dd0`,
+    `/client.js?fingerprint=9a96c2ab9e0d374dadd40fd00fb821f32cdc7b49`,
     `/nullstack/${self.context.environment.key}/offline/index.html`
   ].flat();
   event.waitUntil(async function () {
@@ -202,17 +202,20 @@ function activate(event) {
 self.addEventListener('activate', activate);
 
 function staticStrategy(event) {
-  event.waitUntil(async function() {
+  event.waitUntil(async function () {
     const url = new URL(event.request.url);
-    if(url.origin !== location.origin) return;
-    if(event.request.method !== 'GET') return;
-    if(url.pathname.indexOf(self.context.environment.key) > -1) {
+    if (url.origin !== location.origin) return;
+    if (event.request.method !== 'GET') return;
+    if (url.pathname.indexOf('/nullstack/') > -1) {
+      return event.respondWith(networkFirst(event));
+    }
+    if (url.pathname.indexOf(self.context.environment.key) > -1) {
       return event.respondWith(cacheFirst(event));
     }
-    if(url.pathname.indexOf('.') > -1) {
+    if (url.pathname.indexOf('.') > -1) {
       return event.respondWith(staleWhileRevalidate(event));
     }
-    if(url.pathname === '/') {
+    if (url.pathname === '/') {
       return event.respondWith(networkFirst(event));
     }
     event.respondWith(networkDataFirst(event));
