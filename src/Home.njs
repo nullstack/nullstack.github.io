@@ -6,7 +6,7 @@ class Home extends Translatable {
 
   async getStarted({ router, href }) {
     if ('clipboard' in navigator) {
-      const command = 'npx create-nullstack-app';
+      const command = 'npx create-nullstack-app@latest';
       await navigator.clipboard.writeText(command);
     }
     clearTimeout(this.gettingStarted);

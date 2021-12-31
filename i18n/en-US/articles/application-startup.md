@@ -70,6 +70,7 @@ With this decoupling of the app `context`, after a compilation you can access it
 See a file **script.js** created at root with two examples manipulating even [`project`](/context-project), [`settings`](/context-settings) and the registered [MongoDB database](/how-to-use-mongodb-with-nullstack) below:
 
 ```jsx
+// import from .production instead if you run this in production mode
 const { default: context } = require('./.development/server.js');
 const Faker = require('faker');
 
@@ -93,11 +94,11 @@ async function countUsers() {
   const { database, project, settings } = context;
   project.name = settings.projectName;
 
-  const qtdUsers = await database.collection('users').estimatedDocumentCount();
-  if (qtdUsers > 100) {
+  const count = await database.collection('users').count();
+  if (count > 100) {
     console.log(`${project.name} have more than 100 registered users!`);
   } else {
-    console.log(`${project.name} have ${qtdUsers} registered users!`);
+    console.log(`${project.name} have ${count} registered users!`);
   }
   process.exit(0);
 }

@@ -14,7 +14,7 @@ description: フルスタックアプリケーションをJavascriptで1秒で�
 `project-name`をプロジェクト名に置き換えて、次のコマンドを実行すると、プロジェクトが開始されます：
 
 ```sh
-npx create-nullstack-app project-name
+npx create-nullstack-app@latest project-name
 ```
 
 生成されたフォルダーにディレクトリを変更します：

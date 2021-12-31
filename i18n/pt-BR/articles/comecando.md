@@ -14,7 +14,7 @@ Crie aplicações JavaScript full-stack em segundos usando `npx` para gerar os a
 Troque `project-name` com o nome do seu projeto e rode o comanto abaixo para começar um projeto: 
 
 ```sh
-npx create-nullstack-app project-name
+npx create-nullstack-app@latest project-name
 ```
 
 Troque o diretório para a pasta gerada:

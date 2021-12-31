@@ -70,6 +70,7 @@ Com este desacoplamento do `context` do aplicativo, após uma compilação você
 Veja um arquivo **script.js** criado na raiz com dois exemplos manipulando até mesmo o [`project`](/pt-br/contexto-project), [`settings`](/pt-br/contexto-settings) e o [banco de dados MongoDB](/pt-br/como-usar-mongodb-com-nullstack) registrado abaixo:
 
 ```jsx
+// importe de .production se estiver em modo de produção
 const { default: context } = require('./.development/server.js');
 const Faker = require('faker');
 
@@ -93,11 +94,11 @@ async function countUsers() {
   const { database, project, settings } = context;
   project.name = settings.projectName;
 
-  const qtdUsers = await database.collection('users').estimatedDocumentCount();
-  if (qtdUsers > 100) {
+  const count = await database.collection('users').count();
+  if (count > 100) {
     console.log(`${project.name} tem mais de 100 usuários registrados!`);
   } else {
-    console.log(`${project.name} tem ${qtdUsers} usuários registrados!`);
+    console.log(`${project.name} tem ${count} usuários registrados!`);
   }
   process.exit(0);
 }
