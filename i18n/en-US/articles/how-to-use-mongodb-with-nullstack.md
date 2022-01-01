@@ -34,7 +34,7 @@ const context = Nullstack.start(Application);
 
 context.start = async function() {
   const { secrets } = context;
-  const databaseClient = new MongoClient(secrets.databaseUri);
+  const databaseClient = new MongoClient(secrets.mongodbUri);
   await databaseClient.connect();
   context.database = await databaseClient.db(secrets.databaseName);
 }
