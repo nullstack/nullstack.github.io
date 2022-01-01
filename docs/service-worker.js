@@ -5,7 +5,7 @@ self.context = {
     "development": false,
     "production": true,
     "mode": "ssg",
-    "key": "9a96c2ab9e0d374dadd40fd00fb821f32cdc7b49"
+    "key": "256a39f4b7884105a6a3c8c01c9d85ddf8afad54"
   },
   "project": {
     "domain": "nullstack.app",
@@ -172,7 +172,7 @@ function install(event) {
     ...self.context.worker.preload.map(withAPI),
     '/manifest.json',
     `/client.css?fingerprint=${self.context.environment.key}`,
-    `/client.js?fingerprint=9a96c2ab9e0d374dadd40fd00fb821f32cdc7b49`,
+    `/client.js?fingerprint=256a39f4b7884105a6a3c8c01c9d85ddf8afad54`,
     `/nullstack/${self.context.environment.key}/offline/index.html`
   ].flat();
   event.waitUntil(async function () {
