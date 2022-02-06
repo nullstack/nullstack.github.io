@@ -46,23 +46,23 @@ class Application extends Nullstack {
         <div class="dark:bg-gray-900 dark:text-white">
           <Header locale={locale} />
 
-          <Home route="/" locale="en-US" />
-          <Home route="/pt-br" locale="pt-BR" />
+          <Home route="/" locale="en-US" persistent />
+          <Home route="/pt-br" locale="pt-BR" persistent />
 
-          <Documentation route="/documentation" locale="en-US" />
-          <Documentation route="/pt-br/documentacao" locale="pt-BR" />
+          <Documentation route="/documentation" locale="en-US" persistent />
+          <Documentation route="/pt-br/documentacao" locale="pt-BR" persistent />
 
-          <Components route="/components" locale="en-US" />
-          <Components route="/pt-br/componentes" locale="pt-BR" />
+          <Components route="/components" locale="en-US" persistent />
+          <Components route="/pt-br/componentes" locale="pt-BR" persistent />
 
-          <Contributors route="/contributors" locale="en-US" />
-          <Contributors route="/pt-br/contribuidores" locale="pt-BR" />
+          <Contributors route="/contributors" locale="en-US" persistent />
+          <Contributors route="/pt-br/contribuidores" locale="pt-BR" persistent />
 
-          <Waifu route="/waifu" locale="en-US" />
-          <Waifu route="/pt-br/waifu" locale="pt-BR" />
+          <Waifu route="/waifu" locale="en-US" persistent />
+          <Waifu route="/pt-br/waifu" locale="pt-BR" persistent />
 
-          <Article route="/pt-br/:slug" locale="pt-BR" />
-          <Article route="/:slug" locale="en-US" />
+          <Article route="/pt-br/:slug" locale="pt-BR" persistent />
+          <Article route="/:slug" locale="en-US" persistent />
 
           <GoogleAnalytics id="G-E7GZ5Z4MLN" />
           <Preloader />

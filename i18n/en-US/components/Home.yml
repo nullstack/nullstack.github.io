@@ -1,14 +1,12 @@
 title: "Full-stack JavaScript Components"
-description: "Nullstack is a full-stack JavaScript framework for building progressive web applications"
+description: "Nullstack is a Feature-Driven fullstack JavaScript framework for building progressive web applications"
 hero:
-  heading: "Full-stack"
-  subHeading: "JavaScript Components"
-  tagline: "For one-dev armies"
+  heading: "Feature-Driven"
+  subHeading: "Fullstack JavaScript Components"
   descriptions:
     - "Write the back-end and the front-end of a feature in a single
       component and let the framework decide where the code should run."
-    - "Nullstack gives you all the tools you need to stay focused on your
-      business logic."
+    - "Nullstack gives you all the tools you need to stay focused on the product."
   callToAction: "npx create-nullstack-app"
   actionLink: '/getting-started'
   actionCallback: 'Command copied, paste it on the terminal'
