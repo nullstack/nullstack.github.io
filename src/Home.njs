@@ -4,6 +4,10 @@ import Translatable from './Translatable';
 
 class Home extends Translatable {
 
+  launch({ project, page }) {
+    page.title = `${project.name} - ${this.i18n.title}`;
+  }
+
   async getStarted({ router, href }) {
     if ('clipboard' in navigator) {
       const command = 'npx create-nullstack-app@latest';
