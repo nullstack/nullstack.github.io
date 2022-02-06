@@ -20,14 +20,11 @@ class Home extends Translatable {
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap sm:pt-12">
         <div class="sm:w-5/12 grid gap-8 mt-12 sm:mt-0">
           <h1 class="w-full">
-            <span class={`text-pink-600 ${page.locale === 'pt-BR' ? 'text-2xl sm:text-4xl' : 'text-4xl sm:text-6xl'} font-light block sm:mb-3 text-center sm:text-left`}>
+            <span class={`text-pink-600 ${page.locale === 'pt-BR' ? 'text-xl sm:text-3xl' : 'text-3xl sm:text-6xl'} font-light block sm:mb-3 text-center sm:text-left`}>
               {this.i18n.hero.heading}
             </span>
-            <span class={`text-pink-600 ${page.locale !== 'pt-BR' ? 'text-3xl sm:text-5xl' : 'text-4xl sm:text-6xl'} font-light block sm:mb-3 text-center sm:text-left`}>
+            <span class={`text-pink-600 ${page.locale !== 'pt-BR' ? 'text-xl sm:text-3xl' : 'text-3xl sm:text-5xl'} font-light block sm:mb-3 text-center sm:text-left`}>
               {this.i18n.hero.subHeading}
-            </span>
-            <span class="text-2xl sm:text-4xl font-light block text-center sm:text-left">
-              {this.i18n.hero.tagline}
             </span>
           </h1>
           <>
