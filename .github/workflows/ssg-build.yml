@@ -1,0 +1,42 @@
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: SSG Build to Deploy
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      # cache the dependencies from any node_modules directory
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+            **/package-lock.json
+            **/.production
+          key: node_modules-${{ hashFiles('**/package.json') }}
+
+      - name: Install deps
+        run: npm install
+
+      - name: Build
+        run: npx nullstack build --mode=ssg --output=docs --cache
+
+      - name: Send to Github
+        run: |
+          git branch gh-pages -f
+          git checkout gh-pages
+          touch ./docs/.nojekyll
+          git add docs -f
+          git config --global user.name "NullstackDeployer"
+          git config --global user.email "nullstack@deployer.ci"
+          git commit -m ":rocket: New SSG Build"
+          git push -u origin gh-pages -f
