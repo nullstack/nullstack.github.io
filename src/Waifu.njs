@@ -1,4 +1,4 @@
-import {readdirSync} from 'fs';
+import { readdirSync } from 'fs';
 import Translatable from './Translatable';
 
 class Waifu extends Translatable {
@@ -41,21 +41,21 @@ class Waifu extends Translatable {
           </blockquote>
         </div>
         <div class="flex flex-wrap justify-between w-full">
-          <div class="flex w-full sm:w-6/12 bg-yellow-300 dark:bg-gray-800 justify-center py-8">
-            <img src="/illustrations/nulla-fullbody.png" alt="Nulla-Chan" class="max-w-full" width="319" height="587" loading="lazy" />
+          <div class="flex w-full sm:w-6/12 bg-gray-100 dark:bg-gray-800 justify-center pt-8">
+            <img src="/illustrations/nulla-fullbody.png" alt="Nulla-Chan" class="max-w-full" width="624" height="688" />
           </div>
-          <div class="flex w-full sm:w-6/12 sm:bg-yellow-200 sm:dark:bg-gray-700 justify-center py-8 items-center">
+          <div class="flex w-full sm:w-6/12 sm:bg-gray-50 sm:dark:bg-gray-700 justify-center py-8 items-center">
             <ul class="sm:w-6/12 grid gap-4 sm:mt-0">
               {this.i18n.attributes.map((attribute) => <Attribute {...attribute} />)}
               <li>
                 <b> {this.i18n.artist.label} </b>
-                <a href={this.i18n.artist.href} target="_blank" rel="noopener" class="underline"> 
-                  {this.i18n.artist.text} 
+                <a href={this.i18n.artist.href} target="_blank" rel="noopener" class="underline">
+                  {this.i18n.artist.text}
                 </a>
               </li>
               <li>
                 <b> {this.i18n.concept.label} </b>
-                <a href={this.i18n.concept.href} target="_blank" rel="noopener" class="underline"> 
+                <a href={this.i18n.concept.href} target="_blank" rel="noopener" class="underline">
                   {this.i18n.concept.text}
                 </a>
               </li>
@@ -71,9 +71,9 @@ class Waifu extends Translatable {
     const src = `/fanarts/${image}`;
     return (
       <div class="flex flex-col p-3 shadow items-center space-y-1">
-        <img src={src} alt={name} title={`Nulla-chan by ${name}`}/>
-        <a 
-          href={`https://www.instagram.com/${name}`} 
+        <img src={src} alt={name} title={`Nulla-chan by ${name}`} />
+        <a
+          href={`https://www.instagram.com/${name}`}
           target="_blank"
           rel="noopener"
           class="hover:text-pink-600 block pt-1"
@@ -84,7 +84,7 @@ class Waifu extends Translatable {
   }
 
   renderFanarts({ self }) {
-    if(!self.hydrated) return false
+    if (!self.hydrated) return false
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap pb-12 sm:pb-24">
         <h2 class="w-full text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">
@@ -99,9 +99,9 @@ class Waifu extends Translatable {
       </section>
     )
   }
-  
-  render({}) {
-    if(!this.i18n) return false;
+
+  render({ }) {
+    if (!this.i18n) return false;
     return (
       <div>
         <Profile />
