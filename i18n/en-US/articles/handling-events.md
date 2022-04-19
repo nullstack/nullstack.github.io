@@ -3,7 +3,7 @@ title: Handling Events
 description: Add DOM events to components
 ---
 
-You can
+You can create a method starting with `_`, that means you're creating vanilla JS code. With that you'll be able to add or remove the event listener.
 
 ```jsx
 import Nullstack from "nullstack";
