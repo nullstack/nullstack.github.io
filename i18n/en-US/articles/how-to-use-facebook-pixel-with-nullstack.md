@@ -101,6 +101,6 @@ export default Application;
 
 ## Next step
 
-> 🎉 **Congratulations**. You are done with the documentation!
+> 🎉 **Congratulations!** You are done with the documentation!
 
 ⚔ If you want to see this more examples please [open an issue on github](https://github.com/nullstack/nullstack/issues).

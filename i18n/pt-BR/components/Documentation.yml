@@ -21,6 +21,8 @@ topics:
         href: "/pt-br/rotas-e-parametros"
       - title: "Vínculo bidirecional"
         href: "/pt-br/vinculo-bidirecional"
+      - title: "Propriedades sublinhadas"
+        href: "/pt-br/propriedades-sublinhadas"
   - title: "Conceitos avançados"
     links:
       - title: "Inicialização da aplicação"
@@ -43,6 +45,8 @@ topics:
         href: "/pt-br/contexto-settings"
       - title: "Contexto Secrets"
         href: "/pt-br/contexto-secrets"
+      - title: "Gerenciando Eventos"
+        href: "/pt-br/gerenciando-eventos"
       - title: "self da Instância"
         href: "/pt-br/instancia-self"
       - title: "Requisição e resposta do servidor"
