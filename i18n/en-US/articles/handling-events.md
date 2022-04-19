@@ -7,7 +7,6 @@ You can create a method starting with `_`, that means you're creating vanilla JS
 
 ```jsx
 import Nullstack from "nullstack";
-import Counter from "./Counter";
 
 class Application extends Nullstack {
   _fn() {

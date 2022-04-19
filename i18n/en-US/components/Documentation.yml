@@ -17,6 +17,8 @@ topics:
         href: "/routes-and-params"
       - title: "Two-way bindings"
         href: "/two-way-bindings"
+      - title: "Vanilla JS"
+        href: "/vanilla-js"
   - title: "Advanced concepts"
     links:
       - title: "Application Startup"

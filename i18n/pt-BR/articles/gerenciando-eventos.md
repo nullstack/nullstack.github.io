@@ -7,7 +7,6 @@ Você pode criar um método começando com `_`, isso quer dizer que o código é
 
 ```jsx
 import Nullstack from "nullstack";
-import Counter from "./Counter";
 
 class Application extends Nullstack {
   _fn() {
