@@ -39,6 +39,8 @@ topics:
         href: "/context-settings"
       - title: "Context secrets"
         href: "/context-secrets"
+      - title: "Handling events"
+        href: "/handling-events"
       - title: "Instance self"
         href: "/instance-self"
       - title: "Server request and response"
