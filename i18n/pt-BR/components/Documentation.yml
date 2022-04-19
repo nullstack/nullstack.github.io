@@ -21,8 +21,8 @@ topics:
         href: "/pt-br/rotas-e-parametros"
       - title: "Vínculo bidirecional"
         href: "/pt-br/vinculo-bidirecional"
-      - title: "Vanilla JS"
-        href: "/pt-br/vanilla-js"
+      - title: "Propriedades sublinhadas"
+        href: "/pt-br/propriedades-sublinhadas"
   - title: "Conceitos avançados"
     links:
       - title: "Inicialização da aplicação"

@@ -280,6 +280,4 @@ export default Form;
 
 ## Next step
 
-> 🎉 **Congratulations!**. You are done with the core concepts!
-
-⚔ Learn about the [application startup](/application-startup).
+⚔ Learn more about [underscored properties](/underscored-properties).

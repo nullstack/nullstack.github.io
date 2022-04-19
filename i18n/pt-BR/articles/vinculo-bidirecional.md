@@ -282,7 +282,4 @@ export default Form;
 
 ## Próximos passos
 
-> 🎉 **Parabéns!** Você concluiu os conceitos básicos!
-
-⚔ Aprenda sobre a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
-
+⚔ Aprenda sobre [propriedades sublinhadas](/pt-br/propriedades-sublinhadas).
