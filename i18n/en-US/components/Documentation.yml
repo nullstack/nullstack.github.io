@@ -53,6 +53,8 @@ topics:
         href: "/njs-file-extension"
       - title: "Service Worker"
         href: "/service-worker"
+      - title: "How to customize Webpack"
+        href: "/how-to-customize-webpack"
       - title: "How to deploy"
         href: "/how-to-deploy-a-nullstack-application"
   - title: "Build Modes"
