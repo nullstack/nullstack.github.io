@@ -57,6 +57,8 @@ topics:
         href: "/pt-br/extensao-de-arquivo-njs"
       - title: "Service Worker"
         href: "/pt-br/service-worker"
+      - title: "Como customizar o Webpack"
+        href: "/pt-br/como-customizar-webpack"
       - title: "Como fazer deploy"
         href: "/pt-br/como-fazer-deploy-de-aplicacao-nullstack"
   - title: "Modos de Construção"
