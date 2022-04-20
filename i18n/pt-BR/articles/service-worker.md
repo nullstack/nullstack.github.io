@@ -286,4 +286,4 @@ self.addEventListener('activate', activate);
 
 ## Próximo passo
 
-⚔ Aprenda [Como fazer o deploy de uma aplicação Nullstack](/pt-br/como-fazer-deploy-de-aplicacao-nullstack).
+⚔ Aprenda [Como customizar o Webpack](/pt-br/como-customizar-webpack).

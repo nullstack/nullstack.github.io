@@ -1,13 +1,13 @@
 ---
-title: How to customize Webpack
-description: You can create your own custom webpack config to extend Nullstacks default configs
+title: Como customizar o Webpack
+description: Você pode criar sua própria configuração de webpack personalizada para estender as configurações padrões do Nullstack
 ---
 
-You can create your own custom `webpack.config.js` at the projects root folder to extend Nullstacks default configs
+Você pode criar seu próprio `webpack.config.js` personalizado na pasta raiz do projeto para estender as configurações padrão do Nullstack
 
-Nullstack exposes the file `nullstack/webpack.config.js` which exports a server and client function, each being the config for the respective environment
+Nullstack expõe o arquivo `nullstack/webpack.config.js` que exporta uma função de servidor e cliente, cada uma sendo a configuração para o respectivo ambiente
 
-You can import nullstack webpack config with the following code
+Você pode importar a configuração do webpack do nullstack com o seguinte código
 
 ```jsx
 const [server, client] = require('nullstack/webpack.config');
@@ -15,7 +15,7 @@ const [server, client] = require('nullstack/webpack.config');
 module.exports = [server, client]
 ```
 
-You can customize a single environment by wrapping the targeted function
+Você pode personalizar um único ambiente envolvendo a função de destino
 
 ```jsx
 const [server, client] = require('nullstack/webpack.config');
@@ -40,7 +40,7 @@ function customClient(...args) {
 module.exports = [server, customClient]
 ```
 
-You can also extend both environments at once by creating a wrapper around both environments
+Você também pode estender os dois ambientes ao mesmo tempo criando um wrapper em torno de ambos os ambientes
 
 ```jsx
 const [server, client] = require('nullstack/webpack.config');
@@ -57,6 +57,6 @@ function applyCadencePlugin(environments) {
 module.exports = applyCadencePlugin([server, client])
 ```
 
-## Next step
+## Próximo passo
 
-⚔ Learn [how to deploy a Nullstack application](/how-to-deploy-a-nullstack-application).
+⚔ Aprenda [Como fazer o deploy de uma aplicação Nullstack](/pt-br/como-fazer-deploy-de-aplicacao-nullstack).
