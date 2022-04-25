@@ -55,7 +55,7 @@ It is a convenient place to import global dependencies like CSS frameworks and m
 
 This folder will contain the actual source code of your application.
 
-### src/Application.njs
+### src/Application.jsx
 
 This is your application main file.
 
@@ -65,9 +65,9 @@ When you run `npm start` it is consumed in **server**/**client** JS files by the
 
 >✨ Learn more about the [application startup](/application-startup).
 
-### src/Application.scss
+### src/Application.css
 
-This is an empty file just to demonstrate that you can use [SCSS with Nullstack](/styles).
+This is an empty file just to demonstrate that you can use [CSS with Nullstack](/styles).
 
 It is a good practice to import a style file in a component with the same name.
 

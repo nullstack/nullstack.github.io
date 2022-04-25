@@ -5,7 +5,6 @@ state:
   paragraphs:
     - "Nullstack is being developed since January 2019 with features being extracted from freelancing and enterprise projects."
     - "At this point the API is stable, lifecycle methods and context keys will pretty much be frozen."
-    - "We are not yet on 1.0 but really close, the only thing missing is to test it on applications made outside the core team to figure out if it fits the needs of other programmers."
 roadmap:
   title: "The Roadmap"
   paragraphs:

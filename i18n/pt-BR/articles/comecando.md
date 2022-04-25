@@ -55,7 +55,7 @@ Esta é a ponto de entrada e geração do cliente.
 
 Esta pasta contêm o código fonte da sua aplicação.
 
-### src/Application.njs
+### src/Application.jsx
 
 Este é o arquivo principal da sua aplicação.
 
@@ -65,9 +65,9 @@ Quando você executa `npm start`, ele é consumido nos arquivos JS **server**/**
 
 >✨ Saiba mais sobre a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 
-### src/Application.scss
+### src/Application.css
 
-Este é um arquivo vazio só para demonstrar que você pode usar [SCSS com Nullstack](/pt-br/estilos).
+Este é um arquivo vazio só para demonstrar que você pode usar [CSS com Nullstack](/pt-br/estilos).
 
 É uma boa prática importar um arquivo de estilo em um componente com o mesmo nome.
 
