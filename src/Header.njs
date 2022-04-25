@@ -5,6 +5,10 @@ import Close from "../icons/Close";
 import Mode from "../icons/Mode";
 import Brasil from "../icons/Brasil";
 import Gringo from "../icons/Gringo";
+import GitHub from "../icons/GitHub";
+import YouTube from "../icons/YouTube";
+import Twitter from "../icons/Twitter";
+import Discord from "../icons/Discord";
 
 class Header extends Translatable {
 
@@ -16,12 +20,26 @@ class Header extends Translatable {
         tag={onclick ? 'button' : 'a'}
         href={href}
         target={target}
-        onclick={onclick || {expanded: false}}
+        onclick={onclick || { expanded: false }}
         class={`w-full sm:w-auto border-b sm:border-0 border-gray-100 dark:border-gray-800 p-2 font-lg hover:text-pink-600 items-center flex font-light ${mobile ? 'sm:hidden' : ''}`}
       >
         {title}
       </element>
     );
+  }
+
+  renderSocialLink({ href, icon: Icon, title }) {
+    return (
+      <a
+        href={href}
+        title={title}
+        target="_blank"
+        rel="noopener"
+        class="text-gray-700 hover:text-pink-600 dark:text-pink-600 dark:hover:text-white inline-block"
+      >
+        <Icon size={40} />
+      </a>
+    )
   }
 
   toggleMode(context) {
@@ -49,9 +67,8 @@ class Header extends Translatable {
             </span>
           </div>
           <nav
-            class={`flex items-center flex-wrap sm:px-0 mt-2 sm:mt-0 ${
-              !this.expanded && "hidden sm:flex"
-            }`}
+            class={`flex items-center flex-wrap sm:px-0 mt-2 sm:mt-0 ${!this.expanded && "hidden sm:flex"
+              }`}
           >
             {this.i18n.links.map((link) => (
               <Link {...link} />
@@ -67,19 +84,16 @@ class Header extends Translatable {
             <button onclick={this.toggleMode} title={this.i18n.mode[oppositeMode]} class="hidden sm:flex text-pink-600 dark:text-white">
               <Mode size={25} />
             </button>
-            <a
-              href={this.i18n.action.href}
-              onclick={{ expanded: false }}
-              class="bg-pink-600 text-white px-4 py-2 border border-pink-600 hover:bg-transparent hover:text-pink-600 w-full sm:w-auto min-w-32 text-center"
-            >
-              {this.i18n.action.title}
-            </a>
+            <div class="space-x-0 items-center flex">
+              <SocialLink href="https://discord.gg/eDZfKz264v" title="Discord" icon={Discord} />
+              <SocialLink href="https://github.com/nullstack/nullstack" title="Github" icon={GitHub} />
+            </div>
           </div>
         </div>
       </header>
     );
   }
-  
+
 }
 
 export default Header;

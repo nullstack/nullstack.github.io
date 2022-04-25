@@ -27,7 +27,7 @@ class Home extends Translatable {
             <span class={`text-pink-600 ${page.locale === 'pt-BR' ? 'text-xl sm:text-3xl' : 'text-3xl sm:text-6xl'} font-light block sm:mb-3 text-center sm:text-left`}>
               {this.i18n.hero.heading}
             </span>
-            <span class={`text-pink-600 ${page.locale !== 'pt-BR' ? 'text-xl sm:text-3xl' : 'text-3xl sm:text-5xl'} font-light block sm:mb-3 text-center sm:text-left`}>
+            <span class={`text-pink-600 dark:text-pink-500 ${page.locale !== 'pt-BR' ? 'text-xl sm:text-3xl' : 'text-3xl sm:text-5xl'} font-light block sm:mb-3 text-center sm:text-left`}>
               {this.i18n.hero.subHeading}
             </span>
           </h1>
