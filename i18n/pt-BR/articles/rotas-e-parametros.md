@@ -207,12 +207,15 @@ O `router` tem três chaves:
 - **`url`**
 - **`path`**
 - **`base`**
+- **`previous`**
 
 A chave `url` retorna tudo depois do domínio, incluindo o caminho e os parâmetros de query como uma string.
 
 A chave `path` retorna apenas o caminho sem os parâmetros de consulta.
 
 A chave `base` retorna apenas a url base (ex: `https://nullstack.app` ou `http://localhost:5000`).
+
+A chave `previous` é o mesmo que `url`, mas para a rota anterior. Valor padrão é `null` (ex. ao acessar o aplicativo pela primeira vez).
 
 > 💡 As chaves acima automaticamente removem a barra final por conveniência.
 
