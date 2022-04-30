@@ -3,6 +3,7 @@ import GitHub from "../icons/GitHub";
 import YouTube from "../icons/YouTube";
 import Twitter from "../icons/Twitter";
 import Discord from "../icons/Discord";
+import LinkedIn from '../icons/LinkedIn.njs';
 
 class Footer extends Translatable {
 
@@ -28,10 +29,11 @@ class Footer extends Translatable {
         </div>
         <div class="bg-gray-800 w-full py-4 flex-wrap">
           <nav class="w-full flex items-center justify-center space-x-1">
-            {/* <Link href="https://twitter.com/nullstackapp" title="Twitter" icon={Twitter} />  */}
+            <Link href="https://twitter.com/nullstackapp" title="Twitter" icon={Twitter} />
             <Link href="https://github.com/nullstack/nullstack" title="Github" icon={GitHub} />
             <Link href="https://discord.gg/eDZfKz264v" title="Discord" icon={Discord} />
             <Link href="https://www.youtube.com/nullstack" title="Youtube" icon={YouTube} />
+            <Link href="https://www.linkedin.com/company/nullstack-app" title="LinkedIn" icon={LinkedIn} />
           </nav>
           <nav class="w-full flex flex-wrap items-center justify-center space-x-1">
             <p class="text-center mt-3 w-full text-gray-400 px-6">

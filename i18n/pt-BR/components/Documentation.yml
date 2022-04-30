@@ -45,8 +45,6 @@ topics:
         href: "/pt-br/contexto-settings"
       - title: "Contexto Secrets"
         href: "/pt-br/contexto-secrets"
-      - title: "Gerenciando Eventos"
-        href: "/pt-br/gerenciando-eventos"
       - title: "self da Instância"
         href: "/pt-br/instancia-self"
       - title: "Requisição e resposta do servidor"
