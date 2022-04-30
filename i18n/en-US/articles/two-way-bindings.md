@@ -111,7 +111,7 @@ class Form extends Nullstack {
   name = '';
 
   compare({value}) {
-    this.name === value;
+    this.name === value; // true
   }
  
   render() {

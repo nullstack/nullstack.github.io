@@ -18,7 +18,7 @@ import Counter from './Counter';
 class Application extends Nullstack {
 
   showCounter = true;
-  toogleCounter() {
+  toggleCounter() {
     this.showCounter = !this.showCounter;
   }
 
@@ -26,7 +26,7 @@ class Application extends Nullstack {
     return (
       <div>
         {this.showCounter && <Counter persistent key="Counter"/>}
-        <button onclick={this.toogleCounter}>Show/Hide Counter</button>
+        <button onclick={this.toggleCounter}>Show/Hide Counter</button>
       </div>
     )
   }

@@ -69,6 +69,14 @@ export default Component;
 
 > ✨ Learn more about [server functions](/server-functions).
 
+## Launch
+
+Runs before pre-rendering and at each awakening.
+
+You can update the component with things that doesn't require data fetching operations.
+
+> ✨ Use this lifecycle to setup Meta tags.
+
 ## Hydrate
 
 This method is async and will only run in the client.

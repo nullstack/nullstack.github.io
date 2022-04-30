@@ -72,4 +72,4 @@ export default Application;
 
 > 🎉 **Congratulations!** You are done with the core concepts!
 
-⚔ Learn about the [application startup](/application-startup).
+⚔ Learn about [TypeScript](/typescript).
