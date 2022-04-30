@@ -1,6 +1,8 @@
 topics:
   - title: "Core concepts"
     links:
+      - title: "What is Nullstack?"
+        href: "/what-is-nullstack"
       - title: "Getting started"
         href: "/getting-started"
       - title: "Renderable components"
