@@ -31,4 +31,4 @@ class TypeScript extends Nullstack {
 
 > 🎉 **Congratulations!**. You are done with the core concepts!
 
-⚔ Learn about the [application startup](/application-startup).
+⚔ Learn about the [Transpilation and Security](/transpilation-and-security).

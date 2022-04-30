@@ -9,7 +9,7 @@ JSX is an XML/HTML-like syntax that extends ECMAScript so that XML/HTML-like tex
 
 Stateless components are very similar to web components, they give you the ability to create new HTML tags that shortcut a group of other HTML tags.
 
-Create a file in your src folder with the name of your component and the [jsx extension](/njs-file-extension).
+Create a file in your src folder with the name of your component and the [jsx extension](/jsx-elements).
 
 The props passed to a component can be destructured in the function signature
 

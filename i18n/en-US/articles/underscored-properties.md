@@ -70,4 +70,4 @@ export default Application;
 
 ## Next step
 
-⚔ Learn about the [NJS file extension](/njs-file-extension).
+⚔ Learn about the [jsx elements](/jsx-elements).

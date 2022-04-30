@@ -61,7 +61,7 @@ This folder will contain the actual source code of your application.
 
 This is your application main file.
 
->✨ Learn more about the [njs file extension](/njs-file-extension "Nullstack JavaScript").
+>✨ Learn more about the [jsx elements](/jsx-elements "Nullstack JavaScript").
 
 When you run `npm start` it is consumed in **server**/**client** JS files by their `Nullstack.start` function, which starts and returns both [`context`](/context), that you can use to set up things like [database](/how-to-use-mongodb-with-nullstack) using [settings](/context-settings) and [secrets](/context-secrets).
 

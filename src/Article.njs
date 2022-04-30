@@ -16,6 +16,9 @@ class Article extends Translatable {
     if (router.path === '/renderable-components' || router.path === '/functional-components') {
       router.path = '/stateless-components'
     }
+    if (router.path === '/njs-file-extension') {
+      router.path = '/jsx-elements'
+    }
   }
 
   static async getArticleByKey({ locale, key }) {
