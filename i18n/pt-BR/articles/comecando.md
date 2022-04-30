@@ -17,6 +17,8 @@ Troque `project-name` com o nome do seu projeto e rode o comanto abaixo para com
 npx create-nullstack-app@latest project-name
 ```
 
+> 💡 Se quiser começar com um template usando arquivos .tsx, adicione `--ts` ou `--typescript` ao fim do comando
+
 Troque o diretório para a pasta gerada:
 
 ```sh
