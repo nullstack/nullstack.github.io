@@ -210,12 +210,15 @@ The `router` has three keys:
 - **`url`**
 - **`path`**
 - **`base`**
+- **`previous`**
 
 The `url` key returns everything after the domain including the path and the query params as a string.
 
 The `path` key returns only the path without query params.
 
 The `base` key returns only the base url (e.g: `https://nullstack.app` or `http://localhost:5000`).
+
+The `previous` key is the same as `url`, but for the previous route. Defaults do `null` (e.g. when first accessing app).
 
 > 💡 Those keys above automatically remove the trailing slash for convenience.
 

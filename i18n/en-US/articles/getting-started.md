@@ -17,6 +17,8 @@ Replace `project-name` with your project name and run the command below to start
 npx create-nullstack-app@latest project-name
 ```
 
+> 💡 If you want to start with a template using .tsx files, add `--ts` or `--typescript` to the end of command
+
 Change directory to the generated folder:
 
 ```sh
@@ -55,7 +57,7 @@ It is a convenient place to import global dependencies like CSS frameworks and m
 
 This folder will contain the actual source code of your application.
 
-### src/Application.njs (or jsx)
+### src/Application.jsx
 
 This is your application main file.
 
@@ -69,9 +71,9 @@ When you run `npm start` it is consumed in **server**/**client** JS files by the
 
 You can use Nullstack with TypeScript, just rename `njs` to `nts` or `jsx` to `tsx`.
 
-### src/Application.scss
+### src/Application.css
 
-This is an empty file just to demonstrate that you can use [SCSS with Nullstack](/styles).
+This is an empty file just to demonstrate that you can use [CSS with Nullstack](/styles).
 
 It is a good practice to import a style file in a component with the same name.
 

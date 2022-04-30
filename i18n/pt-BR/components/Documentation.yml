@@ -5,6 +5,8 @@ tagline: "Siga esses passos e se torne um desenvolvedor full-stack javascript!"
 topics:
   - title: "Principais conceitos"
     links:
+      - title: "O que é Nullstack?"
+        href: "/pt-br/o-que-e-nullstack"
       - title: "Começando"
         href: "/pt-br/comecando"
       - title: "Componentes renderizáveis"
@@ -21,6 +23,8 @@ topics:
         href: "/pt-br/rotas-e-parametros"
       - title: "Vínculo bidirecional"
         href: "/pt-br/vinculo-bidirecional"
+      - title: "Propriedades sublinhadas"
+        href: "/pt-br/propriedades-sublinhadas"
   - title: "Conceitos avançados"
     links:
       - title: "Inicialização da aplicação"
@@ -53,6 +57,8 @@ topics:
         href: "/pt-br/extensao-de-arquivo-njs"
       - title: "Service Worker"
         href: "/pt-br/service-worker"
+      - title: "Como customizar o Webpack"
+        href: "/pt-br/como-customizar-webpack"
       - title: "Como fazer deploy"
         href: "/pt-br/como-fazer-deploy-de-aplicacao-nullstack"
   - title: "Modos de Construção"

@@ -280,4 +280,4 @@ export default Form;
 
 ## Next step
 
-⚔ Learn about [TypeScript](/typescript).
+⚔ Learn more about [underscored properties](/underscored-properties).

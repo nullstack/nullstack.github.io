@@ -6,7 +6,7 @@ hero:
   descriptions:
     - "Write the back-end and the front-end of a feature in a single
       component and let the framework decide where the code should run."
-    - "Nullstack gives you all the tools you need to stay focused on the product."
+    - "Nullstack provides you all the tools you need to stay focused on the product."
   callToAction: "npx create-nullstack-app"
   actionLink: '/getting-started'
   actionCallback: 'Command copied, paste it on the terminal'
@@ -67,12 +67,12 @@ playlist:
   slang: "Dweebs"
   realWord: " Experts"
   videos:
-    - title: "Full-stack with Nullstack"
-      link: "https://www.youtube.com/watch?v=l23z00GEar8&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId"
-      thumbnail: "/thumbnails/en-us-pokepoll.webp"
-    - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
-      link: "https://www.youtube.com/watch?v=ud3IF5Xtd1s"
-      thumbnail: "/thumbnails/en-us-contribute.webp"
+    - title: "Nullstack at TDC Future"
+      link: "https://www.youtube.com/watch?v=77qeq6cSHG8"
+      thumbnail: "/thumbnails/en-us-tdc.webp"
     - title: "What are JavaScript Components?"
       link: "https://www.youtube.com/watch?v=H2i5_A1txGI"
       thumbnail: "/thumbnails/en-us-components.webp"
+    - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
+      link: "https://www.youtube.com/watch?v=ud3IF5Xtd1s"
+      thumbnail: "/thumbnails/en-us-contribute.webp"

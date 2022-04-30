@@ -1,6 +1,8 @@
 topics:
   - title: "Core concepts"
     links:
+      - title: "What is Nullstack?"
+        href: "/what-is-nullstack"
       - title: "Getting started"
         href: "/getting-started"
       - title: "Nullstack JSX"
@@ -19,6 +21,8 @@ topics:
         href: "/routes-and-params"
       - title: "Two-way bindings"
         href: "/two-way-bindings"
+      - title: "Underscored Properties"
+        href: "/underscored-properties"
       - title: "TypeScript"
         href: "/typescript"
   - title: "Advanced concepts"
@@ -53,6 +57,8 @@ topics:
         href: "/njs-file-extension"
       - title: "Service Worker"
         href: "/service-worker"
+      - title: "How to customize Webpack"
+        href: "/how-to-customize-webpack"
       - title: "How to deploy"
         href: "/how-to-deploy-a-nullstack-application"
   - title: "Build Modes"

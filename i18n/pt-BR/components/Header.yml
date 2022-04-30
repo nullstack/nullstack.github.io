@@ -2,10 +2,10 @@ home:
   title: "Nullstack"
   href: "/pt-br"
 links:
+  - title: "O que é Nullstack?"
+    href: "/pt-br/o-que-e-nullstack"
   - title: "Documentação"
     href: "/pt-br/comecando"
-  - title: "Componentes"
-    href: "/pt-br/componentes"
   - title: "Contribuidores"
     href: "/pt-br/contribuidores"
   - title: "Waifu"

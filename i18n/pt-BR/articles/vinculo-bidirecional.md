@@ -11,8 +11,6 @@ O processo de controlar a entrada do usuário pode ser dividido em 3 etapas tedi
 - Passar o valor inicial para a entrada;
 - Observar as mudanças na entrada e atribuir o novo valor à variável.
 
-
-
 A última etapa pode incluir modelagem e outros tratamentos de valor.
 
 Este processo no qual você faz manualmente todas essas etapas é chamado de *one-way binding*, é o padrão em muitos frameworks, e é possível no Nullstack.
@@ -282,7 +280,4 @@ export default Form;
 
 ## Próximos passos
 
-> 🎉 **Parabéns!** Você concluiu os conceitos básicos!
-
-⚔ Aprenda sobre a [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
-
+⚔ Aprenda sobre [propriedades sublinhadas](/pt-br/propriedades-sublinhadas).

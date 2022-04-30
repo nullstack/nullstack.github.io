@@ -2,10 +2,10 @@ home:
   title: "Nullstack"
   href: "/"
 links:
+  - title: "What is Nullstack?"
+    href: "/what-is-nullstack"
   - title: "Documentation"
     href: "/getting-started"
-  - title: "Components"
-    href: "/components"
   - title: "Contributors"
     href: "/contributors"
   - title: "Waifu"

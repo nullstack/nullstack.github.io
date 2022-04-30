@@ -5,7 +5,6 @@ state:
   paragraphs:
     - "O Nullstack está sendo desenvolvido desde janeiro de 2019 com recursos sendo extraídos de projetos freelance e corporativos."
     - "Nesse ponto, a API está estável, os métodos de ciclo de vida e as chaves de contexto estarão praticamente congelados."
-    - "Ainda não estamos na v1.0, mas muito perto, a única coisa que falta é testá-lo em aplicativos feitos fora da equipe principal para descobrir se ele atende às necessidades de outros programadores."
 roadmap:
   title: "O Mapa da Estrada"
   paragraphs:
