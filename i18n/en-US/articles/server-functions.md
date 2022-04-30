@@ -177,6 +177,7 @@ The following words cannot be used in server functions:
 
 - `prepare`
 - `initiate`
+- `launch`
 - `hydrate`
 - `update`
 - `terminate`

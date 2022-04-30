@@ -25,7 +25,7 @@ const context = Nullstack.start(Application);
 context.start = function() {
   const { settings, environment } = context;
   settings.endpoint = 'https://domain.com/api';
-  settings.privateKey = environment.development ? 'DEV_API_KEY' : 'PROD_API_KEY';
+  settings.publicKey = environment.development ? 'DEV_API_KEY' : 'PROD_API_KEY';
 }
 
 export default context;

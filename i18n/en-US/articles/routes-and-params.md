@@ -36,15 +36,18 @@ export default Application;
 
 ## Links
 
-Links on Nullstack are simple `a` tags with the `href` value starting with "/".
+Links on Nullstack are simple `a` tags with the `href` value starting with `/`.
 
 ```jsx
 <a href="/page/about"> About Page </a>
+<a path="/page/about"> About Page </a> {/* changes page keeping query params */}
 ```
 
 > 💡 On the client side the click event will push history without reloading the page.
 
 > ✨ You can still assign your own click event to the tag without losing the framework behavior.
+
+> ✨ If a link doesn't start with `/` it's considered an external link and will not use the router.
 
 ## Params
 

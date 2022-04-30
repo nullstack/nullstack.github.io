@@ -26,13 +26,13 @@ cd project-name
 Install the dependencies:
 
 ```sh
-npm install
+npm install # or yarn
 ```
 
 Start the application in development mode:
 
 ```sh
-npm start
+npm start # or yarn start
 ```
 
 ## Understanding the generated files
@@ -55,7 +55,7 @@ It is a convenient place to import global dependencies like CSS frameworks and m
 
 This folder will contain the actual source code of your application.
 
-### src/Application.njs
+### src/Application.njs (or jsx)
 
 This is your application main file.
 
@@ -64,6 +64,10 @@ This is your application main file.
 When you run `npm start` it is consumed in **server**/**client** JS files by their `Nullstack.start` function, which starts and returns both [`context`](/context), that you can use to set up things like [database](/how-to-use-mongodb-with-nullstack) using [settings](/context-settings) and [secrets](/context-secrets).
 
 >✨ Learn more about the [application startup](/application-startup).
+
+#### TypeScript
+
+You can use Nullstack with TypeScript, just rename `njs` to `nts` or `jsx` to `tsx`.
 
 ### src/Application.scss
 
@@ -123,4 +127,4 @@ If this happens to you, our recommendations are:
 
 ## Next step
 
-⚔ Create your first [renderable component](/renderable-components).
+⚔ Learn about [Nullstack JSX](/nullstack-jsx).

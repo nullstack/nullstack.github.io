@@ -111,7 +111,7 @@ class Form extends Nullstack {
   name = '';
 
   compare({value}) {
-    this.name === value;
+    this.name === value; // true
   }
  
   render() {
@@ -280,6 +280,4 @@ export default Form;
 
 ## Next step
 
-> 🎉 **Congratulations!**. You are done with the core concepts!
-
-⚔ Learn about the [application startup](/application-startup).
+⚔ Learn about [TypeScript](/typescript).

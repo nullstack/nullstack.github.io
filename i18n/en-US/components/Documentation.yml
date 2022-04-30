@@ -3,6 +3,8 @@ topics:
     links:
       - title: "Getting started"
         href: "/getting-started"
+      - title: "Nullstack JSX"
+        href: "/nullstack-jsx"
       - title: "Renderable components"
         href: "/renderable-components"
       - title: "Stateful components"
@@ -17,6 +19,8 @@ topics:
         href: "/routes-and-params"
       - title: "Two-way bindings"
         href: "/two-way-bindings"
+      - title: "TypeScript"
+        href: "/typescript"
   - title: "Advanced concepts"
     links:
       - title: "Application Startup"
