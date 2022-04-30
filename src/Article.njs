@@ -1,5 +1,5 @@
 import { existsSync, readFileSync } from 'fs';
-import Nullstack from 'nullstack';
+import Translatable from './Translatable';
 import prismjs from 'prismjs';
 import { Remarkable } from 'remarkable';
 import meta from 'remarkable-meta';
@@ -7,7 +7,7 @@ import YAML from 'yaml';
 import Arrow from '../icons/Arrow';
 import './Article.scss';
 
-class Article extends Nullstack {
+class Article extends Translatable {
 
   title = '';
   html = '';
@@ -58,7 +58,8 @@ class Article extends Nullstack {
     return YAML.parse(file);
   }
 
-  async initiate({ locale, params }) {
+  async initiate({ page, locale, params }) {
+    super.initiate({ page, locale })
     const article = await this.getArticleByKey({ key: params.slug, locale });
     Object.assign(this, article);
     const { topics } = await this.getArticlesList({ locale });
@@ -92,6 +93,7 @@ class Article extends Nullstack {
   }
 
   render() {
+    if (!this.html) return false
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex flex-wrap sm:flex-nowrap py-12 sm:py-24">
         <button
@@ -105,6 +107,9 @@ class Article extends Nullstack {
         <article class="w-full md:w-9/12 pb-24">
           <h1 class="text-pink-600 text-4xl font-light block mb-8"> {this.title} </h1>
           <div html={this.html} class="prose dark:prose-dark max-w-none" />
+          <p class="bg-gray-100 p-2 mt-4">
+            {this.i18n.lead} <a href="/" target="_blank" class="text-pink-600 font-semibold">{this.i18n.cta}</a>
+          </p>
         </article>
       </section>
     )
