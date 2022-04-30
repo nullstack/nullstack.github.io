@@ -5,6 +5,8 @@ topics:
         href: "/what-is-nullstack"
       - title: "Getting started"
         href: "/getting-started"
+      - title: "Nullstack JSX"
+        href: "/nullstack-jsx"
       - title: "Renderable components"
         href: "/renderable-components"
       - title: "Stateful components"
@@ -21,6 +23,8 @@ topics:
         href: "/two-way-bindings"
       - title: "Underscored Properties"
         href: "/underscored-properties"
+      - title: "TypeScript"
+        href: "/typescript"
   - title: "Advanced concepts"
     links:
       - title: "Application Startup"
