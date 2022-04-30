@@ -22,4 +22,4 @@ export default Header;
 
 ## Next step
 
-⚔ Learn about the [NJS file extension](/njs-file-extension).
+⚔ Learn more about the [service worker](/service-worker).

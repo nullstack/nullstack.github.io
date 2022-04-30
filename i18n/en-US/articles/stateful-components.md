@@ -3,6 +3,8 @@ title: Stateful Components
 description: A productive full-stack web framework should not force you to think about framework details
 ---
 
+Stateful components are classes that extend nullstack and are able to hold state that reflects in the ui.
+
 A productive full-stack web framework should not force you to think about framework details.
 
 Nullstack takes control of its subclasses and generates a proxy for each instance.
@@ -101,17 +103,25 @@ export default Paginator;
 
 ## Event Context
 
-Attributes of the event target will be merged to the instance context and can be destructured in the function signature.
+The context of the event is a spread of the Nullstack client context, the component context, and the props of the element that generated the event
 
-```jsx
-import Nullstack from 'nullstack';
+```tsx
+import Nullstack, { NullstackClientContext } from 'nullstack';
 
-class Counter extends Nullstack {
+interface CounterProps extends NullstackClientContext {
+  multiplier: number 
+}
+
+interface CounterIncrementProps extends CounterProps {
+  delta: number
+}
+
+class Counter extends Nullstack<CounterProps> {
 
   count = 0;
 
-  increment({delta}) {
-    this.count += delta;
+  increment({ delta, multiplier }: CounterIncrementProps) {
+    this.count += delta * multiplier;
   }
   
   render() {
@@ -144,7 +154,7 @@ import Nullstack from 'nullstack';
 
 class Form extends Nullstack {
 
-  submit({event}) {
+  submit({ event }) {
     event.preventDefault();
   }
   
@@ -160,6 +170,95 @@ class Form extends Nullstack {
 
 export default Form;
 ```
+
+## TypeScript 
+
+Stateful Components accept a generic that reflect in the props that its tag will accept
+
+```tsx
+// src/Counter.tsx
+import Nullstack, { NullstackClientContext } from 'nullstack';
+
+interface CounterProps extends NullstackClientContext {
+  multiplier: number 
+}
+
+class Counter extends Nullstack<CounterProps> {
+
+  // ...
+  
+  render({ multiplier }: CounterProps) {
+    return <div> {multiplier} </div>
+  }
+
+}
+
+export default Counter;
+```
+
+```tsx
+// src/Application.tsx
+import Counter from './Counter'
+
+export default function Application() {
+  return <Counter multiplier={4} />
+}
+```
+
+## Inner components
+
+Instead of creating a new component just to organize code-splitting, you can create an inner component.
+
+Inner components are any method that the name starts with `render` followed by an uppercase character.
+
+Inner components share the same instance and scope as the main component, therefore, are very convenient to avoid problems like props drilling.
+
+To invoke the inner component use a JSX tag with the method name without the `render` prefix.
+
+```tsx
+import Nullstack, { NullstackClientContext } from 'nullstack';
+
+interface CounterProps extends NullstackClientContext {
+  multiplier: number 
+}
+
+interface CounterIncrementProps extends CounterProps {
+  delta: number
+}
+
+declare function Button(): typeof Counter.prototype.renderButton
+
+class Counter extends Nullstack<CounterProps> {
+
+  count = 0;
+
+  increment({ delta, multiplier }: CounterIncrementProps) {
+    this.count += delta * multiplier;
+  }
+
+  renderButton({ delta = 1 }) {
+    return (
+      <button onclick={this.increment} delta={delta}> 
+        {this.count}
+      </button>
+    )
+  }
+  
+  render() {
+    return (
+      <div>
+        <Button />
+        <Button delta={2} />
+      </div>
+    )
+  }
+
+}
+
+export default Counter;
+```
+
+> 💡 Nullstack will inject a constant reference to the function at transpile time in order to completely skip the runtime lookup process!
 
 ## Next steps
 

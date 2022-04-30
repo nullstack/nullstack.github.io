@@ -9,6 +9,24 @@ Nullstack supports TypeScript. All you have to do is rename your file from `njs 
 
 > ✨ TypeScript is completely optional and you can use pure JavaScript if you prefer.
 
+You can read the full list of types in our [GitHub Repo](https://github.com/nullstack/nullstack/tree/master/types)
+
+The two most often types used are `NullstackClientContext` and `NullstackServerContext`
+
+```jsx
+import Nullstack, {NullstackClientContext, NullstackServerContext} from 'nullstack'
+
+class TypeScript extends Nullstack {
+
+    // ...
+    async serverFunction(context: NullstackServerContext) {}
+
+    async clientFunction(context: NuNullstackClientContextls) {}
+    // ...
+
+}
+```
+
 ## Next step
 
 > 🎉 **Congratulations!**. You are done with the core concepts!

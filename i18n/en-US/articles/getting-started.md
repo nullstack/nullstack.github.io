@@ -129,4 +129,4 @@ If this happens to you, our recommendations are:
 
 ## Next step
 
-⚔ Learn about [Nullstack JSX](/nullstack-jsx).
+⚔ Create your first [Stateless Component](/stateless-components).

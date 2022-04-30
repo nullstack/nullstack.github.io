@@ -12,6 +12,12 @@ class Article extends Translatable {
   title = '';
   html = '';
 
+  prepare({ router }) {
+    if (router.path === '/renderable-components' || router.path === '/functional-components') {
+      router.path = '/stateless-components'
+    }
+  }
+
   static async getArticleByKey({ locale, key }) {
     await import('prismjs/components/prism-jsx.min');
     let path = `i18n/${locale}/articles/${key}.md`;

@@ -77,6 +77,24 @@ You can update the component with things that doesn't require data fetching oper
 
 > ✨ Use this lifecycle to setup Meta tags.
 
+```jsx
+import Nullstack from 'nullstack';
+
+class Component extends Nullstack {
+
+  // ...
+
+  launch({ page }) {
+    page.title = 'Very good title that considers SEO'
+  }
+
+  // ...
+
+}
+
+export default Component;
+```
+
 ## Hydrate
 
 This method is async and will only run in the client.

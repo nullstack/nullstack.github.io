@@ -70,6 +70,4 @@ export default Application;
 
 ## Next step
 
-> 🎉 **Congratulations!** You are done with the core concepts!
-
-⚔ Learn about [TypeScript](/typescript).
+⚔ Learn about the [NJS file extension](/njs-file-extension).
