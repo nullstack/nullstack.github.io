@@ -7,6 +7,8 @@ description: Nullstack supports TypeScript, you can use by simply adding the ext
 
 Nullstack supports TypeScript. All you have to do is rename your file from `njs -> nts` or `jsx -> tsx`.
 
+> ✨ TypeScript is completely optional and you can use pure JavaScript if you prefer.
+
 ## Next step
 
 > 🎉 **Congratulations!**. You are done with the core concepts!
