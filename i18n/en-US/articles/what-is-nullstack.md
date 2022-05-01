@@ -5,7 +5,7 @@ description: Nullstack is an isomorphic JavaScript framework that allows develop
 
 Nullstack is an isomorphic JavaScript framework that allows developers to build Full Stack applications while staying focused on the product features, and solving the user problems, rather than spending a significant amount of their time worrying about layers of abstraction and choosing which tools make them look fancy.
 
-Nullstack can be used to build a variety of projects, such as Blockchain, web applications (SSR, SPA, SSG), Google Chrome extensions, Hybrid Native applications, Electron applications, and anything else you can do with JavaScript at the same time with a single codebase.
+Nullstack can be used to build a variety of projects, such as Blockchain dapps, web applications (SSR, SPA, SSG), Google Chrome extensions, Hybrid Native applications, Electron applications, and anything else you can do with JavaScript at the same time with a single codebase.
 
 ## Feature Driven
 
