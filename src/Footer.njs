@@ -14,7 +14,7 @@ class Footer extends Translatable {
         title={title}
         target="_blank"
         rel="noopener"
-        class="text-pink-600 hover:text-white inline-block"
+        class="text-pink-600 hover:text-white inline-block h-12 w-12 flex items-center justify-center"
       >
         <Icon size={45} />
       </a>

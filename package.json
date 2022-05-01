@@ -17,11 +17,13 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.0",
+    "glob": "^8.0.1",
     "nullsheet": "~0.2.0",
     "nullstack-google-analytics": "^1.0.0",
     "poisonicon": "^0.1.1",
     "postcss-cli": "^8.3.1",
     "prismjs": "^1.22.0",
+    "purgecss-webpack-plugin": "^4.1.3",
     "remarkable": "^2.0.1",
     "remarkable-meta": "^1.0.1",
     "yaml": "^1.10.0"
