@@ -63,7 +63,7 @@ class Page extends Nullstack {
 export default Page;
 ```
 
-> 💡 Components that get optimized into [functional components](/renderable-components) have no access to `self`.
+> 💡 [Stateless components](/stateless-components) have no access to `self`.
 
 ## Instance Key
 

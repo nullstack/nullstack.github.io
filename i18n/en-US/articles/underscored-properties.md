@@ -70,6 +70,4 @@ export default Application;
 
 ## Next step
 
-> 🎉 **Congratulations!** You are done with the core concepts!
-
-⚔ Learn about the [application startup](/application-startup).
+⚔ Learn about the [jsx elements](/jsx-elements).

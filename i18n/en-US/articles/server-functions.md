@@ -167,7 +167,7 @@ export default Component;
 
 > 💡 Server functions are not exposed to the client.
 
-> ✨ Learn more about the [NJS file extension](/njs-file-extension).
+> ✨ Learn more about the [jsx elements](/jsx-elements).
 
 ## Reserved words
 
@@ -177,6 +177,7 @@ The following words cannot be used in server functions:
 
 - `prepare`
 - `initiate`
+- `launch`
 - `hydrate`
 - `update`
 - `terminate`

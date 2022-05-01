@@ -1,7 +1,9 @@
 ---
-title: NJS File Extension
+title: Transpilation and Security
 description: Nullstack JavaScript files let Webpack know which loaders to use at transpile time
 ---
+
+# Transpilation
 
 Nullstack JavaScript files let [Webpack](https://webpack.js.org) know which loaders to use at transpile time.
 
@@ -10,6 +12,8 @@ NJS files must import Nullstack or one of its subclasses.
 If only a subclass is imported, a Nullstack import will be injected at transpile time.
 
 At transpile time JSX tags will be replaced with `Nullstack.element`.
+
+# Security
 
 This extension also allows Nullstack to make free transpile time optimizations like source injection.
 
@@ -114,4 +118,4 @@ For the sake of convenience, you can also use `.jsx`, `.nts` and `.tsx` file ext
 
 ## Next step
 
-⚔ Learn more about the [service worker](/service-worker).
+⚔ Learn about the [application startup](/application-startup).

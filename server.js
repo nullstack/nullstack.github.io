@@ -16,8 +16,6 @@ worker.preload = [
   '/arrow.webp',
   '/stars.webp',
   '/footer.webp',
-  '/documentation',
-  '/components',
   '/contributors',
   '/roboto-v20-latin-300.woff2',
   '/roboto-v20-latin-500.woff2',

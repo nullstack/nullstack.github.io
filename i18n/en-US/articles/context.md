@@ -104,7 +104,7 @@ This one contains the attributes you declare in your tag, and including:
 
 - [`data`](/context-data)
 - [`self`](/instance-self)
-- [`children`](/renderable-components#components-with-children)
+- [`children`](/jsx-elements#components-with-children)
 
 If the attribute is declared in a component tag every function of that component will have access to that attribute in its context.
 

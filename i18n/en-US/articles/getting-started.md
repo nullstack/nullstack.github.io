@@ -17,7 +17,7 @@ Replace `project-name` with your project name and run the command below to start
 npx create-nullstack-app@latest project-name
 ```
 
-> 💡 If you want to start with a template using .tsx files, add `--ts` or `--typescript` to the end of command
+> 💡 If you want to start with a template using .tsx files, add `-ts` or `--typescript` to the end of command
 
 Change directory to the generated folder:
 
@@ -28,13 +28,13 @@ cd project-name
 Install the dependencies:
 
 ```sh
-npm install
+npm install # or yarn
 ```
 
 Start the application in development mode:
 
 ```sh
-npm start
+npm start # or yarn start
 ```
 
 ## Understanding the generated files
@@ -61,11 +61,15 @@ This folder will contain the actual source code of your application.
 
 This is your application main file.
 
->✨ Learn more about the [njs file extension](/njs-file-extension "Nullstack JavaScript").
+>✨ Learn more about the [jsx elements](/jsx-elements "Nullstack JavaScript").
 
 When you run `npm start` it is consumed in **server**/**client** JS files by their `Nullstack.start` function, which starts and returns both [`context`](/context), that you can use to set up things like [database](/how-to-use-mongodb-with-nullstack) using [settings](/context-settings) and [secrets](/context-secrets).
 
 >✨ Learn more about the [application startup](/application-startup).
+
+#### TypeScript
+
+You can use Nullstack with TypeScript, just rename `njs` to `nts` or `jsx` to `tsx`.
 
 ### src/Application.css
 
@@ -125,4 +129,4 @@ If this happens to you, our recommendations are:
 
 ## Next step
 
-⚔ Create your first [renderable component](/renderable-components).
+⚔ Create your first [Stateless Component](/stateless-components).

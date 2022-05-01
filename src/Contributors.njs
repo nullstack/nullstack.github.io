@@ -52,7 +52,7 @@ class Contributors extends Translatable {
     )
   }
 
-  renderCoreContributor({ github, name, role, description, contribution, work }) {
+  renderMainContributor({ github, name, role, description, contribution, work }) {
     return (
       <div class="border border-gray-100 dark:border-gray-800 p-2 mt-2 flex flex-wrap">
         <img src={`https://github.com/${github}.png`} alt={name} width="128" height="128" class="w-32 h-32 mb-2 sm:mb-0" />
@@ -62,7 +62,7 @@ class Contributors extends Translatable {
           </h3>
           <h4 html={role} />
           <p> {description} </p>
-          <p> {contribution} </p>
+          <p html={contribution} />
           {work && <p class="font-semibold" html={work} />}
         </div>
       </div>
@@ -73,7 +73,16 @@ class Contributors extends Translatable {
     const { core } = this.i18n;
     return (
       <Topic {...core}>
-        {core.team.map((contributor) => <CoreContributor {...contributor} />)}
+        {core.team.map((contributor) => <MainContributor {...contributor} />)}
+      </Topic>
+    )
+  }
+
+  renderContentCreators() {
+    const { contentCreators } = this.i18n;
+    return (
+      <Topic {...contentCreators}>
+        {contentCreators.team.map((contributor) => <MainContributor {...contributor} />)}
       </Topic>
     )
   }
@@ -111,6 +120,7 @@ class Contributors extends Translatable {
         <State />
         <Roadmap />
         <CoreTeam />
+        <ContentCreators />
         <GithubContributors title={this.i18n.packages.title} key="packages" />
         <GithubContributors title={this.i18n.documentation.title} key="documentation" />
         <Instructions />

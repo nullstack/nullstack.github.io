@@ -123,4 +123,4 @@ MyProject have 49 registered users!
 
 ## Next step
 
-⚔ Learn about [functional components](/functional-components).
+⚔ Learn about [persistent components](/persistent-components).

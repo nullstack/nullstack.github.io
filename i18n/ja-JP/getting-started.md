@@ -53,7 +53,7 @@ npm start
 
 アプリケーションのメインファイルです。
 
->✨ [njsファイル拡張子]について(/njs-file-extension "Nullstack JavaScript")
+>✨ [njsファイル拡張子]について(/jsx-elements "Nullstack JavaScript")
 
 `start`を実行すると、自動的に`npm start`を実行します。それらをつかってサーバーの[コンテキスト](/context)に[データベース](/how-to-use-mongodb-with-nullstack)を入力したり、[セッティング](/context-settings)や[シークレット](/context-secrets)など使用できます。
 
