@@ -46,11 +46,23 @@ core:
       description: "Experimentalist, writer of fictional universes and dreamer that develop while listening to untitled cassette tapes."
       contribution: "User of undocumented features and creator of issues requiring documentation that he will do himself."
       work: "Fulltime open-source contributor with over 5 years of web development experience"
+    - name: "Bruno Michels"
+      role: "The Dev For Fun"
+      github: "brunolm"
+      description: "Weeb at the top of ranks on Stack Overflow, CoderWars, CodersRank. Plays games and develops things for fun."
+      contribution: "Something with types. Brainwashing the creator to add TypeScript to Nullstack."
+      work: "Wildcard Developer at <a href='https://ae.studio/join-us' class='text-pink-600' target='_blank' rel='noopener'>AE Studio</a> with over 15 years of experience doing specific things."
+
+contentCreators:
+  title: "The Content Creators"
+  paragraphs:
+    - "These people help us spread the word about Nullstack, because the core team is socially inept."
+  team:
     - name: "Alisson Suassuna"
-      role: "Polymorphic Preacher"
+      role: "TipsCode instructor"
       github: "alissonsuassuna"
-      description: "TipsCode instructor. Full-stack JavaScript developer, passionate about technology. Reader of bibles and documentations."
-      contribution: "In charge of creating content about Nullstack, classes, tips and tutorials. Focused in making Nullstack easy to use." 
+      description: "Full-stack JavaScript developer, passionate about technology. Reader of bibles and documentations."
+      contribution: "Creates <a href='https://www.youtube.com/playlist?list=PLw608KLEKJz_W3P6hRayh6fz9BL13soI1' class='text-pink-600' target='_blank' rel='noopener'>tutorials about Nullstack explaining step-by-step</a>. Focused in making Nullstack easy to use." 
       work: "Founder and instructor at  <a href='https://tipscode.com.br/' class='text-pink-600' target='_blank' rel='noopener'>TipsCode</a> with over 8 years of experience in computer science"
 
 packages:

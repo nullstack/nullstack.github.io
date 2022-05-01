@@ -116,7 +116,7 @@ class Article extends Translatable {
         <article class="w-full md:w-9/12 pb-24">
           <h1 class="text-pink-600 text-4xl font-light block mb-8"> {this.title} </h1>
           <div html={this.html} class="prose dark:prose-dark max-w-none" />
-          <p class="bg-gray-100 p-2 mt-4">
+          <p class="bg-gray-100 dark:bg-gray-800 p-2 mt-4">
             {this.i18n.lead} <a href="https://discord.gg/eDZfKz264v" target="_blank" class="text-pink-600 font-semibold">{this.i18n.cta}</a>
           </p>
         </article>

@@ -46,11 +46,23 @@ core:
       description: "Experimentalista, escritor de universos fictícios e sonhador que desenvolve enquanto toca fitas K7 sem título."
       contribution: "Usuário de features não documentadas e criador de issues exigindo documentação que ele mesmo vai fazer."
       work: "Contribuidor open-source em tempo integral com mais de 5 anos de experiência em desenvolviento web"
+    - name: "Bruno Michels"
+      role: "O Dev Por Diversão"
+      github: "brunolm"
+      description: "Weeb que está no topo dos ranks do Stack Overflow, CoderWars, CodersRank. Joga jogos e desenvolve coisas por diversão."
+      contribution: "Algo com tipos. Lavagem cerebral no criador para adicionar TypeScript no Nullstack."
+      work: "Wildcard Developer at <a href='https://ae.studio/join-us' class='text-pink-600' target='_blank' rel='noopener'>AE Studio</a> com mais de 15 anos de experiência fazendo coisas especificas."
+
+contentCreators:
+  title: "Os Criadores de Conteúdo"
+  paragraphs:
+    - "These people help us spread the word about Nullstack, because the core team is socially inept."
+  team:
     - name: "Alisson Suassuna"
-      role: "Pregador Polimórfico"
+      role: "Instrutor da TipsCode"
       github: "alissonsuassuna"
-      description: "Instrutor da TipsCode. Desenvolvedor Full-stack JavaScript, apaixonado por tecnologia. Leitor de biblias e documentações."
-      contribution: "Encarregado da criação de conteúdo sobre o Nullstack, aulas, dicas e tutoriais. Com objetivo de tornar o Nullstack fácil de usar."
+      description: "Desenvolvedor Full-stack JavaScript, apaixonado por tecnologia. Leitor de biblias e documentações."
+      contribution: "Criando <a href='https://www.youtube.com/playlist?list=PLw608KLEKJz_W3P6hRayh6fz9BL13soI1' class='text-pink-600' target='_blank' rel='noopener'>tutoriais passo-a-passo sobre Nullstack</a>. Com objetivo de tornar o Nullstack fácil de usar."
       work: "Fundador e instrutor na <a href='https://tipscode.com.br/' class='text-pink-600' target='_blank' rel='noopener'>TipsCode</a> com ais de 8 anos de experiência em ciências da computação"
 
 packages:
