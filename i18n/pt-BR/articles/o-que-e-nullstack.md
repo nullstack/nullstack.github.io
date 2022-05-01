@@ -5,7 +5,7 @@ description: Nullstack é um framework isomórfico JavaScript que permite aos de
 
 Nullstack é um framework isomórfico JavaScript que permite aos desenvolvedores construir aplicações Full Stack enquanto se concentram nos recursos do produto e resolvem os problemas do usuário, em vez de gastar uma quantidade significativa de tempo se preocupando com camadas de abstração e escolhendo quais ferramentas os fazem parecer sofisticados.
 
-O Nullstack pode ser usado para construir uma variedade de projetos, como Blockchain, aplicações da web (SSR, SPA, SSG), extensões do Google Chrome, aplicativos nativos híbridos, aplicativos Electron e qualquer outra coisa que você possa fazer com JavaScript ao mesmo tempo com uma única base de código.
+O Nullstack pode ser usado para construir uma variedade de projetos, como Blockchain dapps, aplicações da web (SSR, SPA, SSG), extensões do Google Chrome, aplicativos nativos híbridos, aplicativos Electron e qualquer outra coisa que você possa fazer com JavaScript ao mesmo tempo com uma única base de código.
 
 ## Orientado a recursos
 
