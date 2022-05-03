@@ -146,8 +146,6 @@ export default Application;
 
 Keep in mind that every server function is similar to an Express route in API and must be coded without depending on view logic for security.
 
-> 🔒 Server functions with the name starting with "start" (and optionally followed by an uppercase letter) do not generate an API endpoint to avoid malicious context flooding.
-
 ```jsx
 import Nullstack from 'nullstack';
 
@@ -156,6 +154,29 @@ class Component extends Nullstack {
   static async getCount({request, count}) {
     if(!request.session.user) return 0;
     return count;
+  }
+
+  // ...
+
+}
+
+export default Component;
+```
+
+Server functions with the name starting with "_" do not generate an API endpoint and do not have access to the context by default to avoid malicious API calls.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Component extends Nullstack {
+
+  static async _getCount({ request }) {
+    return request.count;
+  }
+
+  static async getDoubleCount({ request }) {
+    if(!request.session.user) return 0;
+    return this._getCount({ request }) * this._getCount({ request });
   }
 
   // ...
@@ -183,6 +204,42 @@ The following words cannot be used in server functions:
 - `terminate`
 
 Server functions named `start` will not generate an API endpoint and can only be called by other server functions.
+
+## Performance Considerations
+
+Server functions are just API endpoints in the end of the day. Be mindful of this when making function calls, and try to keep the payload as small as possible.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Component extends Nullstack {
+
+  // ✅ do this 
+  static async getUserProfileById({ id }) {
+    // ...
+  }
+
+  async hydrate() {
+    this.profile = await this.getUserProfileById({id: this.user.id})
+  }
+
+  // 🚫 do not do this 
+  static async getUserProfile({ user }) {
+    const id = user.id
+    // ...
+  }
+
+  async hydrate() {
+    this.profile = await this.getUserProfile({user: this.user})
+  }
+
+  // ...
+
+}
+
+export default Component;
+```
+
 
 ## Caveats
 
