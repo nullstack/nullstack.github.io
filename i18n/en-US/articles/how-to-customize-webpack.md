@@ -59,4 +59,6 @@ module.exports = applyCadencePlugin([server, client])
 
 ## Next step
 
-⚔ Learn [how to deploy a Nullstack application](/how-to-deploy-a-nullstack-application).
+> 🎉 **Congratulations!**. You are done with the advanced concepts!
+
+⚔ Learn about [server-side rendering](/server-side-rendering).
