@@ -3,6 +3,12 @@ title: Como fazer deploy de uma aplicação Nullstack no GitHub Pages
 description: Você pode colocar uma aplicação Nullstack em qualquer lugar. Faça deploy da sua applicação no Vercel, Heroku, AWS, Azure, GitHub pages, ou em qualquer outro lugar.
 ---
 
+Altere seu script build no `package.json` para incluir `--mode=ssg`:
+
+```json
+"build": "npx nullstack build --mode=ssg",
+```
+
 No seu repositório em `/settings/pages` você pode:
 
 - configurar em qual branch você vai servir arquivos estáticos
