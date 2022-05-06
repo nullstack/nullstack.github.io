@@ -101,6 +101,4 @@ export default Application;
 
 ## Próximo Passo
 
-> 🎉 **Parabéns**. Você concluiu a documentação!
-
-⚔ Se você deseja ver mais exemplos aqui, [abra uma issue no github](https://github.com/nullstack/nullstack/issues).
+⚔ Aprenda [como fazer deploy com Nullstack](/pt-br/como-fazer-deploy).

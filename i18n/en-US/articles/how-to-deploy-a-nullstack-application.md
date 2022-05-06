@@ -35,6 +35,4 @@ After you [generate a static site](/static-site-generation), all you have to do 
 
 ## Next step
 
-> 🎉 **Congratulations!**. You are done with the advanced concepts!
-
-⚔ Learn about [server-side rendering](/server-side-rendering).
+⚔ Learn [how to deploy a nullstack application with vercel](/how-to-deploy-to-vercel).
