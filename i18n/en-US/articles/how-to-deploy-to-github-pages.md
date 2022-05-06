@@ -3,6 +3,12 @@ title: How to Deploy a Nullstack application on GitHub Pages
 description: You can host a Nullstack application anywhere. Deploy it on Vercel, Heroku, AWS, Azure, GitHub pages, or anywhere else.
 ---
 
+Change your build script in `package.json` to build with `--mode=ssg`:
+
+```json
+"build": "npx nullstack build --mode=ssg",
+```
+
 In your repo under `/settings/pages` you can:
 
 - configure which `branch` will be serving the static files
