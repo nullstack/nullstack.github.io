@@ -1,47 +1,7 @@
 ---
-title: How to Deploy
+title: How to Deploy a Nullstack application on GitHub Pages
 description: You can host a Nullstack application anywhere. Deploy it on Vercel, Heroku, AWS, Azure, GitHub pages, or anywhere else.
 ---
-
-Here you'll find ways to deploy an application built with Nullstack to any platform.
-
-## Deploying a Nullstack application to Vercel
-
-### SSR
-
-Create `api/nullstack.js` to export the production application server.
-
-```js
-import application from '../.production/server'
-
-export default application.server;
-```
-
-Add the following `vercel.json` to the root folder in order to redirect all requests to nullstack:
-
-```json
-{
-  "version": 2,
-  "functions": {
-    "api/nullstack.js": {
-      "includeFiles": ".production/**"
-    }
-  },
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "(.*)",
-      "dest": "api/nullstack.js"
-    }
-  ]
-}
-```
-
-## Deploying a Nullstack application to GitHub pages
-
-### SSG
 
 In your repo under `/settings/pages` you can:
 
@@ -103,40 +63,6 @@ jobs:
 
 This action will build your application in SSG mode and generate a folder with the static website, the last command will deploy the static folder to your `master` branch allowing static content to be served from the root.
 
-## Deploying a Nullstack application to Heroku
-
-### SSR
-
-Use the Buildpack `heroku/nodejs`.
-
-Create a `Procfile` in the application root with the following:
-
-```
-web: node .production/server.js
-```
-
-## Deploying a Nullstack application to AWS
-
-### SSR
-
-Run the `build` script and serve your application with:
-
-```
-node .production/server.js
-```
-
-## Deploying a Nullstack application to Azure
-
-### SSR
-
-Run the `build` script and serve your application with:
-
-```
-node .production/server.js
-```
-
 ## Next step
 
-> 🎉 **Congratulations!** You are done with the documentation!
-
-⚔ If you want to see this more examples please [open an issue on github](https://github.com/nullstack/nullstack/issues).
+⚔ Learn [how to deploy a nullstack application with Heroku](/how-to-deploy-to-heroku).

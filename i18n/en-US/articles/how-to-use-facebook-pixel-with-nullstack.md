@@ -101,4 +101,4 @@ export default Application;
 
 ## Next step
 
-⚔ Learn [how to Deploy with Nullstack](/how-to-deploy).
+⚔ Learn [how to deploy a Nullstack application](/how-to-deploy-a-nullstack-application).

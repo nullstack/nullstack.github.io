@@ -1,47 +1,7 @@
 ---
-title: Como fazer deploy
+title: Como fazer deploy de uma aplicação Nullstack no GitHub Pages
 description: Você pode colocar uma aplicação Nullstack em qualquer lugar. Faça deploy da sua applicação no Vercel, Heroku, AWS, Azure, GitHub pages, ou em qualquer outro lugar.
 ---
-
-Aqui você vai encontrar maneiras de fazer deploy da sua aplicação com Nullstack para qualquer plataforma.
-
-## Fazendo deploy de uma aplicação Nullstack no Vercel
-
-### SSR
-
-Crie o arquivo `api/nullstack.js` para exportar o servidor de produção.
-
-```js
-import application from '../.production/server'
-
-export default application.server;
-```
-
-Adicione a seguinte configuração no `vercel.json` na raiz da sua aplicação para redirecionar todos requests do nullstack:
-
-```json
-{
-  "version": 2,
-  "functions": {
-    "api/nullstack.js": {
-      "includeFiles": ".production/**"
-    }
-  },
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "(.*)",
-      "dest": "api/nullstack.js"
-    }
-  ]
-}
-```
-
-## Fazendo deploy de uma aplicação Nullstack no GitHub pages
-
-### SSG
 
 No seu repositório em `/settings/pages` você pode:
 
@@ -103,40 +63,6 @@ jobs:
 
 Esta ação irá construir sua aplicaçção em modo SSG e irá gerar a pasta contendo seu site estatico, o ultimo comando vai pegar a pasta estática e jogar no branch `master` permitindo o GitHub servir o conteúdo estático diretamente da pasta raíz.
 
-## Fazendo deploy de uma aplicação Nullstack no Heroku
-
-### SSR
-
-Use o Buildpack `heroku/nodejs`.
-
-Crie um arquivo `Procfile` na raíz da aplicação com o seguinte:
-
-```
-web: node .production/server.js
-```
-
-## Fazendo deploy de uma aplicação Nullstack no AWS
-
-### SSR
-
-Rode o comando `build` e rode um servidor node com:
-
-```
-node .production/server.js
-```
-
-## Fazendo deploy de uma aplicação Nullstack no Azure
-
-### SSR
-
-Rode o comando `build` e rode um servidor node com:
-
-```
-node .production/server.js
-```
-
 ## Próximo Passo
 
-> 🎉 **Parabéns**. Você concluiu a documentação!
-
-⚔ Se você deseja ver mais exemplos aqui, [abra uma issue no github](https://github.com/nullstack/nullstack/issues).
+⚔ Aprenda [Como fazer o deploy de uma aplicação Nullstack no Heroku](/pt-br/como-fazer-deploy-heroku).

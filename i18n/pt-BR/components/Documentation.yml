@@ -59,8 +59,6 @@ topics:
         href: "/pt-br/service-worker"
       - title: "Como customizar o Webpack"
         href: "/pt-br/como-customizar-webpack"
-      - title: "Como fazer deploy"
-        href: "/pt-br/como-fazer-deploy-de-aplicacao-nullstack"
   - title: "Modos de Construção"
     links:
       - title: "Renderizando no servidor"
@@ -77,5 +75,13 @@ topics:
         href: "/pt-br/como-usar-google-analytics-no-nullstack"
       - title: "Como usar Facebook Pixel"
         href: "/pt-br/como-usar-facebook-pixel-no-nullstack"
+  - title: "Deploy"
+    links:
       - title: "Como fazer deploy"
-        href: "/pt-br/como-fazer-deploy"
+        href: "/pt-br/como-fazer-deploy-de-aplicacao-nullstack"
+      - title: "Como fazer deploy no Vercel"
+        href: "/pt-br/como-fazer-deploy-vercel"
+      - title: "Como fazer deploy no GitHub Pages"
+        href: "/pt-br/como-fazer-deploy-github-pages"
+      - title: "Como fazer deploy no Heroku"
+        href: "/pt-br/como-fazer-deploy-heroku"
