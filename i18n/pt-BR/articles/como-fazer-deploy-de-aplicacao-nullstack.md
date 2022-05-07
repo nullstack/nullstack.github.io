@@ -35,6 +35,4 @@ Depois de [gerar um site estático](/pt-br/geracao-de-sites-estaticos), tudo o q
 
 ## Próxima Etapa
 
-> 🎉 **Parabéns**. Você concluiu os conceitos avançados!
-
-⚔ Aprenda sobre [renderização do lado do servidor](/pt-br/renderizando-no-servidor).
+⚔ Aprenda [Como fazer o deploy de uma aplicação Nullstack no Vercel](/pt-br/como-fazer-deploy-vercel).
