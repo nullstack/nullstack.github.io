@@ -1,7 +1,7 @@
 title: "Documentação"
-description: "Siga esses passos e se torne um desenvolvedor full-stack javascript!"
+description: "Siga esses passos e se torne um desenvolvedor full stack javascript!"
 heading: "Documentação do Nullstack"
-tagline: "Siga esses passos e se torne um desenvolvedor full-stack javascript!"
+tagline: "Siga esses passos e se torne um desenvolvedor full stack javascript!"
 topics:
   - title: "Principais conceitos"
     links:
@@ -13,7 +13,7 @@ topics:
         href: "/pt-br/componentes-renderizaveis"
       - title: "Componentes com estado"
         href: "/pt-br/componentes-com-estado"
-      - title: "Ciclo de vida full-stack"
+      - title: "Ciclo de vida full stack"
         href: "/pt-br/ciclo-de-vida-full-stack"
       - title: "Funções de servidor"
         href: "/pt-br/funcoes-de-servidor"

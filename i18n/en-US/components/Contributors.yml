@@ -13,7 +13,7 @@ roadmap:
 core:
   title: "The Core Team"
   paragraphs:
-    - "Nullstack was developed by full-stack neuro-atypical ex-freelancers."
+    - "Nullstack was developed by full stack neuro-atypical ex-freelancers."
     - "With a heavy background in Rails, Ember.js, React.js and the Vue.js philosophy the inspirations took from those projects might be obvious."
   team:
     - name: "Christian Mortaro"
@@ -27,7 +27,7 @@ core:
       github: "AnnyFigueira"
       description: "Rubber duck with a neck to find inconsistencies and problems, waiting till an API is approved to force us into rewriting everything."
       contribution: "An early adopter of the framework that developed real production applications to validate how the parts fit together."
-      work: "Fullstack developer at <a href='https://ae.studio/join-us' class='text-pink-600' target='_blank' rel='noopener'>AE Studio</a> with over 12 years of experience in web development"
+      work: "Full stack developer at <a href='https://ae.studio/join-us' class='text-pink-600' target='_blank' rel='noopener'>AE Studio</a> with over 12 years of experience in web development"
     - name: "Dayson Marx" 
       role: "Distracted Designer" 
       github: "daysonmarx"
@@ -61,7 +61,7 @@ contentCreators:
     - name: "Alisson Suassuna"
       role: "TipsCode instructor"
       github: "alissonsuassuna"
-      description: "Full-stack JavaScript developer, passionate about technology. Reader of bibles and documentations."
+      description: "Full stack JavaScript developer, passionate about technology. Reader of bibles and documentations."
       contribution: "Creates <a href='https://www.youtube.com/playlist?list=PLw608KLEKJz_W3P6hRayh6fz9BL13soI1' class='text-pink-600' target='_blank' rel='noopener'>tutorials about Nullstack explaining step-by-step</a>. Focused in making Nullstack easy to use." 
       work: "Founder and instructor at  <a href='https://tipscode.com.br/' class='text-pink-600' target='_blank' rel='noopener'>TipsCode</a> with over 8 years of experience in computer science"
 

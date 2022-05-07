@@ -6,9 +6,8 @@ import Mode from "../icons/Mode";
 import Brasil from "../icons/Brasil";
 import Gringo from "../icons/Gringo";
 import GitHub from "../icons/GitHub";
-import YouTube from "../icons/YouTube";
-import Twitter from "../icons/Twitter";
 import Discord from "../icons/Discord";
+import Search from "../icons/Search";
 
 class Header extends Translatable {
 
@@ -35,7 +34,7 @@ class Header extends Translatable {
         title={title}
         target="_blank"
         rel="noopener"
-        class="text-gray-700 hover:text-pink-600 dark:text-pink-600 dark:hover:text-white inline-block"
+        class="text-gray-700 hover:text-pink-600 dark:text-pink-600 dark:hover:text-white flex h-10 w-10 items-center justify-center"
       >
         <Icon size={40} />
       </a>
@@ -47,6 +46,10 @@ class Header extends Translatable {
     context.mode = context.oppositeMode;
     context.oppositeMode = nextOppositeMode;
     window.localStorage.setItem('mode', context.mode);
+  }
+
+  toggleSearch({ instances }) {
+    instances.search.open()
   }
 
   render({ mode, oppositeMode, locale }) {
@@ -77,17 +80,18 @@ class Header extends Translatable {
             <Link onclick={this.toggleMode} title={this.i18n.mode[oppositeMode]} mobile />
           </nav>
           <div class={`flex w-full sm:w-auto mt-4 sm:mt-0 sm:space-x-2 items-center ${!this.expanded && "hidden sm:flex"}`}>
-            <a href={this.i18n.language.href} title={this.i18n.language.title} class="hidden sm:flex text-pink-600">
+            <button onclick={this.toggleSearch} title={this.i18n.search.title} class="hidden sm:flex text-pink-600 h-10 w-10 items-center justify-center">
+              <Search size={25} />
+            </button>
+            <a href={this.i18n.language.href} title={this.i18n.language.title} class="hidden sm:flex text-pink-600 h-10 w-10 items-center justify-center">
               {locale === 'pt-BR' && <Gringo size={30} />}
               {locale !== 'pt-BR' && <Brasil size={30} />}
             </a>
-            <button onclick={this.toggleMode} title={this.i18n.mode[oppositeMode]} class="hidden sm:flex text-pink-600 dark:text-white">
+            <button onclick={this.toggleMode} title={this.i18n.mode[oppositeMode]} class="hidden sm:flex text-pink-600 h-10 w-10 items-center justify-center">
               <Mode size={25} />
             </button>
-            <div class="space-x-0 items-center flex">
-              <SocialLink href="https://discord.gg/eDZfKz264v" title="Discord" icon={Discord} />
-              <SocialLink href="https://github.com/nullstack/nullstack" title="Github" icon={GitHub} />
-            </div>
+            <SocialLink href="https://discord.gg/eDZfKz264v" title="Discord" icon={Discord} />
+            <SocialLink href="https://github.com/nullstack/nullstack" title="Github" icon={GitHub} />
           </div>
         </div>
       </header>

@@ -13,6 +13,8 @@ links:
 action:
   title: "Começar"
   href: "/pt-br/comecando"
+search:
+  title: "Buscar"
 language: 
   title: "English"
   href: "/"
