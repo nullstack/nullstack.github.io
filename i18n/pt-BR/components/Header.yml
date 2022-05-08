@@ -10,6 +10,8 @@ links:
     href: "/pt-br/contribuidores"
   - title: "Waifu"
     href: "/pt-br/waifu"
+menu:
+  title: "Alternar Menu"
 action:
   title: "Começar"
   href: "/pt-br/comecando"
