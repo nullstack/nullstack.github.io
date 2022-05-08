@@ -31,6 +31,8 @@ topics:
         href: "/transpilation-and-security"
       - title: "Application Startup"
         href: "/application-startup"
+      - title: "Script runner"
+        href: "/script-runner"
       - title: "Persistent Components"
         href: "/persistent-components"
       - title: "Context data"
