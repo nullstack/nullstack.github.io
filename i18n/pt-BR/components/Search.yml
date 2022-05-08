@@ -1,4 +1,4 @@
 title: "Busque na documentação"
-close: "fechar"
+close: "[esc] fechar"
 empty: "Nenhum resultado encontrado para o termo"
-placeholder: "O que você está procurando?"
+placeholder: "Pressione enter para navegar para o primeiro resultado"

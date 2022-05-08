@@ -14,7 +14,7 @@ action:
   title: "Começar"
   href: "/pt-br/comecando"
 search:
-  title: "Buscar"
+  title: "Buscar [ctrl + k]"
 language: 
   title: "English"
   href: "/"
