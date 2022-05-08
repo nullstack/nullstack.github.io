@@ -13,6 +13,8 @@ links:
 action:
   title: "Get Started"
   href: "/getting-started"
+search:
+  title: "Search [ctrl + k]"
 language: 
   title: "Português"
   href: "/pt-br"

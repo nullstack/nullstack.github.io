@@ -1,8 +1,8 @@
-title: "Feature-Driven Fullstack JavaScript Components"
-description: "Nullstack is a Feature-Driven fullstack JavaScript framework that helps you build isomorphic applications and stay focused on shipping products to production"
+title: "Feature-Driven Full Stack JavaScript Components"
+description: "Nullstack is a feature-driven full stack JavaScript framework that helps you build isomorphic applications and stay focused on shipping products to production"
 hero:
   heading: "Feature-Driven"
-  subHeading: "Fullstack JavaScript Components"
+  subHeading: "Full Stack JavaScript Components"
   descriptions:
     - "Write the backend and frontend of a feature in a single
       component and let the framework decide where the code should run."
@@ -37,7 +37,7 @@ features:
     snippet: "GlueCode"
     image: "/illustrations/nulla-glue.webp"
     text:
-      "A full-stack Lifecycle combined with a feature-driven mindset allows
+      "A full stack lifecycle combined with a feature-driven mindset allows
       you to write clean and reusable code without the need to create APIs
       manually."
   - title: "Become a programmer less dependent on gimmicks"

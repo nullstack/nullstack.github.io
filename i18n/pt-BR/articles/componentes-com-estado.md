@@ -1,9 +1,9 @@
 ---
 title: Componentes com estado
-description: Um framework web full-stack produtivo não deve forçar você a pensar sobre detalhes de estrutura
+description: Um framework web full stack produtivo não deve forçar você a pensar sobre detalhes de estrutura
 ---
 
-Um framework web full-stack produtivo não deve forçar você a pensar sobre detalhes de estrutura.
+Um framework web full stack produtivo não deve forçar você a pensar sobre detalhes de estrutura.
 
 Nullstack assume o controle de suas subclasses e gera um proxy para cada instância.
 
