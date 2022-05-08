@@ -9,6 +9,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
 import Loader from './Loader';
+import Search from './Search.njs';
 import "./tailwind.css";
 import Waifu from './Waifu';
 
@@ -57,6 +58,8 @@ class Application extends Nullstack {
         <div class="dark:bg-gray-900 dark:text-white">
           <Header locale={locale} />
           <HiringBanner />
+
+          <Search locale={locale} persistent key="search" />
 
           <Home route="/" locale="en-US" persistent />
           <Home route="/pt-br" locale="pt-BR" persistent />

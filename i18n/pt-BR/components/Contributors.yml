@@ -13,7 +13,7 @@ roadmap:
 core:
   title: "A Equipe Principal"
   paragraphs:
-    - "O Nullstack foi desenvolvido por ex-freelancers full-stacks neuroatípicos."
+    - "O Nullstack foi desenvolvido por ex-freelancers full stack neuroatípicos."
     - "Com um histórico pesado em Rails, Ember.js, React.js e filosofia Vue.js as inspirações tiradas desses projetos podem ser óbvias."
   team:
     - name: "Christian Mortaro"
@@ -27,7 +27,7 @@ core:
       github: "AnnyFigueira"
       description: "Pato de borracha com um pescoço para encontrar inconsistências e problemas, esperando até que uma API seja aprovada para nos forçar a reescrever tudo."
       contribution: "Adotante antecipada do framework que desenvolveu aplicações reais em produção para validar como as partes se encaixam."
-      work: "Fullstack developer na <a href='https://ae.studio/join-us' class='text-pink-600' target='_blank' rel='noopener'>AE Studio</a> com mais de 12 anos de experiência em desenvolvimento web"
+      work: "Full stack developer na <a href='https://ae.studio/join-us' class='text-pink-600' target='_blank' rel='noopener'>AE Studio</a> com mais de 12 anos de experiência em desenvolvimento web"
     - name: "Dayson Marx"
       role: "Designer Distraído"
       github: "daysonmarx"
@@ -61,7 +61,7 @@ contentCreators:
     - name: "Alisson Suassuna"
       role: "Instrutor da TipsCode"
       github: "alissonsuassuna"
-      description: "Desenvolvedor Full-stack JavaScript, apaixonado por tecnologia. Leitor de biblias e documentações."
+      description: "Desenvolvedor full stack JavaScript, apaixonado por tecnologia. Leitor de biblias e documentações."
       contribution: "Criando <a href='https://www.youtube.com/playlist?list=PLw608KLEKJz_W3P6hRayh6fz9BL13soI1' class='text-pink-600' target='_blank' rel='noopener'>tutoriais passo-a-passo sobre Nullstack</a>. Com objetivo de tornar o Nullstack fácil de usar."
       work: "Fundador e instrutor na <a href='https://tipscode.com.br/' class='text-pink-600' target='_blank' rel='noopener'>TipsCode</a> com ais de 8 anos de experiência em ciências da computação"
 

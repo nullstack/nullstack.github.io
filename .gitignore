@@ -3,3 +3,5 @@ package-lock.json
 yarn.lock
 .development
 .production
+public/pt-BR.json
+public/en-US.json

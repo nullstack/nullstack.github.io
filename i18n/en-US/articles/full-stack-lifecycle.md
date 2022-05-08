@@ -1,5 +1,5 @@
 ---
-title: Full-Stack Lifecycle
+title: Full Stack Lifecycle
 description: Lifecycle methods are special named functions that you can declare in the class.
 ---
 

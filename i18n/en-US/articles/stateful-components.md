@@ -1,11 +1,11 @@
 ---
 title: Stateful Components
-description: A productive full-stack web framework should not force you to think about framework details
+description: A productive full stack web framework should not force you to think about framework details
 ---
 
 Stateful components are classes that extend nullstack and are able to hold state that reflects in the ui.
 
-A productive full-stack web framework should not force you to think about framework details.
+A productive full stack web framework should not force you to think about framework details.
 
 Nullstack takes control of its subclasses and generates a proxy for each instance.
 
