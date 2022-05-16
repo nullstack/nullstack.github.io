@@ -20,7 +20,7 @@ class Application extends Nullstack {
   }
 
   async terminate() {
-    window.addEventListener("resize", this._listener, false);
+    window.removeEventListener("resize", this._listener, false);
   }
 
   render() {
