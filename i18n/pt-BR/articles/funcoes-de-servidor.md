@@ -183,6 +183,56 @@ As seguintes palavras não podem ser usadas em funções de servidor:
 
 As funções de servidor chamadas `start` não irão gerar um endpoint de API e só podem ser chamadas por outras funções de servidor.
 
+## Prefixos HTTP reservados
+
+Funções de servidor declaradas com nomes começando com verbos HTTP serão executadas de acordo com o respectivo método HTTP.
+Os prefixos disponíveis são:
+
+- `get`
+- `post`
+- `put`
+- `patch`
+- `delete`
+
+```jsx
+import Nullstack from "nullstack";
+
+class HTTPVerbs extends Nullstack {
+  // isso é uma requisição GET
+  static async getUserById({ id }) {
+    // ...
+  }
+
+  // isso é uma requisição POST
+  static async postUser({ data }) {
+    // ...
+  }
+
+  // isso é uma requisição PUT
+  static async putUserById({ id, data }) {
+    // ...
+  }
+
+  // isso é uma requisição PATCH
+  static async patchUserById({ id, data }) {
+    // ...
+  }
+
+  // isso é uma requisição DELETE
+  static async deleteUserById({ id }) {
+    // ...
+  }
+
+  // ...
+}
+
+export default HTTPVerbs;
+```
+
+> 💡 Funções de servidor sem nenhum prefixo especial serão por padrão requisições POST.
+
+> 🔥 Leve em consideração a especificação de cada método HTTP. Por exemplo, requisições GET possuem um limite de 2kb de dados que podem ser passados como parâmetro, então tentar enviar um objeto inteiro para uma função de servidor pode resultar em falha.
+
 ## Ressalvas
 
 Os endpoints de API gerados automaticamente não devem ser usados por aplicativos de terceiros.
