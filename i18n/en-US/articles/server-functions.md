@@ -251,7 +251,7 @@ class HTTPVerbs extends Nullstack {
 export default HTTPVerbs;
 ```
 
-> 💡 Server functions without those special prefixes will be defaulted to a GET request.
+> 💡 Server functions without those special prefixes will be defaulted to a POST request.
 
 > 🔥 Be mindful to the specification of each HTTP method. For example, GET requests have a limit of 2kb of data that can be passed as a parameter, so attempting to send an entire object to a server function may result in failure.
 
