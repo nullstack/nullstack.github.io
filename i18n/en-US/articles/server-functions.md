@@ -205,6 +205,56 @@ The following words cannot be used in server functions:
 
 Server functions named `start` will not generate an API endpoint and can only be called by other server functions.
 
+## Reserved HTTP method prefixes
+
+Server functions declared with their names starting with HTTP verbs will be executed accordingly to the respective HTTP method.
+Supported verbs are:
+
+- `get`
+- `post`
+- `put`
+- `patch`
+- `delete`
+
+```jsx
+import Nullstack from "nullstack";
+
+class HTTPVerbs extends Nullstack {
+  // this is a GET request
+  static async getUserById({ id }) {
+    // ...
+  }
+
+  // this is a POST request
+  static async postUser({ data }) {
+    // ...
+  }
+
+  // this is a PUT request
+  static async putUserById({ id, data }) {
+    // ...
+  }
+
+  // this is a PATCH request
+  static async patchUserById({ id, data }) {
+    // ...
+  }
+
+  // this is a DELETE request
+  static async deleteUserById({ id }) {
+    // ...
+  }
+
+  // ...
+}
+
+export default HTTPVerbs;
+```
+
+> 💡 Server functions without those special prefixes will be defaulted to a GET request.
+
+> 🔥 Be mindful to the specification of each HTTP method. For example, GET requests have a limit of 2kb of data that can be passed as a parameter, so attempting to send an entire object to a server function may result in failure.
+
 ## Performance Considerations
 
 Server functions are just API endpoints in the end of the day. Be mindful of this when making function calls, and try to keep the payload as small as possible.
