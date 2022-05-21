@@ -1,5 +1,5 @@
 ---
-title: Ciclo de Vida Full-Stack
+title: Ciclo de Vida Full Stack
 description: Métodos de ciclo de vida são funções nomeadas de forma especial que você pode declarar na classe
 ---
 

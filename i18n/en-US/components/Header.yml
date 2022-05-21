@@ -10,9 +10,13 @@ links:
     href: "/contributors"
   - title: "Waifu"
     href: "/waifu"
+menu:
+  title: "Toggle Menu"
 action:
   title: "Get Started"
   href: "/getting-started"
+search:
+  title: "Search [ctrl + k]"
 language: 
   title: "Português"
   href: "/pt-br"

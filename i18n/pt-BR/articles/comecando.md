@@ -1,11 +1,11 @@
 ---
 title: Começando
-description: Crie aplicações full-stack em JavaScript em meros segundos
+description: Crie aplicações full stack em JavaScript em meros segundos
 ---
 
 > 📌 Você pode assistir um tutorial no nosso [Canal do Youtube](https://www.youtube.com/watch?v=ieLVXZGXUkI&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe).
 
-Crie aplicações JavaScript full-stack em segundos usando `npx` para gerar os arquivos do seu projeto usando o template mais recente.
+Crie aplicações JavaScript full stack em segundos usando `npx` para gerar os arquivos do seu projeto usando o template mais recente.
 
 > 🔥 A versão mínima necessária do [node.js](https://nodejs.org/pt-br/) para o modo de desenvovimento é *12.20.0*.
 

@@ -9,6 +9,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
 import Loader from './Loader';
+import Search from './Search.njs';
 import "./tailwind.css";
 import Waifu from './Waifu';
 
@@ -41,8 +42,8 @@ class Application extends Nullstack {
 
   renderHiringBanner() {
     return (
-      <div class="p-3 md:p-0">
-        <a class="bg-yellow-100 dark:bg-gray-800 py-2 flex justify-center items-center space-x-2 font-semibold flex-col md:flex-row px-6 text-center md:mt-3" href="https://ae.studio/jobs/4484720004/nullstack-developer" target="_blank">
+      <div class="px-4 md:px-0">
+        <a class="bg-yellow-100 dark:bg-gray-800 py-2 flex justify-center items-center space-x-2 font-semibold flex-col md:flex-row px-6 text-center" href="https://ae.studio/jobs/4484720004/nullstack-developer" target="_blank">
           <span class="text-gray-900 dark:text-white"> AE Studio is hiring Nullstack developers that get shit done! </span>
           <span class="text-pink-800 dark:text-pink-200"> Apply here. </span>
         </a>
@@ -57,6 +58,8 @@ class Application extends Nullstack {
         <div class="dark:bg-gray-900 dark:text-white">
           <Header locale={locale} />
           <HiringBanner />
+
+          <Search locale={locale} persistent key="search" />
 
           <Home route="/" locale="en-US" persistent />
           <Home route="/pt-br" locale="pt-BR" persistent />

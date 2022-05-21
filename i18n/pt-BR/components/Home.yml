@@ -1,7 +1,7 @@
-title: "Componentes JavaScript Fullstack Orientados a Recursos"
-description: "Nullstack é um framework JavaScript fullstack orientado a recursos que ajuda você a construir aplicações isomórficas e focar em botar produtos em produção"
+title: "Componentes JavaScript Full Stack Orientados a Recursos"
+description: "Nullstack é um framework JavaScript full stack orientado a recursos que ajuda você a construir aplicações isomórficas e focar em botar produtos em produção"
 hero:
-  heading: "Componentes JavaScript Fullstack"
+  heading: "Componentes JavaScript Full Stack"
   subHeading: "Orientados a Recursos"
   descriptions:
     - "Escreva o backend e frontend de um recurso em um único
@@ -31,7 +31,7 @@ features:
     snippet: "GlueCode"
     image: "/illustrations/nulla-glue.webp"
     text:
-      "Um ciclo de vida full-stack combinado com uma abordagem orientada a recursos permite que você escreva código limpo e reutilizável sem a necessidade de criar APIs manualmente."
+      "Um ciclo de vida full stack combinado com uma abordagem orientada a recursos permite que você escreva código limpo e reutilizável sem a necessidade de criar APIs manualmente."
   - title: "Torne-se um programador menos dependente de maneirismos"
     snippet: "Vanilla"
     image: "/illustrations/nulla-scrolls.webp"
@@ -57,7 +57,7 @@ playlist:
   slang: "Dweebs"
   realWord: " Especialistas"
   videos:
-    - title: "Full-stack com Nullstack"
+    - title: "Full Stack com Nullstack"
       link: "https://www.youtube.com/watch?v=ieLVXZGXUkI&list=PL5ylYELQy1hz1tcnZcP44xRxETpH9bTUe"
       thumbnail: "/thumbnails/pt-br-pokepoll.webp"
     - title: "Open Source no Brasil - Ajude a traduzir o Nullstack"
