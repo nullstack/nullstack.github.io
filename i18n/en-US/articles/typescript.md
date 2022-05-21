@@ -27,6 +27,57 @@ class TypeScript extends Nullstack {
 }
 ```
 
+Here's how you can add types to server functions, inline render components, extend context:
+
+```tsx
+import Nullstack, { N, NullstackClientContext, NullstackServerContext } from 'nullstack'
+
+// declare server functions
+interface MyComponent {
+  myServerFunction(): void
+}
+
+// extend Nullstack's server context
+interface SomeServerProps extends NullstackServerContext {
+  myServerProp: string
+}
+
+// extend Nullstack's client context
+interface SomeComponentProps extends NullstackClientContext {
+  myClientProp: string
+}
+
+// declare render components
+declare const SomeComponent: (props: SomeComponentProps) => N.NullstackNode
+
+class MyComponent extends Nullstack {
+  // server functions
+  static async myServerFunction({myServerProp}:SomeServerProps) {
+    console.log(myServerProp)
+  }
+
+  // client functions
+  myClientFunction() {
+    this.myServerFunction()
+  }
+
+  // render components
+  renderSomeComponent({ myClientProp: myProp }: SomeComponentProps) {
+    return <>{myProp}</>
+  }
+
+  render() {
+    return (
+      <div>
+        <SomeComponent myClientProp="hello" />
+      </div>
+    )
+  }
+}
+
+export default MyComponent
+```
+
 ## Next step
 
 > 🎉 **Congratulations!**. You are done with the core concepts!
