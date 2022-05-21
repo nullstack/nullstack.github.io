@@ -43,7 +43,7 @@ interface SomeComponentProps extends NullstackClientContext {
 }
 
 // declare render components
-declare function SomeComponent(props: SomeComponentProps): ReturnType<MyComponent.prototype.renderSomeComponent>
+declare const SomeComponent: typeof MyComponent.prototype.renderSomeComponent
 
 class MyComponent extends Nullstack {
   // server functions
