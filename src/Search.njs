@@ -47,13 +47,10 @@ class Search extends Translatable {
     this.searching = false
   }
 
-  open({ self }) {
+  open() {
     this.term = ''
     this.results = []
     this.searching = true
-    setTimeout(() => {
-      self.element.querySelector('[type="search"]').focus()
-    }, 400)
   }
 
   goToFirst({ router, event }) {
@@ -61,6 +58,10 @@ class Search extends Translatable {
       router.url = this.results[0].href
       this.close()
     }
+  }
+
+  focusSearchInput({ element }) {
+    element.focus()
   }
 
   render() {
@@ -72,7 +73,16 @@ class Search extends Translatable {
             <span> {this.i18n.title} </span>
             <button class="text-gray-400" onclick={this.close}> {this.i18n.close} </button>
           </div>
-          <input bind={this.term} oninput={this.search} onkeydown={this.goToFirst} default type="search" class="text-gray-900 dark:text-white w-full bg-gray-100 dark:bg-gray-900 p-4" placeholder={this.i18n.placeholder} />
+          <input
+            bind={this.term}
+            oninput={this.search}
+            onkeydown={this.goToFirst}
+            default
+            type="search"
+            class="text-gray-900 dark:text-white w-full bg-gray-100 dark:bg-gray-900 p-4"
+            placeholder={this.i18n.placeholder}
+            ref={this.focusSearchInput}
+          />
           {this.results.length > 0 &&
             <ul class="mt-4 space-y-4 divide-y divide-gray-200 dark:divide-gray-900">
               {this.results.map((result) => (

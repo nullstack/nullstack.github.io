@@ -13,7 +13,6 @@ import Search from './Search.njs';
 import "./tailwind.css";
 import Waifu from './Waifu';
 
-
 class Application extends Nullstack {
 
   renderPreloader() {
@@ -54,7 +53,7 @@ class Application extends Nullstack {
   render({ router, mode }) {
     const locale = router.url.startsWith('/pt-br') ? 'pt-BR' : 'en-US';
     return (
-      <main class={mode}>
+      <body class={mode}>
         <div class="dark:bg-gray-900 dark:text-white">
           <Header locale={locale} />
           <HiringBanner />
@@ -85,7 +84,7 @@ class Application extends Nullstack {
 
           <Footer locale={locale} />
         </div>
-      </main>
+      </body>
     )
   }
 

@@ -6,20 +6,21 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "nullstack": "^0.15.0",
+    "nullstack": "github:nullstack/nullstack#unstable-next",
     "postcss": "^8.2.10",
     "tailwindcss": "^2.1.1"
   },
   "scripts": {
     "start": "npx nullstack start",
     "build": "npx nullstack build --mode=ssg --output=docs",
+    "reinstall": "rm -rf .development .production package-lock.json node_modules && npm install",
+    "spa": "npx nullstack build --mode=spa && cd spa && npx http-server --port 8080 -P http://localhost:8080?",
     "tailwind": "npx tailwindcss-cli build -o src/tailwind.css"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.0",
     "glob": "^8.0.1",
-    "nullsheet": "~0.2.0",
-    "nullstack-google-analytics": "^1.0.0",
+    "nullstack-google-analytics": "github:Mortaro/nullstack-google-analytics#next",
     "poisonicon": "^0.1.1",
     "postcss-cli": "^8.3.1",
     "prismjs": "^1.22.0",
