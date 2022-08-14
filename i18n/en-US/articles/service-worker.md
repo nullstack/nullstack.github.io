@@ -208,7 +208,7 @@ class LoginPage extends Nullstack {
 
   async submit({worker}) {
     // ...
-    this.headers['Authorization'] = `Bearer ${token}`;
+    worker.headers['Authorization'] = `Bearer ${token}`;
     // ...
   }
 
