@@ -18,6 +18,7 @@ The following keys are available in the object:
 - **production**: `boolean`
 - **static**: `boolean`
 - **key**: `string`
+- **hot** `boolean`
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -43,6 +44,29 @@ export default Page;
 ```
 
 The environment *key* is an md5 hash of the current environment folder outputs. The key is appended to [assets](/styles) and [static API](/static-site-generation) path to assist cache control.
+
+The environment *hot* is boolean that identifies if hot reload is enabled and is available only in development mode.
+
+## Custom Events
+
+During development any updates to tracked files will raise a custom event you can use to facilitate development flow.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class BlogArticle extends Nullstack {
+
+  hydrate({environment}) {
+    if(!environment.hot) return
+    window.addEventListener(environment.event, this.initiate);
+  }
+
+}
+
+export default BlogArticle;
+```
+
+> 🔥 `environment.event` is only available in client functions/lifecycles.
 
 ## Next step
 

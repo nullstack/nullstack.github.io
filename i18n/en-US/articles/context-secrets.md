@@ -56,4 +56,4 @@ Any environment variable starting with NULLSTACK_SECRETS_ will be mapped to the 
 
 ## Next step
 
-⚔ Learn about the [instance self](/instance-self).
+⚔ Learn about the [server request and response](/server-request-and-response).

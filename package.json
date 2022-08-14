@@ -11,7 +11,7 @@
     "tailwindcss": "^2.1.1"
   },
   "scripts": {
-    "start": "npx nullstack start",
+    "start": "npx nullstack start --mode=spa --hot",
     "build": "npx nullstack build --mode=ssg --output=docs",
     "reinstall": "rm -rf .development .production package-lock.json node_modules && npm install",
     "spa": "npx nullstack build --mode=spa && cd spa && npx http-server --port 8080 -P http://localhost:8080?",
