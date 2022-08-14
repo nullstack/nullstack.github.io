@@ -3,7 +3,7 @@ title: Proxy
 description: Proxies are the basic mechanism that allow nullstack to implement rendering and context
 ---
 
-Proxies are the basic mechanism that allow nullstack to implement rendering and context
+Proxies are the basic mechanism that allow Nullstack to implement rendering and context
 
 ## Understanding the proxy
 
