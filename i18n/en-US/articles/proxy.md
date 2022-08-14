@@ -1,9 +1,9 @@
 ---
 title: Proxy
-description: Proxies are the basic mechanism that allow nullstack to implement rendering and context
+description: Proxies are the basic mechanism that allow Nullstack to implement rendering and context
 ---
 
-Proxies are the basic mechanism that allow nullstack to implement rendering and context
+Proxies are the basic mechanism that allow Nullstack to implement rendering and context
 
 ## Understanding the proxy
 
@@ -11,7 +11,7 @@ Nullstack has some conventions over when to proxy an object
 
 Any mutations to a proxy will trigger a rerender cycle
 
-Instances of nullstack class are always proxied
+Instances of Nullstack class are always proxied
 
 
 ```jsx
@@ -112,7 +112,7 @@ You can create a method starting with `_`, that means you're creating vanilla JS
 With that you'll be able to add or remove the event listener.
 
 ```jsx
-import Nullstack from "nullstack";
+import Nullstack from "Nullstack";
 
 class Application extends Nullstack {
   _listener() {
@@ -138,7 +138,7 @@ export default Application;
 You can also use it to ignore the context
 
 ```jsx
-import Nullstack from "nullstack";
+import Nullstack from "Nullstack";
 
 class Application extends Nullstack {
   _method(prop) {
@@ -158,7 +158,7 @@ export default Application;
 It is also useful for library integrations that do not deal well with proxies, or storing DOM elements.
 
 ```jsx
-import Nullstack from "nullstack";
+import Nullstack from "Nullstack";
 
 class Application extends Nullstack {
 

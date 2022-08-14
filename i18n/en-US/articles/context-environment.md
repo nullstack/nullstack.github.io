@@ -51,6 +51,8 @@ The environment *hot* is boolean that identifies if hot reload is enabled and is
 
 During development any updates to tracked files will raise a custom event you can use to facilitate development flow.
 
+You can use this event to improve the developer experience by creating custom side effects to changes, like reinitiating specific components that need to reload data when code changes.
+
 ```jsx
 import Nullstack from 'nullstack';
 
@@ -58,7 +60,7 @@ class BlogArticle extends Nullstack {
 
   hydrate({environment}) {
     if(!environment.hot) return
-    window.addEventListener(environment.event, this.initiate);
+    window.addEventListener(environment.event, () => this.initiate());
   }
 
 }

@@ -5,7 +5,7 @@ description: Refs are a way to control elements from the DOM as they are rendere
 
 You can pass the reference to a variable to any nodes ref and it will set the value of that variable to the DOM element when the node enters the DOM.
 
-You can pass any variable to the `bind` as long as its parent object is mentioned.
+You can pass any variable to the `ref` as long as its parent object is mentioned.
 
 ```jsx
 import Nullstack from 'nullstack';
