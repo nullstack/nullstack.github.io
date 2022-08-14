@@ -7,7 +7,8 @@ import Brasil from "../icons/Brasil";
 import Gringo from "../icons/Gringo";
 import GitHub from "../icons/GitHub";
 import Discord from "../icons/Discord";
-import Search from "../icons/Search";
+import docsearch from '@docsearch/js';
+import '@docsearch/css';
 
 class Header extends Translatable {
 
@@ -46,10 +47,16 @@ class Header extends Translatable {
     context.mode = context.oppositeMode;
     context.oppositeMode = nextOppositeMode;
     window.localStorage.setItem('mode', context.mode);
+    document.querySelector('html').setAttribute('data-theme', context.mode)
   }
 
-  toggleSearch({ instances }) {
-    instances.search.open()
+  startDocSearch(context) {
+    docsearch({
+      container: context.element,
+      appId: 'R2IYF7ETH7',
+      apiKey: '599cec31baffa4868cae4e79f180729b',
+      indexName: 'docsearch',
+    });
   }
 
   render({ mode, oppositeMode, locale }) {
@@ -62,17 +69,17 @@ class Header extends Translatable {
               <a {...this.i18n.home}>
                 <Logo height="30" light={mode === "dark"} />
               </a>
-              <div class="flex items-center sm:hidden">
-                <button onclick={this.toggleSearch} title={this.i18n.search.title} class="flex sm:hidden text-pink-600 h-10 w-10 items-center justify-center">
-                  <Search size={25} />
-                </button>
-                <button
-                  title={this.i18n.menu.title}
-                  onclick={{ expanded: !this.expanded }}
-                >
-                  {this.expanded && <Close size={25} class="text-gray-900 dark:text-white" />}
-                  {!this.expanded && <Hamburger size={25} class="text-gray-900 dark:text-white" />}
-                </button>
+              <div class="flex gap-4">
+                <div id="docsearch" ref={this.startDocSearch} />
+                <div class="flex items-center sm:hidden">
+                  <button
+                    title={this.i18n.menu.title}
+                    onclick={{ expanded: !this.expanded }}
+                  >
+                    {this.expanded && <Close size={25} class="text-gray-900 dark:text-white" />}
+                    {!this.expanded && <Hamburger size={25} class="text-gray-900 dark:text-white" />}
+                  </button>
+                </div>
               </div>
             </div>
             <nav class={['flex items-center flex-wrap sm:px-0 mt-2 sm:mt-0', !this.expanded && 'hidden sm:flex']}>
@@ -81,9 +88,6 @@ class Header extends Translatable {
               <Link onclick={this.toggleMode} title={this.i18n.mode[oppositeMode]} mobile />
             </nav>
             <div class={['flex w-full sm:w-auto mt-4 sm:mt-0 sm:space-x-2 items-center', !this.expanded && 'hidden sm:flex']}>
-              <button onclick={this.toggleSearch} title={this.i18n.search.title} class="hidden sm:flex text-pink-600 h-10 w-10 items-center justify-center">
-                <Search size={25} />
-              </button>
               <a href={this.i18n.language.href} title={this.i18n.language.title} class="hidden sm:flex text-pink-600 h-10 w-10 items-center justify-center">
                 {locale === 'pt-BR' && <Gringo size={30} />}
                 {locale !== 'pt-BR' && <Brasil size={30} />}
