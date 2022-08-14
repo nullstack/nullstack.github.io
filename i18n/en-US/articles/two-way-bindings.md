@@ -61,7 +61,7 @@ Bind reduces drastically the amount of glue code you have to type in your applic
 
 You can shortcut setting a `value`, `name`, and event with the `bind` attribute.
 
-> 💡 Nullstack will simply replace `bind` with the `value`, `name`, and event under the hood at transpile time.
+> 💡 Nullstack will simply replace `bind` with the `value`, `name`, and respective event under the hood at transpile time.
 
 Bind will generate an event that automatically typecasts to the previous primitive type the value was.
 
