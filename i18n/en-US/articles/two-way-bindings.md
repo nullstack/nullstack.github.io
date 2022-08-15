@@ -310,6 +310,37 @@ class Form extends Nullstack {
 export default Form;
 ```
 
+## Debounced Bindings
+
+You can use the attribute `debounce` passing a number of miliseconds to delay setting the input value to the bound variable and the callbacks.
+
+This is helpful when the user input could trigger heavy rerender cycles and avoids input lag.
+
+
+```jsx
+import Nullstack from 'nullstack';
+
+class SearchForm extends Nullstack {
+  
+  term = ''
+
+  search() {
+    // will only run if you stop typeing for 400ms
+  }
+  
+  render() {
+    return (
+      <input bind={this.term} debounce={400} />
+    )
+  }
+
+}
+
+export default SearchForm;
+```
+
+> 💡 Using the debounce attribute is more efficient than doing it manually because it uses Nullstack internal event system.
+
 ## Next step
 
 ⚔ Learn more about [proxies](/proxy).

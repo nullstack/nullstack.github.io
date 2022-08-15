@@ -209,6 +209,34 @@ class Form extends Nullstack {
 export default Form;
 ```
 
+## Debounced Events
+
+You can use the attribute `debounce` passing a number of miliseconds to delay the events of that element
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Counter extends Nullstack {
+  
+  count = 0
+
+  increment() {
+    this.count++
+  }
+  
+  render() {
+    return (
+      <button onclick={this.increment} debounce={2000}> 
+        increment 
+      </button>
+    )
+  }
+
+}
+
+export default Counter;
+```
+
 ## TypeScript 
 
 Stateful Components accept a generic that reflect in the props that its tag will accept
