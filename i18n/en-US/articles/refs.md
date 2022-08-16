@@ -69,6 +69,67 @@ class Toast extends Nullstack {
 export default Toast;
 ```
 
+## Simple Refable Components
+
+Ref can bubble down by just passing the reference from the context.
+
+```jsx
+export default function CustomPlayer({ label, ref }) {
+  return (
+    <div>
+      <video ref={ref} />
+    </div>
+  )
+}
+```
+
+```jsx
+import Nullstack from 'nullstack';
+import CustomPlayer from './CustomPlayer';
+
+class VideoPage extends Nullstack {
+
+  video = null;
+
+  render() {
+    return (
+      <CustomPlayer ref={this.video} />
+    )
+  }
+
+}
+
+export default VideoPage;
+```
+
+## Complex Refable Components
+
+You can create your own refable component by receiving the attributes that `ref` generates.
+
+Ref is a transpile time shortcut that creates an object with the keys `object` and `property`.
+
+```jsx
+class CustomPlayer extends Nullstack {
+
+  element = null
+
+  hydrate({ ref }) {
+    ref.object[ref.property] = this.element
+  }
+
+  render({ audioOnly }) {
+    return (
+      <div>
+        {audioOnly ? <audio ref={this.element} /> : <video ref={this.element} />}
+      </div>
+    )
+  }
+
+}
+
+export default CustomPlayer;
+```
+
 ## Next step
 
 ⚔ Learn about the [Nullstack with TypeScript](/typescript).
