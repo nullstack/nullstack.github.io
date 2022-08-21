@@ -2,7 +2,12 @@
 const { spacing } = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: ["./src/**/*.njs"],
+  content: [
+    "./src/**/*.njs",
+    "./src/**/*.jsx",
+    "./src/**/*.nts",
+    "./src/**/*.tsx",
+  ],
   darkMode: "class",
   theme: {
     minWidth: {
@@ -49,7 +54,7 @@ module.exports = {
             a: {
               color: theme('colors.gray.300')
             },
-            code: { 
+            code: {
               backgroundColor: theme('colors.gray.800'),
               color: theme('colors.gray.300')
             },
@@ -82,16 +87,7 @@ module.exports = {
       })
     },
   },
-  variants: {
-    extend: {
-      backgroundSize: ['hover'],
-      opacity: ['dark'],
-      typography: ['dark'],
-      borderColor: ['dark'],
-    },
-  },
   plugins: [
-    require('autoprefixer'),
     require('@tailwindcss/typography'),
   ],
 };

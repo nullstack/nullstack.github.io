@@ -1,6 +1,7 @@
 import Nullstack from 'nullstack';
 import GoogleAnalytics from 'nullstack-google-analytics';
 import './Application.scss';
+import '../tailwind.css';
 import Article from './Article';
 import Components from './Components';
 import Contributors from './Contributors';
@@ -9,7 +10,6 @@ import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
 import Loader from './Loader';
-import "./tailwind.css";
 import Waifu from './Waifu';
 
 class Application extends Nullstack {
