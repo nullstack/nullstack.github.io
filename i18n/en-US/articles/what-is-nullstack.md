@@ -17,6 +17,8 @@ There're no such thing as big projects in Nullstack, only small features. A feat
 
 This might look wrong and go against everything you've ever learned, but it works, it's faster and more flexible. Your code gets much simpler and easier to understand, people can quickly jump in your codebase and start contributing. Developers can make changes in giant projects without any cognitive overhead.
 
+Nullstack does not need an ecosystem, you probably won't find "nullstack-*" libraries as you can simply use vanilla JavaScript packages. We believe that JavaScript reached a maturity level that creating a piece of code that does exactly what you need is going to often take less lines and lead to less overengineering than configuring a library .
+
 Feature-driven development might not be for everyone, but Nullstack gives you enough freedom to use it however you see fit. You can still use Nullstack with layers and abstractions, we're not here to hold your hand, you're free to shoot your own foot.
 
 ## Next step

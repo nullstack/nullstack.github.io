@@ -19,6 +19,8 @@ npx create-nullstack-app@latest project-name
 
 > 💡 If you want to start with a template using .tsx files, add `-ts` or `--typescript` to the end of command
 
+> 💡 If you want to start with a template using tailwind, add `-tw` or `--tailwind` to the end of command
+
 Change directory to the generated folder:
 
 ```sh
