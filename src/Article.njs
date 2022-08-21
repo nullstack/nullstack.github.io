@@ -1,8 +1,11 @@
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import Translatable from './Translatable';
 import YAML from 'yaml';
 import Arrow from '../icons/Arrow';
 import './Article.scss';
+import prismjs from 'prismjs';
+import { Remarkable } from 'remarkable';
+import meta from 'remarkable-meta';
 
 class Article extends Translatable {
 
@@ -18,11 +21,45 @@ class Article extends Translatable {
     }
   }
 
-  static async getArticleByKey({ articles, locale, key }) {
-    if (articles[locale][`${key}.md`]) {
-      return articles[locale][`${key}.md`]
+  static async getArticleByKey({ locale, key }) {
+    await import('prismjs/components/prism-jsx.min');
+    let path = `i18n/${locale}/articles/${key}.md`;
+    if (!existsSync(path)) {
+      path = `i18n/${locale}/articles/404.md`;
     }
-    return articles[locale][`404.md`]
+    const text = readFileSync(path, 'utf-8');
+    const md = new Remarkable({
+      highlight: (code) => Prism.highlight(code, prismjs.languages.jsx, 'javascript')
+    });
+    md.use(meta);
+    md.use((md) => {
+      const originalRender = md.renderer.rules.link_open;
+      md.renderer.rules.link_open = function () {
+        let result = originalRender.apply(null, arguments);
+        const regexp = /href="([^"]*)"/;
+        const href = regexp.exec(result)[1];
+        if (!href.startsWith('/')) {
+          result = result.replace('>', ' target="_blank" rel="noopener">');
+        }
+        return result;
+      };
+    });
+    md.use((md) => {
+      md.renderer.rules.heading_open = function (tokens, i) {
+        const { content } = tokens[i + 1];
+        const { hLevel } = tokens[i];
+        const id = content.toLowerCase().split(/[^a-z]/).join('-');
+        return `<h${hLevel} id="${id}"><a href="#${id}">`;
+      }
+      md.renderer.rules.heading_close = function (tokens, i) {
+        const { hLevel } = tokens[i];
+        return `</a></h${hLevel}>`;
+      }
+    });
+    return {
+      html: md.render(text),
+      ...md.meta
+    }
   }
 
   static async getArticlesList({ locale }) {
