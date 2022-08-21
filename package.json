@@ -5,21 +5,22 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "nullstack": "github:nullstack/nullstack#unstable-next",
-    "postcss": "^8.2.10",
-    "tailwindcss": "^2.1.1"
+    "concurrently": "^7.2.0",
+    "nullstack": "~0.16.0",
+    "tailwindcss": "^3.0.0"
   },
   "scripts": {
-    "start": "npx nullstack start --mode=spa --hot",
-    "build": "npx nullstack build --mode=ssg --output=docs",
-    "reinstall": "rm -rf .development .production package-lock.json node_modules && npm install",
-    "spa": "npx nullstack build --mode=spa && cd spa && npx http-server --port 8080 -P http://localhost:8080?",
-    "tailwind": "npx tailwindcss-cli build -o src/tailwind.css"
+    "start:nullstack": "npx nullstack start",
+    "start:tailwind": "npx tailwindcss -o ./tailwind.css --watch",
+    "start": "concurrently npm:start:*",
+    "build:nullstack": "npx nullstack build --mode=ssg --output=docs",
+    "build:tailwind": "npx tailwindcss -o ./tailwind.css",
+    "build": "npm run build:tailwind && npm run build:nullstack",
+    "reinstall": "rm -rf .development .production package-lock.json node_modules && npm install"
   },
   "dependencies": {
     "@docsearch/js": "^3.2.0",
-    "@tailwindcss/typography": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.4",
     "glob": "^8.0.1",
     "nullstack-google-analytics": "github:Mortaro/nullstack-google-analytics#next",
     "poisonicon": "^0.1.1",

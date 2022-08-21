@@ -53,9 +53,9 @@ class Header extends Translatable {
   startDocSearch(context) {
     docsearch({
       container: context.element,
-      appId: 'R2IYF7ETH7',
-      apiKey: '599cec31baffa4868cae4e79f180729b',
-      indexName: 'docsearch',
+      appId: 'PTI4K6LPXF',
+      apiKey: '49670e20e0c5c259f1ce7fc5dbf5e6e3',
+      indexName: 'nullstack',
     });
   }
 
