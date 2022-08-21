@@ -80,11 +80,12 @@ class Waifu extends Translatable {
         >
           @{name}
         </a>
-      </div>)
+      </div>
+    )
   }
 
-  renderFanarts({ self }) {
-    if (!self.hydrated) return false
+  renderFanarts() {
+    if (!this.hydrated) return false
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap pb-12 sm:pb-24">
         <h2 class="w-full text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">
@@ -100,7 +101,7 @@ class Waifu extends Translatable {
     )
   }
 
-  render({ }) {
+  render() {
     if (!this.i18n) return false;
     return (
       <div>

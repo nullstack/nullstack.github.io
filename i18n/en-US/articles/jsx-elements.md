@@ -225,11 +225,39 @@ export default Post;
 
 > 🔥 Be careful! When using user-generated HTML you are in risk of script injection
 
-## The head tag
+## Body tag
+
+Renderable components can render a `body` tag an unlimited number of times at any depth of the application.
+
+The `body` attributes of the body tag that are rendered will be merged into the real body tag in the DOM
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Application extends Nullstack {
+
+  // ...
+
+  render() {
+    return (
+      <body class="bg-black">
+        {this.modalOpen &&
+          <body class="overflow-hidden">
+            <div class="modal"> modal here <div>
+          </body>
+        }
+      </body>
+    )
+  }
+
+}
+
+export default Application;
+```
+
+## Head tag
 
 Renderable components can render inside the `head` tag an unlimited number of times at any depth of the application.
-
-The `head` tag will only be updated during the [server-side rendering](/server-side-rendering) process and changes will be ignored after the [hydration](/full-stack-lifecycle) process.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -264,4 +292,4 @@ export default Application;
 
 ## Next step
 
-⚔ Learn about the [Nullstack with TypeScript](/typescript).
+⚔ Learn about [refs](/refs).

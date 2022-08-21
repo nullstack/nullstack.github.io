@@ -20,6 +20,63 @@ class Header extends Nullstack {
 export default Header;
 ```
 
+
+## Conditional classes and styles
+
+You can pass falsy values to `style` and `class` to skip rendering conditionaly.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Counter extends Nullstack {
+
+  count = 0;
+  
+  render() {
+    return (
+      <div 
+        class={this.count > 0 && 'bigger-than-zero'}
+        style={this.count > 0 && 'border-color: black;'}
+      > 
+        {this.count}
+      </div>
+    )
+  }
+
+}
+
+export default Counter;
+```
+
+## Array classes and styles
+
+You can pass an array of strings as prop to `style` and `class` and they will be joined into the final attribute
+
+You can also pass falsy values to skip rendering conditionaly.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Counter extends Nullstack {
+
+  count = 0;
+  
+  render() {
+    return (
+      <div 
+        class={['number', this.count > 0 && 'bigger-than-zero', this.count % 2 === 0 ? 'even' : 'odd' ]}
+        style={['background-color: black;', this.count > 0 && 'border-color: black;', this.count % 2 === 0 ? 'color: blue;' : 'color-red;' ]}
+      > 
+        {this.count}
+      </div>
+    )
+  }
+
+}
+
+export default Counter;
+```
+
 ## Next step
 
 ⚔ Learn more about the [service worker](/service-worker).

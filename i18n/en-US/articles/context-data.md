@@ -14,9 +14,7 @@ You can use this key to avoid polluting your DOM with invalid attributes.
 
 > 💡 This helps Nullstack set attributes without wasting time validating them.
 
-Any `data-*` attributes will receive a respective camelized key on the `data` object.
-
-You can assign `data` attributes both via `data-*` and a `data` key that accepts an object with camelized keys.
+Any `data-*` attributes will receive a respective camelized key on the `data` object when passed to an event context.
 
 The kebab version is also available in the context.
 
@@ -30,17 +28,6 @@ class ContextData extends Nullstack {
   calculate({data}) {
     this.count = this.count * data.multiply + data.sum;
   }
-
-  renderInner(context) {
-    const {data} = context;
-    return (
-      <div data={data}>
-        {data.frameworkName}
-        is same as
-        {context['data-framework-name']}
-      </div>
-    )
-  }
   
   render({data}) {
     return (
@@ -48,7 +35,6 @@ class ContextData extends Nullstack {
         <button onclick={this.calculate} data-multiply={3} data={{sum: 2}}>
           Calculate
         </button>
-        <Inner data-framework-name="Nullstack" />
       </div>
     )
   }

@@ -61,7 +61,7 @@ Bind reduces drastically the amount of glue code you have to type in your applic
 
 You can shortcut setting a `value`, `name`, and event with the `bind` attribute.
 
-> 💡 Nullstack will simply replace `bind` with the `value`, `name`, and event under the hood.
+> 💡 Nullstack will simply replace `bind` with the `value`, `name`, and respective event under the hood at transpile time.
 
 Bind will generate an event that automatically typecasts to the previous primitive type the value was.
 
@@ -231,27 +231,59 @@ class Paginator extends Nullstack {
 export default Paginator;
 ```
 
-## Bindable Components
+## Simple Bindable Components
+
+Bind can bubble down by just passing the reference from the context.
+
+```jsx
+export default function CustomInput({ label, bind }) {
+  return (
+    <div>
+      <label> {label} </label>
+      <input bind={bind} />
+    </div>
+  )
+}
+```
+
+```jsx
+import Nullstack from 'nullstack';
+import CustomInput from './CustomInput';
+
+class Form extends Nullstack {
+
+  name = 'Nulla';
+
+  render() {
+    return (
+      <CustomInput label="Complete Name" bind={this.name} />
+    )
+  }
+
+}
+
+export default Form;
+```
+
+## Complex Bindable Components
 
 You can create your own bindable component by receiving the attributes that `bind` generates.
 
-You must respond by calling `onchange` with a `value` key.
-
-You can also merge any other keys you wish to send to the component user.
+Bind is a transpile time shortcut that creates an object with the keys `object` and `property`.
 
 ```jsx
 class CurrencyInput extends Nullstack {
 
-  parse({event, onchange}) {
+  parse({event, bind}) {
     const normalized = event.target.value.replace(',', '').padStart(3, '0');
     const whole = (parseInt(normalized.slice(0,-2)) || 0).toString();
     const decimal = normalized.slice(normalized.length - 2);
-    const value = parseFloat(whole+'.'+decimal);
-    const bringsHappyness = value >= 1000000;
-    onchange({value, bringsHappyness});
+    bind.object[bind.property] = parseFloat(whole+'.'+decimal);
   }
 
-  render({value, name}) {
+  render({bind}) {
+    const name = bind.property
+    const value = bind.object[bind.property]
     const formatted = value.toFixed(2).replace('.', ',');
     return <input name={name} value={formatted} oninput={this.parse} />
   }
@@ -278,6 +310,37 @@ class Form extends Nullstack {
 export default Form;
 ```
 
+## Debounced Bindings
+
+You can use the attribute `debounce` passing a number of miliseconds to delay setting the input value to the bound variable and the callbacks.
+
+This is helpful when the user input could trigger heavy rerender cycles and avoids input lag.
+
+
+```jsx
+import Nullstack from 'nullstack';
+
+class SearchForm extends Nullstack {
+  
+  term = ''
+
+  search() {
+    // will only run if you stop typeing for 400ms
+  }
+  
+  render() {
+    return (
+      <input bind={this.term} debounce={400} />
+    )
+  }
+
+}
+
+export default SearchForm;
+```
+
+> 💡 Using the debounce attribute is more efficient than doing it manually because it uses Nullstack internal event system.
+
 ## Next step
 
-⚔ Learn more about [underscored properties](/underscored-properties).
+⚔ Learn more about [proxies](/proxy).

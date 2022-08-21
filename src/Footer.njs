@@ -22,6 +22,7 @@ class Footer extends Translatable {
   }
 
   render() {
+    if (!this.i18n) return false
     return (
       <footer class="flex flex-wrap w-full justify-center relative">
         <div class="w-full relative flex justify-center h-80 bg-70 hover:bg-100 bg-bottom bg-no-repeat" style="background-image: url(/stars.webp); transition: background-size 3s;">

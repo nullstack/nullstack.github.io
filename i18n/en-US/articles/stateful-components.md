@@ -47,6 +47,44 @@ export default Counter;
 
 > 💡 Updates are made in batches, usually while awaiting async calls, so making multiple assignments have no performance costs!
 
+## Events array 
+
+You can pass an array of events as prop and they will run in parallel
+
+You can also pass falsy values to skip events conditionaly.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Counter extends Nullstack {
+
+  count = 0;
+
+  increment() {
+    this.count++;
+  }
+
+  log() {
+    console.log(this.count);
+  }
+
+  logUnlessZero() {
+    console.log(this.count > 0);
+  }
+  
+  render() {
+    return (
+      <button onclick={[this.increment, this.log, this.count > 0 && this.logUnlessZero]}> 
+        {this.count}
+      </button>
+    )
+  }
+
+}
+
+export default Counter;
+```
+
 ## Object Events
 
 You can shortcut events that are simple assignments by passing an object to the event.
@@ -169,6 +207,34 @@ class Form extends Nullstack {
 }
 
 export default Form;
+```
+
+## Debounced Events
+
+You can use the attribute `debounce` passing a number of miliseconds to delay the events of that element
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Counter extends Nullstack {
+  
+  count = 0
+
+  increment() {
+    this.count++
+  }
+  
+  render() {
+    return (
+      <button onclick={this.increment} debounce={2000}> 
+        increment 
+      </button>
+    )
+  }
+
+}
+
+export default Counter;
 ```
 
 ## TypeScript 

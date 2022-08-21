@@ -9,10 +9,8 @@ import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
 import Loader from './Loader';
-import Search from './Search.njs';
 import "./tailwind.css";
 import Waifu from './Waifu';
-
 
 class Application extends Nullstack {
 
@@ -35,6 +33,7 @@ class Application extends Nullstack {
     if (localStorage['mode']) {
       context.mode = localStorage['mode'];
       if (context.mode === 'dark') {
+        document.querySelector('html').setAttribute('data-theme', context.mode)
         context.oppositeMode = 'light';
       }
     }
@@ -54,12 +53,10 @@ class Application extends Nullstack {
   render({ router, mode }) {
     const locale = router.url.startsWith('/pt-br') ? 'pt-BR' : 'en-US';
     return (
-      <main class={mode}>
+      <body data-theme={mode} class={mode}>
         <div class="dark:bg-gray-900 dark:text-white">
           <Header locale={locale} />
           <HiringBanner />
-
-          <Search locale={locale} persistent key="search" />
 
           <Home route="/" locale="en-US" persistent />
           <Home route="/pt-br" locale="pt-BR" persistent />
@@ -85,7 +82,7 @@ class Application extends Nullstack {
 
           <Footer locale={locale} />
         </div>
-      </main>
+      </body>
     )
   }
 

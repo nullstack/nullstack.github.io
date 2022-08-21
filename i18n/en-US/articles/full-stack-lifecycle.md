@@ -47,6 +47,8 @@ Nullstack will wait till the promise is resolved and then finally generate the H
 
 If the user is navigating from another route this method will run in the client.
 
+After this method promise is fulfilled `this.initiated` will be set to true
+
 ```jsx
 import Nullstack from 'nullstack';
 
@@ -60,7 +62,12 @@ class Component extends Nullstack {
     });
   }
 
-  // ...
+  render() {
+    if(!this.initiated) return false
+    return (
+      <p> {this.task.description} </p>
+    )
+  }
 
 }
 
@@ -103,6 +110,8 @@ This method will always run no matter which environment started the component.
 
 This is a good place to trigger dependencies that manipulate the dom or can only run on the client-side.
 
+After this method promise is fulfilled `this.hydrated` will be set to true
+
 ```jsx
 import Nullstack from 'nullstack';
 
@@ -116,7 +125,12 @@ class Component extends Nullstack {
     }, 1000);
   }
 
-  // ...
+  render() {
+    if(!this.hydrated) return false
+    return (
+      <p> timer id: {this.timer} </p>
+    )
+  }
 
 }
 
@@ -169,6 +183,8 @@ This is the place to clean up whatever you set up in the `hydrate` method.
 
 The instance will be garbage collected after the `Promise` is resolved.
 
+After this method promise is fulfilled `this.terminated` will be set to true which is useful in the case of [persistent components](/persistent-components)
+
 ```jsx
 import Nullstack from 'nullstack';
 
@@ -178,6 +194,12 @@ class Component extends Nullstack {
 
   async terminate() {
     clearInterval(this.timer);
+  }
+
+  executeBackgroundTask() {
+    if(!this.terminated) {
+      // ...
+    }
   }
 
   // ...
