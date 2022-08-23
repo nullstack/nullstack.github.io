@@ -125,42 +125,6 @@ class Form extends Nullstack {
 export default Form;
 ```
 
-## Bind source
-
-Bind can take a `source` attribute as well.
-
-> 💡 If you do not declare a source to the bind, Nullstack will inject a `source={this}` at transpile time in order to completely skip the runtime lookup process!
-
-If you declare a source, `bind` must be a string with the name of the key that will be mutated.
-
-The source will be merged into the [context](/context) of events.
-
-```jsx
-import Nullstack from 'nullstack';
-
-class Paginator extends Nullstack {
-
-  validate({source, params}) {
-    if(!source.page) {
-      params.page = '1';
-    }
-  }
-
-  render({params}) {
-    return (
-      <input 
-        source={params}
-        bind="page"
-        oninput={this.validate}
-      />
-    )
-  }
-
-}
-
-export default Paginator;
-```
-
 > 💡 Binding by reference is possible because all binds are converted to the format above at transpile time.
 
 Any object that responds to a key call with "[]" can be bound.
@@ -212,8 +176,6 @@ export default Form;
 You can use [object events](/stateful-components) alongside `bind` normally.
 
 The event will run after the variable is mutated.
-
-The event will share the `bind` source.
 
 ```jsx
 import Nullstack from 'nullstack';
