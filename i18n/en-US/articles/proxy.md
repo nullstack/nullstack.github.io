@@ -155,23 +155,6 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-It is also useful for library integrations that do not deal well with proxies, or storing DOM elements.
-
-```jsx
-import Nullstack from "Nullstack";
-
-class Application extends Nullstack {
-
-  async hydrate({ self }) {
-    this._toaster = new MyCoolToasterPlugin()
-    this._videoRef = self.element.querySelector('video')
-  }
-
-}
-
-export default Application;
-```
-
 ## Next step
 
 ⚔ Learn about the [jsx elements](/jsx-elements).
