@@ -333,6 +333,35 @@ class Application extends Nullstack {
 export default Application;
 ```
 
+## Instances
+
+By default components with a route will have the current url as the key.
+
+This behaviour causes the component to be reinstantiated and run lifecycle again even when params change, which is very helpful to load content based on urls.
+
+To skip the behaviour above you can define a custom key to the component.
+
+```jsx
+import Nullstack from 'nullstack';
+import Home from './Home';
+import Page from './Page';
+
+class Application extends Nullstack {
+ 
+  render({ router }) {
+    return (
+      <main>
+        <Home route="/" key="home" />
+        <Page route="/page/:slug" key={router.path} />
+      </main>
+    )
+  }
+
+}
+
+export default Application;
+```
+
 ## Next step
 
 ⚔ Learn about [two-way bindings](/two-way-bindings).
