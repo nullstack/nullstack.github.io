@@ -16,7 +16,13 @@ As explained in [instance `key`](/instance-self#instance-key), keys play a big r
 
 > 🔥 Nullstack trusts its developers to know what they are doing and exposes as much internal behavior for the programmer to do as it wishes, use with caution.
 
-Adding an unique `key` to **Counter** makes it available on `instances` list:
+The default key for class components is a join between the class name and the dom depth like `Counter/1.1` and are hard for humans to interact with.
+
+The first component of your application will have the key `application` by default.
+
+> 💡 keys define which instance will be used to render the component, you can use it to force a node to reinstantiate.
+
+Adding an unique `key` to **Counter** makes it easier to access on `instances` list:
 
 ```jsx
 import Nullstack from 'nullstack';
