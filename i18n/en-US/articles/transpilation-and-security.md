@@ -21,8 +21,8 @@ This extension also allows Nullstack to make free transpile time optimizations l
 
 * On the **server** bundle static async functions are mapped into a registry for security.
 * On the **client** bundle static async functions are removed and replaced with a invoke method.
-* On the **client** bundle static async functions with the name starting with **"start"** (and optionally followed by an uppercase letter) are completely removed.
-* On both **server** and **client** bundles, a hash with the md5 of the original source code is added to the class.
+* On the **client** bundle static async functions with the name starting with **"_"** are completely removed.
+* On both **server** and **client** bundles a hash is added to the class and then the class hash is added to a safelist.
 
 > 🐱‍💻 Bellow an example of a original .njs file.
 

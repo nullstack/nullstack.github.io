@@ -33,6 +33,25 @@ class Component extends Nullstack {
 export default Component;
 ```
 
+You can also call static methods directly which is useful for some code patterns that invoke external server functions.
+
+```jsx
+import Nullstack from 'nullstack';
+import UserStore from './UserStore';
+
+class Component extends Nullstack {
+
+  async initiate() {
+    this.users = await UserStore.getAllUsers()
+  }
+
+  // ...
+
+}
+
+export default Component;
+```
+
 > ✨ Learn more about the [server context](/context).
 
 ## Client behavior
@@ -296,6 +315,8 @@ export default Component;
 Automatically generated API endpoints are not meant to be used by 3rd-party apps.
 
 The URL and implementation may change between versions of Nullstack.
+
+Server functions endpoints are based on file path and function name, changing those might cause backwards compatibility problems in some scenarios.
 
 > ✨ If you want to build an API, learn more about [how to create an API with Nullstack](/server-request-and-response).
 
