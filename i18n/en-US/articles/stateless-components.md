@@ -43,16 +43,17 @@ interface HelloProjectProps {
   name: string
 }
 
-export default function HelloProject({ project, name }: NullstackClientContext<HelloProjectProps>) {
+export default function HelloProject(context: HelloProjectProps) {
+  const { project, name } = context as NullstackClientContext<HelloProjectProps>
   return <p> Hello {name} welcome to {project.name} </p>
 }
 ```
 
 ```jsx
 // src/Application.tsx
-import HelloProject from './HelloDweeb';
+import HelloProject from './HelloProject';
 
-export default function Application({ name }) {
+export default function Application() {
   return (
     <div>
       <HelloProject name="Bilkaya">
