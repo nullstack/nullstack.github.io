@@ -39,11 +39,11 @@ Stateless components have access to the [`client context`](/context) and props a
 // src/HelloProject.tsx
 import { NullstackClientContext } from 'nullstack'
 
-interface HelloProjectProps extends NullstackClientContext {
+interface HelloProjectProps {
   name: string
 }
 
-export default function HelloProject({ project, name }: HelloProjectProps) {
+export default function HelloProject({ project, name }: NullstackClientContext<HelloProjectProps>) {
   return <p> Hello {name} welcome to {project.name} </p>
 }
 ```
