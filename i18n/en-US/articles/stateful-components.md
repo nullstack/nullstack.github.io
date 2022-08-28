@@ -146,11 +146,11 @@ The context of the event is a spread of the Nullstack client context, the compon
 ```tsx
 import Nullstack, { NullstackClientContext } from 'nullstack';
 
-interface CounterProps extends NullstackClientContext {
+interface CounterProps {
   multiplier: number 
 }
 
-interface CounterIncrementProps extends CounterProps {
+interface CounterIncrementProps {
   delta: number
 }
 
@@ -158,7 +158,7 @@ class Counter extends Nullstack<CounterProps> {
 
   count = 0;
 
-  increment({ delta, multiplier }: CounterIncrementProps) {
+  increment({ delta, multiplier }: NullstackClientContext<CounterProps & CounterIncrementProps>) {
     this.count += delta * multiplier;
   }
   
@@ -245,7 +245,7 @@ Stateful Components accept a generic that reflect in the props that its tag will
 // src/Counter.tsx
 import Nullstack, { NullstackClientContext } from 'nullstack';
 
-interface CounterProps extends NullstackClientContext {
+interface CounterProps {
   multiplier: number 
 }
 
@@ -253,7 +253,7 @@ class Counter extends Nullstack<CounterProps> {
 
   // ...
   
-  render({ multiplier }: CounterProps) {
+  render({ multiplier }: NullstackClientContext<CounterProps>) {
     return <div> {multiplier} </div>
   }
 
@@ -282,27 +282,27 @@ Inner components share the same instance and scope as the main component, theref
 To invoke the inner component use a JSX tag with the method name without the `render` prefix.
 
 ```tsx
-import Nullstack, { NullstackClientContext } from 'nullstack';
+import Nullstack, { NullstackClientContext, NullstackNode } from 'nullstack';
 
-interface CounterProps extends NullstackClientContext {
+interface CounterProps {
   multiplier: number 
 }
 
-interface CounterIncrementProps extends CounterProps {
+interface CounterButtonProps {
   delta: number
 }
 
-declare function Button(): typeof Counter.prototype.renderButton
+declare function Button(context: CounterProps): NullstackNode
 
 class Counter extends Nullstack<CounterProps> {
 
   count = 0;
 
-  increment({ delta, multiplier }: CounterIncrementProps) {
+  increment({ delta, multiplier }: NullstackClientContext<CounterProps & CounterButtonProps>) {
     this.count += delta * multiplier;
   }
 
-  renderButton({ delta = 1 }) {
+  renderButton({ delta = 1 }: NullstackClientContext<CounterProps & CounterButtonProps>) {
     return (
       <button onclick={this.increment} delta={delta}> 
         {this.count}
