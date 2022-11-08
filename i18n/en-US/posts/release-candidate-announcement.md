@@ -1,7 +1,7 @@
 ---
 title: "0.16.5 Release Candidate Announcement"
 description: "We're proud to announce the first release candidate of Nullstack"
-date: "Oct. 2022"
+date: "Nov. 2022"
 author:
   name: Anny Figueira
   handle: AnnyFigueira
