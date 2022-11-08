@@ -6,8 +6,8 @@ contribute: "We accept guest posts! You can write it up in markdown and open a P
 posts:
   - title: "0.16.5 Release Candidate Announcement"
     href: "/blog/release-candidate-announcement"
-    description: "We're (finally) officially releasing Nullstack!"
-    date: "Oct. 2022"
+    description: "We're proud to announce the first release candidate of Nullstack"
+    date: "Nov. 2022"
     author:
       name: Anny Figueira
       handle: AnnyFigueira
