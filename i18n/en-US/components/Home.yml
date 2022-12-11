@@ -29,7 +29,7 @@ trinity:
     - title: "Lightweight API requests"
       image: "/illustrations/nulla-dps.webp"
       text:
-        "Subsequent server functions will fetch JSON from an automaticallty
+        "Subsequent server functions will fetch JSON from an automatically
         generated microservice API, deserialize the response, update the
         aplication state, and rerender the page out of the box"
 features:

@@ -40,7 +40,6 @@ Other available keys are:
 
 - **port**: `integer`
 - **maximumPayloadSize**: `string`
-- **cors**: `object`
 
 ```jsx
 // server.js
@@ -52,15 +51,9 @@ const context = Nullstack.start(Application);
 const { server } = context;
 server.port = 3000;
 server.maximumPayloadSize = '5mb';
-server.cors = {
-  origin: 'http://localhost:6969',
-  optionsSuccessStatus: 200
-}
 
 export default context;
 ```
-
-The `cors` object will be passed as the argument to [express cors plugin](https://expressjs.com/en/resources/middleware/cors.html).
 
 ## Request and Response
 
