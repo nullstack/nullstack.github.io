@@ -14,16 +14,25 @@ class Header extends Translatable {
 
   expanded = false;
 
-  renderLink({ title, href, target, mobile, onclick }) {
+  renderBadge({ badge }) {
+    return (
+      <span class="absolute top-[6px] -right-5 bg-yellow-100 text-yellow-800 text-xs leading-none font-semibold ml-1 px-0.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
+        {badge}
+      </span>
+    );
+  }
+
+  renderLink({ title, href, target, mobile, onclick, badge }) {
     return (
       <element
         tag={onclick ? 'button' : 'a'}
         href={href}
         target={target}
         onclick={onclick || { expanded: false }}
-        class={['w-full sm:w-auto border-b sm:border-0 border-gray-100 dark:border-gray-800 p-2 font-lg hover:text-pink-600 items-center flex font-light', mobile && 'sm:hidden']}
+        class={['w-full sm:w-auto border-b sm:border-0 border-gray-100 dark:border-gray-800 p-2 font-lg hover:text-pink-600 items-center flex font-light relative', mobile && 'sm:hidden']}
       >
         {title}
+        {badge && <Badge badge={badge} />}
       </element>
     );
   }
