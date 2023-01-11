@@ -40,6 +40,8 @@ Além de `domain`, `name` and `color` todas as outras chaves tem padrões sensí
 
 Se você não declarar a chave `icons`, Nullstack irá escanear quaisquer ícones com o nome seguindo o padrão "icon-[LARGURA]x[ALTURA].png" na sua pasta **public**.
 
+A meta tag `apple-touch-icon` de `head` irá ser igual ao seu arquivo `icon-180x180.png`.
+
 Se a chave `sitemap` estiver definida como `true` o seu arquivo **robots.txt** irá apontar o sitemap para `https://${project.domain}/sitemap.xml`.
 
 A chave `cdn` irá prefixar seu pacote de assets e ficará disponível no contexto para que você possa manualmente prefixar outros ativos.

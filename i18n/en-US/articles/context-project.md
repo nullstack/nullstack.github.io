@@ -40,6 +40,8 @@ Besides `domain`, `name` and `color` all other keys have sensible defaults gener
 
 If you do not declare the `icons` key, Nullstack will scan any icons with the name following the pattern "icon-[WIDTH]x[HEIGHT].png" in your **public** folder.
 
+The `head` meta tag `apple-touch-icon` will be set to your `icon-180x180.png` file.
+
 If the `sitemap` key is set to true your **robots.txt** file will point the sitemap to `https://${project.domain}/sitemap.xml`.
 
 The `cdn` key will prefix your asset bundles and will be available in the context so you can manually prefix other assets.
