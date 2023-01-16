@@ -1,13 +1,16 @@
-import { readFileSync } from 'fs';
-import Nullstack from 'nullstack';
-import YAML from 'yaml';
+import { existsSync, readFileSync } from "fs";
+import Nullstack from "nullstack";
+import YAML from "yaml";
 
 class Translatable extends Nullstack {
-
   static async geti18nByLocale({ locale }) {
-    const [name] = this.name.split('_');
-    const file = readFileSync(`i18n/${locale}/components/${name}.yml`, 'utf-8');
-    return YAML.parse(file);
+    const [name] = this.name.split("_");
+    const translationPath = `i18n/${locale}/components/${name}.yml`;
+    if (existsSync(translationPath)) {
+      const file = readFileSync(translationPath, "utf-8");
+      return YAML.parse(file);
+    }
+    return {};
   }
 
   async initiate({ page, locale }) {
@@ -15,7 +18,7 @@ class Translatable extends Nullstack {
     this.i18n = await this.geti18nByLocale({ locale });
     if (this.i18n.title) {
       page.description = this.i18n.description;
-      page.locale = locale || 'en-US';
+      page.locale = locale || "en-US";
     }
   }
 
@@ -30,7 +33,6 @@ class Translatable extends Nullstack {
       this.initiate();
     }
   }
-
 }
 
 export default Translatable;
