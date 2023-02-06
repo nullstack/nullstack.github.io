@@ -5,7 +5,7 @@ description: Componentes Funcionais são simples funções puras que podem modif
 
 Desde a v0.9.21, o Nullstack tem a simplicidade de componentes funcionais puros pronta para uso.
 
-Este segue as especificações de [componentes renderizáveis](/pt-br/componentes-renderizaveis), mas com mais ênfase no **renderizável**.
+Este segue as especificações de [componentes sem estado](/pt-br/componentes-renderizaveis), mas com mais ênfase no **renderizável**.
 
 Usando funções puras, você pode escrever componentes focados na renderização da seguinte maneira:
 

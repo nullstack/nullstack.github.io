@@ -1,11 +1,11 @@
 ---
-title: Componentes renderizáveis
-description: Componentes renderizáveis são muito semelhantes aos componentes da Web que fornecem a capacidade de criar novas tags HTML que atalham um grupo de outras tags HTML
+title: Componentes sem estado
+description: Componentes sem estado são muito semelhantes aos componentes da Web que fornecem a capacidade de criar novas tags HTML que atalham um grupo de outras tags HTML
 ---
 
 O componente mais simples que você pode fazer é um componente renderizável, com exceção de [componentes funcionais](/pt-br/componentes-funcionais).
 
-Componentes renderizáveis são muito semelhantes aos componentes da Web que fornecem a capacidade de criar novas tags HTML que atalham um grupo de outras tags HTML.
+Componentes sem estado são muito semelhantes aos componentes da Web que fornecem a capacidade de criar novas tags HTML que atalham um grupo de outras tags HTML.
 
 Crie um arquivo em sua pasta src com o nome de seu componente e com a [extensão `.njs`](/pt-br/extensão-de-arquivo-njs).
 
@@ -330,7 +330,7 @@ export default Post;
 
 ## A tag `head`
 
-Componentes renderizáveis podem renderizar dentro da tag `head` um número ilimitado de vezes em qualquer profundidade do aplicativo.
+Componentes sem estado podem renderizar dentro da tag `head` um número ilimitado de vezes em qualquer profundidade do aplicativo.
 
 A tag `head` só será atualizada durante o processo de [renderização no servidor](/pt-br/renderizacao-no-servidor) e mudanças serão ignorados após o processo de [hidratação](/pt-br/ciclo-de-vida-full-stack).
 
