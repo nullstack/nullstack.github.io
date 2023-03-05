@@ -12,9 +12,6 @@ links:
     href: "/contributors"
   - title: "Waifu"
     href: "/waifu"
-  - title: "Announcement"
-    href: "/blog/release-candidate-announcement"
-    badge: "new"
 menu:
   title: "Toggle Menu"
 action:
