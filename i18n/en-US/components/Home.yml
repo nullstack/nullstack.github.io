@@ -4,15 +4,15 @@ hero:
   heading: "Feature-Driven"
   subHeading: "Full Stack JavaScript Components"
   descriptions:
-    - "Write the backend and frontend of a feature in a single
+    - Your new favorite web framework.
+    - "Write the backend and frontend of a feature in a single isomorphic
       component and let the framework decide where the code should run."
-    - "Nullstack provides you all the tools you need to stay focused on the product."
   callToAction: "npx create-nullstack-app"
   actionLink: '/getting-started'
   actionCallback: 'Command copied, paste it on the terminal'
 trinity:
-  heading: "The Holy Trinity"
-  subHeading: "of progressive web apps development"
+  heading: "Great for the Dev. Great for the User"
+  subHeading: "from fast SSR to offline PWA out of the box"
   roles:
     - title: "Optimized for the first render"
       image: "/illustrations/nulla-tanker.webp"
@@ -33,35 +33,33 @@ trinity:
         generated microservice API, deserialize the response, update the
         aplication state, and rerender the page out of the box"
 features:
-  - title: "Stop wasting time glueing code together"
+  - title: "No more glue code"
     snippet: "GlueCode"
     image: "/illustrations/nulla-glue.webp"
     text:
-      "A full stack lifecycle combined with a feature-driven mindset allows
-      you to write clean and reusable code without the need to create APIs
-      manually."
-  - title: "Become a programmer less dependent on gimmicks"
+      "You write features for products. The compiler extracts your front end code and replaces all static async functions with calls to microservices"
+  - title: "Easy to read and write"
     snippet: "Vanilla"
     image: "/illustrations/nulla-scrolls.webp"
     inverted: true
     text:
       "Your components are just POJOs.
-      Take advantage of the existing ecosystem while you write JavaScript as it is supposed to be,
-      and see the result reflected in the dom."
+      Take advantage of the existing ecosystem while you write JavaScript or TypeScript as it is supposed to be,
+      and see the result reflected in the DOM."
   - title: "You already know Nullstack"
     snippet: "Modern"
     image: "/illustrations/nulla-map.webp"
     text:
-      "Routes are simple attributes you can assign to any tag, and links are just 'a' tags.
+      "JSX tags follow the HTML standard, routes are simple attributes you can assign to any tag, and links are just anchor tags.
       You will find out that Nullstack is just a modern version of your current stack."
-  - title: "All the tools you need speak the same language"
+  - title: "DX with Batteries Included"
     snippet: "Batteries"
     image: "/illustrations/nulla-tools.webp"
     inverted: true
     text:
-      "Most chores are very repetitive. 
-      Save your energy for the real challenges using the shortcuts we created, 
-      like object events and two-way bindings."
+     "Nullstack has a lot of out of the box shortcuts that 
+     were extracted out of repeating patterns in real projects 
+     instead of architecture books. Give it a try and you will get it!"
 playlist:
   heading: "Learn with our "
   slang: "Dweebs"

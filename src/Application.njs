@@ -56,7 +56,7 @@ class Application extends Nullstack {
       <body data-theme={mode} class={mode}>
         <div class="dark:bg-gray-900 dark:text-white">
           <Header locale={locale} />
-          <HiringBanner />
+          {/* <HiringBanner /> */}
 
           <Home route="/" locale="en-US" persistent />
           <Home route="/pt-br" locale="pt-BR" persistent />

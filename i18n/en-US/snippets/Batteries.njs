@@ -1,19 +1,20 @@
 class Batteries extends Nullstack {
 
-  // variables can be bound to the dom
   name = 'Nulla-Chan';
-  isWaifu = true;
-  
-  render() {
-    // preparing an object event
-    const isWaifu = !this.isWaifu;
+  happy = false;
 
-    // events are prevented by default
+  action() {
+    console.log('event already prevented')
+  }
+
+  render() {
     return (
-      <form>
+      <form onsubmit={this.action}>
+        {/* two way bindings */}
         <input bind={this.name} />
-        <button onclick={{isWaifu}}>
-          Toggle Waifu
+        {/* object events */}
+        <button onclick={{ happy: true }}>
+          Hug {this.name}
         </button>
       </form>
     )

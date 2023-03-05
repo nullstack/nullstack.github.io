@@ -23,21 +23,20 @@ class Home extends Translatable {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap sm:pt-12">
         <div class="sm:w-5/12 grid gap-8 mt-12 sm:mt-0">
+          <p class="text-xl sm:text-3xl text-center sm:text-left">
+            {this.i18n.hero.descriptions[0]}
+          </p>
           <h1 class="w-full">
-            <span class={`text-pink-600 ${page.locale === 'pt-BR' ? 'text-xl sm:text-3xl' : 'text-3xl sm:text-6xl'} font-light block sm:mb-3 text-center sm:text-left`}>
+            <span class={`text-pink-600 ${page.locale === 'pt-BR' ? 'text-xl sm:text-3xl' : 'text-5xl sm:text-6xl'} font-light block sm:mb-3 text-center sm:text-left`}>
               {this.i18n.hero.heading}
             </span>
             <span class={`text-pink-600 dark:text-pink-500 ${page.locale !== 'pt-BR' ? 'text-xl sm:text-3xl' : 'text-3xl sm:text-5xl'} font-light block sm:mb-3 text-center sm:text-left`}>
               {this.i18n.hero.subHeading}
             </span>
           </h1>
-          <>
-            {this.i18n.hero.descriptions.map(description =>
-              <p class="text-xl sm:text-2xl text-center sm:text-left">
-                {description}
-              </p>
-            )}
-          </>
+          <p class="text-xl sm:text-2xl text-center sm:text-left">
+            {this.i18n.hero.descriptions[1]}
+          </p>
           <div>
             <button
               class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 inline-block w-full sm:w-auto"
@@ -51,7 +50,7 @@ class Home extends Translatable {
         <div class="bg-center bg-0 hover:bg-100 bg-repeat-y mt-6" style="background-image: url(/stars.webp); transition: background-size 3s;">
           <img src="/illustrations/nulla-hero.webp" alt="Nulla-Chan" class="max-w-full" width="627" height="765" loading="lazy" />
         </div>
-      </section>
+      </section >
     )
   }
 
@@ -73,7 +72,7 @@ class Home extends Translatable {
     return (
       <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap py-12 sm:py-36">
         <h2 class="w-full text-center mb-8 sm:mb-24">
-          <span class="w-full text-pink-600 text-4xl sm:text-6xl font-light block sm:mb-3">{this.i18n.trinity.heading}</span>
+          <span class="w-full text-pink-600 text-2xl sm:text-5xl font-light block sm:mb-3">{this.i18n.trinity.heading}</span>
           <span class="sm:text-xl block">{this.i18n.trinity.subHeading}</span>
         </h2>
         {this.i18n.trinity.roles.map((role) => <Role {...role} />)}
@@ -144,9 +143,15 @@ class Home extends Translatable {
       <div>
         <Hero />
         <Separator />
+        {this.i18n.features.slice(0, 1).map(feature =>
+          <>
+            <Feature {...feature} />
+            <Separator />
+          </>
+        )}
         <Trinity />
         <Separator />
-        {this.i18n.features.map(feature =>
+        {this.i18n.features.slice(1).map(feature =>
           <>
             <Feature {...feature} />
             <Separator />
