@@ -1,4 +1,4 @@
-home: 
+home:
   title: "Nullstack"
   href: "/"
 links:
@@ -6,10 +6,15 @@ links:
     href: "/what-is-nullstack"
   - title: "Documentation"
     href: "/getting-started"
+  - title: "Blog"
+    href: "/blog"
   - title: "Contributors"
     href: "/contributors"
   - title: "Waifu"
     href: "/waifu"
+  - title: "Announcement"
+    href: "/blog/release-candidate-announcement"
+    badge: "new"
 menu:
   title: "Toggle Menu"
 action:
@@ -17,7 +22,7 @@ action:
   href: "/getting-started"
 search:
   title: "Search [ctrl + k]"
-language: 
+language:
   title: "Português"
   href: "/pt-br"
 mode:

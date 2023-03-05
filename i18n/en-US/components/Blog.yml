@@ -1,0 +1,13 @@
+title: "Nullstack Blog"
+description: "Check the latest, coolest stuff going on with Nullstack"
+heading: "Nullstack Blog"
+tagline: "A collection of blog posts about Nullstack."
+contribute: "We accept guest posts! You can write it up in markdown and open a PR to our <a href='https://github.com/nullstack/nullstack.github.io/pulls'>github repo</a>."
+posts:
+  - title: "0.17.2 Release Candidate Announcement"
+    href: "/blog/release-candidate-announcement"
+    description: "We're proud to announce the first release candidate of Nullstack"
+    date: "Jan. 2023"
+    author:
+      name: Anny Figueira
+      handle: AnnyFigueira
