@@ -4,15 +4,15 @@ hero:
   heading: "Componentes JavaScript Full Stack"
   subHeading: "Orientados a Recursos"
   descriptions:
-    - "Escreva o backend e frontend de um recurso em um único
-      componente e deixe o framework decidir onde o código deve ser executado."
-    - "O Nullstack oferece todas as ferramentas que você precisa para manter o foco no produto."
+    - "Seu novo framework web favorito."
+    - "Escreva o backend e o frontend de um recurso em um único componente isomórfico 
+      e deixe o framework descobrir onde o código deve ser executado."
   callToAction: "npx create-nullstack-app"
   actionLink: '/pt-br/comecando'
   actionCallback: 'Comando copiado, cole no terminal'
 trinity:
-  heading: "A Santa Trindade"
-  subHeading: "do desenvolvimento de aplicativos web progressivos"
+  heading: "Excelente para o Dev. Excelente para o usuário"
+  subHeading: "De SSR rápido a PWA offline sem nenhuma configuração"
   roles:
     - title: "Primeira visita otimizada"
       image: "/illustrations/nulla-tanker.webp"
