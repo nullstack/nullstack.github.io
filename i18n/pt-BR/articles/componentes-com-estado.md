@@ -2,6 +2,7 @@
 title: Componentes com estado
 description: Um framework web full stack produtivo não deve forçar você a pensar sobre detalhes de estrutura
 ---
+Componentes com estado são classes que estendem nullstack e são capazes de manter o estado que reflete na interface do usuário.
 
 Um framework web full stack produtivo não deve forçar você a pensar sobre detalhes de estrutura.
 
@@ -44,6 +45,44 @@ export default Counter;
 ```
 
 > 💡 As atualizações são feitas em lotes, geralmente enquanto aguardam chamadas assíncronas, portanto, fazer várias atribuições não tem custos de desempenho!
+
+## Array de Eventos
+
+Você pode passar um array de eventos como prop e eles serão executados em paralelo
+
+Você também pode passar valores falsos para pular eventos condicionalmente.
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Counter extends Nullstack {
+
+  count = 0;
+
+  increment() {
+    this.count++;
+  }
+
+  log() {
+    console.log(this.count);
+  }
+
+  logUnlessZero() {
+    console.log(this.count > 0);
+  }
+  
+  render() {
+    return (
+      <button onclick={[this.increment, this.log, this.count > 0 && this.logUnlessZero]}> 
+        {this.count}
+      </button>
+    )
+  }
+
+}
+
+export default Counter;
+```
 
 ## Objeto de Eventos
 
@@ -158,6 +197,123 @@ class Form extends Nullstack {
 
 export default Form;
 ```
+
+## Eventos Debounced
+
+Você pode usar o atributo `debounce` passando um número de milissegundos para atrasar os eventos desse elemento
+
+```jsx
+import Nullstack from 'nullstack';
+
+class Counter extends Nullstack {
+  
+  count = 0
+
+  increment() {
+    this.count++
+  }
+  
+  render() {
+    return (
+      <button onclick={this.increment} debounce={2000}> 
+        increment 
+      </button>
+    )
+  }
+
+}
+
+export default Counter;
+```
+
+
+## TypeScript 
+
+Componentes com estado aceitam um genérico que reflete nas props que sua tag aceitará
+
+```tsx
+// src/Counter.tsx
+import Nullstack, { NullstackClientContext } from 'nullstack';
+
+interface CounterProps {
+  multiplier: number 
+}
+
+class Counter extends Nullstack<CounterProps> {
+
+  // ...
+  
+  render({ multiplier }: NullstackClientContext<CounterProps>) {
+    return <div> {multiplier} </div>
+  }
+
+}
+
+export default Counter;
+```
+
+```tsx
+// src/Application.tsx
+import Counter from './Counter'
+
+export default function Application() {
+  return <Counter multiplier={4} />
+}
+```
+
+## Componentes internos
+
+Em vez de criar um novo componente apenas para organizar a divisão de código, você pode criar um componente interno.
+
+Componentes internos são qualquer método cujo nome comece com `render` seguido por um caractere maiúsculo.
+
+Os componentes internos compartilham a mesma instância e escopo do componente principal, portanto, são muito convenientes para evitar problemas como perfuração de escoras.
+
+Para invocar o componente interno, use uma tag JSX com o nome do método sem o prefixo `render`.
+
+```tsx
+import Nullstack, { NullstackClientContext, NullstackNode } from 'nullstack';
+
+interface CounterProps {
+  multiplier: number 
+}
+
+interface CounterButtonProps {
+  delta: number
+}
+
+declare function Button(context: CounterProps): NullstackNode
+
+class Counter extends Nullstack<CounterProps> {
+
+  count = 0;
+
+  increment({ delta, multiplier }: NullstackClientContext<CounterProps & CounterButtonProps>) {
+    this.count += delta * multiplier;
+  }
+
+  renderButton({ delta = 1 }: NullstackClientContext<CounterProps & CounterButtonProps>) {
+    return (
+      <button onclick={this.increment} delta={delta}> 
+        {this.count}
+      </button>
+    )
+  }
+  
+  render() {
+    return (
+      <div>
+        <Button />
+        <Button delta={2} />
+      </div>
+    )
+  }
+
+}
+
+export default Counter;
+```
+> 💡 Nullstack will inject a constant reference to the function at transpile time in order to completely skip the runtime lookup process!
 
 ## Próximos passos
 

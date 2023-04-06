@@ -28,13 +28,13 @@ cd project-name
 Instale as dependências:
 
 ```sh
-npm install
+npm install # ou yarn
 ```
 
 Inicie a aplicação em modo de desenvolvimento:
 
 ```sh
-npm start
+npm start # ou yarn start
 ```
 
 ## Entendendo os arquivos gerados
@@ -43,13 +43,13 @@ As seguintes pastas e arquivos serão gerados:
 
 ### server.js
 
-Esta é a ponto de entrada e geração do servidor.
+Esta é a entrada do servidor e o ponto do gerador.
 
 É um lugar conveniente para configurar coisas globais como [banco de dados](/pt-br/como-usar-mongodb-com-nullstack) e manipular o `contexto` do servidor, detalhes em [inicialização da aplicação](/pt-br/inicializacao-da-aplicacao).
 
 ### client.js
 
-Esta é a ponto de entrada e geração do cliente.
+Esta é a entrada do cliente e o ponto do gerador.
 
 É um lugar conveniente para importar dependências globais como frameworks CSS e manipular o `contexto` do cliente.
 

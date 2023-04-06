@@ -9,7 +9,7 @@ topics:
         href: "/pt-br/o-que-e-nullstack"
       - title: "Começando"
         href: "/pt-br/comecando"
-      - title: "Componentes renderizáveis"
+      - title: "Componentes sem estado"
         href: "/pt-br/componentes-renderizaveis"
       - title: "Componentes com estado"
         href: "/pt-br/componentes-com-estado"

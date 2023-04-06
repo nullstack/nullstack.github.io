@@ -17,6 +17,8 @@ Não existem grandes projetos no Nullstack, apenas pequenos recursos. Um recurso
 
 Isso pode parecer errado e ir contra tudo o que você já aprendeu, mas funciona e é mais rápido e flexível. Seu código fica muito mais simples e fácil de entender, as pessoas podem pular rapidamente em sua base de código e começar a contribuir. Os desenvolvedores podem fazer alterações em projetos gigantes sem nenhuma sobrecarga cognitiva.
 
+Nullstack não precisa de um ecossistema, você provavelmente não encontrará bibliotecas "nullstack-*", pois pode simplesmente usar pacotes JavaScript vanilla. Acreditamos que o JavaScript atingiu um nível de maturidade que a criação de um trecho de código que faz exatamente o que você precisa geralmente ocupará menos linhas e levará a menos engenharia excessiva do que configurar uma biblioteca.
+
 O desenvolvimento orientado a recursos pode não ser para todos, mas o Nullstack oferece liberdade suficiente para usá-lo da maneira que achar melhor. Você ainda pode usar o Nullstack com camadas e abstrações, não estamos aqui para segurar sua mão, você é livre para atirar no seu próprio pé.
 
 ## Próximos passos
