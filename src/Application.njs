@@ -7,7 +7,9 @@ import Components from './Components';
 import Contributors from './Contributors';
 import Documentation from './Documentation';
 import Blog from './Blog';
+import Examples from './Examples';
 import Post from './Post';
+import PostExample from './PostExample';
 import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
@@ -65,6 +67,12 @@ class Application extends Nullstack {
 
           <Documentation route="/documentation" locale="en-US" persistent />
           <Documentation route="/pt-br/documentacao" locale="pt-BR" persistent />
+
+          <Examples route="/examples" locale="en-US" persistent />
+          <PostExample route="/examples/:slug" locale="en-US" persistent />
+
+          <Examples route="/pt-br/exemplos" locale="pt-BR" persistent />
+          <PostExample route="/pt-br/exemplos/:slug" locale="pt-BR" persistent />
 
           <Blog route="/blog" locale="en-US" persistent />
           <Post route="/blog/:slug" locale="en-US" persistent />
