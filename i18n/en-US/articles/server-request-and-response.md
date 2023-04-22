@@ -79,6 +79,22 @@ class Application extends Nullstack {
 export default Application;
 ```
 
+It's also possible to expose server functions from your components to be in the web API. Instead of using a function that a `request` and a `response` pass the static function from your component to the express route.
+
+```js
+// server.js
+import Nullstack from 'nullstack';
+import Application from './src/Application';
+import WaifuComponent from './src/WaifuComponent';
+
+const context = Nullstack.start(Application);
+
+context.server.get('/waifus', WaifuComponent.getWaifus)
+
+export default context;
+```
+
+
 ## Next step
 
 ⚔ Learn about [styles](/styles).

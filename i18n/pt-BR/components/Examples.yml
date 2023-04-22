@@ -1,0 +1,13 @@
+title: "Nullstack Examples"
+description: "Check coolest stuff you can do with Nullstack"
+heading: "Nullstack Examples"
+tagline: "A collection of application examples with Nullstack."
+contribute: "We accept guest examples! You can write it up in markdown and open a PR to our <a href='https://github.com/nullstack/nullstack.github.io/pulls'>github repo</a>."
+posts:
+  - title: "Using Nullstack as a Web API"
+    href: "/examples/using-nullstack-as-a-web-api"
+    description: "Nullstack can be used as a web API, and this example shows how to do it."
+    date: "Apr, 2023"
+    author:
+      name: Bruno Michels
+      handle: BrunoLM
