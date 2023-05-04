@@ -10,7 +10,7 @@ class Home extends Translatable {
 
   async getStarted({ router, action }) {
     if ('clipboard' in navigator) {
-      const command = 'npx create-nullstack-app@latest';
+      const command = 'npx create-nullstack-app@latest --typescript --tailwind';
       await navigator.clipboard.writeText(command);
     }
     clearTimeout(this.gettingStarted);
@@ -38,9 +38,9 @@ class Home extends Translatable {
           <p class="text-xl sm:text-2xl text-center sm:text-left">
             {this.i18n.hero.descriptions[1]}
           </p>
-          <div class="space-x-4">
+          <div class="">
             <a
-              class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 w-full sm:w-auto block sm:inline-block text-center"
+              class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 w-full sm:w-auto block sm:hidden text-center"
               href={this.i18n.hero.actionLink}
             >
               {this.i18n.hero.getStarted}
