@@ -16,6 +16,7 @@ class Home extends Translatable {
     clearTimeout(this.gettingStarted);
     this.gettingStarted = setTimeout(() => {
       router.url = action;
+      this.gettingStarted = null;
     }, 3000)
   }
 
