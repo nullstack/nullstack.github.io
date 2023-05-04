@@ -13,8 +13,8 @@ class Snippet extends Nullstack {
     return prismjs.highlight(code, Prism.languages.jsx, "javascript");
   }
 
-  async initiate({ key, locale }) {
-    this.html = await this.getSnippetByKey({ key, locale });
+  async initiate({ key, page }) {
+    this.html = await this.getSnippetByKey({ key, locale: page.locale });
   }
 
   render() {

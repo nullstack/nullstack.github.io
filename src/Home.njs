@@ -8,24 +8,21 @@ class Home extends Translatable {
     page.title = `${project.name} - ${this.i18n.title}`;
   }
 
-  async getStarted({ router, href }) {
+  async getStarted({ router, action }) {
     if ('clipboard' in navigator) {
       const command = 'npx create-nullstack-app@latest';
       await navigator.clipboard.writeText(command);
     }
     clearTimeout(this.gettingStarted);
     this.gettingStarted = setTimeout(() => {
-      router.url = href;
+      router.url = action;
     }, 3000)
   }
 
   renderHero({ page }) {
     return (
-      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap sm:pt-12">
+      <section class="max-w-screen-xl mx-auto px-4 flex justify-between items-center flex-wrap sm:pt-12 pb-24">
         <div class="sm:w-5/12 grid gap-8 mt-12 sm:mt-0">
-          <p class="text-xl sm:text-3xl text-center sm:text-left">
-            {this.i18n.hero.descriptions[0]}
-          </p>
           <h1 class="w-full">
             <span class={`text-pink-600 ${page.locale === 'pt-BR' ? 'text-xl sm:text-3xl' : 'text-5xl sm:text-6xl'} font-light block sm:mb-3 text-center sm:text-left`}>
               {this.i18n.hero.heading}
@@ -35,20 +32,31 @@ class Home extends Translatable {
             </span>
           </h1>
           <p class="text-xl sm:text-2xl text-center sm:text-left">
+            {this.i18n.hero.descriptions[0]}
+          </p>
+          <p class="text-xl sm:text-2xl text-center sm:text-left">
             {this.i18n.hero.descriptions[1]}
           </p>
-          <div>
-            <button
-              class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 inline-block w-full sm:w-auto"
-              onclick={this.getStarted}
+          <div class="space-x-4">
+            <a
+              class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 w-full sm:w-auto block sm:inline-block text-center"
               href={this.i18n.hero.actionLink}
             >
+              Get Started
+            </a>
+            <button
+              class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white px-6 py-4 border border-gray-300 dark:border-pink-600 hover:bg-transparent hover:text-pink-600 hidden sm:inline-block"
+              onclick={this.getStarted}
+              action={this.i18n.hero.actionLink}
+            >
+              <span class="text-pink-600"> $ </span>
               {this.gettingStarted ? this.i18n.hero.actionCallback : this.i18n.hero.callToAction}
             </button>
           </div>
         </div>
-        <div class="bg-center bg-0 hover:bg-100 bg-repeat-y mt-6" style="background-image: url(/stars.webp); transition: background-size 3s;">
-          <img src="/illustrations/nulla-hero.webp" alt="Nulla-Chan" class="max-w-full" width="627" height="765" loading="lazy" />
+        <div class="w-full sm:w-7/12 bg-center bg-0 hover:bg-100 bg-repeat-y mt-6 relative sm:pr-40 sm:pl-12" style="background-image: url(/stars.webp); transition: background-size 3s;">
+          <Snippet key="GlueCode" locale={page.locale} />
+          <img src="/illustrations/nulla-hero.webp" alt="Nulla-Chan" class="hidden sm:flex max-w-sm absolute bottom-0 -right-14" width="627" height="765" loading="lazy" />
         </div>
       </section >
     )
@@ -143,15 +151,9 @@ class Home extends Translatable {
       <div>
         <Hero />
         <Separator />
-        {this.i18n.features.slice(0, 1).map(feature =>
-          <>
-            <Feature {...feature} />
-            <Separator />
-          </>
-        )}
         <Trinity />
         <Separator />
-        {this.i18n.features.slice(1).map(feature =>
+        {this.i18n.features.map(feature =>
           <>
             <Feature {...feature} />
             <Separator />

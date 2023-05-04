@@ -4,9 +4,8 @@ hero:
   heading: "Feature-Driven"
   subHeading: "Full Stack JavaScript Components"
   descriptions:
-    - Your new favorite web framework.
-    - "Write the backend and frontend of a feature in a single isomorphic
-      component and let the framework decide where the code should run."
+    - Nullstack is a web framework that makes coding fun again.
+    - "Write the backend and frontend of a feature in a single isomorphic component with zero boilerplate or glue code."
   callToAction: "npx create-nullstack-app"
   actionLink: '/getting-started'
   actionCallback: 'Command copied, paste it on the terminal'
@@ -33,8 +32,8 @@ trinity:
         generated microservice API, deserialize the response, update the
         aplication state, and rerender the page out of the box"
 features:
-  - title: "No more glue code"
-    snippet: "GlueCode"
+  - title: "Never write another API"
+    snippet: "NeverWriteAnotherAPI"
     image: "/illustrations/nulla-glue.webp"
     text:
       "You write features for products. The compiler extracts your front end code and replaces all static async functions with calls to microservices"

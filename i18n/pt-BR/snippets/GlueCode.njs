@@ -1,24 +1,23 @@
-class Feature extends Nullstack {
+class WaifuCounter extends Nullstack {
 
-  // executa no servidor
-  static async delete({ database }) {
-    database.query("DELETE * FROM WAIFUS");
+  // roda no servidor
+  static async getWaifus({ database }) {
+    const sql = "SELECT COUNT(*) FROM WAIFUS";
+    return database.query(sql);
   }
 
-  // executa no client
-  async confirm() {
-    if (confirm("Tem certeza? uwu")) {
-      await this.delete();
-    }
+  // roda no cliente
+  async countWaifus() {
+    this.waifus = this.getWaifus()
   }
 
-  // executa onde for melhor
+  // roda onde for melhor
   render() {
     return (
-      <button onclick={this.confirm}>
-        Delete
+      <button onclick={this.countWaifus}>
+        Count: {this.waifus}
       </button>
     );
   }
-  
+
 }

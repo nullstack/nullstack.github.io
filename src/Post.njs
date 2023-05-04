@@ -53,9 +53,9 @@ class Post extends Translatable {
     };
   }
 
-  async initiate({ page, locale, params }) {
-    super.initiate({ page, locale });
-    const post = await this.getPostByKey({ key: params.slug, locale });
+  async initiate({ page, params }) {
+    super.initiate({ page, locale: page.locale });
+    const post = await this.getPostByKey({ key: params.slug, locale: page.locale });
     Object.assign(this, post);
   }
 
@@ -75,7 +75,7 @@ class Post extends Translatable {
           <h1 class="text-pink-600 text-4xl font-light block">{this.title}</h1>
           <div class="opacity-80 mb-8">
             <span class="mr-2">
-              By{" "}
+              By
               <a
                 href={`https://github.com/${this.author.handle}`}
                 rel="noopener"

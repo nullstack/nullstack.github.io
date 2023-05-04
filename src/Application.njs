@@ -31,69 +31,52 @@ class Application extends Nullstack {
   prepare(context) {
     context.mode = 'light';
     context.oppositeMode = 'dark';
+    context.page.locale = context.router.url.startsWith('/pt-br') ? 'pt-BR' : 'en-US';
   }
 
   hydrate(context) {
-    if (localStorage['mode']) {
-      context.mode = localStorage['mode'];
-      if (context.mode === 'dark') {
-        document.querySelector('html').setAttribute('data-theme', context.mode)
-        context.oppositeMode = 'light';
-      }
-    }
+    context.mode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"
+    document.querySelector('html').setAttribute('data-theme', context.mode)
   }
 
-  renderHiringBanner() {
-    return (
-      <div class="px-4 md:px-0">
-        <a class="bg-yellow-100 dark:bg-gray-800 py-2 flex justify-center items-center space-x-2 font-semibold flex-col md:flex-row px-6 text-center" href="https://ae.studio/jobs/4484720004/nullstack-developer" target="_blank">
-          <span class="text-gray-900 dark:text-white"> AE Studio is hiring Nullstack developers that get shit done! </span>
-          <span class="text-pink-800 dark:text-pink-200"> Apply here. </span>
-        </a>
-      </div>
-    )
-  }
-
-  render({ router, mode }) {
-    const locale = router.url.startsWith('/pt-br') ? 'pt-BR' : 'en-US';
+  render({ mode }) {
     return (
       <body data-theme={mode} class={mode}>
         <div class="dark:bg-gray-900 dark:text-white">
-          <Header locale={locale} />
-          {/* <HiringBanner /> */}
+          <Header />
 
-          <Home route="/" locale="en-US" persistent />
-          <Home route="/pt-br" locale="pt-BR" persistent />
+          <Home route="/" persistent />
+          <Home route="/pt-br" persistent />
 
-          <Documentation route="/documentation" locale="en-US" persistent />
-          <Documentation route="/pt-br/documentacao" locale="pt-BR" persistent />
+          <Documentation route="/documentation" persistent />
+          <Documentation route="/pt-br/documentacao" persistent />
 
-          <Examples route="/examples" locale="en-US" persistent />
-          <PostExample route="/examples/:slug" locale="en-US" persistent />
+          <Examples route="/examples" persistent />
+          <PostExample route="/examples/:slug" persistent />
 
-          <Examples route="/pt-br/exemplos" locale="pt-BR" persistent />
-          <PostExample route="/pt-br/exemplos/:slug" locale="pt-BR" persistent />
+          <Examples route="/pt-br/exemplos" persistent />
+          <PostExample route="/pt-br/exemplos/:slug" persistent />
 
-          <Blog route="/blog" locale="en-US" persistent />
-          <Post route="/blog/:slug" locale="en-US" persistent />
+          <Blog route="/blog" persistent />
+          <Post route="/blog/:slug" persistent />
 
-          <Components route="/components" locale="en-US" persistent />
-          <Components route="/pt-br/componentes" locale="pt-BR" persistent />
+          <Components route="/components" persistent />
+          <Components route="/pt-br/componentes" persistent />
 
-          <Contributors route="/contributors" locale="en-US" persistent />
-          <Contributors route="/pt-br/contribuidores" locale="pt-BR" persistent />
+          <Contributors route="/contributors" persistent />
+          <Contributors route="/pt-br/contribuidores" persistent />
 
-          <Waifu route="/waifu" locale="en-US" persistent />
-          <Waifu route="/pt-br/waifu" locale="pt-BR" persistent />
+          <Waifu route="/waifu" persistent />
+          <Waifu route="/pt-br/waifu" persistent />
 
-          <Article route="/pt-br/:slug" locale="pt-BR" persistent />
-          <Article route="/:slug" locale="en-US" persistent />
+          <Article route="/pt-br/:slug" persistent />
+          <Article route="/:slug" persistent />
 
           <GoogleAnalytics id="G-E7GZ5Z4MLN" />
           <Preloader />
           <Loader />
 
-          <Footer locale={locale} />
+          <Footer />
         </div>
       </body>
     )
