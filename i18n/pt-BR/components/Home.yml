@@ -6,6 +6,7 @@ hero:
   descriptions:
     - "Nullstack é um web framework que torna programar divertido novamente."
     - "Escreva o backend e o frontend de um recurso em um único componente isomórfico sem boilerplate ou glue code."
+  getStarted: "Comece a usar"
   callToAction: "npx create-nullstack-app"
   actionLink: '/pt-br/comecando'
   actionCallback: 'Comando copiado, cole no terminal'

@@ -6,9 +6,10 @@ hero:
   descriptions:
     - Nullstack is a web framework that makes coding fun again.
     - "Write the backend and frontend of a feature in a single isomorphic component with zero boilerplate or glue code."
+  getStarted: "Get Started"
   callToAction: "npx create-nullstack-app"
   actionLink: '/getting-started'
-  actionCallback: 'Command copied, paste it on the terminal'
+  actionCallback: 'Command copied, paste it in the terminal'
 trinity:
   heading: "Great for the Dev. Great for the User"
   subHeading: "from fast SSR to offline PWA out of the box"

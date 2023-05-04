@@ -42,7 +42,7 @@ class Home extends Translatable {
               class="bg-pink-600 text-white px-6 py-4 border border-pink-600 hover:bg-transparent hover:text-pink-600 w-full sm:w-auto block sm:inline-block text-center"
               href={this.i18n.hero.actionLink}
             >
-              Get Started
+              {this.i18n.hero.getStarted}
             </a>
             <button
               class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white px-6 py-4 border border-gray-300 dark:border-pink-600 hover:bg-transparent hover:text-pink-600 hidden sm:inline-block"
