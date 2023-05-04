@@ -67,11 +67,11 @@ class Article extends Translatable {
     return YAML.parse(file);
   }
 
-  async initiate({ page, locale, params }) {
-    super.initiate({ page, locale })
-    const article = await this.getArticleByKey({ key: params.slug, locale });
+  async initiate({ page, params }) {
+    super.initiate({ page })
+    const article = await this.getArticleByKey({ key: params.slug, locale: page.locale });
     Object.assign(this, article);
-    const { topics } = await this.getArticlesList({ locale });
+    const { topics } = await this.getArticlesList({ locale: page.locale });
     this.topics = topics
   }
 

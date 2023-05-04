@@ -8,7 +8,7 @@ module.exports = {
     "./src/**/*.nts",
     "./src/**/*.tsx",
   ],
-  darkMode: "class",
+  // darkMode: "class",
   theme: {
     minWidth: {
       '0': '0',

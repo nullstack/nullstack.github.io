@@ -9,8 +9,6 @@ Crie aplicações JavaScript full stack em segundos usando `npx` para gerar os a
 
 > 🔥 A versão mínima necessária do [node.js](https://nodejs.org/pt-br/) para o modo de desenvovimento é *12.20.0*.
 
-> ⚠ Se o diretório em que você está contém espaços, você usa Windows e o `npx` der erros, leia sobre o [bug conhecido do npx](#bug-conhecido-do-npx).
-
 Troque `project-name` com o nome do seu projeto e rode o comanto abaixo para começar um projeto: 
 
 ```sh
@@ -98,30 +96,6 @@ Este é o resultado compilado da sua aplicação em modo de produção.
 > 🔥 Não toque nesta pasta
 
 >✨ Saiba mais sobre [como fazer deploy de aplicação Nullstack](/pt-br/como-fazer-deploy-de-aplicacao-nullstack).
-
-## Bug conhecido do npx
-
-Avisado em issues do `npx` como [#100](https://github.com/zkat/npx/issues/100), [#110](https://github.com/zkat/npx/issues/110) e [#143](https://github.com/zkat/npx/issues/146), ele tem um erro ao tentar resolver o caminho para sua pasta de cache quando este contém espaços.
-
-Se isso ocorrer com você, nossas recomendações são:
-
-- Usando baixado como normalmente faria com `npm`:
-  ```sh
-  npm i -g create-nullstack-app
-  create-nullstack-app project-name
-  ```
-
-- ou, mudar o diretório da pasta de cache, como dito [aqui](https://github.com/zkat/npx/issues/146#issuecomment-384016791) e [aqui](https://github.com/zkat/npx/issues/146#issuecomment-384019497):
-
-  - Se deseja manter o uso do espaço, subtitua `PrimeiroNome` pelo usado no seu caminho e rode:
-  ```sh
-  npm config set cache "C:\Users\PrimeiroNome~1\AppData\Roaming\npm-cache" --global
-  ```
-
-  - ou, usando outro caminho sem espaços:
-  ```sh
-  npm config set cache C:\tmp\nodejs\npm-cache --global
-  ```
 
 ## Próximo Passo
 

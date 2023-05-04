@@ -4,9 +4,9 @@ hero:
   heading: "Componentes JavaScript Full Stack"
   subHeading: "Orientados a Recursos"
   descriptions:
-    - "Seu novo framework web favorito."
-    - "Escreva o backend e o frontend de um recurso em um único componente isomórfico 
-      e deixe o framework descobrir onde o código deve ser executado."
+    - "Nullstack é um web framework que torna programar divertido novamente."
+    - "Escreva o backend e o frontend de um recurso em um único componente isomórfico sem boilerplate ou glue code."
+  getStarted: "Comece a usar"
   callToAction: "npx create-nullstack-app"
   actionLink: '/pt-br/comecando'
   actionCallback: 'Comando copiado, cole no terminal'
@@ -27,11 +27,11 @@ trinity:
       text:
         "As funções de servidor subsequentes buscarão JSON de uma API de microsserviços gerada automaticamente, desserializarão a resposta, atualizarão o estado da aplicação e renderizarão a página sem nenhum código adicional"
 features:
-  - title: "Não perca mais tempo colando um código no outro"
-    snippet: "GlueCode"
+  - title: "Nunca escreva outra API"
+    snippet: "NeverWriteAnotherAPI"
     image: "/illustrations/nulla-glue.webp"
     text:
-      "Um ciclo de vida full stack combinado com uma abordagem orientada a recursos permite que você escreva código limpo e reutilizável sem a necessidade de criar APIs manualmente."
+      "Você escreve recursos para produtos. O compilador extrai seu código de frontend e substitui todas as funções assíncronas estáticas por chamadas para microsserviços"
   - title: "Torne-se um programador menos dependente de maneirismos"
     snippet: "Vanilla"
     image: "/illustrations/nulla-scrolls.webp"

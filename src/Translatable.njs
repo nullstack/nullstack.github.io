@@ -13,12 +13,12 @@ class Translatable extends Nullstack {
     return {};
   }
 
-  async initiate({ page, locale }) {
-    this.locale = locale;
-    this.i18n = await this.geti18nByLocale({ locale });
+  async initiate({ page }) {
+    this.locale = page.locale;
+    this.i18n = await this.geti18nByLocale({ locale: page.locale });
     if (this.i18n.title) {
       page.description = this.i18n.description;
-      page.locale = locale || "en-US";
+      page.locale = page.locale || "en-US";
     }
   }
 
@@ -28,8 +28,8 @@ class Translatable extends Nullstack {
     }
   }
 
-  update({ locale }) {
-    if (this.locale !== locale) {
+  update({ page }) {
+    if (this.locale !== page.locale) {
       this.initiate();
     }
   }

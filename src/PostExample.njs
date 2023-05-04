@@ -53,9 +53,9 @@ class PostExample extends Translatable {
     };
   }
 
-  async initiate({ page, locale, params }) {
-    super.initiate({ page, locale });
-    const post = await this.getPostByKey({ key: params.slug, locale });
+  async initiate({ page, params }) {
+    super.initiate({ page, locale: page.locale });
+    const post = await this.getPostByKey({ key: params.slug, locale: page.locale });
     Object.assign(this, post);
   }
 

@@ -9,8 +9,6 @@ Create full stack JavaScript applications within seconds using `npx` to generate
 
 > 🔥 The minimum required [node.js](https://nodejs.org) version for development mode is *12.20.0*.
 
-> ⚠ If the directory you are in contains spaces, you use Windows and `npx` gives errors, read about [the known npx bug](#the-known-npx-bug).
-
 Replace `project-name` with your project name and run the command below to start a project: 
 
 ```sh
@@ -104,30 +102,6 @@ This is the compiled result of your application in production mode.
 > 🔥 Do not touch this folder
 
 >✨ Learn more about [how to deploy a Nullstack application](/how-to-deploy-a-nullstack-application).
-
-## The known npx bug
-
-Warned on `npx` issues like [#100](https://github.com/zkat/npx/issues/100), [#110](https://github.com/zkat/npx/issues/110) and [#143](https://github.com/zkat/npx/issues/146), it has an error when trying to resolve the path to his cache folder when contains spaces.
-
-If this happens to you, our recommendations are:
-
-- Using downloaded as you normally would with `npm`:
-  ```sh
-  npm i -g create-nullstack-app
-  create-nullstack-app project-name
-  ```
-
-- or, change the cache folder directory, as stated [here](https://github.com/zkat/npx/issues/146#issuecomment-384016791) and [here](https://github.com/zkat/npx/issues/146#issuecomment-384019497):
-
-  - If you want to keep the use of space, replace `FirstName` with the one used on your path and run:
-  ```sh
-  npm config set cache "C:\Users\FirstName~1\AppData\Roaming\npm-cache" --global
-  ```
-
-  - or, using another path without spaces:
-  ```sh
-  npm config set cache C:\tmp\nodejs\npm-cache --global
-  ```
 
 ## Next step
 
