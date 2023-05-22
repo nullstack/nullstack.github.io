@@ -184,7 +184,3 @@ class Counter extends Nullstack {
 
 export default Counter;
 ```
-
-## Próximo passo
-
-⚔ Aprenda sobre [Rotas e Parâmetros](/pt-br/rotas-e-parametros).

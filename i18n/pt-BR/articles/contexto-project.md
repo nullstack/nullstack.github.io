@@ -100,7 +100,3 @@ export default Application;
 ```
 
 > 💡 Você pode substituir o **manifest.json** gerado automaticamente e **robots.txt** inserindo o seu próprio arquivo na pasta **public**
-
-## Próximo Passo
-
-⚔ Aprenda sobre a [chave `settings` do contexto](/pt-br/contexto-settings).

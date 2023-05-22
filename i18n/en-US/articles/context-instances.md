@@ -91,7 +91,3 @@ The use of `instances` unlocks unlimited custom behaviors like:
 - A *toast* component that can be invoked from anywhere in your application
 - A *store* system with custom dispatch methods similar to Redux
 - Something we haven't even imagined, dream on and post your ideas on GitHub!
-
-## Next step
-
-⚔ Learn about the [context `environment`](/context-environment).

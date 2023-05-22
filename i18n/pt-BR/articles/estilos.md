@@ -19,7 +19,3 @@ class Header extends Nullstack {
 
 export default Header;
 ```
-
-## Próximo passo
-
-⚔ Aprenda sobre a [extensão de arquivo NJS](/pt-br/extensao-de-arquivo-njs).

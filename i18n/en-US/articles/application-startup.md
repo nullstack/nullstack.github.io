@@ -1,6 +1,7 @@
 ---
 title: Application Startup
 description: The start function will run only once when your application loads and is a good place for setting up your context
+action: ⚔ Learn about the [application startup](/application-startup).
 ---
 
 The **server.js**/**client.js** files at your application root are responsible for starting your application.
@@ -62,7 +63,3 @@ export default Application;
 ```
 
 > 🔒 Server functions with the name starting with "_" do not generate an API endpoint to avoid malicious API calls.
-
-## Next step
-
-⚔ Learn about how to create a [script runners](/script-runner).

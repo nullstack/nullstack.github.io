@@ -68,7 +68,3 @@ jobs:
 ```
 
 This action will build your application in SSG mode and generate a folder with the static website, the last command will deploy the static folder to your `master` branch allowing static content to be served from the root.
-
-## Next step
-
-⚔ Learn [how to deploy a nullstack application with Heroku](/how-to-deploy-to-heroku).

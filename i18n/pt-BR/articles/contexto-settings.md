@@ -54,7 +54,3 @@ export default Application;
 Qualquer variável de ambiente começando com NULLSTACK_SETTINGS_ será mapeado para o `settings` daquele ambiente.
 
 > 🐱‍💻 NULLSTACK_SETTINGS_PUBLIC_KEY será mapeado para `settings.publicKey`
-
-## Próximo passo
-
-⚔ Aprenda sobre a [chave `secrets` do contexto](/pt-br/contexto-secrets).

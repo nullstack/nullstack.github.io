@@ -32,7 +32,3 @@ Add the following `vercel.json` to the root folder in order to redirect all requ
   ]
 }
 ```
-
-## Next step
-
-⚔ Learn [how to deploy a nullstack application with GitHub pages](/how-to-deploy-to-github-pages).

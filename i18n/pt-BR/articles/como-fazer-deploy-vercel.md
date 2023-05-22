@@ -32,7 +32,3 @@ Adicione a seguinte configuração no `vercel.json` na raiz da sua aplicação p
   ]
 }
 ```
-
-## Próximo Passo
-
-⚔ Aprenda [Como fazer o deploy de uma aplicação Nullstack no GitHub Pages](/pt-br/como-fazer-deploy-github-pages).

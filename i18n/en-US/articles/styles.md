@@ -76,7 +76,3 @@ class Counter extends Nullstack {
 
 export default Counter;
 ```
-
-## Next step
-
-⚔ Learn more about the [service worker](/service-worker).

@@ -288,8 +288,3 @@ export default Application;
 ```
 
 > 🔥 You should not use the `head` tag to update [metatags](/context-page) that Nullstack already controls
-
-
-## Next step
-
-⚔ Learn about [refs](/refs).

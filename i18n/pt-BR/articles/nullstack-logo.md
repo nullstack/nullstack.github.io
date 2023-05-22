@@ -33,7 +33,3 @@ Os componentes acima e seus atributos geram os seguintes logotipos:
 ![Nullstack Logos](/nullstack-logos.png)
 
 O logotipo usa largura total e cores de `duotone` por padrão.
-
-## Próximo passo
-
-⚔ Aprenda [como usar MongoDB com Nullstack](/pt-br/como-usar-mongodb-com-nullstack).

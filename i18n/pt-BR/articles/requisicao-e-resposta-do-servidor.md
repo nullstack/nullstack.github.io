@@ -86,7 +86,3 @@ class Application extends Nullstack {
 
 export default Application;
 ```
-
-## Próximo passo
-
-⚔ Aprenda sobre [estilos](/styles).

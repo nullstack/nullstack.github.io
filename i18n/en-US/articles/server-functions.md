@@ -319,7 +319,3 @@ The URL and implementation may change between versions of Nullstack.
 Server functions endpoints are based on file path and function name, changing those might cause backwards compatibility problems in some scenarios.
 
 > ✨ If you want to build an API, learn more about [how to create an API with Nullstack](/server-request-and-response).
-
-## Next step
-
-⚔ Learn about the [context](/context).

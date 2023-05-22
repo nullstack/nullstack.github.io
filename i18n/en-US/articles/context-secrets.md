@@ -53,7 +53,3 @@ export default Application;
 Any environment variable starting with NULLSTACK_SECRETS_ will be mapped to the `secrets` in that environment.
 
 > 🐱‍💻 NULLSTACK_SECRETS_PRIVATE_KEY will be mapped to `secrets.privateKey`
-
-## Next step
-
-⚔ Learn about the [server request and response](/server-request-and-response).

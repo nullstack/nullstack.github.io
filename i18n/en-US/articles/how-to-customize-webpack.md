@@ -56,9 +56,3 @@ function applyCadencePlugin(environments) {
 
 module.exports = applyCadencePlugin([server, client])
 ```
-
-## Next step
-
-> 🎉 **Congratulations!**. You are done with the advanced concepts!
-
-⚔ Learn about [server-side rendering](/server-side-rendering).

@@ -94,7 +94,3 @@ class Application extends Nullstack {
 
 export default Application;
 ```
-
-## Next step
-
-⚔ Learn about the [context `data`](/context-data).

@@ -61,7 +61,3 @@ export default function Application() {
   )
 }
 ```
-
-## Next step
-
-⚔ Add state to your component using [stateful components](/stateful-components).

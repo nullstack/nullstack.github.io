@@ -111,7 +111,3 @@ export default Tasks;
 # Extensões alternativas
 
 Por conveniência, você também pode usar as extensões de arquivo `.jsx`, `.nts` e `.tsx`
-
-## Próximo Passo
-
-⚔ Aprenda mais sobre o [service-worker](/pt-br/service-worker).

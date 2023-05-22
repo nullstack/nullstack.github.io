@@ -53,7 +53,3 @@ Script runners are great for many things like:
 - cron jobs
 
 Note that you are not limited to the above, you can be creative and use it for more complex things like watching blockchain events or task needs access to the same context as your application.
-
-## Next step
-
-⚔ Learn about [persistent components](/persistent-components).

@@ -48,7 +48,3 @@ In SPA mode both [`prepare`](/full-stack-lifecycle) and [`initiate`](/full-stack
 However it is a good pratice to follow SSR patterns in order to be able to easily change the build mode.
 
 You can mix modes and request further server functions by pointing `worker.api` and hosting the server bundle in a node.js environment.
-
-## Next step
-
-⚔ Learn [how to use MongoDB with Nullstack](/how-to-use-mongodb-with-nullstack).

@@ -208,7 +208,3 @@ class Component extends Nullstack {
 
 export default Component;
 ```
-
-## Next steps
-
-⚔ Learn about [server functions](/server-functions).
