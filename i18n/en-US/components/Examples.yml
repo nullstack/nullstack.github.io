@@ -37,3 +37,5 @@ posts:
   - title: "Using Nullstack to build a personal Portfolio on GitHub"
     href: "/examples/using-nullstack-to-build-a-personal-portfolio-on-github"
     description: "Nullstack can be used to build a personal Portfolio on GitHub."
+  - title: "Copying static files to the public folder on build"
+    href: "/examples/copying-static-files-to-the-public-folder-on-build"
