@@ -55,7 +55,3 @@ Você pode adicionar um script para a sua **package.json** a fim de gerar o seu 
 Antes de gerar o HTML, o Nullstack irá esperar que [`prepare`](/ciclo-de-vida-full-stack) e [`initiate`](/ciclo-de-vida-full-stack) de todos os componentes dessa rota sejam resolvidos.
 
 Você pode misturar modos e solicitar outras funções de servidor apontando `worker.api` e hospedando o pacote do servidor em um ambiente node.js.
-
-## Próximo passo
-
-⚔ Aprenda mais sobre [single page applications](/pt-br/aplicacao-de-pagina-unica).

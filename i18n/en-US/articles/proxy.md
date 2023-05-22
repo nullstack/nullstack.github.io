@@ -154,7 +154,3 @@ class Application extends Nullstack {
 
 export default Application;
 ```
-
-## Next step
-
-⚔ Learn about the [jsx elements](/jsx-elements).

@@ -26,9 +26,3 @@ class TypeScript extends Nullstack {
 
 }
 ```
-
-## Next step
-
-> 🎉 **Congratulations!**. You are done with the core concepts!
-
-⚔ Learn about the [Transpilation and Security](/transpilation-and-security).

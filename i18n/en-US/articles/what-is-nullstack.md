@@ -103,7 +103,7 @@ You can even have entire applications as components inside another application.
 function Application() {
   return (
     <div>
-      <Blog route="/blog/*">
+      <Blog route="/blog/*">dssxs-
       <Ecommerce route="/shop/*">
       <Home route="/">
     </div>
@@ -112,7 +112,3 @@ function Application() {
 ```
 
 Any developer can jump right into your project with just JavaScript knowledge and be productive at day 0 because they don't need to understand an overly complicated architecture or have to deal with a giant monolith. Nullstack apps are just isolated small features that are fun to code.
-
-### Next step
-
-⚔ Learn [how to create a nullstack project](/getting-started).

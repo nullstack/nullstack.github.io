@@ -100,7 +100,3 @@ export default Application;
 ```
 
 > 💡 You can override the automatically generated **manifest.json** and **robots.txt** by serving your own file from the **public** folder
-
-## Next step
-
-⚔ Learn about the [context `settings`](/context-settings).

@@ -129,7 +129,3 @@ class CustomPlayer extends Nullstack {
 
 export default CustomPlayer;
 ```
-
-## Next step
-
-⚔ Learn about the [Nullstack with TypeScript](/typescript).

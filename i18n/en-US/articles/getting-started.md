@@ -1,6 +1,7 @@
 ---
 title: Getting Started
-description: Create full stack JavaScript applications within seconds 
+description: Create full stack JavaScript applications within seconds
+action: ⚔ Learn [how to create a nullstack project](/getting-started). 
 ---
 
 > 📌 You can watch a video tutorial on our [Youtube Channel](https://www.youtube.com/watch?v=l23z00GEar8&list=PL5ylYELQy1hyFbguVaShp3XujjdVXLpId).
@@ -102,7 +103,3 @@ This is the compiled result of your application in production mode.
 > 🔥 Do not touch this folder
 
 >✨ Learn more about [how to deploy a Nullstack application](/how-to-deploy-a-nullstack-application).
-
-## Next step
-
-⚔ Create your first [Stateless Component](/stateless-components).

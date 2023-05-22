@@ -132,7 +132,3 @@ export default Application;
 ```
 
 > 🔥 A atribuição à chave `status` durante o modo [aplicativo de página única](/pt-br/ciclo-de-vida-full-stack) não terá efeito.
-
-## Próximo Passo
-
-⚔ Aprenda sobre a [chave `project` do contexto](/pt-br/contexto-project).

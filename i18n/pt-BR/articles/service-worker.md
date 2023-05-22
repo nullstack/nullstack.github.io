@@ -283,7 +283,3 @@ self.addEventListener('activate', activate);
 ```
 
 > 💡 O exemplo acima foi extraido do service worker gerado e usa `self.context.enviroment.key`
-
-## Próximo passo
-
-⚔ Aprenda [Como customizar o Webpack](/pt-br/como-customizar-webpack).

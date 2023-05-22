@@ -302,7 +302,3 @@ export default SearchForm;
 ```
 
 > 💡 Using the debounce attribute is more efficient than doing it manually because it uses Nullstack internal event system.
-
-## Next step
-
-⚔ Learn more about [proxies](/proxy).

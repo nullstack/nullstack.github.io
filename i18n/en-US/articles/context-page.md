@@ -134,7 +134,3 @@ export default Application;
 ```
 
 > 🔥 Assigning to the `status` key during the [single-page application](/full-stack-lifecycle) mode will have no effect.
-
-## Next step
-
-⚔ Learn about the [context `project`](/context-project).

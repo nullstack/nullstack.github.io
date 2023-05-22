@@ -1,6 +1,6 @@
 ---
 title: Facebook's Pixel
-description: Take advantage of the [context](/context) and [custom events](/context-page) to create a component that dynamically sends Pixel events
+description: Take advantage of the context and custom events to create a component that dynamically sends Pixel events
 ---
 
 According to [developers.facebook.com](https://developers.facebook.com/docs/facebook-pixel/):
@@ -98,7 +98,3 @@ class Application extends Nullstack {
 
 export default Application;
 ```
-
-## Next step
-
-⚔ Learn [how to deploy a Nullstack application](/how-to-deploy-a-nullstack-application).

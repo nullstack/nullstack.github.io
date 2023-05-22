@@ -115,7 +115,3 @@ export default Tasks;
 # Alternative extensions
 
 For the sake of convenience, you can also use `.jsx`, `.nts` and `.tsx` file extensions
-
-## Next step
-
-⚔ Learn about the [application startup](/application-startup).

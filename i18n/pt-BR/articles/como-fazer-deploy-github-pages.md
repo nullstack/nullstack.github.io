@@ -68,7 +68,3 @@ jobs:
 ```
 
 Esta ação irá construir sua aplicaçção em modo SSG e irá gerar a pasta contendo seu site estatico, o ultimo comando vai pegar a pasta estática e jogar no branch `master` permitindo o GitHub servir o conteúdo estático diretamente da pasta raíz.
-
-## Próximo Passo
-
-⚔ Aprenda [Como fazer o deploy de uma aplicação Nullstack no Heroku](/pt-br/como-fazer-deploy-heroku).

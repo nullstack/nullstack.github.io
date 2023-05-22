@@ -10,9 +10,3 @@ Crie um arquivo `Procfile` na raíz da aplicação com o seguinte:
 ```
 web: node .production/server.js
 ```
-
-## Próximo Passo
-
-> 🎉 **Parabéns**. Você concluiu a documentação!
-
-⚔ Se você deseja ver mais exemplos aqui, [abra uma issue no github](https://github.com/nullstack/nullstack/issues).

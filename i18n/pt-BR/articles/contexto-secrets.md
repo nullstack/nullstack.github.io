@@ -53,7 +53,3 @@ export default Application;
 Qualquer variável de ambiente iniciada por NULLSTACK_SECRETS_ será mapeada para o `secrets` de seu respectivo ambiente.
 
 > 🐱‍💻 NULLSTACK_SECRETS_PRIVATE_KEY será mapeada para `secrets.privateKey`
-
-## Próximo passo
-
-⚔ Aprendendo sobre o [`self` da instância](/pt-br/instancia-self).

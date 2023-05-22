@@ -45,7 +45,3 @@ export default ContextData;
 ```
 
 > 💡 Camelized keys from the `data` object will result in kebab attributes in the DOM.
-
-## Next step
-
-⚔ Learn about the [context `instances`](/context-instances).

@@ -46,7 +46,3 @@ No modo SPA, tanto [`prepare`](/pt-br/ciclo-de-vida-full-stack) e [`initiate`](/
 No entanto, é uma boa prática seguir os padrões de SSR para poder alterar facilmente o modo de construção.
 
 Você pode misturar modos e solicitar outras funções de servidor apontando `worker.api` e hospedando o pacote do servidor em um ambiente node.js.
-
-## Próximo Passo
-
-⚔ Aprenda [como usar MongoDB com Nullstack](/pt-br/como-usar-mongodb-com-nullstack).

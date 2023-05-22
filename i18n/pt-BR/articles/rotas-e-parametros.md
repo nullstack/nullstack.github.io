@@ -329,7 +329,3 @@ class Application extends Nullstack {
 
 export default Application;
 ```
-
-## Próximo passo
-
-⚔ Aprenda sobre [vínculos bidirecionais](/pt-br/vinculo-bidirecional).

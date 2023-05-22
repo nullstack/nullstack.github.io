@@ -54,7 +54,3 @@ export default Application;
 Any environment variable starting with NULLSTACK_SETTINGS_ will be mapped to the `settings` in that environment.
 
 > 🐱‍💻 NULLSTACK_SETTINGS_PUBLIC_KEY will be mapped to `settings.publicKey`
-
-## Next step
-
-⚔ Learn about the [context `secrets`](/context-secrets).

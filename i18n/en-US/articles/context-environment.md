@@ -69,7 +69,3 @@ export default BlogArticle;
 ```
 
 > 🔥 `environment.event` is only available in client functions/lifecycles.
-
-## Next step
-
-⚔ Learn about the [context `page`](/context-page).

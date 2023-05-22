@@ -99,7 +99,3 @@ class Application extends Nullstack {
 
 export default Application;
 ```
-
-## Next step
-
-⚔ Learn [how to use Facebook Pixel with Nullstack](/how-to-use-facebook-pixel-with-nullstack).

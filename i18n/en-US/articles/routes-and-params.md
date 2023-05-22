@@ -361,7 +361,3 @@ class Application extends Nullstack {
 
 export default Application;
 ```
-
-## Next step
-
-⚔ Learn about [two-way bindings](/two-way-bindings).

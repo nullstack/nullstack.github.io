@@ -65,7 +65,3 @@ class BooksList extends Nullstack {
 
 export default BooksList;
 ```
-
-## Próximo Passo
-
-⚔ Aprenda [como usar Google Analytics no Nullstack](/pt-br/como-usar-google-analytics-no-nullstack).

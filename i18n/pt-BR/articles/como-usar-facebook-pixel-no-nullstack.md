@@ -98,7 +98,3 @@ class Application extends Nullstack {
 
 export default Application;
 ```
-
-## Próximo Passo
-
-⚔ Aprenda [como fazer deploy com Nullstack](/pt-br/como-fazer-deploy).

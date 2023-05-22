@@ -325,7 +325,3 @@ export default Counter;
 ```
 
 > 💡 Nullstack will inject a constant reference to the function at transpile time in order to completely skip the runtime lookup process!
-
-## Next steps
-
-⚔ Learn about the [full-stack lifecycle](/full-stack-lifecycle).

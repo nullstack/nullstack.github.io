@@ -33,7 +33,3 @@ The above components and it's attributes generates the following logos:
 ![Nullstack Logos](/nullstack-logos.png)
 
 The Logo uses full width and has color `duotone` by default.
-
-## Next step
-
-⚔ Learn [how to use MongoDB with Nullstack](/how-to-use-mongodb-with-nullstack).

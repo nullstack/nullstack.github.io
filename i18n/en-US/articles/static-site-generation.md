@@ -57,7 +57,3 @@ Before generating the HTML, Nullstack will wait for [`prepare`](/full-stack-life
 You can mix modes and request further server functions by pointing `worker.api` and hosting the server bundle in a node.js environment.
 
 Nullstatic will crawl a "/404" URL and generate both a "/404.html" and a "/404/index.html".
-
-## Next step
-
-⚔ Learn more about [single page applications](/single-page-applications).

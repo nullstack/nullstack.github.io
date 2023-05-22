@@ -83,6 +83,21 @@ class Article extends Translatable {
     }
   }
 
+  async hydrate({ router, page }) {
+    const examples = [
+      "/how-to-deploy-to-vercel",
+      "/how-to-deploy-to-github-pages",
+      "/how-to-deploy-to-heroku",
+      "/how-to-use-mongodb-with-nullstack",
+      "/how-to-use-google-analytics-with-nullstack",
+      "/how-to-use-facebook-pixel-with-nullstack",
+    ]
+    if (examples.includes(router.url)) {
+      page.status = 301
+      router.url = `/examples${router.url}`
+    }
+  }
+
   renderLink({ title, href, router }) {
     const active = router.url === href;
     return (
@@ -107,6 +122,39 @@ class Article extends Translatable {
     )
   }
 
+  renderNextArticle({ router }) {
+    let nextLink, nextTopic    
+    for (let topicIndex = 0; topicIndex < this.topics.length; topicIndex++) {
+      const topic = this.topics[topicIndex]
+      for (let linkIndex = 0; linkIndex < topic.links.length; linkIndex++) {
+        const link = topic.links[linkIndex]
+        if (link.href === router.path) {
+          console.log({topicIndex}, topic.links.length)
+          if (linkIndex < topic.links.length - 1) {
+            nextLink = topic.links[linkIndex + 1]
+            nextTopic = topic
+          } else if (topicIndex < this.topics.length - 1) {
+            nextTopic = this.topics[topicIndex + 1]
+            nextLink = nextTopic.links[0]
+          }
+        }
+      }
+    }
+    return (
+      <div class="prose dark:prose-dark max-w-none my-12 border border-pink-600 p-6">
+        <h2> <a href="#next-step"> {this.i18n.next} </a> </h2>
+        {nextLink && 
+          <span class="my-2 block"> 
+            ➡️ {this.i18n.learn} <a href={nextLink.href} class="text-white hover:text-pink-600">{nextTopic.title}: {nextLink.title}</a> 
+          </span>
+        }
+        <span>
+          ❓ {this.i18n.lead} <a href="https://discord.gg/eDZfKz264v" target="_blank">{this.i18n.cta}</a>
+        </span>
+      </div>
+    )
+  }
+
   render() {
     if (!this.html) return false
     return (
@@ -125,9 +173,7 @@ class Article extends Translatable {
         <article class="w-full md:w-9/12 pb-24">
           <h1 class="text-pink-600 text-4xl font-light block mb-8"> {this.title} </h1>
           <div html={this.html} class="prose dark:prose-dark max-w-none" />
-          <p class="bg-gray-100 dark:bg-gray-800 p-2 mt-4">
-            {this.i18n.lead} <a href="https://discord.gg/eDZfKz264v" target="_blank" class="text-pink-600 font-semibold">{this.i18n.cta}</a>
-          </p>
+          <NextArticle />
         </article>
       </section>
     )

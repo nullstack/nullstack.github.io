@@ -96,7 +96,3 @@ Este é o resultado compilado da sua aplicação em modo de produção.
 > 🔥 Não toque nesta pasta
 
 >✨ Saiba mais sobre [como fazer deploy de aplicação Nullstack](/pt-br/como-fazer-deploy-de-aplicacao-nullstack).
-
-## Próximo Passo
-
-⚔ Crie seu primeiro [componente renderizável](/pt-br/componentes-renderizaveis).

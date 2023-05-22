@@ -93,8 +93,3 @@ context.server.get('/waifus', WaifuComponent.getWaifus)
 
 export default context;
 ```
-
-
-## Next step
-
-⚔ Learn about [styles](/styles).

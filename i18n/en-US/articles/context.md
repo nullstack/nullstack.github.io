@@ -184,7 +184,3 @@ class Counter extends Nullstack {
 
 export default Counter;
 ```
-
-## Next step
-
-⚔ Learn about [routes and params](/routes-and-params).
