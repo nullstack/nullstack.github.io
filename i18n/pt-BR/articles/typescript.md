@@ -23,13 +23,7 @@ class TypeScript extends Nullstack {
   // ...
   async serverFunction(context: NullstackServerContext) {}
 
-  async clientFunction(context: NuNullstackClientContextls) {}
+  async clientFunction(context: NullstackClientContext) {}
   // ...
 }
 ```
-
-## Next step
-
-> 🎉 **Parabéns!**. Você terminou com os conceitos principais!
-
-⚔ Aprenda sobre [Transpilação e Segurança](/transpilation-and-security).
