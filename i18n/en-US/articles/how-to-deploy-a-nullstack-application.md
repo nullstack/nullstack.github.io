@@ -32,3 +32,9 @@ node .production/server.js
 ## How to Deploy a static generated site with Nullstack
 
 After you [generate a static site](/static-site-generation), all you have to do is move the output folder to any host machine capable of serving HTML.
+
+## Examples
+
+- [How to deploy to Vercel](/examples/how-to-deploy-to-vercel)
+- [How to deploy to Github Pages](/examples/how-to-deploy-to-github-pages)
+- [How to deploy to Heroku](/examples/how-to-deploy-to-heroku)
