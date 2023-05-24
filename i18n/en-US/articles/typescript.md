@@ -19,9 +19,9 @@ import Nullstack, {NullstackClientContext, NullstackServerContext} from 'nullsta
 class TypeScript extends Nullstack {
 
     // ...
-    async serverFunction(context: NullstackServerContext) {}
+    async serverFunction(context?: NullstackServerContext) {}
 
-    async clientFunction(context: NuNullstackClientContextls) {}
+    async clientFunction(context?: NuNullstackClientContextls) {}
     // ...
 
 }
