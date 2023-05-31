@@ -1,6 +1,6 @@
 ---
 title: "Usando o Nullstack como uma API web"
-description: "O Nullstack pode ser usado como uma API web, você escreve os seus próprios endpoints ou pode expôr suas server functions."
+description: "O Nullstack pode ser usado como uma API web, você escreve os seus próprios endpoints ou pode expor suas server functions."
 ---
 O Nullstack pode ser usado como uma API web. O Nullstack roda um servidor expresso por trás da aplicação, permitindo que você defina suas próprias rotas e construa uma API web totalmente personalizada.
 

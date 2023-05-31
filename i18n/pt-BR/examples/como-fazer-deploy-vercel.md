@@ -1,16 +1,17 @@
 ---
 title: Como fazer deploy de uma aplicação Nullstack no Vercel
-description: Você pode hospedar um aplicativo Nullstack em qualquer lugar. Faça deploy no Vercel, Heroku, AWS, Azure, GitHub Pages ou em qualquer outro lugar.
+description: Você pode colocar uma aplicação Nullstack em qualquer lugar. Faça deploy da sua aplicação no Vercel, Heroku, AWS, Azure, GitHub pages, ou em qualquer outro lugar.
 ---
 
-Crie `api/nullstack.js` para exportar o servidor de aplicativos em produção.
+Crie o arquivo `api/nullstack.js` para exportar o servidor de produção.
 
 ```js
 import application from '../.production/server'
 
 export default application.server;
 ```
-Adicione `vercel.json` na raiz do projeto para redirecionar todas as requests para o Nullstack:
+
+Adicione a seguinte configuração no `vercel.json` na raiz da sua aplicação para redirecionar todos requests do nullstack:
 
 ```json
 {

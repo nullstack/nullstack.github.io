@@ -1,15 +1,15 @@
 ---
 title: Google Analytics
-description: Aproveite as chaves de contexto e eventos personalizados para criar um componente que envie eventos de forma dinâmica para o GTAG.
+description: Aproveite as vantagens do contexto e dos eventos personalizados para criar um componente que envia eventos GTAG dinamicamente.
 ---
 
 De acordo com [analytics.google.com](https://analytics.google.com):
 
-"O Google Analytics permite que você meça o retorno do investimento em publicidade, além de rastrear seus anúncios em Flash, vídeo e sites e aplicativos de redes sociais."
+"O Google Analytics permite que você avalie o ROI de publicidade, bem como rastreie o Flash, vídeo e mídias sociais em sites e aplicativos."
 
-Aproveite as [chaves de contexto](/contexto) e [eventos personalizados](/contexto-page) para criar um componente que envie eventos de forma dinâmica para o GTAG.
+Você pode aproveitar as vantagens do [contexto](/pt-br/contexto) e dos [eventos personalizados](/pt-br/contexto-page) para criar um componente que envia eventos GTAG dinamicamente.
 
-O GTAG só pode ser chamado depois do [`hydrate`](/ciclo-de-vida-full-stack) para garantir de que está rodando no client.
+O GTAG só pode ser chamado depois de [`hydrate`](/pt-br/ciclo-de-vida-full-stack) para garantir que está sendo executado no cliente.
 
 ```jsx
 import Nullstack from 'nullstack';
@@ -59,7 +59,7 @@ class Application extends Nullstack {
   render() {
     return (
       <main>
-        <GoogleAnalytics id="TROQUE_PARA_SEU_ID_DO_ANALYTICS" />
+        <GoogleAnalytics id="SUBSTITUA_COM_SEU_ID_DO_GOOGLE_ANALYTICS" />
       </main>
     )
   }
@@ -70,9 +70,9 @@ class Application extends Nullstack {
 export default Application;
 ```
 
-## Usando Wrapper
+## Usando um Wrapper
 
-Como outra alternativa, você pode instalar [nullstack-google-analytics](https://github.com/Mortaro/nullstack-google-analytics) como uma dependência:
+Alternativamente, você pode instalar o [nullstack-google-analytics](https://github.com/Mortaro/nullstack-google-analytics) como uma dependência:
 
 ```sh
 npm install nullstack-google-analytics
@@ -89,7 +89,7 @@ class Application extends Nullstack {
   render() {
     return (
       <main>
-        <GoogleAnalytics id="TROQUE_PARA_SEU_ID_DO_ANALYTICS" />
+        <GoogleAnalytics id="SUBSTITUA_COM_SEU_ID_DO_GOOGLE_ANALYTICS" />
       </main>
     )
   }

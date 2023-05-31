@@ -1,21 +1,21 @@
 ---
 title: Como usar MongoDB
-description: Você pode usar qualquer banco de dados com Nullstack, mas a integração JavaScript e flexibilidade do MongoDB parece especialmente boa com aplicativos Nullstack.
+description: Você pode usar qualquer banco de dados com Nullstack, mas a integração JavaScript e flexibilidade do MongoDB parece especialmente boa com aplicativos Nullstack
 ---
 
-De acord com [mongodb.com](https://www.mongodb.com):
+De acordo com [mongodb.com](https://www.mongodb.com):
 
 "O MongoDB é um banco de dados distribuído de propósito geral, baseado em documentos, criado para desenvolvedores de aplicativos modernos e para a era da nuvem."
 
 Você pode usar qualquer banco de dados com Nullstack, mas a integração JavaScript e flexibilidade do MongoDB parece especialmente boa com aplicativos Nullstack.
 
-Instale o driver do MongoDB pelo npm:
+Instale o driver MongoDB do npm:
 
 ```sh
 npm install mongodb
 ```
 
-Configure as credenciais do banco de dados usando [`secrets`](/context-secrets) em seu arquivo `.env`.
+Configure as credenciais do banco de dados usando [`secrets`](/pt-br/contexto-secrets) em seu arquivo `.env`.
 
 ```
 NULLSTACK_SECRETS_MONGODB_URI="mongodb://localhost:27017/dbname"

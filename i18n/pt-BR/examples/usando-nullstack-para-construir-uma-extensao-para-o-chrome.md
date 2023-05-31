@@ -4,7 +4,7 @@ description: "O Nullstack pode ser usado para construir uma extensão para o Chr
 ---
 O Nullstack pode ser usado para construir uma extensão para o Chrome.
 
-Essas são todas as alterações necessárias para fazer com que o app seja compatível comoo uma extensão:
+Essas são todas as alterações necessárias para fazer com que o app seja compatível como uma extensão:
 
 - `public/manifest.json` criar o arquivo de manifesto da extensão pro Chrome
 - `server.js` desabilita o service worker padrão, como uma extensão ele é desnecessário
