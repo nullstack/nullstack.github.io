@@ -1,11 +1,11 @@
 ---
-title: "Copiando arquivos estaticos para pasta public durante o build"
-description: "Copiando arquivos estaticos para pasta public, como arquivos de schema, css, js e outros arquivos que vem com certos pacotes"
+title: "Copiando arquivos estáticos para a pasta public durante o build"
+description: "Copiando arquivos estáticos para a pasta public, como arquivos de schema, css, js e outros arquivos que vem com certos pacotes"
 ---
 
-To copy static files to the public folder you need to create a custom webpack override.
+Para copiar arquivos estáticos para a pasta pública você precisa criar um webpack personalizado e sobrepor eles.
 
-In order to modify the webpack config that comes in the Nullstack bundle, you can create a `webpack.config.js` as mentioned in the documentation ["How to customize Webpack"](/how-to-customize-webpack).
+Para modificar a configuração do webpack que vem no pacote do Nullstack, você pode criar um arquivo `webpack.config.js`, conforme mencionado na documentação ["Como customizar o webpack"](/como-customizar-webpack).
 
 ```js
 // webpack.config.js
@@ -29,8 +29,7 @@ function customServer(...args) {
 
 module.exports = [customServer, client];
 ```
-
-In case you need to serve these files, you can use `context.server` to create a route and `express.static` to point to the files you want to serve.
+Se você precisar destes arquivos, você pode usar `context.server` para criar uma rota e `express.static` para criar onde você quer servir os arquivos.
 
 ```js
 // server.js
