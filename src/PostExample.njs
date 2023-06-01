@@ -72,45 +72,11 @@ class PostExample extends Translatable {
     return (
       <section class="max-w-screen-md mx-auto px-4 flex flex-wrap sm:flex-nowrap py-12 sm:py-24">
         <article class="w-full pb-24">
-          <h2 class="text-pink-600 text-4xl font-light block">{this.title}</h2>
-
+          <h2 class="text-pink-600 text-4xl font-light block mb-8">{this.title}</h2>
           <div
             html={this.html}
             class="prose dark:prose-dark max-w-none text-lg"
           />
-          <div class="prose dark:prose-dark max-w-none text-lg mt-12">
-            <p>
-              If you have any questions, feel free to join our{" "}
-              <a href="https://discord.com/invite/eDZfKz264v" target="_blank">
-                Discord server
-              </a>{" "}
-              where you can interact with our community 🥰
-            </p>
-            <p>
-              Found a bug or have a feature request? Feel free to{" "}
-              <a
-                href="https://github.com/nullstack/nullstack/issues"
-                target="_blank"
-              >
-                open an issue
-              </a>{" "}
-              at our Github.
-            </p>
-            <p>
-              We will interact over the feedback as fast as we can and release
-              1.0 pretty soon.
-            </p>
-            <p>
-              You can help us by{" "}
-              <a
-                href="https://github.com/nullstack/nullstack/stargazers"
-                target="_blank"
-              >
-                leaving a star on our Github repo🌟
-              </a>
-              .
-            </p>
-          </div>
         </article>
       </section>
     );
