@@ -65,7 +65,7 @@ class Counter extends Nullstack {
     return (
       <div 
         class={['number', this.count > 0 && 'bigger-than-zero', this.count % 2 === 0 ? 'even' : 'odd' ]}
-        style={['background-color: black;', this.count > 0 && 'border-color: black;', this.count % 2 === 0 ? 'color: blue;' : 'color-red;' ]}
+        style={['background-color: black;', this.count > 0 && 'border-color: black;', this.count % 2 === 0 ? 'color: blue;' : 'color: red;' ]}
       > 
         {this.count}
       </div>
