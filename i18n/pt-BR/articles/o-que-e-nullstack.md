@@ -1,9 +1,9 @@
 ---
 title: O que é Nullstack?
-description: O Nullstack é um framework full stack que permite que o frontend e o backend sejam criados em um único componente, nós o chamamos de componentes "orientados a recursos". O Nullstack torna a codificação divertida e simples porque você não pensa em grandes arquiteturas; em vez disso, você possui pequenos recursos em componentes.
+description: O Nullstack é um framework full stack que permite que o frontend e o backend sejam criados em um único componente, nós o chamamos de componentes "orientados a recursos". O Nullstack torna a codificação divertida e simples porque você não pensa em grandes arquiteturas, em vez disso, você possui pequenos recursos em componentes.
 ---
 
-O Nullstack é um framework full stack que permite que o frontend e o backend sejam criados em um único componente, nós o chamamos de componentes "orientados a recursos". O Nullstack torna a codificação divertida e simples porque você não pensa em grandes arquiteturas; em vez disso, você possui pequenos recursos em componentes.
+O Nullstack é um framework full stack que permite que o frontend e o backend sejam criados em um único componente, nós o chamamos de componentes "orientados a recursos". O Nullstack torna a codificação divertida e simples porque você não pensa em grandes arquiteturas, em vez disso, você possui pequenos recursos em componentes.
 
 É mais fácil mostrar do que dizer: vamos repassar um componente que permite ver o número de curtidas de uma postagem em 5 minutos!
 
@@ -20,7 +20,7 @@ class LikeButton extends Nullstack {
 
   // funções "static async" rodam no servidor
   static async getNumberOfLikes({ database, post }) {
-    // database is a user defined context key
+    // database é uma chave de contexto definida pelo usuário
     const sql = 'SELECT COUNT(*) FROM likes WHERE post = ?'
     const [likes] = await database.query(sql, [post])
     return likes
@@ -47,7 +47,6 @@ class LikeButton extends Nullstack {
 Isso foi fácil, esse é um recurso, tudo no mais é um problema imaginário. Mas isso foi realmente muito fácil, e se quisermos escrever dados no banco de dados em vez de apenas ler na página carregar?
 
 Vamos alterar esse span para um botão e verificar os critérios de aceitação do nosso recurso. A qualquer momento, você pode optar por executar funções no servidor e o Nullstack gerará no momento da compilação um microsserviço com uma API apenas para essa função.
-
 
 ```jsx
 import Nullstack from 'nullstack'
