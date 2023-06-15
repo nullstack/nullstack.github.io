@@ -33,6 +33,8 @@ node .production/server.js
 
 Depois de [gerar um site estático](/pt-br/geracao-de-sites-estaticos), tudo o que você precisa fazer é mover a pasta de saída para qualquer máquina host capaz de servir HTML.
 
-## Próxima Etapa
+## Exemplos
 
-⚔ Aprenda [Como fazer o deploy de uma aplicação Nullstack no Vercel](/pt-br/como-fazer-deploy-vercel).
+- [Como fazer deploy no Vercel](/examples/como-fazer-deploy-vercel)
+- [Como fazer deploy no GitHub Pages](/examples/como-fazer-deploy-github-pages)
+- [Como fazer deploy no Heroku](/examples/como-fazer-deploy-heroku)

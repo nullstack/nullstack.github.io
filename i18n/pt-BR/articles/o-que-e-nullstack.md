@@ -1,26 +1,113 @@
 ---
 title: O que é Nullstack?
-description: Nullstack é um framework isomórfico JavaScript que permite aos desenvolvedores construir aplicações Full Stack enquanto se concentram nos recursos do produto e resolvem os problemas do usuário, em vez de gastar uma quantidade significativa de tempo se preocupando com camadas de abstração e escolhendo quais ferramentas os fazem parecer sofisticados.
+description: O Nullstack é um framework full stack que permite que o frontend e o backend sejam criados em um único componente, nós o chamamos de componentes "orientados a recursos". O Nullstack torna a codificação divertida e simples porque você não pensa em grandes arquiteturas, em vez disso, você possui pequenos recursos em componentes.
 ---
 
-Nullstack é um framework isomórfico JavaScript que permite aos desenvolvedores construir aplicações Full Stack enquanto se concentram nos recursos do produto e resolvem os problemas do usuário, em vez de gastar uma quantidade significativa de tempo se preocupando com camadas de abstração e escolhendo quais ferramentas os fazem parecer sofisticados.
+O Nullstack é um framework full stack que permite que o frontend e o backend sejam criados em um único componente, nós o chamamos de componentes "orientados a recursos". O Nullstack torna a codificação divertida e simples porque você não pensa em grandes arquiteturas, em vez disso, você possui pequenos recursos em componentes.
 
-O Nullstack pode ser usado para construir uma variedade de projetos, como Blockchain dapps, aplicações da web (SSR, SPA, SSG), extensões do Google Chrome, aplicativos nativos híbridos, aplicativos Electron e qualquer outra coisa que você possa fazer com JavaScript ao mesmo tempo com uma única base de código.
+É mais fácil mostrar do que dizer: vamos repassar um componente que permite ver o número de curtidas de uma postagem em 5 minutos!
 
-## Orientado a recursos
+Na sua cabeça, você já está pensando em APIs e arquitetura, mas todos os seus usuários desejam ver as informações do banco de dados na tela, então vamos fazer exatamente isso:
 
-Um recurso em Nullstack fala a mesma linguagem para o desenvolvedor, o gerente de projetos e o cliente.
+```jsx
+import Nullstack from 'nullstack'
 
-Em Nullstack os componentes são recursos completos. Eles conectam o back-end e o front-end da aplicação, fornecendo um recurso totalmente funcional em um único componente.
+class LikeButton extends Nullstack {
 
-Não existem grandes projetos no Nullstack, apenas pequenos recursos. Um recurso pode ser composto de outros recursos, um recurso pode até mesmo ser uma aplicação inteira importada como um componente em outra aplicação.
+  // as variáveis de instância são mutáveis e reativas
+  // você pode usar vanilla JS em vez de hooks
+  likes = 0
 
-Isso pode parecer errado e ir contra tudo o que você já aprendeu, mas funciona e é mais rápido e flexível. Seu código fica muito mais simples e fácil de entender, as pessoas podem pular rapidamente em sua base de código e começar a contribuir. Os desenvolvedores podem fazer alterações em projetos gigantes sem nenhuma sobrecarga cognitiva.
+  // funções "static async" rodam no servidor
+  static async getNumberOfLikes({ database, post }) {
+    // database é uma chave de contexto definida pelo usuário
+    const sql = 'SELECT COUNT(*) FROM likes WHERE post = ?'
+    const [likes] = await database.query(sql, [post])
+    return likes
+  }
 
-Nullstack não precisa de um ecossistema, você provavelmente não encontrará bibliotecas "nullstack-*", pois pode simplesmente usar pacotes JavaScript vanilla. Acreditamos que o JavaScript atingiu um nível de maturidade que a criação de um trecho de código que faz exatamente o que você precisa geralmente ocupará menos linhas e levará a menos engenharia excessiva do que configurar uma biblioteca.
+  async initiate({ post }) {
+    // Você pode usar o valor retornado das funções do servidor
+    // Como se fosse uma função regular
+    this.likes = await this.getNumberOfLikes({ post })
+  }
 
-O desenvolvimento orientado a recursos pode não ser para todos, mas o Nullstack oferece liberdade suficiente para usá-lo da maneira que achar melhor. Você ainda pode usar o Nullstack com camadas e abstrações, não estamos aqui para segurar sua mão, você é livre para atirar no seu próprio pé.
+  // JSX segue os padrões HTML
+  render() {
+    return (
+      <div class="likes-counter">
+        <span> {this.likes} </span>
+      </div>
+    )
+  }
 
-## Próximos passos
+}
+```
 
-⚔ Aprenda [como criar um projeto em nullstack](pt-br/comecando).
+Isso foi fácil, esse é um recurso, tudo no mais é um problema imaginário. Mas isso foi realmente muito fácil, e se quisermos escrever dados no banco de dados em vez de apenas ler na página carregar?
+
+Vamos alterar esse span para um botão e verificar os critérios de aceitação do nosso recurso. A qualquer momento, você pode optar por executar funções no servidor e o Nullstack gerará no momento da compilação um microsserviço com uma API apenas para essa função.
+
+```jsx
+import Nullstack from 'nullstack'
+
+class LikeButton extends Nullstack {
+
+  // ...
+
+  static async createLike({ request, database, post }) {
+    const user = request.user.id
+    const sql = 'INSERT INTO likes (user, post) VALUES (?, ?)'
+    await database.query(sql, [user, post])
+  }
+
+  // Cada client function recebe as props
+  async like({ post }) {
+    // Você pode alterar as variáveis e o DOM reflete as mudanças
+    this.likes++
+    // Isso está chamando um ponto de extremidade da API por baixo dos panos
+    await this.createLike({ post })
+  }
+
+  // JSX segue os padrões HTML
+  render() {
+    return (
+      <div class="likes-counter">
+        <button onclick={this.like}>
+          {this.likes}
+        </button>
+      </div>
+    )
+  }
+
+}
+```
+
+Este exemplo é pequeno, mas mostra um pouco da beleza do NullStack. Todo recurso é apenas um componente e os recursos podem ser compostos como você deseja. Este componente pode entrar em um componente post.
+
+```jsx
+function Post({ post }) {
+  return (
+    <div>
+      <article> {post.content} </article>
+      <LikeButton post={post.id}>
+    </div>
+  )
+}
+```
+
+Você pode até ter aplicativos inteiros como componentes dentro de outro aplicativo.
+
+```jsx
+function Application() {
+  return (
+    <div>
+      <Blog route="/blog/*">dssxs-
+      <Ecommerce route="/shop/*">
+      <Home route="/">
+    </div>
+  )
+}
+```
+
+Qualquer desenvolvedor pode pular direto para o seu projeto com apenas conhecimento do JavaScript e ser produtivo no dia 0, porque não precisa entender uma arquitetura excessivamente complicada ou ter que lidar com um monólito gigante. Os aplicativos Nullstack são apenas pequenos recursos isolados que são divertidos de codificar.
