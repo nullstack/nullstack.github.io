@@ -69,7 +69,7 @@ class Toast extends Nullstack {
 export default Toast;
 ```
 
-## Simples components refáveis
+## Simples componentes refáveis
 
 Ref pode ser propagada apenas passando a referência do contexto.
 
