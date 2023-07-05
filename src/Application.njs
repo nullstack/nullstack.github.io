@@ -52,9 +52,9 @@ class Application extends Nullstack {
           <Documentation route="/pt-br/documentacao" persistent />
 
           <Examples route="/examples" persistent />
-          <PostExample route="/examples/:slug" persistent />
-
           <Examples route="/pt-br/exemplos" persistent />
+          
+          <PostExample route="/examples/:slug" persistent />
           <PostExample route="/pt-br/exemplos/:slug" persistent />
 
           <Blog route="/blog" persistent />

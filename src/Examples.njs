@@ -18,7 +18,7 @@ class Examples extends Translatable {
     );
   }
 
-  renderPostExample({ title, href, description, date, author }) {
+  renderPostExample({ title, href, description }) {
     return (
       <a href={href} class="w-full block mb-8">
         <h2 class="w-full text-md sm:text-xl font-light mb-2 text-pink-600">
@@ -39,7 +39,6 @@ class Examples extends Translatable {
           {this.i18n.heading}
         </h1>
         <p class="text-xl sm:text-2xl font-light block mb-3">
-          {" "}
           {this.i18n.tagline}
         </p>
         <p
