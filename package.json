@@ -5,13 +5,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "http-server": "^14.1.1",
     "nullstack": "~0.18.0",
-    "tailwindcss": "^3.0.0",
-    "postcss-loader": "^7.0.1"
+    "postcss-loader": "^7.0.1",
+    "tailwindcss": "^3.0.0"
   },
   "scripts": {
     "start": "npx nullstack start",
     "build": "npx nullstack build --mode=ssg --output=docs",
+    "start:docs": "npx http-server docs",
     "reinstall": "rm -rf .development .production package-lock.json node_modules && npm install"
   },
   "dependencies": {
