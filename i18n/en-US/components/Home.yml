@@ -7,7 +7,7 @@ hero:
     - Nullstack is a web framework that makes coding fun again.
     - "Write the backend and frontend of a feature in a single isomorphic component with zero boilerplate or glue code."
   getStarted: "Get Started"
-  callToAction: "npx create-nullstack-app --typescript --tailwind"
+  callToAction: "npx create-nullstack-app"
   actionLink: '/getting-started'
   actionCallback: 'Command copied, paste it in the terminal'
 trinity:
