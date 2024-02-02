@@ -60,4 +60,4 @@ Nulla-Chan is the avatar of Nullstack, it belongs to a category of avatars calle
 Definitively it was deciding if We should spell it "full stack", "fullstack", or "full-stack". Seriously please tell us on discord which one to pick.
 
 ## How can i get started?
-Just go to your favorite terminal and type "npx create-nullstack-app app-name", and if you are feeling fancy you can also pass the flags --typescript and --tailwind.
+Just go to your favorite terminal and type "npx create-nullstack-app app-name" and use the templates available through the CLI.
