@@ -5,3 +5,4 @@ yarn.lock
 .production
 public/pt-BR.json
 public/en-US.json
+docs
