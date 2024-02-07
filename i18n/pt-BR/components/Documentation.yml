@@ -51,8 +51,12 @@ topics:
         href: "/pt-br/service-worker"
   - title: "Conceitos avançados"
     links:
+      - title: "Proxy"
+        href: "/pt-br/proxy"
       - title: "Inicialização da aplicação"
         href: "/pt-br/inicializacao-da-aplicacao"
+      - title: "Script Runner"
+        href: "/pt-br/script-runner"
       - title: "Componentes Funcionais"
         href: "/pt-br/componentes-funcionais"
       - title: "Componentes Persistentes"

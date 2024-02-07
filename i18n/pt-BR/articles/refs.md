@@ -34,9 +34,9 @@ export default Player;
 
 ## Refs funcionais
 
-Refs pode ser a referência a uma função que será acionada quando o nó entrar no DOM
+Você pode passar uma função ao atributo ref de um elemento e ela é chamada quando o elemento entrar no DOM.
 
-Uma tecla `element` será adicionada ao contexto quando a função for chamada
+Uma chave `element` com uma referência ao elemento é adicionada ao contexto da função
 
 Todas props desse enredo serão mescladas no contexto dessa função.
 
@@ -69,9 +69,9 @@ class Toast extends Nullstack {
 export default Toast;
 ```
 
-## Simples components refáveis
+## Simples componentes refáveis
 
-Ref pode ser propagada apenas passando a referência do contexto.
+Você também pode simplesmente passar uma variável para o ref, e essa variável vai se tornar uma referência ao elemento quando ele entrar no DOM.
 
 ```jsx
 export default function CustomPlayer({ label, ref }) {
